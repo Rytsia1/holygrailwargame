@@ -1517,6 +1517,45 @@ html[lang=ko] #infoBody dl.help dd{word-break:keep-all}
 .sndpop .sp-play[aria-pressed=true]::after{background:#e2c98e!important;left:calc(100% - 25px)}
 .sndpop .sp-play[aria-pressed=true]{box-shadow:inset 0 0 0 2px #0d1229,inset 0 0 0 3px rgba(216,189,124,.35)!important}
 
+/* ---- 2단계: 게임 화면 틀 (ig2_apply) ---- */
+/* 2단계: 게임 화면 틀 */
+.bar{background:linear-gradient(180deg,rgba(9,12,24,.97),rgba(9,12,24,.93))!important;border-bottom:0!important}
+.prog{height:2px;background:rgba(216,189,124,.16)!important}
+.prog i{background:linear-gradient(90deg,#b8975a,#f2e2b4)!important;box-shadow:0 0 6px rgba(230,200,138,.55)}
+.game.war .prog i{background:linear-gradient(90deg,#8e2a33,#e0707a)!important;box-shadow:0 0 6px rgba(224,112,122,.5)}
+.who .nm{font-family:var(--lbF);font-weight:700;color:#f1e6cf}
+.who .age{color:#e2c98e}
+.who .yr{color:#8f8878}
+.who .chip,#game .chip{border-radius:4px;border-color:rgba(196,164,104,.35);color:#a39c8a;font-family:var(--lbF);letter-spacing:.04em}
+#game .chip.war{border-color:rgba(210,69,79,.75);color:#f0a2a8;background:rgba(120,20,30,.18)}
+.ctrl{gap:6px!important}
+.ctrl .sep{display:none!important}
+.ctrl>button,.ctrl .cg-time{height:34px;box-sizing:border-box;border:7px solid transparent!important;border-image:var(--lbTG) 14 fill / 12px / 0 stretch!important;background:none!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.ctrl>button{padding:0 8px!important;color:#ddd3bb!important;font-family:var(--lbF)!important;font-size:12.5px!important;display:inline-flex;align-items:center}
+.ctrl .cg-time{display:inline-flex;align-items:stretch;padding:0 2px}
+.ctrl .cg-time button{position:relative;border:0!important;background:none!important;border-radius:0!important;padding:0 7px!important;color:#8f8878!important;font-family:var(--f-mono);font-size:12.5px}
+.ctrl .cg-time button[aria-pressed=true]{color:#f3e8cb!important;text-shadow:0 0 8px rgba(230,200,140,.5)}
+.ctrl .cg-time button[aria-pressed=true]::after{content:'';position:absolute;left:18%;right:18%;bottom:1px;height:1px;background:linear-gradient(90deg,transparent,#d8bd7c,transparent)}
+.ctrl .cg-time #pauseBtn{color:#d8bd7c!important}
+.ctrl .cg-time #pauseBtn::after{display:none}
+.ctrl .cg-time #pauseBtn+button{margin-left:2px;box-shadow:inset 1px 0 0 rgba(196,164,104,.22)!important}
+.ctrl .sndq{color:#8f8878!important}.ctrl .sndq.on{color:#e2c98e!important}
+.ctrl #autoBtn[aria-pressed=true]{border-image-source:var(--lbPR)!important;color:#f3e8cb!important;text-shadow:0 0 8px rgba(230,200,140,.45)}
+.keys-g{color:#8f8878!important}
+/* 모바일 아래 탭 */
+.tabs{background:linear-gradient(180deg,rgba(9,12,24,.97),rgba(6,8,16,.99))!important;border-top:0!important}
+.tabs::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,189,124,.5) 18%,rgba(216,189,124,.5) 82%,transparent)}
+.tabs::after{content:'';position:absolute;left:50%;top:-3.5px;width:7px;height:7px;transform:translateX(-50%) rotate(45deg);background:linear-gradient(135deg,#f2e2b4,#b8975a);box-shadow:0 0 5px rgba(220,190,120,.6)}
+.tabs button{position:relative;font-family:var(--lbF)!important;color:#8f8878!important;letter-spacing:.1em}
+.tabs button[aria-pressed=true]{color:#f3e8cb!important;text-shadow:0 0 8px rgba(230,200,140,.45)}
+.tabs button[aria-pressed=true]::after{content:'';position:absolute;left:38%;right:38%;bottom:7px;height:1px;background:linear-gradient(90deg,transparent,#d8bd7c,transparent)}
+/* PC 두 칸: 오른쪽 칸 앞에 금선 */
+@media (min-width:901px){#game aside{position:relative}#game aside::before{content:'';position:absolute;left:-15px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(216,189,124,.4),rgba(216,189,124,.12) 60%,rgba(216,189,124,0))}#game aside::after{content:'';position:absolute;left:-18.5px;top:-2px;width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#f2e2b4,#b8975a)}}
+@media (max-width:440px){.ctrl{gap:4px!important}.ctrl .cg-time{padding:0 1px}.ctrl .cg-time button{padding:0 5px!important;font-size:12px}.ctrl>button{padding:0 5px!important;font-size:12px!important}.ctrl .sndq{gap:2px!important}}
+
+.who{align-items:center!important}
+.who .chip.sx{align-self:auto!important}
+
 /* ---- 로딩 화면 ---- */
 #ldScr{position:fixed;inset:0;z-index:2147483000;background:#07060b;pointer-events:auto}
 #ldScr[hidden]{display:none}
@@ -1761,9 +1800,7 @@ play();
       <div class="who"><span class="nm" id="gName"></span><span class="chip sx" id="gSex"></span><span class="age mono" id="gAge"></span><span class="yr mono" id="gYear"></span><span class="chip" id="gPhase">삶</span></div>
       <div class="ctrlwrap">
       <div class="ctrl" role="group" aria-label="시간">
-        <button id="pauseBtn" aria-pressed="false" title="일시정지 (스페이스)">❚❚</button>
-        <span class="sep"></span>
-        <button data-sp="1" aria-pressed="true" title="1배속 (1)">1×</button><button data-sp="2" aria-pressed="false" title="2배속 (2)">2×</button><button data-sp="4" aria-pressed="false" title="4배속 (3)">4×</button><button data-sp="8" aria-pressed="false" title="8배속 (4)">8×</button>
+        <span class="cg-time"><button id="pauseBtn" aria-pressed="false" title="일시정지 (스페이스)">❚❚</button><button data-sp="1" aria-pressed="true" title="1배속 (1)">1×</button><button data-sp="2" aria-pressed="false" title="2배속 (2)">2×</button><button data-sp="4" aria-pressed="false" title="4배속 (3)">4×</button><button data-sp="8" aria-pressed="false" title="8배속 (4)">8×</button></span>
         <span class="sep"></span>
         <button id="sndQ" class="sndq" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="sndPop" title="소리 (M)"><svg class="sq-ic" viewBox="0 0 16 16" aria-hidden="true"><path class="sq-sp" d="M2.5 6h2.6L8.6 3v10L5.1 10H2.5z"/><path class="sq-w" d="M10.6 5.6a3.4 3.4 0 0 1 0 4.8M12.4 3.9a5.8 5.8 0 0 1 0 8.2"/><path class="sq-x" d="M10.8 6.2l3.6 3.6M14.4 6.2l-3.6 3.6"/></svg><svg class="sq-cv" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg></button>
         <span class="sep"></span>
