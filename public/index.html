@@ -1693,6 +1693,36 @@ html[lang=ko] #infoBody dl.help dd{word-break:keep-all}
 #dlg.folded .dpill .dp-dot{border-radius:0;width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#f2e2b4,#b8975a)}
 #dlg.folded .dpill .dp-e{color:#e2c98e;font-size:12.5px}
 
+/* ---- 6단계: 전투 · 위기 (ig6_apply) ---- */
+/* 6단계: 전투 · 위기 */
+#dlg .vs .side{border-radius:7px;border:1px solid rgba(196,164,104,.2);background:linear-gradient(180deg,rgba(17,23,40,.94),rgba(8,11,21,.94));box-shadow:inset 0 0 0 3px rgba(8,11,21,.9),inset 0 0 0 4px rgba(196,164,104,.08)}
+#dlg .vs .side.me{border-color:rgba(216,189,124,.5);box-shadow:inset 0 0 0 3px rgba(8,11,21,.9),inset 0 0 0 4px rgba(216,189,124,.14)}
+#dlg .vs .side.foe{border-color:rgba(210,106,116,.5);background:linear-gradient(180deg,rgba(28,14,24,.94),rgba(12,7,14,.94));box-shadow:inset 0 0 0 3px rgba(12,7,14,.9),inset 0 0 0 4px rgba(210,106,116,.14)}
+#dlg .vs .who2{font-family:var(--lbF);font-weight:700;color:#ece3cc}
+#dlg .vs .side.me .who2{color:#f2e2b4}
+#dlg .vs .side.foe .who2{color:#f3d2d6}
+#dlg .vs .who2 small{font-family:var(--lbF);font-weight:400;color:#8f8878}
+#dlg .vs .cl{font-family:var(--lbF);color:#8f8878}
+#dlg .vs .pg small{font-family:var(--lbF);color:#7f7a6d}
+#dlg .vs .pg b{color:#e8d3a0}
+#dlg .vs .hb{height:5px;background:rgba(4,6,12,.8);box-shadow:inset 0 0 0 1px rgba(196,164,104,.14)}
+#dlg .vs .hb i{background:linear-gradient(90deg,#8e3440,#d86a74)}
+#dlg .vs .hb.sm{height:3px}
+#dlg .vs .hb.sm i{background:linear-gradient(90deg,#4b5a9a,#8d9de0)}
+#dlg .vs .meta{color:#a39c8a}
+#dlg .vs .np2{color:#8f8878}
+/* 효과 칩과 설명 말풍선 */
+.mc{border-radius:4px}
+.mc.g{border-color:rgba(216,189,124,.5);color:#e8d3a0;background:rgba(216,189,124,.06)}
+.mc.r{border-color:rgba(210,106,116,.5);color:#eeb0b6;background:rgba(210,106,116,.06)}
+.mpop{background:linear-gradient(180deg,#121829,#0a0e1b);border-color:rgba(196,164,104,.35);border-radius:7px;box-shadow:0 10px 24px rgba(0,0,0,.6),inset 0 0 0 3px rgba(10,14,27,.9),inset 0 0 0 4px rgba(196,164,104,.1)}
+.mpop:before{background:#121829;border-color:rgba(196,164,104,.35)}
+.mpop b{font-family:var(--lbF);font-weight:700}
+.mpop.g b{color:#e8d3a0}
+.mpop small{color:#8f8878}
+/* 위기 현판 */
+#pairs .cxb{border-radius:7px}
+
 /* ---- 로딩 화면 ---- */
 #ldScr{position:fixed;inset:0;z-index:2147483000;background:#07060b;pointer-events:auto}
 #ldScr[hidden]{display:none}
