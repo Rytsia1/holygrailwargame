@@ -1692,6 +1692,8 @@ html[lang=ko] #infoBody dl.help dd{word-break:keep-all}
 #dlg.folded .dpill{border:9px solid transparent!important;border-image:var(--lbPR) 14 fill / 13px / 0 stretch!important;background:none!important;border-radius:0!important;box-shadow:none!important;padding:3px 12px!important;font-family:var(--lbF);color:#f3e8cb;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6)) drop-shadow(0 0 8px rgba(220,190,120,.14))}
 #dlg.folded .dpill .dp-dot{border-radius:0;width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#f2e2b4,#b8975a)}
 #dlg.folded .dpill .dp-e{color:#e2c98e;font-size:12.5px}
+/* 연출 점검(11-15): 긴 제목이 낱말 가운데서 끊기지 않게 */
+#dlg .sheet h2{word-break:keep-all;overflow-wrap:anywhere}
 
 /* ---- 6단계: 전투 · 위기 (ig6_apply) ---- */
 /* 6단계: 전투 · 위기 */
@@ -1722,6 +1724,9 @@ html[lang=ko] #infoBody dl.help dd{word-break:keep-all}
 .mpop small{color:#8f8878}
 /* 위기 현판 */
 #pairs .cxb{border-radius:7px}
+/* 연출 점검(11-15): 명조 굵은 이름이 넓어 칭호가 잘리지 않게 한 단계 줄인다 */
+#dlg .vs .who2{font-size:15px}
+#dlg .vs .who2 small{font-size:11.5px;margin-left:5px}
 
 /* ---- 7단계: 태어나기 (ig7_apply) ---- */
 /* 7단계: 태어나기 */
@@ -16389,7 +16394,7 @@ function byeGate(i){ const d=Sim.S&&Sim.S.pending; if(!d||!d.byeFx||d._fxGo) ret
   if(fxQuiet()) return false;
   const sh=$('#sheet'); if(!sh||BYE_RUN) return false; BYE_RUN=true; try{ Sim.setHold(true); }catch(e){}
   const SL=2, CELL=4, T0=1.5*SL, TD=1.6*SL, TEND=TD+T0+2.2*SL;
-  const r=sh.getBoundingClientRect(), cols=Math.ceil(r.width/CELL), rows=Math.ceil(r.height/CELL);
+  const r=sh.getBoundingClientRect(), cols=Math.ceil(r.width/CELL), rows=Math.ceil(r.height/CELL); sh.style.filter=''; sh.__f0=(f=>f==='none'?'':f)(getComputedStyle(sh).filter);
   const ov=document.createElement('div'); ov.className='byefx'; ov.innerHTML='<canvas aria-hidden="true"></canvas><i class="bf-ring"></i>'; document.body.appendChild(ov);
   const cv=ov.querySelector('canvas'), cx=cv.getContext('2d'), ring=ov.querySelector('.bf-ring'); let D=1;
   const fit=()=>{ D=Math.min(2,devicePixelRatio||1); cv.width=innerWidth*D; cv.height=innerHeight*D; }; fit();
@@ -16403,7 +16408,7 @@ function byeGate(i){ const d=Sim.S&&Sim.S.pending; if(!d||!d.byeFx||d._fxGo) ret
   const fin=()=>{ if(done) return; done=true; $('#dlg').classList.add('hidden'); clean(); ov.remove(); BYE_RUN=false; try{ Sim.setHold(false); }catch(e){} choose(i); };
   ov.addEventListener('pointerdown',fin);
   function frame(now){ if(done) return; const dt=Math.min(.05,(now-last)/1000); last=now; t+=dt;
-    const glow=Math.min(1,t/T0); sh.style.filter=`brightness(${1+.35*glow}) saturate(${1+.2*glow})`;
+    const glow=Math.min(1,t/T0); sh.style.filter=`${sh.__f0} brightness(${1+.35*glow}) saturate(${1+.2*glow})`;
     ring.style.opacity=(glow*(t>T0?Math.max(0,1-(t-T0)/(TD*.6)):1)).toFixed(3);
     if(t>T0){ const f=Math.min(1,(t-T0)/TD), want=Math.floor(K.length*(f*f*(3-2*f)));
       while(idx<want){ const c=K[idx++]; c.gone=true;

@@ -53,9 +53,18 @@ CSS = r'''
 #dlg.folded .dpill{border:9px solid transparent!important;border-image:var(--lbPR) 14 fill / 13px / 0 stretch!important;background:none!important;border-radius:0!important;box-shadow:none!important;padding:3px 12px!important;font-family:var(--lbF);color:#f3e8cb;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6)) drop-shadow(0 0 8px rgba(220,190,120,.14))}
 #dlg.folded .dpill .dp-dot{border-radius:0;width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#f2e2b4,#b8975a)}
 #dlg.folded .dpill .dp-e{color:#e2c98e;font-size:12.5px}
+/* 연출 점검(11-15): 긴 제목이 낱말 가운데서 끊기지 않게 */
+#dlg .sheet h2{word-break:keep-all;overflow-wrap:anywhere}
 '''
+# 작별 연출이 창을 밝힐 때 창 그림자(filter)를 지우지 않게
+BYE_OLD = "sh.style.filter=`brightness(${1+.35*glow}) saturate(${1+.2*glow})`"
+BYE_NEW = "sh.style.filter=`${sh.__f0} brightness(${1+.35*glow}) saturate(${1+.2*glow})`"
+BYE_AT_OLD = "const r=sh.getBoundingClientRect(), cols=Math.ceil(r.width/CELL), rows=Math.ceil(r.height/CELL);"
+BYE_AT_NEW = "const r=sh.getBoundingClientRect(), cols=Math.ceil(r.width/CELL), rows=Math.ceil(r.height/CELL); sh.style.filter=''; sh.__f0=(f=>f==='none'?'':f)(getComputedStyle(sh).filter);"
 for P in sys.argv[1:]:
     s = open(P, encoding='utf-8').read()
+    assert s.count(BYE_OLD) == 1 and s.count(BYE_AT_OLD) == 1, 'byeGate'
+    s = s.replace(BYE_OLD, BYE_NEW).replace(BYE_AT_OLD, BYE_AT_NEW)
     i = s.index('</style>'); s = s[:i] + CSS + s[i:]
     print('ig5 ok')
     open(P, 'w', encoding='utf-8').write(s)

@@ -34,6 +34,9 @@ CSS = r'''
 .mpop small{color:#8f8878}
 /* 위기 현판 */
 #pairs .cxb{border-radius:7px}
+/* 연출 점검(11-15): 명조 굵은 이름이 넓어 칭호가 잘리지 않게 한 단계 줄인다 */
+#dlg .vs .who2{font-size:15px}
+#dlg .vs .who2 small{font-size:11.5px;margin-left:5px}
 '''
 for P in sys.argv[1:]:
     s = open(P, encoding='utf-8').read()
