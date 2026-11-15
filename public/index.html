@@ -7526,8 +7526,8 @@ const Sim = (() => {
       if(ch_[0].auto) ch_.slice(1).forEach(x=>x.auto=false); }
   }
   function bxNightActs(ch_){ const w=W(), c=BXW(); if(!bxOn()||!w.heroAlive) return; const h=hero();
-    const sn=bxSents(); if(c.stage===2&&sn.length&&w.sm>=20) ch_.push({t:'센티넬을 사냥한다',d:'도시를 헤매는 센티넬 하나를 쓰러뜨린다. 쓰러뜨리면 감독관이 령주 한 획을 준다',auto:w.hp>60&&w.sm>=40,f:()=>bxHuntPick()});
-    const bb=bxBBP(); if(c.stage===2&&bb&&!c.revealD&&c.bb.at!=='me'&&w.sm>=20) ch_.push({t:'토벌령을 따른다',d:`${pName(bb)}${J(pName(bb),과)} 싸운다. 체력을 무너뜨리면 령주 한 획`,f:()=>{ w.queue.push(()=>battle(bb,{attack:true,cx:bb.cx?true:undefined,bxBB:true})); }});
+    const sn=bxSents(); if(c.stage===2&&sn.length&&w.sm>=20) ch_.unshift({t:'센티넬을 사냥한다',d:'도시를 헤매는 센티넬 하나를 쓰러뜨린다. 쓰러뜨리면 감독관이 령주 한 획을 준다',auto:w.hp>60&&w.sm>=40,f:()=>bxHuntPick()});
+    const bb=bxBBP(); if(c.stage===2&&bb&&!c.revealD&&c.bb.at!=='me'&&w.sm>=20) ch_.splice(ch_[0]&&ch_[0].t==='센티넬을 사냥한다'?1:0,0,{t:'토벌령을 따른다',d:`${pName(bb)}${J(pName(bb),과)} 싸운다. 체력을 무너뜨리면 령주 한 획`,f:()=>{ w.queue.push(()=>battle(bb,{attack:true,cx:bb.cx?true:undefined,bxBB:true})); }});
   }
   function bxHuntPick(){ const w=W(), sh=bxSents();
     decide({title:'센티넬을 사냥한다',body:'도시를 헤매는 센티넬들. 어느 쪽을 쫓을 것인가.',war:true,choices:[...sh.map(u=>({t:`${pName(u)}`,d:hpWord(u.hp),f:()=>{ w.trust=clamp(w.trust+traitR({충성:1,연민:2,명예:2,자유:1},{선:2}));
