@@ -7603,7 +7603,7 @@ const Sim = (() => {
     // 호위: 합마다 하나당 30%(체력 비례)로 엄호 60% · 견제 20% · 협공 20%
     let cov=false;
     for(const g of bxGuards()){ if(!ch(BXK.gAct*Math.max(.2,g.hp/100))) continue; const t=rnd();
-      if(t<BXK.gCover){ const l=kLost(); if(l>0&&l>=BXK.gMin&&!cov){ cov=true; const a=Math.round(l*(.4+rnd()*.2)); k.hp=Math.min(k.phase2?BXK.hp2:100,k.hp+a); gHit(g,a*m); } }
+      if(t<BXK.gCover){ const l=kLost(); const sh=.4+rnd()*.2, gd=Math.round(l*sh*m); if(l>0&&l>=BXK.gMin&&!cov&&gd>=1){ cov=true; k.hp=Math.min(k.phase2?BXK.hp2:100,k.hp+l*sh); gHit(g,gd); } }
       else if(t<BXK.gCover+BXK.gChip) K.bxCh={r:r+1,v:ri(3,6)};
       else hit(X,Math.max(1,(4+ri(0,5))*.6)); }
     if(!C) return;
@@ -7724,7 +7724,7 @@ const Sim = (() => {
     // 네가 세이버: 마력 A 이하 상대를 합마다 15%로 매료한다
     if(PV(myParams().p[3])<=5&&ch(.15)){ b.bxCharm=b.round+1; log(`키아라가 손을 내밀었다. ${hero().name}의 손끝이 한순간 그쪽으로 끌려갔다. 매료.`,'war'); }
     for(const g of bxGuards()){ if(!ch(BXK.gAct*Math.max(.2,g.hp/100))) continue; const gN=pName(g), r=rnd();
-      if(r<BXK.gCover){ if(lost>0&&lost>=BXK.gMinMe&&!cov){ cov=true; const a=Math.round(lost*(.4+rnd()*.2)); e.hp=Math.min(100,e.hp+a); g.hp=clamp(g.hp-Math.round(a*Math.min(m,BXK.gCap))); log(pickNR([`${gN}${J(gN,이)} 키아라 앞을 막아서 일격을 대신 받았다.`,`${gN}${J(gN,이)} 표정 없이 키아라와 ${mN} 사이로 끼어들었다. 대신 피가 튀었다.`,`${gN}${J(gN,이)} 몸을 던져 키아라를 가렸다. 그 가슴께에서 단 냄새가 났다.`],'bxgC'),'war'); if(g.hp<=0) bxUnitDown(g,'me'); } }
+      if(r<BXK.gCover){ const sh=.4+rnd()*.2, gd=Math.round(lost*sh*Math.min(m,BXK.gCap)); if(lost>0&&lost>=BXK.gMinMe&&!cov&&gd>=1){ cov=true; e.hp=Math.min(100,e.hp+lost*sh); g.hp=clamp(g.hp-gd); log(pickNR([`${gN}${J(gN,이)} 키아라 앞을 막아서 일격을 대신 받았다.`,`${gN}${J(gN,이)} 표정 없이 키아라와 ${mN} 사이로 끼어들었다. 대신 피가 튀었다.`,`${gN}${J(gN,이)} 몸을 던져 키아라를 가렸다. 그 가슴께에서 단 냄새가 났다.`],'bxgC'),'war'); if(g.hp<=0) bxUnitDown(g,'me'); } }
       else if(r<BXK.gCover+BXK.gChip){ b.bxChip={r:b.round+1,v:ri(3,6)}; log(pickNR([`${gN}${J(gN,이)} 옆에서 ${mN}의 발을 묶었다.`,`${gN}${J(gN,이)} ${mN}의 퇴로를 막아섰다. 다음 수가 무뎌진다.`,`${gN}${J(gN,이)} 초점 없는 눈으로 ${mN}${J(mN,을)} 따라붙었다. 숨 돌릴 틈이 사라졌다.`],'bxgK'),'war'); }
       else { const d=Math.max(1,Math.round((4+ri(0,5))*.6)); w.hp=clamp(w.hp-d); const gh=H_BY[g.hero], GP=npcParams(g).p, mh=hero(), MP=myParams().p; let gk='round', gv=-9; for(const kk of atkKinds(gh)){ const v=atkVal(kk,gh,GP,mh,MP,w.tod==='밤'); if(v>gv+.02){ gv=v; gk=kk; } }
         const GA={round:[`${gN}${J(gN,이)} 키아라와 함께 ${mN}${J(mN,을)} 쳤다.`,`${gN}${J(gN,이)} 키아라의 웃음소리에 맞춰 ${mN}${J(mN,을)} 베고 지나갔다.`,`${gN}의 일격이 ${mN}의 옆구리를 때렸다.`],magic:[`${gN}${J(gN,이)} 입술만 움직여 영창했다. 빛줄기가 ${mN}에게 꽂혔다.`,`${gN}의 마술이 키아라의 손짓을 따라 ${mN}${J(mN,을)} 덮쳤다.`],burst:[`${gN}${J(gN,이)} 마력을 터뜨리며 ${mN}에게 부딪쳤다.`,`${gN}의 일격에 실린 마력이 ${mN}의 어깨에서 터졌다.`]}; log(pickNR(GA[gk]||GA.round,'bxgA'+gk),'war'); } }
@@ -9372,7 +9372,7 @@ const Sim = (() => {
     if((ctx.defend||ctx.ambushed)&&giftIs('future')&&w.famWarn!==w.day){ w.famWarn=w.day; e.scoutEdge=0; log('습격이 올 자리를 이미 보았다. 미래시의 마안이 먼저 움직였다.','war'); }
     pastSee(e);
     if(ctx.remote) remoteStart(e);
-    w.battle={e,ctx,round:1,maxR:ctx.raid?7:ri(5,6),res:'draw',tlIdx:(w.tl||[]).length}; H.sfx(ctx.ambushed||ctx.defend?'ambush':'battle',{e,ctx}); w.battle.od=w.battle.odMax=oddMax(); w.fought=true; w.lastFight=w.day; w.woundRest=0; if(ctx.attack||ctx.ambushed) w.roamed=true;
+    w.battle={e,ctx,round:1,maxR:ctx.raid?7:ri(5,6),res:'draw',tlIdx:(w.tl||[]).length}; H.sfx(ctx.ambushed||ctx.defend?'ambush':'battle',{e,ctx}); w.battle.odMax=oddMax(); if(w.odD!==w.day){ w.odD=w.day; w.odLeft=w.battle.odMax; } w.battle.od=Math.min(w.odLeft!=null?w.odLeft:w.battle.odMax,w.battle.odMax); w.fought=true; w.lastFight=w.day; w.woundRest=0; if(ctx.attack||ctx.ambushed) w.roamed=true;
     if(ctx.attack&&e.cls==='avenger'&&!e.mark) e.mark='me';
     if((ctx.attack||ctx.duel)&&!ctx.final&&!ctx.claim){ w.strikes=(w.strikes||0)+1; if(w.day-(w.lastStrike||0)>=3&&(h.traits.includes('명예')||h.traits.includes('야망'))) w.trust=clamp(w.trust+2); w.woundRest=0; w.lastStrike=w.day; }
     const where=pick(CX().sites.concat(['폐공장','주차 빌딩 옥상']));
@@ -9984,7 +9984,7 @@ const Sim = (() => {
     const top=ord[0], tr=fx(artRatio(k,top));
     return ord.map(id=>{ const m=fx(artRatio(k,id)), on=artLv(id)===artLv(top)&&m===tr; return {art:true,on,dim:on?0:1,l:ARTS[id].n,tier:ART_TIER[artLv(id)],mul:m}; }); }
   function mPay(cost){ const b=W().battle;
-    if(cost){ if(b.od>=cost){ b.od-=cost; return; } b.over=true; add({health:-8}); log('회로가 타들어 가는 것을 참으며 마력을 쥐어짰다.','loss'); return; }
+    if(cost){ if(b.od>=cost){ b.od-=cost; W().odLeft=b.od; return; } b.over=true; add({health:-8}); log('회로가 타들어 가는 것을 참으며 마력을 쥐어짰다.','loss'); return; }
     if(!b.mund){ b.mund=true; return; } add({health:-myBodyCost()}); log('숨이 턱까지 찼다. 그래도 한 번 더 몸을 움직였다.','loss'); }
   const mDead=why=>{ if(S.st.health>0) return false; S.flags.war='dead'; die(why); return true; };
   // 전투 선택지의 칩: 행동이 '무엇을 하는가'는 한 문장(dd), 이번 합에 바뀌는 것은 칩(fx · 이득은 up, 위험은 dn)
@@ -17847,7 +17847,7 @@ const END_SND=k=>END_X[k]?'d':({lost:'c',dead:'c',survived:'b',withdrew:'b',refu
 const END_SK={dead:'j_end_dead',flood:'j_end_flood',bxm_me:'j_end_bxm_me',bxm_live:'j_end_bxm_live',bxm_nobb:'j_end_bxm_nobb',bxm_voice:'j_end_bxm_voice',bxdream:'j_end_bxdream'}; // 전사는 심전도, 범람은 차오르는 진흙과 속보 타자가 결말 음악 앞에 붙은 판
 const endSndK=k=>END_SK[k]||'j_end_'+END_SND(k);
 function endSnd(o,fx){ fxSnd(o,endSndK(fx.k)); sndEndJ=true; }
-function endFx(fx){ if(!xfxOK()||!fx) return; try{ Snd.prep(endSndK(fx.k)); if(/^bxm_/.test(fx.k)) Snd.prep('end_f'); if(fx.k==='bxdream') Snd.prep('end_g'); }catch(e){} if(END_X[fx.k]) fxPlay(()=>crisisEndShow(fx,END_X[fx.k])); else if(END_N[fx.k]) fxPlay(()=>normalEndShow(fx,END_N[fx.k])); }
+function endFx(fx){ if(fx&&document.hidden){ const go=()=>{ if(document.hidden) return; document.removeEventListener('visibilitychange',go); endFx(fx); }; document.addEventListener('visibilitychange',go); return; } if(!xfxOK()||!fx) return; try{ Snd.prep(endSndK(fx.k)); }catch(e){} if(END_X[fx.k]) fxPlay(()=>crisisEndShow(fx,END_X[fx.k])); else if(END_N[fx.k]) fxPlay(()=>normalEndShow(fx,END_N[fx.k])); }
 function crisisEndShow(fx,key){
   const opt={stay:fx.k==='keyStay'||fx.k==='keyRemain',remain:fx.k==='keyRemain',day:fx.day||14,grail:'',hero:fx.hero||'',team:fx.team||'',city:fx.city||''};
   const o=document.createElement('div'); o.id='cfx'; o.className='xfx xe xec'; o.setAttribute('role','status'); o.setAttribute('aria-label',tr('결말'));
@@ -18715,7 +18715,7 @@ function sndTick(){ if(sndQ) return; sndQ=setTimeout(()=>{ sndQ=0; const S=Sim.S
 function sndHook(k,x){ switch(k){
   case 'mark': Snd.jingle('j_mark'); break; case 'summon': break; // 소환 소리는 첫 만남 화면이 뜰 때 소환 연출과 함께 울린다(summonGo) case 'reveal': Snd.jingle('j_name'); break; case 'ghost': Snd.jingle('j_ghost'); break;
   case 'm_buff': case 'm_hex': case 'm_ward': case 'm_heal': Snd.sfx(k,{group:'magic'}); break;
-  case 'retreat': Snd.sfx('f_retreat'); break; case 'ambush': Snd.sfx('f_ambush'); SB=null; break; case 'battle': SB=null; break; } }
+  case 'retreat': Snd.sfx('f_retreat'); if(SB) SB.clash=true; break; case 'ambush': Snd.sfx('f_ambush'); SB=null; break; case 'battle': SB=null; break; } }
 // 게임 상단의 소리 버튼: 재생/일시정지와 음량을 설정 창을 열지 않고 바꾼다
 function sndQuick(){ try{ window.__lbSndSt&&window.__lbSndSt(); }catch(e){} const q=$('#sndQ'); if(!q) return; const c=Snd.cfg(), on=c.on===true;
   q.classList.toggle('on',on); q.classList.toggle('off',!on); q.setAttribute('title',tr(on?'소리 · 켜짐 (M)':'소리 · 꺼짐 (M)'));

@@ -73,6 +73,7 @@ python3 raidintel_apply.py build/game.html         # 저격 · 암습을 막아 
 python3 wishsrc_apply.py build/game.html          # 소원은 만나거나 전해 들었을 때만: 산책 · 뒤밟기 · 흔적 · 정찰 · 공격은 거처만, 멀리서 본 싸움 등은 아무것도 (11-15)
 python3 bxsent_apply.py build/game.html           # 수녀의 서번트가 센티넬이 될 때 이미 알던 진명 · 보구를 이어받음 (11-15)
 python3 bossnpc_apply.py build/game.html          # 보스 강림 뒤 NPC가 보스로 향할 확률 올림(부수려는 조 70% · 쥐려는 조 20/55% · 건강 45 · 마지막 날 가까울수록 더) (11-16)
+python3 fb1116_apply.py build/game.html           # 11-16 피드백: 엄호 반올림 · 퇴각 소리 · 오드 하루 단위 · 숨긴 탭의 결말 연출 (11-16)
 python3 loading_apply.py build/game.html          # 로딩 화면: 성배에 금빛이 차오름 (11-13)
 python3 bxfx_apply.py build/game.html            # 비스트 연출 ①~⑥: 봉인 · 빈 자리 · 강림 · 키아라 입장 · 단독현현 · 결말 (11-12 시안 → 11-13 연결)
 python3 bxfx2_apply.py build/game.html           # 비스트 연출 ⑦~⑪: KP · 해방 · 봉인이 갈라짐 · 토벌령 · 격돌 (11-13 연결)
