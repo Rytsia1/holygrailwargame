@@ -6,7 +6,10 @@ A. 범위 보구는 플레이어 결전에서도 호위를 휩쓴다(NPC 결전�
    - 피해는 그 센티넬의 능력치로만 계산한다(그 서번트가 이 보구를 맞았을 때의 피해, 키아라의 체력 · 배율과 무관).
      함께 간 조의 보구는 평소처럼 CXB.np만큼.
 C. 호위가 된 센티넬의 밤 회복 +10 → +4.
-보정: 호위가 쉽게 쓰러지면 KP가 풀려 키아라가 약해지므로, 키아라의 배율에 BXK.mB를 곱해 승률을 맞춘다.
+보정: 호위가 쉽게 쓰러지면 KP가 풀려 키아라가 약해지므로 배율을 올려 승률을 맞춘다.
+   키아라의 배율 ×1.3(BXK.mB), NPC 결전의 배율 ×2 → ×2.8(BXK.npM).
+   1000판 시뮬레이션: 키아라가 쓰러진 판 6.9% → 7.5%, 내 결전당 키아라 체력 15.6 → 15.4, 결전에서 내 서번트 소멸 58.4% → 57.9%,
+   쓰러진 센티넬 816 → 1368.
 사용: python3 bxaoe_apply.py <game.html>"""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +29,8 @@ for P in sys.argv[1:]:
         k = s.count(o)
         if k != c: miss.append((o[:70], k)); return
         s = s.replace(o, n)
-    rp("gCover:.6, gChip:.2,", "gCover:.6, gChip:.2, mB:1.25,")
+    rp("gCover:.6, gChip:.2,", "gCover:.6, gChip:.2, mB:1.3,")
+    rp("wdM:.85, npM:2,", "wdM:.85, npM:2.8,")
     rp("if(c.karma) m*=BXK.wdM; if(vsNpc) m*=BXK.npM; return m; }", "if(c.karma) m*=BXK.wdM; if(vsNpc) m*=BXK.npM; return m*BXK.mB; }")
     rp("const BX_AOE=/대군|대성|대계|대국|대왕|대마/;",
        "const BX_AOE=/대군|대성|대계|대국|대왕|대마/;\n"
