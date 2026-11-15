@@ -54,6 +54,9 @@ for P in sys.argv[1:]:
     rp("I will not give you a queen's throne.", "I will not give you the seat beside my throne.")
     rp("王妃の座はやらぬ。", "玉座の隣の座はやらぬ。")
     rp("おはよう、旦那はん。", "おはよう、主はん。")   # 슈텐도지 아침(일본어만)
+    # 도감의 '연인이 될 수 없는 서번트' 표시: 엘키두도 이제 애정을 고를 수 있다
+    rp("relLoveOk:id=>!REL_CHILD.includes(id)&&!REL_NOLOVE.includes(id)&&!!H_BY[id]&&H_BY[id].sex!=='x',",
+       "relLoveOk:id=>!REL_CHILD.includes(id)&&!REL_NOLOVE.includes(id)&&!!H_BY[id],")
     s, nd, nt = i18n.add(s, D, [])
     print('relpick miss', miss, 'tr', nd, nt)
     if miss: sys.exit(1)
