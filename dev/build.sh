@@ -80,3 +80,4 @@ python3 pnver_apply.py build/game.html            # 패치 노트 버전 번호 
 python3 pn117_apply.py build/game.html            # 패치 노트 v2.00 (11-14)
 python3 fb1116_apply.py build/game.html           # 11-16 피드백: 엄호 반올림 · 퇴각 소리 · 오드 하루 단위 · 숨긴 탭의 결말 연출 (11-16)
 python3 bxaoe_apply.py build/game.html            # 범위 보구가 호위 센티넬을 휩쓴다(확률은 보구 범위, 피해는 센티넬 능력치) · 호위 밤 회복 +4 · 승률 보정 (11-16)
+python3 langui_apply.py build/game.html           # 언어 선택: 로비 위쪽 언어 단추 하나 + 언어 창(설정 창 틀) (11-16)
