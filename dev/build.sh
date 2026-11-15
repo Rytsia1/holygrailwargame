@@ -64,6 +64,7 @@ python3 ig10_apply.py build/game.html             # 설정 창 켜기/끄기 스
 python3 lbstart_apply.py build/game.html          # 로비 시작 화면: 키보드로 넘겨도 소리를 깨움 (11-15)
 python3 bug1115_apply.py build/game.html          # 11-15 커뮤니티 버그 제보 9건 (직장 연락 · 아줌마 · 강연 · 아이 각인 · 형제 대사 · 남은 령주 · 교회 청산 · 대화로 끝난 밤 · 마안 효과)
 python3 relpick_apply.py build/game.html          # 인연 1단계에서 애정 · 우정 고르기 · 같은 성별 애정 · 아이 사건 출산 제외 (11-15)
+python3 relopen_apply.py build/game.html          # 연애 가능으로: 멀린 · 솔로몬 · 시바의 여왕 (애정 대사 90줄 · 영어 · 일본어) (11-15)
 python3 loading_apply.py build/game.html          # 로딩 화면: 성배에 금빛이 차오름 (11-13)
 python3 bxfx_apply.py build/game.html            # 비스트 연출 ①~⑥: 봉인 · 빈 자리 · 강림 · 키아라 입장 · 단독현현 · 결말 (11-12 시안 → 11-13 연결)
 python3 bxfx2_apply.py build/game.html           # 비스트 연출 ⑦~⑪: KP · 해방 · 봉인이 갈라짐 · 토벌령 · 격돌 (11-13 연결)
