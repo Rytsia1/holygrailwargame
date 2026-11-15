@@ -7001,10 +7001,13 @@ const Sim = (() => {
     wrec('hint',`검은 성배가 강림했다 — ${cn(u)}${u.revealed?`(${bh.name})`:''}`);
     cxCull(); }
   // NPC가 성배로 갈 밤을 정한다: 강림 당일은 그날 밤, 그 뒤로는 다음 날 밤. 소문이 돈다. 부수려는 조는 다른 조에게 함께 가자고 한다
+  // 보스로 갈 날을 정할 확률: 부수려는 조 70% · 쥐려는 조 2단계 전 20% / 뒤 55% · 마지막 날 이틀 전 +10%p, 하루 전 +20%p
+  function cxGoP(p,b){ const w=W(), c=CXW(), fin=(c&&c.finalDay)||14, near=Math.max(0,3-(fin-w.day))*.1;
+    const base=p.cxStance==='break'?.7:p.cxStance==='claim'?(b&&b.phase2?.55:.2):0; return base?Math.min(.95,base+near):0; }
   function cxPlan(){ const w=W(), c=CXW(), b=cxBoss(); if(!c||c.stage<3||!b) return null; const fin=c.finalDay||14;
     const night=w.day===c.d3?w.day:w.day+1; if(night>=fin) return null; let inv=null;
     for(const p of shuffle(contracted())){ if(p.cxGo>=w.day||p.halt>0||!p.cxKnow) continue;
-      if(!(p.hp>=55&&(p.cxStance==='break'&&ch(.5)||p.cxStance==='claim'&&b.phase2&&ch(.35)))) continue;
+      if(!(p.hp>=45&&ch(cxGoP(p,b)))) continue;
       p.cxGo=night; const when=night===w.day?'오늘':'내일';
       log(`${pName(p)} 조가 ${when} 밤 ${CX().grail}${J(CX().grail,으로)} 향한다는 소문이 돌았다.`,'war');
       if(p.cxStance!=='break') continue;
@@ -7176,7 +7179,7 @@ const Sim = (() => {
       const b=cxBoss(), last=contracted().length+(w.heroAlive?1:0)<=1, pact=w.cxPact&&w.cxPact.d===w.day?w.cxPact.i:0;
       if(pact){ const p=pairBy(pact); w.cxPact=null; if(p&&p.alive&&!busy.has(p.i)){ busy.add(p.i); p.cxGo=0; log(`${pName(p)} 조는 약속한 자리에서 한참 기다리다 돌아갔다고 한다.`,'war'); if(w.heroAlive) cxTraitEnd({명예:-3,충성:-1,연민:-1},{질서:-4}); } }
       // 내가 살아 있으면 NPC는 미리 소문이 돈 밤에만 간다. 내가 빠진 뒤에는 그날그날 정한다
-      if(b){ const grp=contracted().filter(p=>!busy.has(p.i)&&!(p.halt>0)&&(w.heroAlive?p.cxGo===w.day&&p.hp>=40:(last&&ch(.7)||p.hp>=55&&(p.cxStance==='break'&&ch(.5)||p.cxStance==='claim'&&b.phase2&&ch(.35)))));
+      if(b){ const grp=contracted().filter(p=>!busy.has(p.i)&&!(p.halt>0)&&(w.heroAlive?p.cxGo===w.day&&p.hp>=40:(last&&ch(.7)||p.hp>=45&&ch(cxGoP(p,b)))));
         // 같은 밤에 함께 간 조끼리는 서로 돕는다: 함께 온 조 하나마다 판정 +CXB.na
         for(const p of grp){ busy.add(p.i); if(!b.alive) break; p.cxAssist=CXB.na*(grp.filter(q=>q!==p&&q.alive).length); cxNpcVs(p,b,false); p.cxAssist=0; } }
       if(w.cxAmb&&w.cxAmb.d===w.day){ const p=pairBy(w.cxAmb.i); w.cxAmb=null;
@@ -7571,7 +7574,7 @@ const Sim = (() => {
     const pact=w.cxPact&&w.cxPact.d===w.day?w.cxPact.i:0;
     if(pact){ const p=pairBy(pact); w.cxPact=null; if(p&&p.alive&&!busy.has(p.i)){ busy.add(p.i); p.cxGo=0; log(`${pName(p)} 조는 약속한 자리에서 한참 기다리다 돌아갔다고 한다.`,'war'); if(w.heroAlive) cxTraitEnd({명예:-3,충성:-1,연민:-1},{질서:-4}); } }
     const last=contracted().length+(w.heroAlive?1:0)<=1;
-    const grp=contracted().filter(p=>!busy.has(p.i)&&!(p.halt>0)&&(w.heroAlive?p.cxGo===w.day&&p.hp>=40:(last&&ch(.7)||p.hp>=55&&ch(.5))));
+    const grp=contracted().filter(p=>!busy.has(p.i)&&!(p.halt>0)&&(w.heroAlive?p.cxGo===w.day&&p.hp>=40:(last&&ch(.7)||p.hp>=45&&ch(cxGoP(p,k)))));
     if(grp.length) bxNpcJoint(grp,false);
     grp.forEach(p=>busy.add(p.i)); }
   // NPC 공동전 (18-G · 18-I): 가장 강한 조가 이끌고, 나머지 조는 합마다 함께 움직인다. 마지막 밤에는 이끄는 조가 쓰러지면 다음 조가 이어받는다
