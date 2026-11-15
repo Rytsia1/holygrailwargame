@@ -5,6 +5,7 @@
 - 닫기(✕): 「이 밤의 이야기와 규칙」 · 기록(도감 · 지난 생 · 업적)의 ✕를 화면 구석이 아니라 그 창의 세로 띠(본문 폭) 안 오른쪽 위로.
   설정 · 패치 노트 · 인연 소환은 이미 창 안에 있어 그대로.
 - 설정 단추: 해 모양 아이콘을 톱니바퀴로(시작 화면 · 로비 둘 다).
+- 시작 화면 위쪽 단추(언어 · 소리 · 설정) 세로 크기를 42px로 똑같이.
 - 로비 단추 소리: 로비가 떠 있는 동안 사람이 직접 누른 단추 · 링크에 선택음(u_choice), 닫기 단추에는 낮고 부드러운 소리(u_pause).
   자기 소리가 따로 있는 단추(시작 · 태어나기 · 이어하기)와 소리 끄기는 뺀다. 다른 단추를 대신 누르는 단추(로비 설정 → #setBtn)는 한 번만 울린다.
 사용: python3 lobbyfb_apply.py <game.html>"""
@@ -31,7 +32,12 @@ for P in sys.argv[1:]:
     rp("#lbAbout[hidden]{display:none}",
        "#lbAbout[hidden]{display:none}\n#lbAbout{--abw:640px}body.lb-wide #lbAbout{--abw:880px}\n"
        "#lbAbout .ab-x{right:max(18px,calc(env(safe-area-inset-right,0px) + 14px),calc((100vw - var(--abw))/2 + 16px))!important}\n"
-       "#lbRec .ab-x{right:max(14px,calc(env(safe-area-inset-right,0px) + 10px),calc((100vw - 1180px)/2 + 16px))!important}")
+       "#lbRec .ab-x{right:max(14px,calc(env(safe-area-inset-right,0px) + 10px),calc((100vw - 1180px)/2 + 16px))!important}\n"
+       # 시작 화면 위쪽 단추 세 개(언어 · 소리 · 설정)의 세로 크기를 42px로 맞춘다
+       "body.lb-on #intro.lb .lb-top .lang-pick,body.lb-on #intro.lb .lb-ico,body.lb-on #intro.lb .lb-top #setBtn{box-sizing:border-box!important;height:42px!important}\n"
+       "body.lb-on #intro.lb .lb-ico{width:42px!important;display:grid!important;place-items:center}\n"
+       "body.lb-on #intro.lb .lb-top #setBtn{display:inline-flex!important;align-items:center;padding-block:0!important}\n"
+       "body.lb-on #intro.lb .lb-top .lb-tools{display:flex;align-items:center}")
     # 4. 톱니바퀴
     sun_css = "%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1'/%3E"
     rp(sun_css, "%3Cpath d='" + GEAR + "'/%3E%3Ccircle cx='12' cy='12' r='3.2'/%3E", 2)
