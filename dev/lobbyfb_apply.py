@@ -6,6 +6,8 @@
   설정 · 패치 노트 · 인연 소환은 이미 창 안에 있어 그대로.
 - 설정 단추: 해 모양 아이콘을 톱니바퀴로(시작 화면 · 로비 둘 다).
 - 시작 화면 위쪽 단추(언어 · 소리 · 설정) 세로 크기를 42px로 똑같이.
+- 태어나기: 누르는 순간 로비 곡이 1.2초에 걸쳐 꺼지고, 태어나는 연출 동안은 조용하다. 삶의 곡은 예전처럼 게임 화면에 들어갈 때 시작(0.8초).
+  처음 4초 페이드인은 로비 곡에만.
 - 로비 단추 소리: 로비가 떠 있는 동안 사람이 직접 누른 단추 · 링크에 선택음(u_choice), 닫기 단추에는 낮고 부드러운 소리(u_pause).
   자기 소리가 따로 있는 단추(시작 · 태어나기 · 이어하기)와 소리 끄기는 뺀다. 다른 단추를 대신 누르는 단추(로비 설정 → #setBtn)는 한 번만 울린다.
 사용: python3 lobbyfb_apply.py <game.html>"""
@@ -22,7 +24,7 @@ for P in sys.argv[1:]:
         s = s.replace(o, n)
     # 1. 처음 시작하는 배경음악은 4초에 걸쳐 천천히 커진다
     rp("g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+(old?1.2:.8));",
-       "if(old){ g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+1.2); } else { const C=new Float32Array(48); for(let i=0;i<48;i++) C[i]=Math.pow(i/47,2.2); g.gain.setValueCurveAtTime(C,n,4); }")
+       "if(old||!/^lobby/.test(k)){ g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+(old?1.2:.8)); } else { const C=new Float32Array(48); for(let i=0;i<48;i++) C[i]=Math.pow(i/47,2.2); g.gain.setValueCurveAtTime(C,n,4); }")
     # 2. '입장' · 가운데
     rp("go:'이 밤으로 들어간다'", "go:'입장'")
     rp("go:'Into the night'", "go:'Enter'")
@@ -43,6 +45,11 @@ for P in sys.argv[1:]:
     rp(sun_css, "%3Cpath d='" + GEAR + "'/%3E%3Ccircle cx='12' cy='12' r='3.2'/%3E", 2)
     rp("""gear:P('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>')""",
        """gear:P('<path d=\"""" + GEAR + """\"/><circle cx="12" cy="12" r="3.2"/>')""")
+    # 6. 태어나기를 누르면 로비 곡을 끈다(태어나는 연출 동안 다시 켜지지 않게). 게임 곡은 지금처럼 게임에 들어갈 때 시작
+    rp("function birth(){ sndEndJ=false;", "function birth(){ window.__lbBirth=true; try{ Snd.bgm(null); }catch(e){} sndEndJ=false;")
+    rp("Birth.run(()=>{ ghLoad(); enterGame(true);", "Birth.run(()=>{ window.__lbBirth=false; ghLoad(); enterGame(true);")
+    rp("function sndScene(){\n  if($('#intro').classList.contains('hidden')) lbK=null;",
+       "function sndScene(){\n  if($('#intro').classList.contains('hidden')) lbK=null;\n  if(window.__lbBirth) return null;")
     # 5. 로비 단추 소리
     rp("function sndSync(){ const k=sndScene(); if(k!==undefined) Snd.bgm(k); }",
        "function sndSync(){ const k=sndScene(); if(k!==undefined) Snd.bgm(k); }\n"

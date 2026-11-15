@@ -15471,7 +15471,7 @@ document.querySelectorAll('#sexPick button').forEach(b=>b.onclick=()=>{ if(b.dat
 sexSync();
 function moonMark(k){ try{ const c=dexLoad(); return !!(c&&c.ach&&c.ach[k]); }catch(e){ return false; } }
 function moonVow(){ return moonMark('_bbmoon'); }
-function birth(){ sndEndJ=false; gcEvent('born','태어나기'); store.del(K_SAVE); saveMark(null); const bid=bondPick(); Sim.newLife({len,sex:store.get(K_SEX)||null,bond:bid?{id:bid,p:bondChance(bid)}:null,moon:moonVow(),send:moonMark('_bbsend')}); Birth.run(()=>{ ghLoad(); enterGame(true); Sim.start(); playClaim(null); }); }
+function birth(){ window.__lbBirth=true; try{ Snd.bgm(null); }catch(e){} sndEndJ=false; gcEvent('born','태어나기'); store.del(K_SAVE); saveMark(null); const bid=bondPick(); Sim.newLife({len,sex:store.get(K_SEX)||null,bond:bid?{id:bid,p:bondChance(bid)}:null,moon:moonVow(),send:moonMark('_bbsend')}); Birth.run(()=>{ window.__lbBirth=false; ghLoad(); enterGame(true); Sim.start(); playClaim(null); }); }
 
 $('#startBtn').onclick=birth;
 /* ---- 인연 소환: 계약했던 서번트를 골라 두면 소환할 때 부를 수 있다 ---- */
@@ -18613,7 +18613,7 @@ const Snd=(()=>{
     const old=cur; cur=k?{k}:null; fadeOut(old,1.2); if(!k) return; const me=cur;
     load(k).then(L=>{ if(cur!==me||!on()) return; const m=SND_M[k], s=c.createBufferSource(), g=c.createGain(); s.buffer=L.b;
       if(m.ls!=null){ s.loop=true; s.loopStart=m.ls+L.off; s.loopEnd=m.le+L.off; }
-      const n=c.currentTime, again=played[k]&&m.ls!=null; played[k]=1; if(old){ g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+1.2); } else { const C=new Float32Array(48); for(let i=0;i<48;i++) C[i]=Math.pow(i/47,2.2); g.gain.setValueCurveAtTime(C,n,4); } s.connect(g); g.connect(gB); s.start(n,L.off+(again?m.ls:0)); me.src=s; me.g=g; }).catch(()=>{}); } // 전투 뒤 밤으로 돌아가듯 다시 듣는 곡은 도입을 건너뛰고 반복 구간부터
+      const n=c.currentTime, again=played[k]&&m.ls!=null; played[k]=1; if(old||!/^lobby/.test(k)){ g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+(old?1.2:.8)); } else { const C=new Float32Array(48); for(let i=0;i<48;i++) C[i]=Math.pow(i/47,2.2); g.gain.setValueCurveAtTime(C,n,4); } s.connect(g); g.connect(gB); s.start(n,L.off+(again?m.ls:0)); me.src=s; me.g=g; }).catch(()=>{}); } // 전투 뒤 밤으로 돌아가듯 다시 듣는 곡은 도입을 건너뛰고 반복 구간부터
   // 연출음: 한 번 재생, 그동안 배경음악을 낮춤. 화면 연출과 맞추려고 멈출 수 있는 손잡이를 돌려준다
   // o.at: 몇 초 뒤에 울릴지 · o.sync: 화면 연출에 맞춘 소리라, 늦게 불러와지면 그만큼 앞부분을 건너뛰어 어긋나지 않게 한다
   let duckN=0;
@@ -18657,6 +18657,7 @@ const LB_KEYS=['lobby1','lobby2','lobby3','lobby4','lobby5']; let lbK=null, lbLa
 function lobbyBgm(){ if(!lbK){ const c=LB_KEYS.filter(k=>k!==lbLast); lbK=c[Math.floor(Math.random()*c.length)]; lbLast=lbK; } return lbK; }
 function sndScene(){
   if($('#intro').classList.contains('hidden')) lbK=null;
+  if(window.__lbBirth) return null;
   if(!$('#ending').classList.contains('hidden')) return Snd.endKey()||'end_b';
   if(!$('#intro').classList.contains('hidden')) return lobbyBgm();
   const S=Sim.S; if(!S||$('#game').classList.contains('hidden')) return null;
