@@ -61,6 +61,7 @@ python3 ig7_apply.py build/game.html              # 게임 UI 7단계: 태어나
 python3 ig8_apply.py build/game.html              # 게임 UI 8단계: 결과 화면 (11-15)
 python3 ig9_apply.py build/game.html              # 게임 UI 9단계: 알림 · 캡처 창 · 보낸 조 창 (11-15)
 python3 ig10_apply.py build/game.html             # 설정 창 켜기/끄기 스위치 (11-15)
+python3 lbstart_apply.py build/game.html          # 로비 시작 화면: 키보드로 넘겨도 소리를 깨움 (11-15)
 python3 loading_apply.py build/game.html          # 로딩 화면: 성배에 금빛이 차오름 (11-13)
 python3 bxfx_apply.py build/game.html            # 비스트 연출 ①~⑥: 봉인 · 빈 자리 · 강림 · 키아라 입장 · 단독현현 · 결말 (11-12 시안 → 11-13 연결)
 python3 bxfx2_apply.py build/game.html           # 비스트 연출 ⑦~⑪: KP · 해방 · 봉인이 갈라짐 · 토벌령 · 격돌 (11-13 연결)

@@ -18620,6 +18620,7 @@ const Snd=(()=>{
       setTimeout(()=>{ if(!on()) c.suspend().catch(()=>{}); },200); } }
   document.addEventListener('visibilitychange',()=>{ if(!ctx) return; if(document.hidden) ctx.suspend().catch(()=>{}); else if(on()) ctx.resume().catch(()=>{}); });
   document.addEventListener('pointerdown',()=>{ if(on()) wake(); },{passive:true});
+  document.addEventListener('keydown',e=>{ if(on()&&!e.repeat) wake(); },true); // 키보드로 시작해도 소리를 깨운다
   if(on()) setTimeout(preload,1500);
   return {cfg,on,setCfg,enable,bgm,jingle,cue:jingle,prep,sfx,vol,setEnd:k=>{endK=k;},endKey:()=>endK};
 })();
