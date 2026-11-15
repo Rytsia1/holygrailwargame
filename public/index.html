@@ -6873,8 +6873,8 @@ const Sim = (() => {
     t.intel=clamp(t.intel+g); if(t.intel>=45) clsReveal(t,'모은 단서를 맞춰 보았다. ');
     const loc=why!=='sight'&&why!=='btalk'&&why!=='watch'; // 싸우며 본 것(sight: 보구·마스터), 전장에서 나눈 말(btalk), 멀리서 지켜본 싸움(watch)은 거처나 소원까지 알려 주지 않는다
     if(loc&&!t.known&&t.intel>=30){ t.known=true; log(`${cn(t)} 조의 거처를 알아냈다. ${t.arche}, ${t.mname}.`,'war'); ghostIntro(t); }
-    if(loc&&why!=='raid'&&(!t.wishKnown||t.bxNun&&!t.bxWishTrue)&&t.intel>=50){ t.wishKnown=true; if(t.bxNun) t.bxWishTrue=1; log(`${t.mname}의 소원은 ‘${AR(t).wish}’이라고 한다.`,'n'); if(t.bxNun&&bxNunLv(t)<2) log("구원을 말하던 수녀의 소원치고는, 그 안에 다른 사람이 없었다.",'n'); }
-    const T=INTEL_SRC[why==='btalk'?'talk':why==='watch'||why==='raid'?'trail':why]||INTEL_SRC.def;
+    if(loc&&why!=='raid'&&why!=='trace'&&(!t.wishKnown||t.bxNun&&!t.bxWishTrue)&&t.intel>=50){ t.wishKnown=true; if(t.bxNun) t.bxWishTrue=1; log(`${t.mname}의 소원은 ‘${AR(t).wish}’이라고 한다.`,'n'); if(t.bxNun&&bxNunLv(t)<2) log("구원을 말하던 수녀의 소원치고는, 그 안에 다른 사람이 없었다.",'n'); }
+    const T=INTEL_SRC[why==='btalk'?'talk':why==='watch'||why==='raid'||why==='trace'?'trail':why]||INTEL_SRC.def;
     const TH=(typeof globalThis!=='undefined'&&globalThis.__TH)||INTEL_TH;
     if(TH.hint&&t.intel>=TH.hint&&!t.revealed&&!t.hint) giveHint(t,'');
     if(t.intel>=(hero()&&hero().sp==='judge'?TH.judge:TH.name)) revealPair(t,pick(T.pair));
@@ -7839,7 +7839,7 @@ const Sim = (() => {
     battle(e,{claim:true,defend:!!w.altarPre,attack:!w.altarPre&&!!pre}); }
   function altarResolve(b){ const w=W(), e=b.e; w.altarDone=true; if(S.dead) return;
     if(['win','fled','asn'].includes(b.res)&&w.heroAlive){ w.altar='me'; log(`성배가 강림할 자리를 차지했다. 발밑의 지맥이 ${hero().name}에게로 흘러든다.`,'war');
-      contracted().forEach(p=>addIntel(p,10,'trail')); }
+      contracted().forEach(p=>addIntel(p,10,'trace')); }
     else if(['retreat','fail','lose'].includes(b.res)||!w.heroAlive){ if(e.alive&&e.master){ e.altar=true; log(`${pName(e)} 조가 성배가 강림할 자리를 차지했다.`,'notice'); } }
     else log('새벽이 오자 그 자리에 모였던 마력이 흩어졌다. 아무도 자리를 차지하지 못했다.','war');
     contracted().forEach(p=>p.altarPre=false); }
@@ -8147,7 +8147,7 @@ const Sim = (() => {
       {t:'정체를 숨기고 떠난다',r:{연민:-6,명예:-3,야망:3,자유:1},al:{선:-6,악:4,질서:2},tg:'-구조',f:()=>{ W().exposure=clamp(W().exposure-6); return '사이렌이 가까워질 무렵에는 이미 세 블록 떨어져 있었다.'; }}]})},
     {id:'duel',c:()=>contracted().some(p=>!p.ally&&p.known),f:()=>{ const p=pick(contracted().filter(p=>!p.ally&&p.known)); return {txt:`${pName(p)} 조에게서 결투장이 왔다. 오늘 자정, 강변 공터. 정정당당하게 겨루자고 적혀 있다.`,ch:[
       {t:'정면으로 응한다',r:{명예:6,자유:2,야망:-1},al:{질서:4},tg:'정면승부',f:()=>{ W().duel=p; return '답장 대신 결투장 귀퉁이를 접어 두었다. 자정에 가면 된다.'; }},
-      {t:'응하는 척 함정을 판다',r:{명예:-7,야망:5,자유:-1},al:{질서:-6,혼돈:2,악:2},tg:['계략','-정면승부'],f:()=>{ p.hp=clamp(p.hp-15); addIntel(p,20,'trail'); return '공터 둘레에 표식을 묻어 두었다. 상대는 발을 들이자마자 피를 흘렸다.'; }},
+      {t:'응하는 척 함정을 판다',r:{명예:-7,야망:5,자유:-1},al:{질서:-6,혼돈:2,악:2},tg:['계략','-정면승부'],f:()=>{ p.hp=clamp(p.hp-15); addIntel(p,20,'trace'); return '공터 둘레에 표식을 묻어 두었다. 상대는 발을 들이자마자 피를 흘렸다.'; }},
       {t:'무시한다',r:{명예:-3,자유:1},tg:'-정면승부',f:()=>'결투장은 서랍 속으로 들어갔다.'},
       {t:'결투장에 저주를 실어 돌려보낸다',need:['taboo',4],r:{명예:-8,야망:4},f:()=>{ p.hp=clamp(p.hp-20); lean('taboo',1); return '종이가 상대 손에서 검게 타들어 갔다는 소문을 들었다.'; }}]}; }},
     {id:'deal',c:()=>contracted().filter(p=>!p.ally).length>=2,f:()=>{ const [a,b]=shuffle(contracted().filter(p=>!p.ally)); return {txt:`${pName(a)} 조의 사자가 찾아왔다. 함께 ${pName(b)} 조를 치자는 제안이다. 끝나면 나눠 갖자고 했지만, 눈빛이 미덥지 않다.`,ch:[
@@ -8168,12 +8168,12 @@ const Sim = (() => {
       {t:'듣기 좋은 거짓말을 한다',r:{명예:-5,야망:2,자유:-2,충성:-2},al:{선:-2,질서:-2},tg:'계략',f:()=>`${h.name}${J(h.name,은)} 잠시 당신을 보다가 시선을 돌렸다.`},
       {t:'대답하지 않는다',r:{자유:3,충성:-3},f:()=>'침묵이 길어졌다. 서번트도 더 묻지 않았다.'}]}; }},
     {id:'solo',f:()=>{ const h=hero(); return {txt:`${h.name}${J(h.name,이)} 오늘 밤은 혼자 정찰을 나가겠다고 한다. 마스터가 따라오면 오히려 방해라고.`,ch:[
-      {t:'맡긴다',r:{자유:6,충성:2},al:{혼돈:4,질서:-2},f:()=>{ const t=crossFoe(); if(t) addIntel(t,25,'trail'); W().hp=clamp(W().hp-5); return `${h.name}${J(h.name,은)} 새벽에 돌아와 지도 위에 표시 몇 개를 남겼다. 옷자락이 조금 찢겨 있었다.`; }},
+      {t:'맡긴다',r:{자유:6,충성:2},al:{혼돈:4,질서:-2},f:()=>{ const t=crossFoe(); if(t) addIntel(t,25,'trace'); W().hp=clamp(W().hp-5); return `${h.name}${J(h.name,은)} 새벽에 돌아와 지도 위에 표시 몇 개를 남겼다. 옷자락이 조금 찢겨 있었다.`; }},
       {t:'령주를 보이며 금한다',r:{자유:-8,충성:2,야망:2,명예:-1},f:()=>`${h.name}${J(h.name,은)} 손등을 한 번 보고, 그대로 자리에 앉았다.`},
-      {t:'함께 간다',r:{충성:4,연민:2},f:()=>{ const t=crossFoe(); if(t) addIntel(t,15,'trail'); W().exposure=clamp(W().exposure+expUp(5)); return '둘이 함께 지붕 위를 건넜다. 서번트가 몇 번이나 당신을 끌어올렸다.'; }}]}; }},
+      {t:'함께 간다',r:{충성:4,연민:2},f:()=>{ const t=crossFoe(); if(t) addIntel(t,15,'trace'); W().exposure=clamp(W().exposure+expUp(5)); return '둘이 함께 지붕 위를 건넜다. 서번트가 몇 번이나 당신을 끌어올렸다.'; }}]}; }},
     {id:'child',f:()=>({txt:'밤길에 사역마 고양이를 품에 안은 아이가 울고 있었다. 어느 조의 마스터 동생이라고 한다. 길을 잃었다.',ch:[
       {t:'집까지 데려다준다',r:{연민:6,명예:3,야망:-3},al:{선:6,악:-2},tg:'구조',f:()=>{ W().exposure=clamp(W().exposure+expUp(5)); const t=crossFoe(); if(t) t.friendly=true; return '아이는 대문 앞에서 손을 흔들었다. 창문 너머로 누군가 이쪽을 오래 보았다.'; }},
-      {t:'사역마를 붙잡아 정보를 캔다',r:{연민:-6,명예:-4,야망:5},al:{선:-6,악:4},f:()=>{ const t=crossFoe(); if(t) addIntel(t,35,'trail'); return '고양이의 기억 속에 그 조의 거처가 또렷하게 남아 있었다. 아이는 끝내 울음을 그치지 않았다.'; }},
+      {t:'사역마를 붙잡아 정보를 캔다',r:{연민:-6,명예:-4,야망:5},al:{선:-6,악:4},f:()=>{ const t=crossFoe(); if(t) addIntel(t,35,'trace'); return '고양이의 기억 속에 그 조의 거처가 또렷하게 남아 있었다. 아이는 끝내 울음을 그치지 않았다.'; }},
       {t:'교회에 맡긴다',r:{연민:2,충성:2},al:{질서:4},f:()=>'수녀가 아이를 받아 안았다.'},
       {t:'아이의 회로를 살펴본다',need:['zeal',4],r:{연민:-7,야망:3},f:()=>{ add({mana:2}); lean('zeal',1); return '드문 회로였다. 아이는 왜 그렇게 보느냐고 물었다. 대답하지 않았다.'; }}]})},
     {id:'injured',c:()=>W().fought,f:()=>({txt:'아침 뉴스에 어젯밤 싸움으로 다친 사람들이 나왔다. 병원 로비가 부상자로 가득하다고 한다.',ch:[
@@ -8216,7 +8216,7 @@ const Sim = (() => {
     const unknown=alivePairs().filter(p=>p.intel<60);
     const ch_=[
       {t:routineName(),d:'일상을 지킨다',chips:[{l:'노출 −6',c:'up'},{l:'정신 +1',c:'up'}],f:()=>w.queue.push(()=>{ w.exposure=clamp(w.exposure-6); add({will:1}); log(pick(['아무 일도 없는 척하는 하루가 가장 길었다.','점심을 먹으며 어젯밤 뉴스 이야기를 들었다. 고개만 끄덕였다.','창밖을 보다가 몇 번 이름이 불렸다.','평범한 하루가 이렇게 귀한 줄 몰랐다.'])); })},
-      {t:'거리를 탐문한다',d:unknown.length?'다른 조의 흔적을 찾는다':'더 알아낼 것이 많지 않다',chips:unknown.length?[{l:'다른 조 정보 ↑',c:'up'}]:undefined,foot:unknown.length?[['반영 스탯',[`지식 ${Math.round(S.st.lore)}`]]]:undefined,auto:unknown.length>0&&w.hp>50,f:()=>w.queue.push(()=>{ const t=wpick(alivePairs().filter(p=>p.intel<90),p=>100-p.intel); if(!t){log('흔적은 이미 다 식어 있었다.');return;} log(pick(['어젯밤 무너졌다는 다리 근처를 걸었다.','가스 사고가 났다는 골목에 아직 테이프가 둘러져 있었다.','옥상마다 이상한 그을음이 남아 있었다.','상가 경비원에게 이것저것 물었다.'])); addIntel(t,ri(10,20)+S.st.lore*.06); if(ch(.25)) masterEvent(true); })},
+      {t:'거리를 탐문한다',d:unknown.length?'다른 조의 흔적을 찾는다':'더 알아낼 것이 많지 않다',chips:unknown.length?[{l:'다른 조 정보 ↑',c:'up'}]:undefined,foot:unknown.length?[['반영 스탯',[`지식 ${Math.round(S.st.lore)}`]]]:undefined,auto:unknown.length>0&&w.hp>50,f:()=>w.queue.push(()=>{ const t=wpick(alivePairs().filter(p=>p.intel<90),p=>100-p.intel); if(!t){log('흔적은 이미 다 식어 있었다.');return;} log(pick(['어젯밤 무너졌다는 다리 근처를 걸었다.','가스 사고가 났다는 골목에 아직 테이프가 둘러져 있었다.','옥상마다 이상한 그을음이 남아 있었다.','상가 경비원에게 이것저것 물었다.'])); addIntel(t,ri(10,20)+S.st.lore*.06,'trace'); if(ch(.25)) masterEvent(true); })},
       {t:`${h.name}${J(h.name,과)} 도시를 걷는다`,d:'',chips:[{l:'신뢰 ↑',c:'up'},{l:'노출 ↑',c:'dn'}],auto:autoBond(w),f:()=>w.queue.push(()=>outing())},
       {t:'몸을 추스른다',d:'서번트와 당신의 상처를 돌본다',chips:[{l:`서번트 건강 +${Math.round(5+S.st.mana*.1+Math.max(0,artLv('heal')-1)*3+(artLv('alchemy')>=2?3:0))}`,c:'up'},{l:'서번트 마력 ↑',c:'up'},{l:'건강 +4',c:'up'}],foot:[['현재',[`서번트 건강 ${Math.round(w.hp)}`,`서번트 마력 ${Math.round(w.sm)}`]]],auto:w.hp<55,f:()=>w.queue.push(()=>{ w.hp=clamp(w.hp+5+S.st.mana*.1+Math.max(0,artLv('heal')-1)*3+(artLv('alchemy')>=2?3:0)); smRegen(5); add({health:4}); log(pick(['종일 잤다. 꿈도 꾸지 않았다.','보석 두 개를 깨서 서번트에게 마력을 몰아주었다.','약국에서 붕대를 한 아름 샀다. 약사가 이상하게 쳐다보았다.'])); })},
       {t:'결계를 손본다',d:altarLive()?'지맥이 요동쳐 결계가 자리 잡지 않는다':'결계는 날마다 조금씩 옅어진다',chips:altarLive()?undefined:(()=>{ const b0=(h.cls==='caster'?8:0)+S.st.mana*.05+Math.max(0,artLv('barrier')-1)*3; return [{l:`결계 +${Math.round(8+b0)}~${Math.round(14+b0)}`,c:'up'}]; })(),foot:[['현재',[`결계 ${Math.round(w.fort)}`]]],off:altarLive(),f:()=>w.queue.push(()=>{ const g=ri(8,14)+(h.cls==='caster'?8:0)+S.st.mana*.05+Math.max(0,artLv('barrier')-1)*3; w.fort=clamp(w.fort+g); log('창틀과 문지방마다 표식을 새로 그렸다.'); })},
@@ -8504,7 +8504,7 @@ const Sim = (() => {
     {w:3,c:()=>W().pairs.some(p=>!p.alive&&!p.revealed),f:()=>{ const p=pick(W().pairs.filter(p=>!p.alive&&!p.revealed)); p.revealed=true; const th=H_BY[p.hero]; log(`신부가 탈락한 조의 기록을 보여 주었다. 쓰러진 ${cn(p)}의 정체는 ${th.title} ${th.name}이었다고 한다.`,'war'); }},
     {w:3,c:()=>contracted().some(p=>!p.ally&&!p.known),f:()=>{ const p=pick(contracted().filter(p=>!p.ally&&!p.known)); decide({title:'예배당의 낯선 사람',body:`맨 앞줄에 누군가 혼자 기도하고 있었다. 손등에 붕대를 감았다. 마스터다. ${p.arche}로 보인다.`,war:true,choices:[
       {t:'옆에 앉아 말을 건다',d:'관계에 기댄다',st:[{l:'관계',v:Math.round(S.st.bond)}],auto:true,f:()=>{ addIntel(p,30,'talk'); if(chk('관계',S.st.bond+ri(0,40),60)){ p.friendly=true; return `${p.mname}${J(p.mname,은)} 놀라지 않았다. “여기서는 싸우지 않는 게 규칙이죠.” 한참 이야기를 나눴다.`; } return `${p.mname}${J(p.mname,은)} 짧게 대답하고 먼저 일어섰다. 그래도 얼굴은 기억해 두었다.`; }},
-      {t:'뒤를 밟는다',d:'들키면 노출이 오른다',f:()=>{ if(ch(.6)){ addIntel(p,40,'trail'); return '그는 세 번 길을 꺾고 낡은 건물로 들어갔다. 거처를 알았다.'; } W().exposure=clamp(W().exposure+expUp(10)); return '골목 끝에서 그가 돌아보았다. 들켰다.'; }},
+      {t:'뒤를 밟는다',d:'들키면 노출이 오른다',f:()=>{ if(ch(.6)){ addIntel(p,40,'trace'); return '그는 세 번 길을 꺾고 낡은 건물로 들어갔다. 거처를 알았다.'; } W().exposure=clamp(W().exposure+expUp(10)); return '골목 끝에서 그가 돌아보았다. 들켰다.'; }},
       {t:'모른 척한다',f:()=>'기도가 끝날 때까지 뒷줄에 앉아 있었다.'}]}); }},
     {w:3,c:()=>S.wealth>=8&&alivePairs().some(p=>!p.revealed),f:()=>{ const p=pick(alivePairs().filter(p=>!p.revealed)); decide({title:'신부의 거래',body:`“정보에는 값이 있습니다. 헌금 조금이면 ${cn(p)} 조에 대해 아는 것을 말씀드리지요.”`,war:true,choices:[
       {t:'헌금한다',d:'재산 −8',auto:true,f:()=>{ add({wealth:-8}); addIntel(p,40); return '신부는 봉투를 세지도 않고 이야기를 시작했다.'; }},
@@ -8514,7 +8514,7 @@ const Sim = (() => {
       {t:'털어놓는다',auto:true,f:()=>{ add({will:4}); W().trust=clamp(W().trust+fitT(2)); return '이번 전쟁에서 본 것들을 처음으로 소리 내어 말했다. 신부는 끝까지 아무 말도 하지 않았다.'; }},
       {t:'그냥 나온다',f:()=>{ add({will:1}); return '커튼 앞에 잠깐 서 있다가 돌아섰다.'; }}]})},
     {w:3,c:()=>contracted().some(p=>p.aid==='apostle')&&!W().churchQuest,f:()=>{ const w=W(),p=contracted().find(p=>p.aid==='apostle'); decide({title:'교회의 의뢰',body:'신부가 문을 잠갔다. “이번 전쟁에 사도가 섞여 있습니다. 인간이 아닙니다. 그 조를 쓰러뜨려 주신다면, 교회가 보답하겠습니다.”',war:true,choices:[
-      {t:'받아들인다',d:'그 조의 거처를 알게 된다. 쓰러뜨리면 령주 1획',auto:true,f:()=>{ w.churchQuest=p.i; addIntel(p,Math.max(0,40-p.intel)+10,'trail'); return '신부가 지도에 붉은 점 하나를 찍어 주었다.'; }},
+      {t:'받아들인다',d:'그 조의 거처를 알게 된다. 쓰러뜨리면 령주 1획',auto:true,f:()=>{ w.churchQuest=p.i; addIntel(p,Math.max(0,40-p.intel)+10,'trace'); return '신부가 지도에 붉은 점 하나를 찍어 주었다.'; }},
       {t:'거절한다',f:()=>'“그러시겠지요.” 신부는 잠갔던 문을 다시 열었다.'}]}); }},
     {w:2,c:()=>(W().heat||0)>=2||W().civ>0,f:()=>{ const w=W(); w.exposure=clamp(w.exposure+expUp(5)); log(`신부의 목소리가 차가웠다. “지난밤 일, 성당교회는 다 알고 있습니다. ${w.civ>1?'한 번만 더 그러시면 대행자가 움직입니다.':'은닉에 협조해 주시지요.'}”`,'war'); }},
     {w:2,c:()=>S.st.lore>=40&&alivePairs().some(p=>p.revealed&&!p.artKnown),f:()=>{ const p=pick(alivePairs().filter(p=>p.revealed&&!p.artKnown)); if(chk('지식',S.st.lore+ri(0,40),65)) revealArt(p,`교회 지하 서고에서 ${H_BY[p.hero].from}에 관한 사본을 찾았다. `); else log('교회 지하 서고를 뒤졌다. 찾던 기록은 누군가 먼저 빌려 간 뒤였다.'); }},
@@ -8720,7 +8720,7 @@ const Sim = (() => {
       {c:p=>true,f:p=>decide({title:'소아 병동',body:`병원 소아 병동 복도. 한 여자가 병실 앞 의자에서 손등을 감싸 쥐고 있었다. 령주였다. 병실 문패에는 8살 아이의 이름이 적혀 있었다.`,war:true,choices:[
         {t:'말을 건다',auto:true,f:()=>{addIntel(p,45,'talk');p.sym=true;return `${p.metKnown?`${p.mname}${J(p.mname,은)} 당신을 알아보고도 도망치지 않았다.`:`여자의 이름은 ${p.mname}.`} 딸의 병은 어떤 의사도 고치지 못한다고 했다. 그래서 성배가 필요하다고.`}},
         {t:'모른 척 지나간다',f:()=>'엘리베이터 문이 닫힐 때까지 여자는 고개를 들지 않았다.'},
-        {t:'뒤를 밟는다',f:()=>{addIntel(p,35,'trail');add({will:-1});return '여자는 병원 근처 낡은 여관으로 들어갔다. 창문마다 결계가 서툴게 붙어 있었다.'}}]})},
+        {t:'뒤를 밟는다',f:()=>{addIntel(p,35,'trace');add({will:-1});return '여자는 병원 근처 낡은 여관으로 들어갔다. 창문마다 결계가 서툴게 붙어 있었다.'}}]})},
       {c:p=>p.sym&&W().day>=5,f:p=>decide({title:'부탁',body:`${p.mname}${J(p.mname,이)} 당신을 찾아왔다. “딸이 이번 주를 넘기기 어렵대요. 며칠만, 며칠만 우리를 건드리지 말아 주세요.”`,war:true,choices:[
         {t:'약속한다',auto:true,f:()=>{p.truce=true;lean('judge',0);add({bond:3});return '여자는 고맙다는 말 대신 당신 손을 오래 잡았다.'}},
         {t:'거절한다',f:()=>{add({will:1,bond:-2});return '여자는 울지 않았다. 그게 더 나빴다.'}}]})},
@@ -8734,7 +8734,7 @@ const Sim = (() => {
     heir:[
       {c:p=>true,f:p=>decide({title:'결투장',body:`우편함에 밀랍 인장이 찍힌 봉투가 꽂혀 있었다. “${p.mname}${J(p.mname,이)} 정식으로 결투를 청한다. 오늘 밤 자정, 시립 묘지. 정정당당하게.”`,war:true,choices:[
         {t:'응한다',d:'오늘 밤 결투가 벌어진다',f:()=>{addIntel(p,40);W().duel=p;W().trust=clamp(W().trust+Math.round(mixR(hero().traits.includes('명예')?8:2,alR({질서:8})))+lkR('정면승부'));return '답장은 쓰지 않았다. 자정에 가면 되는 일이다.'}},
-        {t:'무시한다',auto:true,f:()=>{p.tac='hunter';addIntel(p,30);return '봉투를 서랍에 넣었다. 다음 날 아침, 대문에 칼자국이 나 있었다.'}}]})},
+        {t:'무시한다',auto:true,f:()=>{p.tac='hunter';addIntel(p,30,'watch');return '봉투를 서랍에 넣었다. 다음 날 아침, 대문에 칼자국이 나 있었다.'}}]})},
     ],
     elder:[
       {c:p=>true,f:p=>decide({title:'헌책방 안쪽 방',body:'헌책방 주인이 당신을 안쪽 방으로 불렀다. 늙은 마술사였다. “정보를 사고팔지. 내가 아는 두 조의 거처와, 자네 서번트의 진명을 바꾸세.”',war:true,choices:[
@@ -8749,7 +8749,7 @@ const Sim = (() => {
     exec:[
       {c:p=>true,f:p=>decide({title:'봉인지정 집행자',body:`대낮의 횡단보도에서 ${p.mname}${J(p.mname,이)} 길을 막아섰다. “마술협회는 이 성배를 회수할 겁니다. 지금 물러나면 기록에서 당신 이름을 지워 드리죠.”`,war:true,choices:[
         {t:'거절한다',auto:true,f:()=>{p.tac='hunter';W().exposure=clamp(W().exposure+expUp(10));addIntel(p,30);return '집행자는 수첩에 무언가를 적었다. “그럼 밤에 뵙죠.”'}},
-        {t:'역으로 미행한다',f:()=>{addIntel(p,50,'trail');if(ch(.3)){W().queue.unshift(()=>battle(p,{ambushed:true}));return '들켰다. 골목 끝에서 그가 기다리고 있었다.'}return '그는 강변 호텔로 들어갔다. 꼭대기 층 창문에 불이 켜졌다.'}},
+        {t:'역으로 미행한다',f:()=>{addIntel(p,50,'trace');if(ch(.3)){W().queue.unshift(()=>battle(p,{ambushed:true}));return '들켰다. 골목 끝에서 그가 기다리고 있었다.'}return '그는 강변 호텔로 들어갔다. 꼭대기 층 창문에 불이 켜졌다.'}},
         {t:'물러난다',d:'전쟁에서 빠진다',f:()=>{W().withdraw=true;return '령주를 내밀었다. 집행자는 의외라는 얼굴로 그것을 받아 갔다.'}}]})},
     ],
     avenger:[
@@ -8802,7 +8802,7 @@ const Sim = (() => {
     prodigy:[
       {c:p=>true,f:p=>decide({title:'놀이터의 아이',body:`밤 놀이터에 12살쯤 된 아이가 혼자 그네를 타고 있었다. 손등에 령주가 있다. 옆에서 ${cn(p)}${J(cn(p),이)} 아이의 그네를 밀어 주고 있었다.`,war:true,choices:[
         {t:'저녁은 먹었냐고 묻는다',auto:true,f:()=>{add({bond:2});addIntel(p,30,'talk');if(ch(.5)){p.sym=true;return `아이는 편의점 도시락을 같이 먹고 갔다. 헤어질 때 말했다. “${S.sex==='f'?'아줌마':'아저씨'}는 나중에 이길게요.”`}return '“어른들은 꼭 그거 물어보더라.” 아이는 그네에서 뛰어내려 사라졌다.'}},
-        {t:'조용히 뒤를 밟는다',f:()=>{addIntel(p,45,'trail');add({will:-1});return '아이는 시계탑 직원이 잡아 준 호텔 스위트룸으로 들어갔다. 혼자였다.'}},
+        {t:'조용히 뒤를 밟는다',f:()=>{addIntel(p,45,'trace');add({will:-1});return '아이는 시계탑 직원이 잡아 준 호텔 스위트룸으로 들어갔다. 혼자였다.'}},
         {t:'못 본 척한다',f:()=>'그네 삐걱이는 소리가 골목 끝까지 들렸다.'}]})},
     ],
     artist:[
@@ -8842,14 +8842,14 @@ const Sim = (() => {
       {t:'정보만 얻는다',f:()=>{const t=alivePairs().find(x=>x.aid==='lord')||pick(alivePairs().filter(x=>x!==p));if(t)addIntel(t,35);addIntel(p,30);return '그는 아는 걸 다 털어놓았다. 의심이라는 걸 모르는 사람이었다.'}}]})}],
     wanderer:[{c:p=>true,f:p=>decide({title:'바다에서 온 사람',body:`안개 낀 부두에 낡은 배 한 척이 닿았다. 내린 사람은 ${p.mname}. 그의 주위에서만 공기가 오래된 냄새를 풍겼다. “이 시대에도 성배가 있다니. 와 볼 만했군.”`,war:true,choices:[
       {t:'신대의 마술에 대해 묻는다',auto:true,f:()=>{add({lore:4});addIntel(p,30,'talk');return '그는 이 시대 마술이 얼마나 가벼운지 한참 설명했다. 절반은 이해할 수 없었고, 나머지 절반은 무서웠다.'}},
-      {t:'배를 몰래 살핀다',f:()=>{addIntel(p,50,'trail');if(ch(.4)){add({health:-6});return '갑판에 발을 디딘 순간 시간이 한참 흘렀다. 정신을 차리니 해가 지고 있었다.'}return '배 안에는 지도에 없는 바다의 해도가 가득했다.'}}]})}],
+      {t:'배를 몰래 살핀다',f:()=>{addIntel(p,50,'trace');if(ch(.4)){add({health:-6});return '갑판에 발을 디딘 순간 시간이 한참 흘렀다. 정신을 차리니 해가 지고 있었다.'}return '배 안에는 지도에 없는 바다의 해도가 가득했다.'}}]})}],
     apostle:[{al:1,c:p=>true,f:p=>{log(`${cityN()}에서 밤사이 실종자가 또 나왔다는 뉴스. 목에 작은 상처가 두 개 있는 시신이 발견되었다.`,'war');decide({title:'밤의 손님',body:`골목에서 창백한 사람이 당신을 막아섰다. 입가에 붉은 것이 묻어 있다. ${p.mname}. “같은 성배를 노리는 사이잖아. 나랑 손잡자. 대행자들 좀 처리해 줘.”`,war:true,choices:[
       {t:'거절하고 물러난다',auto:true,f:()=>{addIntel(p,40);return '사도는 웃으며 어둠으로 녹아들었다. 다음 날 실종자 명단이 한 줄 늘었다.'}},
       {t:'대행자에게 알린다',f:()=>{addIntel(p,40);const h=alivePairs().find(x=>(x.aid==='executor'||x.aid==='burial')&&!x.bxNun);if(h){p.hp=clamp(p.hp-30);return '그날 밤 교회 종이 울렸다. 사도가 크게 다쳤다는 소문이 돌았다.'}return '감독관에게 알렸다. 감독관은 얼굴이 하얘졌다.'}},
       {t:'손을 잡는다',off:allyBlock(),f:()=>{p.ally=true;p.allyDay=W().day;p.known=true;S.flags.allyName=p.mname;allyConfide(p);wrec('ally',`${cn(p)} 조 ${p.mname}${J(p.mname,과)} 동맹`,{p:p.i});add({will:-6});lean('avenger',1);return '사도의 손은 얼음처럼 차가웠다. 그날 밤 꿈에 피 냄새가 났다.'}}]});}}],
     killer:[{c:p=>true,f:p=>{const w=W();decide({title:'폭발',body:'새벽, 거처 옆 건물에서 폭발음이 났다. 누군가 당신 거처를 노리고 폭약을 설치했다가 위치를 잘못 잡은 것이다. 현장에 탄피 하나가 떨어져 있었다.',war:true,choices:[
-      {t:'거처를 옮긴다',auto:true,f:()=>{w.fort=clamp(w.fort-10);w.exposure=clamp(w.exposure-12);addIntel(p,20);return '짐을 싸서 옮겼다. 새 거처는 결계가 얇았지만 아무도 몰랐다.'}},
-      {t:'탄피를 추적한다',f:()=>{addIntel(p,45,'trail');return `탄피에 각인된 번호로 ${p.mname}의 은신처를 짐작했다. 사냥꾼은 서번트가 아니라 사람을 노린다.`}},
+      {t:'거처를 옮긴다',auto:true,f:()=>{w.fort=clamp(w.fort-10);w.exposure=clamp(w.exposure-12);addIntel(p,20,'watch');return '짐을 싸서 옮겼다. 새 거처는 결계가 얇았지만 아무도 몰랐다.'}},
+      {t:'탄피를 추적한다',f:()=>{addIntel(p,45,'trace');return `탄피에 각인된 번호로 ${p.mname}의 은신처를 짐작했다. 사냥꾼은 서번트가 아니라 사람을 노린다.`}},
       {t:'결계를 두 배로 친다',f:()=>{w.fort=clamp(w.fort+15);add({health:-4});return '밤새 결계를 겹쳐 쳤다. 손끝이 갈라졌다.'}}]});}}],
     exorcist:[{c:p=>true,f:p=>decide({title:'퇴마사',body:`오래된 신당 앞에서 부적을 붙이던 퇴마 가문의 후계자 ${p.mname}${J(p.mname,이)} 당신 서번트를 보더니 부적을 들었다. “이 땅에서 무슨 짓을 하는 거죠? 영령이 이렇게 많이 깨어난 건 처음이에요.”`,war:true,choices:[
       {t:'성배전쟁을 설명한다',auto:true,f:()=>{addIntel(p,40,'talk');if(ch(.4))p.friendly=true;return '퇴마사는 한숨을 쉬었다. “서양 마술사들은 늘 남의 땅을 어지럽히죠.” 그래도 부적을 내렸다.'}},
@@ -8976,7 +8976,7 @@ const Sim = (() => {
     const r=contest(snipeD(e,kind,false),kind==='m'?22:14,'서번트의 민첩·저격 솜씨'), eN=pName(e);
     if(kind==='sv'){
       if(r==='great'||r==='ok'){ const dmg=Math.max(5,Math.min(25,Math.round((8+(P[0]-E.P[2])*2.5+(SNIPE[h.id]||1)*2.5)*(r==='great'?1.5:1)*(.85+rnd()*.3))));
-        e.hp=clamp(e.hp-dmg); addIntel(e,10,'trail');
+        e.hp=clamp(e.hp-dmg); addIntel(e,10,'trace');
         log(r==='great'?`화살이 ${eN}${J(eN,을)} 정확히 꿰뚫었다. 쓰러지지 않으려 버티는 모습까지 똑똑히 보였다.`:`화살이 ${eN}의 어깨를 스쳤다. 상대는 곧바로 몸을 숨겼다.`,'war');
         if(r==='great') revealSkills(e,'맞받아치는 움직임을 보았다. ',1);
         if(e.hp<=0) defeatNpc(e,'우리');
@@ -8992,7 +8992,7 @@ const Sim = (() => {
     if(r==='great'){ log(`화살이 결계를 뚫고 ${e.mname}에게 닿았다. ${eN}${J(eN,이)} 손을 뻗었지만 늦었다.`,'war'); add({will:-3}); masterKilled(e); return tr<0?`${h.name}${J(h.name,은)} 활을 내리고 한동안 말이 없었다.`:''; }
     if(r==='ok'){ e.mHurt=3; e.hp=clamp(e.hp-ri(6,12)); let s=`화살이 ${e.mname}의 몸을 스쳤다. 마스터가 쓰러지자 ${eN}의 움직임이 눈에 띄게 둔해졌다.`;
       if(e.seals>0&&ch(.35)){ e.seals--; s+=` ${e.mname}${J(e.mname,이)} 령주로 서번트를 곁에 불러들였다.`; } return s; }
-    if(r==='fail'){ e.provoked=2; addIntel(e,8,'trail'); return `${eN}${J(eN,이)} 화살을 쳐 냈다. ${e.mname}${J(e.mname,은)} 무사하다. 이제 저쪽도 우리를 노릴 것이다.`; }
+    if(r==='fail'){ e.provoked=2; addIntel(e,8,'trace'); return `${eN}${J(eN,이)} 화살을 쳐 냈다. ${e.mname}${J(e.mname,은)} 무사하다. 이제 저쪽도 우리를 노릴 것이다.`; }
     w.exposure=clamp(w.exposure+expUp(15)); w.queue.unshift(()=>battle(e,{defend:true}));
     return `화살이 빗나간 순간 ${eN}의 시선이 이쪽을 꿰뚫었다. 위치가 드러났다. 그들이 온다.`;
   }
@@ -9139,7 +9139,7 @@ const Sim = (() => {
     const w=W(),h=hero(),P=myP(); const sc=SV(h,'insight')*2+P[4]*3+rnd()*20;
     const unk=alivePairs().filter(p=>!p.known&&!p.ally);
     const doF=()=>{ w.foresee=true; return '계시가 내렸다. 오늘 밤 누가 문을 두드릴지 알 수 있다.'; };
-    const doL=()=>{ const t=pick(unk); addIntel(t,Math.max(0,30-t.intel)+10,'trail'); return `계시가 ${cn(t)} 조의 거처를 가리켰다.`; };
+    const doL=()=>{ const t=pick(unk); addIntel(t,Math.max(0,30-t.intel)+10,'trace'); return `계시가 ${cn(t)} 조의 거처를 가리켰다.`; };
     if(sc>=30) return [doF(),unk.length?doL():''].join(' ');
     if(sc>=18) return unk.length&&ch(.5)?doL():doF();
     return '기도는 길었지만 계시는 내리지 않았다.';
@@ -9185,8 +9185,8 @@ const Sim = (() => {
     const w=W(),h=hero(); const pool=alivePairs().filter(p=>(p.intel<80||!p.known)&&!p.ally); const t=wpick(pool,p=>Math.max(10,100-p.intel)+(p.known?0:30)); if(!t){ log('도시는 조용했다.'); return; }
     w.roamed=true; w.exposure=clamp(w.exposure+expUp(12)); w.sm=clamp(w.sm-8);
     log(pickNR([`${h.name}의 탈것이 밤의 대로를 가로질렀다. 신호등이 한꺼번에 깜빡였다.`,`${h.name}${J(h.name,과)} 함께 강을 따라 도시 끝까지 내달렸다. 바람 소리밖에 들리지 않았다.`,'고가도로 위를 질주했다. 도시의 마력이 지도처럼 눈 아래 펼쳐졌다.',`${h.name}의 탈것이 지붕에서 지붕으로 뛰어올랐다. 거처 몇 곳의 불빛이 한눈에 들어왔다.`],'rideS'),'war');
-    addIntel(t,ri(40,55)+(h.sp==='intel'?15:0)+SV(h,'insight')+S.st.lore*.08,'trail'); if(CHK) CHK.push({txt:'「라이더」의 탈것으로 도시를 가로질렀다',ok:true});
-    if(ch(.15)){ const t2=wpick(pool.filter(p=>p!==t&&p.alive),p=>100-p.intel); if(t2){ addIntel(t2,ri(15,25),'trail'); log(`돌아오는 길에 ${cn(t2)} 조의 흔적도 스쳐 보았다.`,'war'); } }
+    addIntel(t,ri(40,55)+(h.sp==='intel'?15:0)+SV(h,'insight')+S.st.lore*.08,'trace'); if(CHK) CHK.push({txt:'「라이더」의 탈것으로 도시를 가로질렀다',ok:true});
+    if(ch(.15)){ const t2=wpick(pool.filter(p=>p!==t&&p.alive),p=>100-p.intel); if(t2){ addIntel(t2,ri(15,25),'trace'); log(`돌아오는 길에 ${cn(t2)} 조의 흔적도 스쳐 보았다.`,'war'); } }
     if(ch(.3)&&!t.truce){ t.provoked=Math.max(t.provoked||0,2); log(`질주하는 모습을 ${pName(t)} 조에게 들켰다. 그쪽도 이제 우리를 노릴 것이다.`,'war'); if(CHK) CHK.push({txt:'요란한 질주가 눈에 띄었다',ok:false}); }
   }
   function scout(){
@@ -9195,7 +9195,7 @@ const Sim = (() => {
     w.roamed=true;
     const site=pick(CX().sites||['구시가지']);
     log(pickNR(['옥상에서 옥상으로 건너갔다.','강변을 따라 마력의 흔적을 쫓았다.','서번트가 먼저 기척을 찾아냈다.','버려진 공장 지대를 돌았다.',`${site} 쪽으로 마력의 잔향이 이어져 있었다.`,'지하철 막차가 끊긴 선로를 따라 걸었다.','인적 없는 상가 지하 주차장을 한 층씩 내려갔다.','공사장 크레인 꼭대기에서 도시를 내려다보았다.',h.cls==='bow'?`${h.name}${J(h.name,이)} 멀리서 도시 전체를 훑었다.`:h.cls==='shadow'?`${h.name}${J(h.name,이)} 기척을 지운 채 앞서 나갔다.`:h.cls==='rider'?`${h.name}의 탈것을 타고 도시를 가로질렀다.`:h.cls==='caster'?`${h.name}${J(h.name,이)} 사역마를 날려 거리를 살폈다.`:`${h.name}${J(h.name,이)} 당신을 등 뒤에 두고 앞장섰다.`],'scoutL'));
-    addIntel(t,ri(20,35)+(h.cls==='bow'?12:0)+(h.sp==='intel'?15:0)+(h.sp==='judge'?25:0)+SV(h,'insight')+S.st.lore*.08,'trail');
+    addIntel(t,ri(20,35)+(h.cls==='bow'?12:0)+(h.sp==='intel'?15:0)+(h.sp==='judge'?25:0)+SV(h,'insight')+S.st.lore*.08,'trace');
     { const sc=SCOUT_CLS(h); if(sc&&CHK) CHK.push({txt:sc.r,ok:true}); }
     if(!t.ally&&ch(.16+(t.tac==='hunter'?.1:0))&&!t.truce&&npcWillRaid(t)){ log(`돌아오는 길, ${pName(t)} 조에게 들켰다.`,'war'); woundNote(t); battle(t,{ambushed:true}); return; }
     if(ch(.5)) scoutEvent(t);
@@ -9204,21 +9204,21 @@ const Sim = (() => {
   const RANK_BAND=r=>{ const b=String(r).replace(/[+-]/g,''); return b==='EX'?'규격 밖':b==='A'?'A급 이상':b==='B'?'B급 안팎':'C급 이하'; };
   const SCOUT_EV=[
     {w:3,c:t=>!t.artKnown&&!t.artHint&&W().day>=2,f:t=>decide({title:'격전지의 흔적',body:`${t.known?pName(t)+' 조의 거처 근처':'외곽의 공사장'}에 땅이 유리처럼 녹아 굳은 자리가 있었다. 누군가 여기서 보구를 썼다.`,war:true,choices:[
-      {t:'흔적을 조사한다',d:`지식 ${Math.round(S.st.lore)} · 보구의 종류와 규모를 짐작한다`,auto:true,f:()=>{ if(chk('지식',S.st.lore+ri(0,45),40)){ const a=artOf(H_BY[t.hero]); t.artHint={k:a.k,r:RANK_BAND(a.r)}; wrec('hint',`${cn(t)}의 보구 흔적 — ${a.k}, ${t.artHint.r}`,{p:t.i}); addIntel(t,10,'trail'); return `흔적의 크기와 마력의 결로 짐작했다. ${cn(t)}의 보구는 ${a.k}, ${t.artHint.r}의 위력이다. 이름까지는 알 수 없다.`; } addIntel(t,8,'trail'); return '흔적은 이미 식어 있었다. 남은 것은 탄 냄새뿐이었다.'; }},
+      {t:'흔적을 조사한다',d:`지식 ${Math.round(S.st.lore)} · 보구의 종류와 규모를 짐작한다`,auto:true,f:()=>{ if(chk('지식',S.st.lore+ri(0,45),40)){ const a=artOf(H_BY[t.hero]); t.artHint={k:a.k,r:RANK_BAND(a.r)}; wrec('hint',`${cn(t)}의 보구 흔적 — ${a.k}, ${t.artHint.r}`,{p:t.i}); addIntel(t,10,'trace'); return `흔적의 크기와 마력의 결로 짐작했다. ${cn(t)}의 보구는 ${a.k}, ${t.artHint.r}의 위력이다. 이름까지는 알 수 없다.`; } addIntel(t,8,'trace'); return '흔적은 이미 식어 있었다. 남은 것은 탄 냄새뿐이었다.'; }},
       {t:'자리를 뜬다',f:()=>'오래 머물면 들킨다. 발길을 돌렸다.'}]})},
     {w:3,c:t=>true,f:t=>decide({title:'결계의 흔적',body:`${t.known?pName(t)+' 조의 거처 근처':'낡은 아파트 단지'}에 누군가 결계를 깔아 두었다. 아직 따뜻하다.`,war:true,choices:[
-      {t:'해제를 시도한다',d:'마력으로 결계를 푼다. 실패하면 들킨다',auto:S.st.mana>=50,f:()=>{ if(chk('마력',S.st.mana+ri(0,35),60)){ addIntel(t,30,'trail'); t.fortDown=true; return '결계가 소리 없이 풀렸다. 안쪽에 남은 마력의 흔적을 읽었다.'; } W().exposure=clamp(W().exposure+expUp(10)); add({health:-5}); return '결계가 경보를 울렸다. 서둘러 빠져나왔다.'; }},
-      {t:'표식만 남겨 둔다',auto:true,f:()=>{ addIntel(t,12,'trail'); return '결계 바깥에 작은 표식을 남겼다. 다음에 찾아오기 쉬울 것이다.'; }}]})},
+      {t:'해제를 시도한다',d:'마력으로 결계를 푼다. 실패하면 들킨다',auto:S.st.mana>=50,f:()=>{ if(chk('마력',S.st.mana+ri(0,35),60)){ addIntel(t,30,'trace'); t.fortDown=true; return '결계가 소리 없이 풀렸다. 안쪽에 남은 마력의 흔적을 읽었다.'; } W().exposure=clamp(W().exposure+expUp(10)); add({health:-5}); return '결계가 경보를 울렸다. 서둘러 빠져나왔다.'; }},
+      {t:'표식만 남겨 둔다',auto:true,f:()=>{ addIntel(t,12,'trace'); return '결계 바깥에 작은 표식을 남겼다. 다음에 찾아오기 쉬울 것이다.'; }}]})},
     {w:3,c:t=>true,f:t=>decide({title:'사역마',body:'전선 위에 앉은 까마귀 한 마리가 당신을 계속 따라왔다. 눈동자에 마술 각인이 비친다. 누군가의 사역마다.',war:true,choices:[
-      {t:'붙잡는다',auto:true,f:()=>{ if(ch(.6)){ addIntel(t,22,'trail'); return '서번트가 까마귀를 낚아챘다. 각인을 거꾸로 더듬어 주인의 방향을 알아냈다.'; } W().exposure=clamp(W().exposure+expUp(8)); return '까마귀는 날아가 버렸다. 당신 얼굴을 본 채로.'; }},
+      {t:'붙잡는다',auto:true,f:()=>{ if(ch(.6)){ addIntel(t,22,'trace'); return '서번트가 까마귀를 낚아챘다. 각인을 거꾸로 더듬어 주인의 방향을 알아냈다.'; } W().exposure=clamp(W().exposure+expUp(8)); return '까마귀는 날아가 버렸다. 당신 얼굴을 본 채로.'; }},
       {t:'일부러 따라가게 둔다',d:'거짓 거처로 유인한다',f:()=>{ W().exposure=clamp(W().exposure-8); return '빈 창고로 한참 돌아갔다. 까마귀는 그 창고 지붕에 앉아 밤을 새웠다.'; }},
       {t:'무시한다',f:()=>{ W().exposure=clamp(W().exposure+expUp(4)); return '모르는 척 걸었다. 등 뒤가 계속 따끔거렸다.'; }}]})},
     {w:2,c:t=>alivePairs().length>=3,f:t=>{ const o=pick(alivePairs().filter(x=>x!==t)); decide({title:'다른 조의 싸움',body:`멀리서 섬광이 번쩍였다. ${pName(t)} 조와 ${pName(o)} 조가 싸우고 있다.`,war:true,choices:[
-      {t:'끝까지 지켜본다',auto:true,f:()=>{ addIntel(t,20,'trail'); addIntel(o,20,'trail'); if(ch(.35)&&t.revealed&&!t.artKnown) revealArt(t,'멀리서 그 빛을 보았다. '); t.hp=clamp(t.hp-ri(8,18)); o.hp=clamp(o.hp-ri(8,18)); return '두 조 모두 상처를 입고 물러났다. 그 싸움을 처음부터 끝까지 보았다.'; }},
+      {t:'끝까지 지켜본다',auto:true,f:()=>{ addIntel(t,20,'watch'); addIntel(o,20,'watch'); if(ch(.35)&&t.revealed&&!t.artKnown) revealArt(t,'멀리서 그 빛을 보았다. '); t.hp=clamp(t.hp-ri(8,18)); o.hp=clamp(o.hp-ri(8,18)); return '두 조 모두 상처를 입고 물러났다. 그 싸움을 처음부터 끝까지 보았다.'; }},
       {t:'약한 쪽을 친다',d:'싸움에 끼어든다',f:()=>{ const weak=t.hp<o.hp?t:o; weak.hp=clamp(weak.hp-10); W().queue.unshift(()=>battle(weak,{attack:true})); return '두 조가 서로에게 정신이 팔린 틈을 노렸다.'; }},
       {t:'물러난다',f:()=>'휘말리기 전에 자리를 떴다.'}]}); }},
     {w:2,c:t=>!t.known,f:t=>decide({title:'마스터의 거처',body:'불 켜진 창문 하나가 눈에 띄었다. 창가에 마법진이 그려진 천이 걸려 있다. 마스터의 거처일지도 모른다.',war:true,choices:[
-      {t:'위치만 기억해 둔다',auto:true,f:()=>{ addIntel(t,30,'trail'); return '주소와 드나드는 시간을 적어 두었다.'; }},
+      {t:'위치만 기억해 둔다',auto:true,f:()=>{ addIntel(t,30,'trace'); return '주소와 드나드는 시간을 적어 두었다.'; }},
       {t:'몰래 들어가 본다',d:'지식과 정신에 기댄다',f:()=>{ if(chk('지식·정신',S.st.lore+S.st.will+ri(0,40),80)){ addIntel(t,50,'trail'); return '책상 위에 촉매의 흔적과 메모가 있었다. 그 서번트가 누구인지 짐작이 갔다.'; } add({health:-ri(8,14)}); W().exposure=clamp(W().exposure+expUp(12)); return '문턱의 함정에 걸렸다. 피를 흘리며 도망쳤다.'; }}]})},
     {w:2,c:t=>true,f:t=>decide({title:'밤길의 아이',body:'새벽 2시, 놀이터 그네에 아이 하나가 앉아 있다. 집에 가기 싫다고 했다. 이 근처는 오늘 밤 위험하다.',war:true,choices:[
       {t:'집까지 데려다준다',auto:true,f:()=>{ W().trust=clamp(W().trust+Math.round(mixR(hero().traits.includes('연민')?7:3,alR({선:7,중용:5,악:3})))+lkR('구조')); add({bond:2}); lean('judge',1); const n=hero().name; return byBody(hero(),{normal:`${n}${J(n,이)} 아이를 어깨에 태웠다. 아이는 잠이 들었다.`,giant:`${n}${J(n,이)} 아이를 어깨에 태웠다. 아이는 지붕보다 높은 자리에서 금세 잠이 들었다.`,child:`${n}${J(n,이)} 아이와 손을 잡고 나란히 걸었다. 둘은 키가 비슷했다. 집 앞에 닿자 아이는 졸린 눈을 비볐다.`,tiny:`${n}${J(n,이)} 아이 손을 잡고 앞장서 걸었다. 걷다 지친 아이가 ${n}${J(n,을)} 인형처럼 끌어안았다. 집 앞에 닿았을 때 둘 다 졸고 있었다.`,beast:'늑대가 몸을 낮춰 아이를 등에 태웠다. 아이는 털에 얼굴을 묻고 잠이 들었다.'}); }},
@@ -9305,7 +9305,7 @@ const Sim = (() => {
   function unravelPick(){ const w=W(); const ts=alivePairs().filter(p=>p.known&&!p.ally&&!p.truce&&p.master&&p.cls==='caster');
     decide({title:'적의 결계를 풀러 간다',body:'어느 거처의 술식을 풀 것인가.',war:true,choices:[...ts.map(p=>({t:`${pName(p)} 조 · ${p.mname}`,d:`${oddsTxt(unravelD(p),false)} · ${wsTxt(p)}`,auto:unravelD(p)>=0,f:()=>unravelDo(p)})),{...BACK}]}); }
   function unravelDo(e){ const w=W(); w.roamed=true; const r=contest(unravelD(e),14,'마력·지식'); e.alert=(e.alert||0)+(r==='fail'||r==='bad'?2:1);
-    if(r==='great'||r==='ok'){ const big=r==='great'; if(big){ e.workshop=false; e.wsProg=Math.round((e.wsProg||100)*.3); } e.noWs=w.day+(big?3:1); addIntel(e,15,'trail');
+    if(r==='great'||r==='ok'){ const big=r==='great'; if(big){ e.workshop=false; e.wsProg=Math.round((e.wsProg||100)*.3); } e.noWs=w.day+(big?3:1); addIntel(e,15,'trace');
       return big?`${e.mname}의 공방 술식을 뿌리째 풀어 냈다. 며칠 동안 그 거처는 그냥 건물이다.`:`결계의 바깥 몇 겹을 풀어 냈다. 하루쯤은 그 거처의 힘이 약해져 있을 것이다.`; }
     if(r==='fail'){ w.exposure=clamp(w.exposure+expUp(8)); return '술식이 생각보다 촘촘했다. 손을 대다 들킬 뻔하고 물러났다.'; }
     add({health:-ri(6,12)}); e.provoked=2; if(S.st.health<=0){ S.flags.war='dead'; die('결계의 반격'); return ''; } return '술식에 숨겨 둔 반격 장치가 터졌다. 손이 타는 듯이 아팠다.'; }
@@ -9314,7 +9314,7 @@ const Sim = (() => {
   function blastPick(){ const ts=alivePairs().filter(p=>p.known&&!p.ally&&!p.truce&&p.master);
     decide({title:'거처를 폭파한다',body:'마술과 상관없는 수단이다. 크게 소란이 날 것이다.',war:true,choices:[...ts.map(p=>({t:`${pName(p)} 조 · ${p.mname}`,d:`${asnWord(blastP(p))} · ${wsTxt(p)} · 정보 ${Math.round(p.intel)}`,auto:blastP(p)>=.5,f:()=>blastDo(p)})),{...BACK}]}); }
   function blastDo(e){ const w=W(); w.roamed=true; add({wealth:-15}); w.heat=(w.heat||0)+2; w.exposure=clamp(w.exposure+expUp(15));
-    if(ch(blastP(e))){ const ws=e.workshop; e.workshop=false; e.wsProg=Math.round((e.wsProg||0)*.3); e.noWs=w.day+3; e.mHurt=2; e.hp=clamp(e.hp-ri(5,12)); addIntel(e,20,'trail');
+    if(ch(blastP(e))){ const ws=e.workshop; e.workshop=false; e.wsProg=Math.round((e.wsProg||0)*.3); e.noWs=w.day+3; e.mHurt=2; e.hp=clamp(e.hp-ri(5,12)); addIntel(e,20,'trace');
       if(ch(.1)){ log(`자정 무렵, ${e.mname}의 거처가 폭음과 함께 내려앉았다. 잔해 속에서 마술사는 끝내 나오지 못했다.`,'war'); masterKilled(e); return ''; }
       return `자정 무렵, ${e.mname}의 거처가 폭음과 함께 내려앉았다.${ws?' 공방도 함께 무너졌다.':''} 마술사는 다친 몸으로 빠져나간 모양이다.`; }
     e.provoked=2; return '폭약은 터졌지만 거처는 비어 있었다. 눈치챈 것이다. 이제 저쪽도 우리를 노린다.'; }
@@ -11242,7 +11242,7 @@ const Sim = (() => {
     const sv=strays();
     if(sv.length&&ch(.95)){ log('무너진 결계의 흔적을 따라 밤거리를 헤맸다. 마력의 잔광이 골목 끝으로 이어져 있었다.','war'); strayMeet(sv.includes(w.stray)?w.stray:pick(sv)); return; }
     log(pick(['밤새 거리를 헤맸지만, 주인 잃은 서번트의 기척은 어디에도 없었다.','몇 번이나 마력의 잔광을 쫓았지만 모두 막다른 골목이었다.','강변까지 걸었다. 차가운 바람 말고는 아무것도 없었다.']),'n');
-    const o=alivePairs().filter(x=>!x.known&&!x.ally); if(o.length&&ch(.5)){ const t=pick(o); log(`대신 ${pName(t)} 조가 드나든 흔적을 찾았다.`,'war'); addIntel(t,15,'trail'); }
+    const o=alivePairs().filter(x=>!x.known&&!x.ally); if(o.length&&ch(.5)){ const t=pick(o); log(`대신 ${pName(t)} 조가 드나든 흔적을 찾았다.`,'war'); addIntel(t,15,'trace'); }
     if(ch(.1)){ S.flags.war='dead'; die('서번트 없이 밤거리를 헤매다 당한 습격'); }
   }
   function watchFight(){
@@ -11609,7 +11609,7 @@ const Sim = (() => {
       if(a.cls==='avenger'&&!a.mark&&ch(0.4)){ a.mark=pick(ts).i; a.nAct='class'; continue; } // 복수의 표적을 정한다
       if(a.cls==='rider'&&ch(0.25)){ // 탈것을 타고 정찰한다
         a.scoutEdge=1; addKnow(a,pick(ts),15);
-        if(w.heroAlive&&!a.ally&&ch(.3+w.exposure/200)){ w.exposure=clamp(w.exposure+expUp(6)); addIntel(a,10,'trail'); log(pickNR([`밤새 거리를 질주하는 탈것의 소리가 들렸다. ${cn(a)} 조가 도시를 훑고 있다.`,`거처 앞 도로를 무언가가 엄청난 속도로 지나갔다. 바퀴 자국이 아직 뜨겁다. ${cn(a)} 조다.`],'npcRide'),'war'); }
+        if(w.heroAlive&&!a.ally&&ch(.3+w.exposure/200)){ w.exposure=clamp(w.exposure+expUp(6)); addIntel(a,10,'watch'); log(pickNR([`밤새 거리를 질주하는 탈것의 소리가 들렸다. ${cn(a)} 조가 도시를 훑고 있다.`,`거처 앞 도로를 무언가가 엄청난 속도로 지나갔다. 바퀴 자국이 아직 뜨겁다. ${cn(a)} 조다.`],'npcRide'),'war'); }
         a.nAct='class'; continue; }
       if(a.cls==='caster'&&!a.workshop&&ch(0.6)){ // 공방을 짓는다
         a.wsProg=Math.min(100,(a.wsProg||0)+ri(12,24)+Math.round(A[3]*2)); if(a.wsProg>=100){ a.workshop=true; if(a.known&&ch(.6)) log(`${pName(a)} 조의 거처 쪽에서 마력의 맥박이 느껴진다. 공방이 완성된 것 같다.`); }
@@ -11793,7 +11793,7 @@ const Sim = (() => {
       {t:'승객부터 구한다',auto:true,f:()=>{w.hp=clamp(w.hp-10);w.trust=clamp(w.trust+fitT(6+traitR({연민:3,명예:2,야망:-2},{선:3,악:-3,질서:1},'구조'),false,alGood()));w.exposure=clamp(w.exposure+expUp(8));lean('judge',1);const n=hero().name;return byBody(hero(),{normal:'서번트가 버스를 통째로 들어 골목으로 옮겼다. 그사이 적의 일격을 등으로 받았다.',beast:'늑대가 버스 옆구리를 들이받아 골목으로 밀어냈다. 그사이 적의 일격을 등으로 받았다.'})+(alEvil()?` ${n}${J(n,은)} 굳이 그럴 필요가 있었냐는 얼굴이었다.`:'')}},
       {t:'싸움에 집중한다',f:()=>{add({will:-3});w.civ=(w.civ||0)+1;w.trust=clamp(w.trust+fitT(traitR({연민:-3,명예:-2,야망:1},{선:-3,악:1,질서:-1},'-구조')));return '버스 쪽에서 비명이 들렸다. 돌아보지 않았다.'}}]});}},
     {w:2,c:()=>W().roamed,f:()=>{const w=W();decide({title:'덫',body:'거리 모퉁이마다 낯선 결계가 깔려 있다. 누군가 이 길로 올 사람을 기다렸다.',war:true,choices:[
-      {t:'해제한다',auto:S.st.mana>=45,f:()=>{if(chk('마력',S.st.mana+ri(0,30),60)){add({lore:2});alivePairs().filter(p=>!p.known).slice(0,1).forEach(p=>addIntel(p,30));return '결계를 풀자 설치한 자의 마력 흔적이 남았다.'}w.hp=clamp(w.hp-15);return byBody(hero(),{normal:'결계가 터졌다. 서번트가 당신을 끌어안고 굴렀다.',tiny:'결계가 터졌다. 서번트가 당신 무릎 뒤를 걷어차 넘어뜨렸다. 폭풍은 머리 위로 지나갔다.',beast:'결계가 터졌다. 늑대가 당신 옷자락을 물고 옆으로 몸을 던졌다.'})}},
+      {t:'해제한다',auto:S.st.mana>=45,f:()=>{if(chk('마력',S.st.mana+ri(0,30),60)){add({lore:2});alivePairs().filter(p=>!p.known).slice(0,1).forEach(p=>addIntel(p,30,'trace'));return '결계를 풀자 설치한 자의 마력 흔적이 남았다.'}w.hp=clamp(w.hp-15);return byBody(hero(),{normal:'결계가 터졌다. 서번트가 당신을 끌어안고 굴렀다.',tiny:'결계가 터졌다. 서번트가 당신 무릎 뒤를 걷어차 넘어뜨렸다. 폭풍은 머리 위로 지나갔다.',beast:'결계가 터졌다. 늑대가 당신 옷자락을 물고 옆으로 몸을 던졌다.'})}},
       {t:'돌아간다',f:()=>'먼 길로 돌아 집에 왔다. 새벽이 다 되어 있었다.'}]});}},
     {w:0,title:'snipe',c:()=>alivePairs().some(p=>p.cls==='bow'&&p.master&&!p.ally),f:()=>{const w=W();const p=wpick(alivePairs().filter(p=>p.cls==='bow'&&p.master&&!p.ally),p=>SNIPE[p.hero]??1);const th=H_BY[p.hero];if(ch(.35)) return snipeAtMe(p);decide({title:'저격',body:'어딘가 아주 먼 곳에서 빛이 번쩍였다. 다음 순간 옆 건물 벽이 뚫렸다. 아처다.'+(p.revealed?` ${SNIPE_TX[p.hero]||''}`:''),war:true,choices:[
       {t:'엄폐하며 물러난다',auto:true,f:()=>{w.hp=clamp(w.hp-ri(5,12));addIntel(p,15,'raid');return '세 발을 더 피했다. 쏜 방향을 기억해 두었다.'}},
@@ -11840,13 +11840,13 @@ const Sim = (() => {
   WAR_EV.push(
     {w:2,c:()=>contracted().some(p=>p.cls==='caster'&&!p.ally&&p.drain>0&&!p.drainSeen),f:()=>{const w=W();const p=contracted().find(p=>p.cls==='caster'&&!p.ally&&p.drain>0&&!p.drainSeen);p.drainSeen=true;
       decide({title:'쓰러지는 시민들',body:`${pick(CX().sites)} 근처에서 사람들이 이유 없이 쓰러지는 일이 이어지고 있다. 뉴스는 가스 누출이라고 했다. 마력이 빨려 나간 흔적이다. 캐스터다.`,war:true,choices:[
-        {t:'흔적을 쫓는다',d:`지식 ${Math.round(S.st.lore)} · 마력이 흘러간 곳을 찾는다`,auto:true,f:()=>{ if(chk('지식',S.st.lore+ri(0,40),45)){ addIntel(p,35,'trail'); return '마력의 실을 따라가자 낡은 건물 하나가 나왔다. 창문마다 마법진이 비쳤다.'; } w.exposure=clamp(w.exposure+expUp(5)); return '흔적은 중간에 끊겼다. 너무 오래 서성였다.'; }},
+        {t:'흔적을 쫓는다',d:`지식 ${Math.round(S.st.lore)} · 마력이 흘러간 곳을 찾는다`,auto:true,f:()=>{ if(chk('지식',S.st.lore+ri(0,40),45)){ addIntel(p,35,'trace'); return '마력의 실을 따라가자 낡은 건물 하나가 나왔다. 창문마다 마법진이 비쳤다.'; } w.exposure=clamp(w.exposure+expUp(5)); return '흔적은 중간에 끊겼다. 너무 오래 서성였다.'; }},
         {t:'감독관에게 알린다',f:()=>{ p.hp=clamp(p.hp-15); lean('judge',1); return '감독관 신부는 고개를 끄덕였다. 며칠 뒤 그 동네에 교회 사람들이 드나들었다.'; }},
         {t:'내버려 둔다',f:()=>{ add({will:-2}); return '내 싸움이 아니라고 생각하기로 했다.'; }}]});}},
     {w:2,c:()=>!W().rulerHit&&W().day>=3&&(W().kills>=1||W().exposure>=50)&&contracted().some(p=>p.cls==='judge'&&!p.ally),f:()=>{const w=W(),h=hero(),P=myP();const p=contracted().find(p=>p.cls==='judge'&&!p.ally);const E=eStat(p,false);w.rulerHit=true;
       const r=contest((P[3]*3+SV(h,'mr')*2+4)-(E.P[3]*3+E.P[4]*2+10));
       log(`한밤, 손등이 아닌 ${h.name}의 몸에서 령주의 빛이 일었다. 다른 누군가의 령주였다. 룰러다.`,'seal');
-      if(r==='great'||r==='ok'){ addIntel(p,20,'trail'); log(`${h.name}${J(h.name,이)} 명령을 떨쳐 냈다. 「대마력」이 빛을 튕겨 냈다.`.replace(SV(h,'mr')?'':' 「대마력」이 빛을 튕겨 냈다.',''),'war'); return; }
+      if(r==='great'||r==='ok'){ addIntel(p,20,'watch'); log(`${h.name}${J(h.name,이)} 명령을 떨쳐 냈다. 「대마력」이 빛을 튕겨 냈다.`.replace(SV(h,'mr')?'':' 「대마력」이 빛을 튕겨 냈다.',''),'war'); return; }
       w.halt=2; log(`“정지하라.” ${h.name}의 발이 땅에 붙은 듯 움직이지 않았다. 이틀 동안은 먼저 칠 수 없다.`,'loss');}},
   );
   function stealDone(p){
