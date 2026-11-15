@@ -6873,8 +6873,8 @@ const Sim = (() => {
     t.intel=clamp(t.intel+g); if(t.intel>=45) clsReveal(t,'모은 단서를 맞춰 보았다. ');
     const loc=why!=='sight'&&why!=='btalk'&&why!=='watch'; // 싸우며 본 것(sight: 보구·마스터), 전장에서 나눈 말(btalk), 멀리서 지켜본 싸움(watch)은 거처나 소원까지 알려 주지 않는다
     if(loc&&!t.known&&t.intel>=30){ t.known=true; log(`${cn(t)} 조의 거처를 알아냈다. ${t.arche}, ${t.mname}.`,'war'); ghostIntro(t); }
-    if(loc&&(!t.wishKnown||t.bxNun&&!t.bxWishTrue)&&t.intel>=50){ t.wishKnown=true; if(t.bxNun) t.bxWishTrue=1; log(`${t.mname}의 소원은 ‘${AR(t).wish}’이라고 한다.`,'n'); if(t.bxNun&&bxNunLv(t)<2) log("구원을 말하던 수녀의 소원치고는, 그 안에 다른 사람이 없었다.",'n'); }
-    const T=INTEL_SRC[why==='btalk'?'talk':why==='watch'?'trail':why]||INTEL_SRC.def;
+    if(loc&&why!=='raid'&&(!t.wishKnown||t.bxNun&&!t.bxWishTrue)&&t.intel>=50){ t.wishKnown=true; if(t.bxNun) t.bxWishTrue=1; log(`${t.mname}의 소원은 ‘${AR(t).wish}’이라고 한다.`,'n'); if(t.bxNun&&bxNunLv(t)<2) log("구원을 말하던 수녀의 소원치고는, 그 안에 다른 사람이 없었다.",'n'); }
+    const T=INTEL_SRC[why==='btalk'?'talk':why==='watch'||why==='raid'?'trail':why]||INTEL_SRC.def;
     const TH=(typeof globalThis!=='undefined'&&globalThis.__TH)||INTEL_TH;
     if(TH.hint&&t.intel>=TH.hint&&!t.revealed&&!t.hint) giveHint(t,'');
     if(t.intel>=(hero()&&hero().sp==='judge'?TH.judge:TH.name)) revealPair(t,pick(T.pair));
@@ -11796,8 +11796,8 @@ const Sim = (() => {
       {t:'해제한다',auto:S.st.mana>=45,f:()=>{if(chk('마력',S.st.mana+ri(0,30),60)){add({lore:2});alivePairs().filter(p=>!p.known).slice(0,1).forEach(p=>addIntel(p,30));return '결계를 풀자 설치한 자의 마력 흔적이 남았다.'}w.hp=clamp(w.hp-15);return byBody(hero(),{normal:'결계가 터졌다. 서번트가 당신을 끌어안고 굴렀다.',tiny:'결계가 터졌다. 서번트가 당신 무릎 뒤를 걷어차 넘어뜨렸다. 폭풍은 머리 위로 지나갔다.',beast:'결계가 터졌다. 늑대가 당신 옷자락을 물고 옆으로 몸을 던졌다.'})}},
       {t:'돌아간다',f:()=>'먼 길로 돌아 집에 왔다. 새벽이 다 되어 있었다.'}]});}},
     {w:0,title:'snipe',c:()=>alivePairs().some(p=>p.cls==='bow'&&p.master&&!p.ally),f:()=>{const w=W();const p=wpick(alivePairs().filter(p=>p.cls==='bow'&&p.master&&!p.ally),p=>SNIPE[p.hero]??1);const th=H_BY[p.hero];if(ch(.35)) return snipeAtMe(p);decide({title:'저격',body:'어딘가 아주 먼 곳에서 빛이 번쩍였다. 다음 순간 옆 건물 벽이 뚫렸다. 아처다.'+(p.revealed?` ${SNIPE_TX[p.hero]||''}`:''),war:true,choices:[
-      {t:'엄폐하며 물러난다',auto:true,f:()=>{w.hp=clamp(w.hp-ri(5,12));addIntel(p,15);return '세 발을 더 피했다. 쏜 방향을 기억해 두었다.'}},
-      {t:'사선을 거슬러 달려간다',f:()=>{addIntel(p,40);w.queue.unshift(()=>battle(p,{attack:true}));return '서번트가 빗발치는 화살 속으로 뛰어들었다.'}}]});}},
+      {t:'엄폐하며 물러난다',auto:true,f:()=>{w.hp=clamp(w.hp-ri(5,12));addIntel(p,15,'raid');return '세 발을 더 피했다. 쏜 방향을 기억해 두었다.'}},
+      {t:'사선을 거슬러 달려간다',f:()=>{addIntel(p,40,'raid');w.queue.unshift(()=>battle(p,{attack:true}));return '서번트가 빗발치는 화살 속으로 뛰어들었다.'}}]});}},
     {w:2,c:()=>hero().id==='cuchulainn'&&!S.once.geis,f:()=>{S.once.geis=1;decide({title:'금기',body:'길에서 만난 노파가 고기 수프를 내밀었다. 개고기라고 했다. 쿠 훌린은 손님으로서 거절할 수 없다.',war:true,choices:[{t:'대신 거절한다',auto:true,f:()=>{W().trust=clamp(W().trust+8);return '“고맙다, 마스터.” 그는 작게 웃었다.'}},{t:'그가 정하게 둔다',f:()=>{W().hp=clamp(W().hp-25);return '그는 수프를 비웠다. 왼손이 떨리기 시작했다.'}}]});}},
     {w:2,c:()=>hero().sp==='traitor'||(hero().traits.includes('야망')&&W().trust<25),f:()=>{const w=W(),h=hero();if(w.trust>=40){log(`${h.name}${J(h.name,이)} 다른 조의 사신과 이야기하다가 당신을 보고 입을 다물었다.`);return;}decide({title:'배신의 기척',body:`${h.name}${J(h.name,이)} 당신보다 강한 주인을 찾고 있다.`,war:true,choices:[
       {t:'령주로 묶어 둔다',d:'1획',off:w.seals<1,auto:true,f:()=>{useSeal('내 곁에 있어라');w.trust=clamp(w.trust+fitT(-5));return `${h.name}${J(h.name,은)} 이를 갈며 무릎을 꿇었다.`}},
@@ -11815,11 +11815,11 @@ const Sim = (() => {
       if(famWatch()){ const f=famName(); log(`어둠 속에서 ${f}${J(f,이)} 먼저 울었다. 당신은 눈을 떴다.`,'war'); }
       if(giftIs('future')) log('잠결에 칼날이 내려오는 장면을 보았다. 눈을 뜨기 전에 이미 몸을 굴렸다.','war');
       decide({title:'암습',body:`잠결에 목덜미가 서늘했다. 방 안에 누군가 있다. 기척이 전혀 없었다. 어새신이다.${p.revealed?' '+th.name+'의 기척이다.':''}`,war:true,choices:[
-        {t:`${h.name}${J(h.name,을)} 부른다`,d:det>=6?'서번트는 이런 낌새에 밝다':'서번트가 늦지 않기를',st:[{l:'신뢰',v:Math.round(w.trust)}],auto:true,f:()=>{ if(chk('신뢰',w.trust+ri(0,50)+det,55+off)&&!ch(ASN_BONUS)){ addIntel(p,25,'trail'); w.queue.unshift(()=>battle(p,{ambushed:true,asnFail:true})); return `${h.name}${J(h.name,이)} 벽을 뚫고 들어왔다. 칼끝이 당신 목 한 치 앞에서 멈췄다.`; } if(hurt(12,22)) return ''; addIntel(p,15,'trail'); return '서번트가 닿기 전에 칼날이 먼저 지나갔다. 피가 이불을 적셨다.'; }},
-        {t:'결계에 맡긴다',d:`결계 ${Math.round(w.fort)}`,f:()=>{ if(chk('결계',w.fort+ri(0,40)+wsF()*6+asnSk(h,'night',true)*.5,55+off)&&!ch(ASN_BONUS)){ addIntel(p,20,'trail'); return '결계가 비명을 지르며 칼날을 튕겨 냈다. 그림자는 창밖으로 사라졌다.'; } w.fort=clamp(w.fort-10); if(hurt(14,24)) return ''; return '결계가 종잇장처럼 찢겼다.'; }},
-        ...(artLv('puppet')>=2&&!w.puppetUsed?[{t:'대역 인형을 내세운다',d:'인형술 · 전쟁에서 한 번',f:()=>{ w.puppetUsed=true; addIntel(p,15,'trail'); return '칼날이 꽂힌 것은 당신을 닮은 인형이었다. 그림자는 속았다는 것을 알고 물러났다.'; }}]:[]),
-        ...(martialLv()>=1?[{t:'몸으로 맞선다',d:'익힌 무투 · 건강과 정신에 기댄다',st:[{l:'건강',v:Math.round(S.st.health)},{l:'정신',v:Math.round(S.st.will)}],f:()=>{ if(chk('무투',S.st.health*.6+S.st.will*.4+martialLv()*10+artLv('anshou')*6+ri(0,40),90+off)&&!ch(ASN_BONUS)){ p.hp=clamp(p.hp-10); addIntel(p,25,'trail'); return '어둠 속에서 칼날을 쥔 손목을 붙잡아 꺾었다. 그림자는 비틀거리며 창밖으로 사라졌다.'; } if(hurt(12,22)) return ''; return '몸이 먼저 움직였지만, 칼날이 한 박자 빨랐다.'; }}]:[]),
-        {t:'마술로 반격한다',d:'마력과 정신에 기댄다',st:[{l:'마력',v:Math.round(S.st.mana)},{l:'정신',v:Math.round(S.st.will)}],off:!isMage(),f:()=>{ if(chk('마력·정신',S.st.mana+S.st.will+ri(0,40),100+off)&&!ch(ASN_BONUS)){ p.hp=clamp(p.hp-12); addIntel(p,30,'trail'); return '손끝에서 터진 마력이 그림자를 벽에 내동댕이쳤다. 그림자는 피를 흘리며 달아났다.'; } if(hurt(16,26)) return ''; return '주문이 완성되기 전에 칼날이 닿았다.'; }}]});}},
+        {t:`${h.name}${J(h.name,을)} 부른다`,d:det>=6?'서번트는 이런 낌새에 밝다':'서번트가 늦지 않기를',st:[{l:'신뢰',v:Math.round(w.trust)}],auto:true,f:()=>{ if(chk('신뢰',w.trust+ri(0,50)+det,55+off)&&!ch(ASN_BONUS)){ addIntel(p,25,'raid'); w.queue.unshift(()=>battle(p,{ambushed:true,asnFail:true})); return `${h.name}${J(h.name,이)} 벽을 뚫고 들어왔다. 칼끝이 당신 목 한 치 앞에서 멈췄다.`; } if(hurt(12,22)) return ''; addIntel(p,15,'raid'); return '서번트가 닿기 전에 칼날이 먼저 지나갔다. 피가 이불을 적셨다.'; }},
+        {t:'결계에 맡긴다',d:`결계 ${Math.round(w.fort)}`,f:()=>{ if(chk('결계',w.fort+ri(0,40)+wsF()*6+asnSk(h,'night',true)*.5,55+off)&&!ch(ASN_BONUS)){ addIntel(p,20,'raid'); return '결계가 비명을 지르며 칼날을 튕겨 냈다. 그림자는 창밖으로 사라졌다.'; } w.fort=clamp(w.fort-10); if(hurt(14,24)) return ''; return '결계가 종잇장처럼 찢겼다.'; }},
+        ...(artLv('puppet')>=2&&!w.puppetUsed?[{t:'대역 인형을 내세운다',d:'인형술 · 전쟁에서 한 번',f:()=>{ w.puppetUsed=true; addIntel(p,15,'raid'); return '칼날이 꽂힌 것은 당신을 닮은 인형이었다. 그림자는 속았다는 것을 알고 물러났다.'; }}]:[]),
+        ...(martialLv()>=1?[{t:'몸으로 맞선다',d:'익힌 무투 · 건강과 정신에 기댄다',st:[{l:'건강',v:Math.round(S.st.health)},{l:'정신',v:Math.round(S.st.will)}],f:()=>{ if(chk('무투',S.st.health*.6+S.st.will*.4+martialLv()*10+artLv('anshou')*6+ri(0,40),90+off)&&!ch(ASN_BONUS)){ p.hp=clamp(p.hp-10); addIntel(p,25,'raid'); return '어둠 속에서 칼날을 쥔 손목을 붙잡아 꺾었다. 그림자는 비틀거리며 창밖으로 사라졌다.'; } if(hurt(12,22)) return ''; return '몸이 먼저 움직였지만, 칼날이 한 박자 빨랐다.'; }}]:[]),
+        {t:'마술로 반격한다',d:'마력과 정신에 기댄다',st:[{l:'마력',v:Math.round(S.st.mana)},{l:'정신',v:Math.round(S.st.will)}],off:!isMage(),f:()=>{ if(chk('마력·정신',S.st.mana+S.st.will+ri(0,40),100+off)&&!ch(ASN_BONUS)){ p.hp=clamp(p.hp-12); addIntel(p,30,'raid'); return '손끝에서 터진 마력이 그림자를 벽에 내동댕이쳤다. 그림자는 피를 흘리며 달아났다.'; } if(hurt(16,26)) return ''; return '주문이 완성되기 전에 칼날이 닿았다.'; }}]});}},
     {w:4,c:()=>W().seals===0&&!W().stealTried&&contracted().some(p=>!p.ally&&['cunning','hunter','proud'].includes(p.tac)),f:()=>{const w=W(),h=hero();w.stealTried=true;
       const p=pick(contracted().filter(p=>!p.ally&&['cunning','hunter','proud'].includes(p.tac)));
       log(`${p.mname}${J(p.mname,이)} 결계 밖에서 ${h.name}에게 말을 걸었다. “령주 하나 없는 주인 밑에 있을 이유가 있나? 나와 계약하지. 내 령주는 아직 남아 있다.”`,'enemy');
@@ -11834,7 +11834,7 @@ const Sim = (() => {
     const atk=E.P[1]*3+E.P[4]*2+E.sv('insight')*1.2+(SNIPE[p.hero]||1)*4-10;
     const hit=(r,lo,hi,why)=>{ if(r==='great'||r==='ok') return null; add({health:-ri(r==='fail'?lo:hi[0],r==='fail'?hi[0]:hi[1])}); if(S.st.health<=0){ S.flags.war='dead'; die('아처의 저격'); return ''; } return why; };
     decide({title:'저격',body:`어딘가 아주 먼 곳에서 빛이 번쩍였다. 이번에는 벽이 아니라 당신을 노렸다.${p.revealed?' '+(SNIPE_TX[p.hero]||''):''}`,war:true,choices:[
-      {t:`${h.name}${J(h.name,이)} 막는다`,d:`${oddsTxt((P[1]*3+SV(h,'insight')*1.5+w.trust*.1+8)-atk,!p.revealed)} · 서번트의 민첩과 신뢰`,auto:true,f:()=>{ const r=contest((P[1]*3+SV(h,'insight')*1.5+w.trust*.1+8)-atk,14,'서번트의 민첩·눈썰미'); const x=hit(r,8,[16,30],'서번트의 손끝이 화살을 스쳤지만 다 막지는 못했다. 어깨가 뜨거웠다.'); if(x!==null) return x; addIntel(p,15,'trail'); return `${h.name}${J(h.name,이)} 화살을 쳐 냈다. 날아온 방향을 기억해 두었다.`; }},
+      {t:`${h.name}${J(h.name,이)} 막는다`,d:`${oddsTxt((P[1]*3+SV(h,'insight')*1.5+w.trust*.1+8)-atk,!p.revealed)} · 서번트의 민첩과 신뢰`,auto:true,f:()=>{ const r=contest((P[1]*3+SV(h,'insight')*1.5+w.trust*.1+8)-atk,14,'서번트의 민첩·눈썰미'); const x=hit(r,8,[16,30],'서번트의 손끝이 화살을 스쳤지만 다 막지는 못했다. 어깨가 뜨거웠다.'); if(x!==null) return x; addIntel(p,15,'raid'); return `${h.name}${J(h.name,이)} 화살을 쳐 냈다. 날아온 방향을 기억해 두었다.`; }},
       {t:'몸을 던져 엎드린다',d:'정신과 건강에 기댄다',st:[{l:'정신',v:Math.round(S.st.will)},{l:'건강',v:Math.round(S.st.health)}],f:()=>{ const r=contest(S.st.will*.15+S.st.health*.1-12,14,'정신·건강'); const x=hit(r,6,[12,24],'화살이 등을 스쳤다. 피가 셔츠를 적셨다.'); return x!==null?x:'유리창이 쏟아졌다. 화살은 머리 위를 지나갔다.'; }}]});
   }
   WAR_EV.push(
