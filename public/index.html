@@ -788,7 +788,7 @@ aside{display:grid;gap:18px;align-content:start}
 .set-sec .pn-btn{margin-bottom:10px}
 .set-sec p{margin:0;font-family:var(--f-ui);font-size:13px;line-height:1.65;color:var(--dim)}
 .set-sec .set-more{background:none;border:0;padding:0;margin-left:2px;color:var(--gold2);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.pn-btn.set::before{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1'/%3E%3C/svg%3E") center/contain no-repeat}
+.pn-btn.set::before{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.24 4.81 L10.57 2.51 L13.43 2.51 L13.76 4.81 L15.84 5.67 L17.70 4.27 L19.73 6.30 L18.33 8.16 L19.19 10.24 L21.49 10.57 L21.49 13.43 L19.19 13.76 L18.33 15.84 L19.73 17.70 L17.70 19.73 L15.84 18.33 L13.76 19.19 L13.43 21.49 L10.57 21.49 L10.24 19.19 L8.16 18.33 L6.30 19.73 L4.27 17.70 L5.67 15.84 L4.81 13.76 L2.51 13.43 L2.51 10.57 L4.81 10.24 L5.67 8.16 L4.27 6.30 L6.30 4.27 L8.16 5.67Z'/%3E%3Ccircle cx='12' cy='12' r='3.2'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.24 4.81 L10.57 2.51 L13.43 2.51 L13.76 4.81 L15.84 5.67 L17.70 4.27 L19.73 6.30 L18.33 8.16 L19.19 10.24 L21.49 10.57 L21.49 13.43 L19.19 13.76 L18.33 15.84 L19.73 17.70 L17.70 19.73 L15.84 18.33 L13.76 19.19 L13.43 21.49 L10.57 21.49 L10.24 19.19 L8.16 18.33 L6.30 19.73 L4.27 17.70 L5.67 15.84 L4.81 13.76 L2.51 13.43 L2.51 10.57 L4.81 10.24 L5.67 8.16 L4.27 6.30 L6.30 4.27 L8.16 5.67Z'/%3E%3Ccircle cx='12' cy='12' r='3.2'/%3E%3C/svg%3E") center/contain no-repeat}
 .pn-btn.inst::before{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/contain no-repeat}
 .pn-btn.hidden{display:none}
 .pn-btn:hover{border-color:var(--gold);background:rgba(201,164,92,.1)}
@@ -1030,6 +1030,9 @@ body.lb-wide #intro.lb .keys{display:block}
 /* 이 밤의 이야기와 규칙: 배경 위에 옅은 검은 막을 깔고 띄운다 */
 #lbAbout{position:fixed;inset:0;z-index:60;overflow:hidden}
 #lbAbout[hidden]{display:none}
+#lbAbout{--abw:640px}body.lb-wide #lbAbout{--abw:880px}
+#lbAbout .ab-x{right:max(18px,calc(env(safe-area-inset-right,0px) + 14px),calc((100vw - var(--abw))/2 + 16px))!important}
+#lbRec .ab-x{right:max(14px,calc(env(safe-area-inset-right,0px) + 10px),calc((100vw - 1180px)/2 + 16px))!important}
 #lbAbout .ab-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,14,.72),rgba(6,6,14,.58) 45%,rgba(6,6,14,.80));opacity:0;transition:opacity .5s}
 #lbAbout.open .ab-veil{opacity:1}
 #lbAbout .ab-in{position:relative;height:100%;overflow-y:auto;box-sizing:border-box;max-width:640px;margin:0 auto;padding-top:max(64px,calc(env(safe-area-inset-top,0px) + 56px));padding-bottom:max(48px,env(safe-area-inset-bottom,0px));padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));opacity:0;transform:translateY(14px);transition:opacity .55s .08s,transform .55s .08s;outline:none}
@@ -1045,7 +1048,7 @@ body.lb-wide #lbAbout .rules{grid-template-columns:repeat(3,1fr);gap:22px}
 #lbAbout .warn,#lbAbout .agenote,#lbAbout .ab-spoil{display:block;font-size:12.5px;color:var(--dim);margin:0 0 6px;text-align:left}
 #lbAbout .agenote::before{content:"※ "}
 #lbAbout .ab-go{display:block;margin:26px 0 8px;width:100%;max-width:320px}
-body.lb-wide #lbAbout .ab-go{margin-inline:auto}
+#lbAbout .ab-go{margin-inline:auto}
 body.lb-reading #intro.lb .lb-screen{opacity:0;transition:opacity .45s}
 @media (prefers-reduced-motion:reduce){#lbAbout .ab-veil,#lbAbout .ab-in{transition:none}}
 
@@ -18606,7 +18609,7 @@ const Snd=(()=>{
     const old=cur; cur=k?{k}:null; fadeOut(old,1.2); if(!k) return; const me=cur;
     load(k).then(L=>{ if(cur!==me||!on()) return; const m=SND_M[k], s=c.createBufferSource(), g=c.createGain(); s.buffer=L.b;
       if(m.ls!=null){ s.loop=true; s.loopStart=m.ls+L.off; s.loopEnd=m.le+L.off; }
-      const n=c.currentTime, again=played[k]&&m.ls!=null; played[k]=1; g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+(old?1.2:.8)); s.connect(g); g.connect(gB); s.start(n,L.off+(again?m.ls:0)); me.src=s; me.g=g; }).catch(()=>{}); } // 전투 뒤 밤으로 돌아가듯 다시 듣는 곡은 도입을 건너뛰고 반복 구간부터
+      const n=c.currentTime, again=played[k]&&m.ls!=null; played[k]=1; if(old){ g.gain.setValueAtTime(0,n); g.gain.linearRampToValueAtTime(1,n+1.2); } else { const C=new Float32Array(48); for(let i=0;i<48;i++) C[i]=Math.pow(i/47,2.2); g.gain.setValueCurveAtTime(C,n,4); } s.connect(g); g.connect(gB); s.start(n,L.off+(again?m.ls:0)); me.src=s; me.g=g; }).catch(()=>{}); } // 전투 뒤 밤으로 돌아가듯 다시 듣는 곡은 도입을 건너뛰고 반복 구간부터
   // 연출음: 한 번 재생, 그동안 배경음악을 낮춤. 화면 연출과 맞추려고 멈출 수 있는 손잡이를 돌려준다
   // o.at: 몇 초 뒤에 울릴지 · o.sync: 화면 연출에 맞춘 소리라, 늦게 불러와지면 그만큼 앞부분을 건너뛰어 어긋나지 않게 한다
   let duckN=0;
@@ -18662,6 +18665,13 @@ function sndScene(){
   return w.tod==='밤'?'night':'day';
 }
 function sndSync(){ const k=sndScene(); if(k!==undefined) Snd.bgm(k); }
+// 로비 단추 소리: 사람이 직접 누른 단추 · 링크만(자기 소리가 있는 단추 · 소리 끄기는 빼고), 닫기는 낮고 부드럽게
+document.addEventListener('click',e=>{ try{ if(!e.isTrusted||$('#intro').classList.contains('hidden')) return;
+  const b=e.target.closest('button,a[href],[role=button],summary'); if(!b||b.disabled||b.closest('[data-nosfx]')) return;
+  if(b.matches('#startBtn,#contBtn,.lb-go,#sndNo')) return;
+  const t=(b.textContent||'').trim(), al=b.getAttribute('aria-label')||'';
+  const close=b.matches('.ab-x,.set-x,.bd-x')||/^(닫기|Close|閉じる)$/.test(t)||/^(닫기|Close|閉じる)$/.test(al);
+  Snd.sfx(close?'u_pause':'u_choice',{gap:0}); }catch(_){} });
 // 전투 한 합이 끝날 때마다 양쪽 건강 변화로 맞는 소리·막는 소리를 고른다
 let SB=null;
 function sndBattle(){ const S=Sim.S, w=S&&S.war, b=w&&w.battle;
@@ -18739,9 +18749,9 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
 
 /* ---- 로비 새 배치: 기존 단추를 그대로 옮겨 쓴다 (기능 · 번역은 그대로) ---- */
 (function(){ const $q=s=>document.querySelector(s), intro=$q('#intro'); if(!intro||typeof LOBBY==='undefined') return;
-  const TX={ko:{more:'이 밤의 이야기와 규칙',go:'이 밤으로 들어간다',spoil:'※ TYPE-MOON 세계관에 대한 스포일러가 포함될 수 있습니다.',none:'아직 불 켜진 창도,<br>떠오른 별도 없다.',lit:(a,b)=>`<b>${a}번</b>의 생이 불을 켜고,<br><b>${b}명</b>의 영령이 별이 되었다.`,close:'닫기',snd:'소리 켜기 · 끄기',set:'설정'},
-    en:{more:'The story and rules of this night',go:'Into the night',spoil:'※ May contain spoilers for the TYPE-MOON universe.',none:'No window is lit yet,<br>and no star has risen.',lit:(a,b)=>`<b>${a}</b> ${a===1?'life has':'lives have'} lit the city,<br><b>${b}</b> Heroic Spirit${b===1?' has':'s have'} become stars.`,close:'Close',snd:'Sound on / off',set:'Settings'},
-    ja:{more:'この夜の物語とルール',go:'この夜へ',spoil:'※ TYPE-MOON作品の世界観に関するネタバレを含む場合があります。',none:'まだ灯る窓も、<br>昇る星もない。',lit:(a,b)=>`<b>${a}</b>の生が灯をともし、<br><b>${b}</b>人の英霊が星になった。`,close:'閉じる',snd:'サウンドのオン・オフ',set:'設定'}}[typeof LANG==='string'&&['en','ja'].includes(LANG)?LANG:'ko'];
+  const TX={ko:{more:'이 밤의 이야기와 규칙',go:'입장',spoil:'※ TYPE-MOON 세계관에 대한 스포일러가 포함될 수 있습니다.',none:'아직 불 켜진 창도,<br>떠오른 별도 없다.',lit:(a,b)=>`<b>${a}번</b>의 생이 불을 켜고,<br><b>${b}명</b>의 영령이 별이 되었다.`,close:'닫기',snd:'소리 켜기 · 끄기',set:'설정'},
+    en:{more:'The story and rules of this night',go:'Enter',spoil:'※ May contain spoilers for the TYPE-MOON universe.',none:'No window is lit yet,<br>and no star has risen.',lit:(a,b)=>`<b>${a}</b> ${a===1?'life has':'lives have'} lit the city,<br><b>${b}</b> Heroic Spirit${b===1?' has':'s have'} become stars.`,close:'Close',snd:'Sound on / off',set:'Settings'},
+    ja:{more:'この夜の物語とルール',go:'入場',spoil:'※ TYPE-MOON作品の世界観に関するネタバレを含む場合があります。',none:'まだ灯る窓も、<br>昇る星もない。',lit:(a,b)=>`<b>${a}</b>の生が灯をともし、<br><b>${b}</b>人の英霊が星になった。`,close:'閉じる',snd:'サウンドのオン・オフ',set:'設定'}}[typeof LANG==='string'&&['en','ja'].includes(LANG)?LANG:'ko'];
   const el=(t,c,h)=>{ const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e; };
   const mv=(p,...s)=>s.forEach(x=>{ const n=typeof x==='string'?$q(x):x; if(n) p.appendChild(n); });
   intro.classList.add('lb');
@@ -18867,7 +18877,7 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
   const P=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
   const I={back:P('<path d="M15 5l-7 7 7 7"/>'),eye:P('<path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/>'),
    eyeoff:P('<path d="M3 3l18 18"/><path d="M10.6 6.1A10.6 10.6 0 0 1 12 6c6.4 0 10 6 10 6a17 17 0 0 1-3.1 3.7M6.5 7.6C3.8 9.3 2 12 2 12s3.6 6 10 6c1.6 0 3-.4 4.2-.9"/>'),
-   snd:P('<path d="M4 10h4l5-4v12l-5-4H4z"/><path d="M16 9c1.5 1.5 1.5 4.5 0 6M18.5 7c3 3 3 7 0 10"/>'),gear:P('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>'),
+   snd:P('<path d="M4 10h4l5-4v12l-5-4H4z"/><path d="M16 9c1.5 1.5 1.5 4.5 0 6M18.5 7c3 3 3 7 0 10"/>'),gear:P('<path d="M10.24 4.81 L10.57 2.51 L13.43 2.51 L13.76 4.81 L15.84 5.67 L17.70 4.27 L19.73 6.30 L18.33 8.16 L19.19 10.24 L21.49 10.57 L21.49 13.43 L19.19 13.76 L18.33 15.84 L19.73 17.70 L17.70 19.73 L15.84 18.33 L13.76 19.19 L13.43 21.49 L10.57 21.49 L10.24 19.19 L8.16 18.33 L6.30 19.73 L4.27 17.70 L5.67 15.84 L4.81 13.76 L2.51 13.43 L2.51 10.57 L4.81 10.24 L5.67 8.16 L4.27 6.30 L6.30 4.27 L8.16 5.67Z"/><circle cx="12" cy="12" r="3.2"/>'),
    link:P('<circle cx="8" cy="12" r="4"/><circle cx="16" cy="12" r="4"/>'),lock:P('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
    dex:P('<path d="M12 3l8 9-8 9-8-9z"/><path d="M12 8l3.5 4L12 16l-3.5-4z"/>'),lives:P('<path d="M12 3c-1.5 3 2 4 0 7-1 1.5-3 1-3-1"/><path d="M8 13a4 4 0 0 0 8 0c0-3-2-4-2-6"/><path d="M6 21h12"/>'),
    ach:P('<path d="M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M12 13v4M8 21h8M9 17h6"/>'),sent:P('<path d="M21 3 3 10.5l7 2.5 2.5 7z"/><path d="M10 13l5-5"/>'),scn:P('<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M9 8h6"/>')};

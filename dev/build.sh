@@ -67,6 +67,7 @@ python3 relpick_apply.py build/game.html          # 인연 1단계에서 애정 
 python3 relopen_apply.py build/game.html          # 연애 가능으로: 멀린 · 솔로몬 · 시바의 여왕 (애정 대사 90줄 · 영어 · 일본어) (11-15)
 python3 solhuman_apply.py build/game.html         # 사람이 된 솔로몬: 곁에 남는 조건 · 재능 선택지 11곳 · 재능 사건 6개 (11-15)
 python3 lobbybgm_apply.py build/game.html         # 로비 배경음악 5곡: 로비로 들어올 때마다 무작위 1곡(바로 앞 곡 제외) · 예전 title 곡 대신 (11-15)
+python3 lobbyfb_apply.py build/game.html          # 로비 피드백: 첫 배경음악 4초에 걸쳐 커짐 · 입장 단추(가운데) · ✕를 창 안으로 · 톱니바퀴 · 로비 단추 소리 (11-15)
 python3 loading_apply.py build/game.html          # 로딩 화면: 성배에 금빛이 차오름 (11-13)
 python3 bxfx_apply.py build/game.html            # 비스트 연출 ①~⑥: 봉인 · 빈 자리 · 강림 · 키아라 입장 · 단독현현 · 결말 (11-12 시안 → 11-13 연결)
 python3 bxfx2_apply.py build/game.html           # 비스트 연출 ⑦~⑪: KP · 해방 · 봉인이 갈라짐 · 토벌령 · 격돌 (11-13 연결)
