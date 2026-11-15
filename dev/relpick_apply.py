@@ -4,6 +4,7 @@
 - 고르지 않고 우정으로 바로 가는 경우는 그대로: 미성년 마스터 · 아이 서번트 · 연인 불가 서번트 · 배우자가 살아 있는 마스터.
   이 우정 이유(미성년 · 배우자)는 이제 성별과 상관없이 붙어서, 에필로그의 애정 전환 장면도 같은 성별 · 엘키두에게 열린다.
 - 1단계 전 서번트 카드: 다음 「호감 · 전우」.
+- 대사 두 줄: 길가메시 3단계 '왕비의 자리' → '왕좌 옆자리' (한·영·일) · 슈텐도지 아침 일본어 「旦那はん」 → 「主はん」
 - 서번트와의 아이: 같은 성별 · 성별 없음이면 「아이를 갖는다」가 빠지고 입양 · 둘로 충분하다만 남는다.
 사용: python3 relpick_apply.py <game.html>"""
 import sys, i18n
@@ -48,6 +49,11 @@ for P in sys.argv[1:]:
     # 서번트와의 아이: 같은 성별 · 성별 없음이면 낳는 선택지가 빠진다
     rp("{ let nm=null; const late=femAge()>45;",
        "{ let nm=null; const late=femAge()>45||relSame(H_BY[S.hero]);")
+    # 마스터의 성별을 전제한 대사 두 줄(같은 성별 애정이 열리며 어긋나게 된 것)
+    rp("왕비의 자리는 주지 않는다.", "왕좌 옆자리는 주지 않는다.", 3)   # 길가메시 3단계 · 대사와 번역 틀 두 곳
+    rp("I will not give you a queen's throne.", "I will not give you the seat beside my throne.")
+    rp("王妃の座はやらぬ。", "玉座の隣の座はやらぬ。")
+    rp("おはよう、旦那はん。", "おはよう、主はん。")   # 슈텐도지 아침(일본어만)
     s, nd, nt = i18n.add(s, D, [])
     print('relpick miss', miss, 'tr', nd, nt)
     if miss: sys.exit(1)
