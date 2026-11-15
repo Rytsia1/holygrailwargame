@@ -5,3 +5,4 @@ dev/__pycache__/
 dev/base.html
 dev/build/
 dev/*.uicheck.html
+dev/zh/__pycache__/
