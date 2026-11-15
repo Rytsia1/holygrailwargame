@@ -7,7 +7,8 @@
 ⑤ 「형제」 동맹 거절: 형제가 각인을 받았으면 / 아무도 받지 않았으면 대사가 다르다.
 ⑥ 결과 화면 령주: 남은 획을 '3 − 쓴 획'이 아니라 전쟁이 끝날 때 실제로 남은 획으로(사건으로 더 받은 령주 반영).
 ⑦ 에필로그 「검은 옷의 대행자」: 교회 출신 · 교회와 인연을 맺은 사람 · 감독관은 '쓰러뜨린 마스터의 가문이 낸 진정'만으로는 오지 않는다.
-⑧ 전투 중 대화로 상대가 무기를 거두면 그날 밤 행동이 끝난다(습격 · 밤 사건이 이어지지 않는다). 다시 붙어 응급 치유를 또 쓰던 것.
+⑧ 최후의 결전에서는 대화로 싸움을 멈출 수 없다(물러날 수 없는 것과 같다). 멈추면 곧바로 다시 붙어 응급 치유를 새로 쓰며 이기던 것.
+   그 밖의 싸움에서 말로 끝나면 물러남과 같이 그날 밤의 나머지 순서는 그대로 이어진다(바꾸지 않음).
 ⑨ 마의 피 · 과거시의 마안: 전투 행동이 없는 마안은 상태 패널에 늘 켜져 있는 효과를 한 줄로 보여 준다.
 사용: python3 bug1115_apply.py <game.html>"""
 import sys, i18n
@@ -36,9 +37,6 @@ D = [
      '戦闘に入ると、相手陣営が歩んできた道を読み取る'),
 ]
 T = [
-    ('동맹 {0} 조가 {1} 조에게 습격당했다는 소식은 새벽에야 들었다.',
-     'You only heard at dawn that your ally, the {0} team, had been attacked by the {1} team.',
-     '同盟の{0}陣営が{1}陣営に襲われたという知らせは、明け方になってようやく届いた。'),
     ('강의실 맨 뒷줄에 {0~이} 앉아 있었다. 질문 시간에 한 학생이 “서번트는 전쟁이 끝나면 어디로 가나요?”라고 물었다. 대답하는 동안 웃음을 참기 어려웠다.',
      '{0} was sitting in the back row of the lecture hall. During questions, a student asked, “Where do Servants go when the war ends?” It was hard not to laugh while you answered.',
      '講義室の最後列に{0}が座っていた。質問の時間、ある学生が「サーヴァントは戦争が終わるとどこへ行くんですか？」と尋ねた。答える間、笑いをこらえるのが大変だった。'),
@@ -88,19 +86,8 @@ for P in sys.argv[1:]:
        "c:()=>!!(S.flags.civ||(S.flags.killedMaster&&!(S.origin==='church'||S.flags.churchTie||S.flags.overseer))||S.flags.cupDisaster||S.flags.churchOwe)")
     rp(":S.flags.killedMaster?'검은 옷의 남자가",
        ":S.flags.killedMaster&&!(S.origin==='church'||S.flags.churchTie||S.flags.overseer)?'검은 옷의 남자가")
-    # ⑧ 대화로 끝난 밤
-    rp("      b.res='talk'; return endBattle(); }",
-       "      if(w.tod==='밤') w.quietN=w.day; // 말로 끝난 밤: 그날 밤 행동은 여기서 끝난다(습격 · 밤 사건 없음)\n      b.res='talk'; return endBattle(); }")
-    rp("  function threat(){\n    const w=W(); if(w.ended||!w.heroAlive||S.pending) return;",
-       "  function threat(){\n    const w=W(); if(w.ended||!w.heroAlive||S.pending) return; if(w.quietN===w.day) return;")
-    rp("  function warEvent(){\n    const w=W(); if(w.ended||!w.heroAlive||S.pending||S.dead) return;",
-       "  function warEvent(){\n    const w=W(); if(w.ended||!w.heroAlive||S.pending||S.dead) return; if(w.quietN===w.day) return;")
-    # 최후의 결전은 말로 멈출 수 없다(멈춰도 곧바로 다시 붙어, 응급 치유를 새로 쓰며 이기던 것)
+    # ⑧ 최후의 결전은 말로 멈출 수 없다(물러날 수 없는 것처럼. 멈춰도 곧바로 다시 붙어, 응급 치유를 새로 쓰며 이기던 것)
     rp("    if(ch(stop)){", "    if(!b.ctx.final&&ch(stop)){")
-    # 말로 끝난 밤에는 동맹의 급한 연락에도 달려가지 않는다(그 싸움은 그들끼리 결판난다 · 외면으로 치지 않는다)
-    rp("    const a=pairBy(r.a), b=pairBy(r.b); if(!a||!b||!a.alive||!b.alive||!b.ally||!a.master) return;",
-       "    const a=pairBy(r.a), b=pairBy(r.b); if(!a||!b||!a.alive||!b.alive||!b.ally||!a.master) return;\n"
-       "    if(w.quietN===w.day){ log(`동맹 ${pName(b)} 조가 ${pName(a)} 조에게 습격당했다는 소식은 새벽에야 들었다.`,'war'); allyRaidFight(a,b); return; }")
     # ⑨ 전투 행동이 없는 마안의 효과
     rp("return {n:GIFTS[g.id].n,gr:GRADE_N[g.gr],ctl:['제어 못 함','제어 보통','제어 능숙'][g.ctl||0]}; }",
        "return {n:GIFTS[g.id].n,gr:GRADE_N[g.gr],ctl:['제어 못 함','제어 보통','제어 능숙'][g.ctl||0],"
