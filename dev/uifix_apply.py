@@ -3,6 +3,7 @@
   새 창 장식(얇은 금테 틀)으로. 단계 칩은 둥근 알약 대신 다른 칩과 같은 각진 칩, 지금 단계는 금테 + 은은한 금빛,
   목록 점은 마름모.
 - 결정 창의 「잠시 접기」: 제목 줄이 단추를 덮어 위 · 오른쪽 가장자리만 눌리던 것을, 단추를 제목 위로 올려 단추 전체가 눌리게.
+- 유리/불리 (추측) 선택지의 구분선이 틀 밖으로 삐져나가던 것: 오른쪽 여백을 표시 폭에 맞춰 110px로.
 사용: python3 uifix_apply.py <game.html>"""
 import sys
 CSS = ("#dlg .ai{border:7px solid transparent!important;border-image:var(--lbTG) 14 fill / 12px / 0 stretch!important;background:none!important;"
@@ -16,7 +17,10 @@ CSS = ("#dlg .ai{border:7px solid transparent!important;border-image:var(--lbTG)
        "#dlg .ai-steps span.stp-c{color:#f3e8cb;background:rgba(216,189,124,.2);border-color:#d8bd7c;text-shadow:0 0 6px rgba(230,200,140,.45)}\n"
        "#dlg .ai-main{color:#e2c98e;border-color:rgba(216,189,124,.55)}\n"
        # 잠시 접기: 제목 줄이 단추 위를 덮어 가장자리만 눌리던 것 → 단추를 제목 위로
-       "#dlg .dfold{position:relative;z-index:2}")
+       "#dlg .dfold{position:relative;z-index:2}\n"
+       # 유리/불리 (추측) 표시가 있는 선택지: 새 창에서 오른쪽 여백이 70px로 줄었는데 구분선은 예전 여백(118px)만큼 늘려 틀 밖으로 삐져나감
+       # → 여백을 표시 폭에 맞춰 110px로, 구분선은 그 여백 끝까지(−104px)
+       "#dlg .choice.hasadv.est{padding-right:110px}")
 for P in sys.argv[1:]:
     s = open(P, encoding='utf-8').read(); miss = []
     a = "#dlg .choice .cs span,#dlg .choice .adv,#dlg .ai-main,#dlg .ai-steps span{border-radius:4px}"
