@@ -7415,7 +7415,7 @@ const Sim = (() => {
     else { c.bb.me=1; log(`${hero().name}${J(hero().name,이)} 손을 펼쳤다. 도시 한가운데의 성배가 보이지 않는 상자에 갇혔다.`,'voice'); c.bbAsk=w.day; }
     log('문 셀의 백업: 봉인을 쥔 BB는 모든 능력치가 령주를 쓴 것처럼 한 단계씩 버틴다.','war');
     // 수녀 조의 거짓 탈락 통지
-    if(n&&n.alive){ n.alive=false; n.bxFake=1; n.revealed=true; pairOut(n,'탈락 통지(거짓)'); log(`감독관의 통지: ${cn(n)} 조 탈락.`,'notice');
+    if(n&&n.alive){ n.bxKnew={r:!!n.revealed,a:!!n.artKnown}; n.alive=false; n.bxFake=1; n.revealed=true; pairOut(n,'탈락 통지(거짓)'); log(`감독관의 통지: ${cn(n)} 조 탈락.`,'notice');
       bxLater(3,'그 조가 쓰러진 자리에서 아무것도 수습되지 않았다는 이야기를 들었다.'); }
     // 토벌령: 수녀가 매장기관 신분으로 감독관을 움직였다
     const tgt=at==='me'?'당신의 조':at==='npc'?`${pName(pairBy(c.bb.i))} 조`:pName(bxBBU());
@@ -7431,7 +7431,7 @@ const Sim = (() => {
   // BB가 없는 생: 성배가 차는 밤 (18-J)
   function bxNoBB(){ const w=W(), c=BXW(), n=bxNunP();
     log('자정, 성배가 있던 자리가 텅 비어 있었다. 감독관은 성배가 아직 차지 않았으니 전쟁은 이어진다고만 알렸다.','notice',{fx:{t:'bxseal',nb:1,d:w.day}});
-    if(n&&n.alive){ n.alive=false; n.bxFake=1; n.revealed=true; pairOut(n,'탈락 통지(거짓)'); log(`감독관의 통지: ${cn(n)} 조 탈락.`,'notice'); }
+    if(n&&n.alive){ n.bxKnew={r:!!n.revealed,a:!!n.artKnown}; n.alive=false; n.bxFake=1; n.revealed=true; pairOut(n,'탈락 통지(거짓)'); log(`감독관의 통지: ${cn(n)} 조 탈락.`,'notice'); }
     c.noBB=1; c.descAt=BXK.nwD; bxSentStart();
     // 남은 자리: 7일차 전에 탈락한 서번트를 최근 순으로 (봉인이 없어 성배째 삼켰다)
     const fell=w.pairs.filter(p=>!p.alive&&!p.bxFake&&p.hero!=='bb'&&!p.bxSentUsed).sort((a,b)=>((b.out&&b.out.d)||0)-((a.out&&a.out.d)||0));
@@ -7443,7 +7443,7 @@ const Sim = (() => {
   const bxFreeKp=()=>BXW().kp.find(k=>k.at==='kiara')||null;
   // 센티넬: 수녀의 서번트 → (BB가 쥔 하나) → 소환되지 않은 멜트릴리스 · 패션립 → 7일차 이후 탈락하는 서번트
   function bxSentStart(){ const w=W(), c=BXW();
-    bxMkSent(c.nunHero,{nun:true});
+    { const n=bxNunP(), k=n&&(n.bxKnew||{r:!!n.revealed,a:!!n.artKnown}); bxMkSent(c.nunHero,{nun:true,src:n?{revealed:k.r,artKnown:k.a}:undefined}); }
     if(c.bb.at!=='none'){ const k=bxFreeKp(); if(k){ if(c.bb.at==='me'){ k.at='got'; c.kpGot=(c.kpGot||0)+1; c.kpMe=(c.kpMe||0)+1; } else k.at='bb'; } }
     const summoned=new Set([S.hero,...w.pairs.map(p=>p.hero)]);
     for(const id of ['meltryllis','passionlip']) if(!summoned.has(id)) bxMkSent(id,{ego:true}); }
