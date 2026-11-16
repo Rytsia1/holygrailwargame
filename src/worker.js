@@ -4,7 +4,7 @@
 //   GET  /api/health  상태 확인
 //   POST /api/life    한 생이 끝날 때 게임 결과를 익명으로 받는다
 //   POST /api/life/fix  새 서번트가 허용 목록에 빠져 있던 동안 서번트 칸이 빈 채 저장된 생을 그 기기의 기록으로 채운다
-//   GET  /api/stats   모인 결과를 합쳐 돌려준다 (10분 동안 캐시)
+//   GET  /api/stats   모인 결과를 합쳐 돌려준다 (합친 결과를 D1 한 줄로 두고 10분마다 한 요청만 다시 센다)
 //                     ?since=&until= (ms 시각, since=new는 신규 서번트 17명이 처음 기록된 때) — 그 기간만 클래스·서번트·엔딩별로 (통계 페이지 /stats.html)
 //   POST /api/ghost   살아남은 조를 다른 겨울로 보낸다 (이름을 공개하기로 한 경우에만 이름 포함)
 //   GET  /api/ghost   ?year=&dev= — 1~40년 앞선 전쟁에서 살아남은 다른 기기의 조를 몇 개 받는다
@@ -100,6 +100,8 @@ const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS sync_groups (gid TEXT PRIMARY KEY, ver INTEGER NOT NULL, ts INTEGER NOT NULL, seen INTEGER NOT NULL, devs INTEGER NOT NULL, size INTEGER NOT NULL, data TEXT NOT NULL)`,
   `CREATE INDEX IF NOT EXISTS sync_groups_seen ON sync_groups(seen)`,
   `CREATE TABLE IF NOT EXISTS sync_codes (code TEXT PRIMARY KEY, gid TEXT NOT NULL, key TEXT NOT NULL, exp INTEGER NOT NULL)`,
+  // 통계 스냅숏: 합친 결과를 한 줄로 남겨 둔다. busy = 지금 다시 세고 있는 요청이 잡은 시각
+  `CREATE TABLE IF NOT EXISTS stats_snap (k TEXT PRIMARY KEY, at INTEGER NOT NULL, busy INTEGER NOT NULL DEFAULT 0, body TEXT NOT NULL)`,
 ];
 let schemaReady = null;
 const ensureSchema = env => (schemaReady ??= env.DB.batch(SCHEMA.map(s => env.DB.prepare(s))).catch(e => { schemaReady = null; throw e; }));
@@ -243,10 +245,17 @@ async function getGhost(request, url, env) {
   const dev = str(url.searchParams.get('dev'), ID) || '-';
   if (!year) return json({ ok: false, error: 'bad_year' }, 400);
   await ensureSchema(env);
-  const { results } = await env.DB.prepare(
-    `SELECT id, data FROM ghosts WHERE hidden = 0 AND dev != ? AND year BETWEEN ? AND ? ORDER BY random() LIMIT 4`
-  ).bind(dev, year - 40, year - 1).all();
-  const list = results.map(r => ({ id: r.id, ...JSON.parse(r.data) }));
+  // 조 id는 무작위 글자라 id 순서가 곧 섞인 순서다. 무작위 위치에서 시작해 id 순서로 12개만 읽고 그중 4개를 고른다
+  // (예전 ORDER BY random()은 조건에 맞는 조를 모두 읽고 섞었다). 12개에서 고르는 것은 id 간격 탓에 몇몇 조가
+  // 자주 뽑히는 쏠림을 줄이려고. +year: 연도 색인 대신 id 색인을 타게 한다.
+  const pivot = 'g' + crypto.randomUUID().replace(/-/g, '').slice(0, 20);
+  const pick = op => env.DB.prepare(
+    `SELECT id, data FROM ghosts WHERE id ${op} ? AND hidden = 0 AND dev != ? AND +year BETWEEN ? AND ? ORDER BY id LIMIT 12`
+  ).bind(pivot, dev, year - 40, year - 1).all();
+  let { results } = await pick('>=');
+  if (results.length < 12) results = results.concat((await pick('<')).results).slice(0, 12);   // 끝에 닿으면 처음부터 이어서
+  for (let i = results.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [results[i], results[j]] = [results[j], results[i]]; }
+  const list = results.slice(0, 4).map(r => ({ id: r.id, ...JSON.parse(r.data) }));
   return json({ ok: true, list });
 }
 
@@ -460,9 +469,45 @@ const cxOut = (rows, cls) => ({
 // 신규 서번트(2026.10.30) — 통계 페이지의 '신규 서번트 이후' 기준점
 const NEW_HEROES = ['baobhan','barghest','melusine','muramasa','ishtar','ereshkigal','lanling','habetrot','quetzalcoatl','kama','sheba','asclepius','constantine','huyan','lilith','yuyoku','nameless'];
 const tsArg = v => { const n = Number(v); return Number.isFinite(n) && n > 0 && n < 1e14 ? Math.floor(n) : null; };
-// 기간을 정해 합친다. 같은 기간을 여러 번 물어도 DB를 한 번만 읽도록 10분 캐시하고, 시각은 분 단위로 맞춘다.
+// 통계 스냅숏: 합친 결과를 stats_snap에 한 줄로 두고, 10분이 지나면 한 요청만 다시 센다.
+// (예전에는 Cache API에 10분 캐시했는데, 데이터센터마다 따로라 거의 매번 전체를 다시 셌다)
+// 다시 세는 동안 다른 요청은 지난 결과를 받는다. 처음이라 지난 결과가 없을 때만 기다린다.
+const SNAP_TTL = 10 * 60000, SNAP_LOCK = 2 * 60000;
+async function snapStats(env, ctx, key, build) {
+  const now = Date.now();
+  const row = await env.DB.prepare(`SELECT at, body FROM stats_snap WHERE k = ?`).bind(key).first();
+  if (row && row.body && now - row.at < SNAP_TTL) return row.body;
+  // 다시 셀 차례를 잡는다: busy가 비었거나 너무 오래된 경우에만 한 요청이 잡는다
+  const claim = await env.DB.prepare(
+    `INSERT INTO stats_snap (k, at, busy, body) VALUES (?, 0, ?, '') ON CONFLICT(k) DO UPDATE SET busy = excluded.busy WHERE stats_snap.busy < ?`
+  ).bind(key, now, now - SNAP_LOCK).run();
+  const mine = !!(claim.meta && claim.meta.changes);
+  const redo = async () => {
+    try {
+      const body = JSON.stringify(await build());
+      await env.DB.batch([
+        env.DB.prepare(`UPDATE stats_snap SET at = ?, busy = 0, body = ? WHERE k = ?`).bind(Date.now(), body, key),
+        env.DB.prepare(`DELETE FROM stats_snap WHERE k != 'all' AND at < ? AND busy < ?`).bind(now - 86400000, now - SNAP_LOCK),   // 하루 넘게 안 쓴 기간 통계는 지운다
+      ]);
+      return body;
+    } catch (e) {
+      await env.DB.prepare(`UPDATE stats_snap SET busy = 0 WHERE k = ?`).bind(key).run().catch(() => {});
+      throw e;
+    }
+  };
+  if (row && row.body) {               // 지난 결과가 있으면 그것을 바로 주고, 차례를 잡았으면 뒤에서 다시 센다
+    if (mine) ctx.waitUntil(redo().catch(e => console.error('stats redo', e && e.message)));
+    return row.body;
+  }
+  return mine ? redo() : JSON.stringify(await build());   // 처음: 지난 결과가 없으니 센다
+}
+const statsRes = body => new Response(body, {
+  status: 200,
+  headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=600', 'x-content-type-options': 'nosniff' },
+});
+
+// 기간을 정해 합친다. 시각은 분 단위로 맞추고, 같은 기간은 스냅숏 한 줄을 같이 쓴다.
 async function getStatsRange(request, env, ctx, url) {
-  const cache = caches.default;
   const sRaw = url.searchParams.get('since'), uRaw = url.searchParams.get('until');
   await ensureSchema(env);
   let since = sRaw === 'new' ? null : tsArg(sRaw), until = tsArg(uRaw);
@@ -471,73 +516,64 @@ async function getStatsRange(request, env, ctx, url) {
     since = (r && r.t0) || null;
   }
   const M = 60000; since = since ? Math.floor(since / M) * M : 0; until = until ? Math.ceil(until / M) * M : 0;
-  const ck = new URL('/api/stats', request.url); ck.searchParams.set('since', String(since)); if (until) ck.searchParams.set('until', String(until));
-  const key = new Request(ck.toString(), { method: 'GET' });
-  const hit = await cache.match(key);
-  if (hit) return hit;
   const W = `ts >= ?${until ? ' AND ts < ?' : ''}`, B = until ? [since, until] : [since];
   const q = (sql) => env.DB.prepare(sql).bind(...B);
-  const [tot, heroes, cls, ends, cxr, cxc] = await env.DB.batch([
-    q(`SELECT COUNT(*) AS lives, COUNT(DISTINCT dev) AS players, MIN(ts) AS first, MAX(ts) AS last, ROUND(AVG(age), 1) AS avgAge,
-              SUM(hero IS NOT NULL) AS warLives, SUM(hero IS NOT NULL AND ending IN ('victor', 'shared')) AS wins FROM lives WHERE ${W}`),
-    q(`SELECT hero, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE ${W} AND hero IS NOT NULL GROUP BY hero`),
-    q(`SELECT cls, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE ${W} AND hero IS NOT NULL GROUP BY cls`),
-    q(`SELECT ending, COUNT(*) AS n FROM lives WHERE ${W} GROUP BY ending`),
-    ...cxQ(env, W, B),
-  ]);
-  const t = tot.results[0] || {};
-  const body = {
-    ok: true, at: Date.now(), range: { since, until: until || null },
-    lives: t.lives || 0, players: t.players || 0, warLives: t.warLives || 0, wins: t.wins || 0,
-    first: t.first || null, last: t.last || null, avgAge: t.avgAge || null,
-    heroes: Object.fromEntries(heroes.results.map(r => [r.hero, [r.n, r.g || 0]])),
-    cls: Object.fromEntries(cls.results.filter(r => r.cls).map(r => [r.cls, [r.n, r.g || 0]])),
-    ends: Object.fromEntries(ends.results.map(r => [r.ending, r.n])),
-    cx: cxOut(cxr, cxc),
-  };
-  const res = json(body, 200, { 'cache-control': 'public, max-age=600' });
-  ctx.waitUntil(cache.put(key, res.clone()));
-  return res;
+  const body = await snapStats(env, ctx, `r:${since}:${until}`, async () => {
+    const [tot, heroes, cls, ends, cxr, cxc] = await env.DB.batch([
+      q(`SELECT COUNT(*) AS lives, COUNT(DISTINCT dev) AS players, MIN(ts) AS first, MAX(ts) AS last, ROUND(AVG(age), 1) AS avgAge,
+                SUM(hero IS NOT NULL) AS warLives, SUM(hero IS NOT NULL AND ending IN ('victor', 'shared')) AS wins FROM lives WHERE ${W}`),
+      q(`SELECT hero, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE ${W} AND hero IS NOT NULL GROUP BY hero`),
+      q(`SELECT cls, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE ${W} AND hero IS NOT NULL GROUP BY cls`),
+      q(`SELECT ending, COUNT(*) AS n FROM lives WHERE ${W} GROUP BY ending`),
+      ...cxQ(env, W, B),
+    ]);
+    const t = tot.results[0] || {};
+    return {
+      ok: true, at: Date.now(), range: { since, until: until || null },
+      lives: t.lives || 0, players: t.players || 0, warLives: t.warLives || 0, wins: t.wins || 0,
+      first: t.first || null, last: t.last || null, avgAge: t.avgAge || null,
+      heroes: Object.fromEntries(heroes.results.map(r => [r.hero, [r.n, r.g || 0]])),
+      cls: Object.fromEntries(cls.results.filter(r => r.cls).map(r => [r.cls, [r.n, r.g || 0]])),
+      ends: Object.fromEntries(ends.results.map(r => [r.ending, r.n])),
+      cx: cxOut(cxr, cxc),
+    };
+  });
+  return statsRes(body);
 }
 
 async function getStats(request, env, ctx) {
   if (await slowDown(env, request, 't')) return SLOW();
   const url = new URL(request.url);
   if (url.searchParams.has('since') || url.searchParams.has('until')) return getStatsRange(request, env, ctx, url);
-  const cache = caches.default;
-  const key = new Request(new URL('/api/stats', request.url).toString(), { method: 'GET' });
-  const hit = await cache.match(key);
-  if (hit) return hit;
-
   await ensureSchema(env);
-  const [tot, heroes, ends, cups, ach, cxr, cxc] = await env.DB.batch([
-    env.DB.prepare(`SELECT (SELECT COUNT(*) FROM lives) AS lives, (SELECT COUNT(*) FROM devices) AS players,
-                           (SELECT MIN(ts) FROM lives) AS since, (SELECT ROUND(AVG(age), 1) FROM lives) AS avgAge,
-                           (SELECT COUNT(*) FROM lives WHERE hero IS NOT NULL) AS warLives`),
-    env.DB.prepare(`SELECT hero, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE hero IS NOT NULL GROUP BY hero`),
-    env.DB.prepare(`SELECT ending, COUNT(*) AS n FROM lives GROUP BY ending`),
-    env.DB.prepare(`SELECT cup, COUNT(*) AS n FROM lives WHERE cup IS NOT NULL GROUP BY cup`),
-    env.DB.prepare(`SELECT ach, COUNT(*) AS n FROM dev_ach GROUP BY ach`),
-    ...cxQ(env, 'ts >= ?', [0]),
-  ]);
-  const t = tot.results[0] || {};
-  const body = {
-    ok: true,
-    at: Date.now(),
-    lives: t.lives || 0,
-    players: t.players || 0,
-    warLives: t.warLives || 0,
-    since: t.since || null,
-    avgAge: t.avgAge || null,
-    heroes: Object.fromEntries(heroes.results.map(r => [r.hero, [r.n, r.g || 0]])),
-    ends: Object.fromEntries(ends.results.map(r => [r.ending, r.n])),
-    cups: Object.fromEntries(cups.results.map(r => [r.cup, r.n])),
-    ach: Object.fromEntries(ach.results.map(r => [r.ach, r.n])),
-    cx: cxOut(cxr, cxc),
-  };
-  const res = json(body, 200, { 'cache-control': 'public, max-age=600' });
-  ctx.waitUntil(cache.put(key, res.clone()));
-  return res;
+  const body = await snapStats(env, ctx, 'all', async () => {
+    const [tot, heroes, ends, cups, ach, cxr, cxc] = await env.DB.batch([
+      env.DB.prepare(`SELECT (SELECT COUNT(*) FROM lives) AS lives, (SELECT COUNT(*) FROM devices) AS players,
+                             (SELECT MIN(ts) FROM lives) AS since, (SELECT ROUND(AVG(age), 1) FROM lives) AS avgAge,
+                             (SELECT COUNT(*) FROM lives WHERE hero IS NOT NULL) AS warLives`),
+      env.DB.prepare(`SELECT hero, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE hero IS NOT NULL GROUP BY hero`),
+      env.DB.prepare(`SELECT ending, COUNT(*) AS n FROM lives GROUP BY ending`),
+      env.DB.prepare(`SELECT cup, COUNT(*) AS n FROM lives WHERE cup IS NOT NULL GROUP BY cup`),
+      env.DB.prepare(`SELECT ach, COUNT(*) AS n FROM dev_ach GROUP BY ach`),
+      ...cxQ(env, 'ts >= ?', [0]),
+    ]);
+    const t = tot.results[0] || {};
+    return {
+      ok: true,
+      at: Date.now(),
+      lives: t.lives || 0,
+      players: t.players || 0,
+      warLives: t.warLives || 0,
+      since: t.since || null,
+      avgAge: t.avgAge || null,
+      heroes: Object.fromEntries(heroes.results.map(r => [r.hero, [r.n, r.g || 0]])),
+      ends: Object.fromEntries(ends.results.map(r => [r.ending, r.n])),
+      cups: Object.fromEntries(cups.results.map(r => [r.cup, r.n])),
+      ach: Object.fromEntries(ach.results.map(r => [r.ach, r.n])),
+      cx: cxOut(cxr, cxc),
+    };
+  });
+  return statsRes(body);
 }
 
 export default {
@@ -572,7 +608,7 @@ export default {
       if (url.pathname.startsWith('/api/')) return json({ ok: false, error: 'not_found' }, 404);
     } catch (e) {
       if (e instanceof TooBig) return json({ ok: false, error: 'too_big' }, 413);
-      console.error(e);
+      console.error(`${request.method} ${url.pathname} — ${(e && e.name) || 'Error'}: ${(e && e.message) || e}`, e && e.stack);
       return json({ ok: false, error: 'server' }, 500);
     }
     return env.ASSETS.fetch(request);
