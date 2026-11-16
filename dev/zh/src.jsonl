@@ -33263,3 +33263,7 @@
 {"id": 33263, "k": "d", "ko": "남은 빛은 곁에 남는 데 쓰였다.", "en": "The remaining light was spent on staying by your side.", "ja": "残った光は、そばに残るために使われた。"}
 {"id": 33264, "k": "t", "ko": "성배가 빛났다. 빛은 {0}에게 모여들었다가, 아무것도 바꾸지 못하고 그 둘레를 맴돌았다.", "en": "The Grail shone. The light gathered around {0}, then only circled there, unable to change anything.", "ja": "聖杯が輝いた。光は{0}のもとへ集まり、何も変えられないまま、そのまわりを巡った。"}
 {"id": 33265, "k": "t", "ko": "소원은 이미 이루어져 있었다. 남은 빛이 {0}에게 스며들었다. 다음 날 아침, {1}는 처음으로 배가 고프다고 했다.", "en": "The wish had already come true. The remaining light seeped into {0}. The next morning, {1:he} said for the first time that {1:he} was hungry.", "ja": "願いはすでに叶っていた。残った光が{0}に染み込んだ。翌朝、{1}は初めてお腹が空いたと言った。"}
+{"id": 33266, "k": "d", "ko": "성유물", "en": "Relic", "ja": "聖遺物"}
+{"id": 33267, "k": "d", "ko": "손에 넣은 적이 있다", "en": "You once held it", "ja": "かつて手にしたことがある"}
+{"id": 33268, "k": "t", "ko": "‘{0}’의 주인", "en": "Owner of “{0}”", "ja": "「{0}」の持ち主"}
+{"id": 33269, "k": "t", "ko": "그중 {0}번 쓰러뜨렸다", "en": "defeated {0}", "ja": "うち{0}回撃破"}

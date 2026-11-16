@@ -82,4 +82,5 @@ python3 fb1116_apply.py build/game.html           # 11-16 피드백: 엄호 반�
 python3 bxaoe_apply.py build/game.html            # 범위 보구가 호위 센티넬을 휩쓴다(확률은 보구 범위, 피해는 센티넬 능력치) · 호위 밤 회복 +4 · 승률 보정 (11-16)
 python3 langui_apply.py build/game.html           # 언어 선택: 로비 위쪽 언어 단추 하나 + 언어 창(설정 창 틀) (11-16)
 python3 lovewish_apply.py build/game.html          # 이미 이루어진 소원: 연인(멜뤼진은 지기도)과 서번트의 소원 → 수육 (11-16)
+python3 dexrelic_apply.py build/game.html          # 도감 성유물: 계약 상세의 성유물 줄 · 쥐어 본 성유물의 주인(??? 칸) (11-16)
 python3 zh/zh_apply.py build/game.html            # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 전 숨김 (11-16)
