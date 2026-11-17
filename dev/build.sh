@@ -84,4 +84,5 @@ python3 langui_apply.py build/game.html           # 언어 선택: 로비 위쪽
 python3 lovewish_apply.py build/game.html          # 이미 이루어진 소원: 연인(멜뤼진은 지기도)과 서번트의 소원 → 수육 (11-16)
 python3 dexrelic_apply.py build/game.html          # 도감 성유물: 계약 상세의 성유물 줄 · 쥐어 본 성유물의 주인(??? 칸) (11-16)
 python3 bxguard_apply.py build/game.html           # 비스트 업적 「호위를 걷어 내다」: 강림 전에 센티넬을 다 잡아도 열림 (11-17)
+python3 sexfix_apply.py build/game.html            # 성별: 프렐라티 남성 · 카게키요 여성, 지문 · 번역도 (11-17)
 python3 zh/zh_apply.py build/game.html            # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 전 숨김 (11-16)

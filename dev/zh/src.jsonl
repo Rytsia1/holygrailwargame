@@ -3074,8 +3074,8 @@
 {"id": 3074, "k": "d", "ko": "옛 친구 몫. 나머진 우리 거야.", "en": "For an old friend. The rest is ours.", "ja": "昔の友達の分。残りは私たちの。"}
 {"id": 3075, "k": "d", "ko": "그는 장바구니를 쥔 채 멈춰 섰다.", "en": "He stopped short, still gripping the shopping bag.", "ja": "彼は買い物袋を握ったまま立ち止まった。"}
 {"id": 3076, "k": "d", "ko": "…눈을, 스스로 찔렀다. 겐지의 세상, 보기 싫어서. …사실은. 혼자 남은 나를, 보기 싫었다.", "en": "…My eyes. I put them out myself. Did not want to see, the Genji's world. …In truth. I did not want to see myself, left alone.", "ja": "…目を、自ら突いた。源氏の世を、見たくなくて。…本当は。ひとり残った己を、見たくなかった。"}
-{"id": 3077, "k": "d", "ko": "…딸이, 찾아왔다. 늙은 장님에게. 카게키요는, 모른다고 했다. …부끄러웠다. 그것뿐.", "en": "…My daughter, came looking. For an old blind man. Kagekiyo said, he did not know her. …I was ashamed. That is all.", "ja": "…娘が、訪ねてきた。老いた盲人のもとへ。景清は、知らぬと言った。…恥ずかしかった。それだけだ。"}
-{"id": 3078, "k": "d", "ko": "…헤이케의 어린 임금. 바다로 갔다. 카게키요는, 따라가지 못했다. 그날부터, 죽지 못한다.", "en": "…The young emperor of the Heike. Went into the sea. Kagekiyo, could not follow. From that day, he cannot die.", "ja": "…平家の幼き帝。海へ行った。景清は、ついて行けなかった。あの日から、死ねぬ。"}
+{"id": 3077, "k": "d", "ko": "…딸이, 찾아왔다. 늙은 장님에게. 카게키요는, 모른다고 했다. …부끄러웠다. 그것뿐.", "en": "…My daughter, came looking. For the old blind one. Kagekiyo said, she knew no such girl. …I was ashamed. That is all.", "ja": "…娘が、訪ねてきた。老いた盲人のもとへ。景清は、知らぬと言った。…恥ずかしかった。それだけだ。"}
+{"id": 3078, "k": "d", "ko": "…헤이케의 어린 임금. 바다로 갔다. 카게키요는, 따라가지 못했다. 그날부터, 죽지 못한다.", "en": "…The young emperor of the Heike. Went into the sea. Kagekiyo, could not follow. From that day, she cannot die.", "ja": "…平家の幼き帝。海へ行った。景清は、ついて行けなかった。あの日から、死ねぬ。"}
 {"id": 3079, "k": "d", "ko": "…카게키요는, 베는 것밖에 모른다. 그래도. 너는, 베고 싶지 않다. …곁에, 있고 싶다.", "en": "…Kagekiyo knows only how to cut. Even so. You, I do not want to cut. …I want to be, by your side.", "ja": "…景清は、斬ることしか知らぬ。それでも。お前は、斬りたくない。…傍に、いたい。"}
 {"id": 3080, "k": "d", "ko": "…원령은, 사람을 좋아하면 안 된다. 그렇게 들었다. …상관없다. 너를, 좋아한다.", "en": "…A vengeful spirit, must not love a person. So I was told. …It does not matter. I love you.", "ja": "…怨霊は、人を好いてはならぬ。そう聞いた。…構わぬ。お前が、好きだ。"}
 {"id": 3081, "k": "d", "ko": "…일어났나. 밥. 지었다. 탔다.", "en": "…Awake. Rice. I cooked it. It burned.", "ja": "…起きたか。飯。炊いた。焦げた。"}
@@ -14733,7 +14733,7 @@
 {"id": 14733, "k": "d", "ko": "늑대가 들꽃 앞에서 오래 멈춰 있었다.", "en": "The wolf stopped for a long time in front of some wildflowers.", "ja": "狼が野の花の前で長いこと立ち止まっていた。"}
 {"id": 14734, "k": "d", "ko": "늑대는 사람이 다가오면 으르렁거렸다. 당신만은 예외였다.", "en": "The wolf growled whenever people approached. You were the only exception.", "ja": "狼は人が近づくと唸った。あなただけは例外だった。"}
 {"id": 14735, "k": "d", "ko": "카게키요가 바닷가에 서 있었다. 밤새.", "en": "Kagekiyo stood on the seashore. All night.", "ja": "景清が海辺に立っていた。一晩中。"}
-{"id": 14736, "k": "d", "ko": "카게키요는 \"겐지\"라는 글자를 보면 칼을 뽑으려 했다.", "en": "Whenever Kagekiyo saw the characters for “Genji,” he tried to draw his sword.", "ja": "景清は「源氏」という文字を見ると刀を抜こうとした。"}
+{"id": 14736, "k": "d", "ko": "카게키요는 \"겐지\"라는 글자를 보면 칼을 뽑으려 했다.", "en": "Whenever Kagekiyo saw the characters for “Genji,” she tried to draw her sword.", "ja": "景清は「源氏」という文字を見ると刀を抜こうとした。"}
 {"id": 14737, "k": "d", "ko": "카게키요가 아주 드물게 조개를 주워 와 당신에게 건넸다.", "en": "On very rare occasions, Kagekiyo picked up a seashell and handed it to you.", "ja": "景清がごく稀に、貝殻を拾ってきてあなたに手渡した。"}
 {"id": 14738, "k": "d", "ko": "앙리 마유가 소파에 누워 텔레비전을 봤다.", "en": "Angra Mainyu lay on the sofa watching TV.", "ja": "アンリマユがソファに寝転んでテレビを見ていた。"}
 {"id": 14739, "k": "d", "ko": "앙리 마유가 동네 사람에게 길을 알려 주었다. 친절했다.", "en": "Angra Mainyu gave a neighbor directions. He was kind about it.", "ja": "アンリマユが近所の人に道を教えてあげていた。親切だった。"}
@@ -17656,7 +17656,7 @@
 {"id": 17656, "k": "d", "ko": "헤센과 로보는 사람이 없는 새벽 공원만 골라 걸었다. 늑대는 이슬 젖은 풀 냄새를 오래 맡았다.", "en": "Hessian and Lobo walked only through parks at dawn when no one was around. The wolf breathed in the scent of dew-wet grass for a long time.", "ja": "ヘシアンとロボは、人のいない明け方の公園だけを選んで歩いた。狼は露に濡れた草の匂いを長いこと嗅いでいた。"}
 {"id": 17657, "k": "d", "ko": "…헤이케는, 졌다. 바다에, 가라앉았다. …너는, 지지 마라.", "en": "…The Heike, lost. Sank, into the sea. …You, don't lose.", "ja": "…平家は、負けた。海に、沈んだ。…お前は、負けるな。"}
 {"id": 17658, "k": "d", "ko": "…원한은, 따뜻하다. 그래서, 놓기 어렵다. …이상한 말이다. 잊어라.", "en": "…Grudges, are warm. So, hard to let go. …Strange thing to say. Forget it.", "ja": "…怨みは、温かい。だから、手放しがたい。…妙なことを言った。忘れろ。"}
-{"id": 17659, "k": "d", "ko": "카게키요는 해변에 서서 파도를 오래 보았다. 바다를 향해 무언가 중얼거리고는 등을 돌렸다.", "en": "Kagekiyo stood on the beach and watched the waves for a long time. He muttered something toward the sea, then turned his back.", "ja": "景清は浜辺に立ち、長いこと波を見ていた。海に向かって何かを呟くと、背を向けた。"}
+{"id": 17659, "k": "d", "ko": "카게키요는 해변에 서서 파도를 오래 보았다. 바다를 향해 무언가 중얼거리고는 등을 돌렸다.", "en": "Kagekiyo stood on the beach and watched the waves for a long time. She muttered something toward the sea, then turned her back.", "ja": "景清は浜辺に立ち、長いこと波を見ていた。海に向かって何かを呟くと、背を向けた。"}
 {"id": 17660, "k": "d", "ko": "나는 이 세상 모든 악이래. 근데 사실 그냥 시골 마을 청년이었어. 웃기지? 다들 나한테 악을 떠넘긴 거야.", "en": "They say I'm All the World's Evil. But really, I was just some guy from a country village. Funny, right? Everyone just dumped their evil on me.", "ja": "オレはこの世全ての悪なんだとさ。でも本当は、ただの田舎の村の若造だったんだ。笑えるだろ？みんなでオレに悪を押しつけたってわけ。"}
 {"id": 17661, "k": "d", "ko": "최약의 서번트라고 했지? 진짜야. 그러니까 기대하지 마. …그래도 네가 기대하면, 좀 해 볼게.", "en": "I said I'm the weakest Servant, right? It's true. So don't expect anything. …Still, if you do expect something, I'll give it a shot.", "ja": "最弱のサーヴァントだって言ったろ？マジだよ。だから期待すんな。…まあ、あんたが期待するってんなら、ちょっとはやってみるさ。"}
 {"id": 17662, "k": "d", "ko": "앙리 마유는 편의점 앞에 쪼그려 앉아 컵라면을 먹었다. “이게 인간의 행복이지.”", "en": "Angra Mainyu squatted outside a convenience store eating cup noodles. “This right here is human happiness.”", "ja": "アンリマユはコンビニの前にしゃがみ込んでカップ麺を食べた。「これが人間の幸せってやつだよな」"}
@@ -33268,3 +33268,27 @@
 {"id": 33268, "k": "t", "ko": "‘{0}’의 주인", "en": "Owner of “{0}”", "ja": "「{0}」の持ち主"}
 {"id": 33269, "k": "t", "ko": "그중 {0}번 쓰러뜨렸다", "en": "defeated {0}", "ja": "うち{0}回撃破"}
 {"id": 33270, "k": "d", "ko": "센티넬을 모두 걷어 내고 키아라를 쓰러뜨렸다", "en": "Defeated Kiara after every Sentinel had fallen", "ja": "センチネルをすべて退け、キアラを倒した"}
+{"id": 33271, "k": "d", "ko": "그는 웃다가 문득 입을 다물었다.", "en": "He was laughing, then suddenly fell silent.", "ja": "彼は笑っていたが、ふと口をつぐんだ。"}
+{"id": 33272, "k": "d", "ko": "그는 장바구니를 흔들며 앞질러 걸었다.", "en": "He swung the shopping bag and walked on ahead of you.", "ja": "彼は買い物袋を揺らしながら、先を歩いた。"}
+{"id": 33273, "k": "d", "ko": "그는 카드 한 장을 뒤집어 보였다. 아무 그림도 없었다.", "en": "He flipped a card over to show you. It was completely blank.", "ja": "彼はカードを一枚めくってみせた。何の絵も描かれていなかった。"}
+{"id": 33274, "k": "d", "ko": "그는 베개 옆에 종이꽃 하나를 두고 갔다.", "en": "He left a paper flower by your pillow.", "ja": "彼は枕元に紙の花を一輪置いていった。"}
+{"id": 33275, "k": "d", "ko": "그는 당신 손에 카드 한 장을 쥐여 주었다.", "en": "He pressed a card into your hand.", "ja": "彼はあなたの手にカードを一枚握らせた。"}
+{"id": 33276, "k": "d", "ko": "그는 웃으며 당신 이마에 손가락을 댔다.", "en": "Smiling, he touched a finger to your forehead.", "ja": "彼は笑いながら、あなたの額に指を当てた。"}
+{"id": 33277, "k": "d", "ko": "그는 잔 두 개를 든 채 잠깐 망설였다.", "en": "He hesitated a moment, a cup in each hand.", "ja": "彼はカップを二つ持ったまま、少しためらった。"}
+{"id": 33278, "k": "d", "ko": "그는 아이를 안고 숨을 죽였다.", "en": "He held the baby and held his breath.", "ja": "彼は赤ん坊を抱いて息を殺した。"}
+{"id": 33279, "k": "d", "ko": "그는 당신 어깨를 친 손으로 카드를 튕겼다.", "en": "He flicked a card with the hand that had clapped your shoulder.", "ja": "彼はあなたの肩を叩いた手で、カードを弾いた。"}
+{"id": 33280, "k": "d", "ko": "그는 잔 하나를 뒤집어 보였다가 바로 돌려놓았다.", "en": "He turned one cup upside down to show you, then set it right again.", "ja": "彼は杯を一つ逆さにしてみせて、すぐに戻した。"}
+{"id": 33281, "k": "d", "ko": "그는 마지막 카드를 당신 주머니에 넣었다.", "en": "He slipped his last card into your pocket.", "ja": "彼は最後のカードをあなたのポケットに入れた。"}
+{"id": 33282, "k": "d", "ko": "그는 흩어지는 손을 흔들어 작은 불꽃을 피웠다.", "en": "He waved his fading hand and kindled a tiny spark.", "ja": "彼は消えゆく手を振って、小さな火花を咲かせた。"}
+{"id": 33283, "k": "d", "ko": "그는 잔에 동전 하나를 넣었다가 사라지게 했다.", "en": "He dropped a coin into the cup, then made it vanish.", "ja": "彼は杯に硬貨を一枚入れて、消してみせた。"}
+{"id": 33284, "k": "d", "ko": "그녀는 장바구니를 쥔 채 멈춰 섰다.", "en": "She stopped short, still gripping the shopping bag.", "ja": "彼女は買い物袋を握ったまま立ち止まった。"}
+{"id": 33285, "k": "d", "ko": "그녀는 창가에서 몸을 돌렸다.", "en": "She turned from the window.", "ja": "彼女は窓辺で振り返った。"}
+{"id": 33286, "k": "d", "ko": "그녀는 당신 손을 잡았다가, 서툴게 놓았다.", "en": "She took your hand, then clumsily let it go.", "ja": "彼女はあなたの手を握り、不器用に離した。"}
+{"id": 33287, "k": "d", "ko": "그녀는 당신 손을 더듬어 찾아 꼭 쥐었다.", "en": "She groped for your hand and gripped it tight.", "ja": "彼女は手探りであなたの手を探し、強く握った。"}
+{"id": 33288, "k": "d", "ko": "그녀는 창을 열어 두고 오래 바람을 맞았다.", "en": "She left the window open and stood in the breeze for a long time.", "ja": "彼女は窓を開け放ち、長いこと風に当たっていた。"}
+{"id": 33289, "k": "d", "ko": "그녀는 아이를 칼처럼 받쳐 든 채 굳어 버렸다.", "en": "She froze, holding the baby up like a sword.", "ja": "彼女は赤子を刀のように捧げ持ったまま固まった。"}
+{"id": 33290, "k": "d", "ko": "그녀는 당신 어깨를 친 제 손을 내려다보았다.", "en": "She looked down at the hand that had clapped your shoulder.", "ja": "彼女はあなたの肩を叩いた自分の手を見下ろした。"}
+{"id": 33291, "k": "d", "ko": "그녀는 문 앞에 칼을 무릎에 놓고 앉아 있었다.", "en": "She was sitting at the door, sword across her knees.", "ja": "彼女は刀を膝に置いて戸口に座っていた。"}
+{"id": 33292, "k": "d", "ko": "그녀는 붉은 깃발 조각을 당신 손목에 감아 주었다.", "en": "She wound a scrap of red banner around your wrist.", "ja": "彼女は赤い旗の切れ端を、あなたの手首に巻いた。"}
+{"id": 33293, "k": "d", "ko": "그녀는 당신 어깨를 짚고 오래 서 있었다.", "en": "She rested a hand on your shoulder and stood there a long while.", "ja": "彼女はあなたの肩に手を置き、長いこと立っていた。"}
+{"id": 33294, "k": "d", "ko": "그녀는 잔 하나를 바다 쪽 창가에 먼저 놓았다.", "en": "She first set one cup on the windowsill facing the sea.", "ja": "彼女は杯をひとつ、まず海のほうの窓辺に置いた。"}
