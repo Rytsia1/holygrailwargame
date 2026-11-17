@@ -103,8 +103,15 @@ const SCHEMA = [
   // 통계 스냅숏: 합친 결과를 한 줄로 남겨 둔다. busy = 지금 다시 세고 있는 요청이 잡은 시각
   `CREATE TABLE IF NOT EXISTS stats_snap (k TEXT PRIMARY KEY, at INTEGER NOT NULL, busy INTEGER NOT NULL DEFAULT 0, body TEXT NOT NULL)`,
 ];
-let schemaReady = null;
-const ensureSchema = env => (schemaReady ??= env.DB.batch(SCHEMA.map(s => env.DB.prepare(s))).catch(e => { schemaReady = null; throw e; }));
+// 스키마 준비: 한 번 끝나면 표시만 남긴다. 준비 중인 promise를 여러 요청이 나눠 기다리면, 그 promise를 만든 요청이
+// 먼저 끝났을 때 나머지가 'This promise was created by a request that has since ended'로 실패하므로 요청마다 직접 기다린다.
+// (처음 켜질 때 몇 요청이 같이 돌려도 CREATE ... IF NOT EXISTS라 괜찮다)
+let schemaOk = false;
+const ensureSchema = async env => {
+  if (schemaOk) return;
+  await env.DB.batch(SCHEMA.map(s => env.DB.prepare(s)));
+  schemaOk = true;
+};
 
 const ENDINGS = new Set(['shared', 'victor', 'lost', 'survived', 'collapsed', 'withdrew', 'refused', 'dead', 'none']);
 const ID = /^[A-Za-z0-9_-]{1,40}$/;
@@ -282,13 +289,15 @@ async function withdrawGhost(request, env) {
 }
 
 // 접속 주소를 서버만 아는 무작위 값과 섞어 되돌릴 수 없는 짧은 값으로 바꾼다(신고 중복 확인용)
-let saltP = null;
-const salt = env => (saltP ??= (async () => {
+// (값만 기억한다 — 위 ensureSchema와 같은 까닭으로 promise를 요청끼리 나눠 기다리지 않는다)
+let saltV = null;
+const salt = async env => {
+  if (saltV) return saltV;
   const rnd = [...crypto.getRandomValues(new Uint8Array(24))].map(x => x.toString(16).padStart(2, '0')).join('');
   await env.DB.prepare(`INSERT OR IGNORE INTO meta (k, v) VALUES ('salt', ?)`).bind(rnd).run();
   const row = await env.DB.prepare(`SELECT v FROM meta WHERE k = 'salt'`).first();
-  return row.v;
-})().catch(e => { saltP = null; throw e; }));
+  return (saltV = row.v);
+};
 async function whoKey(env, request) {
   const data = new TextEncoder().encode((await salt(env)) + '|' + ipOf(request));
   const h = new Uint8Array(await crypto.subtle.digest('SHA-256', data));
