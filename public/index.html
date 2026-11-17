@@ -11087,7 +11087,7 @@ const Sim = (() => {
       if(e.ghost){ const q=W().pairs.find(q=>q!==e&&q.alive&&!q.revealed&&gKnow(e,q.hero)&&gKnow(e,q.hero).n); if(q) W().queue.push(()=>{ if(q.alive) revealPair(q,`쓰러진 ${e.mname}의 낡은 수첩에 그 이름이 적혀 있었다. `); }); } }
     if(by==='우리'&&W().churchQuest===e.i){ W().churchQuest=-1; W().seals++; log('며칠 뒤 신부가 찾아와 당신 손등에 령주 한 획을 그려 주었다. “약속드린 보답입니다.”','seal'); }
     if(e.aid==='mother') log(`${e.mname}${J(e.mname,은)} 그날 밤 병원으로 돌아갔다. 딸의 병실 불이 늦게까지 켜져 있었다.`,'loss');
-    if(npcStayAlone(e)){ e.lone=true; log(`마술사 ${e.mname}${J(e.mname,은)} 성당교회로 가지 않았다. 손등의 령주가 아직 빛나고 있다.`,'war'); }
+    if(npcStayAlone(e)){ e.lone=true; e.loneD=W().day; log(`마술사 ${e.mname}${J(e.mname,은)} 성당교회로 가지 않았다. 손등의 령주가 아직 빛나고 있다.`,'war'); }
     else if(ch(e.tac==='naive'||e.tac==='desperate'?.25:.45)){ e.master=false; log(`마술사 ${e.mname}의 행방은 알 수 없다.`,'war'); }
     else if(by==='우리'&&ch(.55)) W().queue.push(()=>defeatedMaster(e));
   }
@@ -11116,7 +11116,7 @@ const Sim = (() => {
   function npcStayAlone(p){ if(!(p.seals>0)) return false; const r=(STYLE[p.aid]||{retreat:30}).retreat; return ch(Math.max(.1,Math.min(.85,(55-r)/55))); }
   function npcRecontract(m,s){ const w=W();
     s.master=true; s.mDied=false; s.stray=0; s.mname=m.mname; s.aid=m.aid; s.arche=m.arche; s.tac=m.tac; s.pw=m.pw; s.seals=Math.max(0,(m.seals||1)-1); s.ghost=m.ghost||null; s.ghostIntro=!!m.ghostIntro; s.joinDay=m.joinDay;
-    s.hp=Math.max(s.hp,55); s.known=false; s.ally=false; s.truce=false; s.wishKnown=false; s.recon=1; m.lone=false; if(w.stray===s) w.stray=null;
+    s.hp=Math.max(s.hp,55); s.known=false; s.ally=false; s.truce=false; s.wishKnown=false; s.recon=1; s.reconD=w.day; m.lone=false; if(w.stray===s) w.stray=null;
     log(`감독관의 통지: 주인을 잃었던 ${cn(s)}${J(cn(s),이)} 새 마스터와 계약했다.${m.known?` 탈락했던 ${cn(m)} 조의 ${m.mname}${J(m.mname,이)==='이'?'이다':'다'}.`:''}`,'notice');
     wrec('hint',`${cn(s)} 서번트가 ${m.known?m.mname:'다른 마스터'}${J(m.known?m.mname:'다른 마스터',과)} 다시 계약했다`); }
   // 마스터를 노리는 정도: 어새신 서번트, 마스터를 먼저 노리는 마술사
@@ -11676,6 +11676,7 @@ const Sim = (() => {
     const w=W(); if(w.ended) return; w.nf=[]; for(const p of w.pairs){ p.nAct=null; p.rest=false; }
     for(const p of w.pairs){ if(p.alive&&!p.master&&p.stray>0){ p.stray--; if(p.stray<=0){p.alive=false;pairOut(p,'주인을 잃고 사라졌다');if(w.stray===p)w.stray=null;log(`주인 잃은 ${pName(p)}${J(pName(p),이)} 끝내 사라졌다.`);} } }
     for(const m of w.pairs.filter(p=>p.lone)){
+      if(m.loneD===w.day) continue;   // 서번트를 잃은 그 밤에는 다시 계약하지 않는다 (11-18)
       if(ch(.1)){ m.lone=false; continue; }
       const sv=strays(); if(sv.length&&ch(.4)) npcRecontract(m,pick(sv));
     }
@@ -11711,7 +11712,7 @@ const Sim = (() => {
         if(lh.sp==='revive'&&!lose.usedRevive){lose.usedRevive=true;lose.hp=45;if(seen)log(`멀리서 ${pName(lose)}${J(pName(lose),이)} 쓰러졌다가 다시 일어서는 것이 보였다.`);continue;}
         lose.alive=false; lose.revealed=true; pairOut(lose,'다른 조에게 쓰러졌다',seen?win:null);
         log(`감독관의 통지: ${cn(lose)} 조 탈락. ${seen?`${pName(win)} 조의 손에.`:''}`,'notice');
-        if(npcStayAlone(lose)){ lose.lone=true; if(seen||lose.known) log(`${lose.mname}${J(lose.mname,은)} 성당교회로 가지 않았다는 소문이다.`); }
+        if(npcStayAlone(lose)){ lose.lone=true; lose.loneD=w.day; if(seen||lose.known) log(`${lose.mname}${J(lose.mname,은)} 성당교회로 가지 않았다는 소문이다.`); }
         if(seen&&win.revealed&&!win.artKnown&&ch(.3)) revealArt(win,'멀리서 그 빛을 보았다. ');
         if(lose.ally){ log(`동맹 ${lose.mname}의 조가 무너졌다.`,'loss'); S.flags.allyName=lose.mname; }
         reported++;
@@ -11751,7 +11752,7 @@ const Sim = (() => {
     if(w.host&&w.host.go){ hostRescue(); return; } // 예전 세이브: 밤 행동을 이미 고른 뒤라면 여기서 치른다
     if(w.coal){ if(w.coal.d===w.day){ coalNight(); return; } w.coal=null; }
     if(w.siege){ if(w.siege.d===w.day&&w.altarGo!==w.day){ siegeNight(); return; } w.siege=null; }
-    const foes=contracted().filter(p=>!p.ally&&!p.truce&&!(p.halt>0)&&!p.rest&&raidOk(p)&&!(w.nf||[]).some(f=>f.includes(p.i))); // 오늘 밤 이미 다른 조와 싸운 조는 오지 않는다
+    const foes=contracted().filter(p=>!p.ally&&!p.truce&&!(p.halt>0)&&!p.rest&&p.reconD!==w.day&&raidOk(p)&&!(w.nf||[]).some(f=>f.includes(p.i))); // 오늘 밤 이미 다른 조와 싸운 조는 오지 않는다
     const P=.13+w.exposure*.003+w.day*.011-(w.hid?.12:0)-Math.min(w.fort,SIEGE_FORT)*.0015+(w.seals===0?.08:0)-SV(hero(),'stealth')*.012+(foes.some(p=>p.provoked>0)?.12:0)+(w.hunted?.08:0)+(w.altarPre&&!w.altarDone?.06:0);
     if(!foes.length||!ch(Math.max(.03,P))) return;
     if(w.altarGo===w.day) return;
