@@ -89,6 +89,7 @@ python3 patch201_apply.py build/game.html          # 패치 노트 2.01 「UI �
 python3 lbtop_apply.py build/game.html             # 로비 배경: 덜 넓은 화면에서 위쪽에 하늘 없는 띠가 생기던 것 (11-17)
 python3 dexego_apply.py build/game.html            # 도감: 문 캔서 · 얼터 에고 칸 (11-17)
 python3 namefix_apply.py build/game.html           # 이름 고정 (11-17)
+python3 artlove_apply.py build/game.html           # 알트리아 연애 가능 · 애정 대사 30줄 (11-18)
 python3 recon_apply.py build/game.html             # 재계약: 서번트를 잃은 밤엔 안 함 · 재계약한 밤엔 습격 안 함 (11-18)
 python3 l2lang_apply.py build/game.html            # 로비 2단계 언어 버튼을 1단계처럼 (11-18)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
