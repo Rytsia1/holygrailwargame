@@ -16853,7 +16853,7 @@ function renderVT(){ const hist=store.get(K_HIST)||[], c=dexLoad(), got=Sim.ACH.
   if(VT==='dex') renderDex(c); if(VT==='ach') renderAch(c); if(VT==='sent') renderSent(); }
 function dexClsOpen(c,k){ return Sim.HEROES.some(x=>x.cls===k&&['c','m'].includes(dexState(c,x.id))); }
 function dexState(c,id){ const e=c.heroes[id]; return !e?'u':e.c?'c':e.met?'m':e.seen?'s':'u'; }
-function renderDex(c){ const H=Sim.HEROES, CL=['sword','lance','bow','rider','caster','shadow','berserk','judge','avenger'].filter(k=>Sim.CLS[k]); const nC=H.filter(x=>dexState(c,x.id)==='c').length, nM=dexMetCount(c), nR=relTopCount(c), all=dexAllNames();
+function renderDex(c){ const H=Sim.HEROES, CL=['sword','lance','bow','rider','caster','shadow','berserk','judge','avenger','moon','ego'].filter(k=>Sim.CLS[k]); const nC=H.filter(x=>dexState(c,x.id)==='c').length, nM=dexMetCount(c), nR=relTopCount(c), all=dexAllNames();
   const unk=x=>{ const rh=!!(c.heroes[x.id]&&c.heroes[x.id].rh), t=rh?esc(tr(`‘${x.relic}’의 주인`)):'아직 만나지 못했다';
     return all?`<div class="dx-card u nm${rh?' rh':''}">${faceHtml(null,48,{unk:true})}<div><span class="n">${esc(x.name)}</span><span class="t">${t}</span></div></div>`:`<div class="dx-card u${rh?' rh':''}"${rh?` title="${t}"`:''}>${faceHtml(null,48,{unk:true})}<div><span class="n">???</span><span class="t">${t}</span></div>${rh?`<span class="mk">${esc(tr('성유물'))}</span>`:''}</div>`; };
   const cards=x=>{ const s=dexState(c,x.id), e=c.heroes[x.id]||{};
