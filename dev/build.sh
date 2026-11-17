@@ -86,4 +86,5 @@ python3 dexrelic_apply.py build/game.html          # 도감 성유물: 계약 �
 python3 bxguard_apply.py build/game.html           # 비스트 업적 「호위를 걷어 내다」: 강림 전에 센티넬을 다 잡아도 열림 (11-17)
 python3 sexfix_apply.py build/game.html            # 성별: 프렐라티 남성 · 카게키요 여성, 지문 · 번역도 (11-17)
 python3 patch201_apply.py build/game.html          # 패치 노트 2.01 「UI 스타일 개선 및 인연관계 개선」 (11-17)
+python3 lbtop_apply.py build/game.html             # 로비 배경: 덜 넓은 화면에서 위쪽에 하늘 없는 띠가 생기던 것 (11-17)
 python3 zh/zh_apply.py build/game.html            # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 전 숨김 (11-16)

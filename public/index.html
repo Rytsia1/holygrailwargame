@@ -14218,6 +14218,7 @@ function build(){cancelAnimationFrame(raf);if(!active)return;const vw=innerWidth
 function fit(){if(!Lr||!active)return;const vw=innerWidth,vh=innerHeight,W=Lr.W,H=Lr.H,FY=Lr.wide?H-160:620,acts=qs('#intro .lb-acts'),LN=typeof window.__lbLine==='function'?window.__lbLine(vw,vh):null,top=LN!=null?LN:acts?Math.min(vh,acts.getBoundingClientRect().top+scrollY):vh*.7,line=top-6;
  let s=Math.max(vw/W,vh/H)*1.035,y=line-FY*s;if(y>0){s=Math.max(s,line/FY);y=line-FY*s}
  const sMax=vw/(W*.78);if(s>sMax){s=sMax;y=line-FY*s}
+ if(y>0){y=0;if(H*s<vh)s=vh/H}   // 배경 위 끝은 늘 화면 위에: 상한에 걸려 내려가면 위쪽에 하늘 없는 띠가 보인다 (11-17)
  Lr.skyShift=Math.min(Lr.wide?90:150,Math.max(0,-y/s));const x=(vw-W*s)/2;stage.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${s.toFixed(4)})`;Lr.skyg.style.transform=`translateY(${Lr.skyShift.toFixed(1)}px)`;
  const fd=qs('#lobbyBg .lb-fade');if(fd)fd.style.top=Math.max(0,top-150)+'px';
  try{const c=Lr.O.sky.getContext('2d').getImageData(Lr.O.sky.width>>1,2,1,1).data;qs('#lobbyBg').style.background=`linear-gradient(rgb(${c[0]},${c[1]},${c[2]}),rgb(${c[0]},${c[1]},${c[2]}) 40%,#121019 41%)`}catch(e){}}
