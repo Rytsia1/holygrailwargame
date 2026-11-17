@@ -49,7 +49,7 @@ for li, lg in ((0, 'zhs'), (1, 'zht')):
 # 이미 넣은 파일: 사전 파일만 새로 만들고 불러오는 주소의 버전을 바꾼다 (--on이면 공개로)
 if 'const ZH_ON=' in s:
     s = re.sub(r"\{zhs:'[0-9a-f]{8}',zht:'[0-9a-f]{8}'\}\[L\]", "{zhs:'" + ver['zhs'] + "',zht:'" + ver['zht'] + "'}[L]", s)
-    if ON: s = s.replace('const ZH_ON=false;', 'const ZH_ON=true;').replace('const ZO=false;', 'const ZO=true;')
+    if ON: s = s.replace('const ZH_ON=false;', 'const ZH_ON=true;').replace('const ZO=false,', 'const ZO=true,')
     open(P, 'w', encoding='utf-8').write(s); print('사전만 새로 만듦' + (' · 공개' if ON else '')); sys.exit(0)
 
 # ---- ② 로딩 화면: 언어 읽기 + 중국어 사전 불러오기 ----
@@ -215,6 +215,6 @@ rp("""    title:'聖杯が満ちる<em>夜</em>'}}[LG];""", """    title:'聖杯
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
-if ON: s = s.replace('const ZH_ON=false;', 'const ZH_ON=true;').replace('const ZO=false;', 'const ZO=true;')
+if ON: s = s.replace('const ZH_ON=false;', 'const ZH_ON=true;').replace('const ZO=false,', 'const ZO=true,')
 open(P, 'w', encoding='utf-8').write(s)
 print('적용 끝', P, '(공개)' if ON else '(숨김)')

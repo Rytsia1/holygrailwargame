@@ -1895,7 +1895,7 @@ body.ld-on #intro{opacity:0!important}
 <body>
 <div id="ldScr" data-notr role="status" aria-live="polite"><canvas id="ldBg"></canvas><canvas id="ldCup"></canvas><p id="ldTxt"><span></span><b>0%</b></p></div>
 <script>
-(()=>{let L='ko';const ZO=false,LS=['ko','en','ja','zhs','zht'];try{const q=new URLSearchParams(location.search).get('lang');if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));const v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');if(LS.includes(v))L=v;else{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}}catch(e){}
+(()=>{let L='ko';const ZO=true,LS=['ko','en','ja','zhs','zht'];try{const q=new URLSearchParams(location.search).get('lang');if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));const v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');if(LS.includes(v))L=v;else{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}}catch(e){}
  if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'71f3a3de',zht:'7812a4c8'}[L]+'"><\/script>');
  document.querySelector('#ldTxt span').textContent={ko:'성배에 마력이 차오른다',en:'Mana is filling the Grail',ja:'聖杯に魔力が満ちていく',zhs:'魔力正在注满圣杯',zht:'魔力正在注滿聖杯'}[L];})();
 /* ===== 로딩 화면 (11-13): 하늘에서 금빛 줄기가 졸졸 떨어져 성배를 채우고, 넘쳐 쏟아진 뒤 성배와 검은 배경이 픽셀로 흩어진다 =====
@@ -14267,7 +14267,7 @@ const I18N_NAMES={"김":["Kim","キム","k","金","金"],"이":["Lee","イ","k",
    게임 엔진과 화면 코드는 한국어로 그대로 두고, 화면에 그려진 글자를 사전으로 바꿔 끼운다.
    사전에 없는 문장(아직 번역하지 않은 이야기)은 한국어로 남는다. */
 const LANGS=['ko','en','ja','zhs','zht'];
-const ZH_ON=false;   // 중국어 공개 전: 언어 창에 없고 자동으로 고르지 않는다(주소 ?lang=zhs · zht로만) — zh_apply.py --on으로 켠다
+const ZH_ON=true;   // 중국어 공개 전: 언어 창에 없고 자동으로 고르지 않는다(주소 ?lang=zhs · zht로만) — zh_apply.py --on으로 켠다
 const K_LANG='cupnight.lang';
 const LANG=(()=>{ try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'null'); if(LANGS.includes(v)) return v; }catch(e){}
   const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();
