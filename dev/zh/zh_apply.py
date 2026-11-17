@@ -144,8 +144,8 @@ rp("""date:(y,m,d)=>`${y}年${m}月${d}日`},
 }[LANG]||null;""")
 rp("""lead:sx=>`${sx==='f'?'女の子':'男の子'}が生まれた。名前をつけてください。`},
 }[LANG]||null;""", """lead:sx=>`${sx==='f'?'女の子':'男の子'}が生まれた。名前をつけてください。`},
-  zhs:{skip:'跳过',sur:'姓',given:'名',dice:'换个名字',ok:'就用这个名字',nofx:'下次起跳过开场演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。请为孩子取个名字。`},
-  zht:{skip:'跳過',sur:'姓',given:'名',dice:'換個名字',ok:'就用這個名字',nofx:'下次起跳過開場演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。請為孩子取個名字。`},
+  zhs:{skip:'跳过',sur:'姓',given:'名',dice:'换个名字',ok:'就用这个名字',fix:'下次也用这个名字',nofx:'下次起跳过开场演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。请为孩子取个名字。`},
+  zht:{skip:'跳過',sur:'姓',given:'名',dice:'換個名字',ok:'就用這個名字',fix:'下次也用這個名字',nofx:'下次起跳過開場演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。請為孩子取個名字。`},
 }[LANG]||null;""")
 rp("""concat(LANG==='ja'?["16px 'Noto Serif JP'","16px 'Noto Sans JP'"]:[]);""",
    """concat(LANG==='ja'?["16px 'Noto Serif JP'","16px 'Noto Sans JP'"]:ZH?["16px 'Noto Serif "+(LANG==='zht'?'TC':'SC')+"'","16px 'Noto Sans "+(LANG==='zht'?'TC':'SC')+"'"]:[]);""")

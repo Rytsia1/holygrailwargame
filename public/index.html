@@ -926,7 +926,7 @@ html,body{overflow-x:clip}
 .b-f input{background:var(--ink);border:1px solid var(--line);color:var(--text);border-radius:4px;padding:8px 10px;font:16px var(--f-ui);min-width:0;width:100%;box-sizing:border-box}
 .b-prev{margin:0;font-family:var(--f-display);font-size:22px;color:var(--gold2);text-align:center;min-height:1.4em;overflow-wrap:anywhere}
 .b-act{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.b-opt{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--faint);cursor:pointer}
+.b-opt{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--faint);cursor:pointer}.b-opts{display:flex;flex-wrap:wrap;gap:4px 16px}
 html.birth-on,html.birth-on body{overflow:hidden}
 
 /* ---- 비스트 Ⅲ/R 화면 효과: 단꿈 · 만다라 (봉인 bx2 · 강림 bx3) ---- */
@@ -2050,7 +2050,7 @@ play();
     </div>
     <p class="b-prev" id="bPrev" aria-live="polite"></p>
     <div class="b-act"><button type="button" class="btn" id="bDice"></button><button type="submit" class="btn primary" id="bOk"></button></div>
-    <label class="b-opt"><input type="checkbox" id="bNoFx"><span id="bLNoFx"></span></label>
+    <div class="b-opts"><label class="b-opt"><input type="checkbox" id="bFix"><span id="bLFix"></span></label><label class="b-opt"><input type="checkbox" id="bNoFx"><span id="bLNoFx"></span></label></div>
   </form>
 </div>
 
@@ -15456,17 +15456,18 @@ return {CX,OX};
 })();
 const K_NOFX='cupnight.nofx';
 const BT={
-  ko:{skip:'건너뛰기',sur:'성',given:'이름',dice:'다른 이름',ok:'이 이름으로',nofx:'다음부터 시작 연출 건너뛰기',aria:'태어나기',lead:sx=>`${sx==='f'?'여자아이':'남자아이'}가 태어났다. 이름을 지어 주세요.`},
-  en:{skip:'Skip',sur:'Surname',given:'Given name',dice:'Another name',ok:'Use this name',nofx:'Skip the opening next time',aria:'Birth',lead:sx=>`A ${sx==='f'?'girl':'boy'} is born. Choose a name.`},
-  ja:{skip:'スキップ',sur:'姓',given:'名',dice:'別の名前',ok:'この名前にする',nofx:'次回から演出を省略する',aria:'誕生',lead:sx=>`${sx==='f'?'女の子':'男の子'}が生まれた。名前をつけてください。`},
-  zhs:{skip:'跳过',sur:'姓',given:'名',dice:'换个名字',ok:'就用这个名字',nofx:'下次起跳过开场演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。请为孩子取个名字。`},
-  zht:{skip:'跳過',sur:'姓',given:'名',dice:'換個名字',ok:'就用這個名字',nofx:'下次起跳過開場演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。請為孩子取個名字。`},
+  ko:{skip:'건너뛰기',sur:'성',given:'이름',dice:'다른 이름',ok:'이 이름으로',fix:'다음에도 이 이름으로',nofx:'다음부터 시작 연출 건너뛰기',aria:'태어나기',lead:sx=>`${sx==='f'?'여자아이':'남자아이'}가 태어났다. 이름을 지어 주세요.`},
+  en:{skip:'Skip',sur:'Surname',given:'Given name',dice:'Another name',ok:'Use this name',fix:'Keep this name next time',nofx:'Skip the opening next time',aria:'Birth',lead:sx=>`A ${sx==='f'?'girl':'boy'} is born. Choose a name.`},
+  ja:{skip:'スキップ',sur:'姓',given:'名',dice:'別の名前',ok:'この名前にする',fix:'次回もこの名前にする',nofx:'次回から演出を省略する',aria:'誕生',lead:sx=>`${sx==='f'?'女の子':'男の子'}が生まれた。名前をつけてください。`},
+  zhs:{skip:'跳过',sur:'姓',given:'名',dice:'换个名字',ok:'就用这个名字',fix:'下次也用这个名字',nofx:'下次起跳过开场演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。请为孩子取个名字。`},
+  zht:{skip:'跳過',sur:'姓',given:'名',dice:'換個名字',ok:'就用這個名字',fix:'下次也用這個名字',nofx:'下次起跳過開場演出',aria:'降生',lead:sx=>`${sx==='f'?'女孩':'男孩'}出生了。請為孩子取個名字。`},
 }[LANG]||null;
+const K_NAMEFIX='cupnight.nameFix.v1';   // 이름 고정: 다음 생에도 이름 칸에 미리 채워 둘 성 · 이름 (11-17)
 const Birth=(()=>{
   const el=$('#birth'), cv=$('#bCv'), ctx=cv.getContext('2d'), form=$('#bName'), skipB=$('#bSkip');
   const BT0=BT||{skip:'건너뛰기',sur:'성',given:'이름',dice:'다른 이름',ok:'이 이름으로',nofx:'다음부터 시작 연출 건너뛰기',aria:'태어나기',lead:()=>''};
   el.setAttribute('aria-label',BT0.aria); skipB.textContent=BT0.skip; $('#bLSur').textContent=BT0.sur; $('#bLGiv').textContent=BT0.given;
-  $('#bDice').textContent=BT0.dice; $('#bOk').textContent=BT0.ok; $('#bLNoFx').textContent=BT0.nofx;
+  $('#bDice').textContent=BT0.dice; $('#bOk').textContent=BT0.ok; $('#bLNoFx').textContent=BT0.nofx; $('#bLFix').textContent=BT0.fix||'다음에도 이 이름으로';
   const FONTS=["40px 'Song Myung'","16px 'Gowun Batang'","700 16px 'Gowun Batang'","12px 'IBM Plex Mono'","12px 'IBM Plex Sans KR'","600 12px 'IBM Plex Sans KR'","40px 'Nanum Pen Script'"].concat(LANG==='ja'?["16px 'Noto Serif JP'","16px 'Noto Sans JP'"]:ZH?["16px 'Noto Serif "+(LANG==='zht'?'TC':'SC')+"'","16px 'Noto Sans "+(LANG==='zht'?'TC':'SC')+"'"]:[]);
   let W=0,H=0,DPR=1, raf=0, phase='', t0=0, f0=0, o0=0, T=0, done=null, S=null, sug=null, holdT=0;
   // 기기의 '애니메이션 줄이기' 설정으로는 연출을 건너뛰지 않는다(끄기는 게임 안 옵션으로만)
@@ -15511,7 +15512,7 @@ const Birth=(()=>{
     $('#bPrev').textContent=v||' '; }
   function showName(){ skipB.classList.add('hidden'); const L=Sim.NAMES[S.city.loc]||Sim.NAMES.ko;
     form.classList.toggle('gs',L.order==='gs'); $('#bLead').textContent=BT0.lead(S.sex);
-    sug={sur:S.sur,given:givenOf(S.name,S.sur,L)}; fill(); $('#bNoFx').checked=noFx(); form.classList.remove('hidden');
+    const fx=store.get(K_NAMEFIX); sug=fx&&(fx.sur||fx.given)?{sur:fx.sur||'',given:fx.given||''}:{sur:S.sur,given:givenOf(S.name,S.sur,L)}; fill(); $('#bFix').checked=!!(fx&&(fx.sur||fx.given)); $('#bNoFx').checked=noFx(); form.classList.remove('hidden');
     let coarse=false; try{ coarse=matchMedia('(pointer:coarse)').matches; }catch(e){}
     if(!coarse){ const f=L.order==='gs'?$('#bGiven'):$('#bSur'); f.focus(); f.select(); } }
   $('#bSur').oninput=prev; $('#bGiven').oninput=prev;
@@ -15520,7 +15521,7 @@ const Birth=(()=>{
     let a=$('#bSur').value.trim(), b=$('#bGiven').value.trim();
     if(a===disp(sug.sur)) a=sug.sur; if(b===disp(sug.given)) b=sug.given;
     if(!a&&!b){ a=sug.sur; b=sug.given; }
-    Sim.setName(a,b); const nf=$('#bNoFx').checked; store.set(K_NOFX,nf); if(typeof fxBtn==='function') fxBtn(); form.classList.add('hidden');
+    Sim.setName(a,b); if($('#bFix').checked) store.set(K_NAMEFIX,{sur:a,given:b}); else store.del(K_NAMEFIX); const nf=$('#bNoFx').checked; store.set(K_NOFX,nf); if(typeof fxBtn==='function') fxBtn(); form.classList.add('hidden');
     if(nf){ finish(); return; }
     skipB.classList.remove('hidden');
     if(reduce()){ phase='ostatic'; BOX.build(originP()); T=BOX.END; paint(); holdT=setTimeout(finish,2400); return; }
