@@ -94,4 +94,5 @@ python3 recon_apply.py build/game.html             # 재계약: 서번트를 잃
 python3 i18nfix20_apply.py build/game.html          # 일본어 화면에 남던 한국어: 섞인 이름 · 마력 공급 · 따옴표 나눔 · 센티넬 · 선택지 설명 (11-20)
 python3 l2lang_apply.py build/game.html            # 로비 2단계 언어 버튼을 1단계처럼 (11-18)
 python3 syncdev_apply.py build/game.html            # 기기 연결: 기기 목록 · 다른 기기 끊기 · 이름 바꾸기 (11-20)
+python3 fitlive_apply.py build/game.html           # 전쟁 중 궁합: 마스터 성향이 기준선을 넘나들면 성향 보정만 다시 계산(+10 / −10·7·4·0) (11-20)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
