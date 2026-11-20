@@ -24909,7 +24909,7 @@
 {"id": 24909, "k": "d", "ko": "령주가 없어도 캣은 안 간다. 밥그릇이 여기 있으니까. 그리고 주인도.", "en": "Even without Command Spells, Cat isn't leaving. Her food bowl is here. And so is her master.", "ja": "令呪がなくてもキャットは行かない。ご飯のお皿がここにあるからな。あと、ご主人も。"}
 {"id": 24910, "k": "d", "ko": "아침이다. 밥은 다 됐다. 오늘은 당근이 들어간다. 남기지 마라.", "en": "Morning. Breakfast is ready. Today there are carrots in it. Don't leave any.", "ja": "朝だ。ご飯はできてる。今日はにんじん入りだ。残すなよ。"}
 {"id": 24911, "k": "d", "ko": "흠, 주인이 정했다면 따른다. 고양이는 변덕스럽지만 오늘은 착하다.", "en": "Hmm, if my master decided, Cat follows. Cats are fickle, but today she's being good.", "ja": "ふむ、ご主人が決めたなら従う。猫は気まぐれだが、今日はいい子だ。"}
-{"id": 24912, "k": "d", "ko": "이 잔, 냄새가 고약하다. 상한 우유 같다. 캣은 이런 건 안 마신다. 주인도 마시지 마라.", "en": "This cup smells foul. Like spoiled milk. Cat won't drink this. Neither should you, Master.", "ja": "この杯、くさい。腐った牛乳みたいだ。キャットはこんなの飲まない。ご주인も飲むな。"}
+{"id": 24912, "k": "d", "ko": "이 잔, 냄새가 고약하다. 상한 우유 같다. 캣은 이런 건 안 마신다. 주인도 마시지 마라.", "en": "This cup smells foul. Like spoiled milk. Cat won't drink this. Neither should you, Master.", "ja": "この杯、くさい。腐った牛乳みたいだ。キャットはこんなの飲まない。ご主人も飲むな。"}
 {"id": 24913, "k": "d", "ko": "이겼다! 오늘은 축하 밥이다. 메뉴는 주인이 좋아하는 걸로 전부다. 멍!", "en": "We won! Tonight is a celebration feast. The menu is everything you like, Master. Woof!", "ja": "勝った！今日はお祝いご飯だ。メニューはご主人の好きなもの全部だ。ワン！"}
 {"id": 24914, "k": "d", "ko": "캣은 먼저 간다. 밥은 냉장고에 있다. 데워 먹어라.", "en": "Cat's heading off first. Food's in the fridge. Heat it up before you eat.", "ja": "キャットは先に行く。ご飯は冷蔵庫にある。温めて食べろ。"}
 {"id": 24915, "k": "d", "ko": "좋은 주인이었다. 캣은 좋은 고양이였을까.", "en": "You were a good master. Was Cat a good cat?", "ja": "いいご主人だった。キャットはいい猫だったかな。"}
@@ -33436,3 +33436,30 @@
 {"id": 33443, "k": "d", "ko": "츠바메 가에시는 피할 수 없다", "en": "Tsubame Gaeshi cannot be dodged", "ja": "燕返しはかわせない"}
 {"id": 33444, "k": "d", "ko": "협회가 수육한 영령의 존재를 알게 된다", "en": "The Association learns that an incarnated Heroic Spirit exists", "ja": "協会が受肉した英霊の存在を知る"}
 {"id": 33445, "k": "t", "ko": "밤사이 {0}에서 {1~이} 쓰러졌다고 한다.", "en": "Word is that {1} fell at {0} during the night.", "ja": "夜のうちに{0}で{1}が倒れたらしい。"}
+{"id": 33446, "k": "d", "ko": "기기 목록을 불러오는 중", "en": "Loading devices", "ja": "端末一覧を読み込み中"}
+{"id": 33447, "k": "d", "ko": "이름 바꾸기", "en": "Rename", "ja": "名前を変更"}
+{"id": 33448, "k": "d", "ko": "연결", "en": "linked", "ja": "連携"}
+{"id": 33449, "k": "d", "ko": "지금 사용 중", "en": "in use now", "ja": "使用中"}
+{"id": 33450, "k": "d", "ko": "마지막 접속", "en": "last seen", "ja": "最終接続"}
+{"id": 33451, "k": "d", "ko": "끊기", "en": "Unlink", "ja": "解除"}
+{"id": 33452, "k": "d", "ko": "저장", "en": "Save", "ja": "保存"}
+{"id": 33453, "k": "d", "ko": "기기 이름", "en": "Device name", "ja": "端末名"}
+{"id": 33454, "k": "d", "ko": "업데이트 전에 연결된 기기입니다. 그 기기에서 게임을 열면 이름이 나타납니다.", "en": "Linked before the update. Its name appears once the game is opened on that device.", "ja": "アップデート前に連携した端末です。その端末でゲームを開くと名前が表示されます。"}
+{"id": 33455, "k": "d", "ko": "계속 쓸 기기라면 먼저 그 기기에서 게임을 한 번 열고 나서 끊어 주세요.", "en": "If you still use that device, open the game on it once before unlinking.", "ja": "使い続ける端末なら、先にその端末でゲームを一度開いてから解除してください。"}
+{"id": 33456, "k": "d", "ko": "선택한 기기의 연결을 끊을까요?", "en": "Unlink the selected device?", "ja": "選んだ端末の連携を解除しますか？"}
+{"id": 33457, "k": "d", "ko": "그 기기는 다음에 맞추려 할 때 연결이 풀려, 이 기록을 더 받거나 바꿀 수 없습니다. 그 기기에 이미 있던 기록은 그 기기에 남습니다. 다시 쓰려면 새 연결 코드로 연결하면 됩니다.", "en": "That device will be unlinked the next time it tries to sync, and can no longer receive or change these records. Records already on it stay on that device. To use it again, link it with a new code.", "ja": "その端末は次に同期しようとしたときに連携が解除され、この記録を受け取ったり変更したりできなくなります。その端末にすでにある記録はその端末に残ります。また使うには、新しい連携コードで連携してください。"}
+{"id": 33458, "k": "d", "ko": "확인되지 않은 기기의 연결을 끊을까요?", "en": "Unlink the unconfirmed devices?", "ja": "確認されていない端末の連携を解除しますか？"}
+{"id": 33459, "k": "d", "ko": "계속 쓸 기기라면 그 기기에서 새 연결 코드로 다시 연결하면 됩니다.", "en": "If you still use one of them, link it again with a new code.", "ja": "使い続ける端末なら、その端末で新しい連携コードを使ってもう一度連携してください。"}
+{"id": 33460, "k": "d", "ko": "연결을 끊었습니다.", "en": "Unlinked.", "ja": "連携を解除しました。"}
+{"id": 33461, "k": "d", "ko": "이 기기 연결 끊기", "en": "Unlink this device", "ja": "この端末の連携を解除"}
+{"id": 33462, "k": "d", "ko": "다른 기기에서 이 기기의 연결을 끊었습니다. 이 기기의 기록은 그대로 남아 있습니다.", "en": "This device was unlinked from another device. The records on this device are still here.", "ja": "別の端末からこの端末の連携が解除されました。この端末の記録はそのまま残っています。"}
+{"id": 33463, "k": "d", "ko": "다른 기기에서 이 기기의 연결을 끊었습니다", "en": "This device was unlinked from another device", "ja": "別の端末からこの端末の連携が解除されました"}
+{"id": 33464, "k": "d", "ko": "이 기기는 아래 ‘이 기기 연결 끊기’로 끊어 주세요", "en": "Use ‘Unlink this device’ below for this device", "ja": "この端末は下の「この端末の連携を解除」で解除してください"}
+{"id": 33465, "k": "d", "ko": "기기 목록을 위해 기기 종류(예: iPhone · Safari), 직접 붙인 이름, 연결한 때, 마지막으로 맞춘 때를 함께 맡깁니다.", "en": "For the device list, it also stores each device's type (e.g. iPhone · Safari), the name you gave it, when it was linked, and when it last synced.", "ja": "端末一覧のため、端末の種類（例: iPhone · Safari）、自分で付けた名前、連携した日時、最後に同期した日時もあわせて預けます。"}
+{"id": 33466, "k": "d", "ko": "기기 목록", "en": "Device list", "ja": "端末一覧"}
+{"id": 33467, "k": "d", "ko": "연결된 기기는 설정의 ‘다른 기기와 연결’에서 볼 수 있습니다.", "en": "You can see linked devices under ‘Link devices’ in Settings.", "ja": "連携した端末は設定の「他の端末と連携」で確認できます。"}
+{"id": 33468, "k": "d", "ko": "다른 기기를 끊으면 그 기기는 다음에 맞출 때 연결이 풀립니다. 그 기기에 있던 기록은 그대로 남습니다.", "en": "If you unlink another device, it is unlinked the next time it syncs. The records on that device stay as they are.", "ja": "他の端末を解除すると、その端末は次の同期のときに連携が解除されます。その端末にあった記録はそのまま残ります。"}
+{"id": 33469, "k": "d", "ko": "업데이트 전에 연결된 기기는 그 기기에서 게임을 한 번 열 때까지 ‘아직 확인되지 않은 기기’로 보입니다. 다른 기기를 끊으면 확인되지 않은 기기도 함께 끊깁니다.", "en": "Devices linked before the update appear as ‘unconfirmed’ until the game is opened on them once. Unlinking another device also unlinks unconfirmed devices.", "ja": "アップデート前に連携した端末は、その端末でゲームを一度開くまで「まだ確認されていない端末」として表示されます。他の端末を解除すると、確認されていない端末も一緒に解除されます。"}
+{"id": 33470, "k": "t", "ko": "아직 확인되지 않은 기기 {0}대", "en": "{0} unconfirmed device(s)", "ja": "まだ確認されていない端末 {0}台"}
+{"id": 33471, "k": "t", "ko": "아직 확인되지 않은 기기 {0}대도 함께 끊깁니다.", "en": "{0} unconfirmed device(s) will be unlinked too.", "ja": "まだ確認されていない端末 {0}台も一緒に解除されます。"}
+{"id": 33472, "k": "t", "ko": "업데이트 전에 연결된 기기 {0}대가 끊깁니다.", "en": "{0} device(s) linked before the update will be unlinked.", "ja": "アップデート前に連携した端末 {0}台が解除されます。"}

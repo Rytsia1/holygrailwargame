@@ -93,4 +93,5 @@ python3 artlove_apply.py build/game.html           # 알트리아 연애 가능 
 python3 recon_apply.py build/game.html             # 재계약: 서번트를 잃은 밤엔 안 함 · 재계약한 밤엔 습격 안 함 (11-18)
 python3 i18nfix20_apply.py build/game.html          # 일본어 화면에 남던 한국어: 섞인 이름 · 마력 공급 · 따옴표 나눔 · 센티넬 · 선택지 설명 (11-20)
 python3 l2lang_apply.py build/game.html            # 로비 2단계 언어 버튼을 1단계처럼 (11-18)
+python3 syncdev_apply.py build/game.html            # 기기 연결: 기기 목록 · 다른 기기 끊기 · 이름 바꾸기 (11-20)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
