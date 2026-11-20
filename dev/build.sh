@@ -98,4 +98,5 @@ python3 fitlive_apply.py build/game.html           # 전쟁 중 궁합: 마스�
 python3 affview_apply.py build/game.html           # 성향 보기: 나의 서번트 칸 · 정보 창의 성향 · 속성 · 궁합, 상태 칸의 나의 성향(옅음 · 짙음 · 깊음, 눌러서 영향) (11-20)
 python3 duelfinal_apply.py build/game.html         # 약속된 결판은 결전 날에 끼어들지 않는다: 결투장 · 서번트의 고집 · 결판 약속 선택 (11-20)
 python3 fightday_apply.py build/game.html          # 싸움을 약속하는 일은 하루에 하나: 결투장 · 서번트의 고집 · 후계자의 결투장, 겹치면 먼저 한 약속 (11-20)
+python3 cross2_apply.py build/game.html            # 갈림길 61장면 추가 · 한 전쟁 최대 5번(하루 한 번 65%) · 마스터 유형 조건 · 나의 성향 · 원한과 빚 (11-20)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
