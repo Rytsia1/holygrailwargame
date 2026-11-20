@@ -95,4 +95,5 @@ python3 i18nfix20_apply.py build/game.html          # 일본어 화면에 남던
 python3 l2lang_apply.py build/game.html            # 로비 2단계 언어 버튼을 1단계처럼 (11-18)
 python3 syncdev_apply.py build/game.html            # 기기 연결: 기기 목록 · 다른 기기 끊기 · 이름 바꾸기 (11-20)
 python3 fitlive_apply.py build/game.html           # 전쟁 중 궁합: 마스터 성향이 기준선을 넘나들면 성향 보정만 다시 계산(+10 / −10·7·4·0) (11-20)
+python3 affview_apply.py build/game.html           # 성향 보기: 나의 서번트 칸 · 정보 창의 성향 · 속성 · 궁합, 상태 칸의 나의 성향(옅음 · 짙음 · 깊음, 눌러서 영향) (11-20)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
