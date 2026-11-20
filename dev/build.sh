@@ -100,4 +100,5 @@ python3 duelfinal_apply.py build/game.html         # 약속된 결판은 결전 
 python3 fightday_apply.py build/game.html          # 싸움을 약속하는 일은 하루에 하나: 결투장 · 서번트의 고집 · 후계자의 결투장, 겹치면 먼저 한 약속 (11-20)
 python3 cross2_apply.py build/game.html            # 갈림길 61장면 추가 · 한 전쟁 최대 5번(하루 한 번 65%) · 마스터 유형 조건 · 나의 성향 · 원한과 빚 (11-20)
 python3 life2_apply.py build/game.html             # 삶 성향 사건 46개 · 성향 사건 1.5배 · 마술 사건 2.2배 · 한 해 최대 2개(삶+성장) (11-20)
+python3 epi3_apply.py build/game.html             # 에필로그 성향 사건 50개(짙음 4 · 깊음 5) · 서번트가 떠난 삶의 봄 열나흘 · 첫 해 사건 100개 (11-21)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)

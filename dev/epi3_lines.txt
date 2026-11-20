@@ -1,0 +1,48 @@
+# 11-21 서번트가 떠난 삶 · 날과 달의 문장
+# DAY 열나흘 동안 아무 날에나 · DAYK 갈래(away 보낸 삶 · win 승리 · lost 잃음) · DAYL 열나흘째 밤 · MON n달째 · MONK 갈래 n달째 · END 첫 해가 끝날 때
+DAY 도시는 아무 일도 없었다는 듯 출근길을 서둘렀다.|The city hurried off to work as if nothing had happened.|街は何事もなかったように通勤を急いでいた。|城市像什么都没发生过一样，匆匆忙忙地赶着上班。
+DAY 혼자 사는 집의 소리가 낯설었다. 냉장고가 이렇게 크게 울리는 줄 몰랐다.|The sounds of a house lived in alone were unfamiliar. You hadn't known the fridge hummed so loudly.|ひとりで暮らす家の音が耳慣れなかった。冷蔵庫がこんなに大きく唸るとは知らなかった。|一个人住的屋子，声音都很陌生。你从不知道冰箱的嗡嗡声这么响。
+DAY 비가 왔다. 빗소리가 그 겨울의 발소리와 닮아 있었다.|It rained. The sound of the rain was like footsteps from that winter.|雨が降った。雨音があの冬の足音に似ていた。|下雨了。雨声很像那个冬天的脚步声。
+DAY 뉴스에서 일기 예보를 들었다. 내일은 맑다고 했다.|The weather report said tomorrow would be clear.|ニュースで天気予報を聞いた。明日は晴れるそうだ。|新闻里的天气预报说，明天是晴天。
+DAY 장을 보러 나갔다. 무엇을 사야 할지 몰라 한참 서 있었다.|You went grocery shopping and stood there a long time, not knowing what to buy.|買い物に出た。何を買えばいいのかわからず、しばらく立ち尽くした。|你出门买菜，却不知道该买什么，愣愣地站了很久。
+DAY 밤이 조용했다. 아무도 습격하지 않는 밤은 이렇게 길었다.|The night was quiet. A night with no attacks was this long.|夜は静かだった。誰も襲ってこない夜は、こんなに長かった。|夜很安静。没有袭击的夜晚，原来这么漫长。
+DAY 공원 벤치에 앉아 비둘기를 보았다. 비둘기들은 그 겨울을 기억하지 않았다.|You sat on a park bench and watched the pigeons. They didn't remember that winter.|公園のベンチに座って鳩を眺めた。鳩たちはあの冬を覚えていなかった。|你坐在公园长椅上看鸽子。鸽子们不记得那个冬天。
+DAY 현관에 신발이 한 켤레뿐이었다.|There was only one pair of shoes at the door.|玄関には靴が一足だけだった。|玄关只有一双鞋。
+DAY 오랜만에 텔레비전을 켰다. 웃음소리가 방을 채웠다. 끄지 않았다.|You turned on the TV for the first time in a while. Laughter filled the room. You left it on.|久しぶりにテレビをつけた。笑い声が部屋を満たした。消さなかった。|你久违地打开电视。笑声充满了房间。你没有关。
+DAY 편의점 점원이 요즘 안 보이셨다며 웃었다. 앓았다고 했다.|The convenience store clerk smiled and said they hadn't seen you in a while. You said you'd been sick.|コンビニの店員が、最近見かけなかったと笑った。寝込んでいたと答えた。|便利店店员笑着说最近都没见到你。你说生了一场病。
+DAY 빨래가 잘 말랐다. 개는 데 오 분도 걸리지 않았다.|The laundry dried well. Folding it took less than five minutes.|洗濯物がよく乾いた。畳むのに五分もかからなかった。|衣服晒得很干。叠好不到五分钟。
+DAY 낮잠을 잤다. 깨어났을 때 누가 있는 줄 알고 이름을 부를 뻔했다.|You took a nap. When you woke, you almost called out a name, thinking someone was there.|昼寝をした。目覚めたとき、誰かがいると思って名前を呼びそうになった。|你睡了个午觉。醒来时以为有人在，差点叫出一个名字。
+DAY 바람이 따뜻해졌다. 봄이 오는 것이 조금 억울했다.|The wind grew warmer. It felt a little unfair that spring was coming.|風が暖かくなった。春が来ることが、少し悔しかった。|风变暖了。春天要来了，这让你有点不甘心。
+DAY 저녁 하늘이 붉었다. 그 겨울의 하늘과는 다른 붉은색이었다.|The evening sky was red. A different red from that winter's sky.|夕方の空が赤かった。あの冬の空とは違う赤だった。|傍晚的天空是红色的，和那个冬天的天空红得不一样。
+DAYK away 배낭을 메고 나서던 뒷모습이 자꾸 떠올랐다.|You kept picturing their back as they set out with that backpack.|リュックを背負って出ていく後ろ姿が、何度も浮かんだ。|对方背着背包离开的背影，总是浮现在你眼前。
+DAYK away 지도를 펴 놓고 어디쯤 갔을지 짐작해 보았다.|You spread out a map and guessed where they might be by now.|地図を広げて、今ごろどのあたりにいるだろうかと考えた。|你摊开地图，猜想对方现在走到了哪里。
+DAYK away 같은 하늘 아래 어딘가에 있다는 것이 생각보다 큰 위로였다.|Knowing they were somewhere under the same sky was a bigger comfort than you expected.|同じ空の下のどこかにいるということが、思ったより大きな慰めだった。|知道对方在同一片天空下的某个地方，比你想象的更能安慰人。
+DAYK away 우편함을 하루에 세 번 열어 보았다.|You checked the mailbox three times a day.|郵便受けを一日に三回のぞいた。|你一天打开三次信箱。
+DAYK win 소원은 이루어졌다. 그런데도 무언가를 빼앗긴 기분이 들었다.|The wish had come true. And yet you felt as if something had been taken from you.|願いは叶った。それなのに、何かを奪われた気がした。|愿望实现了。可你还是觉得像被夺走了什么。
+DAYK win 성배를 쥐었던 손을 오래 들여다보았다. 그냥 손이었다.|You looked for a long time at the hand that had held the Grail. It was just a hand.|聖杯を握った手を長いこと見つめた。ただの手だった。|你久久凝视着握过圣杯的那只手。那只是一只普通的手。
+DAYK win 빛이 되어 흩어지던 마지막 장면은 눈을 감을 때마다 조금씩 덜 아팠다.|The last scene, when they scattered into light, hurt a little less each time you closed your eyes.|光となって散っていく最後の場面は、目を閉じるたびに少しずつ痛まなくなった。|对方化作光芒散去的最后一幕，每次闭上眼，都比上一次少痛一点。
+DAYK lost 이길 수도 있었던 밤을 하나씩 떠올렸다. 그러다 그만두었다.|You went over the nights you might have won, one by one. Then you stopped.|勝てたかもしれない夜をひとつずつ思い返した。そして、やめた。|你一个个回想那些本可以赢的夜晚。然后停了下来。
+DAYK lost 살아남았다는 것이 아직 실감 나지 않았다.|It still didn't feel real that you'd survived.|生き残ったという実感が、まだ湧かなかった。|活下来这件事，你还没有真实感。
+DAYK lost 그 사람이 지키려던 것이 당신이었다는 걸 이제야 조금 받아들였다.|Only now did you begin to accept that what they had been protecting was you.|あの人が守ろうとしていたのがあなただったことを、ようやく少し受け入れた。|直到现在，你才稍稍接受了那个人想守护的正是你。
+DAYL d 열나흘째 밤이었다. 그 겨울과 꼭 같은 길이를 이번에는 혼자 보냈다.|It was the fourteenth night. Exactly as long as that winter, spent alone this time.|十四日目の夜だった。あの冬とまったく同じ長さを、今度はひとりで過ごした。|第十四个夜晚。和那个冬天一样长的时间，这一次你独自度过了。
+DAYL away 열나흘째 밤이었다. 그 사람도 어딘가에서 같은 밤을 보내고 있을 것이다.|It was the fourteenth night. Somewhere, they were spending the same night.|十四日目の夜だった。あの人もどこかで同じ夜を過ごしているのだろう。|第十四个夜晚。那个人也一定在某个地方度过着同样的夜晚。
+MON 2 벚꽃이 피었다 졌다. 같이 보자던 약속은 꽃보다 오래 남았다.|The cherry blossoms bloomed and fell. The promise to see them together lasted longer than the flowers.|桜が咲いて散った。一緒に見ようという約束は、花より長く残った。|樱花开了又谢。说好要一起看的约定，比花留得更久。
+MON 3 낮이 길어졌다. 혼자 보내는 저녁도 그만큼 길어졌다.|The days grew longer. So did the evenings spent alone.|日が長くなった。ひとりで過ごす夕方も、そのぶん長くなった。|白天变长了。独自度过的傍晚也随之变长。
+MON 4 장마가 시작되었다. 젖은 신발을 말리며 그 겨울의 눈을 생각했다.|The rainy season began. Drying your wet shoes, you thought of that winter's snow.|梅雨が始まった。濡れた靴を乾かしながら、あの冬の雪を思った。|梅雨季开始了。晾干湿透的鞋时，你想起了那个冬天的雪。
+MON 5 매미가 울었다. 여름은 아무것도 묻지 않고 왔다.|The cicadas sang. Summer came without asking anything.|蝉が鳴いた。夏は何も問わずにやって来た。|蝉鸣声起。夏天什么也没问就来了。
+MON 6 불꽃놀이 소리에 몸이 먼저 움츠러들었다. 그러고 나서 하늘을 올려다보았다.|Your body flinched at the sound of fireworks before you knew it. Then you looked up at the sky.|花火の音に体が先にすくんだ。それから空を見上げた。|烟火声响起时，身体先缩了一下。然后你抬头望向了天空。
+MON 7 바람이 선선해졌다. 이불을 한 장 더 꺼냈다.|The wind turned cool. You took out another blanket.|風が涼しくなった。布団をもう一枚出した。|风变凉了。你又拿出了一床被子。
+MON 8 은행잎이 떨어졌다. 혼자 걷는 길이 노랗게 덮였다.|The ginkgo leaves fell. The road you walked alone was covered in yellow.|銀杏の葉が散った。ひとりで歩く道が黄色く覆われた。|银杏叶纷纷飘落。你独自走的路被染成一片金黄。
+MON 9 첫서리가 내렸다. 손등이 먼저 겨울을 알아챘다.|The first frost came. The back of your hand knew it was winter before you did.|初霜が降りた。手の甲が先に冬に気づいた。|初霜降下。手背比你更早察觉到冬天。
+MON 10 다시 겨울이 왔다. 이번 겨울에는 아무도 소환하지 않는다.|Winter came again. This winter, no one would be summoned.|また冬が来た。今年の冬は、誰も召喚しない。|冬天又来了。这个冬天，没有人会被召唤。
+MON 11 그 겨울의 날짜가 가까워졌다. 달력에 작은 동그라미를 쳤다.|The date of that winter drew near. You drew a small circle on the calendar.|あの冬の日付が近づいた。カレンダーに小さな丸をつけた。|那个冬天的日子近了。你在日历上画了一个小圈。
+MON 12 한 해가 지났다. 눈이 녹고, 손등의 자국은 이제 햇빛 아래서만 보였다.|A year has passed. The snow has melted, and the mark on the back of your hand shows only in sunlight now.|一年が過ぎた。雪が解け、手の甲の痕は今では日の光の下でしか見えない。|一年过去了。雪化了，手背上的痕迹如今只有在阳光下才看得见。
+MONK away 3 엽서가 왔다. 낯선 나라의 우표가 붙어 있었다.|A postcard came, with a stamp from a country you didn't know.|はがきが届いた。見知らぬ国の切手が貼ってあった。|来了一张明信片，贴着陌生国家的邮票。
+MONK away 6 엽서 속 하늘은 이쪽보다 파랬다.|The sky on the postcard was bluer than the one here.|はがきの中の空は、こちらより青かった。|明信片里的天空，比这里的更蓝。
+MONK away 9 이번 엽서에는 한 줄이 더 적혀 있었다. 잘 지내라는 말이었다.|This postcard had one more line than usual: "Take care of yourself."|今度のはがきには一行多く書かれていた。元気でいろ、という言葉だった。|这张明信片上多写了一行字：好好照顾自己。
+MONK away 11 겨울이 되자 엽서가 한동안 오지 않았다. 그래도 걱정하지 않기로 했다.|When winter came, the postcards stopped for a while. You decided not to worry.|冬になると、はがきがしばらく来なくなった。それでも心配しないことにした。|入冬后，明信片有一阵子没来了。你决定不去担心。
+MONK win 5 성배가 사라진 도시에 평범한 여름이 왔다.|An ordinary summer came to a city with no Grail.|聖杯の消えた街に、ありふれた夏が来た。|圣杯消失的城市迎来了一个普通的夏天。
+MONK win 10 소원이 이루어진 세상에서 맞는 첫 겨울이었다.|The first winter in a world where the wish had come true.|願いが叶った世界で迎える、初めての冬だった。|这是在愿望实现的世界里迎来的第一个冬天。
+MONK lost 4 그 사람이 마지막으로 서 있던 자리에 풀이 무성하게 자랐다.|Grass grew thick where they had last stood.|あの人が最後に立っていた場所に、草が生い茂った。|那个人最后站立的地方，长满了茂盛的草。
+MONK lost 8 졌다는 말을 처음으로 소리 내어 해 보았다. 생각보다 무겁지 않았다.|For the first time, you said aloud that you had lost. It wasn't as heavy as you'd thought.|負けた、と初めて声に出して言ってみた。思ったより重くなかった。|你第一次把“输了”说出口。没有想象中那么沉重。
+END 한 해가 지났다. 시간은 다시 제 속도로 흐르기 시작했다.|A year has passed. Time began to flow at its own pace again.|一年が過ぎた。時間はまた、いつもの速さで流れ始めた。|一年过去了。时间又开始按原本的速度流淌。

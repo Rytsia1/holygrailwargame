@@ -1,0 +1,398 @@
+# 11-21 에필로그 성향 사건 50개 (복수 · 정의 · 잔혹 · 금기 · 근원 집착 각 10)
+# 형식: @id P w=무게 / ? 조건(JS) / T 제목 / B 본문(B?조건 은 갈래) / C 선택지 :: 효과 :: 결과   (C* = 자동 선택)
+# 글은 한국어|영어|일본어|간체 (번체는 간체에서 바꾼다). 효과: will lore bond mana health wealth ±n, avenger judge cruel taboo zeal ±n
+
+@af_av01 P w=4
+? afS('avenger')
+T 원수의 근황|News of an old enemy|仇敵の近況|仇人的近况
+B 오래 미워한 사람이 몰락했다는 소식이 들려온다.|Word reaches you that someone you hated for years has fallen on hard times.|長年憎んできた相手が落ちぶれたという知らせが届く。|你听说，那个你恨了很多年的人已经落魄了。
+C* 찾아가 끝을 본다|Go and see it for yourself|会いに行って最後を見届ける|去亲眼看看他的下场 :: will-3 avenger+1 :: 낡은 아파트 계단참에서 그를 내려다보았다. 통쾌할 줄 알았는데, 계단을 내려오는 다리가 무거웠다.|You looked down at him from the landing of a run-down apartment block. You had expected it to feel good. Your legs were heavy on the way down.|古びたアパートの踊り場から彼を見下ろした。痛快だと思っていたのに、階段を下りる足は重かった。|你站在破旧公寓的楼梯平台上俯视着他。本以为会很痛快，下楼时双腿却很沉。
+C 신문을 덮는다|Close the newspaper|新聞を閉じる|合上报纸 :: will+3 avenger-1 :: 신문을 접어 재활용함에 넣었다. 그 이름이 종이와 함께 멀어졌다.|You folded the paper and dropped it in the recycling. The name went away with it.|新聞を畳んで資源ごみに出した。その名前も紙と一緒に遠ざかった。|你把报纸折好，丢进了回收箱。那个名字也随着纸一起远去了。
+C 그 집 아이에게 몰래 학비를 보낸다|Secretly send his child's school fees|その家の子に、ひそかに学費を送る|偷偷给他家孩子寄学费 :: wealth-3 will+3 avenger-1 judge+1 :: 보낸 사람의 이름은 적지 않았다. 원수의 아이는 다음 학기에도 학교에 다녔다.|You left the sender's name blank. Your enemy's child stayed in school the next term.|送り主の名は書かなかった。仇の子は次の学期も学校に通った。|你没有写汇款人的名字。仇人的孩子下学期也照常上学了。
+
+@af_av02 P w=4
+? afS('avenger')
+T 같은 눈을 한 젊은이|A young one with the same eyes|同じ目をした若者|有着同样眼神的年轻人
+B 복수를 꿈꾸는 젊은이가 찾아와 가르침을 청한다. 그 눈이 낯익다.|A young person who dreams of revenge comes asking to be taught. You know that look.|復讐を夢見る若者が訪ねてきて、教えを請う。その目には見覚えがある。|一个梦想着复仇的年轻人找上门来，向你求教。那双眼睛你很熟悉。
+C* 가르친다|Teach them|教える|教他 :: lore+3 avenger+1 :: 기다리는 법과 숨기는 법을 가르쳤다. 젊은이는 고맙다며 고개를 숙였다. 당신은 답례하지 못했다.|You taught them how to wait and how to hide it. They bowed and thanked you. You could not bow back.|待つことと隠すことを教えた。若者は礼を言って頭を下げた。あなたは礼を返せなかった。|你教了对方如何等待、如何隐藏。年轻人低头道谢，你却没能回礼。
+C 말린다|Talk them out of it|止める|劝阻他 :: bond+3 avenger-1 :: 그 겨울 이야기를 조금 들려주었다. 젊은이는 한참 말이 없다가, 저녁을 먹고 가도 되느냐고 물었다.|You told them a little about that winter. They were quiet for a long time, then asked if they could stay for dinner.|あの冬の話を少しだけ聞かせた。若者は長いこと黙っていたが、夕飯を食べていってもいいかと尋ねた。|你给对方讲了一点那个冬天的事。年轻人沉默了很久，然后问能不能留下来吃晚饭。
+C 이야기만 들어 준다|Just listen|話だけ聞いてやる|只是听他说 :: bond+3 :: 밤이 깊도록 들어 주었다. 젊은이는 올 때보다 조금 가벼운 얼굴로 돌아갔다.|You listened deep into the night. They left looking a little lighter than when they came.|夜更けまで話を聞いた。若者は来たときより少し軽い顔で帰っていった。|你一直听到深夜。年轻人离开时的神情，比来时轻松了一些。
+
+@af_av03 P w=4
+? afS('avenger')
+T 서랍 속의 칼|The blade in the drawer|引き出しの刃|抽屉里的刀
+B?isMage() 복수를 위해 짜 둔 술식이 서랍 속 양피지에서 나왔다.|The spell you once prepared for revenge turns up on a sheet of parchment in a drawer.|復讐のために組んでおいた術式が、引き出しの羊皮紙から出てきた。|为复仇而编好的术式，从抽屉里的羊皮纸上翻了出来。
+B 복수를 위해 갈아 둔 칼이 서랍 속에서 나왔다.|The knife you once sharpened for revenge turns up in a drawer.|復讐のために研いでおいた刃物が、引き出しから出てきた。|为复仇而磨好的刀，从抽屉里翻了出来。
+C 녹여 버린다|Destroy it|消してしまう|销毁它 :: will+3 avenger-2 :: 불에 넣고 끝까지 지켜보았다. 서랍이 조금 가벼워졌다.|You put it in the fire and watched until it was gone. The drawer felt a little lighter.|火にくべて、最後まで見届けた。引き出しが少し軽くなった。|你把它丢进火里，一直看到最后。抽屉轻了一些。
+C 다시 간다|Sharpen it again|また研ぐ|重新打磨 :: will-3 avenger+1 :: 밤새 손질했다. 날이 밝을 무렵, 왜 이걸 하고 있는지 잠깐 잊었다.|You worked on it all night. Near dawn, for a moment, you forgot why you were doing it.|一晩じゅう手入れをした。夜が明けるころ、なぜこれをしているのか一瞬忘れた。|你整夜都在打磨它。天快亮时，你一度忘了自己为什么要这么做。
+C* 그대로 넣어 둔다|Put it back|そのまましまっておく|原样放回去 :: - :: 서랍을 닫았다. 그것은 그 자리에서 또 몇 해를 기다릴 것이다.|You closed the drawer. It would wait there for a few more years.|引き出しを閉めた。それはまた何年も、そこで待つのだろう。|你关上抽屉。它会在那里再等上好几年。
+
+@af_av04 P w=4 blk=avenge_end
+? afS('avenger')&&!epiUsed('avenge_end')
+T 원수의 장례식|The enemy's funeral|仇の葬儀|仇人的葬礼
+B 원수가 세상을 떠났다. 장례식은 조촐하다.|Your enemy has died. The funeral is a small one.|仇がこの世を去った。葬儀はささやかなものだ。|仇人去世了。葬礼办得很简单。
+C* 영정 앞에 서서 웃는다|Stand before the portrait and smile|遺影の前に立って笑う|站在遗像前笑 :: bond-3 avenger+1 :: 웃음은 오래가지 않았다. 조문객 몇이 당신을 돌아보았다.|The smile did not last. A few mourners turned to look at you.|笑みは長く続かなかった。弔問客の何人かがあなたを振り返った。|笑容没能持续多久。几位吊唁的人回头看了你一眼。
+C 멀리서 끝을 지켜본다|Watch the end from afar|遠くから最後を見届ける|远远地看着最后一程 :: will+3 avenger-1 :: 운구차가 모퉁이를 돌 때까지 서 있었다. 끝난 것은 그 사람의 삶만이 아니었다.|You stood there until the hearse turned the corner. His life was not the only thing that ended.|霊柩車が角を曲がるまで立っていた。終わったのは、その人の人生だけではなかった。|你一直站到灵车转过街角。结束的不只是那个人的一生。
+C 가지 않는다|Don't go|行かない|不去 :: - :: 그날 하루를 평소처럼 보냈다. 그게 가장 어려웠다.|You spent the day as if it were any other. That was the hardest part.|その日を普段どおりに過ごした。それがいちばん難しかった。|那一天你过得和平常一样。这才是最难的。
+
+@af_av05 P w=4
+? afS('avenger')&&lkJob()
+T 원수의 아이|The enemy's child|仇の子|仇人的孩子
+B 원수의 아이가 당신이 일하는 곳에 지원서를 냈다. 붙이고 떨어뜨리는 것은 당신 손에 달렸다.|Your enemy's child has applied to work where you work. Whether they get in is up to you.|仇の子が、あなたの職場に応募してきた。採るも落とすも、あなた次第だ。|仇人的孩子向你工作的地方投了简历。录不录用，由你决定。
+C* 떨어뜨린다|Reject them|落とす|刷掉他 :: avenger+1 :: 서류는 다른 서류들 사이에 묻혔다. 그 아이는 이유를 끝내 모를 것이다.|The application sank into the pile. The child will never know why.|書類は他の書類に埋もれた。その子が理由を知ることはないだろう。|那份材料被埋进了其他材料里。那孩子永远不会知道原因。
+C 공정하게 본다|Judge them fairly|公平に見る|公平地看待 :: will+3 avenger-1 judge+1 :: 다른 지원자들과 똑같이 보았다. 그 아이는 일을 잘했다. 그게 이상하게 위로가 되었다.|You judged them like any other applicant. They turned out to be good at the job. Strangely, that was a comfort.|他の応募者と同じように見た。その子はよく働いた。それが妙に慰めになった。|你像对待其他应聘者一样看待那份申请。那孩子工作做得很好，这竟让你感到些许安慰。
+C 다른 사람에게 맡긴다|Leave it to someone else|他の人に任せる|交给别人 :: - :: 결정은 동료에게 넘겼다. 결과는 묻지 않았다.|You passed the decision to a colleague. You never asked how it went.|判断は同僚に任せた。結果は聞かなかった。|你把决定交给了同事，也没有问结果。
+
+@af_av06 P w=4
+? afS('avenger')
+T 그날이 오면|When that day comes|その日が来ると|每当那一天到来
+B 해마다 그날이 오면 잊고 있던 분노가 돌아온다.|Every year, when that day comes around, the anger you had forgotten comes back.|毎年その日が来ると、忘れていた怒りが戻ってくる。|每年到了那一天，你以为已经忘掉的愤怒就会回来。
+C* 그날을 되새긴다|Relive that day|あの日を思い返す|重温那一天 :: will-3 avenger+1 :: 그날의 일을 처음부터 끝까지 다시 떠올렸다. 하나도 흐려지지 않았다.|You went over that day from beginning to end. None of it had faded.|あの日のことを最初から最後まで思い返した。何ひとつ色褪せていなかった。|你把那天的事从头到尾又回想了一遍，一点都没有模糊。
+C 다른 기억으로 채운다|Fill it with other memories|別の思い出で埋める|用别的回忆填满它 :: bond+3 avenger-1 :: 친구를 불러 밥을 먹었다. 내년 그날에도 그러기로 약속했다.|You called a friend over for a meal, and promised to do the same next year.|友人を呼んで食事をした。来年のその日もそうしようと約束した。|你叫朋友来一起吃饭，约好明年的这一天也这样过。
+
+@af_av07 P w=4
+? afS('avenger')
+T 늦은 사과|A late apology|遅すぎた謝罪|迟到的道歉
+B 당신에게 상처를 준 사람에게서 늦은 사과 편지가 왔다.|A belated letter of apology arrives from someone who once hurt you.|あなたを傷つけた人から、遅すぎる謝罪の手紙が届いた。|曾经伤害过你的人寄来了一封迟到的道歉信。
+C* 찢는다|Tear it up|破る|撕掉 :: avenger+1 :: 읽지도 않고 찢었다. 조각을 주워 모으는 데 더 오래 걸렸다.|You tore it up without reading it. Picking up the pieces took longer.|読みもせずに破いた。破片を拾い集めるほうが時間がかかった。|你没读就把它撕了。把碎片捡起来反倒花了更久。
+C 답장을 쓴다|Write back|返事を書く|写回信 :: will+6 avenger-2 :: 세 번을 고쳐 썼다. 마지막 판에는 원망도 용서도 없이 '받았습니다' 한 줄만 남았다.|You rewrote it three times. The final version held no blame and no forgiveness. Only one line: "Received."|三度書き直した。最後の文面には恨みも赦しもなく、「受け取りました」の一行だけが残った。|你改写了三遍。最后一稿里既没有怨恨也没有原谅，只剩下一句“已收到”。
+C 서랍에 넣는다|Put it in a drawer|引き出しにしまう|放进抽屉 :: - :: 편지는 서랍 깊은 곳으로 들어갔다. 가끔 그 서랍을 지나칠 때 걸음이 느려졌다.|The letter went to the back of a drawer. Sometimes you slowed down when you passed it.|手紙は引き出しの奥にしまわれた。その引き出しの前を通るとき、ときどき足が遅くなった。|信被塞进了抽屉深处。有时经过那个抽屉，你的脚步会慢下来。
+
+@af_av08 P w=4
+? afS('avenger')
+T 복수의 값|The price of revenge|復讐の代価|复仇的代价
+B 당신의 복수로 무너진 집안 사람이 찾아왔다. 이번에는 당신이 누군가의 원수다.|Someone from a family ruined by your revenge is at your door. This time, you are someone's enemy.|あなたの復讐で崩れた家の者が訪ねてきた。今度はあなたが、誰かの仇だ。|一个因你的复仇而家破人亡的人找上门来。这一次，你成了别人的仇人。
+C* 문을 닫는다|Shut the door|扉を閉める|关上门 :: avenger+1 :: 문 너머의 기척은 한 시간쯤 머물다 사라졌다.|The presence on the other side of the door lingered for about an hour, then was gone.|扉の向こうの気配は一時間ほどとどまり、やがて消えた。|门外的动静停留了大约一个小时，然后消失了。
+C 사과한다|Apologize|謝る|道歉 :: will-3 bond+3 avenger-1 :: 그는 사과를 받지 않았다. 그래도 돌아가는 길에 한 번 뒤를 돌아보았다.|He did not accept the apology. Still, on his way out, he looked back once.|彼は謝罪を受け入れなかった。それでも帰り道で一度だけ振り返った。|他没有接受道歉。不过离开时，他回头看了一次。
+C 무엇을 원하느냐고 묻는다|Ask what he wants|何が望みかと尋ねる|问他想要什么 :: wealth-3 :: 그가 원한 것은 돈이었다. 생각보다 적은 액수여서 오히려 마음이 쓰였다.|What he wanted was money. It was less than you expected, and somehow that weighed on you more.|彼が求めたのは金だった。思ったより少ない額で、かえって胸に引っかかった。|他想要的是钱。数目比你想的少，反倒让你更放不下。
+
+@af_av09 P w=5
+? afD('avenger')
+T 끝나지 않는 장부|The ledger that never closes|終わらない帳面|没有尽头的账簿
+B 갚아야 할 이름을 적어 둔 장부에 아직 이름이 남아 있다. 그사이 주름이 늘었다.|Names remain in the ledger where you wrote down the debts you meant to settle. Meanwhile, your wrinkles have multiplied.|返すべき名を書き留めた帳面に、まだ名前が残っている。そのあいだに皺が増えた。|那本记着该清算之人名字的账簿上，还剩着几个名字。这些年，你的皱纹多了。
+C 마지막 이름까지 지운다|Strike out every last name|最後の名まで消す|划掉最后一个名字 :: health-3 will-3 avenger+1 :: 마지막 줄에 줄을 그었다. 장부를 덮자 할 일이 하나도 남지 않았다.|You struck through the last line. When you closed the ledger, there was nothing left to do.|最後の行に線を引いた。帳面を閉じると、するべきことは何ひとつ残っていなかった。|你在最后一行划上了线。合上账簿时，再也没有什么要做的事了。
+C* 장부를 태운다|Burn the ledger|帳面を燃やす|烧掉账簿 :: will+6 avenger-2 :: 종이는 잘 탔다. 수십 년이 이렇게 가벼웠나 싶었다.|The paper burned easily. You wondered if decades had always been this light.|紙はよく燃えた。何十年もの重みが、こんなに軽かったのかと思った。|纸烧得很快。你不禁想，几十年原来这么轻。
+
+@af_av10 P w=5
+? afD('avenger')&&S.age>=50
+T 마지막 원수|The last enemy|最後の仇|最后的仇人
+B 마지막 원수가 병상에서 당신을 부른다.|Your last enemy calls for you from a hospital bed.|最後の仇が、病床からあなたを呼んでいる。|你最后的仇人躺在病床上，叫你过去。
+C* 가서 용서한다|Go and forgive him|行って赦す|去原谅他 :: will+6 avenger-3 :: 마른 손을 잡았다. 그 손이 이렇게 작았다는 걸 그제야 알았다.|You took his withered hand. Only then did you realize how small it was.|痩せた手を握った。その手がこんなに小さかったことに、そのとき初めて気づいた。|你握住了那只枯瘦的手，这才发现它原来这么小。
+C 가서 끝을 지켜본다|Go and watch the end|行って最期を見届ける|去看他的最后 :: avenger+1 :: 마지막 숨을 끝까지 보았다. 병실을 나서며, 당신에게도 그날이 오리라는 걸 생각했다.|You watched until his last breath. Leaving the room, you thought about how that day would come for you, too.|最期の息まで見届けた。病室を出ながら、自分にもその日が来ることを思った。|你一直看着他咽下最后一口气。走出病房时，你想到这一天也终将轮到自己。
+C 가지 않는다|Don't go|行かない|不去 :: will-3 :: 사흘 뒤 부고가 왔다. 마지막으로 무슨 말을 하려 했는지는 영영 모르게 되었다.|Three days later, word came that he had died. You will never know what he meant to say.|三日後に訃報が届いた。最後に何を言おうとしていたのか、永遠にわからなくなった。|三天后传来了讣告。他最后想说什么，你永远不会知道了。
+
+@af_jd01 P w=4
+? afS('judge')
+T 동네의 중재자|The neighborhood mediator|町内の仲裁人|街坊的调解人
+B 이웃들이 다툴 때마다 당신을 찾아온다.|Whenever the neighbors quarrel, they come to you.|近所の人たちは揉めるたびにあなたを訪ねてくる。|每当邻居们起了争执，就会来找你。
+C* 맡는다|Take it on|引き受ける|接下来 :: bond+3 judge+1 :: 담장 하나, 주차 자리 하나, 개 한 마리. 사람들은 당신의 말이라면 따랐다.|A wall, a parking spot, a dog. People went along with whatever you said.|塀ひとつ、駐車場ひとつ、犬一匹。人々はあなたの言うことなら従った。|一堵墙、一个车位、一条狗。只要是你说的，大家都肯听。
+C 법대로 하라고 한다|Tell them to go by the law|法に従えと言う|让他们依法解决 :: will+3 :: 사람들은 서운해했지만, 당신의 저녁은 조용해졌다.|People were disappointed, but your evenings grew quiet.|人々は寂しがったが、あなたの夕べは静かになった。|大家有些失落，但你的傍晚安静了下来。
+
+@af_jd02 P w=4
+? afS('judge')
+T 고발장|The complaint|告発状|举报信
+B?lkJob() 일터의 비리 증거가 손에 들어왔다.|Evidence of corruption at your workplace has fallen into your hands.|職場の不正の証拠が手に入った。|你拿到了单位里贪腐的证据。
+B 동네 공사의 비리 증거가 손에 들어왔다.|Evidence of corruption in a local construction project has fallen into your hands.|町内の工事の不正の証拠が手に入った。|你拿到了街区工程贪腐的证据。
+C* 공개한다|Make it public|公表する|公开 :: wealth-3 will+3 judge+1 :: 몇 사람이 자리를 잃었다. 당신도 한동안 눈치를 보며 지냈다. 후회는 없었다.|A few people lost their positions. For a while you had to watch your back. You had no regrets.|何人かが職を失った。あなたもしばらく肩身の狭い思いをした。後悔はなかった。|有几个人丢了位子。你也有一阵子过得小心翼翼，但并不后悔。
+C 덮는다|Bury it|握りつぶす|压下来 :: wealth+3 judge-1 :: 증거는 파쇄기로 들어갔다. 그 주에 봉투 하나가 책상 위에 놓였다.|The evidence went into the shredder. That week, an envelope appeared on your desk.|証拠はシュレッダーにかけられた。その週、机の上に封筒がひとつ置かれた。|证据进了碎纸机。那个星期，你桌上多了一个信封。
+C 당사자에게 고칠 기회를 준다|Give them a chance to fix it|当人に正す機会を与える|给当事人改正的机会 :: bond+3 :: 그는 석 달 안에 바로잡았다. 그 뒤로 당신에게만은 깍듯했다.|He set it right within three months. After that, he was always courteous to you, at least.|彼は三か月以内に正した。それからは、あなたにだけは礼儀正しかった。|他三个月内就纠正了。从那以后，他对你格外客气。
+
+@af_jd03 P w=4
+? afS('judge')
+T 그 겨울의 증인|Witness to that winter|あの冬の証人|那个冬天的证人
+B 그 겨울의 가스 사고로 가족을 잃은 사람이 진실을 묻는다.|Someone who lost family in that winter's "gas explosion" asks you for the truth.|あの冬のガス事故で家族を失った人が、真実を尋ねてくる。|一个在那个冬天的“煤气事故”中失去家人的人，来问你真相。
+C* 털어놓는다|Tell them|打ち明ける|说出来 :: will+3 bond+3 judge+1 :: 마술이라는 말은 하지 않았다. 그래도 사고가 아니었다는 것만은 말했다. 그 사람은 오래 울었다.|You didn't say the word "magic." But you told them it had not been an accident. They cried for a long time.|魔術という言葉は使わなかった。それでも、事故ではなかったことだけは伝えた。その人は長く泣いた。|你没有提“魔术”两个字，但告诉了对方那不是意外。那人哭了很久。
+C 모른다고 한다|Say you don't know|知らないと言う|说不知道 :: judge-1 :: 그 사람은 고개를 숙이고 돌아갔다. 같은 거짓말을 교회가 먼저 했을 것이다.|They bowed their head and left. The Church had probably told them the same lie already.|その人は頭を下げて帰っていった。同じ嘘を、教会が先についていたのだろう。|那人低着头离开了。同样的谎，教会大概早就说过了。
+C 다른 방식으로 돕는다|Help some other way|別のやり方で助ける|用别的方式帮忙 :: wealth-3 :: 유족 모임에 이름 없이 돈을 보냈다. 진실 대신 줄 수 있는 것이 그것뿐이었다.|You sent money to the families' association without a name. It was all you could give in place of the truth.|遺族の会に名前を伏せて寄付をした。真実の代わりに渡せるものは、それしかなかった。|你匿名给遇难者家属会寄了钱。代替真相，你能给的只有这个。
+
+@af_jd04 P w=4
+? afS('judge')
+T 길 잃은 아이|The lost child|迷子|迷路的孩子
+B 밤길에 부모를 잃은 아이를 만났다.|On a dark street, you find a child who has lost their parents.|夜道で、親とはぐれた子どもに出会った。|夜路上，你遇到了一个和父母走散的孩子。
+C* 함께 부모를 찾는다|Search for the parents together|一緒に親を探す|一起找父母 :: bond+3 judge+1 :: 두 시간을 걸었다. 아이 엄마는 당신 손을 잡고 몇 번이나 고개를 숙였다.|You walked for two hours. The child's mother took your hand and bowed again and again.|二時間歩いた。子どもの母親はあなたの手を取って、何度も頭を下げた。|你们走了两个小时。孩子的妈妈握着你的手，一次又一次地鞠躬。
+C 경찰에 맡긴다|Leave it to the police|警察に任せる|交给警察 :: - :: 아이를 파출소에 데려다주었다. 그 뒤의 일은 경찰이 했다.|You brought the child to the police box. The police took it from there.|子どもを交番に連れていった。その後のことは警察がやった。|你把孩子送到了派出所，后面的事交给了警察。
+C 지나친다|Walk on by|通り過ぎる|走过去 :: judge-1 :: 몇 걸음 가다가 돌아보았다. 아이는 이미 보이지 않았다.|A few steps on, you looked back. The child was already gone.|数歩進んで振り返った。子どもはもう見えなかった。|走了几步，你回头看了看，孩子已经不见了。
+
+@af_jd05 P w=4
+? afS('judge')&&lkJob()
+T 부당한 해고|Unfair dismissal|不当解雇|无端解雇
+B 동료가 억울하게 일자리를 잃었다.|A coworker has been unfairly let go.|同僚が不当に職を失った。|一位同事被无端解雇了。
+C* 편을 든다|Take their side|味方する|站在他那边 :: wealth-3 bond+3 judge+1 :: 탄원서에 맨 먼저 이름을 적었다. 결과는 반쯤 이긴 셈이었다. 승진은 한 해 늦어졌다.|You were the first to sign the petition. It was half a win. Your promotion came a year late.|嘆願書に真っ先に名前を書いた。結果は半分勝ったようなものだった。昇進は一年遅れた。|你第一个在请愿书上签了名。结果算是赢了一半，你的升职晚了一年。
+C 모른 척한다|Pretend not to notice|見て見ぬふりをする|装作不知道 :: judge-1 :: 동료의 책상은 일주일 만에 다른 사람의 것이 되었다.|Within a week, the coworker's desk belonged to someone else.|同僚の机は一週間で別の人のものになった。|不到一周，那位同事的桌子就换了主人。
+C 새 자리를 알아봐 준다|Help them find a new job|新しい職を探してやる|帮他找新工作 :: bond+3 :: 아는 곳에 전화를 몇 통 했다. 동료는 석 달 뒤 더 나은 곳으로 출근했다.|You made a few calls. Three months later, they started at a better place.|知り合いに何本か電話をかけた。同僚は三か月後、もっといい職場に通い始めた。|你给认识的人打了几通电话。三个月后，那位同事去了更好的地方上班。
+
+@af_jd06 P w=4
+? afS('judge')
+T 선거|The election|選挙|选举
+B 비리가 뻔한 후보가 동네 선거에 나왔다.|A candidate with an obvious record of corruption is running in the local election.|不正が明らかな候補者が、地元の選挙に出てきた。|一个劣迹斑斑的候选人参加了本地选举。
+C* 반대 운동에 나선다|Campaign against them|反対運動に加わる|参加反对活动 :: bond+3 health-3 judge+1 :: 전단을 돌리느라 무릎이 상했다. 그 후보는 떨어졌다.|Handing out flyers wore out your knees. The candidate lost.|ビラ配りで膝を痛めた。その候補は落選した。|发传单累伤了膝盖。那个候选人落选了。
+C 조용히 투표만 한다|Just vote quietly|黙って投票だけする|默默投票 :: - :: 한 표를 넣었다. 개표 결과는 아슬아슬했다.|You cast your one vote. The count was close.|一票を投じた。開票結果は僅差だった。|你投下了一票。计票结果咬得很紧。
+C 관심을 끈다|Tune it out|関心を持たない|不去关心 :: - :: 선거가 끝났다는 것도 현수막이 내려간 뒤에야 알았다.|You only realized the election was over when the banners came down.|選挙が終わったことも、横断幕が外されてから知った。|直到横幅被撤下，你才知道选举已经结束了。
+
+@af_jd07 P w=4
+? afS('judge')
+T 가난한 학생|The struggling student|貧しい学生|贫困的学生
+B 재능 있는 학생이 돈 때문에 학교를 그만두려 한다.|A talented student is about to quit school for lack of money.|才能のある学生が、お金のために学校を辞めようとしている。|一个有天赋的学生因为钱的问题打算退学。
+C* 후원한다|Support them|援助する|资助他 :: wealth-3 will+3 judge+1 :: 졸업식 날 꽃다발이 하나 왔다. 카드에는 '선생님께'라고 적혀 있었다.|On graduation day, a bouquet arrived. The card said, "To my teacher."|卒業式の日、花束がひとつ届いた。カードには「先生へ」と書かれていた。|毕业典礼那天，你收到一束花，卡片上写着“致老师”。
+C 장학 제도를 알려 준다|Tell them about scholarships|奨学金制度を教える|告诉他奖学金制度 :: bond+3 :: 서류를 같이 채웠다. 학생은 다음 학기에도 학교에 나왔다.|You filled out the forms together. The student was back in school the next term.|書類を一緒に埋めた。学生は次の学期も学校に来た。|你们一起填好了材料。下学期，那个学生照常来上学了。
+
+@af_jd08 P w=4
+? afS('judge')
+T 오래된 판결|An old verdict|古い判決|陈年判决
+B 오래전 잘못된 판결을 뒤집을 증거를 찾았다.|You have found evidence that could overturn a wrongful verdict from long ago.|昔の誤った判決を覆す証拠を見つけた。|你找到了能推翻一桩陈年错案的证据。
+C* 재심을 청한다|Petition for a retrial|再審を請求する|申请再审 :: lore+3 wealth-3 judge+1 :: 2년이 걸렸다. 법정을 나온 노인은 하늘을 오래 올려다보았다.|It took two years. The old man who walked out of the courthouse looked up at the sky for a long time.|二年かかった。法廷を出た老人は、長いあいだ空を見上げていた。|花了两年时间。走出法庭的老人仰望天空，看了很久。
+C 당사자에게만 알린다|Tell only the man himself|当人にだけ知らせる|只告诉当事人 :: bond+3 :: 노인은 증거를 받아 들고 '이걸로 됐다'고 했다. 재심은 원하지 않았다.|The old man took the evidence and said, "This is enough." He didn't want a retrial.|老人は証拠を受け取り、「これで十分だ」と言った。再審は望まなかった。|老人接过证据，说了句“这就够了”。他不想再审。
+C 덮어 둔다|Leave it buried|伏せておく|压下不提 :: judge-1 :: 서류철은 상자 속으로 돌아갔다. 상자는 다시 열리지 않았다.|The file went back into its box. The box was never opened again.|ファイルは箱の中に戻った。箱が再び開けられることはなかった。|文件夹被放回箱子里，那个箱子再也没有打开过。
+
+@af_jd09 P w=5
+? afD('judge')
+T 법정의 증언대|The witness stand|法廷の証言台|法庭的证人席
+B 누명을 쓴 사람의 증인이 되어 달라는 부탁이 왔다. 상대는 힘 있는 집안이다.|You are asked to testify for someone who was framed. The other side is a powerful family.|濡れ衣を着せられた人の証人になってほしいと頼まれた。相手は力のある一族だ。|有人请你为一个蒙冤的人出庭作证。对方是有权有势的家族。
+C* 증언대에 선다|Take the stand|証言台に立つ|站上证人席 :: will+6 health-3 judge+1 :: 반대 신문은 다섯 시간이었다. 판결문에 당신의 증언이 두 줄 인용되었다.|Cross-examination lasted five hours. Two lines of your testimony were quoted in the verdict.|反対尋問は五時間に及んだ。判決文に、あなたの証言が二行引用された。|反方质询长达五个小时。判决书里引用了你的两行证词。
+C 증거만 보낸다|Send only the evidence|証拠だけ送る|只寄出证据 :: lore+3 :: 이름 없는 봉투가 변호인에게 갔다. 재판은 뒤집혔다. 누가 보냈는지는 아무도 몰랐다.|An unmarked envelope reached the defense. The case turned. No one knew who had sent it.|差出人のない封筒が弁護人のもとに届いた。裁判はひっくり返った。誰が送ったのか、誰も知らなかった。|一个没有署名的信封寄到了辩护律师手里。案子翻了过来，没人知道是谁寄的。
+C 물러선다|Back away|手を引く|退缩 :: judge-1 :: 거절하는 전화를 끊고 오래 앉아 있었다.|You hung up after saying no, and sat there for a long time.|断りの電話を切ったあと、長いこと座っていた。|挂断拒绝的电话后，你坐了很久。
+
+@af_jd10 P w=5
+? afD('judge')
+T 이름 없는 수호자|The nameless guardian|名もなき守り手|无名的守护者
+B 사람들이 억울한 일이 생길 때마다 당신에게 가져온다. 몸은 하나뿐이다.|Whenever people are wronged, they bring it to you. But you only have one body.|人々は理不尽なことがあるたびに、あなたのもとへ持ち込む。体はひとつしかない。|每当有人受了冤屈，就会找到你这里来。可你只有一副身躯。
+C 다 맡는다|Take on all of it|すべて引き受ける|全部接下 :: health-3 bond+3 judge+1 :: 현관 앞에 신발이 끊이지 않았다. 몸이 버티는 한 그 문은 닫히지 않을 것이다.|There were always shoes at your door. As long as your body held out, that door would stay open.|玄関先から靴が絶えることはなかった。体がもつかぎり、その扉は閉じないだろう。|你家门口的鞋从没断过。只要身体还撑得住，那扇门就不会关上。
+C* 뒤를 이을 사람을 키운다|Train people to carry it on|後を継ぐ人を育てる|培养接班人 :: bond+3 lore+3 :: 젊은 사람 셋이 당신의 일을 나눠 맡았다. 당신은 처음으로 일요일을 쉬었다.|Three young people took over parts of your work. For the first time, you had Sundays off.|若い三人があなたの仕事を分けて引き受けた。あなたは初めて日曜日に休んだ。|三个年轻人分担了你的工作。你第一次在星期天休息。
+C 내려놓는다|Put it down|手放す|放下 :: will+3 judge-1 :: 문에 '쉽니다'라고 써 붙였다. 처음 며칠은 그 문을 볼 수가 없었다.|You hung a sign on the door: "Closed." For the first few days, you couldn't look at it.|扉に「休みます」と貼り出した。最初の数日は、その扉を見ることができなかった。|你在门上贴了张“休息”。头几天，你都不敢看那扇门。
+
+@af_cr01 P w=4
+? afS('cruel')
+T 무너진 사람|A broken person|崩れた人|崩溃的人
+B 예전에 짓밟았던 사람이 문 앞에 서 있다.|Someone you once trampled is standing at your door.|かつて踏みにじった人が、玄関の前に立っている。|一个曾被你践踏过的人站在你家门口。
+C* 다시 밀어낸다|Push them away again|また突き放す|再次推开 :: cruel+1 :: 문을 닫는 데 힘은 들지 않았다. 그게 문제였다.|It took no effort to shut the door. That was the problem.|扉を閉めるのに力はいらなかった。それが問題だった。|关上门毫不费力。问题就在这里。
+C 사과한다|Apologize|謝る|道歉 :: will-3 bond+3 cruel-1 :: 말을 고르는 데 오래 걸렸다. 그 사람은 끝까지 들었고, 아무 말 없이 갔다.|It took you a long time to find the words. They listened to the end and left without a word.|言葉を選ぶのに時間がかかった。その人は最後まで聞いて、何も言わずに去った。|你斟酌了很久才开口。那人听到最后，一言不发地走了。
+C 돈을 쥐여 보낸다|Send them off with money|金を握らせて帰す|塞点钱打发走 :: wealth-3 :: 봉투를 받는 손이 떨렸다. 무엇이 떨게 했는지는 묻지 않았다.|The hand that took the envelope trembled. You didn't ask why.|封筒を受け取る手が震えていた。何がそうさせたのかは聞かなかった。|接过信封的手在发抖。你没有问为什么。
+
+@af_cr02 P w=4
+? afS('cruel')
+T 약한 고리|The weak link|弱み|软肋
+B 경쟁자의 약점을 하나 알게 됐다. 쥐면 그 자리를 가질 수 있다.|You've learned a rival's weak spot. If you use it, the position is yours.|競争相手の弱みをひとつ知った。握れば、その席は手に入る。|你得知了竞争对手的一个把柄。只要抓住它，那个位置就是你的。
+C* 쥔다|Use it|握る|抓住它 :: wealth+3 cruel+1 :: 그는 스스로 물러났다. 송별회에서 그는 당신에게 끝까지 웃었다.|He stepped down on his own. At his farewell party, he smiled at you to the very end.|彼は自ら身を引いた。送別会で、彼は最後まであなたに笑いかけていた。|他主动退了下来。送别会上，他对你一直笑到最后。
+C 모른 척한다|Pretend you don't know|知らないふりをする|装作不知道 :: - :: 약점은 약점으로 남았다. 자리는 다음 해에 공정하게 정해졌다.|The weakness stayed just that. The position was decided fairly the next year.|弱みは弱みのまま残った。席は翌年、公正に決まった。|把柄终究只是把柄。第二年，那个位置被公平地定了下来。
+C 미리 귀띔해 준다|Tip him off|前もって耳打ちする|提前提醒他 :: bond+3 cruel-1 :: 그는 놀란 얼굴로 고맙다고 했다. 그 뒤로 둘은 경쟁자이자 술친구가 되었다.|He looked startled, then thanked you. After that, the two of you were rivals and drinking buddies.|彼は驚いた顔で礼を言った。それ以来、二人は競争相手であり飲み仲間になった。|他一脸惊讶地向你道谢。从那以后，你们既是对手，也是酒友。
+
+@af_cr03 P w=4
+? afS('cruel')&&lkKid()
+T 닮아 가는 아이|A child who takes after you|似てくる子|越来越像你的孩子
+B 아이가 친구를 울려 놓고 당신처럼 웃었다.|Your child made a friend cry, then smiled the way you do.|子どもが友だちを泣かせて、あなたのように笑った。|孩子把朋友弄哭了，然后露出了和你一模一样的笑。
+C* 잘했다고 한다|Say well done|よくやったと言う|夸他做得好 :: cruel+1 :: 아이는 칭찬받은 날의 얼굴을 했다. 그 얼굴이 오래 마음에 걸렸다.|Your child wore the face of someone who'd been praised. That face stayed with you.|子どもは褒められた日の顔をした。その顔がいつまでも気にかかった。|孩子露出了被夸奖时的表情。那张脸让你挂心了很久。
+C 꾸짖는다|Scold them|叱る|责备他 :: bond+3 cruel-1 :: 아이와 함께 친구 집에 가서 고개를 숙였다. 돌아오는 길에 아이가 손을 잡았다.|You went with your child to the friend's house and bowed your heads together. On the way back, your child took your hand.|子どもと一緒に友だちの家へ行き、頭を下げた。帰り道、子どもが手を握ってきた。|你带着孩子去朋友家低头道歉。回来的路上，孩子牵住了你的手。
+C 아무 말도 하지 않는다|Say nothing|何も言わない|什么也不说 :: will-3 :: 저녁 식탁이 조용했다. 아이는 당신의 얼굴을 몇 번 살폈다.|Dinner was quiet. Your child glanced at your face a few times.|夕食の食卓は静かだった。子どもは何度かあなたの顔色をうかがった。|晚饭桌上很安静。孩子偷偷看了你好几眼。
+
+@af_cr04 P w=4
+? afS('cruel')&&lkJob()
+T 아랫사람|The subordinate|部下|下属
+B 부하가 작은 실수를 했다. 모두가 당신 얼굴을 살핀다.|Someone under you made a small mistake. Everyone is watching your face.|部下が小さなミスをした。皆があなたの顔色をうかがっている。|下属犯了个小错。所有人都在看你的脸色。
+C* 모두 앞에서 모욕한다|Humiliate him in front of everyone|皆の前で罵る|当众羞辱他 :: cruel+1 :: 사무실이 조용해졌다. 그 뒤로 실수는 줄었고, 웃음도 줄었다.|The office went silent. After that there were fewer mistakes, and less laughter.|オフィスが静まり返った。それ以来ミスは減り、笑い声も減った。|办公室一下子安静了。从那以后，错少了，笑声也少了。
+C 따로 불러 일러 준다|Take him aside and explain|個別に呼んで教える|单独叫来指点 :: bond+3 cruel-1 :: 그는 다음 주에 같은 일을 완벽하게 해냈다. 커피 한 잔이 책상에 놓여 있었다.|The next week he did the same job perfectly. A cup of coffee was waiting on your desk.|彼は翌週、同じ仕事を完璧にこなした。机の上にコーヒーが一杯置かれていた。|下周他把同样的工作做得完美无缺。你桌上多了一杯咖啡。
+C 웃어넘긴다|Laugh it off|笑って流す|一笑了之 :: will+3 :: '나도 그랬다'고 말했다. 정말 그랬던가는 기억나지 않았다.|You said, "I did the same once." You couldn't remember whether that was true.|「私もそうだった」と言った。本当にそうだったかは覚えていなかった。|你说了句“我以前也这样”。是不是真的这样，你自己也记不清了。
+
+@af_cr05 P w=4
+? afS('cruel')
+T 밤마다 짖는 개|The dog that barks at night|毎晩吠える犬|夜夜吠叫的狗
+B 이웃집 개가 밤마다 짖는다.|The neighbor's dog barks every night.|隣の家の犬が毎晩吠える。|邻居家的狗每天晚上都叫。
+C* 주인을 위협한다|Threaten the owner|飼い主を脅す|威胁狗主人 :: cruel+1 :: 다음 날부터 개는 짖지 않았다. 이웃은 당신과 눈을 마주치지 않았다.|From the next day on, the dog didn't bark. The neighbor wouldn't meet your eyes.|翌日から犬は吠えなくなった。隣人はあなたと目を合わせなくなった。|从第二天起，狗不再叫了。邻居也不再和你对视。
+C 찾아가 이야기한다|Go and talk to them|訪ねて話す|上门谈谈 :: bond+3 :: 개는 늙어서 밤이 무서워 짖는다고 했다. 둘이서 개집에 작은 등을 달아 주었다.|The dog was old, they said, and barked at night because it was scared. Together you hung a little lamp over its kennel.|犬は年老いて、夜が怖くて吠えるのだという。二人で犬小屋に小さな明かりをつけてやった。|邻居说狗老了，晚上害怕才叫。你们一起在狗窝上挂了一盏小灯。
+C 귀마개를 산다|Buy earplugs|耳栓を買う|买耳塞 :: - :: 귀마개를 끼고 잤다. 개 짖는 소리 대신 심장 소리가 들렸다.|You slept with earplugs. Instead of barking, you heard your own heartbeat.|耳栓をして寝た。犬の声の代わりに、心臓の音が聞こえた。|你戴着耳塞睡觉。听到的不再是狗叫，而是自己的心跳。
+
+@af_cr06 P w=4
+? afS('cruel')
+T 경쟁자의 몰락|A rival's downfall|競争相手の没落|对手的没落
+B 오랜 경쟁자가 파산 직전이다. 한 수면 끝난다.|Your longtime rival is on the brink of ruin. One more move would finish him.|長年の競争相手が破産寸前だ。あと一手で終わる。|多年的对手濒临破产。只要再出一手，他就完了。
+C* 마지막 한 수를 둔다|Make the final move|最後の一手を打つ|走出最后一步 :: wealth+3 cruel+1 :: 그의 가게는 다음 달 문을 닫았다. 간판을 내리던 날 당신은 길 건너에 서 있었다.|His shop closed the next month. On the day the sign came down, you were standing across the street.|彼の店は翌月閉まった。看板が下ろされた日、あなたは通りの向こうに立っていた。|他的店下个月就关了门。摘招牌那天，你就站在马路对面。
+C 손을 내민다|Offer a hand|手を差し伸べる|伸出援手 :: wealth-3 bond+3 cruel-1 :: 그는 한참 망설이다 손을 잡았다. 2년 뒤 두 사람의 가게는 같은 간판을 달았다.|He hesitated a long time before taking your hand. Two years later, your two shops hung the same sign.|彼は長いこと迷ってから手を取った。二年後、二人の店は同じ看板を掲げた。|他犹豫了很久才握住你的手。两年后，你们两家店挂上了同一块招牌。
+C 그저 지켜본다|Just watch|ただ見ている|只是旁观 :: - :: 아무것도 하지 않았다. 그는 혼자 버텨 냈다. 당신은 조금 놀랐다.|You did nothing. He pulled through on his own. You were a little surprised.|何もしなかった。彼はひとりで持ちこたえた。あなたは少し驚いた。|你什么都没做。他自己撑了过来，你有点意外。
+
+@af_cr07 P w=4
+? afS('cruel')
+T 늙은 어른|An aging elder|年老いた人|年迈的长辈
+B?O().orphan 보육원 원장님이 늙어서 돌봐 줄 사람을 찾는다.|The old director of the orphanage you grew up in needs someone to look after her.|孤児院の院長が年老いて、世話をしてくれる人を探している。|孤儿院的院长年纪大了，正在找人照顾她。
+B 늙은 친척이 돌봐 달라고 한다.|An elderly relative asks you to look after them.|年老いた親戚が、面倒を見てほしいと言ってきた。|年迈的亲戚请你照顾他。
+C* 돈만 보내고 연락을 끊는다|Send money and cut off contact|金だけ送って連絡を絶つ|只寄钱，断绝联系 :: wealth-3 cruel+1 :: 매달 자동 이체가 나갔다. 전화는 받지 않았다.|A transfer went out automatically every month. You didn't answer the phone.|毎月、自動で振り込みが出ていった。電話には出なかった。|每个月都自动转一笔钱过去。电话你一个也没接。
+C 직접 보살핀다|Care for them yourself|自分で世話をする|亲自照顾 :: bond+3 health-3 cruel-1 :: 주말마다 찾아가 밥을 차렸다. 손이 많이 갔고, 그만큼 이야기가 늘었다.|Every weekend you went over and cooked. It was a lot of work, and there was that much more to talk about.|週末ごとに訪ねて食事を作った。手間はかかったが、そのぶん話が増えた。|每个周末你都去做饭。很费心思，聊的话也随之多了起来。
+C 좋은 요양원을 찾아 드린다|Find a good care home|いい介護施設を探す|找一家好的养老院 :: wealth-3 :: 볕이 잘 드는 방이었다. 면회 날이면 창가에 앉아 기다린다고 했다.|It was a sunny room. On visiting days, they said, the old one sat by the window and waited.|日当たりのいい部屋だった。面会日には窓辺に座って待っているのだという。|那是一间阳光充足的房间。听说每到探视日，老人都坐在窗边等着。
+
+@af_cr08 P w=4
+? afS('cruel')&&S.wealth>=40
+T 빚진 사람들|Those who owe you|借りのある人々|欠债的人们
+B 돈을 빌려준 사람들의 목록이 길다.|The list of people who owe you money is long.|金を貸した相手のリストは長い。|欠你钱的人列了长长一串。
+C* 모두 받아낸다|Collect from all of them|すべて取り立てる|全部讨回来 :: wealth+6 bond-3 cruel+1 :: 마지막 한 푼까지 받아 냈다. 그해 연말에 안부 연락은 한 통도 오지 않았다.|You collected every last coin. That year's end, not a single holiday greeting came.|最後の一銭まで取り立てた。その年の暮れ、挨拶の連絡は一通も来なかった。|你连最后一分钱都收了回来。那年年底，一条问候都没收到。
+C 일부를 탕감해 준다|Forgive some of the debts|一部を帳消しにする|免掉一部分 :: wealth-3 bond+3 cruel-1 :: 몇 사람의 이름에 줄을 그었다. 그중 한 사람은 몇 해 뒤 손수 만든 음식을 보내왔다.|You crossed out a few names. Years later, one of them sent you food they'd made by hand.|何人かの名前に線を引いた。そのうちの一人は、何年かして手作りの料理を送ってきた。|你划掉了几个名字。几年后，其中一人给你寄来了亲手做的食物。
+C 그대로 둔다|Leave it be|そのままにする|放着不管 :: - :: 목록은 그대로 서랍에 있었다. 갚는 사람도, 갚지 않는 사람도 있었다.|The list stayed in its drawer. Some paid you back. Some didn't.|リストはそのまま引き出しにあった。返す人もいれば、返さない人もいた。|名单一直放在抽屉里。有人还了，有人没还。
+
+@af_cr09 P w=5
+? afD('cruel')
+T 거울|The mirror|鏡|镜子
+B 혼자 남은 밤, 거울 속 얼굴이 낯설다.|Alone one night, the face in the mirror looks like a stranger's.|ひとり残された夜、鏡の中の顔が見知らぬものに見える。|独自一人的夜里，镜子里的脸显得很陌生。
+C 그 얼굴을 받아들인다|Accept that face|その顔を受け入れる|接受那张脸 :: will+3 cruel+1 :: 낯선 얼굴에 대고 고개를 끄덕였다. 얼굴도 끄덕였다.|You nodded at the stranger's face. It nodded back.|見知らぬ顔にうなずいた。顔もうなずき返した。|你对着那张陌生的脸点了点头。那张脸也点了点头。
+C 거울을 깨뜨린다|Smash the mirror|鏡を割る|砸碎镜子 :: health-3 cruel-1 :: 손등에서 피가 났다. 조각마다 다른 얼굴이 비쳤다.|Your knuckles bled. Every shard showed a different face.|手の甲から血が出た。破片ごとに違う顔が映っていた。|手背流了血。每一块碎片里都映着一张不同的脸。
+C* 오래된 사진을 꺼낸다|Take out an old photo|古い写真を取り出す|拿出旧照片 :: bond+3 cruel-1 :: 젊은 날의 사진 속 당신은 누군가의 어깨에 팔을 두르고 있었다. 그 사람에게 전화를 걸었다.|In an old photo, a younger you had an arm around someone's shoulders. You called that person.|若い頃の写真の中で、あなたは誰かの肩に腕を回していた。その人に電話をかけた。|年轻时的照片里，你搂着一个人的肩膀。你给那个人打了电话。
+
+@af_cr10 P w=5
+? afD('cruel')&&S.age>=50
+T 아무도 오지 않는 생일|A birthday no one comes to|誰も来ない誕生日|无人到来的生日
+B 늙어서 혼자 맞는 생일이다. 전화는 울리지 않는다.|A birthday alone in old age. The phone doesn't ring.|年老いてひとりで迎える誕生日。電話は鳴らない。|年老后独自过的生日。电话一直没有响。
+C 혼자인 것을 받아들인다|Accept being alone|ひとりであることを受け入れる|接受孤身一人 :: cruel+1 :: 불을 켜지 않은 채 저녁이 지나갔다. 그게 익숙하다는 것이 이상하지 않았다.|The evening passed without your turning on the lights. It didn't seem strange that you were used to it.|明かりもつけないまま夜が過ぎた。それに慣れていることが、少しも不思議ではなかった。|灯也没开，夜晚就这样过去了。你对此早已习惯，并不觉得奇怪。
+C* 오래 끊은 번호에 전화한다|Call a number you cut off long ago|長く絶っていた番号に電話する|拨打一个断联多年的号码 :: bond+3 will-3 cruel-2 :: 신호가 일곱 번 갔다. 여덟 번째에 누군가 받았다. 한참 둘 다 아무 말도 하지 않았다.|It rang seven times. On the eighth, someone picked up. For a long while, neither of you spoke.|呼び出し音が七回鳴った。八回目に誰かが出た。しばらく、どちらも何も言わなかった。|铃声响了七次。第八次，有人接了起来。很久，你们俩谁都没说话。
+C 케이크를 사 온다|Buy a cake|ケーキを買ってくる|买个蛋糕 :: will+3 :: 제일 작은 케이크를 샀다. 점원이 초를 몇 개 드릴지 물었다. 하나면 된다고 했다.|You bought the smallest cake. The clerk asked how many candles you wanted. One is enough, you said.|いちばん小さなケーキを買った。店員に蝋燭は何本かと聞かれ、一本でいいと答えた。|你买了最小的蛋糕。店员问要几根蜡烛，你说一根就够了。
+
+@af_tb01 P w=4
+? afS('taboo')
+T 다시 부르는 상자|The box that calls again|また呼ぶ箱|再次呼唤的箱子
+B 손대지 말았어야 할 상자가 밤마다 당신을 부른다.|A box you should never have touched calls to you every night.|触れるべきではなかった箱が、毎晩あなたを呼ぶ。|那个本不该碰的箱子，每晚都在呼唤你。
+C 연다|Open it|開ける|打开 :: mana+3 health-3 taboo+1 :: 안에는 아무것도 없었다. 그 아무것도 없는 것이 당신 안으로 들어왔다.|There was nothing inside. That nothing came into you.|中には何もなかった。その何もないものが、あなたの中に入ってきた。|里面什么也没有。而那份“什么也没有”，钻进了你的身体。
+C* 봉인을 더한다|Add another seal|封印を重ねる|再加一道封印 :: will+3 taboo-1 :: 일곱 겹으로 감았다. 그날 밤부터 부르는 소리가 멀어졌다.|You wrapped it seven times. From that night on, the calling grew distant.|七重に封じた。その夜から、呼ぶ声が遠のいた。|你用七层封印缠住了它。从那晚起，呼唤声渐渐远了。
+C 교회에 맡긴다|Hand it to the Church|教会に預ける|交给教会 :: taboo-1 :: 신부는 상자를 받으며 아무것도 묻지 않았다. 묻지 않는 것이 더 무서웠다.|The priest took the box without asking a single question. That was more frightening.|神父は何も聞かずに箱を受け取った。聞かれないことのほうが怖かった。|神父接过箱子，什么也没问。不问反而更可怕。
+
+@af_tb02 P w=4
+? afS('taboo')
+T 닫히지 않는 묘지 문|The cemetery gate that won't close|閉まらない墓地の門|关不上的墓园门
+B 밤마다 동네 묘지의 문이 열려 있다. 당신만 그걸 안다.|Every night the gate of the local cemetery stands open. Only you know it.|毎晩、町の墓地の門が開いている。それを知っているのはあなただけだ。|每天夜里，街区墓地的门都开着。只有你知道。
+C 들어간다|Go in|入る|进去 :: mana+3 will-3 taboo+1 :: 묘비 사이를 걸었다. 이름 없는 무덤 하나가 당신의 발소리에 대답했다.|You walked among the headstones. One nameless grave answered your footsteps.|墓石のあいだを歩いた。名もない墓のひとつが、あなたの足音に応えた。|你在墓碑之间穿行。一座无名坟墓回应了你的脚步声。
+C* 문을 닫아 준다|Close the gate|門を閉めてやる|把门关上 :: - :: 녹슨 빗장을 걸었다. 다음 날 밤에도 문은 열려 있었다. 당신은 또 닫았다.|You slid the rusted bolt shut. The next night the gate was open again. You closed it again.|錆びた閂をかけた。次の夜も門は開いていた。あなたはまた閉めた。|你插上了生锈的门闩。第二天晚上门又开着，你又把它关上了。
+C 교회에 알린다|Tell the Church|教会に知らせる|告诉教会 :: taboo-1 :: 일주일 뒤 문에 새 자물쇠가 달렸다. 성수 냄새가 났다.|A week later there was a new lock on the gate. It smelled of holy water.|一週間後、門に新しい錠がついた。聖水の匂いがした。|一周后，门上换了新锁，散发着圣水的气味。
+
+@af_tb03 P w=4
+? afS('taboo')
+T 검은 파편|The black shard|黒い欠片|黑色碎片
+B 그 겨울 성배의 파편 같은 것이 보낸 사람 없이 우편으로 왔다.|Something like a shard of that winter's Grail arrives in the mail, with no sender.|あの冬の聖杯の欠片のようなものが、差出人なしで郵便で届いた。|一件像是那个冬天圣杯碎片的东西被寄到了你家，没有寄件人。
+C* 간직한다|Keep it|しまっておく|留着 :: mana+3 taboo+1 :: 상자에 넣어 침대 밑에 두었다. 겨울이면 따뜻해졌다.|You put it in a box under the bed. In winter, it grew warm.|箱に入れてベッドの下に置いた。冬になると温かくなった。|你把它装进盒子放在床底下。一到冬天，它就会变暖。
+C 교회에 넘긴다|Turn it over to the Church|教会に引き渡す|交给教会 :: taboo-1 :: 감독관의 대리라는 사람이 받으러 왔다. 그는 장갑을 두 겹 끼고 있었다.|Someone calling himself the overseer's deputy came to collect it. He wore two pairs of gloves.|監督役の代理だという人が受け取りに来た。手袋を二重にはめていた。|一个自称监督者代理的人来取走了它。他戴着两层手套。
+C 부순다|Smash it|砕く|砸碎它 :: health-3 :: 망치에 금이 갔다. 파편은 멀쩡했다. 손목이 한 달을 아팠다.|The hammer cracked. The shard was fine. Your wrist hurt for a month.|金槌にひびが入った。欠片は無傷だった。手首が一か月痛んだ。|锤子裂了，碎片却完好无损。你的手腕疼了一个月。
+
+@af_tb04 P w=4
+? afS('taboo')&&lkM()
+T 금서 경매|An auction of forbidden books|禁書の競売|禁书拍卖
+B 어느 가문이 봉인해 둔 금서가 몰래 경매에 나왔다.|A forbidden book sealed away by some magus family has turned up at a secret auction.|ある家が封じていた禁書が、ひそかに競売に出た。|某个魔术家族封存的禁书，被偷偷拿出来拍卖了。
+C* 산다|Buy it|買う|买下 :: wealth-3 lore+3 taboo+1 :: 첫 장을 넘기자 방 안의 시계가 멈췄다. 당신은 마지막 장까지 읽었다.|When you turned the first page, the clock in the room stopped. You read to the last page.|最初のページをめくると、部屋の時計が止まった。あなたは最後のページまで読んだ。|翻开第一页时，屋里的钟停了。你一直读到最后一页。
+C 교회에 신고한다|Report it to the Church|教会に通報する|向教会举报 :: taboo-1 :: 경매장은 그날 밤 비었다. 금서가 어디로 갔는지는 알려 주지 않았다.|The auction house was empty by that night. No one told you where the book went.|競売場はその夜のうちに空になった。禁書の行方は教えてもらえなかった。|当晚拍卖场就人去楼空。没人告诉你那本禁书去了哪里。
+C 모른 척한다|Pretend you never heard|知らないふりをする|装作不知道 :: - :: 누군가 샀을 것이다. 신문에서 이상한 사건을 볼 때마다 그 책을 떠올렸다.|Someone must have bought it. Every time you read about something strange in the news, you thought of that book.|誰かが買ったのだろう。新聞で妙な事件を見るたび、あの本を思い出した。|应该有人买走了吧。每次在报纸上看到怪事，你都会想起那本书。
+
+@af_tb05 P w=4
+? afS('taboo')
+T 죽은 이의 목소리|The voice of the dead|死者の声|逝者的声音
+B 오래된 녹음기에서 세상을 떠난 사람의 목소리가 당신을 부른다. 분명히 아는 목소리다.|From an old tape recorder, the voice of someone long dead calls your name. You know that voice.|古いテープレコーダーから、この世を去った人の声があなたを呼ぶ。確かに知っている声だ。|旧录音机里传出一个已逝之人的声音，在叫你的名字。那是你熟悉的声音。
+C 대답한다|Answer it|答える|回应 :: mana+3 will-3 taboo+1 :: 대답하자 목소리가 한 마디 더 했다. 녹음된 적 없는 말이었다.|When you answered, the voice said one more thing. Something that had never been recorded.|答えると、声はもうひと言しゃべった。録音されたことのない言葉だった。|你一回应，那声音又多说了一句。那句话从来没有被录下过。
+C* 테이프를 지운다|Erase the tape|テープを消す|抹掉磁带 :: will+3 taboo-1 :: 지우는 데 일 분이 걸렸다. 다시 듣고 싶은 마음은 일 년을 갔다.|Erasing it took a minute. Wanting to hear it again lasted a year.|消すのに一分かかった。もう一度聴きたい気持ちは一年続いた。|抹掉它花了一分钟。想再听一次的念头却持续了一年。
+
+@af_tb06 P w=4
+? afS('taboo')&&lkM()
+T 그 겨울의 제단|That winter's altar|あの冬の祭壇|那个冬天的祭坛
+B 성배가 강림했던 자리에 아직 재가 따뜻하다.|Where the Grail descended, the ashes are still warm.|聖杯が降臨した場所で、灰がまだ温かい。|圣杯降临过的地方，灰烬仍是温热的。
+C 다시 불을 붙인다|Rekindle the fire|また火をつける|重新点火 :: mana+6 health-3 taboo+1 :: 불꽃이 검었다. 그 불 앞에서 당신은 처음으로 그 겨울을 그리워했다.|The flame was black. Before it, for the first time, you missed that winter.|炎は黒かった。その火の前で、あなたは初めてあの冬を懐かしんだ。|火焰是黑色的。在那团火前，你第一次怀念起那个冬天。
+C* 흙으로 덮는다|Cover it with earth|土をかぶせる|用土盖住 :: will+3 taboo-1 :: 흙을 세 삽 덮었다. 재는 더 이상 따뜻하지 않았다.|You shoveled three spadefuls of earth over it. The ash was warm no longer.|土を三杯かぶせた。灰はもう温かくなかった。|你铲了三锹土盖上去。灰烬不再温热了。
+C 그냥 돌아간다|Just go home|そのまま帰る|直接回去 :: - :: 돌아오는 길에 손이 따뜻했다. 재를 만진 적은 없었다.|Your hands were warm on the way home. You had never touched the ash.|帰り道、手が温かかった。灰に触れたことはなかった。|回家路上，你的手是暖的。可你明明没碰过那些灰。
+
+@af_tb07 P w=4
+? afS('taboo')
+T 거울 너머|Beyond the mirror|鏡の向こう|镜子另一侧
+B 거울 너머로 손을 넣을 수 있다는 걸 알게 됐다.|You have discovered you can reach your hand through the mirror.|鏡の向こうに手を入れられることに気づいた。|你发现自己能把手伸进镜子里。
+C 넣어 본다|Reach in|入れてみる|伸进去试试 :: mana+3 will-3 taboo+1 :: 저편은 차가웠다. 누군가 당신의 손가락을 하나씩 세었다.|The other side was cold. Someone counted your fingers, one by one.|向こう側は冷たかった。誰かがあなたの指を一本ずつ数えた。|那一侧冰冷。有人一根一根地数着你的手指。
+C* 거울을 덮는다|Cover the mirror|鏡を覆う|盖住镜子 :: - :: 천을 덮었다. 그 방에 들어갈 때는 불을 먼저 켰다.|You covered it with a cloth. After that, you always turned on the light before entering that room.|布をかぶせた。その部屋に入るときは、先に明かりをつけるようにした。|你用布把它盖上。从那以后进那个房间前，你总是先开灯。
+C 거울을 내다 버린다|Throw the mirror out|鏡を捨てる|把镜子扔掉 :: will+3 taboo-1 :: 수거차가 거울을 싣고 갔다. 당신은 차가 모퉁이를 돌 때까지 보고 있었다.|The garbage truck carried it away. You watched until the truck turned the corner.|回収車が鏡を積んで去った。車が角を曲がるまで、あなたは見ていた。|垃圾车把镜子运走了。你一直看到车子转过街角。
+
+@af_tb08 P w=4
+? afS('taboo')&&S.age>=40
+T 늙지 않는 제안|An offer of youth|老いない誘い|不老的提议
+B 젊음을 돌려주겠다는 존재가 꿈에 나타났다.|Something appears in your dreams, offering to give you back your youth.|若さを返してやろうという存在が、夢に現れた。|一个声称能让你重返青春的存在出现在你的梦里。
+C 제안을 받아들인다|Accept the offer|誘いを受け入れる|接受提议 :: health+6 will-6 taboo+1 :: 아침에 거울 속 얼굴이 열 살 젊었다. 그 대신 무엇을 내주었는지는 기억나지 않았다.|In the morning, the face in the mirror was ten years younger. You couldn't remember what you'd given in exchange.|朝、鏡の中の顔は十歳若返っていた。その代わりに何を差し出したのかは思い出せなかった。|早上，镜子里的脸年轻了十岁。至于用什么换来的，你想不起来了。
+C* 거절한다|Refuse|断る|拒绝 :: will+3 :: 그 존재는 웃으며 '다음에'라고 했다. 다음은 오지 않았다. 아직은.|It laughed and said, "Next time." Next time hasn't come. Not yet.|その存在は笑って「また今度」と言った。今度はまだ来ていない。まだ。|它笑着说“下次吧”。下次还没有来。至少现在还没有。
+
+@af_tb09 P w=5
+? afD('taboo')
+T 이름 없는 손님|The nameless guest|名もなき客|无名的访客
+B 문 앞에 서 있는 무언가가 당신의 이름을 안다.|Something standing at your door knows your name.|戸口に立つ何かが、あなたの名を知っている。|站在门口的某样东西，知道你的名字。
+C 맞아들인다|Let it in|迎え入れる|请它进来 :: mana+6 will-6 taboo+1 :: 손님은 차를 마시지 않았다. 대신 당신의 그림자를 조금 마셨다.|The guest didn't drink the tea. It drank a little of your shadow instead.|客は茶を飲まなかった。代わりに、あなたの影を少し飲んだ。|客人没喝茶，而是喝掉了你的一点影子。
+C* 돌려보낸다|Send it away|追い返す|打发它走 :: will+3 taboo-1 :: 소금을 문턱에 뿌렸다. 기척은 오래 망설이다 돌아갔다.|You scattered salt on the threshold. The presence hesitated a long time before turning back.|敷居に塩をまいた。気配は長いこと迷った末に去っていった。|你在门槛上撒了盐。那个气息犹豫了很久，才转身离去。
+C 아침까지 문을 열지 않는다|Keep the door shut until morning|朝まで扉を開けない|到天亮都不开门 :: - :: 동이 트자 문 앞에 젖은 발자국만 남아 있었다. 들어오는 방향이었다.|At dawn, there were only wet footprints at the door. They pointed inward.|夜が明けると、戸口には濡れた足跡だけが残っていた。中へ向かう向きだった。|天亮后，门口只留下湿漉漉的脚印，脚尖朝着屋里。
+
+@af_tb10 P w=5
+? afD('taboo')&&S.age>=50
+T 문 너머의 초대|An invitation from beyond the door|扉の向こうからの招待|来自门后的邀请
+B 생의 끝자락에서 문 너머로 와 달라는 초대장이 왔다.|Near the end of your life, an invitation arrives, asking you to come through the door.|人生の終わり際に、扉の向こうへ来てほしいという招待状が届いた。|在人生的尽头，你收到一封邀请函，请你穿过那扇门。
+C 초대에 응한다|Accept the invitation|招待に応じる|接受邀请 :: mana+6 health-6 taboo+1 :: 문을 지나 한 걸음을 디뎠다. 돌아왔을 때 당신의 머리는 하얗게 세어 있었다.|You took one step through the door. When you came back, your hair had turned white.|扉をくぐって一歩踏み出した。戻ったとき、あなたの髪は真っ白になっていた。|你穿过那扇门迈出一步。回来时，你的头发已经全白了。
+C* 문을 봉인한다|Seal the door|扉を封印する|封印那扇门 :: will+6 taboo-2 :: 남은 마력을 모두 썼다. 문은 닫혔고, 당신은 처음으로 그 너머가 궁금하지 않았다.|You used all the mana you had left. The door closed, and for the first time you didn't wonder what lay beyond.|残った魔力をすべて使った。扉は閉じ、あなたは初めてその向こうを知りたいと思わなかった。|你用尽了剩下的魔力。门关上了，你第一次不再好奇门的另一边。
+C 초대장을 태운다|Burn the invitation|招待状を燃やす|烧掉邀请函 :: will+3 taboo-1 :: 타들어 가는 초대장에서 답장을 기다리겠다는 글씨가 마지막까지 남아 있었다.|As the invitation burned, the words "I will await your reply" were the last to go.|燃えていく招待状に、「返事を待っています」という文字が最後まで残っていた。|邀请函化为灰烬时，“静候回音”几个字留到了最后。
+
+@af_zl01 P w=4
+? afS('zeal')&&lkM()
+T 마지막 논문|The final thesis|最後の論文|最后的论文
+B 평생의 연구가 근원의 문턱 앞에서 멈췄다.|Your life's research has stalled at the threshold of the Root.|生涯の研究が、根源の門の手前で止まった。|你毕生的研究在根源的门槛前停滞了。
+C* 계속한다|Keep going|続ける|继续 :: lore+3 health-3 zeal+1 :: 촛불 아래서 계산을 다시 했다. 틀린 곳은 없었다. 그래서 더 괴로웠다.|You redid the calculations by candlelight. There were no mistakes. That made it worse.|蝋燭の下で計算をやり直した。間違いはなかった。だからこそ苦しかった。|你在烛光下重新演算了一遍。没有错误。正因如此才更痛苦。
+C 제자에게 넘긴다|Pass it to a student|弟子に託す|交给弟子 :: bond+3 zeal-1 :: 노트 마흔 권을 상자에 담아 건넸다. 제자는 그 무게에 휘청했다.|You packed forty notebooks into a box and handed it over. Your student staggered under the weight.|ノート四十冊を箱に詰めて渡した。弟子はその重さによろめいた。|你把四十本笔记装进箱子交给了弟子。弟子被那份重量压得一个踉跄。
+C 덮는다|Close the notebook|閉じる|合上 :: will+3 :: 노트를 덮고 산책을 나갔다. 십 년 만에 처음 본 것처럼 하늘이 넓었다.|You closed the notebook and went for a walk. The sky was as wide as if you were seeing it for the first time in ten years.|ノートを閉じて散歩に出た。十年ぶりに見るように、空が広かった。|你合上笔记出门散步。天空辽阔得像是十年来第一次见到。
+
+@af_zl02 P w=4
+? afS('zeal')
+T 차려 둔 저녁|Dinner on the table|用意された夕食|备好的晚饭
+B?lkFam() 가족이 저녁을 차려 놓고 기다린다. 연구는 오늘이 고비다.|Your family has set out dinner and is waiting. Tonight is the critical point of your research.|家族が夕食を用意して待っている。研究は今夜が山場だ。|家人做好了晚饭在等你。研究今晚正到关键时刻。
+B 친구가 저녁을 차려 놓고 기다린다. 연구는 오늘이 고비다.|A friend has set out dinner and is waiting. Tonight is the critical point of your research.|友人が夕食を用意して待っている。研究は今夜が山場だ。|朋友做好了晚饭在等你。研究今晚正到关键时刻。
+C* 연구를 한다|Keep researching|研究を続ける|继续研究 :: lore+3 bond-3 zeal+1 :: 새벽에 내려가 보니 식탁에 접시 하나가 랩에 싸여 있었다.|When you came out at dawn, there was a single plate on the table, wrapped in plastic.|明け方に出ていくと、食卓にラップをかけた皿がひとつ置いてあった。|天亮时你出来一看，桌上放着一盘用保鲜膜包好的饭菜。
+C 저녁을 먹는다|Eat dinner|夕食を食べる|吃晚饭 :: bond+3 :: 국이 식기 전에 앉았다. 연구는 이튿날 다시 했다. 결과는 같았다.|You sat down before the soup went cold. You redid the work the next day. The result was the same.|汁物が冷める前に席についた。研究は翌日やり直した。結果は同じだった。|你在汤凉之前坐了下来。研究第二天重做了一遍，结果一样。
+C 연구실로 가져오라고 한다|Ask for it to be brought to your study|研究室に運んでもらう|让人送到研究室 :: - :: 쟁반이 문 앞에 놓였다. 노크는 없었다.|A tray was left outside the door. There was no knock.|お盆が扉の前に置かれた。ノックはなかった。|托盘被放在了门口，没有敲门声。
+
+@af_zl03 P w=4
+? afS('zeal')&&lkM()
+T 제자의 회로|The apprentice's circuits|弟子の回路|弟子的回路
+B 새로 받은 제자의 회로가 드물게 좋다. 연구에 쓰면 한 걸음 나아간다.|Your new apprentice has unusually fine circuits. Using them in your research would take you a step forward.|新しく取った弟子の回路が、まれに見る良さだ。研究に使えば一歩進む。|新收的弟子回路出奇地好。用在研究上，能让你前进一步。
+C 연구에 쓴다|Use them for your research|研究に使う|用在研究上 :: lore+6 zeal+1 cruel+1 :: 제자는 석 달을 앓았다. 당신의 노트는 다섯 장 늘었다.|Your apprentice was sick for three months. Your notes grew by five pages.|弟子は三か月寝込んだ。あなたのノートは五ページ増えた。|弟子病了三个月。你的笔记多了五页。
+C* 제대로 가르친다|Teach them properly|きちんと教える|好好教导 :: bond+3 :: 기초부터 다시 가르쳤다. 몇 해 뒤 제자는 당신이 풀지 못한 식 하나를 풀어 왔다.|You taught from the basics up. Years later, the apprentice brought back the solution to an equation you'd never cracked.|基礎から教え直した。数年後、弟子はあなたが解けなかった式をひとつ解いて持ってきた。|你从基础开始重新教。几年后，弟子解出了一道你没能解开的式子。
+C 돌려보낸다|Send them back|帰す|送回去 :: - :: 제자는 다른 가문으로 갔다. 소문으로는 잘 지낸다고 했다.|The apprentice went to another family. Rumor had it they were doing well.|弟子は別の家に移った。噂では元気にしているという。|弟子去了别的家族。听说过得不错。
+
+@af_zl04 P w=4
+? afS('zeal')&&lkM()
+T 학회의 비웃음|Laughed at by the Association|学会の嘲笑|学会的嘲笑
+B 학회에서 당신의 연구를 망상이라고 비웃었다.|At the Association, they laughed your research off as a delusion.|学会で、あなたの研究は妄想だと笑われた。|在学会上，你的研究被人嘲笑为妄想。
+C* 증명하겠다고 말한다|Say you'll prove it|証明してみせると言う|说要证明给他们看 :: lore+3 bond-3 zeal+1 :: 강당이 조용해졌다. 그날부터 당신의 연구실 불은 꺼지지 않았다.|The hall went quiet. From that day on, the light in your study never went out.|講堂が静まり返った。その日から、あなたの研究室の明かりは消えなかった。|礼堂安静了下来。从那天起，你研究室的灯再也没灭过。
+C 웃어넘긴다|Laugh it off|笑って流す|一笑了之 :: will+3 :: 같이 웃었다. 집에 오는 길에 군것질을 했다. 맛있었다.|You laughed along. On the way home you bought a snack. It was good.|一緒に笑った。帰り道で買い食いをした。おいしかった。|你也跟着笑了。回家路上买了点零食，很好吃。
+
+@af_zl05 P w=4
+? afS('zeal')&&lkM()
+T 영맥 측량|Surveying the leylines|霊脈の測量|测量灵脉
+B 도시의 영맥을 몰래 측량하면 연구가 빨라진다. 교회는 금하고 있다.|Secretly surveying the city's leylines would speed up your research. The Church forbids it.|街の霊脈をひそかに測量すれば研究が早く進む。教会はそれを禁じている。|偷偷测量城市的灵脉，研究就能快很多。但教会明令禁止。
+C* 몰래 잰다|Survey in secret|ひそかに測る|偷偷测量 :: lore+3 mana+3 zeal+1 :: 새벽마다 도시를 걸었다. 지도는 완성되었다. 교회의 차가 집 앞에 서는 날이 늘었다.|You walked the city every dawn. The map was finished. More and more often, a Church car parked outside your house.|毎朝明け方に街を歩いた。地図は完成した。教会の車が家の前に停まる日が増えた。|你每天黎明都在城里走动。地图完成了。教会的车停在你家门口的日子也越来越多。
+C 허가를 구한다|Ask for permission|許可を求める|申请许可 :: - :: 서류는 넉 달이 걸렸다. 허가는 절반만 났다. 절반이면 충분했다.|The paperwork took four months. You got half the permission you asked for. Half was enough.|書類に四か月かかった。許可は半分しか下りなかった。半分で十分だった。|手续花了四个月，只批下来一半。一半就够了。
+C 그만둔다|Give it up|やめる|放弃 :: - :: 계산은 느렸다. 느린 만큼 손으로 하는 일이 많아졌다. 나쁘지 않았다.|The calculations went slowly. Being slow meant more work by hand. It wasn't bad.|計算は遅かった。遅いぶん、手でやることが増えた。悪くなかった。|计算变慢了。慢了，亲手做的事就多了。也不坏。
+
+@af_zl06 P w=4
+? afS('zeal')&&lkM()
+T 앞서 간 집안|The family that pulled ahead|先を行く家|领先的家族
+B 경쟁 가문의 연구가 한발 앞섰다.|A rival family's research has pulled a step ahead of yours.|競争相手の家の研究が一歩先んじた。|竞争家族的研究领先了你一步。
+C 연구를 훔친다|Steal their research|研究を盗む|偷走他们的研究 :: lore+6 zeal+1 judge-1 :: 그 집 결계는 낡아 있었다. 훔친 노트의 글씨는 당신 것보다 반듯했다.|Their bounded field was old. The handwriting in the stolen notes was neater than yours.|その家の結界は古びていた。盗んだノートの字は、あなたのものより整っていた。|那家的结界已经陈旧。偷来的笔记上，字迹比你的还工整。
+C* 협력을 제안한다|Propose working together|協力を持ちかける|提议合作 :: bond+3 lore+3 :: 그 집 노인이 차를 내왔다. 두 가문의 식은 생각보다 잘 맞았다.|The old head of their family served you tea. The two families' formulas fit together better than expected.|その家の老人が茶を出してくれた。二つの家の式は思ったよりよく噛み合った。|那家的老人给你端来了茶。两家的式子比想象中契合得多。
+C 자기 길을 간다|Go your own way|自分の道を行く|走自己的路 :: will+3 :: 앞서 간 길은 보지 않기로 했다. 당신의 길에는 당신 발자국만 있었다.|You decided not to look at the path ahead of you. Only your own footprints lay on yours.|先を行く道は見ないことにした。あなたの道には、あなたの足跡しかなかった。|你决定不去看别人领先的那条路。你的路上，只有你自己的脚印。
+
+@af_zl07 P w=4
+? afS('zeal')
+T 의사의 경고|The doctor's warning|医者の警告|医生的警告
+B 의사가 이대로는 몸이 버티지 못한다고 한다.|The doctor says your body won't hold out if you go on like this.|医者が、このままでは体がもたないと言う。|医生说，再这样下去，你的身体会撑不住。
+C 무시한다|Ignore it|無視する|无视 :: lore+3 health-6 zeal+1 :: 진료 기록 뒷면에 계산을 적었다. 다음 진료는 가지 않았다.|You scribbled calculations on the back of your medical record. You skipped the next appointment.|診療記録の裏に計算を書きつけた。次の診察には行かなかった。|你在病历背面写满了演算。下一次复诊你没去。
+C* 따른다|Follow the advice|従う|听从 :: health+3 zeal-1 :: 하루 여섯 시간을 잤다. 꿈에서 근원 대신 바다를 보았다.|You slept six hours a night. In your dreams, you saw the sea instead of the Root.|一日六時間眠った。夢で根源の代わりに海を見た。|你每天睡六个小时。梦里，你看到的不是根源，而是大海。
+
+@af_zl08 P w=4
+? afS('zeal')&&lkKid()
+T 다른 길을 고른 아이|A child who chose another path|別の道を選んだ子|选择了另一条路的孩子
+B 아이가 당신의 연구를 잇지 않고 다른 길을 가겠다고 한다.|Your child says they won't carry on your research. They want a different path.|子どもが、あなたの研究を継がずに別の道を行くと言う。|孩子说不想继承你的研究，要走另一条路。
+C 이으라고 강요한다|Insist they carry it on|継げと強いる|强迫他继承 :: bond-3 zeal+1 :: 아이는 고개를 끄덕였다. 그날 밤 아이 방에서 작은 울음소리가 들렸다.|Your child nodded. That night, you heard quiet crying from their room.|子どもはうなずいた。その夜、子ども部屋から小さな泣き声が聞こえた。|孩子点了点头。那天夜里，孩子房间里传出了小声的哭泣。
+C* 보내 준다|Let them go|送り出す|放他走 :: bond+3 zeal-1 :: 짐을 싸는 아이에게 노트 한 권을 쥐여 주었다. 연구 노트가 아니라 요리책이었다.|As your child packed, you pressed a notebook into their hands. Not research notes. A cookbook.|荷造りする子どもにノートを一冊持たせた。研究ノートではなく料理帳だった。|孩子收拾行李时，你塞给他一本笔记。不是研究笔记，是食谱。
+
+@af_zl09 P w=5
+? afD('zeal')
+T 모자란 시간|Not enough time|足りない時間|不够的时间
+B 남은 생이 연구를 끝내기에 모자라다는 걸 알았다.|You've realized the life you have left won't be enough to finish your research.|残りの人生では研究を終えるのに足りないと悟った。|你意识到，余生不足以完成你的研究。
+C 모든 것을 건다|Stake everything on it|すべてを賭ける|押上一切 :: lore+6 health-6 bond-3 zeal+1 :: 연구실 바닥에서 자는 날이 늘었다. 꿈속에서도 계산을 했다.|More and more often you slept on the study floor. You calculated even in your dreams.|研究室の床で眠る日が増えた。夢の中でも計算をした。|睡在研究室地板上的日子越来越多。连梦里都在演算。
+C 내려놓는다|Let it go|手放す|放下 :: will+3 bond+3 zeal-2 :: 마지막 페이지에 '여기까지'라고 적었다. 쓰고 나니 생각보다 좋은 말이었다.|On the last page, you wrote: "This far." Once written, it turned out to be a better phrase than you'd expected.|最後のページに「ここまで」と書いた。書いてみると、思ったよりいい言葉だった。|你在最后一页写下“到此为止”。写下后才发现，这句话比想象中要好。
+C* 남은 시간을 기록하는 데 쓴다|Spend the time left writing it down|残りの時間を記録に使う|用余下的时间做记录 :: lore+3 :: 다음 사람을 위해 틀린 길을 모두 적었다. 맞는 길보다 쓸 것이 훨씬 많았다.|For whoever came next, you wrote down every wrong path. There was far more to write than about the right one.|次の人のために、間違えた道をすべて書き留めた。正しい道よりずっと書くことが多かった。|你为后来者写下了所有走错的路。要写的比正确的路多得多。
+
+@af_zl10 P w=5
+? afD('zeal')&&lkM()
+T 근원의 목소리|The voice of the Root|根源の声|根源之声
+B 연구실에서 무언가가 당신의 물음에 대답하는 것 같다.|In your study, something seems to be answering your questions.|研究室で、何かがあなたの問いに答えているような気がする。|在研究室里，似乎有什么东西在回答你的提问。
+C 응답한다|Respond|応じる|回应 :: mana+6 will-6 zeal+1 :: 대답은 숫자였다. 받아 적은 종이는 아침이 되자 백지였다. 머릿속에만 남았다.|The answer was numbers. By morning, the sheet you'd written them on was blank. They remained only in your head.|答えは数字だった。書き留めた紙は朝には白紙になっていた。頭の中にだけ残った。|回答是一串数字。写下的纸到早上变成了白纸，那些数字只留在了你脑子里。
+C* 귀를 막는다|Shut it out|耳をふさぐ|捂住耳朵 :: will+3 zeal-1 :: 연구실 문을 잠갔다. 문 너머의 목소리는 사흘 동안 조금씩 작아졌다.|You locked the study door. Over three days, the voice behind it slowly faded.|研究室の扉に鍵をかけた。扉の向こうの声は、三日かけて少しずつ小さくなった。|你锁上了研究室的门。门后的声音在三天里一点点变小了。
+C 대답을 받아 적기만 한다|Only write down the answers|答えを書き留めるだけにする|只记下回答 :: lore+3 :: 묻지 않고 적기만 했다. 그것은 실망한 듯 조용해졌다.|You only wrote things down without asking. It fell silent, as if disappointed.|問わずに書き留めるだけにした。それは失望したように静かになった。|你不再提问，只是记录。它像是失望了似的安静了下来。

@@ -1,0 +1,317 @@
+# 11-21 서번트가 떠난 삶 · B 첫 해 (50)
+# 머리줄: @id B [must] [mon=a,b] [k=away,win,lost] [w=n] [blk=…]
+
+@lb01 B mon=2,3
+T 첫 달 정산|Settling the first month|最初の月の清算|第一个月的清算
+B 전쟁에 쓴 돈을 정리한다.|You go over what the war cost you.|戦争に使ったお金を整理する。|你清算战争中花掉的钱。
+C* 메운다|Cover it|穴埋めする|填补 :: wealth-3 will+3 :: 적금 하나를 깼다. 장부의 숫자가 0으로 맞았다. 그 겨울이 조금 멀어졌다.|You broke a savings account. The ledger balanced to zero. That winter felt a little further away.|積立をひとつ崩した。帳簿の数字がゼロに揃った。あの冬が少し遠のいた。|你取出了一笔定期存款。账上的数字归了零。那个冬天远了一些。
+C 미룬다|Put it off|後回しにする|往后拖 :: will-3 :: 영수증 묶음을 상자에 넣었다. 상자는 계속 그 자리에 있었다.|You put the bundle of receipts in a box. The box stayed where it was.|領収書の束を箱に入れた。箱はずっとその場所にあった。|你把一沓收据塞进箱子。箱子一直放在那里。
+
+@lb02 B
+T 새 길|A new path|新しい道|新的道路
+B 무엇을 하며 살지 정해야 한다.|You need to decide what to do with your life.|これから何をして生きていくか、決めなければならない。|你得决定接下来要做什么。
+C* 새 일을 찾는다|Find new work|新しい仕事を探す|找新工作 :: wealth+3 :: 면접에서 공백 기간을 물었다. 쉬었다고 했다. 다음 주부터 출근이었다.|At the interview, they asked about the gap. You said you'd taken a break. You started the next week.|面接で空白期間について聞かれた。休んでいたと答えた。翌週から出勤だった。|面试时对方问起空白期，你说休息了一阵。下周就开始上班了。
+C 하던 일로 돌아간다|Go back to what you did|元の仕事に戻る|回到原来的工作 :: health+3 :: 익숙한 일이 손에 맞았다. 익숙하다는 것이 이렇게 고마운 줄 몰랐다.|Familiar work fit your hands. You hadn't known how grateful you could be for the familiar.|慣れた仕事が手になじんだ。慣れていることが、こんなにありがたいとは知らなかった。|熟悉的工作很顺手。你从没想过，熟悉竟是这么值得感激的事。
+
+@lb03 B
+T 상담실|The counselor's office|相談室|咨询室
+B 잠이 계속 오지 않아 상담을 권유받았다.|Because you still can't sleep, someone suggests you see a counselor.|眠れない日が続き、カウンセリングを勧められた。|你一直睡不着，有人建议你去做心理咨询。
+C* 간다|Go|行く|去 :: will+3 wealth-3 :: 무엇을 잃었는지는 말하지 못했다. 잃었다는 것만 말해도 상담사는 고개를 끄덕였다.|You couldn't say what you'd lost. Even just saying you'd lost something, the counselor nodded.|何を失ったのかは言えなかった。失ったことだけを話しても、カウンセラーはうなずいてくれた。|你说不出失去了什么。光是说你失去了，咨询师就点了点头。
+C 혼자 견딘다|Get through it alone|ひとりで耐える|独自熬过去 :: will-3 :: 밤마다 천장의 얼룩을 셌다. 서른일곱 개였다.|Every night you counted the stains on the ceiling. There were thirty-seven.|毎晩、天井のしみを数えた。三十七個あった。|每天夜里，你数着天花板上的污渍。一共三十七块。
+
+@lb04 B mon=2,2
+T 한 달째 되는 날|One month on|ひと月目の日|满一个月的那天
+B 서번트가 떠난 지 한 달이 되었다.|It has been a month since your Servant left.|サーヴァントが去ってから、一か月が経った。|从者离开已经一个月了。
+C* 그 장소에 간다|Go to that place|あの場所へ行く|去那个地方 :: will+3 :: 마지막으로 함께 있던 곳에 갔다. 한 달 사이에 풀이 자라 있었다.|You went to the last place you'd been together. In a month, the grass had grown.|最後に一緒にいた場所へ行った。一か月のあいだに草が伸びていた。|你去了你们最后待在一起的地方。一个月里，草已经长高了。
+C 평소처럼 보낸다|Spend it like any other day|いつもどおりに過ごす|像平常一样度过 :: health+3 :: 평소처럼 일어나 평소처럼 잤다. 달력에 쳐 둔 동그라미만 평소와 달랐다.|You got up as usual and went to bed as usual. Only the circle on the calendar was different.|いつもどおり起きて、いつもどおり寝た。カレンダーにつけた丸だけが、いつもと違っていた。|你像平常一样起床，像平常一样睡觉。只有日历上画的那个圈不一样。
+
+@lb05 B
+? lkM()
+T 협회의 제안|The Association's offer|協会の申し出|协会的提议
+B 협회가 전쟁 경험을 기록으로 사겠다고 한다.|The Association offers to buy your account of the war.|協会が、戦争の経験を記録として買い取りたいと言ってきた。|魔术协会提出要买下你的战争经历记录。
+C 응한다|Accept|応じる|答应 :: wealth+3 bond-3 :: 녹음기 앞에서 사흘 동안 이야기했다. 서번트의 이름이 서류 번호가 되었다.|You talked in front of a recorder for three days. Your Servant's name became a file number.|録音機の前で三日間話した。サーヴァントの名前が書類番号になった。|你对着录音机讲了三天。从者的名字变成了一个文件编号。
+C* 거절한다|Refuse|断る|拒绝 :: will+3 :: '팔 물건이 아닙니다' 하고 말했다. 협회 사람은 명함을 두고 갔다.|"It's not for sale," you said. The Association's man left his card.|「売り物ではありません」と言った。協会の人は名刺を置いていった。|你说：“这不是用来卖的。”协会的人留下名片走了。
+
+@lb06 B
+? lkM()||ep3K()==='win'
+T 감시의 눈|Watching eyes|監視の目|监视的目光
+B 누군가 당신을 지켜보는 것 같다.|You feel like someone is watching you.|誰かに見張られている気がする。|你觉得有人在监视你。
+C* 찾아낸다|Find them|突き止める|揪出来 :: lore+3 health-3 :: 사흘을 숨어 기다렸다. 교회의 젊은 수습생이었다. 그는 얼굴이 빨개져서 도망갔다.|You lay in wait for three days. It was a young Church trainee. He turned red and ran.|三日間隠れて待った。教会の若い見習いだった。彼は顔を真っ赤にして逃げていった。|你埋伏了三天。是教会的一个年轻见习生。他涨红了脸逃走了。
+C 이사를 고민한다|Think about moving|引っ越しを考える|考虑搬家 :: wealth-3 :: 부동산을 몇 군데 돌았다. 결국 커튼만 바꾸었다.|You visited a few estate agents. In the end, you only changed the curtains.|不動産屋をいくつか回った。結局、カーテンだけ替えた。|你跑了几家房产中介，最后只换了窗帘。
+
+@lb07 B
+T 새 인연|A new acquaintance|新しい縁|新的缘分
+B 새로 알게 된 사람이 함께 밥을 먹자고 한다.|Someone you've recently met asks you to get a meal together.|新しく知り合った人が、一緒にご飯を食べようと誘ってくる。|一个新认识的人约你一起吃饭。
+C* 응한다|Say yes|応じる|答应 :: bond+3 :: 별 이야기는 하지 않았다. 다음에 또 먹자는 말에 그러자고 했다.|You didn't talk about much. When they said "Let's do this again," you said yes.|たいした話はしなかった。また食べようと言われて、そうしようと答えた。|你们没聊什么特别的。对方说下次再一起吃，你答应了。
+C 거절한다|Decline|断る|拒绝 :: - :: 아직은 아니라고 했다. 상대는 '언제든'이라고 했다.|You said not yet. They said, "Anytime."|まだ今はと断った。相手は「いつでも」と言った。|你说现在还不行。对方说：“随时都可以。”
+
+@lb08 B
+T 역사책|The history book|歴史書|历史书
+B 서점에서 서번트의 이야기가 실린 책을 본다.|At a bookstore, you see a book that tells your Servant's story.|書店で、サーヴァントの話が載った本を見つける。|你在书店看到一本记载着从者故事的书。
+C* 산다|Buy it|買う|买下 :: lore+3 wealth-3 :: 책 속의 영웅은 당신이 아는 사람과 조금 달랐다. 여백에 연필로 고쳐 적었다.|The hero in the book was a little different from the one you knew. You made corrections in the margins in pencil.|本の中の英雄は、あなたの知る人と少し違っていた。余白に鉛筆で書き直した。|书里的英雄和你认识的那个人有些不同。你用铅笔在页边改了几处。
+C 덮는다|Put it down|閉じる|合上 :: - :: 표지만 쓰다듬고 제자리에 꽂았다.|You only ran a hand over the cover and put it back on the shelf.|表紙を撫でただけで、元の場所に戻した。|你只是摸了摸封面，就把它放回了原处。
+
+@lb09 B
+T 전설의 땅|The land of legend|伝説の地|传说之地
+B 서번트의 전설이 깃든 곳에 갈 수 있다.|You could visit the land where your Servant's legend was born.|サーヴァントの伝説が息づく地へ行くことができる。|你可以去从者传说诞生的那片土地。
+C* 떠난다|Go|旅立つ|出发 :: will+3 wealth-3 :: 바람이 낯설지 않았다. 그 사람이 왜 그런 눈을 했는지 조금 알 것 같았다.|The wind didn't feel strange. You thought you understood a little why they had looked at things the way they did.|風は見知らぬものではなかった。あの人がなぜあんな目をしていたのか、少しわかった気がした。|那里的风并不陌生。你似乎有些明白，那个人为什么会有那样的眼神。
+C 다음으로 미룬다|Save it for later|また今度にする|下次再说 :: - :: 항공권 검색창을 닫았다. 언젠가라는 말을 하나 더 만들었다.|You closed the flight search. You'd made one more "someday."|航空券の検索画面を閉じた。「いつか」がひとつ増えた。|你关掉了机票搜索页面。又多了一个“总有一天”。
+
+@lb10 B mon=3,9
+T 계절|The season|季節|季节
+B?S.epi.m<=4 봄이 가고 여름이 왔다.|Spring has given way to summer.|春が過ぎて夏が来た。|春去夏来。
+B?S.epi.m<=7 여름이 가고 가을이 왔다.|Summer has given way to autumn.|夏が過ぎて秋が来た。|夏去秋来。
+B 가을이 가고 겨울이 다가온다.|Autumn is fading; winter is on its way.|秋が過ぎ、冬が近づいている。|秋天将尽，冬天要来了。
+C* 산책한다|Take a walk|散歩する|散步 :: health+3 :: 동네를 한 바퀴 걸었다. 계절이 바뀐 것을 처음 알아챈 사람처럼 오래 걸었다.|You walked around the neighborhood. You walked for a long time, like someone noticing the season for the first time.|町内をひと回り歩いた。季節が変わったことに初めて気づいた人のように、長く歩いた。|你在附近绕了一圈。像第一次察觉到季节变换的人一样，走了很久。
+C 창밖만 본다|Just look out the window|窓の外を眺める|只看着窗外 :: will+3 :: 창가에 앉아 나뭇잎의 색을 보았다. 시간이 간다는 것은 이런 것이었다.|You sat by the window and watched the color of the leaves. So this was what time passing looked like.|窓辺に座って木の葉の色を見ていた。時が過ぎるとは、こういうことだった。|你坐在窗边看着树叶的颜色。原来时间流逝就是这样。
+
+@lb11 B
+? lkOther()
+T 다른 마스터의 부고|Another Master's obituary|別のマスターの訃報|另一位御主的讣告
+B 그 겨울의 다른 마스터가 세상을 떠났다는 부고가 왔다.|Word comes that another Master from that winter has died.|あの冬の別のマスターが亡くなったという訃報が届いた。|传来讣告，那个冬天的另一位御主去世了。
+C* 간다|Go to the funeral|行く|去 :: bond+3 will-3 :: 영정 사진 속 얼굴은 그 겨울보다 젊었다. 조문객 가운데 그 겨울을 아는 사람은 당신뿐이었다.|The face in the funeral portrait was younger than it had been that winter. Of all the mourners, you were the only one who knew about that winter.|遺影の顔は、あの冬より若かった。弔問客の中で、あの冬を知る者はあなただけだった。|遗像上的脸比那个冬天时还要年轻。吊唁的人里，知道那个冬天的只有你。
+C 꽃만 보낸다|Just send flowers|花だけ送る|只送花 :: - :: 꽃집에 이름 없이 꽃을 보내 달라고 했다. 카드에는 '그 겨울에'라고만 썼다.|You had flowers sent without a name. On the card you wrote only: "From that winter."|花屋に名前なしで花を届けてもらった。カードには「あの冬に」とだけ書いた。|你让花店匿名送去鲜花。卡片上只写了“致那个冬天”。
+
+@lb12 B
+? lkM()
+T 성유물 경매|A relic at auction|聖遺物の競売|圣遗物拍卖
+B 서번트와 닿은 성유물이 경매에 나왔다.|A relic connected to your Servant has come up for auction.|サーヴァントにゆかりのある聖遺物が競売に出た。|一件与从者有渊源的圣遗物出现在拍卖会上。
+C 산다|Buy it|買う|买下 :: wealth-6 will+3 :: 가격은 터무니없었다. 그래도 손에 쥐자 그 겨울의 체온 같은 것이 느껴졌다.|The price was outrageous. But when you held it, you felt something like the warmth of that winter.|値段は法外だった。それでも手に取ると、あの冬の体温のようなものが感じられた。|价格高得离谱。可一握在手里，你就感到了类似那个冬天的体温。
+C* 지켜만 본다|Just watch|見ているだけにする|只是看着 :: - :: 낙찰가가 오르는 것을 끝까지 보았다. 망치 소리가 생각보다 가벼웠다.|You watched the bidding climb to the end. The gavel sounded lighter than you'd expected.|落札価格が上がっていくのを最後まで見ていた。木槌の音は思ったより軽かった。|你一直看着成交价往上涨。落槌声比想象中要轻。
+
+@lb13 B
+T 아이의 질문|A child's question|子どもの質問|孩子的问题
+B?lkKid() 아이가 그 사람은 어디 갔냐고 묻는다.|Your child asks where that person went.|子どもが、あの人はどこへ行ったのかと聞く。|孩子问你，那个人去哪儿了。
+B 동네 아이가 그 사람은 어디 갔냐고 묻는다.|A child from the neighborhood asks where that person went.|近所の子どもが、あの人はどこへ行ったのかと聞く。|邻居家的孩子问你，那个人去哪儿了。
+C* 이야기를 들려준다|Tell them the story|話して聞かせる|讲给他听 :: bond+3 :: 먼 옛날 이야기처럼 들려주었다. 아이는 그다음은 어떻게 됐냐고 물었다. 다음 이야기는 내일 하기로 했다.|You told it like a story from long ago. The child asked, "And then?" You promised the rest tomorrow.|昔話のように話して聞かせた。子どもは「それから?」と聞いた。続きは明日話すことにした。|你像讲很久以前的故事一样讲给孩子听。孩子问：“然后呢？”你说剩下的明天再讲。
+C 얼버무린다|Give a vague answer|はぐらかす|含糊带过 :: - :: '멀리 갔어'라고만 했다. 아이는 더 묻지 않고 공을 차러 갔다.|You only said, "Far away." The child didn't ask more and went off to kick a ball.|「遠くへ行ったよ」とだけ言った。子どもはそれ以上聞かず、ボールを蹴りに行った。|你只说了句“去了很远的地方”。孩子没再问，跑去踢球了。
+
+@lb14 B
+T 다시 몸을|Back in shape|体を鍛え直す|重新锻炼
+B 몸을 다시 단련하기 시작한다.|You start training your body again.|体を鍛え直し始める。|你重新开始锻炼身体。
+C* 꾸준히 한다|Keep at it|続ける|坚持下去 :: health+3 :: 매일 아침 같은 길을 달렸다. 숨이 차는 것이 살아 있다는 느낌과 비슷했다.|You ran the same route every morning. Being out of breath felt a lot like being alive.|毎朝同じ道を走った。息が切れる感覚は、生きている感覚に似ていた。|你每天早上都跑同一条路。气喘吁吁的感觉，和活着的感觉很像。
+C 그만둔다|Give up|やめる|放弃 :: - :: 사흘째에 운동화를 신발장에 넣었다. 운동화는 그대로 새것이었다.|On the third day, you put your running shoes back in the cabinet. They stayed practically new.|三日目に運動靴を下駄箱にしまった。靴は新品のままだった。|第三天，你把运动鞋放回了鞋柜。鞋子还跟新的一样。
+
+@lb15 B
+T 뜸해진 꿈|Fewer dreams|減った夢|梦少了
+B 서번트 꿈을 꾸는 날이 줄었다.|You dream of your Servant less often now.|サーヴァントの夢を見る日が減った。|梦见从者的日子变少了。
+C* 그대로 받아들인다|Accept it as it is|そのまま受け入れる|就这样接受 :: will+3 :: 꿈이 줄어든 만큼 낮이 길어졌다. 그 낮을 잘 쓰기로 했다.|As the dreams grew fewer, the days grew longer. You decided to use those days well.|夢が減ったぶん、昼が長くなった。その昼を大切に使うことにした。|梦少了，白天就显得长了。你决定好好利用这些白天。
+C 붙잡으려 한다|Try to hold on|つかもうとする|努力抓住 :: will-3 mana+3 :: 잠들기 전에 그 겨울의 장면을 일부러 떠올렸다. 꿈은 오지 않고 회로만 달아올랐다.|Before sleep, you deliberately called up scenes from that winter. The dreams didn't come; only your circuits grew hot.|眠る前にわざとあの冬の場面を思い浮かべた。夢は来ず、回路だけが熱くなった。|睡前你刻意回想那个冬天的场景。梦没有来，只有回路发烫。
+
+@lb16 B k=away w=2
+T 먼 도시의 소문|A rumor from a distant city|遠い街の噂|远方城市的传闻
+B 먼 도시에서 서번트를 닮은 사람을 봤다는 소문이 들린다.|You hear a rumor that someone who looks like your Servant was seen in a faraway city.|遠い街でサーヴァントに似た人を見たという噂が聞こえてくる。|有传言说，在遥远的城市里有人见到了一个长得像从者的人。
+C 찾아간다|Go there|訪ねていく|去找 :: wealth-3 will+3 :: 그 도시의 광장에 하루 종일 앉아 있었다. 만나지 못했다. 그래도 같은 하늘 아래 있다는 것은 알았다.|You sat in that city's square all day. You didn't meet. But you knew you were under the same sky.|その街の広場に一日じゅう座っていた。会えなかった。それでも同じ空の下にいることはわかった。|你在那座城市的广场上坐了一整天。没有遇见。但你知道，你们在同一片天空下。
+C* 소문으로 둔다|Leave it as a rumor|噂のままにしておく|就当是传闻 :: - :: 잘 지내는 모양이라고 생각했다. 그걸로 됐다.|You figured they must be doing well. That was enough.|元気にしているのだろうと思った。それでよかった。|你想，对方大概过得很好。这就够了。
+
+@lb17 B must mon=12,12
+T 한 해|One year|一年|一年
+B 전쟁이 끝난 지 한 해가 되었다.|A year has passed since the war ended.|戦争が終わって一年が経った。|战争结束已经一年了。
+C* 기념한다|Mark the day|記念する|纪念这一天 :: will+3 :: 초를 하나 켜고 그 겨울을 처음부터 끝까지 떠올렸다. 이번에는 마지막 장면에서 울지 않았다.|You lit a candle and went through that winter from beginning to end. This time, you didn't cry at the last scene.|蝋燭を一本灯し、あの冬を最初から最後まで思い返した。今度は最後の場面で泣かなかった。|你点了一根蜡烛，把那个冬天从头到尾回想了一遍。这一次，到最后一幕你没有哭。
+C 앞으로 간다|Move forward|前へ進む|继续向前 :: health+3 :: 달력을 새로 샀다. 첫 장에 아무것도 적지 않았다.|You bought a new calendar. You wrote nothing on the first page.|新しいカレンダーを買った。最初のページには何も書かなかった。|你买了本新日历。第一页什么也没写。
+
+@lb18 B
+T 이사|Moving|引っ越し|搬家
+B 전쟁의 기억이 남은 집을 떠날 수도 있다.|You could leave the house that holds the memories of the war.|戦争の記憶が残る家を離れることもできる。|你也可以搬离那栋留有战争记忆的房子。
+C 이사한다|Move out|引っ越す|搬走 :: wealth-3 will+3 :: 새집의 창은 다른 쪽을 향해 있었다. 아침 해가 들어오는 방향이 바뀌었다.|The windows in the new place faced a different way. The morning sun came in from a new direction.|新しい家の窓は別の方角を向いていた。朝日の差し込む向きが変わった。|新家的窗户朝着另一个方向。晨光照进来的方向变了。
+C* 남는다|Stay|残る|留下 :: - :: 남기로 했다. 그 집에서 생긴 일은 그 집에서 받아들이고 싶었다.|You decided to stay. What happened in that house, you wanted to come to terms with in that house.|残ることにした。その家で起きたことは、その家で受け止めたかった。|你决定留下。在那栋房子里发生的事，你想在那里接受它。
+
+@lb19 B
+T 첫 생일|The first birthday|初めての誕生日|第一个生日
+B 서번트 없이 맞는 첫 생일이다.|It's your first birthday without your Servant.|サーヴァントのいない、初めての誕生日だ。|这是没有从者的第一个生日。
+C* 친구들과 보낸다|Spend it with friends|友人と過ごす|和朋友一起过 :: bond+3 :: 케이크의 초를 끄며 소원을 빌지 않았다. 대신 친구들 얼굴을 하나씩 보았다.|You blew out the candles without making a wish. Instead, you looked at your friends' faces one by one.|ケーキの蝋燭を吹き消しながら、願いごとはしなかった。代わりに友人たちの顔をひとりずつ見た。|吹蜡烛时你没有许愿，而是一个个看着朋友们的脸。
+C 혼자 보낸다|Spend it alone|ひとりで過ごす|一个人过 :: will-3 :: 전화기를 꺼 두었다. 켰을 때 메시지가 몇 개 와 있었다.|You turned off your phone. When you turned it back on, there were a few messages.|携帯の電源を切っておいた。入れたとき、メッセージがいくつか来ていた。|你关了手机。重新开机时，收到了几条消息。
+
+@lb20 B
+? lkM()
+T 연구 재개|Back to research|研究再開|重拾研究
+B 멈춰 둔 연구를 다시 펼친다.|You open up your paused research again.|止めていた研究を、また広げる。|你重新摊开了搁置的研究。
+C* 몰두한다|Throw yourself into it|没頭する|埋头钻研 :: lore+3 health-3 :: 밤을 새웠다. 노트 한 귀퉁이에 그 겨울의 계산이 적혀 있었다. 그 옆에 이어서 적었다.|You stayed up all night. In the corner of a notebook were calculations from that winter. You continued writing beside them.|徹夜した。ノートの隅にあの冬の計算が書いてあった。その横に続きを書いた。|你熬了一整夜。笔记本一角写着那个冬天的演算，你在旁边接着写了下去。
+C 천천히 한다|Take it slow|ゆっくり進める|慢慢来 :: lore+3 :: 하루에 한 장씩만 했다. 한 장이면 충분한 날도 있었다.|You did only one page a day. On some days, one page was enough.|一日一ページずつだけ進めた。一ページで十分な日もあった。|你每天只做一页。有些日子，一页就够了。
+
+@lb21 B
+T 피해자 모임|The victims' group|被害者の会|受害者互助会
+B 사고 피해자를 돕는 모임이 사람을 찾는다.|A group helping victims of the "accident" is looking for volunteers.|事故の被害者を支える会が、人手を探している。|一个帮助事故受害者的团体正在招人。
+C* 함께한다|Join them|参加する|加入 :: bond+3 wealth-3 judge+1 :: 매주 토요일, 서류를 정리하고 차를 끓였다. 이유는 말하지 않았다.|Every Saturday you sorted papers and made tea. You never said why.|毎週土曜日、書類を整理してお茶を淹れた。理由は言わなかった。|每周六，你都去整理文件、泡茶。你从没说过原因。
+C 기부만 한다|Just donate|寄付だけする|只捐款 :: wealth-3 :: 계좌로 돈을 보냈다. 영수증에 감사하다는 글이 적혀 있었다.|You sent money to their account. The receipt said thank you.|口座に送金した。領収書に感謝の言葉が書かれていた。|你往他们的账户汇了款。收据上写着感谢的话。
+
+@lb22 B
+T 흐려지는 목소리|A fading voice|薄れていく声|渐渐模糊的声音
+B 서번트의 목소리가 잘 떠오르지 않는다.|You can't quite recall your Servant's voice anymore.|サーヴァントの声が、うまく思い出せない。|你渐渐想不起从者的声音了。
+C* 적어 둔다|Write it down|書き留める|记下来 :: lore+3 will+3 :: 기억나는 말을 모두 적었다. 적고 나니 목소리가 조금 돌아왔다.|You wrote down every phrase you could remember. Once written, the voice came back a little.|覚えている言葉をすべて書き出した。書き終えると、声が少し戻ってきた。|你把记得的话全都写了下来。写完后，那个声音回来了一点。
+C 흘려보낸다|Let it go|流れるにまかせる|让它淡去 :: will-3 :: 흐려지는 것도 그 사람의 일부라고 생각했다. 그렇게 생각하기로 했다.|You told yourself that fading, too, was part of them. You decided to believe that.|薄れていくことも、あの人の一部なのだと思った。そう思うことにした。|你告诉自己，淡去也是那个人的一部分。你决定这样相信。
+
+@lb23 B
+T 옛 친구의 결혼식|An old friend's wedding|旧友の結婚式|老朋友的婚礼
+B 옛 친구의 결혼식 초대장이 왔다.|A wedding invitation arrives from an old friend.|昔の友人から結婚式の招待状が届いた。|收到了老朋友的婚礼请柬。
+C* 간다|Go|行く|去 :: bond+3 wealth-3 :: 축가가 길었다. 하객석에서 실컷 박수를 쳤다.|The wedding song went on and on. You clapped your heart out from the guests' seats.|祝いの歌が長かった。招待客の席から思い切り拍手を送った。|婚礼上的祝歌唱了很久。你在宾客席上使劲鼓掌。
+C 축하 연락만 한다|Just send congratulations|お祝いの連絡だけする|只发去祝福 :: - :: 긴 메시지를 썼다가 짧게 고쳐 보냈다. 하트가 하나 돌아왔다.|You wrote a long message, then cut it short before sending. A heart came back.|長いメッセージを書いてから、短く直して送った。ハートがひとつ返ってきた。|你写了一条长消息，又改短了才发出去。对方回了一个爱心。
+
+@lb24 B
+T 새 취미|A new hobby|新しい趣味|新的爱好
+B 서번트가 좋아하던 것을 해 본다.|You try something your Servant used to love.|サーヴァントが好きだったことをやってみる。|你试着做了从者喜欢的事。
+C* 이어 간다|Keep it up|続けてみる|继续下去 :: will+3 :: 처음에는 서툴렀다. 서툰 것이 즐거웠다. 그 사람도 처음엔 그랬을 것이다.|You were clumsy at first. Being clumsy was fun. They must have started out the same way.|最初は下手だった。下手なのが楽しかった。あの人も最初はそうだったのだろう。|一开始很笨拙。笨拙也很开心。那个人一开始大概也是这样吧。
+C 내 취미를 찾는다|Find your own|自分の趣味を探す|找自己的爱好 :: health+3 :: 결국 당신에게 맞는 것은 따로 있었다. 그 사람이라면 그걸 더 좋아했을 것이다.|In the end, something else suited you better. They would have liked that more.|結局、あなたに合うものは別にあった。あの人なら、そのほうを喜んだだろう。|到头来，适合你的是别的东西。那个人的话，应该会更喜欢这样。
+
+@lb25 B
+T 닮은 사람|A familiar face|似た人|相像的人
+B 거리에서 서번트를 닮은 사람을 봤다.|On the street, you see someone who looks like your Servant.|街で、サーヴァントに似た人を見かけた。|你在街上看到一个像从者的人。
+C 따라간다|Follow them|ついていく|跟上去 :: will-3 :: 두 블록을 따라갔다. 그 사람이 돌아보았다. 전혀 다른 얼굴이었다.|You followed for two blocks. They turned around. A completely different face.|二ブロックついていった。その人が振り返った。まるで違う顔だった。|你跟了两个街区。那人回过头来，是一张完全不同的脸。
+C* 그대로 지나친다|Walk on|そのまま通り過ぎる|就这样走过去 :: will+3 :: 뒷모습만 보고 지나쳤다. 닮았다는 것만으로도 하루가 조금 밝았다.|You only saw them from behind, and walked on. Just the resemblance brightened your day a little.|後ろ姿だけ見て通り過ぎた。似ているというだけで、一日が少し明るくなった。|你只看了一眼背影就走过去了。光是相像，就让这一天亮了一点。
+
+@lb26 B blk=checkup
+T 건강 검진|A health checkup|健康診断|体检
+B 검진 결과가 좋지 않다.|Your checkup results aren't good.|健康診断の結果がよくない。|体检结果不太好。
+C* 생활을 고친다|Change your habits|生活を改める|改变生活习惯 :: health+3 :: 술을 끊고 계단을 걸었다. 석 달 뒤 수치가 조금 내려갔다.|You quit drinking and took the stairs. Three months later, the numbers came down a little.|酒をやめて階段を使った。三か月後、数値が少し下がった。|你戒了酒，改走楼梯。三个月后，指标降了一点。
+C 무시한다|Ignore it|無視する|不理会 :: health-3 :: 결과지를 접어 서랍에 넣었다. 그 겨울에 비하면 별것 아니라고 생각했다.|You folded the results and put them in a drawer. Compared to that winter, it seemed like nothing.|結果用紙を畳んで引き出しに入れた。あの冬に比べれば何でもないと思った。|你把体检单折起来塞进抽屉。和那个冬天比起来，这不算什么。
+
+@lb27 B
+? lkJob()
+T 인정|Recognition|評価|认可
+B 일터에서 성과를 인정받았다.|Your work is recognized at your workplace.|職場で成果を認められた。|你的工作成绩在单位得到了认可。
+C* 더 맡는다|Take on more|もっと引き受ける|承担更多 :: wealth+3 health-3 :: 일이 늘었다. 바쁘다는 것이 고마운 시기였다.|Your workload grew. It was a time when being busy was a blessing.|仕事が増えた。忙しいことがありがたい時期だった。|工作变多了。那段日子，忙碌反倒是种恩赐。
+C 쉬어 간다|Take a breather|ひと息つく|歇一歇 :: health+3 :: 상여금으로 짧은 여행을 다녀왔다. 바다가 보이는 방이었다.|You took a short trip with the bonus. The room had a view of the sea.|賞与で短い旅行に出かけた。海の見える部屋だった。|你用奖金去短途旅行了一趟。房间能看到大海。
+
+@lb28 B
+T 밤 산책|A night walk|夜の散歩|夜间散步
+B 함께 걷던 밤길을 혼자 걷는다.|You walk alone along the night road you used to walk together.|一緒に歩いた夜道を、ひとりで歩く。|你独自走在曾经一起走过的夜路上。
+C* 끝까지 걷는다|Walk to the end|最後まで歩く|走到尽头 :: will+3 :: 가로등이 하나씩 켜졌다. 그 겨울에는 꺼진 가로등이 더 많았다.|The streetlights came on one by one. That winter, more of them had been dark.|街灯がひとつずつ灯った。あの冬は、消えた街灯のほうが多かった。|路灯一盏盏亮了起来。那个冬天，熄灭的路灯要多得多。
+C 돌아선다|Turn back|引き返す|折返 :: - :: 반쯤 가다 돌아섰다. 남은 반은 다음에 걷기로 했다.|Halfway there, you turned back. You'd walk the other half another time.|半分ほど行って引き返した。残りの半分はまた今度歩くことにした。|走到一半你就折返了。剩下的一半，下次再走。
+
+@lb29 B
+T 기록 보존|Keeping the records|記録の保存|保存记录
+B 교회가 전쟁 기록 보존에 동의해 달라고 한다.|The Church asks for your consent to preserve records of the war.|教会が、戦争の記録保存に同意してほしいと言ってきた。|教会请你同意保存战争记录。
+C* 동의한다|Consent|同意する|同意 :: bond+3 :: 서명란에 이름을 적었다. 언젠가 다음 마스터가 이 기록을 읽을 것이다.|You signed your name. Someday, the next Master will read these records.|署名欄に名前を書いた。いつか次のマスターがこの記録を読むのだろう。|你在签名栏写下名字。总有一天，下一位御主会读到这些记录。
+C 거절한다|Refuse|断る|拒绝 :: lore+3 :: 대신 당신만의 기록을 남겼다. 교회의 것보다 서번트 이야기가 훨씬 길었다.|Instead, you kept your own record. It had far more about your Servant than the Church's ever would.|代わりに自分だけの記録を残した。教会のものより、サーヴァントの話がずっと長かった。|你转而留下了属于自己的记录。关于从者的部分，比教会的长得多。
+
+@lb30 B
+? lkOther()
+T 생존자의 고백|A survivor's confession|生存者の告白|幸存者的坦白
+B 살아남은 마스터가 그날 밤의 진실을 털어놓는다.|A surviving Master confesses the truth about that night.|生き残ったマスターが、あの夜の真実を打ち明ける。|一位幸存的御主向你吐露了那一夜的真相。
+C* 듣는다|Listen|聞く|听下去 :: lore+3 will-3 :: 당신이 몰랐던 한 수가 있었다. 들은 뒤에도 그 사람을 미워할 수 없었다.|There had been a move you never knew about. Even after hearing it, you couldn't hate them.|あなたの知らなかった一手があった。聞いたあとも、その人を憎めなかった。|原来还有你不知道的一步棋。听完之后，你还是恨不起那个人。
+C 막는다|Stop them|遮る|打断 :: - :: '듣지 않겠다'고 했다. 그 사람은 안도한 얼굴이었다.|"I don't want to hear it," you said. They looked relieved.|「聞きたくない」と言った。その人はほっとした顔をした。|你说：“我不想听。”对方看起来松了一口气。
+C 그를 탓한다|Blame them|責める|责怪对方 :: bond-3 avenger+1 :: 목소리가 높아졌다. 그 사람은 고개를 숙인 채 다 들었다. 끝나고 나서도 마음은 풀리지 않았다.|Your voice rose. They took it all with head bowed. Even when it was over, you felt no better.|声が大きくなった。その人はうなだれたまま、すべて聞いた。終わっても、気持ちは晴れなかった。|你的声音越来越大。那人低着头全都听完了。说完之后，你心里还是没有好受。
+
+@lb31 B
+T 영웅 영화|A hero movie|英雄の映画|英雄电影
+B 서번트를 닮은 영웅이 주인공인 영화가 개봉했다.|A movie starring a hero who resembles your Servant has come out.|サーヴァントに似た英雄が主人公の映画が公開された。|一部以酷似从者的英雄为主角的电影上映了。
+C* 본다|See it|観る|去看 :: will+3 wealth-3 :: 배우는 조금도 닮지 않았다. 그래도 마지막 장면에서 눈물이 났다.|The actor didn't look anything like them. Still, the last scene brought tears.|俳優は少しも似ていなかった。それでも最後の場面で涙が出た。|演员一点都不像。可最后一幕，你还是流泪了。
+C 보지 않는다|Skip it|観ない|不看 :: - :: 극장 앞 포스터만 보고 지나쳤다. 포스터 속 영웅은 지나치게 멋있었다.|You only glanced at the poster outside the theater. The hero on it was far too dashing.|映画館の前のポスターだけ見て通り過ぎた。ポスターの英雄はかっこよすぎた。|你只看了一眼影院门口的海报就走过去了。海报上的英雄帅得过头了。
+
+@lb32 B mon=8,10
+T 연말 모임|A year-end party|年末の集まり|年末聚会
+B 연말 모임에 초대받았다.|You're invited to a year-end party.|年末の集まりに誘われた。|你被邀请参加年末聚会。
+C* 간다|Go|行く|去 :: bond+3 :: 건배를 몇 번 했다. 한 해를 돌아보자는 말에 웃기만 했다.|You toasted a few times. When someone suggested looking back on the year, you only smiled.|何度か乾杯した。一年を振り返ろうと言われて、笑うだけだった。|你干了几次杯。有人提议回顾这一年，你只是笑了笑。
+C 집에 있는다|Stay home|家にいる|待在家里 :: will-3 :: 창밖에서 다른 집들의 웃음소리가 들렸다.|You could hear laughter from other homes outside the window.|窓の外から、よその家の笑い声が聞こえた。|窗外传来别人家的笑声。
+
+@lb33 B mon=9,11
+T 새해 첫날|New Year's Day|元日|元旦
+B 새해 첫 해가 뜬다.|The first sun of the new year rises.|新年の初日が昇る。|新年的第一缕阳光升起。
+C* 소원을 빈다|Make a wish|願いをかける|许个愿 :: will+3 :: 성배에 빌 만한 소원보다 훨씬 작은 소원이었다. 이번에는 이루어질 것 같았다.|It was a much smaller wish than any you could have asked of the Grail. This one felt like it might come true.|聖杯に願うようなものより、ずっと小さな願いだった。今度は叶いそうな気がした。|那是一个比向圣杯许的愿小得多的愿望。这次好像能实现。
+C 그냥 잔다|Just sleep in|そのまま寝る|接着睡 :: health+3 :: 해는 당신 없이도 떴다. 늦은 아침에 끓인 라면이 맛있었다.|The sun rose without you. The instant noodles you made for a late breakfast were delicious.|日はあなたがいなくても昇った。遅い朝に作ったラーメンがおいしかった。|太阳没等你也照样升起。晚起后煮的泡面很香。
+
+@lb34 B
+? lkM()
+T 남은 마력|Lingering mana|残った魔力|残留的魔力
+B 거처에 서번트의 마력 흔적이 남아 있다.|Traces of your Servant's mana linger in your home.|住まいに、サーヴァントの魔力の痕跡が残っている。|住处还残留着从者的魔力痕迹。
+C* 연구한다|Study it|研究する|研究它 :: lore+3 mana+3 :: 흔적을 따라 회로를 그렸다. 영령의 마력은 사람의 것과 결이 달랐다.|You traced the residue into a circuit diagram. A Heroic Spirit's mana had a different grain from a human's.|痕跡をたどって回路を描いた。英霊の魔力は、人のものとは肌理が違っていた。|你顺着痕迹描出了回路。英灵的魔力和人类的纹理不同。
+C 지운다|Cleanse it|消す|清除 :: will+3 :: 정화 의식을 했다. 방 안의 공기가 가벼워졌다. 조금 허전했다.|You performed a cleansing rite. The air in the room grew lighter. It felt a little empty.|浄化の儀式をした。部屋の空気が軽くなった。少し物足りなかった。|你做了净化仪式。屋里的空气变轻了，心里有些空落落的。
+
+@lb35 B
+? lkKid()
+T 아이의 그림|Your child's drawing|子どもの絵|孩子的画
+B 아이가 그 사람을 그렸다.|Your child drew a picture of that person.|子どもがあの人の絵を描いた。|孩子画了那个人。
+C* 벽에 걸어 둔다|Hang it on the wall|壁に飾る|挂在墙上 :: bond+3 will+3 :: 크레파스로 그린 그림이었다. 닮지 않았는데, 웃는 모습만은 똑같았다.|It was a crayon drawing. It didn't look like them — except the smile, which was exactly right.|クレヨンで描いた絵だった。似ていなかったが、笑った顔だけはそっくりだった。|那是用蜡笔画的。画得不像，只有笑容一模一样。
+C 칭찬만 한다|Just praise it|褒めるだけにする|只是夸奖 :: bond+3 :: 잘 그렸다고 머리를 쓰다듬었다. 아이는 다음 날 그림을 하나 더 그려 왔다.|You stroked your child's head and said it was good. The next day, they brought you another.|上手に描けたねと頭を撫でた。子どもは次の日、もう一枚描いてきた。|你摸着孩子的头说画得真好。第二天，孩子又画了一张来。
+
+@lb36 B
+T 잃었던 물건|Something lost|なくした物|丢失的东西
+B 전쟁 중 잃어버린 물건을 찾았다.|You've found something you lost during the war.|戦争中になくした物が見つかった。|你找到了战争中弄丢的东西。
+C* 반긴다|Welcome it back|喜ぶ|欣喜 :: will+3 :: 소파 틈에 끼어 있었다. 그 겨울 내내 거기 있었던 것이다.|It had been wedged in the sofa cushions. It had been there the whole winter.|ソファの隙間に挟まっていた。あの冬のあいだずっと、そこにあったのだ。|它卡在沙发缝里。整个冬天，它一直都在那里。
+C 버린다|Throw it away|捨てる|扔掉 :: - :: 이제는 쓸 일이 없는 물건이었다. 버리고 나서 조금 웃었다.|It was something you'd never need again. After throwing it away, you laughed a little.|もう使うことのない物だった。捨ててから、少し笑った。|那已经是用不上的东西了。扔掉后，你笑了一下。
+
+@lb37 B
+T 좋아하던 음식|Their favorite food|好物|喜欢的食物
+B 서번트가 좋아하던 음식을 만들어 본다.|You try making your Servant's favorite food.|サーヴァントの好物を作ってみる。|你试着做从者喜欢吃的东西。
+C* 끝까지 만든다|Make it all the way through|最後まで作る|坚持做完 :: will+3 health+3 :: 맛은 조금 달랐다. 그래도 두 그릇을 먹었다.|It didn't taste quite the same. You still ate two bowls.|味は少し違った。それでも二杯食べた。|味道有点不一样。但你还是吃了两碗。
+C 사 먹는다|Buy it instead|買って食べる|买来吃 :: wealth-3 :: 가게 것이 더 맛있었다. 그 사람이 들었으면 화를 냈을 것이다.|The store-bought one tasted better. They'd have been furious to hear it.|店のほうがおいしかった。あの人が聞いたら怒っただろう。|店里卖的更好吃。那个人要是听见了，肯定会生气。
+
+@lb38 B k=away w=2
+T 두 번째 소식|A second message|二通目の便り|第二封来信
+B 서번트에게서 두 번째 소식이 닿았다.|A second message arrives from your Servant.|サーヴァントから二通目の便りが届いた。|从者寄来了第二封消息。
+C* 기다린다|Wait for the next|待つ|等下一封 :: will+3 :: 엽서에는 산이 있었다. 다음 엽서에는 무엇이 있을지 기다리는 것이 즐거워졌다.|This postcard had mountains on it. You started looking forward to what the next one would show.|はがきには山が写っていた。次のはがきに何が写っているか、待つのが楽しみになった。|明信片上是一座山。你开始期待下一张会是什么。
+C 찾아 나선다|Go looking|探しに出る|出门寻找 :: wealth-3 will+3 :: 소인이 찍힌 도시까지 갔다. 우체국 직원이 그런 사람이 왔었다고 했다. 사흘 전이었다.|You went to the city on the postmark. The post office clerk said someone like that had come by. Three days earlier.|消印の街まで行った。郵便局員が、そんな人が来たと言った。三日前だった。|你去了邮戳上的那座城市。邮局职员说，确实来过那样一个人。是三天前。
+
+@lb39 B
+T 친구의 상실|A friend's loss|友人の喪失|朋友的失去
+B 친구가 큰 상실을 겪었다며 이야기를 청한다.|A friend who has suffered a great loss asks to talk.|大きな喪失を経験した友人が、話を聞いてほしいと言う。|一位遭遇了巨大失去的朋友，想找你聊聊。
+C* 들어 준다|Listen|話を聞く|倾听 :: bond+3 will+3 :: 할 수 있는 말은 많지 않았다. 당신이 아는 상실의 무게만큼 고개를 끄덕였다.|There wasn't much you could say. You nodded as much as the loss you knew allowed.|かけられる言葉は多くなかった。あなたの知る喪失の重さのぶんだけ、うなずいた。|能说的话不多。你只是按照自己体会过的失去之重，默默点头。
+C 바쁘다고 한다|Say you're busy|忙しいと言う|说自己很忙 :: - :: 다음에 보자고 했다. 다음은 생각보다 늦게 왔다.|You said "Next time." Next time came later than you'd thought.|また今度と言った。今度は思ったより遅くなった。|你说下次再见。下次来得比你想的要晚。
+
+@lb40 B
+T 바다|The sea|海|大海
+B 함께 보자던 바다를 보러 간다.|You go to see the sea you'd promised to see together.|一緒に見ようと言っていた海を見に行く。|你去看那片说好要一起看的海。
+C* 혼자 간다|Go alone|ひとりで行く|一个人去 :: will+3 wealth-3 :: 파도가 끝없이 밀려왔다. 그 사람은 이 소리를 좋아했을 것이다.|The waves kept coming. They would have loved this sound.|波が果てしなく寄せてきた。あの人はこの音が好きだっただろう。|海浪不停地涌来。那个人一定会喜欢这个声音。
+C 다음에 간다|Go another time|また今度行く|下次再去 :: - :: 바다는 기다려 줄 것이다. 바다는 늘 그랬다.|The sea would wait. It always had.|海は待っていてくれるだろう。海はいつもそうだった。|大海会等你的。它一直都是这样。
+
+@lb41 B
+T 도서관의 전설|A legend in the library|図書館の伝説|图书馆里的传说
+B 도서관에서 서번트 전설의 다른 판본을 찾았다.|At the library, you find a different version of your Servant's legend.|図書館で、サーヴァントの伝説の別の版を見つけた。|你在图书馆找到了从者传说的另一个版本。
+C* 읽는다|Read it|読む|读下去 :: lore+3 :: 이 판본에서는 결말이 조금 달랐다. 당신은 이쪽이 마음에 들었다.|In this version, the ending was a little different. You liked this one better.|この版では結末が少し違っていた。あなたはこちらのほうが気に入った。|这个版本的结局略有不同。你更喜欢这个。
+C 덮는다|Close it|閉じる|合上 :: - :: 당신이 아는 이야기 하나면 충분했다.|The one story you knew was enough.|あなたの知るひとつの物語で十分だった。|你知道的那一个故事，就足够了。
+
+@lb42 B
+T 돌아온 잠|Sleep returns|戻ってきた眠り|睡眠回来了
+B 오랜만에 깊이 잤다.|For the first time in a long while, you slept deeply.|久しぶりに深く眠った。|你久违地睡了个好觉。
+C* 기뻐한다|Be glad|喜ぶ|高兴 :: health+3 :: 몸이 가벼웠다. 아침을 두 번 먹었다.|Your body felt light. You ate breakfast twice.|体が軽かった。朝ごはんを二回食べた。|身体很轻松。你吃了两顿早饭。
+C 미안해진다|Feel guilty|申し訳なくなる|感到愧疚 :: will-3 :: 잘 잔 것이 미안했다. 누구에게 미안한지는 알 것 같았다.|You felt guilty for sleeping well. You thought you knew who you felt guilty toward.|よく眠れたことが申し訳なかった。誰に申し訳ないのかは、わかる気がした。|睡得好竟让你觉得愧疚。对谁愧疚，你似乎心里有数。
+
+@lb43 B
+T 박물관 특별전|A museum exhibition|博物館の特別展|博物馆特展
+B 서번트의 시대를 다룬 특별전이 열렸다.|A special exhibition on your Servant's era has opened.|サーヴァントの時代を扱った特別展が開かれた。|一场关于从者那个时代的特展开幕了。
+C* 간다|Go|行く|去 :: lore+3 will+3 :: 유리관 속 물건 하나 앞에서 오래 서 있었다. 그 사람이 쓰던 것과 꼭 닮았다.|You stood a long time before one item in a glass case. It looked just like something they'd used.|ガラスケースの中の品のひとつの前に、長いこと立っていた。あの人が使っていた物にそっくりだった。|你在一个玻璃展柜前站了很久。里面那件东西，和那个人用过的一模一样。
+C 가지 않는다|Don't go|行かない|不去 :: - :: 전시 안내문을 냉장고에 붙여 두었다. 전시가 끝날 때까지 그대로 있었다.|You stuck the exhibition flyer on the fridge. It stayed there until the show ended.|展示の案内を冷蔵庫に貼っておいた。展示が終わるまでそのままだった。|你把展览传单贴在冰箱上，一直贴到展览结束。
+
+@lb44 B
+T 옛 거처 앞|The old base|かつての拠点の前|旧据点前
+B 전쟁 때 머물던 곳 앞을 지난다.|You pass the place where you stayed during the war.|戦争中に過ごした場所の前を通る。|你路过战争期间住过的地方。
+C 들어가 본다|Go inside|入ってみる|进去看看 :: will-3 lore+3 :: 새 주인이 벽지를 바꿨다. 벽지 아래 결계의 흔적이 희미하게 남아 있었다.|The new owner had changed the wallpaper. Beneath it, faint traces of the bounded field remained.|新しい住人が壁紙を替えていた。壁紙の下に、結界の痕跡がかすかに残っていた。|新主人换了墙纸。墙纸下面，还隐约残留着结界的痕迹。
+C* 지나친다|Pass by|通り過ぎる|走过去 :: - :: 창가에 다른 사람의 화분이 놓여 있었다. 그걸로 됐다.|Someone else's plant sat in the window. That was enough.|窓辺に知らない人の植木鉢が置かれていた。それでよかった。|窗台上摆着别人的盆栽。这样就好。
+
+@lb45 B
+? !!O().mage
+T 가문의 평가|The family's verdict|一族の評価|家族的评价
+B 가문 어른들이 전쟁의 결과를 두고 평가한다.|The elders of your family pass judgment on how the war turned out.|家の年長者たちが、戦争の結果について評価を下す。|家族长辈们对战争的结果评头论足。
+C* 평가를 받아들인다|Accept their verdict|評価を受け入れる|接受评价 :: bond+3 will-3 :: 고개를 숙이고 다 들었다. 마지막에 가장 나이 든 어른이 '살아 돌아왔으면 됐다'고 했다.|You bowed your head and heard them out. At the end, the eldest said, "You came back alive. That's enough."|頭を下げてすべて聞いた。最後に長老が「生きて帰ったのだから、それでいい」と言った。|你低着头全部听完。最后，最年长的那位说：“活着回来就好。”
+C 어른들에게 맞선다|Stand up to the elders|年長者に反論する|顶撞长辈 :: will+3 bond-3 :: '그 자리에 없던 분들이 할 말은 아닙니다' 하고 말했다. 방이 조용해졌다.|"That's not for those who weren't there to say," you told them. The room went silent.|「その場にいなかった方々が言うことではありません」と言った。部屋が静まり返った。|你说：“这不是不在场的人该说的话。”屋里顿时鸦雀无声。
+
+@lb46 B mon=10,11
+T 봄을 기다리며|Waiting for spring|春を待ちながら|等待春天
+B 긴 겨울이 끝나 간다.|The long winter is coming to an end.|長い冬が終わろうとしている。|漫长的冬天就要结束了。
+C* 봄 계획을 세운다|Make plans for spring|春の計画を立てる|制定春天的计划 :: will+3 :: 달력에 작은 계획 몇 개를 적었다. 그 겨울 뒤로 처음 적는 계획이었다.|You wrote a few small plans on the calendar. The first plans you'd made since that winter.|カレンダーに小さな予定をいくつか書いた。あの冬以来、初めて書く予定だった。|你在日历上写了几个小计划。这是那个冬天以后第一次做计划。
+C 겨울을 견딘다|Endure the winter|冬を耐える|熬过冬天 :: health-3 :: 이불 속에서 겨울을 보냈다. 손등이 시렸다.|You spent the winter under the covers. The back of your hand ached with cold.|布団の中で冬を過ごした。手の甲が冷えた。|你在被窝里熬过了冬天。手背冷得发疼。
+
+@lb47 B
+T 연락 끊긴 사람|Someone you lost touch with|連絡の途絶えた人|断了联系的人
+B 전쟁 동안 연락을 끊었던 사람이 있다.|There's someone you cut off contact with during the war.|戦争のあいだ、連絡を絶っていた人がいる。|有一个人，你在战争期间断了联系。
+C* 먼저 연락한다|Reach out first|先に連絡する|主动联系 :: bond+3 :: '살아 있었구나'라는 답이 왔다. 그 말이 얼마나 정확한지 그 사람은 몰랐을 것이다.|The reply came: "So you're alive." They couldn't have known how accurate that was.|「生きてたんだ」と返事が来た。その言葉がどれほど正確か、相手は知らなかっただろう。|对方回复：“原来你还活着啊。”对方大概不知道，这句话有多准确。
+C 그대로 둔다|Leave it|そのままにする|就这样吧 :: bond-3 :: 이름을 볼 때마다 엄지가 멈췄다. 누르지는 않았다.|Every time you saw the name, your thumb paused. You never pressed it.|名前を見るたびに親指が止まった。押しはしなかった。|每次看到那个名字，你的拇指都会停住。但始终没有按下去。
+
+@lb48 B
+? fought()
+T 이웃의 퇴원|A neighbor goes home|隣人の退院|邻居出院
+B 전쟁에 휘말려 다친 이웃이 퇴원했다.|A neighbor who was hurt in the crossfire of the war has been discharged from the hospital.|戦争に巻き込まれて怪我をした隣人が退院した。|被卷入战争受伤的邻居出院了。
+C* 찾아간다|Visit them|訪ねる|去探望 :: bond+3 will-3 :: 과일을 들고 갔다. 이웃은 가스 사고였다고, 운이 나빴다고 웃었다. 같이 웃었다.|You went over with some fruit. The neighbor laughed: a gas explosion, just bad luck. You laughed along.|果物を持って訪ねた。隣人はガス事故だった、運が悪かったと笑った。一緒に笑った。|你带着水果去看望。邻居笑着说是煤气事故，运气不好。你也跟着笑了。
+C 멀리서 본다|Watch from a distance|遠くから見る|远远地看着 :: will-3 :: 창문 너머로 휠체어를 보았다. 인사할 말이 떠오르지 않았다.|You saw the wheelchair through the window. You couldn't think of anything to say.|窓越しに車椅子を見た。かける言葉が浮かばなかった。|你隔着窗户看见了轮椅。想不出该说什么问候的话。
+
+@lb49 B
+T 이름 검색|Searching their name|名前の検索|搜索名字
+B 밤늦게 서번트의 이름을 검색해 본다.|Late at night, you search for your Servant's name.|夜更けに、サーヴァントの名前を検索してみる。|深夜，你搜索了从者的名字。
+C* 끝까지 읽는다|Read it all|最後まで読む|读完 :: lore+3 will-3 :: 수천 개의 글이 있었다. 어느 글에도 그 겨울은 없었다.|There were thousands of articles. None of them had that winter in it.|何千もの記事があった。どの記事にも、あの冬はなかった。|有成千上万篇文章。没有一篇写到那个冬天。
+C 창을 닫는다|Close the window|画面を閉じる|关掉页面 :: - :: 검색어만 남은 창을 닫았다.|You closed the window with only the search term in it.|検索語だけが残った画面を閉じた。|你关掉了只剩搜索词的页面。
+
+@lb50 B mon=4,11 k=win,lost
+T 매달의 의식|A monthly ritual|毎月の儀式|每月的仪式
+B 매달 그날이 되면 작은 의식을 한다.|Every month, on that day, you perform a small ritual.|毎月その日になると、小さな儀式をする。|每个月到了那一天，你都会举行一个小小的仪式。
+C* 이어 간다|Keep it up|続ける|继续下去 :: will+3 :: 차 두 잔을 끓이고 하나는 식을 때까지 두었다. 그 시간만큼은 둘이었다.|You made two cups of tea and let one go cold. For that long, there were two of you.|お茶を二杯淹れて、一杯は冷めるまで置いておいた。その間だけは、二人だった。|你泡了两杯茶，一杯放到凉。那段时间里，你们还是两个人。
+C 그만둔다|Stop|やめる|停下 :: health+3 :: 그날을 그냥 보냈다. 의식이 없어도 그날은 그날이었다.|You let the day pass like any other. Even without the ritual, that day was still that day.|その日を何もせずに過ごした。儀式がなくても、その日はその日だった。|那一天你什么都没做。没有仪式，那一天依然是那一天。
