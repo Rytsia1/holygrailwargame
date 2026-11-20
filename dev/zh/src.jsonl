@@ -33376,3 +33376,63 @@
 {"id": 33383, "k": "d", "ko": "왕이었던 시절에는 아침이 오는 것이 전혀 기쁘지 않았습니다. 오늘 아침은… 눈을 떴을 때 당신이 있어서, 기뻤습니다.", "en": "When I was king, mornings never brought me any joy. This morning… you were there when I opened my eyes, and I was glad.", "ja": "王だった頃は、朝が来るのが少しも嬉しくなかった。今朝は…目を開けたらあなたがいて、嬉しかったのです。"}
 {"id": 33384, "k": "t", "ko": "왕으로서 한 맹세는 많았습니다. 한 사람으로서 하는 고백은 이것이 처음입니다. {1}, 당신을 사랑하고 있습니다.", "en": "I made many vows as a king. This is my first confession as a person. {1}, I am in love with you.", "ja": "王としての誓いは数多く立てました。一人の人間としての告白は、これが初めてです。{1}、あなたを愛しています。"}
 {"id": 33385, "k": "t", "ko": "좋은 아침입니다, {1}. 커피라는 것을 처음 내려 보았습니다. …어렵군요. 쓰다면 솔직히 말씀해 주십시오.", "en": "Good morning, {1}. This is the first time I have made coffee. …It is difficult. If it is bitter, please say so honestly.", "ja": "おはようございます、{1}。コーヒーというものを初めて淹れてみました。…難しいですね。苦ければ、正直に言ってください。"}
+{"id": 33386, "k": "d", "ko": "마스터가 지쳐 마력 공급이 흔들립니다", "en": "Your Master is exhausted, and the mana supply wavers", "ja": "マスターが疲れ、魔力供給が揺らいでいます"}
+{"id": 33387, "k": "d", "ko": "‘칼로 받아 낸다’로 맞설 수 있다", "en": "Can counter with ‘Parry with your blade’", "ja": "「刀で受け止める」で対抗できる"}
+{"id": 33388, "k": "d", "ko": "「허를 찌른다」가 강해진다", "en": "“Catch them off guard” grows stronger", "ja": "「虚を突く」が強くなる"}
+{"id": 33389, "k": "d", "ko": "같은 합에 두 보구가 맞부딪치면 격돌한다. 힘의 차이가 크면 한쪽이 꿰뚫고, 비슷하면 함께 흩어진다. 선택 화면의 ?에서 자세히 볼 수 있다.", "en": "If two Noble Phantasms meet in the same exchange, they clash. If one is far stronger it pierces through; if they are close, both scatter. See ? on the choice screen for details.", "ja": "同じ合で二つの宝具がぶつかると激突する。力の差が大きければ一方が貫き、拮抗していれば共に散る。詳しくは選択画面の？で確認できる。"}
+{"id": 33390, "k": "d", "ko": "거처를 지킨다", "en": "Defend your hideout", "ja": "拠点を守る"}
+{"id": 33391, "k": "d", "ko": "결계 대부분을 버리고 습격을 피한다", "en": "Abandon most of your Bounded Field and evade the raid", "ja": "結界の大半を捨てて襲撃をかわす"}
+{"id": 33392, "k": "d", "ko": "결계 대부분을 버린다", "en": "Abandon most of your Bounded Field", "ja": "結界の大半を捨てる"}
+{"id": 33393, "k": "d", "ko": "교회에 빚이 생긴다", "en": "You will owe the Church", "ja": "教会に借りができる"}
+{"id": 33394, "k": "d", "ko": "교회와 영원히 적이 된다", "en": "You become the Church's enemy forever", "ja": "教会と永遠に敵対する"}
+{"id": 33395, "k": "d", "ko": "교회와 척지지 않는다", "en": "You stay on good terms with the Church", "ja": "教会と敵対しない"}
+{"id": 33396, "k": "d", "ko": "노출을 지우고, 다른 조 하나의 단서를 읽어 낸다", "en": "Erase your Exposure and read a clue about another team", "ja": "露見を消し、他の陣営一つの手がかりを読み取る"}
+{"id": 33397, "k": "d", "ko": "대신 가족이 이 전쟁에 가까워진다", "en": "But your family is drawn closer to this war", "ja": "代わりに家族がこの戦争に近づく"}
+{"id": 33398, "k": "d", "ko": "대신 돌아오지 않을 수 있다", "en": "But they may not come back", "ja": "代わりに戻ってこないかもしれない"}
+{"id": 33399, "k": "d", "ko": "든든한 도움을 받는다", "en": "You get solid help", "ja": "心強い助けを得る"}
+{"id": 33400, "k": "d", "ko": "들키면 다친다", "en": "You get hurt if caught", "ja": "見つかれば怪我をする"}
+{"id": 33401, "k": "d", "ko": "마스터끼리 맞붙을 때 「정면으로 덤빈다」", "en": "“Charge head-on” when Masters face off", "ja": "マスター同士がぶつかる時「正面から飛びかかる」"}
+{"id": 33402, "k": "d", "ko": "맞대결에서 ‘칼을 뽑아 든다’", "en": "‘Draw your blade’ in a duel", "ja": "対決で「刀を抜く」"}
+{"id": 33403, "k": "d", "ko": "맞대결에서 ‘퇴마의 칼’로 맞설 수 있다", "en": "Can counter with the ‘Exorcising blade’ in a duel", "ja": "対決で「退魔の刃」で対抗できる"}
+{"id": 33404, "k": "d", "ko": "맞대결에서 몸으로 맞설 때 힘이 실린다", "en": "Your body carries more force when you fight hand to hand in a duel", "ja": "対決で体ひとつで立ち向かう時に力がこもる"}
+{"id": 33405, "k": "d", "ko": "맞설 때 유리하다", "en": "You have the edge when you stand your ground", "ja": "立ち向かう時に有利"}
+{"id": 33406, "k": "d", "ko": "명예·야망을 따르는 서번트는 사흘 넘게 싸우지 않으면 신뢰가 떨어진다. 습격을 받아 맞서거나 토벌에 나서는 등 실제로 싸운 밤은 싸운 것으로 치고, 서번트의 체력이 절반 이하인 밤과 캐스터가 공방을 짓거나 진지를 지킨 밤은 세지 않는다.", "en": "Servants who value Honor or Ambition lose trust if they go more than three days without a fight. Nights you actually fought, such as answering a raid or joining a subjugation, count as fighting. Nights when your Servant is at half health or less, and nights a Caster built a Workshop or held a Territory, are not counted.", "ja": "名誉・野心を重んじるサーヴァントは、三日を超えて戦わないと信頼が下がる。襲撃を迎え撃ったり討伐に出たりして実際に戦った夜は戦ったものとみなし、サーヴァントの体力が半分以下の夜と、キャスターが工房を築いたり陣地を守ったりした夜は数えない。"}
+{"id": 33407, "k": "d", "ko": "모두 대피한다", "en": "Everyone evacuates", "ja": "全員避難する"}
+{"id": 33408, "k": "d", "ko": "반드시 따돌린다", "en": "You will shake them off", "ja": "必ず振り切る"}
+{"id": 33409, "k": "d", "ko": "반드시 막아 낸다", "en": "You will hold them off", "ja": "必ず防ぎきる"}
+{"id": 33410, "k": "d", "ko": "반드시 물러간다", "en": "They will withdraw", "ja": "必ず退く"}
+{"id": 33411, "k": "d", "ko": "반드시 이긴다", "en": "You will win", "ja": "必ず勝つ"}
+{"id": 33412, "k": "d", "ko": "반드시 종결된다", "en": "It will be settled", "ja": "必ず決着する"}
+{"id": 33413, "k": "d", "ko": "반드시 집행자가 온다", "en": "The Enforcer will come", "ja": "必ず執行者が来る"}
+{"id": 33414, "k": "d", "ko": "봉인지정에서 벗어난다", "en": "You escape the Sealing Designation", "ja": "封印指定から逃れる"}
+{"id": 33415, "k": "d", "ko": "사냥꾼은 도시를 떠난다", "en": "The hunter leaves the city", "ja": "狩人は街を去る"}
+{"id": 33416, "k": "d", "ko": "사도와 사령에게 더 강하다", "en": "Stronger against Dead Apostles and ghosts", "ja": "死徒と死霊により強い"}
+{"id": 33417, "k": "d", "ko": "사역마 정찰로 더 많은 것을 알아낸다", "en": "Familiar scouting reveals more", "ja": "使い魔の偵察でより多くを知る"}
+{"id": 33418, "k": "d", "ko": "사흘에 한 번", "en": "Once every three days", "ja": "三日に一度"}
+{"id": 33419, "k": "d", "ko": "상대가 보구를 쓰는 순간에는 맞받아치거나, 몸을 빼거나, 그대로 받아 낼 수 있다. 선택 화면의 ?에서 자세히 볼 수 있다.", "en": "When the enemy unleashes a Noble Phantasm, you can counter it, dodge, or take it head-on. See ? on the choice screen for details.", "ja": "相手が宝具を使う瞬間には、迎え撃つか、身をかわすか、そのまま受け止めることができる。詳しくは選択画面の？で確認できる。"}
+{"id": 33420, "k": "d", "ko": "서번트가 결계를 깨려는 손을 막아 낸다", "en": "Your Servant stops the hand trying to break the Bounded Field", "ja": "サーヴァントが結界を破ろうとする手を阻む"}
+{"id": 33421, "k": "d", "ko": "서번트가 다칠 수 있다", "en": "Your Servant may get hurt", "ja": "サーヴァントが傷つくかもしれない"}
+{"id": 33422, "k": "d", "ko": "서번트가 반드시 구해 온다", "en": "Your Servant will bring them back", "ja": "サーヴァントが必ず救い出す"}
+{"id": 33423, "k": "d", "ko": "서번트가 약해진다", "en": "Your Servant grows weaker", "ja": "サーヴァントが弱くなる"}
+{"id": 33424, "k": "d", "ko": "서번트의 체력이 절반 이하인 동안에는 싸우러 나가지 않아도 신뢰가 떨어지지 않는다.", "en": "While your Servant is at half health or less, trust does not drop even if you do not go out to fight.", "ja": "サーヴァントの体力が半分以下の間は、戦いに出なくても信頼は下がらない。"}
+{"id": 33425, "k": "d", "ko": "성공하면 근원의 방향을 안다", "en": "On success, you learn the direction of the Root", "ja": "成功すれば根源の方角がわかる"}
+{"id": 33426, "k": "d", "ko": "성공하면 넘칠 때를 안다", "en": "On success, you learn when it will overflow", "ja": "成功すれば溢れる時期がわかる"}
+{"id": 33427, "k": "d", "ko": "성공하면 습격을 미리 안다", "en": "On success, you know about raids in advance", "ja": "成功すれば襲撃を事前に察知できる"}
+{"id": 33428, "k": "d", "ko": "성공하면 조각을 모으는 자를 안다", "en": "On success, you learn who is gathering the fragments", "ja": "成功すれば欠片を集める者がわかる"}
+{"id": 33429, "k": "d", "ko": "성배가 봉인되었다", "en": "The Grail has been sealed", "ja": "聖杯は封印された"}
+{"id": 33430, "k": "d", "ko": "성배전쟁에서 사역마 정찰", "en": "Familiar scouting in the Holy Grail War", "ja": "聖杯戦争で使い魔の偵察"}
+{"id": 33431, "k": "d", "ko": "세 갈래의 칼날이 한꺼번에 떨어진다", "en": "Three blades fall at once", "ja": "三筋の刃が同時に落ちる"}
+{"id": 33432, "k": "d", "ko": "암습을 받으면 ‘대역 인형을 내세운다’를 쓸 수 있다", "en": "When ambushed, you can use ‘Put forward your stand-in doll’", "ja": "暗殺を受けた時「身代わり人形を立てる」を使える"}
+{"id": 33433, "k": "d", "ko": "영맥은 반드시 가라앉는다", "en": "The ley line will settle", "ja": "霊脈は必ず鎮まる"}
+{"id": 33434, "k": "d", "ko": "이 성배는 소원을 먹는다", "en": "This Grail devours wishes", "ja": "この聖杯は願いを喰らう"}
+{"id": 33435, "k": "d", "ko": "인연이 애정으로 이어진다", "en": "Your bond turns toward love", "ja": "絆が愛情へとつながる"}
+{"id": 33436, "k": "d", "ko": "인연이 우정으로 이어진다", "en": "Your bond turns toward friendship", "ja": "絆が友情へとつながる"}
+{"id": 33437, "k": "d", "ko": "재산이 든다", "en": "Costs Wealth", "ja": "財産がかかる"}
+{"id": 33438, "k": "d", "ko": "전투 지원 ‘세례영창’을 쓸 수 있다", "en": "Can use the combat support ‘Baptism Rite’", "ja": "戦闘支援「洗礼詠唱」を使える"}
+{"id": 33439, "k": "d", "ko": "전투에서 ‘보석을 던진다’를 쓸 수 있다", "en": "Can use ‘Throw a gem’ in battle", "ja": "戦闘で「宝石を投げる」を使える"}
+{"id": 33440, "k": "d", "ko": "전투에서 ‘흑건을 던진다’를 쓸 수 있다", "en": "Can use ‘Throw Black Keys’ in battle", "ja": "戦闘で「黒鍵を投げる」を使える"}
+{"id": 33441, "k": "d", "ko": "절반의 확률로 들키지 않는다", "en": "Half the time, you go unnoticed", "ja": "半々の確率で見つからない"}
+{"id": 33442, "k": "d", "ko": "정찰을 쉰 밤에는 자동 보초", "en": "Automatic sentry on nights you skip scouting", "ja": "偵察を休んだ夜は自動で見張り"}
+{"id": 33443, "k": "d", "ko": "츠바메 가에시는 피할 수 없다", "en": "Tsubame Gaeshi cannot be dodged", "ja": "燕返しはかわせない"}
+{"id": 33444, "k": "d", "ko": "협회가 수육한 영령의 존재를 알게 된다", "en": "The Association learns that an incarnated Heroic Spirit exists", "ja": "協会が受肉した英霊の存在を知る"}
+{"id": 33445, "k": "t", "ko": "밤사이 {0}에서 {1~이} 쓰러졌다고 한다.", "en": "Word is that {1} fell at {0} during the night.", "ja": "夜のうちに{0}で{1}が倒れたらしい。"}
