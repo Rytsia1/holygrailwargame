@@ -61,6 +61,10 @@ T = [('밤사이 {0}에서 {1~이} 쓰러졌다고 한다.', 'Word is that {1} f
       '据说夜里，{1}在{0}倒下了。', '據說夜裡，{1}在{0}倒下了。')]
 D = D + D2   # ⑦ 선택지 · 기술 설명 조각 (i18nfix20_lines.py)
 s, nd, nt = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [(a, b, c) for a, b, c, *_ in T])
+# ⑧ 타마모 캣 대사 일본어 번역 속 한글 「ご주인」 → 「ご主人」
+CK = '이 잔, 냄새가 고약하다. 상한 우유 같다. 캣은 이런 건 안 마신다. 주인도 마시지 마라.'
+s, _n1, _n2 = i18n.add(s, [(CK, "This cup smells foul. Like spoiled milk. Cat won't drink this. Neither should you, Master.",
+                            'この杯、くさい。腐った牛乳みたいだ。キャットはこんなの飲まない。ご主人も飲むな。')], overwrite=True)
 open(P, 'w', encoding='utf-8').write(s)
 zp = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zh', 'done.json')
 Z = json.load(open(zp, encoding='utf-8')); n = 0
