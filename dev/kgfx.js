@@ -174,11 +174,11 @@ function kgDiam(V,cx,y,s,lit,newA,empty){ const c=V.c, D=V.D, gap=24*s; for(let 
   c.strokeStyle='rgba(255,226,170,.85)'; c.lineWidth=1.2*D; c.shadowBlur=0; c.stroke(); c.restore(); } }
 
 /* 날 카드: 작은 「진심」 · 불 꺼진 잔에 하루치 핏빛이 차오르고 오늘의 마름모가 켜진다 (2.7초) */
-function kgDayShow(fx){
-  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, T=2.7, d=Math.max(1,Math.min(4,fx.d||1)), DN=['첫째 날','둘째 날','셋째 날','넷째 날'];
-  const V=xfxOpen('kgx',`${tr('진심')} · ${tr(DN[d-1])}`,kgTxtH(DN[d-1],fx.ev||''),T,frame); fxSnd(V.o,'j_kg_day'+d);
+function kgDayShow(fx){   // 11-22: 1.5배 느리게(약 4초)
+  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, T=2.7, K=1.5, d=Math.max(1,Math.min(4,fx.d||1)), DN=['첫째 날','둘째 날','셋째 날','넷째 날'];
+  const V=xfxOpen('kgx',`${tr('진심')} · ${tr(DN[d-1])}`,kgTxtH(DN[d-1],fx.ev||''),T*K,frame); fxSnd(V.o,'j_kg_day'+d);
   const P=kgPaint(V), X=kgTxt(V), FS=(()=>{ try{ return getComputedStyle(document.documentElement).getPropertyValue('--f-story').trim()||'serif'; }catch(e){ return 'serif'; } })();
-  function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.8, cx=W/2, base=H*.56, inA=io(seg(t,0,.3)), out=io(seg(t,T-.4,T));
+  function frame(t0,dt){ const t=t0/K; dt/=K; const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.8, cx=W/2, base=H*.56, inA=io(seg(t,0,.3)), out=io(seg(t,T-.4,T));
     c.save(); c.globalAlpha=1-out; c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); P.night(inA*.8,t);
     P.glow(cx,base-110*s,170*s,'200,40,70',.18*inA);
     c.save(); c.globalAlpha*=inA; c.textAlign='center'; c.textBaseline='middle'; c.font=`${Math.max(12*D,15*s)}px ${FS}`; c.fillStyle='rgba(240,160,170,.85)'; c.shadowColor='rgba(235,60,85,.8)'; c.shadowBlur=8*D; c.fillText([...tr('진심')].join(LANG==='en'?'':'  '),cx,H*.13); c.restore();

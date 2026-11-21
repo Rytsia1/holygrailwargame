@@ -174,7 +174,9 @@
   function duelEnd(win){ const w=W(), D=w.duel, h=hero(); if(!D) return; D.res=win?'win':'lose';
     log(win?`${h.name}${J(h.name,이)} 무릎을 꿇었다. 칼이 손에서 미끄러졌다.`:`${h.name}의 칼끝이 당신의 목 앞에서 멈췄다.`,win?'war':'loss');
     soon(()=>{ const D2=w.duel; if(!D2) return; S.st.health=Math.max(1,Math.min(100,D2.mhp)); w.hp=Math.max(0,D2.shp); w.sm=D2.sm;
-      const k=D2.ctx.kind; w.duelLast={kind:k,res:D2.res,r:D2.r,R:Math.round(D2.R)}; w.duel=null; (DUEL_END[k]||DUEL_END.test)(D2.res==='win'); }); return ''; }
+      const k=D2.ctx.kind, won=D2.res==='win'; w.duelLast={kind:k,res:D2.res,r:D2.r,R:Math.round(D2.R)}; w.duel=null;
+      // 11-22: 서번트끼리의 전투처럼 결과를 알리는 창(닫으면 뒤처리)
+      decide({title:`${h.name} · 결투 종료`,body:`${won?'당신이 이겼다':'당신이 졌다'} · 상대 ${hpWord(Math.max(0,D2.shp))} · 당신 ${hpWord(Math.max(0,D2.mhp))}`,war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>{ (DUEL_END[k]||DUEL_END.test)(won); return null; }}]}); }); return ''; }
   // 상세 화면용 정보
   function duelView(){ const w=W(), D=w&&w.duel; if(!D) return null; const h=hero(), M=duelMaster(), mr=SV(h,'mr'), A=artOf(h);
     const hiN=M.hi.map(id=>`${ARTS[id].n} · ${ART_TIER[M.lv(id)]}`), mods={me:[],en:[]};

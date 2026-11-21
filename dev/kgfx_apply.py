@@ -19,7 +19,7 @@ SND = os.path.join(HERE, '..', 'public', 'assets', 'sound')
 def dur(n):
     try: return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(SND, n + '.mp3')], capture_output=True, text=True).stdout.strip()), 2)
     except Exception: return 6.0
-SNDS = ['j_end_kgF', 'j_end_kgS', 'j_end_kgT', 'j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel', 'j_kg_mr', 'j_kg_ally']
+SNDS = ['j_end_kgN', 'j_end_kgF', 'j_end_kgS', 'j_end_kgT', 'j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel', 'j_kg_mr', 'j_kg_ally']
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
        ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
@@ -69,16 +69,23 @@ D = [
  ('동맹이 등을 돌렸다.', 'Your ally turned against you.', '同盟が背を向けた。', '同盟背弃了你。', '同盟背棄了你。'),
  ('셋째 날 물러났던 동맹이 잔을 막으러 돌아왔다.', 'The ally who withdrew on the third day came back to stop the cup.', '三日目に退いた同盟が、杯を止めに戻ってきた。', '第三天退走的同盟回来阻止杯子了。', '第三天退走的同盟回來阻止杯子了。'),
  ('나', 'Me', '私', '我', '我'),
+ ('당신이 이겼다', 'You won', 'あなたが勝った', '你赢了', '你贏了'),
+ ('당신이 졌다', 'You lost', 'あなたが負けた', '你输了', '你輸了'),
  ('찰나의 순간, 잔과 함께 등을 베였다.', 'In an instant, your back was cut, and the cup with it.', '刹那のうちに、杯もろとも背を斬られた。', '刹那之间，你连同杯子一起被从背后斩开。', '剎那之間，你連同杯子一起被從背後斬開。'),
  ('당신의 사고는 이어지지 않았다.', 'Your thoughts went no further.', 'あなたの思考は、その先へ続かなかった。', '你的思绪没能再延续下去。', '你的思緒沒能再延續下去。'),
  ('무자비한 본성은 저지되었고,', 'Your merciless nature was stopped,', '無慈悲な本性は阻まれ、', '无情的本性被阻止了，', '無情的本性被阻止了，'),
  ('서번트의 표정에는 연민만이 가득했다.', 'and your Servant’s face held nothing but pity.', 'サーヴァントの表情には、憐れみだけが満ちていた。', '从者的脸上只剩下满满的怜悯。', '從者的臉上只剩下滿滿的憐憫。'),
 ]
-s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [])
+TPL = [('{0} · 결투 종료', '{0} · Duel over', '{0} · 決闘終了', '{0} · 决斗结束', '{0} · 決鬥結束'),
+       ('당신 {0}', 'You {0}', 'あなた {0}', '你 {0}', '你 {0}'),
+       ('그 뒤 · {0}', 'Afterward · {0}', 'その後 · {0}', '之后 · {0}', '之後 · {0}'),
+       ('그 뒤 · 서번트 · {0}', 'Afterward · Servant · {0}', 'その後 · サーヴァント · {0}', '之后 · 从者 · {0}', '之後 · 從者 · {0}'),
+       ('그 뒤 · 가까운 사람 · {0}', 'Afterward · Someone close · {0}', 'その後 · 近しい人 · {0}', '之后 · 亲近之人 · {0}', '之後 · 親近之人 · {0}')]
+s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [(a, b, c) for a, b, c, *_ in TPL])
 open(P, 'w', encoding='utf-8').write(s)
 zp = os.path.join(HERE, 'zh', 'done.json')
 Z = json.load(open(zp, encoding='utf-8')); n = 0
-for a, _b, _c, d, e in D:
+for a, _b, _c, d, e in D + TPL:
     if a not in Z: Z[a] = [d, e]; n += 1
 json.dump(Z, open(zp, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('적용 끝 · 사전', nd, '· 중국어', n)

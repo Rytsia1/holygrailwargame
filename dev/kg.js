@@ -237,7 +237,12 @@
     S.once.crest=1; S.phase='epi'; S.warState='done'; S.clock=0; S.epi={i:999,n:1,used:[],kgNo:1}; H.phase('epi'); H.save(); H.change(); }
   // 쓰러지는 결말(① 서번트 승 · ④): 죽음 뒤에 후일담
   function kgDie(k){ const w=W(); w.ended=true; w.queue=[]; S.flags.war='dead'; S.flags.endFx=k==='f'?'kgF':'kgS'; fxOnly(endFxOf());
-    die(k==='f'?'등 뒤의 칼':'서번트와의 결투'); kgAfter(k); }
+    die(k==='f'?'등 뒤의 칼':'서번트와의 결투');
+    // 11-22: 후일담이 '마지막으로' 창 뒤에 묻혀 바로 기록으로 넘어가는 것처럼 보이던 것 → 기록 줄에도 남기고, 창으로 먼저 보여 준 뒤 닫으면 마지막 말
+    const A=(k==='f'?[['그 뒤 · 서번트',kgAfPick('f')],['그 뒤 · 가까운 사람',kgAfPick('fn')]]:[['그 뒤',kgAfPick(k)]]).filter(a=>a[1]);
+    A.forEach(([hd,x])=>kgAfShow(x,hd));
+    const P0=S.pending, go=i=>{ if(i>=A.length){ if(P0) decide(P0); return null; } const [hd,x]=A[i]; decide({title:`${hd} · ${x.t()}`,body:x.b().join('\n'),war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>go(i+1)}]}); return null; };
+    if(P0&&A.length){ S.pending=null; go(0); } }
   // 후일담: 결말마다 그 뒤의 장면 하나 (조건이 가장 많이 맞는 줄들 가운데 하나)
   function kgAfPick(k){ const c=KG_AF.filter(x=>x.k===k&&(!x.c||x.c())); if(!c.length) return null; const m=Math.max(...c.map(x=>x.sp)); return pick(c.filter(x=>x.sp===m)); }
   function kgAfShow(x,head){ if(!x) return; log(`${head} · ${x.t}`,'night'); for(const l of x.b) log(l,'n'); }
