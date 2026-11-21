@@ -23,7 +23,10 @@ SNDS = ['j_end_kgF', 'j_end_kgS', 'j_end_kgT', 'j_kg_in', 'j_kg_back_a', 'j_kg_b
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
        ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
-       ".kgx .xd-s{color:#efe2cf;line-height:1.65;word-break:keep-all;max-width:26em;margin:0 auto;text-shadow:0 0 4px #000,0 0 12px #000}.kgx .kgx-s2{margin-top:6px;opacity:0}")
+       ".kgx .xd-s{color:#efe2cf;line-height:1.65;word-break:keep-all;max-width:26em;margin:0 auto;text-shadow:0 0 4px #000,0 0 12px #000}.kgx .kgx-s2{margin-top:6px;opacity:0}"
+       # 가로로 눕힌 휴대폰처럼 낮은 화면: 아래 글을 작고 낮게 두어 잔 · 초상과 겹치지 않게 (검귀 연출 · 검귀 결말 전용 장면만)
+       "@media (max-height:520px) and (min-aspect-ratio:1/1){.kgx .xd-txt,.kge .txt{bottom:4%!important}.kgx .xd-d,.kgx .xd-d.long,.kge .txt .d,.kge .txt .d.long{font-size:clamp(20px,6.5vh,30px)!important}"
+       ".kgx .xd-rule,.kge .txt .rule{margin:5px auto!important}.kgx .xd-s,.kge .txt .s,.kge .txt .s2{font-size:12.5px!important;line-height:1.45!important}.kgx .kgx-s2,.kge .txt .s2{margin-top:2px!important}.kgx .kgx-w,.kge .wish{top:5%!important;font-size:15px!important}}")
 
 js = open(os.path.join(HERE, 'kgfx.js'), encoding='utf-8').read()
 rp("function bxOrderFx(fx){", js + "\nfunction bxOrderFx(fx){")

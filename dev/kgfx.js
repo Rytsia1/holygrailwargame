@@ -35,8 +35,13 @@ function kgPaint(V){ const {cl,seg,io,oc}=XF, c=V.c; let SHK=0;
 const KGX_STARS=(()=>{ const R=XF.rng(3); return [...Array(70)].map(()=>({x:R(),y:R()*.6,r:.4+R()*1.2,p:R()*6})); })();
 // 글자: 제목 · 줄 · 부제 둘, 위쪽 한 줄(소원 · 지문)
 function kgTxtH(title,sub,sub2,raw){ const tt=title?(raw?title:tr(title)):''; return `<div class="kgx-w"></div><div class="xd-txt"><div class="xd-d${[...tt].length>5?' long':''}"${raw?' data-notr':''}>${[...tt].map(ch=>`<span>${ch===' '?'&nbsp;':esc(ch)}</span>`).join('')}</div><div class="xd-rule"></div><div class="xd-s">${esc(sub?tr(sub):'')}</div><div class="xd-s kgx-s2">${esc(sub2||'')}</div></div>`; }
+// 좁은 화면에서 제목이 한 줄을 넘으면 글자 크기를 줄여 맞춘다 (긴 영어 제목이 잘리던 것). 가운데 정렬이라 scrollWidth는 넘친 몫의 절반만 잡혀서 글자 폭을 더해 잰다
+function kgFitT(el){ if(!el) return; el.style.fontSize=''; const go=()=>{ const cw=el.clientWidth, sw=[...el.children].reduce((a,e)=>a+e.offsetWidth,0); if(cw>0&&sw>cw+1){ const fs=parseFloat(getComputedStyle(el).fontSize); el.style.fontSize=Math.max(14,fs*cw/sw*.97)+'px'; } }; go(); requestAnimationFrame(go); }
+// 아래 글 덩어리의 윗변(캔버스 좌표): 령주 문양 같은 그림이 글과 겹치지 않게 그 위로 올린다
+function kgTop(V){ try{ const a=V.o.querySelector('.xd-txt').getBoundingClientRect(), b=V.o.getBoundingClientRect(); return (a.top-b.top)*V.D; }catch(e){ return V.H*.62; } }
 function kgTxt(V){ const {seg,io,oc}=XF, o=V.o, CH=[...o.querySelectorAll('.xd-d span')], rule=o.querySelector('.xd-rule'), s1=o.querySelector('.xd-s'), s2=o.querySelector('.kgx-s2'), W=o.querySelector('.kgx-w');
   if(!CH.length) rule.style.display='none';
+  kgFitT(o.querySelector('.xd-d'));
   let WC=[];
   return {
     setW(t){ W.innerHTML=kgWrap(W,t).map(l=>l.split(' ').map(w=>`<span class="ww">${[...w].map(ch=>`<span class="c">${esc(ch)}</span>`).join('')}</span>`).join(' ')).join('<br>'); WC=[...W.querySelectorAll('span.c')]; },
@@ -133,7 +138,7 @@ function kgBackShow(fx){
     if(v==='b'&&t>=2.05){ c.save(); c.globalCompositeOperation='saturation'; c.fillStyle=`rgba(128,128,128,${.85*frozen})`; c.fillRect(0,0,W,H); c.restore();
       c.fillStyle=`rgba(16,22,38,${.28*frozen})`; c.fillRect(0,0,W,H);
       DU.forEach(p=>{ c.fillStyle=`rgba(220,232,250,${.55*frozen*p.v})`; c.beginPath(); c.arc(p.x*W,p.y*H,D*(.6+p.r*1.4),0,Math.PI*2); c.fill(); });
-      const sx=W*.2, sy=H*.7, R=Math.min(58*s,W*.12), burn=seg(t,2.12,2.5)*(1-.6*seg(t,3.4,5.5));
+      const R=Math.min(58*s,W*.12), sx=W*.2, sy=Math.min(H*.7,kgTop(V)-R*1.3), burn=seg(t,2.12,2.5)*(1-.6*seg(t,3.4,5.5));
       P.glow(sx,sy,R*2.6,'230,40,70',.5*seg(t,2.12,2.5)); lit[si]=burn; P.crest(sx,sy,R,lit,seg(t,2.1,2.3));
       P.wave(sx,sy,seg(t,2.15,3.2),Math.max(W,H)*.8,'255,70,90',10,1); P.kick(t,2.06,7,.3); P.flash(pulse(t,2.08,.05)*.3,'255,90,110'); }
     // 암전
@@ -249,7 +254,7 @@ function kgMrShow(fx){
   let SP=null, BK=[];
   function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_(), cx=W/2, top=H*.62, inA=io(seg(t,0,.4)), out=io(seg(t,T-.5,T));
     c.save(); c.globalAlpha=1-out; c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); P.night(inA,t); P.pool(t,top,inA*.7); P.glow(cx,-H*.1,H*.75,'235,60,85',.22*inA);
-    const R=Math.min(54*s,W*.14), px=cx, py=H*.4, sxC=W*.2, syC=H*.7, RC=Math.min(48*s,W*.11), BR=R*1.55, C0=1.5, C1=2.85;
+    const R=Math.min(54*s,W*.14), px=cx, py=H*.4, sxC=W*.2, RC=Math.min(48*s,W*.11), syC=Math.min(H*.7,kgTop(V)-RC*1.3), BR=R*1.55, C0=1.5, C1=2.85;
     const cont=t>=C0&&t<C1, cu=seg(t,C0,C1), push=cont?Math.sin((t-C0)*Math.PI*2*1.7)*(.35+.65*cu):0;
     const burn=seg(t,.5,1.0)*(1-seg(t,2.95,3.6))*(1+.35*Math.max(0,push)+.3*(cont?cu:0)), lit=[0,0,0]; lit[si]=Math.min(1,burn);
     P.glow(sxC,syC,RC*(2.4+.8*cu),'230,40,70',.45*Math.min(1.4,burn)); P.crest(sxC,syC,RC,lit,inA);

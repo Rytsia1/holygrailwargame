@@ -1,8 +1,9 @@
   // 11-21: 검귀 루트 결말 전용 장면 (시안 8~10) — 등 뒤의 칼 · 막아선 칼 · 둘이 이긴 세계
   const kgFill=(cx,base,s,frac,col,a)=>{ const top=base-160*s, bot=base-72*s, y=bot-(bot-top)*frac; c.save(); cupPath(cx,base,s); c.clip(); const g=c.createLinearGradient(0,y,0,bot); g.addColorStop(0,`rgba(${col},${.95*a})`); g.addColorStop(1,`rgba(${col},${.6*a})`); c.fillStyle=g; c.fillRect(cx-70*s,y,140*s,bot-y+2); c.strokeStyle=`rgba(255,200,205,${.7*a})`; c.lineWidth=1.2*D; c.beginPath(); c.ellipse(cx,y,Math.max(4,(64-56*Math.max(0,(y-top)/(bot-top)))*s),3*s,0,0,Math.PI*2); c.stroke(); c.restore(); };
   const kgCup=(cx,base,s,ig,col,dim)=>{ c.save(); c.globalAlpha*=1-.6*dim; cupLight(cx,base,s,ig,col); c.restore(); };
+  const kgEndInit=()=>{ o.classList.add('kge'); const d=TX.d; d.style.fontSize=''; const go=()=>{ const cw=d.clientWidth, sw=[...d.children].reduce((a,e)=>a+e.offsetWidth,0); if(cw>0&&sw>cw+1){ const fs=parseFloat(getComputedStyle(d).fontSize); d.style.fontSize=Math.max(14,fs*cw/sw*.97)+'px'; } }; go(); requestAnimationFrame(go); };
   const kgWishRed=()=>{ WISH.style.color='#ffe9ec'; WC.forEach(e=>{ if(e.style.opacity>0) e.style.textShadow=e.style.textShadow.replace(/255,\s*220,\s*150/,'255,90,110'); }); };
-  SCN.kgF={HOLD:7.0,init(){ setWish(opt.wish); setText('등 뒤의 칼','찰나의 순간, 잔과 함께 등을 베였다.','당신의 사고는 이어지지 않았다.','rgba(220,50,70,.9)'); OUT=99; this.SP=null; },
+  SCN.kgF={HOLD:7.0,init(){ setWish(opt.wish); setText('등 뒤의 칼','찰나의 순간, 잔과 함께 등을 베였다.','당신의 사고는 이어지지 않았다.','rgba(220,50,70,.9)'); OUT=99; this.SP=null; kgEndInit(); },
    frame(t,dt){ const s=S_()*.9, cx=W/2, base=H*.58, top=H*.6, inA=io(seg(t,0,.4)), CUT=1.45;
     const CC=[cx+6*s,base-118*s], ang=Math.PI/2+.5, F0=Math.hypot(W,H), ux=Math.cos(ang), uy=Math.sin(ang), P1=[CC[0]-ux*F0,CC[1]-uy*F0], P2=[CC[0]+ux*F0,CC[1]+uy*F0], dx=P2[0]-P1[0], dy=P2[1]-P1[1], nx=-uy, ny=ux;
     const world=dim=>{ c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); night(inA,t); pool(t,top,inA*.8);
@@ -23,7 +24,7 @@
     const sw=seg(t,CUT-.06,CUT+.06); if(sw>0&&t<CUT+.25){ const k=oc(sw), a=1-seg(t,CUT+.06,CUT+.25); c.save(); c.lineCap='round'; c.strokeStyle=`rgba(255,255,255,${a})`; c.lineWidth=3*D; c.shadowColor='rgba(220,230,255,1)'; c.shadowBlur=24*D; c.beginPath(); c.moveTo(P1[0],P1[1]); c.lineTo(P1[0]+dx*k,P1[1]+dy*k); c.stroke(); c.restore(); }
     flash(pulse(t,CUT+.03,.05)*.55,'255,250,255');
     wish(t,.3,CUT-.05); kgWishRed(); text(t,3.6,4.6); }};
-  SCN.kgS={HOLD:7.0,init(){ setWish(''); setText('막아선 칼','무자비한 본성은 저지되었고,','서번트의 표정에는 연민만이 가득했다.','rgba(210,220,240,.9)'); OUT=99; this.SH=null; },
+  SCN.kgS={HOLD:7.0,init(){ setWish(''); setText('막아선 칼','무자비한 본성은 저지되었고,','서번트의 표정에는 연민만이 가득했다.','rgba(210,220,240,.9)'); OUT=99; this.SH=null; kgEndInit(); },
    frame(t,dt){ const s=S_()*.72, cx=W/2, top=H*.6, base=top-2*D, inA=io(seg(t,0,.4)), dawn=io(seg(t,1.2,3.6)), BRK=2.6;
     c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); night(inA*(1-.7*dawn),t);
     if(dawn>0){ const g=c.createLinearGradient(0,top,0,0); g.addColorStop(0,`rgba(214,206,214,${.55*dawn})`); g.addColorStop(.25,`rgba(150,160,190,${.38*dawn})`); g.addColorStop(.7,`rgba(60,70,100,${.25*dawn})`); g.addColorStop(1,`rgba(20,22,40,${.1*dawn})`); c.fillStyle=g; c.fillRect(0,0,W,top); glow(cx,top,Math.max(W,H)*.45,'255,236,210',.35*dawn); }
@@ -46,7 +47,7 @@
     c.restore();
     const gl=seg(t,3.1,3.7); if(gl>0&&gl<1){ const y=lerp(gy+14*S,tip-22*S,io(gl)); glow(bx-bw*.6,y,26*S,'255,250,240',.9*Math.sin(gl*Math.PI)); glow(bx-bw*.6,y,8*S,'255,255,255',Math.sin(gl*Math.PI)); }
     text(t,3.6,4.6); }};
-  SCN.kgT={HOLD:7.4,init(){ setWish(opt.wish); setText('둘이 이긴 세계','둘이 이긴 세계의 첫 아침이 왔다.','그 세계는 아주 조용했다.','rgba(230,190,200,.85)'); OUT=99; this.LT=null; this.FZ=0; },
+  SCN.kgT={HOLD:7.4,init(){ setWish(opt.wish); setText('둘이 이긴 세계','둘이 이긴 세계의 첫 아침이 왔다.','그 세계는 아주 조용했다.','rgba(230,190,200,.85)'); OUT=99; this.LT=null; this.FZ=0; kgEndInit(); },
    frame(t,dt){ const s=S_()*.82, cx=W/2, top=H*.6, base=top-4*D, inA=io(seg(t,0,.4)), FL=1.2, dawn=io(seg(t,2.6,4.4));
     if(!this.LT){ const R=rng(44), B=[]; let x=-10*D; while(x<W+10*D){ const w=(12+R()*30)*D, h=(14+R()*(Math.abs(x-cx)<70*s?14:56))*D; const win=[]; for(let i=0;i<Math.floor(w*h/(90*D*D));i++) if(R()<.6) win.push({x:x+2*D+R()*(w-4*D),y:top-h+2*D+R()*(h-4*D),p:R()}); B.push({x,w,h,win}); x+=w+(R()<.3?R()*8*D:0); } this.LT=B; }
     c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); night(inA*(1-dawn),t);
