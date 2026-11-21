@@ -83,7 +83,7 @@
   // 낮: 그날의 일
   function kgDay(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     g.d++; w.day++; w.tod='낮'; w.prog=0; mark('war');
-    log(`진심 · ${KG_DAYN[g.d-1]}`,'night');
+    log(`진심 · ${KG_DAYN[g.d-1]}`,'night',{fx:{t:'kgday',d:g.d,ev:['흔적','가까운 사람','다른 손','평범한 하루'][g.d-1]}});
     if(g.d===1){ const om=g.k==='zeal'&&!isMage()?KG_W.zeal.omenN:KG_W[g.k].omen;
       decide({title:'흔적',body:`아침 뉴스가 이상한 일을 짧게 전한다. ${om} 잔은 아직 바닥만 젖어 있다.`,war:true,choices:[
         {t:'보러 간다',d:'징조를 가까이서 본다',f:()=>{ lean(g.k,1); kgR(5); w.queue.push(()=>kgNight()); return '징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.'; }},
@@ -149,8 +149,9 @@
     return ''; }
   function kgClose(){ const w=W(); if(w.kg) w.kg.done=true; S.flags.kgSt=kgSt(); S.flags.kgSus=w.kg?w.kg.sus:0; S.flags.kgLover=kgLover()?1:0; }
   // 마지막 밤의 갈래 (시트 35줄)
-  function kgFinal(){ const w=W(), g=w.kg; const a=kgAlly();
-    if(((S.aff&&S.aff[g.k])||0)<8){ g.done=true; S.flags.kgOff=1; log('잔이 가득 찼지만, 마음 가장 깊은 곳의 그 소원은 이제 거기 없었다. 나흘 사이에 무언가가 바뀌어 있었다.','war'); w.queue=[]; finale(a&&S.flags.kgShared?a:null); return; }
+  function kgFinal(){ const w=W(), g=w.kg; const a=kgAlly(); const gone=((S.aff&&S.aff[g.k])||0)<8;
+    fxOnly({t:'kgfull',v:gone?'g':'r'});   // 잔이 가득 차는 순간 (성향이 옅어졌으면 금빛)
+    if(gone){ g.done=true; S.flags.kgOff=1; log('잔이 가득 찼지만, 마음 가장 깊은 곳의 그 소원은 이제 거기 없었다. 나흘 사이에 무언가가 바뀌어 있었다.','war'); w.queue=[]; finale(a&&S.flags.kgShared?a:null); return; }
     if(g.bet&&g.R>=60){ log('잔이 가득 찼다.','war'); return kgBetray(); }
     if(g.R>=60) return kgDuel(g.R);
     if(g.R>=35) return kgSealAsk();
@@ -188,6 +189,7 @@
     kgAfter('t'); kgNoEpi(); }
   // 막아선다(①): 실제 결투
   function kgDuel(R){ const w=W(), g=w.kg, h=hero(), a=kgAlly(); g.duel=1; if(a){ S.flags.kgAllyI=a.i; S.flags.kgAllyN=a.mname||''; }
+    fxOnly({t:'kgduel',id:h.id,name:h.name,cls:CLS[h.cls]&&CLS[h.cls].n||'',line:(KG_SV[h.id]||[])[0]||''});   // 결투 시작
     duelStart({kind:'kg1',resolve:R,stage:kgSt(),promise:g.prom,memory:g.mem,ally:a?a.i:null,first:(KG_SV[h.id]||[])[0]||null}); }
   // 함께 가는 척한다(④)
   function kgBetray(){ const w=W(), g=w.kg, h=hero(), a=kgAlly();

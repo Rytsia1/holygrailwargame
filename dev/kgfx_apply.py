@@ -19,7 +19,7 @@ SND = os.path.join(HERE, '..', 'public', 'assets', 'sound')
 def dur(n):
     try: return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(SND, n + '.mp3')], capture_output=True, text=True).stdout.strip()), 2)
     except Exception: return 6.0
-SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h']
+SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel']
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
        ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
@@ -27,7 +27,7 @@ CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;p
 
 js = open(os.path.join(HERE, 'kgfx.js'), encoding='utf-8').read()
 rp("function bxOrderFx(fx){", js + "\nfunction bxOrderFx(fx){")
-rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx};")
+rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx};")
 rp('"j_bx_order":{"d":4.63}', '"j_bx_order":{"d":4.63},' + ','.join(f'"{n}":{{"d":{dur(n)}}}' for n in SNDS))
 rp(".xd-rule.bx{", CSS + ".xd-rule.bx{")
 if miss:
@@ -45,6 +45,12 @@ D = [
  ('칼끝이 목 한 뼘 앞에서 멈췄다.', 'The blade stopped a hand’s breadth from your throat.', '刃先が喉の一寸手前で止まった。', '刀尖停在了离喉咙一拃远的地方。', '刀尖停在了離喉嚨一拃遠的地方。'),
  ('등 뒤에서 칼이 먼저 닿았다.', 'The blade at your back reached you first.', '背後から、刃が先に届いた。', '背后的刀先一步碰到了你。', '背後的刀先一步碰到了你。'),
  ('등 뒤의 칼', 'The Blade at Your Back', '背後の刃', '背后的刀', '背後的刀'),
+ ('진심', 'True Heart', '本心', '真心', '真心'),
+ ('넷째 날 밤', 'Fourth Night', '四日目の夜', '第四天夜', '第四天夜'),
+ ('본성에 삼켜진다.', 'You are swallowed by your nature.', '本性に呑まれていく。', '被本性吞噬。', '被本性吞噬。'),
+ ('흘러넘치던 본성이 고요해졌다.', 'The nature that had been spilling over fell still.', '溢れ出していた本性が、静まった。', '满溢而出的本性归于平静。', '滿溢而出的本性歸於平靜。'),
+ ('나의 서번트였던 자', 'The one who was your Servant', 'かつて我がサーヴァントだった者', '曾是我的从者之人', '曾是我的從者之人'),
+ ('서번트가 당신의 앞을 막아섰다.', 'Your Servant stands in your way.', 'サーヴァントが、あなたの前に立ちはだかった。', '从者挡在了你的面前。', '從者擋在了你的面前。'),
 ]
 s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [])
 open(P, 'w', encoding='utf-8').write(s)

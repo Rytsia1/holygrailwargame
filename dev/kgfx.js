@@ -143,3 +143,87 @@ function kgBackShow(fx){
       if(t>=3.7){ if(!SH) SH=P.burst(46,cx,base-160*s,40,170,90,23,1.6,2.6,420); c.save(); c.globalCompositeOperation='lighter'; P.sparks(SH,dt,1,'255,214,150'); c.restore(); P.glow(cx,base-160*s,60*s,'255,214,150',.25*pulse(t,3.75,.15)); } }
     X.w(t,.25,v==='c'?2.6:1.7,'255,220,150'); X.txt(t,{a:2.75,b:2.6,c:3.6,h:2.5}[v]??2.6,v==='b'?4.2:null); kgShake(V,P); }
 }
+
+/* ---- 11-21 2차: 날마다 바뀌는 카드 · 잔이 가득 차는 순간 · 결투 시작 (시안 9판) ---- */
+function kgDayFx(fx){ xfxGo('j_kg_day'+(fx.d||1),()=>kgDayShow(fx)); }
+function kgFullFx(fx){ xfxGo(fx.v==='g'?'j_kg_full_g':'j_kg_full_r',()=>kgFullShow(fx)); }
+function kgDuelFx(fx){ xfxGo('j_kg_duel',()=>kgDuelShow(fx)); }
+// 잔 속에 고인 것: frac 0~1 (몸통 바닥 → 입구)
+function kgBowl(V,P,cx,base,s,frac,col,a){ const c=V.c, top=base-160*s, bot=base-72*s, y=bot-(bot-top)*frac; c.save(); P.cupPath(cx,base,s); c.clip();
+  const g=c.createLinearGradient(0,y,0,bot); g.addColorStop(0,`rgba(${col},${.95*a})`); g.addColorStop(1,`rgba(${col},${.6*a})`); c.fillStyle=g; c.fillRect(cx-70*s,y,140*s,bot-y+2);
+  c.strokeStyle=`rgba(255,200,205,${.7*a})`; c.lineWidth=1.2*V.D; c.beginPath(); c.ellipse(cx,y,Math.max(4,(64-56*Math.max(0,(y-top)/(bot-top)))*s),3*s,0,0,Math.PI*2); c.stroke(); c.restore(); }
+function kgDiam(V,cx,y,s,lit,newA,empty){ const c=V.c, D=V.D, gap=24*s; for(let i=0;i<4;i++){ const x=cx+(i-1.5)*gap, r=5.5*s, on=!empty&&i<lit, nw=i===lit-1; c.save();
+  c.beginPath(); c.moveTo(x,y-r); c.lineTo(x+r,y); c.lineTo(x,y+r); c.lineTo(x-r,y); c.closePath();
+  if(on){ const a=nw?newA:1; c.fillStyle=`rgba(230,60,85,${.9*a})`; c.shadowColor='rgba(255,70,90,1)'; c.shadowBlur=(nw?14:6)*D*a; c.fill(); }
+  c.strokeStyle='rgba(255,226,170,.85)'; c.lineWidth=1.2*D; c.shadowBlur=0; c.stroke(); c.restore(); } }
+
+/* 날 카드: 작은 「진심」 · 불 꺼진 잔에 하루치 핏빛이 차오르고 오늘의 마름모가 켜진다 (2.7초) */
+function kgDayShow(fx){
+  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, T=2.7, d=Math.max(1,Math.min(4,fx.d||1)), DN=['첫째 날','둘째 날','셋째 날','넷째 날'];
+  const V=xfxOpen('kgx',`${tr('진심')} · ${tr(DN[d-1])}`,kgTxtH(DN[d-1],fx.ev||''),T,frame); fxSnd(V.o,'j_kg_day'+d);
+  const P=kgPaint(V), X=kgTxt(V), FS=(()=>{ try{ return getComputedStyle(document.documentElement).getPropertyValue('--f-story').trim()||'serif'; }catch(e){ return 'serif'; } })();
+  function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.8, cx=W/2, base=H*.56, inA=io(seg(t,0,.3)), out=io(seg(t,T-.4,T));
+    c.save(); c.globalAlpha=1-out; c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); P.night(inA*.8,t);
+    P.glow(cx,base-110*s,170*s,'200,40,70',.18*inA);
+    c.save(); c.globalAlpha*=inA; c.textAlign='center'; c.textBaseline='middle'; c.font=`${Math.max(12*D,15*s)}px ${FS}`; c.fillStyle='rgba(240,160,170,.85)'; c.shadowColor='rgba(235,60,85,.8)'; c.shadowBlur=8*D; c.fillText([...tr('진심')].join(LANG==='en'?'':'  '),cx,H*.13); c.restore();
+    c.save(); c.globalAlpha*=inA; P.cupLight(cx,base,s,.05,[230,90,110],.85); c.restore();
+    const fr=lerp((d-1)/4,d/4,io(seg(t,.4,1.4))); if(fr>0) kgBowl(V,P,cx,base,s,fr,'200,30,55',inA);
+    if(t>1.3) P.wave(cx,base-160*s+(1-fr)*88*s,seg(t,1.3,2.1),60*s,'235,80,100',5,.15);
+    kgDiam(V,cx,base+19*s,s,d,seg(t,1.25,1.5)); c.restore();
+    X.txt(t,1.0); V.o.querySelector('.xd-txt').style.opacity=(1-out).toFixed(3); }
+}
+
+/* 잔이 가득 차는 순간: r 본성에 삼켜진다(붉게 넘침) / g 흘러넘치던 본성이 고요해졌다(금빛으로 가라앉음) (4.6초) */
+function kgFullShow(fx){
+  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, pulse=(t,at,w)=>Math.exp(-Math.pow((t-at)/w,2)), T=4.6, g0=fx.v==='g';
+  const V=xfxOpen('kgx',tr('넷째 날 밤'),kgTxtH('넷째 날 밤',g0?'잔이 가득 찼다.':'본성에 삼켜진다.',g0?tr('흘러넘치던 본성이 고요해졌다.'):''),T,frame); fxSnd(V.o,g0?'j_kg_full_g':'j_kg_full_r');
+  const P=kgPaint(V), X=kgTxt(V); let SP=null;
+  if(!g0) V.o.querySelector('.xd-rule').style.background='linear-gradient(90deg,transparent,rgba(230,70,90,.95),transparent)';
+  else V.o.querySelector('.xd-rule').style.background='linear-gradient(90deg,transparent,rgba(240,200,130,.95),transparent)';
+  function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.9, cx=W/2, base=H*.58, inA=io(seg(t,0,.4)), top=H*.6, out=io(seg(t,T-.5,T));
+    c.save(); c.globalAlpha=1-out; c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); P.night(inA,t); P.pool(t,top,inA*.8);
+    const FULL=1.6, fr=lerp(.75,1,io(seg(t,.3,FULL))), gold=g0?seg(t,FULL,FULL+.5):0;
+    const col=gold>0?`${Math.round(200+55*gold)},${Math.round(30+180*gold)},${Math.round(55+75*gold)}`:'200,30,55';
+    c.save(); c.beginPath(); c.rect(0,0,W,top+6*D); c.clip();
+    const ig=t<FULL?.05:(!g0?.05+1.1*seg(t,FULL,FULL+.3):.05+.9*gold); P.cupLight(cx,base,s,ig,!g0?[255,80,100]:[255,226,160],.85*(1-gold));
+    kgBowl(V,P,cx,base,s,fr,col,inA); c.restore();
+    const rimY=base-160*s;
+    if(!g0&&t>=FULL){ const L=io(seg(t,FULL,FULL+1.3)); c.save(); c.globalCompositeOperation='lighter'; c.lineCap='round';
+      for(const sd of [-1,1]) for(const off of [0,.35,.7]){ const k=Math.max(0,L-off*.3); if(k<=0) continue; c.strokeStyle=`rgba(255,90,110,${.75*(1-seg(t,3.4,4.4))})`; c.lineWidth=(3-off*2)*s; c.shadowColor='rgba(255,60,80,1)'; c.shadowBlur=12*D;
+        c.beginPath(); for(let q=0;q<=k;q+=.02){ const yy=rimY+q*(base-rimY); const ww=yy<base-72*s?(64-54*Math.pow((yy-rimY)/(88*s),1.6))*s:(10+32*Math.pow(Math.max(0,(yy-(base-72*s))/(72*s)),3))*s; const x=cx+sd*(ww+2*s+off*3*s); q?c.lineTo(x,yy):c.moveTo(x,yy); } c.stroke(); }
+      c.restore();
+      if(!SP) SP=P.burst(60,cx,rimY,60,260,180,31,1.0,1.8,-60); c.save(); c.globalCompositeOperation='lighter'; P.sparks(SP,dt,1,'255,110,125'); c.restore();
+      P.glow(cx,rimY,150*s,'235,50,75',.5*seg(t,FULL,FULL+.2)*(1-.5*seg(t,2.4,4.4)));
+      P.wave(cx,rimY,seg(t,FULL,FULL+1.0),Math.max(W,H)*.6,'255,80,100',12,.35); P.kick(t,FULL,8,.4); P.flash(pulse(t,FULL+.02,.06)*.35,'255,120,130'); }
+    if(g0&&t>=FULL){ P.glow(cx,rimY,170*s,'255,220,150',.45*gold*(1-.4*seg(t,3,4.6))); P.wave(cx,rimY,seg(t,FULL+.1,FULL+1.6),Math.max(W,H)*.5,'255,226,170',8,.35); }
+    c.restore();
+    X.txt(t,2.2,g0?3.0:null); V.o.querySelector('.xd-txt').style.opacity=(1-out).toFixed(3); kgShake(V,P); }
+}
+
+/* 결투 시작: 서번트 초상이 돌아서서 당신을 본다 · 테두리가 핏빛으로 금 간다 · 칼이 세워진다 · 첫마디 (5.4초) */
+function kgDuelShow(fx){
+  const {seg,io,oc}=XF, T=5.4;
+  const V=xfxOpen('kgx',`${tr(fx.name||'')} · ${tr('나의 서번트였던 자')}`,kgTxtH(fx.name||'',`${tr('나의 서번트였던 자')}${fx.cls?' · '+tr(fx.cls):''}`,tr('서번트가 당신의 앞을 막아섰다.')),T,frame); fxSnd(V.o,'j_kg_duel');
+  const P=kgPaint(V), X=kgTxt(V); X.setW(fx.line?kgLine(fx.line):''); X.red(true);
+  const img=new Image(); img.src=`assets/portraits/${fx.id}.webp`;
+  function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_(), cx=W/2, top=H*.62, inA=io(seg(t,0,.4)), out=io(seg(t,T-.5,T));
+    c.save(); c.globalAlpha=1-out; c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H); P.night(inA,t); P.pool(t,top,inA*.7);
+    P.glow(cx,-H*.1,H*.75,'235,60,85',.28*inA);
+    const R=Math.min(58*s,W*.15), px=cx, py=H*.4, ap=oc(seg(t,.2,.8)), fl=seg(t,1.1,1.55), sx=Math.cos(Math.PI*fl), red=seg(t,1.3,1.6), crack=seg(t,1.45,1.7);
+    const bl=oc(seg(t,1.6,2.0));
+    if(bl>0){ const bx=px+R*.95, by0=py+R*.5, by1=Math.max(H*.27,py+R*.3-(R*1.9)*bl); c.save(); c.lineCap='round'; c.strokeStyle='rgba(220,40,60,.35)'; c.lineWidth=10*s; c.shadowColor='rgba(255,60,80,1)'; c.shadowBlur=24*D; c.beginPath(); c.moveTo(bx,by0); c.lineTo(bx,by1); c.stroke();
+      c.strokeStyle='rgba(240,245,255,.95)'; c.lineWidth=3*s; c.shadowColor='rgba(210,230,255,1)'; c.shadowBlur=10*D; c.beginPath(); c.moveTo(bx,by0); c.lineTo(bx,by1); c.stroke(); c.restore();
+      const gl=seg(t,1.85,1.95)*(1-seg(t,2.05,2.4)); if(gl>0){ const r=22*s*gl; c.save(); c.strokeStyle='rgba(235,245,255,1)'; c.lineWidth=1.2*D; c.shadowColor='rgba(200,230,255,1)'; c.shadowBlur=12*D; c.beginPath(); c.moveTo(bx-r,by1); c.lineTo(bx+r,by1); c.moveTo(bx,by1-r*.8); c.lineTo(bx,by1+r*.8); c.stroke(); c.restore(); } }
+    if(ap>0){ c.save(); c.globalAlpha*=ap*inA; c.translate(px,py+(1-ap)*20*s);
+      P.glow(0,0,R*2.2,red>0?'235,60,85':'255,214,150',.35+.25*red);
+      c.save(); c.beginPath(); c.arc(0,0,R,0,Math.PI*2); c.clip(); c.fillStyle='#2b2534'; c.fillRect(-R,-R,2*R,2*R); c.scale(Math.abs(sx)<.02?.02*Math.sign(sx||1):sx,1); if(img.complete&&img.naturalWidth) c.drawImage(img,-R,-R,2*R,2*R);
+      if(red>0){ c.fillStyle=`rgba(120,10,30,${.18*red})`; c.fillRect(-R,-R,2*R,2*R); } c.restore();
+      const rc=red>0?`${Math.round(226+9*red)},${Math.round(196-136*red)},${Math.round(138-53*red)}`:'226,196,138';
+      c.lineWidth=2.4*D; c.strokeStyle=`rgba(${rc},1)`; c.shadowColor=`rgba(${rc},1)`; c.shadowBlur=12*D; c.beginPath(); c.arc(0,0,R,0,Math.PI*2); c.stroke();
+      if(crack>0){ c.shadowBlur=6*D; c.strokeStyle=`rgba(255,120,130,${crack})`; c.lineWidth=1.4*D; [[.2,.9],[1.35,.7],[2.7,.8],[4.1,.6]].forEach(([a0,l])=>{ c.beginPath(); c.moveTo(Math.cos(a0)*R,Math.sin(a0)*R); c.lineTo(Math.cos(a0+.08)*R*(1-.28*l*crack),Math.sin(a0+.08)*R*(1-.28*l*crack)); c.lineTo(Math.cos(a0-.05)*R*(1-.45*l*crack),Math.sin(a0-.05)*R*(1-.45*l*crack)); c.stroke(); }); }
+      c.restore(); P.kick(t,1.5,6,.3); }
+    c.restore();
+    X.w(t,2.4,T-.5,'235,60,85'); X.txt(t,2.0,3.2); V.o.querySelector('.xd-txt').style.opacity=(1-out).toFixed(3); kgShake(V,P); }
+}
+// 서번트 대사 한 줄을 그 언어의 따옴표로
+function kgLine(l){ const q=tr(l).replace(/^[“「]|[”」]$/g,''); if(/^\(/.test(q)||/^（/.test(q)) return q; return LANG==='ja'||LANG==='zht'?'「'+q+'」':'“'+q+'”'; }

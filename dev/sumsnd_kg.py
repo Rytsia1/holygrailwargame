@@ -4,6 +4,7 @@
 - j_kg_back_b  령주로 멈춰라 (6.6초): ... '쉭'이 되감기듯 멎음 → 령주의 저음 · 떨리는 화음
 - j_kg_back_c  알면서 그대로 둔다 (6.2초): 화음이 끝까지 이어지다 '쉭' 뒤 함께 가라앉음
 - j_kg_back_h  동맹 앞에서 등 뒤의 칼이 먼저 닿음 (4초): '쉭' → 무겁게 베임 (쓰러지지 않음)
+- j_kg_day1~4  날 카드 (2.9초) · j_kg_full_r/g 잔이 가득 참 (4.8초) · j_kg_duel 결투 시작 (5.6초)
 사용: python3 sumsnd_kg.py <출력 폴더> [이름,이름]"""
 import sys, os, subprocess, numpy as np
 from scipy.signal import fftconvolve, butter, sosfilt
@@ -99,7 +100,34 @@ def back(v):
         put(B, lp(noise(1.2), 700) * np.exp(-T(1.2) / .5), 2.3, 0, .12)
     return reverb(B, 2.2, .3)
 
+def kg_day(d):   # 날 카드: 낮은 울림 · 차오르는 물소리 · 종 하나(날마다 한 음씩 낮아짐)
+    L = 2.9; B = buf(L)
+    put(B, tone(49, 2.4, .3, 1.0), 0, 0, .35)
+    x = T(1.0); sw = bp(noise(1.0), 250, 1400) * np.minimum(1, x / .5) * np.clip((1 - x) / .3, 0, 1); put(B, sw, .4, 0, .12)
+    put(B, bell([220, 196, 174.61, 164.81][d - 1], 2.0), 1.3, 0, .38)
+    return reverb(B, 2.0, .3)
+def kg_full(v):  # 잔이 가득 참: 부푸는 울림 → 붉게 넘침(쿵 · 흘러내림) / 금빛으로 풀림
+    L = 4.8; B = buf(L)
+    put(B, tone(41.2, 2.0, 1.2, .3), 0, 0, .4)
+    x = T(1.5); put(B, bp(noise(1.5), 200, 1400) * np.minimum(1, x / 1.2), .2, 0, .08)
+    if v == 'r':
+        put(B, thump(55, 1.4), 1.6, 0, .9); put(B, bp(noise(.9), 300, 900) * np.exp(-T(.9) / .3), 1.6, 0, .3)
+        put(B, pad([138.59, 164.81, 207.65], 2.4, .05, 1.8, 1400), 1.62, 0, .3)
+        for k in range(12): put(B, bell(rng.uniform(900, 1800), .4), 1.7 + k * .12, rng.uniform(-.6, .6), .04)
+    else:
+        for i, f in enumerate([523.25, 659.25, 783.99, 1046.5]): put(B, tone(f, 2.6, .05, 2.0), 1.6 + i * .05, (i - 1.5) * .2, .09)
+        put(B, bell(1046.5, 2.0), 1.62, 0, .12)
+    return reverb(B, 2.4, .32)
+def kg_duel():  # 결투 시작: 잔의 울림 → 돌아서는 '스릉' → '칭' · 낮은 쿵 → 어두운 화음
+    L = 5.6; B = buf(L)
+    put(B, tone(55, 1.2, .4, .4), 0, 0, .35); put(B, pad([261.63, 329.63, 392.0], 1.0, .3, .4), .2, 0, .15)
+    put(B, whoosh(.5, 1800, 5200, 1), 1.1, .3, .35)
+    x = T(.45); put(B, np.sin(2 * np.pi * np.cumsum(220 * (2 ** (x / .45))) / SR) * adsr(.45, .02, .3) * .3, 1.15, .3, .3)
+    put(B, bell(3150, .9), 1.85, .5, .14); put(B, thump(52, 1.4), 1.9, 0, .85); put(B, lp(noise(.3), 400) * np.exp(-T(.3) / .08), 1.9, 0, .3)
+    put(B, pad([146.83, 174.61, 220.0], 3.2, .3, 2.0, 1200), 2.0, 0, .25)
+    return reverb(B, 2.2, .3)
+
 os.makedirs(OUT, exist_ok=True)
-F = {'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}
+F = {'j_kg_day1': lambda: kg_day(1), 'j_kg_day2': lambda: kg_day(2), 'j_kg_day3': lambda: kg_day(3), 'j_kg_day4': lambda: kg_day(4), 'j_kg_full_r': lambda: kg_full('r'), 'j_kg_full_g': lambda: kg_full('g'), 'j_kg_duel': kg_duel, 'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}
 ONLY = sys.argv[2].split(',') if len(sys.argv) > 2 else list(F)
 for n in ONLY: save(n, F[n]())
