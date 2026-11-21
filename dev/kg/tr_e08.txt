@@ -1,0 +1,171 @@
+k176t|The Closed Doors|閉じた扉|关上的门
+k176b|The city's doors have closed again. Only you can see where the doors stood half-open that night.|街の扉がまた閉じた。あの夜半分開いていた扉の場所が、あなたにだけ見える。|城里的门又关上了。那一夜半开着的门的位置，只有你看得见。
+k176b@0|The city's doors have closed again. Only you can sense where the doors stood half-open that night.|街の扉がまた閉じた。あの夜半分開いていた扉の場所が、あなたにだけ感じられる。|城里的门又关上了。那一夜半开着的门的位置，只有你感觉得到。
+k176c1|Touch that spot|その場所に手を触れる|伸手触碰那个地方
+k176r1|It was cold.|冷たかった。|冰冷。
+k176c2|Decide not to look|見ないことにする|决定不去看
+k176c3|Write down where it is|場所を書き留めておく|记下那个位置
+k177t|The Servant Without a Reflection|映らないサーヴァント|照不出的从者
+k177b|The place where your Servant used to appear in the mirror is empty. As if it had always been that way.|鏡に映っていたサーヴァントの場所が空いた。初めからそうだったかのように。|镜中曾映出从者的位置空了。仿佛从一开始就是这样。
+k177c1|Stand before the mirror a long time|鏡の前に長く立つ|在镜子前站了很久
+k177c2|Cover the mirror|鏡を覆う|把镜子盖起来
+k177c3|Wonder if your Servant is beyond the door|扉の向こうにサーヴァントがいるだろうかと考える|心想从者会不会在门的那一边
+k178t|A Voice Calling|呼ぶ声|呼唤的声音
+k178b|Every night, something calls from beyond the door. It sounds like your fallen Servant's voice.|夜ごと、扉の向こうから呼ぶ声がする。倒れたサーヴァントの声に似ている。|每到夜里，门的那一边都传来呼唤声。像极了倒下的从者的声音。
+k178b@0|Every night, something calls from beyond the door. It sounds like your fallen Servant's breathing.|夜ごと、扉の向こうから呼ぶ声がする。倒れたサーヴァントの息づかいに似ている。|每到夜里，门的那一边都传来呼唤声。像极了倒下的从者的呼吸声。
+k178c1|Answer|応える|回应
+k178r1|The sound stopped. The next day, it came from closer.|声が止んだ。次の日、もっと近くから聞こえた。|声音停了。第二天，却从更近的地方传来。
+k178c2|Cover your ears|耳をふさぐ|捂住耳朵
+k178c3|Say that isn't their voice|あの声ではないと言う|说那不是对方的声音
+k178c3@0|Say that isn't their breathing|あの息づかいではないと言う|说那不是对方的呼吸声
+k179t|Forbidden Books|禁書|禁书
+k179b|The books you collected before that winter are still on the shelves.|あの冬より前に集めた本が、書棚にそのまま並んでいる。|那个冬天之前收集的书，原封不动地摆在书架上。
+k179c1|Burn them|燃やす|烧掉
+k179c2|Read them again|また読む|重新阅读
+k179c3|Give them to someone|誰かに譲る|转交给别人
+k180t|A Half-Erased Shadow|半分消えた影|被抹去一半的影子
+k180b|You thought of the person whose shadow was half-erased on the second day. What is their shadow like now?|二日目に影が半分消えたあの人を思い出した。その人の影は今どうなっているだろう。|你想起了第二天影子被抹去一半的那个人。那个人的影子现在怎么样了呢。
+k180c1|Go to see them|訪ねていく|去看望
+k180r1|Their shadow was whole. They did not welcome you.|影は元どおりだった。その人はあなたを歓迎しなかった。|影子完好无损。那个人并不欢迎你。
+k180r1@0|Their shadow was still half empty. They did not welcome you.|影はまだ半分欠けていた。その人はあなたを歓迎しなかった。|影子依旧缺了一半。那个人并不欢迎你。
+k180c2|Don't go|訪ねない|不去
+k180c3|Recall the shadow being erased|影が消えていく様子を思い出す|回想影子被抹去时的样子
+k181t|One Step Away|一歩手前で|一步之遥
+k181b|The place where the cup broke was one step short of reaching the Root. Every night, that one step is calculated anew.|杯が砕けた場所は、根源に届く一歩手前だった。その一歩が、毎晩また計算される。|杯子碎裂之处，离抵达根源只差一步。那一步，每夜都在重新计算。
+k181b@0|The place where the cup broke was one step short of reaching what lay beyond. Every night, that one step is calculated anew.|杯が砕けた場所は、その向こうに届く一歩手前だった。その一歩が、毎晩また計算される。|杯子碎裂之处，离抵达彼方只差一步。那一步，每夜都在重新计算。
+k181c1|Stop calculating|計算をやめる|停止计算
+k181c2|Calculate it to the end|最後まで計算する|计算到底
+k181r2@0|You could not see the end.|終わりは見えなかった。|看不到尽头。
+k181c3|Write the calculation down|計算を書き留めておく|把计算记下来
+k182t|The Clocks Restored|戻った時計|恢复的钟表
+k182b|The city's clocks show the right time again. Only your clock is still slow.|街の時計がまた正しい時刻を指している。あなたの時計だけが、まだ遅れている。|城里的钟表又指向了正确的时间。只有你的表还慢着。
+k182c1|Set it right|合わせる|调准
+k182c2|Leave it be|そのままにする|就这样吧
+k182c3|Stop the clock|時計を止める|让表停下
+k183t|Another Stepping Stone|別の踏み台|另一块垫脚石
+k183b|The thought occurs to you: maybe it doesn't have to be this city. Another city, another war.|この街でなくてもいいのかもしれない、という考えが浮かぶ。別の街、別の戦争。|你冒出一个念头：也许不一定非得是这座城市。别的城市，别的战争。
+k183c1|Gather materials|資料を集める|收集资料
+k183c1@0|Gather rumors|噂を集める|收集传闻
+k183c2|Discard the thought|考えを捨てる|打消这个念头
+k183c3|Become afraid of that thought|その考えが怖くなる|对这个念头感到恐惧
+k184t|The One Who Woke|目覚めた人|醒来的人
+k184b|You think of the person who wouldn't wake from sleep on the second day. Did they wake after the cup broke?|二日目に眠りから覚めなかったあの人を思い出す。杯が砕けたあと、目を覚ましただろうか。|你想起第二天一睡不醒的那个人。杯子碎了之后，对方醒过来了吗？
+k184c1|Go to check|確かめに行く|去确认
+k184r1|They woke, but they weren't the same as before.|目覚めたが、以前とは違っていた。|醒是醒了，却和以前不一样了。
+k184r1@0|They were living well.|その人は元気に暮らしていた。|那个人过得很好。
+k184c2|Don't check|確かめない|不去确认
+k184c3|Recall that you never factored their name into the calculation|その人の名を計算に入れていなかったことを思い出す|想起自己从未把那个人的名字算进计算之中
+k185t|A Child's Laughter|子どもの笑い声|孩子的笑声
+k185b|A child's laughter interrupts your calculations. Just like long ago. Only this time, you can't find a reason to pick the calculation back up.|子どもの笑い声が計算を邪魔する。昔と同じだ。ただ今度は、計算を続ける理由が見つからない。|孩子的笑声打断了你的计算。和很久以前一样。只是这一次，你找不到继续计算的理由。
+k185c1|Continue the calculation|計算を続ける|继续计算
+k185c2|Listen to the laughter|笑い声を聞く|倾听笑声
+k185c3|Close the window|窓を閉める|关上窗户
+k186t|The One Before the Broken Cup|砕けた杯の前の人|站在碎杯前的人
+k186b|You ran into the ally Master who broke the cup on the street. They stop walking first.|杯を砕いた同盟のマスターと、道で出くわした。その人のほうが先に足を止める。|你在街上遇到了打碎杯子的那位同盟御主。对方先停下了脚步。
+k186c1|Greet them|挨拶する|打招呼
+k186r1|They bowed their head. You couldn't tell if it was an apology or a greeting.|その人が頭を下げた。謝罪なのか挨拶なのか、わからなかった。|对方低下了头。分不清是道歉还是打招呼。
+k186c2|Walk past|通り過ぎる|走过去
+k186c3|Ask about that night|あの夜のことを尋ねる|问起那一夜的事
+k187t|Something Returned|返ってきた物|归还之物
+k187b|Your former ally sent you something. It's what your fallen Servant dropped that night.|同盟のマスターが物をひとつ送ってきた。倒れたサーヴァントがあの夜落としたものだ。|同盟御主寄来了一样东西。那是倒下的从者那一夜掉落的。
+k187c1|Accept it|受け取る|收下
+k187r1|A trace of your bond remains.|縁の痕跡が残る。|羁绊的痕迹留了下来。
+k187c2|Send it back|送り返す|寄回去
+k187c3|Don't open it|開けずにおく|不打开
+k188t|Their Servant|あの人のサーヴァント|那个人的从者
+k188b|That Servant is still at your former ally's side. The Servant who struck yours down.|同盟のマスターのそばには、まだあのサーヴァントがいる。あなたのサーヴァントを倒した、あのサーヴァントが。|同盟御主身边还跟着那个从者。那个击倒了你的从者的从者。
+k188c1|Look at the Servant|サーヴァントを見つめる|看着那个从者
+k188r1|The Servant lowered their eyes first.|サーヴァントのほうが先に目を伏せた。|那个从者先垂下了目光。
+k188c2|Look only at the Master|同盟のマスターだけを見る|只看着同盟御主
+k188c3|Excuse yourself|その場を離れる|离开
+k189t|The Same Bar|同じ酒場|同一家酒馆
+k189b|Your former ally sits in the same bar. The only empty seat is next to you.|同じ酒場に同盟のマスターが座っている。空いている席は、あなたの側にひとつだけだ。|同一家酒馆里坐着那位同盟御主。空位只有你旁边那一个。
+k189c1|Sit down|座る|坐下
+k189r1|Without a word, you shared a drink.|何も言わずに一杯を分け合った。|一言不发地共饮了一杯。
+k189c2|Go somewhere else|別の店へ行く|去别处
+k189c3|Send over a drink and leave|一杯おごって出る|请对方一杯，然后离开
+k190t|Words of Thanks|礼の言葉|道谢的话
+k190b|Your former ally says they're glad you didn't call off your Servant to the very end that night. Because of that, they were able to fight.|同盟のマスターが言う。あの夜、あなたが最後までサーヴァントを退かせなかったのはよかったと。だから戦えたのだと。|同盟御主说，那一夜你直到最后都没有让从者退下，真是太好了。正因如此，他们才能战斗。
+k190c1|Ask what they mean|どういう意味かと尋ねる|问是什么意思
+k190r1|「Because your Servant would have wanted that too.」|「あなたのサーヴァントも、それを望んでいたはずだから」|「因为你的从者应该也希望如此」
+k190c2|Don't listen|聞かない|不听
+k190c3|Nod|頷く|点头
+k191t|A Letter Asking for Help|助けを求める手紙|求助信
+k191b|Your former ally reached out asking for help. They've gotten into trouble over something else.|同盟のマスターが助けを求めてきた。別のことで困っているのだと。|同盟御主来向你求助。说是因为别的事陷入了困境。
+k191c1|Help them|助ける|帮忙
+k191c2|Refuse|断る|拒绝
+k191c3|Don't answer|返事をしない|不回复
+k192t|Mismatched Hands|すれ違う手|错过的手
+k192b|Your former ally holds out a hand. Just as before that night.|同盟のマスターが手を差し出す。あの夜より前のように。|同盟御主伸出了手。就像那一夜之前一样。
+k192c1|Take it|握る|握住
+k192r1|Their hand was cold. So was yours.|手が冷たかった。あなたの手も。|那只手很冰冷。你的手也是。
+k192c2|Don't take it|握らない|不握
+k192r2|They withdrew their hand.|その人は手を引っ込めた。|对方收回了手。
+k192c3|Ask what they did with that hand|その手で何をしたのかと尋ねる|问对方用那只手做了什么
+k192r3|They didn't answer.|その人は答えなかった。|对方没有回答。
+k193t|The Wish We Were to Make Together|共に願うはずだった願い|本该一起许下的愿望
+k193b|You recall the line where you'd agreed to make a wish together. You chose the line beneath it.|共に願いをかけると決めた、あの一行を思い出す。あなたはその下の一行を選んだ。|你想起了那一行——约定一起许愿的那一行。你选择了它下面的那一行。
+k193c1|Apologize|謝る|道歉
+k193r1|Your former ally was silent for a long time.|同盟のマスターは長く黙っていた。|同盟御主沉默了很久。
+k193c2|Don't apologize|謝らない|不道歉
+k193c3|Ask about that wish again|その願いをもう一度尋ねる|再问起那个愿望
+k193r3|They said they no longer wish for it.|その人は、もうその願いはかけないと言った。|对方说如今已经不再许那个愿了。
+k194t|An Ally Departing|去っていく同盟|离去的同盟
+k194b|Your former ally let you know they're leaving the city.|同盟のマスターが、街を離れると知らせてきた。|同盟御主告诉你，要离开这座城市了。
+k194c1|See them off|見送る|送行
+k194r1|At the last, they spoke a Servant's name. It was yours.|最後に、その人がサーヴァントの名を呼んだ。あなたのサーヴァントだった。|最后，对方叫出了一个从者的名字。那是你的从者。
+k194c2|Don't see them off|見送らない|不去送行
+k194c3|Leave only a letter|手紙だけ残す|只留一封信
+k195t|The Servant Who Was an Enemy|敵だったサーヴァント|曾是敌人的从者
+k195b|Your former ally's Servant came alone. They say they have something to tell you.|同盟のサーヴァントが一人で訪ねてきた。話があるのだと。|同盟的从者独自前来。说有话要告诉你。
+k195c1|Listen|聞く|倾听
+k195c2|Send them away|追い返す|请对方离开
+k195c3|Take up a weapon|武器を取る|拿起武器
+k195r3|Your former ally's Servant did not take up theirs.|同盟のサーヴァントは武器を取らなかった。|同盟的从者没有拿起武器。
+k196t|Dreams of the Same Day|同じ日の夢|同一天的梦
+k196b|Your former ally said they dream of that night too. The same scene, from the other side.|同盟のマスターも、あの夜の夢を見ると言った。同じ場面を、反対側から。|同盟御主说，自己也会梦见那一夜。同样的场景，从另一边看。
+k196c1|Tell each other your dreams|互いの夢を語る|互相讲述梦境
+k196c2|Only listen|聞くだけにする|只是倾听
+k196c3|Suggest you stop|やめようと言う|提议到此为止
+k197t|A Name Left Behind|残った名|留下的名字
+k197b|Your former ally didn't live long after that night. Your name is on the funeral list too.|同盟のマスターは、あの夜のあと長くは生きられなかった。葬儀の名簿にはあなたの名前もある。|同盟御主在那一夜之后没能活多久。葬礼的名单上也有你的名字。
+k197c1|Go|行く|去
+k197r1|No one knew who you were.|誰もあなたが誰なのか知らなかった。|没有人知道你是谁。
+k197c2|Don't go|行かない|不去
+k197c3|Just send flowers|花だけ送る|只送花
+k198t|A Family Member Who Never Recovered|回復しない家族|未能康复的家人
+k198b|Even with the cup broken, what happened on the second day wasn't undone. Your family member still hasn't recovered.|杯が砕けても、二日目のことは元に戻らなかった。家族はまだ回復していない。|即使杯子碎了，第二天的事也没有复原。家人仍未康复。
+k198c1|Stay by their side|そばにつく|守在身边
+k198c2|You can't bear to see them|見る自信がない|没有勇气去看
+k198c3|Try a different doctor|医者を変えてみる|换个医生试试
+k199t|Your Family's Hand|家族の手|家人的手
+k199b|Your family member takes your hand, not knowing what you chose that day.|家族があなたの手を握る。あの日あなたが何を選んだのかを知らずに。|家人握住了你的手。并不知道那天你做了什么选择。
+k199c1|Hold it|握り返す|回握住
+k199c2|Pull your hand away|手を引く|抽回手
+k199c3|Blurt it out|言ってしまう|脱口而出
+k199r3|Your family pretended not to hear.|家族は聞こえないふりをした。|家人装作没有听见。
+k200t|A Friend's Empty Seat|友人の空席|朋友的空位
+k200b|Your friend can't come to the gathering. Everyone asks after them. Only you can't answer.|友人が集まりに来られない。皆が様子を尋ねる。あなただけが答えられない。|朋友没能来聚会。大家都在问朋友的近况。只有你答不上来。
+k200c1|Pass on their regards for them|代わりに近況を伝える|代为转达问候
+k200c2|Leave|席を立つ|起身离开
+k200c3|Go to see your friend|友人を訪ねる|去看朋友
+k200r3|Your friend saw you and tried hard to smile.|友人はあなたを見て、笑おうと努めた。|朋友看到你，努力想要挤出笑容。
+k201t|A Letter from Your Friend|友人からの手紙|朋友的来信
+k201b|A short letter came from your friend. Take care, it said. I'm all right.|友人から短い手紙が来た。元気でいてくれと、自分は大丈夫だと。|朋友寄来一封短信。说让你保重，自己没事。
+k201c1|Write a reply|返事を書く|写回信
+k201r1|You rewrote it again and again.|何度も書き直した。|你改写了一遍又一遍。
+k201c2|Fold the letter away|手紙をたたんでおく|把信折好收起
+k201c3|Go see them and tell the truth|訪ねて本当のことを言う|登门说出真相
+k201r3|Your friend was silent a long time. Then told you to go home.|友人は長いこと黙っていた。そして、帰ってくれと言った。|朋友沉默了很久。然后叫你回去。
+k202t|A Student Who Doesn't Come|来ない弟子|不来的弟子
+k202b|Your student doesn't come to lessons. Not since that day.|弟子が授業に来ない。あの日以来。|弟子不来上课了。自那天以后。
+k202b@0|Your student doesn't come to practice. Not since that day.|弟子が稽古に来ない。あの日以来。|弟子不来练习了。自那天以后。
+k202c1|Go to see them|訪ねていく|去看望
+k202r1|Your student still couldn't hold themselves up.|弟子はまだ体を支えられなかった。|弟子还没法撑起身子。
+k202c2|Wait|待つ|等待
+k202c3|Take on another student|別の弟子をとる|收别的弟子
+k203t|The Notebook Left Behind|残されたノート|留下的笔记
+k203b|Your student's notebook is still on your desk. On the last page is written what you taught them.|弟子のノートが、まだあなたの机にある。最後のページに、あなたが教えたことが書かれている。|弟子的笔记本还在你的桌上。最后一页写着你教过的东西。
+k203c1|Return it|返す|还回去
+k203r1|Your student's family took it on their behalf.|弟子の家族が代わりに受け取った。|弟子的家人代为收下了。
+k203c2|Keep it|手元に置く|留在身边

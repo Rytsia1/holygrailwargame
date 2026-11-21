@@ -254,7 +254,7 @@ rp("    log(`제${w.day}일 · 밤`,'night');\n", "    log(`제${w.day}일 · �
 rp("const END_N={wish:'wish',", "const END_N={kgM:'kgM',kgT:'kgT',kgB:'kgB',kgP:'kgP',kgP2:'kgP2',kgX:'kgX',kgS:'kgS',kgF:'kgF',wish:'wish',")
 rp("({lost:'c',dead:'c',survived:'b',withdrew:'b',refused:'e'})[k]", "({lost:'c',dead:'c',kgS:'c',kgF:'c',kgX:'c',survived:'b',withdrew:'b',refused:'e'})[k]")
 SCN = r"""  // 11-21: 검귀 루트 결말 — 있는 장면을 빌려 문구만 바꾼다
-  const scnAs=(base,hold,txt)=>({HOLD:hold,low:SCN[base].low,init(){ SCN[base].init.call(this); txt.call(this); },frame(t,dt){ return SCN[base].frame.call(this,t,dt); }});
+  const scnAs=(base,hold,txt)=>({HOLD:hold,get low(){ return SCN[base].low; },init(){ SCN[base].init.call(this); txt.call(this); },frame(t,dt){ return SCN[base].frame.call(this,t,dt); }});
   SCN.kgM=scnAs('wish',7.0,function(){ setText('검을 거두지 않은 자','잔이 당신의 소원을 받아 들었다.','막아선 서번트는 새벽이 오기 전에 흩어졌다.'); });
   SCN.kgT=scnAs('wish',7.0,function(){ setText('둘이 이긴 세계','둘이 이긴 세계의 첫 아침이 왔다.','그 세계는 아주 조용했다.'); });
   SCN.kgB=scnAs('heroWish',7.0,function(){ setWish(opt.wish); setText('묶인 잔','소원은 이루어졌다.',`${opt.hero}${jo(opt.hero,'은','는')} 곁에 남았다. 그 뒤로 입을 열지 않았다.`); });
@@ -284,7 +284,8 @@ def rd(fn, keyed):
         out[p[0]] = (tuple(p[1:]), tpl)
     return out
 TID = {}
-for fn in ('tr_e.txt', 'tr_a.txt', 'tr_s.txt'): TID.update(rd(fn, False))
+import glob
+for fp in sorted(glob.glob(os.path.join(KD, 'tr_*.txt'))): TID.update(rd(os.path.basename(fp), False))
 TRE = rd('tre.txt', True)
 dict_items, tpl_items, zh = [], [], []
 lost = []

@@ -1,0 +1,171 @@
+k70c2|Name a different wish|別の願いを言う|说出另一个愿望
+k70r2|Your Servant stopped. But it was only a dream.|サーヴァントが立ち止まった。だが、それは夢だった。|从者停了下来。但那只是一场梦。
+k70c3|Say nothing|何も言わない|什么也不说
+k71t|Confession|告解|告解
+k71b|At the church you'd long attended, you asked to make a confession. Behind the screen, the priest was silent a long while, then asked: “Who is that standing behind you?”|長く通った教会で告解を願い出た。仕切りの向こうで神父は長いこと黙っていたが、やがて問うた。「あなたの後ろに立っているのは誰ですか」|你在常去的教堂请求告解。隔板另一边的神父沉默了许久，然后问道：“站在你身后的是谁？”
+k71c1|Tell the truth|本当のことを言う|如实相告
+k71r1|The priest told you not to come again.|神父は、もう来ないでくれと言った。|神父叫你不要再来了。
+k71c2|Say no one is there|誰もいないと言う|说没有人
+k71c3|Abandon the confession and leave|告解をやめて出ていく|放弃告解离开
+k72t|A Letter from the Family|家からの手紙|家族来信
+k72b|A letter arrived from your family. Having held the cup, what did you bring back? It questions whether you are fit to inherit the Crest.|家から手紙が来た。杯を手にしながら何を持ち帰ったのかと、刻印を継ぐ資格を問うている。|家族寄来了一封信。信中质问你握住了杯子却带回了什么，质疑你是否有资格继承刻印。
+k72c1|Write a reply|返事を書く|写回信
+k72r1|The reply came back unopened.|返事は開封されないまま戻ってきた。|回信原封不动地被退了回来。
+k72c2|Burn the letter|手紙を燃やす|烧掉信
+k72c3|Go there in person|自ら訪ねていく|亲自登门
+k72r3|The gate never opened.|門はついに開かなかった。|大门终究没有打开。
+k73t|A Name Reclaimed|取り戻した名|夺回的名号
+k73b|With the cup, you could reclaim your family's name. Yet in the changed world, there's no one left to call it.|杯で家の名を取り戻すことができた。なのに、変わった世界でその名を呼ぶ者は誰もいない。|借助杯子，你得以夺回家族的名号。可在改变后的世界里，没有人再呼唤那个名字。
+k73c1|Hang out the name|名を掲げる|挂出名号
+k73r1|No one came.|訪ねてくる者はいなかった。|没有人来访。
+k73c2|Abandon the name|名を捨てる|舍弃名号
+k73c3|Let your Servant hear that name|サーヴァントにその名を聞かせる|让从者听听那个名字
+k73r3|Your Servant didn't repeat the name.|サーヴァントはその名を復唱しなかった。|从者没有跟着念那个名字。
+k74t|An Old Colleague|昔の同僚|昔日同僚
+k74b|A colleague from your exorcism days came to investigate the changed world. Seeing your Servant, their hand went to their weapon.|退魔の仕事を共にした同僚が、変わった世界を調べに来た。あなたのサーヴァントを見るなり、手が武器へ伸びる。|过去一起驱魔的同僚前来调查改变后的世界。一看到你的从者，手便伸向了武器。
+k74c1|Step in between|立ちはだかる|挡在中间
+k74r1|Your colleague lowered their weapon and left. They never came back.|同僚は武器を収めて帰っていった。二度と来なかった。|同僚收起武器离开了。再也没有来过。
+k74c2|Pretend not to see|知らないふりをする|装作没看见
+k74r2|Your Servant stepped forward. Your colleague fled.|サーヴァントが前に出た。同僚は逃げ出した。|从者上前一步。同僚逃走了。
+k74c3|Turn your Servant into spirit form|サーヴァントを霊体に戻す|让从者化为灵体
+k74r3|Your colleague believed they had seen nothing.|同僚は何も見なかったと信じた。|同僚相信自己什么也没看见。
+k75t|A Call from the Director|院長からの電話|院长的电话
+k75b|The orphanage director called. Your voice has changed so much lately, they said.|孤児院の院長から電話があった。近ごろ声がずいぶん変わったと。|孤儿院院长打来电话。说你最近的声音变了很多。
+k75c1|Say you're fine|大丈夫だと言う|说自己没事
+k75r1|The director asked nothing more. That hurt more.|院長はそれ以上聞かなかった。そのほうがつらかった。|院长没有再问。那反而更让人难受。
+k75c2|Visit the orphanage|孤児院へ行く|去孤儿院
+k75r2|The children saw your Servant and hid.|子どもたちがサーヴァントを見て隠れた。|孩子们看到从者就躲了起来。
+k75c3|Hang up|電話を切る|挂断电话
+k76t|The Holiday|節句|节日
+k76b|Your family gathered for the holiday. No one asks about the empty space behind you. They all avoid sitting there.|節目の日に家族が集まった。誰もあなたの後ろの空席を尋ねない。皆その場所を避けて座る。|节日里家人团聚。没有人问起你身后的空位。大家都避开那个位置坐下。
+k76c1|Stay until the end|最後までいる|待到最后
+k76r1|The conversation broke off only when it came to you.|会話はあなたの前でだけ途切れた。|话题只在你面前中断。
+k76c2|Leave early|早めに帰る|提早离开
+k76c3|Ask them to set one more place for your Servant|サーヴァントの席をもうひとつ用意してほしいと頼む|请他们为从者多摆一个座位
+k76r3|The table went quiet.|食卓が静まり返った。|饭桌安静了下来。
+k77t|Messages Left Unanswered|返事のない連絡|没有回复的消息
+k77b|The messages you send your friend are only ever marked read. Last time you met, they kept glancing behind you.|友人に送った連絡は、既読がつくだけだ。前に会った時、友人はしきりにあなたの後ろを見ていた。|你发给朋友的消息只显示已读。上次见面时，朋友总往你身后看。
+k77c1|Send one more|もう一度送る|再发一条
+k77r1|No reply came.|返事は来なかった。|没有回复。
+k77c2|Go to see them|会いに行く|去找对方
+k77r2|Your friend opened the door only halfway.|友人は扉を半分だけ開けた。|朋友只把门开了一半。
+k77c3|Give up|やめる|放弃
+k78t|A Student Leaving|去っていく弟子|离去的弟子
+k78b|Your student says they're leaving. When you ask why, they look not at you, but at your Servant.|弟子が去ると言う。理由を尋ねると、あなたではなくサーヴァントを見る。|弟子说要离开。你问原因，对方却没有看你，而是看着从者。
+k78c1|Ask them to stay|引き止める|挽留
+k78r1|Your student stayed one more day, then left.|弟子はもう一日だけ留まって、去っていった。|弟子多留了一天，然后离开了。
+k78c2|Let them go|行かせてやる|放对方走
+k78c3|Ask your Servant what they said to them|サーヴァントに何を言ったのかと尋ねる|问从者对弟子说了什么
+k78r3|Your Servant didn't answer.|サーヴァントは答えなかった。|从者没有回答。
+k79t|The Neighbors' Eyes|近所の目|邻居的目光
+k79b|The neighbors detour around the front of your house. They say the person standing there in silence frightens them.|近所の人々は、あなたの家の前を避けて通る。黙って立っている人が怖いのだそうだ。|邻居们绕开你家门前走。说那个默默站着的人很吓人。
+k79c1|Go explain yourself|訪ねて弁明する|上门解释
+k79r1|The neighbor nodded but wouldn't meet your eyes.|近所の人は頷いたが、目を合わせなかった。|邻居点了点头，却不与你对视。
+k79c2|Turn your Servant into spirit form|サーヴァントを霊体に戻す|让从者化为灵体
+k79r2|From that day on, your Servant barely showed themselves.|その日から、サーヴァントはほとんど姿を見せなくなった。|从那天起，从者几乎不再现身。
+k79c3|Move house|引っ越す|搬家
+k80t|Someone Afraid|怯える人|害怕的人
+k80b|Your spouse is afraid to be alone with your Servant. When your spouse comes in, your Servant leaves the room.|配偶者がサーヴァントと二人きりになるのを怖がる。その人が入ってくると、サーヴァントは部屋を出ていく。|你的配偶害怕和从者独处。只要配偶一进来，从者就离开房间。
+k80c1|Reassure your spouse|配偶者を安心させる|安抚配偶
+k80r1|Your spouse nodded, but couldn't sleep that night.|配偶者は頷いたが、その夜は眠れなかった。|配偶点了点头，那天夜里却没能入睡。
+k80c2|Give your Servant a separate room|サーヴァントの部屋を別にする|给从者另安排一间房
+k80c3|Turn your Servant into spirit form|サーヴァントを霊体に戻す|让从者化为灵体
+k80r3|Your spouse still sensed something.|配偶者はそれでも何かを感じていた。|配偶还是感觉到了什么。
+k81t|The Child's Question|子どもの質問|孩子的问题
+k81b|Your child asks: why doesn't that person talk? Why won't they look at Mom?|子どもが尋ねる。どうしてあの人はしゃべらないの。どうしてお母さんを見ないの。|孩子问：为什么那个人不说话？为什么不看妈妈？
+k81b@0|Your child asks: why doesn't that person talk? Why won't they look at Dad?|子どもが尋ねる。どうしてあの人はしゃべらないの。どうしてお父さんを見ないの。|孩子问：为什么那个人不说话？为什么不看爸爸？
+k81c1|Say they're sick|病気なのだと言う|说对方生病了
+k81r1|Your child brought your Servant some medicine. Your Servant took it and stood there for a long time.|子どもはサーヴァントに薬を持っていった。サーヴァントは薬を受け取り、長いこと立ち尽くしていた。|孩子给从者拿来了药。从者接过药，在那里站了很久。
+k81c2|Say you don't know|わからないと言う|说不知道
+k81c3|Get angry|怒る|发火
+k81r3|Your child cried.|子どもが泣いた。|孩子哭了。
+k82t|The Overseer|監督役|监督者
+k82b|The Overseer of the war came to call. Saying they'd come to record the changed world, they stared at your Servant a long while.|戦争の監督役が訪ねてきた。変わった世界を記録しに来たと言って、サーヴァントを長いこと見つめる。|战争的监督者来访了。说是来记录改变后的世界，盯着从者看了很久。
+k82c1|Let them record it|記録させる|让对方记录
+k82r1|The Overseer wrote down a single line—"Bound, I see"—and left.|監督役は「縛られていますね」と一言だけ書きつけて帰った。|监督者只写下一句"被束缚着啊"，便离开了。
+k82c2|Send them away|追い返す|请对方离开
+k82c3|Have your Servant answer|サーヴァントに答えさせる|让从者回答
+k82r3|Your Servant didn't open their mouth. The Overseer nodded.|サーヴァントは口を開かなかった。監督役が頷いた。|从者没有开口。监督者点了点头。
+k83t|A World Without That Name|名のない世界|没有那个名字的世界
+k83b|In that world there is no name for the Master who was your ally. Not at the shop where you laughed together, nor on the roads you walked together.|その世界には、同盟だったマスターの名がない。共に笑った店にも、共に歩いた道にも。|在那个世界里，没有曾是你同盟的那位御主的名字。在一起欢笑过的店里没有，一起走过的路上也没有。
+k83c1|Write that name down|その名を書き留めておく|写下那个名字
+k83r1|Your Servant looked at that paper for a long time.|サーヴァントがその紙を長く見つめた。|从者久久地看着那张纸。
+k83c2|Decide to forget|忘れることにする|决定忘记
+k83c3|Walk that road|その道を歩く|走那条路
+k83r3|Your Servant stopped at the spot where that person fell.|サーヴァントは、その人が倒れた場所で立ち止まった。|从者在那个人倒下的地方停住了脚步。
+k84t|The Ally Who Remained|残っていた同盟|留下来的同盟
+k84b|The Master who was your ally came to visit. Seeing the Servant behind you, they asked nothing more.|同盟だったマスターが訪ねてきた。あなたの後ろのサーヴァントを見ると、それ以上は何も聞かなかった。|曾是你同盟的御主来访了。看到你身后的从者，便没有再多问。
+k84c1|Drink together|一緒に酒を飲む|一起喝酒
+k84r1|Your former ally never once looked at your Servant.|同盟者は最後までサーヴァントを見なかった。|那位同盟始终没有看从者一眼。
+k84c2|Tell them what you wished for|何を願ったのかを話す|说出你许了什么愿
+k84r2|Your former ally never came again.|同盟者は二度と来なかった。|那位同盟再也没有来过。
+k84c3|Send them away|追い返す|请对方离开
+k85t|A Table for Two|二人きりの食卓|只剩两人的餐桌
+k85b|No one visits anymore. Two chairs remain at the table. One is always empty.|訪ねてくる人がいなくなった。食卓には椅子が二つ残った。ひとつはいつも空いている。|再也没有人来访了。餐桌旁只剩两把椅子。其中一把总是空着。
+k85c1|Put the chair away|椅子を片づける|把椅子收起来
+k85c2|Keep it there|置いたままにする|继续放着
+k85c3|Try sitting in your Servant's chair|サーヴァントの椅子に座ってみる|坐到从者的椅子上试试
+k85r3|You could see the window your Servant always looked through. Beyond it was the world you wished for.|サーヴァントが見ていた窓が見えた。その向こうは、あなたが望んだ世界だった。|你看见了从者一直凝望的那扇窗。窗外是你所期望的世界。
+k86t|At the Door to the End|最後まで戸口に|始终守在门边
+k86b|Winter of the final year. Your Servant stands in the doorway, just as on that first night. You no longer ask whether they are guarding you or unable to leave.|最後の年の冬。サーヴァントは初めてのあの夜のように戸口に立っている。守っているのか、離れられないのか、もうあなたも尋ねない。|最后一年的冬天。从者像最初那一夜一样站在门边。是守护还是无法离开，你也不再过问了。
+k86c1|Tell them to come in|入れと言う|叫对方进来
+k86r1|Your Servant didn't come in.|サーヴァントは入ってこなかった。|从者没有进来。
+k86c2|Stand there with them|一緒に立つ|一起站着
+k86r2|Snow fell.|雪が降った。|雪落了下来。
+k86c3|Turn your back|背を向ける|转过身去
+k86r3|The shadow in the doorway stayed where it was.|戸口の影は、そのまま残った。|门边的影子依旧留在那里。
+k87t|A Stranger|知らない人|陌生人
+k87b|For the first time in a long while, you looked your Servant straight in the face. You can't remember how this person looked when they smiled.|久しぶりにサーヴァントの顔をまっすぐ見た。この人が笑った顔が思い出せない。|许久以来，你第一次直视从者的脸。你想不起这个人笑起来的样子了。
+k87c1|Try to remember|思い出そうとする|努力回想
+k87r1|It never came back to you.|ついに思い出せなかった。|终究没能想起来。
+k87c2|Stop trying|やめる|放弃
+k87r2|Your Servant turned their head away.|サーヴァントが顔をそむけた。|从者别过了头。
+k87c3|Say their name|名前を呼ぶ|叫对方的名字
+k87r3|Your Servant blinked once. That was all.|サーヴァントが一度まばたきした。それがすべてだった。|从者眨了一下眼睛。仅此而已。
+k88t|What the Cup Left Behind|杯が残したもの|杯子留下的东西
+k88b|You collapse. Your Servant comes near and reaches out—then stops, looking at the scar on the back of your hand.|あなたが倒れる。サーヴァントが近づいて手を差し伸べかけ、手の甲の傷痕を見る。|你倒下了。从者走近，伸出手却又停下，看着你手背上的伤疤。
+k88c1|Take their hand|手を取る|握住那只手
+k88r1|Your hands touched. It wasn't warm.|手が触れた。温かくはなかった。|手碰到了一起。并不温暖。
+k88c2|Pull your hand away|手を引く|收回手
+k88r2|Your Servant pulled their hand away too.|サーヴァントも手を引いた。|从者也收回了手。
+k88c3|Close your eyes|目を閉じる|闭上眼睛
+k88r3|The last thing you heard was a door closing.|最後に聞こえたのは、扉の閉まる音だった。|你最后听到的，是关门的声音。
+k89t|The Day of Scattering|散っていく日|消散之日
+k89b|The last of the magical energy that held them to you runs out. Your Servant's outline scatters. They never once look back.|あなたが繋ぎとめていた最後の魔力が尽きる。サーヴァントの輪郭が散っていく。サーヴァントは一度も振り返らない。|维系着从者的最后一丝魔力耗尽了。从者的轮廓渐渐消散。从者一次也没有回头。
+k89b@0|The last warmth of the Command Seal mark cools. Your Servant's outline scatters. They never once look back.|令呪の痕の最後の熱が冷めていく。サーヴァントの輪郭が散っていく。サーヴァントは一度も振り返らない。|令咒痕迹最后的余温冷却了。从者的轮廓渐渐消散。从者一次也没有回头。
+k89c1|Call out|呼ぶ|呼唤
+k89r1|There was no answer.|返事はなかった。|没有回应。
+k89c2|Watch to the end|最後まで見届ける|看到最后
+k89r2|You watched until the light went out entirely.|光がすっかり消えるまで見ていた。|你一直看着，直到光芒完全熄灭。
+k89c3|Look away first|先に目をそらす|先移开视线
+k89r3|The room grew wider.|部屋が広くなった。|房间变宽了。
+k90t|The Letter Left Behind|残された手紙|留下的信
+k90b|After you are gone, your Servant unfolds a letter you wrote long ago, found on your desk. About that winter, the four days, and that night.|あなたが逝ったあと、サーヴァントはあなたの机で、昔あなたが書いた手紙を開く。あの冬のこと、四日間のこと、あの夜のこと。|你离开后，从者在你的书桌上展开了你很久以前写的信。那个冬天的事、那四天的事、那一夜的事。
+k90c1|Your Servant reads it to the end|サーヴァントは最後まで読む|从者把信读到最后
+k90r1|A single damp mark was left at the end of the letter.|手紙の最後に、濡れた跡がひとつ残った。|信的末尾留下了一处湿痕。
+k90c2|Your Servant folds it away|サーヴァントはたたんでしまう|从者把信折好收起
+k90r2|The drawer closed again.|引き出しがまた閉じられた。|抽屉又关上了。
+k91t|The Same Window|同じ窓|同一扇窗
+k91b|In the final year, your Servant stood at the same window as you for the first time. No words. Outside is the world you wished for.|最後の年、サーヴァントが初めてあなたと同じ窓の前に立った。言葉はない。窓の外は、あなたが望んだ世界だ。|最后一年，从者第一次和你站在同一扇窗前。没有言语。窗外是你所期望的世界。
+k91c1|Look outside|窓の外を見る|望向窗外
+k91r1|The two of you saw the same thing. You weren't thinking the same thing.|二人は同じものを見た。同じことを考えてはいなかった。|你们看着同样的东西。想的却不一样。
+k91c2|Look at your Servant|サーヴァントを見る|看向从者
+k91r2|Your Servant's eyes were wet.|サーヴァントの目が濡れていた。|从者的眼睛湿润了。
+k91c3|Close the window|窓を閉める|关上窗户
+k91r3|Your Servant laid a hand on yours, then took it away.|サーヴァントがその手に手を重ね、そして引いた。|从者把手覆在你的手上，又拿开了。
+k92t|The Road of That Winter|あの冬の道|那个冬天的路
+k92b|For the last time, you walk the road you walked together on the fourth day. Your Servant walks right beside you, not three steps behind.|四日目に一緒に歩いたあの道を、最後に歩く。サーヴァントは三歩後ろではなく、すぐ隣を歩いている。|你最后一次走上第四天一起走过的那条路。从者不再落后三步，而是就走在你身旁。
+k92b@0|For the last time, you set out the meal you shared on the fourth day. For the first time, your Servant picks up a spoon across from you.|四日目に一緒に食べたあの料理を、最後に用意する。サーヴァントが初めて、向かいで箸を取る。|你最后一次摆上第四天一起吃过的那顿饭。从者第一次在对面拿起了餐具。
+k92c1|Speak to them|話しかける|搭话
+k92r1|Your Servant didn't answer. They only kept pace with you.|サーヴァントは答えなかった。歩調だけを合わせた。|从者没有回答。只是配合着你的步伐。
+k92r1@0|Your Servant didn't answer. Only the spoon moved.|サーヴァントは答えなかった。箸だけが動いた。|从者没有回答。只有餐具在动。
+k92c2|Walk in silence|黙って歩く|默默地走
+k92c2@0|Eat in silence|黙って食べる|默默地吃
+k92r2|The road came to an end.|道が尽きた。|路走到了尽头。
+k92r2@0|The bowls were empty.|器が空になった。|碗空了。
+k92c3|Hold out your hand|手を差し出す|伸出手
+k92r3|Your Servant only brushed your fingertips.|サーヴァントは指先をかすめただけだった。|从者只是轻轻擦过了你的指尖。
+k93t|All That's Left Is a Scar|残ったのは傷痕|只剩下伤疤
+k93b|You collapse. With a fingertip, your Servant strokes the scar on the back of your hand once. Just as on that night.|あなたが倒れる。サーヴァントが指先で手の甲の傷痕を一度撫でる。あの夜のように。|你倒下了。从者用指尖抚了一下你手背上的伤疤。就像那一夜。
+k93c1|Say something|何か言う|说些什么
+k93r1|Your Servant shook their head. As if to say: don't say anything.|サーヴァントは首を振った。何も言うなというように。|从者摇了摇头。像是在说什么都别说。

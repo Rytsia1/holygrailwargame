@@ -1,0 +1,170 @@
+k147c1|Say you're still here|残っていると言う|说还在
+k147r1|Your Servant nodded. It wasn't the face of someone who believed you.|サーヴァントが頷いた。信じている顔ではなかった。|从者点了点头。那并不是相信的表情。
+k147c2|Say you don't know|わからないと言う|说不知道
+k147r2|For the first time, your Servant took your hand.|サーヴァントが初めてあなたの手を取った。|从者第一次握住了你的手。
+k147c3|Don't answer|答えない|不回答
+k148t|Testing Eyes|試す目|试探的眼神
+k148b|Sometimes your Servant looks at you with the eyes of those four days. Every time you want something.|ときどき、サーヴァントがあの四日間の目であなたを見る。あなたが何かを望むたびに。|有时，从者会用那四天里的眼神看着你。每当你想要什么的时候。
+k148c1|Meet their gaze|目を合わせる|迎上那目光
+k148c2|Set aside what you want|望むものを手放す|放下想要的东西
+k148c3|Ask why they look at you like that|なぜそんなふうに見るのかと尋ねる|问对方为什么那样看你
+k148r3|Your Servant said they were sorry. Still, the look didn't change.|サーヴァントはすまないと言った。それでも目はそのままだった。|从者说了对不起。可那眼神依旧没变。
+k149t|That Road|あの道|那条路
+k149b|You walk again the road you walked together on the fourth day. That day, you thought it would be the last.|四日目に一緒に歩いた道を、また歩く。あの日は最後だと思っていた。|你再次走上第四天一起走过的那条路。那天，你以为那会是最后一次。
+k149c1|Walk to the end|最後まで歩く|走到尽头
+k149r1|Your Servant stopped at the same place as that day.|サーヴァントはあの日と同じ場所で立ち止まった。|从者在和那天同样的地方停了下来。
+k149c2|Turn back halfway|途中で引き返す|中途折返
+k149c3|Take a different road|別の道を行く|走另一条路
+k150t|That Meal|あの料理|那顿饭
+k150b|Your Servant prepared the very meal you ate on the fourth day. That day, you thought it would be your last meal together.|四日目に食べたあの料理を、サーヴァントが用意してくれた。あの日は最後の食事だと思っていた。|从者准备了第四天你们吃过的那顿饭。那天，你以为那会是最后一餐。
+k150c1|Eat together|一緒に食べる|一起吃
+k150r1|It tasted the same as that day. That hurt even more.|あの日と同じ味だった。それがいっそうつらかった。|味道和那天一样。这让人更加心痛。
+k150c2|You can't eat it|食べられない|吃不下
+k150r2|Your Servant quietly cleared the table.|サーヴァントが静かに食卓を片づけた。|从者默默地收拾了餐桌。
+k150c3|Say thank you|ありがとうと言う|道谢
+k150r3|Your Servant turned their head away.|サーヴァントが顔をそむけた。|从者别过了头。
+k151t|A Dream of a Different Ending|別の結末の夢|另一种结局的梦
+k151b|In your dream, you didn't set down the cup. Your Servant raises their blade. You wake to find your Servant beside you.|夢の中で、あなたは杯を置かなかった。サーヴァントが刃を構える。目覚めると、サーヴァントがそばにいる。|梦里，你没有放下杯子。从者举起了刀刃。醒来时，从者就在你身旁。
+k151c1|Tell them about the dream|夢の話をする|讲起那个梦
+k151r1|Your Servant said that dream comes to them too.|サーヴァントは、その夢は自分にも来ると言った。|从者说，自己也会做那个梦。
+k151r1@0|Your Servant nodded.|サーヴァントが頷いた。|从者点了点头。
+k151c2|Don't tell them|話さない|不说
+k151c3|Don't go back to sleep|もう眠らない|不再入睡
+k152t|Laughter Out of Step|合わない笑い|不合拍的笑
+k152b|When you laugh together, your Servant stops laughing first. It's always been that way since those four days.|一緒に笑っていても、サーヴァントのほうが先に笑うのをやめる。あの四日間以来、ずっとそうだった。|一起笑的时候，从者总是先停下来。自从那四天以后，一直都是这样。
+k152c1|Stop with them|一緒にやめる|跟着停下
+k152c2|Keep laughing|笑い続ける|继续笑
+k152r2|Your laughter was left alone in the air.|笑い声がひとり残った。|只剩下你的笑声。
+k152c3|Ask why they stopped|なぜやめたのかと尋ねる|问对方为什么停下
+k152r3|「The moments you smile weigh on me.」|「あなたが笑う時が、気にかかって」|「你笑的时候，让我放心不下」
+k153t|What I Saw to the End|最後まで見たもの|看到最后的东西
+k153b|In the final year, your Servant says it: whatever you wished for, they saw it through to the end. Whatever it was.|最後の年、サーヴァントが言う。あなたが何を望んだにせよ、最後まで見届けたと。それが何であれ。|最后一年，从者说道：不管你曾期望过什么，都已看到了最后。不管那是什么。
+k153c1|Say thank you|ありがとうと言う|道谢
+k153r1|Your Servant smiled. It was the first smile you'd seen since those four days.|サーヴァントが笑った。あの四日間以来、初めて見る笑顔だった。|从者笑了。那是自那四天以来你第一次看到的笑容。
+k153c2|Say you're sorry|すまないと言う|说对不起
+k153r2|Your Servant shook their head.|サーヴァントが首を振った。|从者摇了摇头。
+k154t|The Cup in the Empty Place|空いた場所の杯|空位上的杯子
+k154b|Your Servant is gone, and only you and the broken cup remain. You broke it together, but you clean it up alone.|サーヴァントが去り、砕けた杯とあなただけが残った。一緒に砕いたのに、一人で片づける。|从者离开了，只剩下你和碎掉的杯子。明明是一起打碎的，却要一个人收拾。
+k154c1|Clean up every piece|最後まで片づける|收拾干净
+k154c2|Leave it as it is|そのままにしておく|就这样放着
+k154c3|Keep one shard|欠片をひとつ残す|留下一块碎片
+k155t|Walking Alone|一人で歩く道|独自走的路
+k155b|You walk alone the road you walked together on the fourth day. It sounds as if someone is following three steps behind.|四日目に一緒に歩いた道を、一人で歩く。三歩後ろからついてくる足音が聞こえる気がする。|你独自走上第四天一起走过的那条路。仿佛能听到身后三步有脚步声跟着。
+k155c1|Look back|振り返る|回头
+k155r1|No one was there.|誰もいなかった。|一个人也没有。
+k155c2|Don't look back|振り返らない|不回头
+k155c3|Stop where you are|その場で立ち止まる|停在原地
+k155r3|The sun went down.|日が暮れた。|太阳落山了。
+k156t|Eating It Alone|一人で食べるあれ|独自吃的那顿饭
+k156b|You ordered the same meal you ate on the fourth day, alone. The seat across from you is far too wide.|四日目に食べたあの料理を、一人で頼んだ。向かいの席が広すぎる。|你一个人点了第四天吃过的那道菜。对面的座位空荡得过分。
+k156c1|Finish it|全部食べる|吃完
+k156c2|Leave some|残す|剩下一些
+k156c3|Order two portions|二人前を頼む|点两份
+k157t|The Back of Your Hand|手の甲|手背
+k157b|The Command Seal mark is fading. Once even that disappears, there will be no proof that winter ever happened.|令呪の痕が薄れていく。それまで消えてしまえば、あの冬があった証は何もない。|令咒的痕迹渐渐变淡。若连它也消失了，就再没有那个冬天存在过的证据了。
+k157c1|Draw the mark down|痕を描き写しておく|把痕迹描画下来
+k157c2|Let it fade|薄れるままにする|任其淡去
+k157c3|Touch it|触れてみる|摸一摸
+k157r3|It was lukewarm.|ぬるかった。|微温。
+k158t|The Protected World|守られた世界|被守护的世界
+k158b|The world you didn't wish for goes on as usual again today. It's the world your Servant tried to protect.|あなたが望まなかった世界が、今日も平凡に回っている。サーヴァントが守ろうとした世界だ。|你没有期望过的世界，今天也照常运转着。那是从者想要守护的世界。
+k158c1|Look out the window|窓の外を見る|望向窗外
+k158c2|Recall the wish's pull|願いの傾きを思い出す|回想起那个愿望的倾向
+k158c3|Go out for a walk|外へ出て歩く|出去走走
+k159t|The Same Season|同じ季節|同样的季节
+k159b|It smelled the same as that winter. It snowed that winter you first met, too.|あの冬と同じ匂いがした。初めて出会ったあの冬にも雪が降っていた。|闻起来和那个冬天一样。初次相遇的那个冬天也下着雪。
+k159c1|Stand in the snow|雪に打たれる|站在雪中
+k159c2|Close the window|窓を閉める|关上窗户
+k159c3|Try calling that name|その名を呼んでみる|试着呼唤那个名字
+k159r3|Only the snow fell.|雪が降るだけだった。|只有雪在落下。
+k160t|The Last Winter|最後の冬|最后的冬天
+k160b|Winter of the final year. The hands that set down the cup that night no longer obey you well. Still, you look down at those hands for a long time.|最後の年の冬。あの夜杯を置いた手は、もう思うように動かない。それでも、その手を長く見下ろす。|最后一年的冬天。那一夜放下杯子的手，如今已不太听使唤。即便如此，你还是久久地低头看着那双手。
+k160c1|Think it was the right thing to do|正しいことだったと思う|认为那是对的
+k160c2|Wonder if there was another way|別の道もあったのかと考える|思考是否还有别的路
+k160c3|Don't think about it|考えない|不去想
+k161t|The List That Never Ended|終わらない名簿|没有终结的名单
+k161b|The cup is broken. The list remains. Every night, one name grows clearer.|杯は砕けた。名簿は残った。夜ごと、名前がひとつ鮮明になる。|杯子碎了。名单还在。每到夜里，都有一个名字变得清晰。
+k161c1|Burn the list|名簿を燃やす|烧掉名单
+k161r1|Before the ashes had even cooled, the name came back to you.|灰が冷めきる前に、名前がまた浮かんだ。|灰烬还未冷却，那个名字又浮现了出来。
+k161c2|Go find one of the names|名前のひとりを訪ねる|去找名单上的一个人
+k161r2|They had grown old and frail. You did nothing.|その人は老いて弱っていた。何もできなかった。|那个人已经年老体衰。你什么也没做。
+k161c3|Put it in a drawer|引き出しにしまう|收进抽屉
+k162t|The Night Left Unrepaid|報いきれなかった夜|未能讨还的那一夜
+k162b|In your dream the cup fills again. When you reach for it, your ally's Servant blocks the way. Just like that night.|夢の中で杯がまた満ちる。手を伸ばすと、同盟のサーヴァントが立ちはだかる。あの夜のままに。|梦里，杯子又满了。你一伸手，同盟的从者就挡在前面。和那一夜一模一样。
+k162c1|Reach out again|また手を伸ばす|再次伸手
+k162r1|The nights you couldn't wake from grew long.|目覚められない夜が長かった。|醒不过来的夜晚漫长无尽。
+k162c2|Draw your hand back|手を引く|收回手
+k162c3|Glare at the one blocking you|立ちはだかる者をにらむ|瞪着挡路的人
+k162r3|That face has now become the face of your ally's Master.|その顔は、今では同盟のマスターの顔に変わっていた。|那张脸如今变成了同盟御主的脸。
+k163t|A New Enemy|新たな仇|新的仇人
+k163b|The name of the ally who took the cup from you sits at the very top of your list. You don't remember writing it.|杯を奪ったあの同盟の名が、名簿のいちばん上に載っている。いつ書いたのか覚えていない。|夺走杯子的那位同盟的名字，出现在名单的最上面。你不记得是什么时候写上的。
+k163c1|Erase it|消す|划掉
+k163r1|The mark where you erased it was darker than before.|消した跡が、かえって濃かった。|划掉的痕迹反而更深了。
+k163c2|Leave it|そのままにする|就这样留着
+k163c3|Throw out the whole list|名簿ごと捨てる|把整份名单扔掉
+k164t|The Hands That Carried It for You|代わりに背負った手|代为背负的手
+k164b|You think of the Servant who fell that winter. They fell fighting for your revenge.|あの冬に倒れたサーヴァントのことを思う。あなたの復讐のために戦って倒れた。|你想起那个冬天倒下的从者。对方是为了你的复仇而战，才倒下的。
+k164c1|Say you'll repay it for your Servant's sake|サーヴァントのために報いると言う|说要为了从者讨还
+k164c2|Think your Servant never wanted that|サーヴァントはそれを望まなかったと思う|认为从者并不希望这样
+k164c3|Stop thinking|考えるのをやめる|停止思考
+k165t|Petty Revenge|小さな仕返し|小小的报复
+k165b|On your way to work, you ran into someone who'd been rude to you. There's a chance to pay them back, just a little.|出勤途中、あなたに無礼を働いた人にまた会った。ほんの少し仕返しする機会がある。|上班路上，你又遇到了曾对你无礼的人。有个能小小报复一下的机会。
+k165c1|Pay them back|仕返しする|报复回去
+k165r1|You felt nothing at all.|何も感じなかった。|什么感觉也没有。
+k165c2|Let it go|聞き流す|算了
+k165c3|Stare at them a long time|その人を長く見る|久久盯着那个人
+k165r3|They moved away, looking uncomfortable.|その人は居心地悪そうに席を外した。|那个人一脸不自在地走开了。
+k166t|The Sound of Quarreling|言い争う声|争吵声
+k166b|Outside the window, the neighbors are quarreling. If that wish had come true, this sound would not exist.|窓の外で近所の人たちが言い争っている。あの願いが叶っていたら、この声はなかった。|窗外的邻居们在吵架。如果那个愿望实现了，就不会有这声音了。
+k166c1|Close the window|窓を閉める|关上窗户
+k166c2|Step in|割って入る|插手劝架
+k166r2|The quarrel got worse.|諍いが大きくなった。|争吵愈演愈烈。
+k166c3|Listen to the end|最後まで聞く|听到最后
+k166r3|The quarrel died down on its own.|諍いは自然と収まった。|争吵自己平息了。
+k167t|A Mistaken Verdict|食い違った判決|错误的判决
+k167b|Was the one who broke the cup that night in the right? You hold a trial for yourself.|あの夜杯を砕いた側が正しかったのか。自分自身に裁判を開く。|那一夜打碎杯子的一方是对的吗？你为自己开了一场审判。
+k167c1|Conclude that you were right|自分が正しかったと結論づける|得出结论：你是对的
+k167c2|Conclude that they were right|あちらが正しかったと結論づける|得出结论：对方是对的
+k167c3|Postpone the verdict|判決を先送りする|暂缓判决
+k168t|Someone Who Won't Wait in Line|列に並ばない人|不排队的人
+k168b|Someone cut to the front of the line. No one stops them.|列の先頭に誰かが割り込んだ。誰も止めない。|有人插到了队伍最前面。没有人阻止。
+k168c1|Stop them|止める|阻止
+k168c2|Put up with it|我慢する|忍着
+k168c3|Stand behind them|その人の後ろに並ぶ|排到那个人后面
+k169t|Hands That Make the Rules|規則を作る手|制定规则的手
+k169b|At work (or in your group), it fell to you to set the rules. Your hands drift toward strictness on their own.|職場（あるいは集まり）で、あなたが規則を決めることになった。手が自然と厳しいほうへ向かう。|在工作单位（或团体）里，由你来制定规则。你的手不由自主地偏向严格的一方。
+k169c1|Make them strict|厳しく決める|定得严格
+k169c2|Make them lenient|緩く決める|定得宽松
+k169c3|Leave it to someone else|他人に任せる|交给别人
+k170t|Your Servant's Justice|サーヴァントの正義|从者的正义
+k170b|You recall what your fallen Servant believed was right. Was it the same as you?|倒れたサーヴァントが何を正しいと信じていたかを思い出す。あなたと同じだっただろうか。|你回想倒下的从者曾坚信什么是正确的。和你一样吗？
+k170c1|Think it was the same|同じだったと思う|认为是一样的
+k170c2|Think it was different|違っていたと思う|认为是不同的
+k170c3|Realize you can never ask|もう聞けないと知る|明白已经无法再问
+k171t|The Lit Ward|灯りの点いた病棟|亮着灯的病房楼
+k171b|Not a single hospital light went out. Because the cup was broken that night.|病院の灯りはひとつも消えなかった。あの夜、杯が砕けたからだ。|医院的灯一盏也没有熄灭。因为那一夜，杯子碎了。
+k171c1|Walk past|通り過ぎる|走过去
+k171c2|Watch it a long time|長く見つめる|看了很久
+k171c3|Go into the hospital and sit|病院に入って座っている|走进医院坐着
+k171r3|No one looked at you.|誰もあなたを見なかった。|没有人看你一眼。
+k172t|The Weak Side|弱い側|弱者一方
+k172b|That night, you nearly fell too. You were the weak one.|あの夜、あなたも倒れかけた。弱い側だった。|那一夜，你也差点倒下。你是弱者。
+k172c1|Accept that fact|その事実を受け入れる|接受这个事实
+k172c2|Resolve to become stronger|もっと強くなると決める|决心变得更强
+k172c3|Push the thought away|考えを押しのける|把这个念头推开
+k173t|The Playground|遊び場|游乐场
+k173b|A child who fell at the playground is crying. No one goes to them. Your legs don't move either.|遊び場で転んだ子どもが泣いている。誰も近寄らない。あなたの足も動かない。|一个在游乐场摔倒的孩子在哭。没有人过去。你的双腿也动不了。
+k173c1|Help them up|起こしてやる|扶起孩子
+k173c2|Walk past|通り過ぎる|走过去
+k173c3|Watch from a distance|遠くから見守る|远远看着
+k173r3|The child's guardian came running.|子どもの保護者が駆けつけた。|孩子的监护人跑了过来。
+k174t|An Aging Body|老いていく体|渐渐衰老的身体
+k174b|The you in the mirror has aged a little. If that wish had come true, someday it would have been your turn to be erased.|鏡の中のあなたが少し老けた。あの願いが叶っていたら、いつかはあなたも消される番だった。|镜子里的你老了一些。如果那个愿望实现了，总有一天也会轮到你被抹去。
+k174c1|Think you'd have done it anyway|それでもそうしただろうと思う|认为即便如此你也会那样做
+k174c2|Think that thought for the first time|初めてそのことを考える|第一次想到这一点
+k174c3|Put the mirror away|鏡を片づける|把镜子收起来
+k175t|A Still Heart|静かな心|平静的心
+k175b|You saw someone collapse in the street. Your heart went still, just like long ago. This time there's no one to break that stillness.|道で倒れた人を見た。昔のように心が静かになった。今度は、その静けさを破る人が誰もいない。|你看到有人倒在街上。心像很久以前一样平静下来。这一次，没有人能打破那份平静。
+k175c1|Run to them|駆け寄る|跑过去
+k175c2|Watch|見守る|在一旁看着
+k175c3|Call for help and leave|人を呼んで立ち去る|叫人来然后离开

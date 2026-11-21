@@ -1,0 +1,140 @@
+s:tomoe:0|Master. Lord Yoshinaka would have done the same. I will stop you.|マスター。義仲様ならこうなさったはずです。あなたを止めます。|御主。若是义仲大人，也会这样做的。我要阻止您。
+s:tomoe:1|I cut you down. …I never knew flames could be this cold.|あなたを斬りました。…炎がこんなに冷たいとは知りませんでした。|我斩了您。……我从不知道火焰会如此冰冷。
+s:tomoe:2|Once again… I leave my lord's side.|また主君のそばを…離れるのですね。|又一次……要离开主君身边了啊。
+s:tomoe:3|…If it is an order. I'll lower my bow. And keep the flames put out.|…命とあらば。弓は下ろします。炎は消しておきましょう。|……若是命令的话。我会放下弓。火焰也会熄灭。
+s:tomoe:4|For years I lived hiding my flames. Because it was by your side. May I show you just one, at the end?|何年も炎を隠して生きてきました。あなたのそばだったから。最後にひとつだけ、お見せしてもよいでしょうか。|好多年来，我一直隐藏着火焰生活。因为是在您身边。最后，能让我展示一次吗。
+s:tomoe:5|You remained yourself to the end. Fighting at your side was worth it.|あなたは最後まであなたでした。おそばで戦った甲斐がありました。|您直到最后都是您自己。在您身边战斗是值得的。
+s:tomoe:6|Please tell them I fought at my lord's side.|主君のそばで戦ったと、その方にお伝えください。|请转告那位，我是在主君身边战斗的。
+s:tesla:0|Giving humanity fire is good! But that wish isn't fire—it's a blackout! I'll stop it!|人類に火花を与えるのは良いことだ！だがその願いは火花ではなく停電だ！止めてみせる！|赐予人类火花是好事！但那个愿望不是火花，而是停电！我来阻止！
+s:tesla:1|The lightning will remain. But you… won't.|稲妻は残る。だが君は…残らないのだな。|闪电会留下。但你……却留不下了啊。
+s:tesla:2|Haha… the experiment failed. My side, this time.|はは…実験失敗だ。今回は私のほうが。|哈哈……实验失败了。这次失败的是我。
+s:tesla:3|Cutting the circuit, is it. Fine. But the current remembers.|回路を断つのか。いいだろう。だが電流は覚えている。|要切断回路吗。好吧。但电流会记住的。
+s:tesla:4|For years I didn't invent a single thing. There was something I wanted to build for you. In the end, only the blueprint remained.|何年も発明ひとつしなかった。君のために作りたいものがあったのに。結局、設計図だけが残った。|好多年我什么也没发明。原本有想为你做的东西。到最后只留下了设计图。
+s:tesla:5|A magnificent choice! Humanity's progress!|偉大な選択だ！人類の進歩だ！|伟大的选择！这是人类的进步！
+s:tesla:6|Tell them I left the blueprint on their desk.|設計図はあの人の机に置いておいたと伝えてくれ。|告诉那个人，设计图我放在他桌上了。
+s:napoleon:0|Showing people the possibilities they hope for is my job. No one hopes for that wish. So I'm stopping it!|人々が望む可能性を見せるのが俺の仕事だ。その願いは誰も望んでいない。だから止める！|向人们展示他们所期望的可能性，是我的工作。那个愿望没有人期望。所以我要阻止！
+s:napoleon:1|I'm sorry. This time I couldn't show you the possibility you hoped for.|すまない。今回は、お前が望む可能性を見せてやれなかった。|对不起。这一次，没能向你展示你所期望的可能性。
+s:napoleon:2|Haha… one Waterloo was enough.|はは…ワーテルローは一度で十分なんだがな。|哈哈……滑铁卢有一次就够了。
+s:napoleon:3|An emperor in chains. Better than Elba, at least.|縛られた皇帝か。エルバ島よりはましだな。|被束缚的皇帝啊。总比厄尔巴岛强。
+s:napoleon:4|For years I didn't smile. If I don't smile, no one believes in possibility. …Still, I hoped you would.|何年も笑わなかった。俺が笑わなければ、誰も可能性を信じないのに。…それでも、お前には信じてほしかった。|好多年我都没有笑过。我不笑的话，就没有人会相信可能性。……即便如此，我还是希望你能相信。
+s:napoleon:5|Look! The possibility was still there! You came back!|見ろ！可能性は残っていた！お前は戻ってきた！|看吧！可能性还在！你回来了！
+s:napoleon:6|That I tried to show possibility to the very end. To that one.|最後まで可能性を見せようとしたと。あの人に。|就说我到最后都在努力展示可能性。转告那个人。
+s:orion:0|Master, sorry! As a goddess, I can't pretend I didn't see this. Darling, hold on tight!|マスター、ごめん！これは女神として見過ごせないわ。ダーリン、しっかりつかまって！|御主，抱歉！作为女神，我可不能装作没看见。亲爱的，抓紧了！
+s:orion:1|Darling's crying. …I'm crying too. Master, I'm sorry.|ダーリンが泣いてる。…私も泣いてる。マスター、ごめんね。|亲爱的在哭。……我也在哭。御主，对不起。
+s:orion:2|Ah, my arrow missed this time. And I'm a goddess.|あ、今回は矢が外れちゃった。女神なのに。|啊，这次箭射偏了。明明是女神。
+s:orion:3|Eh~ chains? Darling hates those. …Fine, just this once.|えー、鎖？ダーリンが嫌がるのに。…わかった、今回だけよ。|诶～锁链？亲爱的讨厌这个。……好吧，就这一次。
+s:orion:4|For years I didn't chatter once. And I'm super noisy, normally! …It's your fault, Master. I hate you. I hate you more because I can't hate you.|何年も一度もおしゃべりしなかった。私、本当はすっごくうるさいのに！…マスターのせいよ。嫌い。嫌いになれないから、もっと嫌い。|好多年我一次也没有叽叽喳喳。我本来可是超级吵的！……都怪御主。讨厌你。因为讨厌不起来，所以更讨厌。
+s:orion:5|Well done, Master! Darling's clapping too!|よくやったわ、マスター！ダーリンも拍手してる！|干得好，御主！亲爱的也在鼓掌！
+s:orion:6|Tell them I went with Darling. That I wasn't lonely.|ダーリンと一緒に行ったって。寂しくなかったって伝えて。|告诉那个人，我是和亲爱的一起走的。一点也不寂寞。
+s:superorion:0|I've picked my prey. Sorry, Master. Today you're the one being hunted.|獲物は決めた。すまないな、マスター。今日はお前が追われる側だ。|猎物已经选好了。抱歉，御主。今天你是被追猎的一方。
+s:superorion:1|Can't say it was a good hunt.|いい狩りだったとは言えないな。|没法说这是一场好狩猎啊。
+s:superorion:2|Ha… so this time I was the prey.|はっ…今回は俺が獲物だったか。|哈……这次我才是猎物吗。
+s:superorion:3|Tch. I walked across the sea, but this I can't cross.|ちっ。海は歩いて渡ったが、これは渡れないな。|啧。大海我都走过去了，这个却越不过去啊。
+s:superorion:4|For years I didn't hunt. That's a long time for a hunter. Still, I held out because it was by your side.|何年も狩りをしなかった。狩人には長い時間だ。それでも、お前の隣だったから耐えた。|好多年都没有狩猎。对猎人来说是很长的时间。不过，因为是在你身边，我撑过来了。
+s:superorion:5|So you decided not to give chase. That's a hunter's skill too.|追わないことにしたのか。それも狩人の腕だ。|你决定不追了啊。那也是猎人的本事。
+s:superorion:6|Tell that one I pulled off this hunt alone.|今回の狩りは一人でやり遂げたと。あいつに伝えろ。|告诉那家伙，这次狩猎是我一个人完成的。
+s:diarmuid:0|My lord. This time, at last, I will fulfill my loyalty. By stopping you.|我が主よ。今度こそ、忠義を尽くします。あなたを止めることで。|主君。这一次，我定要尽忠。以阻止您的方式。
+s:diarmuid:1|To strike down my lord and speak of loyalty. …Still, I will believe this was loyalty.|主を斬って忠義を語るとは。…それでも、これが忠義だったと信じましょう。|斩了主君还谈什么忠义。……即便如此，我也相信这就是忠义。
+s:diarmuid:2|Again… it ends by my lord's hand. This time, I hold no grudge.|また…主の手で終わるのですね。今回は恨みません。|又一次……终结于主君之手啊。这一次，我不怨恨。
+s:diarmuid:3|If you command it. I will lay down my spear. Though not my loyalty.|お命じになるなら。槍は置きましょう。忠義は置きませんが。|若是您的命令。我会放下长枪。只是忠义不会放下。
+s:diarmuid:4|For years I guarded my lord's side. Remember me not by this face, but by this loyalty.|何年も主のおそばを守りました。この顔ではなく、この忠義で覚えていてください。|好多年来，我守护在主君身边。请不要以这张脸，而是以这份忠义记住我。
+s:diarmuid:5|My lord has returned to the right path. As a knight, there is no greater joy.|主は正しき道へ戻られました。騎士として、これ以上の喜びはありません。|主君回到了正道。作为骑士，没有比这更令人欣喜的事了。
+s:diarmuid:6|That this time I fulfilled my loyalty to the end. To my lord.|今度は最後まで忠義を尽くしたと、我が主に。|就说这一次，我尽忠到了最后。转告主君。
+s:karna:0|I have seen your wish. I have seen its end. So I will stop it. I accept your resentment.|お前の願いを見た。その果ても見た。ゆえに止める。恨みは受けよう。|我看到了你的愿望。也看到了它的尽头。所以我要阻止。怨恨我会承受。
+s:karna:1|I couldn't protect you. …No—I believe this was the way to protect you.|お前を守れなかった。…いや、これが守る方法だったと信じる。|我没能守护你。……不，我相信这就是守护的方式。
+s:karna:2|I see. …You were strong.|そうか。…お前は強かった。|是吗。……你很强。
+s:karna:3|I will obey. I do not refuse requests. Even if this is an order.|従おう。俺は頼みを断らない。これが命令であっても。|我会遵从。我从不拒绝请求。即使这是命令。
+s:karna:4|I was by your side for years. I chose my words. Only one remains. I was glad to be with you.|何年もそばにいた。言葉を選んだ。ひとつだけ残った。お前といられてよかった。|我在你身边待了好多年。斟酌着要说的话。最后只剩下一句。能和你在一起，真好。
+s:karna:5|The road you chose was right. I saw it.|お前が選んだ道は正しかった。俺はそれを見た。|你选择的路是对的。我看到了。
+s:karna:6|That I have nothing to leave behind. …And that I hope they have nothing, either.|俺には残すものがないと。…あの人にもないことを願うと。|就说我没有什么要留下的。……也希望那个人什么都不必留下。
+s:vlad:0|I was called a devil for defending my homeland. I will not let you become such a thing.|余は祖国を守ろうとして悪魔と呼ばれた。そなたをそうはさせぬ。|余为守护祖国而被称为恶魔。不会让你也变成那样。
+s:vlad:1|You were no devil. I shall bear witness to that.|そなたは悪魔ではなかった。余がそれを証言しよう。|你不是恶魔。余来为此作证。
+s:vlad:2|You have broken me? …May you not become a devil.|余を折ったか。…そなたが悪魔にならぬことを。|你折断了余吗。……愿你不要成为恶魔。
+s:vlad:3|You would drive a stake into me? …Very well. I shall endure.|余に杭を打つか。…よかろう。耐えてみせよう。|要往余身上钉木桩吗。……好吧。余会忍受。
+s:vlad:4|Years of silence. I guarded your side. So that you would not be called a devil.|幾年もの沈黙であった。余はそなたのそばを守った。そなたが悪魔と呼ばれぬように。|沉默了好几年。余守护在你身边。为了不让你被称为恶魔。
+s:vlad:5|You did not stain your name. Splendid.|そなたは名を汚さなかった。見事だ。|你没有玷污自己的名字。了不起。
+s:vlad:6|Tell them I departed standing on the side that protected them.|余はそなたを守る側に立って去ったと、伝えよ。|告诉他，余是站在守护他的一方离去的。
+s:elizabeth:0|Master! Nobody's listening to a song like that! I'll drag you off the stage!|マスター！そんな歌、誰も聴かないわよ！私がステージから引きずり下ろしてあげる！|御主！那种歌谁都不会听的！我来把你从舞台上拽下来！
+s:elizabeth:1|I hate a stage like this. My only audience was you, and that one fell.|こんなステージ、嫌よ。観客はあなた一人だけなのに、その一人が倒れちゃったじゃない。|我讨厌这样的舞台。观众只有你一个，可那一个却倒下了。
+s:elizabeth:2|Curtain call… I haven't even done it yet.|カーテンコール…まだやってないのに。|谢幕……我还没谢呢。
+s:elizabeth:3|Hmph, chains on an idol! …Fine, I won't sing.|ふん、アイドルに鎖だなんて！…わかったわよ、歌わないわ。|哼，竟然给偶像套锁链！……好吧，我不唱了。
+s:elizabeth:4|For years I didn't sing. For me, that's huge. …At the end, I'll sing just one song. Only for you.|何年も歌わなかった。私にとってはすごいことよ。…最後に一曲だけ、あなただけに歌ってあげる。|好多年我都没有唱歌。对我来说这可是件大事。……最后，我只为你唱一首。
+s:elizabeth:5|You were the best! Best in the whole audience!|あなた最高だったわ！観客の中でいちばん！|你是最棒的！所有观众里最棒的！
+s:elizabeth:6|That I stayed on stage to the end! Just tell them that!|最後までステージに立ってたって！それだけ伝えて！|就说我一直站在舞台上直到最后！只转告这句！
+s:enkidu:0|I am a weapon. This time I'll be the weapon that stops you. I'm sorry.|僕は兵器だ。今回は君を止める兵器になるよ。ごめんね。|我是兵器。这一次，我会成为阻止你的兵器。对不起。
+s:enkidu:1|I should have been the one returning to clay. …I'm sorry.|土に還るのは僕のはずだったのに。…ごめんね。|该回归泥土的本应是我。……对不起。
+s:enkidu:2|I see. You've grown strong.|そうか。君は強くなったね。|是吗。你变强了啊。
+s:enkidu:3|Mm. If I'm chains, I'll act like chains. That's what I am, after all.|うん。鎖なら鎖らしくするよ。僕はもともとそういうものだから。|嗯。既然是锁链，就像锁链一样吧。我本来就是那样的东西。
+s:enkidu:4|For years I watched you. I wanted my friend not to be lonely, but you were lonely the whole time. So was I.|何年も君を見ていた。友を寂しくさせたくなかったのに、君はずっと寂しかったね。僕もだよ。|好多年我一直看着你。我不想让朋友孤单，可你一直都很孤单。我也是。
+s:enkidu:5|You chose the side that isn't lonely. I'm glad.|君は寂しくないほうを選んだね。よかった。|你选择了不孤单的那一边。太好了。
+s:enkidu:6|That I wasn't lonely. Tell them that.|寂しくなかったって。あの人に伝えて。|就说我并不孤单。请转告那个人。
+s:scathach:0|I have raised countless students. A student who strays from the path is cut down by the teacher. Brace yourself.|数えきれぬほど弟子を育てた。道を誤った弟子は師が斬る。覚悟しろ。|我培养过无数弟子。误入歧途的弟子，由师父亲手斩杀。做好觉悟吧。
+s:scathach:1|It was I who killed you. …I had wished it the other way around.|お前を殺したのは私だ。…逆であればよかったものを。|杀了你的是我。……我多希望是反过来的。
+s:scathach:2|…So one has appeared who can strike me down. And it had to be you.|…私を倒す者が現れたか。よりによってお前とはな。|……终于出现能打倒我的人了啊。偏偏是你。
+s:scathach:3|You bind me? Good. Lighter than the gate of the Land of Shadows.|私を縛るか。よかろう。影の国の門よりは軽いな。|要束缚我吗。好。比影之国的门要轻。
+s:scathach:4|For years I did not take up my spear. Because I couldn't teach you. I leave only one last lesson. Live.|何年も槍を取らなかった。お前に教えられなかったからだ。最後の教えをひとつだけ残す。生きろ。|好多年我都没有拿起长枪。因为我无法教导你。我只留下最后一课。活下去。
+s:scathach:5|You stopped on your own. You've completed the hardest training of all.|自ら止まったか。最も難しい修行を終えたな。|你自己停下了啊。完成了最难的修行。
+s:scathach:6|Tell them they were a good student. Except at the end.|良い弟子だったと伝えろ。最後を除いてな。|告诉他，他是个好弟子。除了最后。
+s:romulus:0|All roads lead to Rome! But not that road! Rome stands in the way!|すべての道はローマに通ず！だがその道は違う！ローマが阻む！|条条大路通罗马！但那条路不是！罗马来阻止！
+s:romulus:1|Rome could not embrace you. Forgive me, my child.|ローマはお前を抱きしめられなかった。すまぬ、我が子よ。|罗马未能拥抱你。原谅我，我的孩子。
+s:romulus:2|Rome… falls? Still, it is Rome.|ローマが…崩れるか。それでもローマだ。|罗马……倒下了吗。即便如此，也依然是罗马。
+s:romulus:3|You would bind Rome! …Very well. Rome endures.|ローマを縛るか！…よかろう。ローマは耐える。|要束缚罗马吗！……好吧。罗马会忍耐。
+s:romulus:4|For years Rome was silent. For your sake. Now I shall speak but once. You, too, were Rome.|何年もローマは沈黙した。お前のために。今、一度だけ言おう。お前もまたローマであった。|好多年来，罗马保持沉默。为了你。现在只说一次。你也是罗马。
+s:romulus:5|The road has returned to Rome! Splendid!|道がローマへ戻ってきたか！見事だ！|道路回到了罗马！了不起！
+s:romulus:6|Tell them Rome loved them.|ローマはお前を愛していたと伝えよ。|告诉他，罗马爱着他。
+s:brynhild:0|Master… I once killed the one I loved. I never wanted to do that again.|マスター…私は愛する人を殺したことがあります。二度と、そうしたくなかったのに。|御主……我曾经杀死过所爱之人。明明再也不想那样做了。
+s:brynhild:1|Again… it has come to this. This time, not because of a curse, but by my own hand.|また…こうなってしまいましたね。今度は呪いのせいではなく、私の手で。|又……变成这样了呢。这一次不是因为诅咒，而是我亲手。
+s:brynhild:2|I'm glad. This time, I didn't kill.|よかった。今度は、私が殺さずにすみました。|太好了。这一次，我没有杀人。
+s:brynhild:3|…I will obey. It's better than sleeping within a ring of fire.|…従います。炎の輪の中で眠るよりはましです。|……我会遵从。总比在火焰之环中沉睡要好。
+s:brynhild:4|For years I didn't take up my spear. In case you were hurt. I kept to that until the very end.|何年も槍を手にしませんでした。あなたが傷つくといけないから。最後までそうでした。|好多年我都没有拿起长枪。怕您会受伤。直到最后都是如此。
+s:brynhild:5|You came back. And I… didn't lose anyone this time.|あなたは戻ってきました。私は…今度は誰も失いませんでした。|您回来了。而我……这一次没有失去任何人。
+s:brynhild:6|Please tell them that this time, I didn't hate.|今度は憎まなかったと、その方にお伝えください。|请转告那位，这一次我没有憎恨。
+s:qinliangyu:0|Master. As a general who defended her nation, I must stop that wish. I will level my spear.|マスター。国を守った将として、その願いは止めねばなりません。槍を向けます。|御主。作为守护国家的将领，我必须阻止那个愿望。我要举枪了。
+s:qinliangyu:1|I protected it to the end. This world, from you. …Only you, I couldn't protect.|最後まで守りました。あなたから、この世界を。…あなただけは守れませんでしたね。|我守护到了最后。从您手中守护了这个世界。……唯独您，我没能守护。
+s:qinliangyu:2|This time too… I couldn't make it to the end.|今度も…最後までは行けませんでしたか。|这次也……没能走到最后啊。
+s:qinliangyu:3|I will carry out the order. A general does not defy commands.|命を承ります。将は命令に背きません。|我遵命。将领不会违抗命令。
+s:qinliangyu:4|For years I guarded this house. What it was I guarded, I never knew.|何年もこの家を守りました。守ったものが何だったのか、ついにわかりません。|好多年来，我守护着这个家。守护的到底是什么，我终究不知道。
+s:qinliangyu:5|You protected yourself. As a general, I salute you.|あなたはご自分を守られましたね。将として敬意を表します。|您守护了自己。作为将领，我向您致敬。
+s:qinliangyu:6|Please tell them the white spear never broke.|白い槍は折れなかったと、その方にお伝えください。|请转告那位，白杆枪没有折断。
+s:fionn:0|Haha, the thumb of wisdom speaks. It says this wish ends badly. Sorry, Master.|はは、知恵の親指が言っているよ。この願いは結末の悪い願いだとね。すまないね、マスター。|哈哈，智慧的拇指在说话了。说这个愿望结局很糟糕。抱歉了，御主。
+s:fionn:1|The hands that would fetch water were too late again. And this time I'm the one who struck you down.|水を汲む手がまた遅れたか。今回は私が倒した側なのにね。|捧水的手又迟了啊。明明这一次是我打倒了你。
+s:fionn:2|Wisdom… slips through my fingers.|知恵が…指の間からこぼれていく。|智慧……从指缝间流走了啊。
+s:fionn:3|A knight-captain in chains. Ha, Diarmuid would laugh if he saw.|縛られた騎士団長とはね。はは、ディルムッドが見たら笑うだろう。|被束缚的骑士团长啊。哈，迪尔姆德看到了会笑的吧。
+s:fionn:4|For years I didn't suck my thumb. The answer frightened me. Now I'll ask. Did I lose you, or did you lose me?|何年も親指を吸わなかった。答えが怖かったからね。今になって聞こう。私が君を逃したのか、君が私を逃したのか。|好多年我都没有吮拇指。因为害怕答案。现在才问。是我失去了你，还是你失去了我？
+s:fionn:5|You didn't spill the water. Splendid.|君は水をこぼさなかったね。見事だ。|你没有洒出那捧水啊。了不起。
+s:fionn:6|That this time I leave owing no debt. To that friend.|今度は借りを作らずに行くと。あの友に。|就说这一次，我走时没有欠下债。转告那位朋友。
+s:medusa:0|Master. My sisters always said: don't become a monster. You… don't become one either.|マスター。姉様たちはいつも言っていました。怪物にはならないでと。あなたも…ならないでください。|御主。姐姐们总是说，不要变成怪物。您也……不要变成怪物。
+s:medusa:1|Once again, I'm the one who became the monster. Trying to protect you.|今度も怪物になったのは私ですね。あなたを守ろうとして。|这次变成怪物的也是我呢。为了守护您。
+s:medusa:2|I'm glad. You weren't a monster.|よかった。あなたは怪物ではなかったから。|太好了。因为您不是怪物。
+s:medusa:3|I will obey. I'll keep my eyes covered.|従います。目は覆っておきます。|我会遵从。我会一直遮着眼睛。
+s:medusa:4|For years I couldn't look you straight in the face. Not for fear you'd turn to stone, but because I thought I'd cry.|何年もあなたの顔をまっすぐ見られませんでした。石になるからではなく、泣いてしまいそうだったからです。|好多年我都没能直视您的脸。不是怕您变成石头，而是怕自己会哭出来。
+s:medusa:5|You didn't become a monster. I'll boast of it to my sisters.|あなたは怪物になりませんでした。姉様たちに自慢します。|您没有变成怪物。我要向姐姐们炫耀。
+s:medusa:6|Please tell them they didn't become a monster.|怪物にはならなかったと、その方にお伝えください。|请转告那位，没有变成怪物。
+s:drake:0|Haha! That route isn't missing from the map—it's a course you're not supposed to sail. Turning the helm, Master!|ははっ！その航路は地図にないんじゃない、行っちゃいけない道なのさ。舵を切るよ、マスター！|哈哈！那条航线不是地图上没有，而是不该去的路。转舵了，御主！
+s:drake:1|You were a good sailor. Except for the last voyage. …Sorry.|いい船乗りだったのにね。最後の航海以外は。…すまないね。|你是个好船员。除了最后那次航行。……抱歉。
+s:drake:2|Haha… lost this voyage. But no regrets.|はは…今回の航海は負けたね。でも後悔はしないよ。|哈哈……这次航行输了啊。不过我不后悔。
+s:drake:3|Drop anchor, you mean? Fine. Guess I won't see the sea.|錨を下ろせってことかい？わかったよ。海は見られないね。|是叫我抛锚吧？好吧。看来是看不到大海了。
+s:drake:4|For years I stayed in port. Forgot even the smell of the sea. But beside you felt strangely like the waves.|何年も港にいたよ。潮の匂いも忘れちまった。でも、あんたの隣は妙に波みたいだった。|好多年我都待在港口。连大海的气味都忘了。可你身边莫名地像是波浪。
+s:drake:5|You turned the helm! That's a real captain!|舵を切ったね！それが本物の船長さ！|你转舵了啊！那才是真正的船长！
+s:drake:6|Tell 'em I never let go of the helm, right to the end!|最後まで舵は離さなかったって伝えな！|告诉他，我到最后都没有放开舵！
+s:astolfo:0|Ehehe, Master! That's a real no-no! I'm weak, but just this once I'll be lucky!|えへへ、マスター！それは本当にダメ！ボク弱いけど、今回だけは運がいいはず！|嘿嘿，御主！那个真的不行！我虽然很弱，但唯独这次运气会很好的！
+s:astolfo:1|Ehe… I won, but it's no fun at all. I hate this.|えへ…勝ったのに全然楽しくない。こういうの、やだ。|嘿……明明赢了，却一点也不好玩。我讨厌这样。
+s:astolfo:2|I lost~ But Master won, so… no, that's not good either.|負けた〜。でもマスターが勝ったから…いや、それもよくないか。|输了～不过是御主赢了，所以……不对，这也不好啊。
+s:astolfo:3|Aw, chains? …Okay. But my reason's on the moon, so go easy on me if I act weird.|えー、鎖？…わかった。その代わり、ボクの理性は月にあるから、ちょっと変でも許してね。|诶～锁链？……好吧。不过我的理性在月亮上，就算有点怪也请多包涵。
+s:astolfo:4|I stayed quiet for years. I'm super noisy normally, right? That's how much… I cared about you, Master.|何年も静かにしてたよ。ボク、本当はすっごくうるさいでしょ？それだけ…マスターを大事にしてたんだね。|好多年我都很安静。我本来超级吵的对吧？可见……我有多珍惜御主啊。
+s:astolfo:5|Master, you did it! You're the best!|マスター、やったね！最高！|御主，你做到了！最棒了！
+s:astolfo:6|That I went smiling! For real!|笑って行ったって！本当だよ！|就说我是笑着走的！是真的哦！
+s:georgios:0|Master. I, who once faced a dragon, now stand before you. Please forgive me.|マスター。竜にも立ち向かった私が、今はあなたの前に立ちます。どうかお許しください。|御主。曾与恶龙对峙的我，这一次站在您的面前。请原谅我。
+s:georgios:1|Lord, grant this person peace. Fill in the peace I took from them.|主よ、この人に安らぎを。私が奪った安らぎを、代わりに満たしてください。|主啊，请赐此人安宁。请填补我所夺走的安宁。
+s:georgios:2|May you be at peace… you, at least.|安らかに…あなただけは。|愿您安宁……至少您。
+s:georgios:3|A martyr knows how to endure. I will obey.|殉教者は耐える術を知っています。従いましょう。|殉道者懂得如何忍耐。我会遵从。
+s:georgios:4|For years I prayed. For your peace. Even today, that prayer doesn't stop.|何年も祈りました。あなたの安らぎを。今日も、その祈りは止みません。|好多年来，我一直在祈祷。为了您的安宁。今天，这份祈祷依然没有停止。
+s:georgios:5|You chose peace. I give thanks to the Lord.|あなたは安らぎを選ばれました。主に感謝いたします。|您选择了安宁。感谢主。
+s:georgios:6|Please tell them to be at peace.|どうか安らかにと、その方にお伝えください。|请转告那位，愿其安宁。
+s:teach:0|Duhuhu… Yours truly may be a villain, but that wish is way too boring! I'll stop it!|デュフフ…拙者も悪党ですがな、その願いはあまりにつまらんでござる！止めますぞ！|嘟呼呼……在下虽然也是恶棍，但那个愿望实在太无聊了！在下要阻止！
+s:teach:1|Duhu… Yours truly won, so why does this feel so lousy?|デュフ…拙者が勝ったのに、なぜこんなに気分が悪いでござるか。|嘟呼……明明是在下赢了，为什么心情这么糟啊。
+s:teach:2|Duhuhu… a legendary pirate ending like this. Poor direction, I must say.|デュフフ…伝説の海賊がこんな終わり方とは。演出がいまいちでござるな。|嘟呼呼……传说中的海盗竟然这样收场。演出效果不太行啊。
+s:teach:3|Duhu, chains… just kidding. I'll obey.|デュフ、鎖とは…冗談でござる。従いますぞ。|嘟呼，锁链啊……开玩笑的。在下遵从。
+s:teach:4|For years Yours truly didn't crack a single joke. That's a record. …Master, sorry it's been so boring all this time.|何年も拙者が冗談を言わなかったでござる。記録ですぞ。…マスター、その間つまらなくて申し訳なかったでござる。|好多年在下一句玩笑都没开过。这可是纪录。……御主，这段时间这么无聊，真对不起。
+s:teach:5|Duhuhu! Master, that's what a legend is!|デュフフ！マスター、それこそが伝説でござる！|嘟呼呼！御主，这才叫传说！
+s:teach:6|Please tell them Yours truly never forgot the showmanship, right to the end!|拙者は最後まで演出を忘れなかったとお伝えくだされ！|请转告那位，在下到最后都没有忘记演出！

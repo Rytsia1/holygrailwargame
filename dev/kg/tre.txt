@@ -1,0 +1,233 @@
+# 검귀 루트 엔진(kg.js)의 글. 한국어|영어|일본어|간체. 틀은 앞에 T ({0} · {0~이} 같은 자리)
+나를 짓밟은 모든 것에 갚는다|Repay everything that ever trampled me|私を踏みにじったすべてに報いる|向所有践踏过我的一切讨还
+누구도 거역할 수 없는 정의|A justice no one can defy|誰も逆らえない正義|无人能违抗的正义
+약한 것이 없는 세상|A world with nothing weak in it|弱いものがいない世界|没有弱者的世界
+문 너머를 이쪽으로 연다|Open what lies beyond the door onto this side|扉の向こうをこちら側へ開く|将门的彼方向这一侧敞开
+이 도시 전부를 근원에 닿는 디딤돌로 쓴다|Use this entire city as a stepping stone to the Root|この街すべてを根源へ至る踏み台にする|将这整座城市当作通往根源的垫脚石
+아침 신문의 부고란이 길어졌다.|The obituary column in the morning paper has grown longer.|朝刊の訃報欄が長くなった。|晨报的讣告栏变长了。
+당신이 오래 품어 온 명단의 이름이 하나씩 지워지고 있다.|One by one, the names on the list you've carried so long are being crossed out.|あなたが長く抱えてきた名簿の名前が、ひとつずつ消えていく。|你长久以来藏在心里的那份名单上的名字，正一个个被抹去。
+거리의 사람들이 같은 시각에 같은 말을 한다.|People on the street say the same words at the same moment.|街の人々が、同じ時刻に同じことを口にする。|街上的人们在同一时刻说着同样的话。
+다투는 소리가 사라졌다.|The sound of quarreling has vanished.|言い争う声が消えた。|争吵的声音消失了。
+병원의 불이 하나씩 꺼진다.|The hospital lights go out one by one.|病院の灯りがひとつずつ消えていく。|医院的灯一盏盏熄灭。
+거리에서 노인과 아이가 보이지 않는다.|There are no old people or children to be seen on the streets.|街から老人と子どもの姿が見えなくなった。|街上看不到老人和孩子了。
+밤마다 도시의 문이 열린 채로 있다.|Every night, the city's doors stand open.|夜ごと、街の扉が開いたままになっている。|每到夜里，城里的门都敞开着。
+거울에 비치지 않는 사람이 늘었다.|More and more people cast no reflection in mirrors.|鏡に映らない人が増えた。|照不进镜子的人变多了。
+영맥이 한 방향으로 쏠린다.|The ley lines are leaning in one direction.|霊脈がひとつの方向へ傾いていく。|灵脉朝着一个方向倾斜。
+도시의 시계들이 조금씩 늦어진다.|The city's clocks are slowly falling behind.|街の時計が少しずつ遅れていく。|城里的钟表一点点变慢。
+무언가가 한 방향으로 쏠리는 것이 느껴진다.|You can feel something leaning in one direction.|何かがひとつの方向へ傾いているのを感じる。|能感觉到有什么正朝一个方向倾斜。
+T 오래전 다툰 적 있는 {0~이} 쓰러졌다.|{0}, with whom you once quarreled long ago, has collapsed.|昔いさかいをしたことのある{0}が倒れた。|很久以前和你吵过架的{0}倒下了。
+그 이름도 명단에 있었다.|That name was on the list too.|その名前も名簿にあった。|那个名字也在名单上。
+T {0~이} 작은 거짓말 하나 때문에 굳어 버렸다.|{0} has frozen solid over a single small lie.|{0}が、小さな嘘ひとつのせいで固まってしまった。|{0}因为一个小小的谎言而僵住了。
+T 앓고 있던 {0}의 숨이 가늘어졌다.|The breathing of {0}, who had been ill, has grown faint.|病んでいた{0}の息が細くなった。|一直生病的{0}，呼吸变得微弱了。
+T {0}의 그림자가 반쯤 지워졌다.|Half of {0}'s shadow has been erased.|{0}の影が半分消えた。|{0}的影子被抹去了一半。
+T 마력 회로가 없는 {0~이} 잠에서 깨지 않는다.|{0}, who has no magic circuits, will not wake from sleep.|魔術回路を持たない{0}が、眠りから覚めない。|没有魔术回路的{0}一睡不醒。
+배우자|your spouse|配偶者|配偶
+딸|your daughter|娘|女儿
+아들|your son|息子|儿子
+어머니|your mother|母|母亲
+아버지|your father|父|父亲
+보육원 원장|the orphanage director|孤児院の院長|孤儿院院长
+형제|your sibling|きょうだい|兄弟姐妹
+오랜 친구|your old friend|古い友人|老朋友
+제자|your student|弟子|弟子
+옆집 이웃|your next-door neighbor|隣の家の人|隔壁邻居
+이번 생에 실제로 있는 사람이다.|This is someone who truly exists in this life.|この人生に実在する人だ。|这是此生真实存在的人。
+잔이 무엇을 대가로 차오르는지, 이제 알았다.|Now you know what the cup fills itself with.|杯が何を代償に満ちていくのか、今わかった。|现在你明白了，杯子是以什么为代价被注满的。
+T 진짜 소원: “{0}”|True Wish: “{0}”|本当の願い：「{0}」|真正的愿望：“{0}”
+T 마음 가장 깊은 곳의 「{0}」. 잔이 가득 차기까지 나흘이 걸린다|The 「{0}」 in the deepest part of your heart. The cup will take four days to fill|心の最も深いところにある「{0}」。杯が満ちるまで四日かかる|内心最深处的「{0}」。杯子要四天才会注满
+T 성배 앞에서 손을 거두었다. 목록 맨 아래, 아무에게도 말하지 않은 소원이 하나 있었다. “{0}.”|You drew your hand back before the Grail. At the very bottom of the list was a wish you had never told anyone. “{0}.”|聖杯の前で手を引いた。リストのいちばん下に、誰にも言ったことのない願いがひとつあった。「{0}。」|你在圣杯前收回了手。在清单的最底部，有一个从未对任何人说过的愿望。“{0}。”
+잔은 그 소원을 받아 들었다. 다만 바닥만 젖었을 뿐, 아직 차지 않았다. 가득 차기까지 나흘이 걸린다.|The cup accepted the wish. But only its bottom was wet; it was not yet full. It would take four days to fill.|杯はその願いを受け取った。ただ底が濡れただけで、まだ満ちてはいない。満ちるまで四日かかる。|杯子接受了那个愿望。只是杯底刚被沾湿，还远未注满。要注满需要四天。
+T 진짜 소원 — {0}|True Wish — {0}|本当の願い — {0}|真正的愿望 — {0}
+잔을 내려놓는다|Set down the cup|杯を置く|放下杯子
+마지막 기회. 진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다|Last chance. Do not make the true wish; break the cup together with your Servant|最後の機会。本当の願いを口にせず、サーヴァントと共に杯を砕く|最后的机会。不许下真正的愿望，与从者一起打碎杯子
+진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다|Do not make the true wish; break the cup together with your Servant|本当の願いを口にせず、サーヴァントと共に杯を砕く|不许下真正的愿望，与从者一起打碎杯子
+첫째 날|Day One|一日目|第一天
+둘째 날|Day Two|二日目|第二天
+셋째 날|Day Three|三日目|第三天
+넷째 날|Day Four|四日目|第四天
+T 진짜 소원 · {0}|True Wish · {0}|本当の願い · {0}|真正的愿望 · {0}
+T 진짜 소원 · {0} 밤|True Wish · {0}, Night|本当の願い · {0}の夜|真正的愿望 · {0}夜
+흔적|Traces|痕跡|痕迹
+아침 뉴스가 이상한 일을 짧게 전한다.|The morning news briefly reports something strange.|朝のニュースが、奇妙な出来事を短く伝える。|早间新闻简短地报道了一件怪事。
+잔은 아직 바닥만 젖어 있다.|Only the bottom of the cup is wet yet.|杯はまだ底が濡れているだけだ。|杯子还只是底部湿着。
+보러 간다|Go and see|見に行く|去看看
+징조를 가까이서 본다|See the omen up close|兆しを間近で見る|近距离看那征兆
+징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.|You saw the omen up close. It had the shape of what you wished for.|兆しを間近で見た。それはあなたが望んだ形をしていた。|你近距离看了那征兆。它正是你所期望的形状。
+모른 척한다|Pretend not to know|知らないふりをする|装作不知道
+신문을 접었다. 오늘은 아무 일도 없었던 것으로 했다.|You folded the newspaper. Today, nothing had happened.|新聞をたたんだ。今日は何もなかったことにした。|你把报纸叠了起来。就当今天什么都没发生。
+가까운 사람|Someone Close|近しい人|亲近的人
+지킨다|Protect them|守る|保护那个人
+잔에 고인 것을 그 사람 쪽에서 거둔다|Draw back what has pooled in the cup from that person|杯に溜まったものを、その人から引き上げる|从那个人身上收回杯中积聚之物
+잔에 고인 것을 그 사람 쪽에서 거두었다. 그 사람은 무사했다. 잔이 조금 얕아졌다.|You drew back what had pooled in the cup from that person. They were safe. The cup grew a little shallower.|杯に溜まったものを、その人から引き上げた。その人は無事だった。杯が少し浅くなった。|你从那个人身上收回了杯中积聚之物。那个人平安无事。杯子浅了一些。
+내버려 둔다|Leave it be|放っておく|置之不理
+그대로 두었다. 그 사람은 회복하지 못했다. 잔은 조금 더 차올랐다.|You left it as it was. They never recovered. The cup filled a little more.|そのままにした。その人は回復しなかった。杯はもう少し満ちた。|你就那样放着不管。那个人没能恢复。杯子又满了一些。
+감독관|the Overseer|監督役|监督者
+다른 손|Other Hands|他の手|另一只手
+T {0~이} 잔을 노리고 움직였다. 해가 지기 전에 거처의 결계가 흔들렸다.|{0} made a move for the cup. Before sundown, the bounded field around your base shook.|{0}が杯を狙って動いた。日が沈む前に、拠点の結界が揺れた。|{0}为夺取杯子行动了。日落之前，据点的结界摇晃起来。
+맞선다|Stand against them|迎え撃つ|迎击
+T {0~이} 당신 앞을 막아섰다. 짧은 싸움 끝에 그들은 물러났다.|{0} stood in front of you. After a brief fight, they withdrew.|{0}があなたの前に立ちはだかった。短い戦いの末、彼らは退いた。|{0}挡在了你身前。短暂交手之后，他们退走了。
+T {0~이} 잔을 노리고 움직이기 시작했다.|{0} has begun to move for the cup.|{0}が杯を狙って動き始めた。|{0}开始为夺取杯子而行动。
+거처 문턱에 낯선 마력의 흔적이 남아 있었다. 서번트가 그쪽과 닿은 흔적이다.|An unfamiliar trace of magical energy lingered on the threshold of your base. A sign that your Servant had been in contact with them.|拠点の敷居に、見慣れない魔力の痕跡が残っていた。サーヴァントがあちらと接触した痕跡だ。|据点门槛上残留着陌生的魔力痕迹。那是从者与对方接触过的痕迹。
+서번트가 어디론가 다녀온 기척이 있다.|There are signs your Servant went somewhere and came back.|サーヴァントがどこかへ出かけてきた気配がある。|有从者去过什么地方又回来的迹象。
+모른 척했다. 서번트도 아무 말 하지 않았다.|You pretended not to know. Your Servant didn't say anything either.|知らないふりをした。サーヴァントも何も言わなかった。|你装作不知道。从者也什么都没说。
+따진다|Confront them|問い詰める|追问
+어디에 다녀왔는지 묻는다|Ask where they went|どこへ行っていたのか問う|问对方去了哪里
+어디에 다녀왔느냐고 따졌다. 서번트는 대답 대신 당신을 오래 보았다.|You demanded to know where they had gone. Instead of answering, your Servant looked at you for a long time.|どこへ行っていたのかと問い詰めた。サーヴァントは答える代わりに、あなたを長く見つめた。|你追问对方去了哪里。从者没有回答，只是久久地看着你。
+령주로 묶는다|Bind with a Command Seal|令呪で縛る|以令咒束缚
+T 서번트의 마음을 지금 자리에 묶는다 · 신뢰가 크게 떨어진다 [령주 1획 · 남은 {0}획]|Bind your Servant's heart where it stands now · Trust drops sharply [1 Command Seal · {0} left]|サーヴァントの心を今の場所に縛る · 信頼が大きく下がる [令呪1画 · 残り{0}画]|将从者的心束缚在此刻 · 信任大幅下降 [令咒1划 · 剩余{0}划]
+내 곁을 떠나지 마라|Do not leave my side|私のそばを離れるな|不准离开我身边
+령주가 타올랐다. 서번트의 마음은 그 자리에 묶였다.|The Command Seal blazed. Your Servant's heart was bound in place.|令呪が燃え上がった。サーヴァントの心はその場に縛られた。|令咒燃烧起来。从者的心被束缚在了原地。
+평범한 하루|An Ordinary Day|ありふれた一日|平凡的一天
+오늘 하루만, 아무 일 없는 날로 하자.|Just for today, let's make it a day where nothing happens.|今日一日だけ、何もない日にしよう。|就今天一天，当作什么都没发生的日子吧。
+오늘 하루만, 아무 일 없는 날로 보내시지요.|Just for today, let us spend it as a day where nothing happens.|今日一日だけ、何もない日として過ごしませんか。|就今天一天，让我们当作什么都没发生来度过吧。
+오늘 하루만은 아무 일 없는 날로 하자꾸나.|For today alone, let it be a day where nothing happens.|今日一日だけは、何もない日にしようではないか。|唯独今日，就当作无事发生之日吧。
+(서번트가 외투를 들고 문가에 선다. 오늘은 그냥 나가자는 얼굴이다.)|(Your Servant stands at the door holding a coat. Their face says: let's just go out today.)|（サーヴァントが上着を手に戸口に立つ。今日はただ出かけようという顔だ。）|（从者拿着外套站在门口。一副今天就只是出去走走的表情。）
+같이 걷는다|Walk together|一緒に歩く|一起散步
+그 겨울에 지나간 길을 걷는다|Walk the roads you passed that winter|あの冬に通った道を歩く|走那个冬天走过的路
+그 겨울에 지나간 길을 걸었다. 둘 다 그날의 이야기를 하지 않았다.|You walked the roads you passed that winter. Neither of you spoke of those days.|あの冬に通った道を歩いた。二人とも、あの日のことは話さなかった。|你们走了那个冬天走过的路。两人都没有提起那些日子。
+밥을 먹는다|Share a meal|ご飯を食べる|一起吃饭
+서번트가 좋아하던 것을 먹는다|Eat what your Servant liked|サーヴァントが好きだったものを食べる|吃从者喜欢的东西
+서번트가 좋아하던 것을 먹었다. 맛있었다. 그게 이상했다.|You ate what your Servant liked. It was delicious. That felt strange.|サーヴァントが好きだったものを食べた。おいしかった。それが不思議だった。|你们吃了从者喜欢的东西。很好吃。这反而让人觉得奇怪。
+해 질 녘, 헤어질 때 하는 말 같은 것을 들었다.|At dusk, you heard something like the words people say when they part.|夕暮れ時、別れ際に言うような言葉を聞いた。|黄昏时分，你听到了一句像是道别时会说的话。
+오늘은 고마웠어. 정말로.|Thanks for today. Really.|今日はありがとな。本当に。|今天谢谢你。真的。
+오늘은 고마웠습니다. 정말로.|Thank you for today. Truly.|今日はありがとうございました。本当に。|今天谢谢您。真的。
+오늘은 고마웠다. 진심으로.|I am grateful for today. Sincerely.|今日は感謝する。心から。|今日之事，朕由衷感谢。
+(헤어질 때처럼, 서번트가 당신의 손을 오래 쥐었다.)|(As if parting, your Servant held your hand for a long time.)|（別れ際のように、サーヴァントがあなたの手を長く握った。）|（像是要道别一般，从者久久握着你的手。）
+좋아. 네가 바라는 거라면 따르지.|Fine. If it's what you want, I'll follow.|いいぜ。お前が望むなら従うさ。|好。既然是你想要的，我就照办。
+좋습니다. 당신이 바라신다면 따르겠습니다.|Very well. If you wish it, I will follow.|わかりました。あなたが望むなら従います。|好的。只要是您的期望，我就会遵从。
+좋다. 그대가 바란다면 짐도 따르마.|Very well. If you wish it, I too shall follow.|よかろう。そなたが望むなら余も従おう。|好。既是汝之所愿，朕也随之。
+(서번트가 고개를 끄덕인다. 생각보다 빨랐다.)|(Your Servant nods. Sooner than you expected.)|（サーヴァントが頷く。思ったより早かった。）|（从者点了点头。比预想的要快。）
+평소답지 않게, 대답이 너무 빨랐다.|Unlike them, the answer came far too quickly.|いつもらしくなく、返事が早すぎた。|不像平时的样子，回答得太快了。
+그 소원, 언제부터였어.|That wish. Since when?|その願い、いつからだ。|那个愿望，是从什么时候开始的。
+그 소원, 언제부터였습니까.|That wish. Since when have you held it?|その願い、いつからだったのですか。|那个愿望，是从什么时候开始的呢。
+그 소원, 언제부터였느냐.|That wish. Since when has it been?|その願い、いつからであったか。|那个愿望，是从何时开始的。
+(서번트가 낮의 신문을 당신 앞에 내려놓는다. 묻는 눈이다.)|(Your Servant sets the morning's newspaper down in front of you. Their eyes are asking.)|（サーヴァントが昼の新聞をあなたの前に置く。問う目だ。）|（从者把白天的报纸放在你面前。那是询问的眼神。）
+물음|The Question|問い|询问
+징조를 본 서번트가 처음으로 물었다.|Having seen the omen, your Servant asked for the first time.|兆しを見たサーヴァントが、初めて問いかけた。|看到征兆的从者第一次开口问道。
+정직하게 말한다|Answer honestly|正直に言う|如实相告
+오래전부터였다고 말했다. 서번트는 오래 말이 없었다.|You said it had been there for a long time. Your Servant was silent for a long while.|ずっと前からだと言った。サーヴァントは長いこと黙っていた。|你说那是很久以前就有的。从者久久没有说话。
+둘러댄다|Make an excuse|はぐらかす|搪塞过去
+성배가 보여 준 것일 뿐이라고 둘러댔다. 서번트는 더 묻지 않았다.|You claimed the Grail had simply shown it to you. Your Servant asked nothing more.|聖杯が見せたものにすぎないとはぐらかした。サーヴァントはそれ以上聞かなかった。|你搪塞说那只是圣杯给你看的东西。从者没有再问。
+되묻는다|Ask in return|問い返す|反问
+“너라면 무엇을 빌었겠나”|“What would you have wished for?”|「お前なら何を願った？」|“换作是你，会许什么愿？”
+T {0~은} 자신의 소원을 이야기했다. “{1}.”|{0} told you their own wish. “{1}.”|{0}は自分の願いを語った。「{1}。」|{0}说出了自己的愿望。“{1}。”
+약속은 네가 지키면 돼.|You're the one who has to keep promises.|約束はお前が守ればいい。|约定由你来守就行了。
+약속은 당신이 지키시면 됩니다.|It is you who must keep promises.|約束は、あなたが守ればよいのです。|约定只要由您来遵守就好。
+약속은 그대가 지키면 될 일이다.|Promises are for you to keep.|約束はそなたが守ればよいことだ。|约定，汝来守便是。
+(서번트가 당신의 손을 한 번 두드리고 거둔다.)|(Your Servant pats your hand once and draws back.)|（サーヴァントがあなたの手を一度叩いて、引っ込める。）|（从者轻拍了一下你的手，然后收了回去。）
+서번트는 약속을 청하지 않았다.|Your Servant did not ask for a promise.|サーヴァントは約束を求めなかった。|从者没有要求任何约定。
+다 이루어진 뒤에도, 지금의 네가 남아 있겠다고 말해 줘.|Tell me that even after it all comes true, the you of right now will still be there.|全部叶った後も、今のお前が残ってるって言ってくれ。|告诉我，即使一切都实现了，现在的你也依然会在。
+다 이루어진 뒤에도, 지금의 당신이 남아 있겠다고 말해 주십시오.|Please tell me that even after it all comes true, the you of this moment will remain.|すべてが叶った後も、今のあなたが残っていると言ってください。|请告诉我，即使一切都实现了，现在的您也依然会留下。
+다 이루어진 뒤에도, 지금의 그대가 남아 있겠다고 말하라.|Tell me that even after all is fulfilled, the you of this moment shall remain.|すべてが叶った後も、今のそなたが残ると言うがよい。|告诉朕，即使一切实现之后，此刻的汝也依然会留存。
+(서번트가 손등의 령주 자국을 가리키고, 당신의 가슴을 가리킨다.)|(Your Servant points to the Command Seal mark on the back of your hand, then to your chest.)|（サーヴァントが手の甲の令呪の痕を指し、あなたの胸を指す。）|（从者指了指你手背上的令咒痕迹，又指了指你的胸口。）
+약속|The Promise|約束|约定
+낮의 일을 본 서번트가 약속을 청했다.|Having seen what happened that day, your Servant asked for a promise.|昼の出来事を見たサーヴァントが、約束を求めた。|看到白天的事情后，从者请求一个约定。
+약속한다|Promise|約束する|做出承诺
+약속했다. 서번트가 짧게 고개를 끄덕였다.|You promised. Your Servant gave a short nod.|約束した。サーヴァントが短く頷いた。|你做出了承诺。从者轻轻点了点头。
+거절한다|Refuse|断る|拒绝
+약속할 수 없다고 했다.|You said you couldn't promise.|約束はできないと言った。|你说你无法承诺。
+대답하지 않는다|Don't answer|答えない|不回答
+대답하지 않았다. 밤이 길었다.|You didn't answer. The night was long.|答えなかった。長い夜だった。|你没有回答。那一夜很长。
+처음 만난 밤의 이야기였다.|It was the story of the night you first met.|初めて出会った夜の話だった。|那是你们初次相遇那一夜的故事。
+함께 넘긴 위기의 밤 이야기였다.|It was the story of a night of crisis you got through together.|共に乗り越えた危機の夜の話だった。|那是你们共同度过危机的那一夜的故事。
+인연이 깊어진 밤의 이야기였다.|It was the story of the night your bond grew deeper.|縁が深まった夜の話だった。|那是你们羁绊加深那一夜的故事。
+그날의 너는 지금과 같은 사람이었어?|Were you the same person that day as you are now?|あの日のお前は、今と同じ人間だったか？|那天的你，和现在是同一个人吗？
+그날의 당신은 지금과 같은 사람이었습니까.|Were you that day the same person you are now?|あの日のあなたは、今と同じ人でしたか。|那天的您，和现在是同一个人吗。
+그날의 그대는 지금과 같은 자였느냐.|Were you that day the same as you are now?|あの日のそなたは、今と同じ者であったか。|那日的汝，与此刻是同一人吗。
+(서번트가 그날 밤의 자리를 손끝으로 가리키고, 당신을 본다.)|(Your Servant points a fingertip at the place from that night, then looks at you.)|（サーヴァントがあの夜の場所を指先で示し、あなたを見る。）|（从者用指尖指了指那一夜的地方，然后看向你。）
+서번트는 그날 비가 왔다고 했다. 당신이 기억하는 그날은 맑았다.|Your Servant said it had rained that day. The day you remember was clear.|サーヴァントはあの日雨が降っていたと言った。あなたの覚えているあの日は晴れていた。|从者说那天下了雨。可你记得那天是晴天。
+기억|The Memory|記憶|记忆
+서번트가 그 겨울의 장면 하나를 꺼냈다.|Your Servant brought up a scene from that winter.|サーヴァントがあの冬の場面をひとつ取り出した。|从者提起了那个冬天的一个场景。
+같은 사람이다|I'm the same person|同じ人間だ|是同一个人
+같은 사람이라고 했다. 서번트의 눈이 아주 조금 흔들렸다.|You said you were the same person. Your Servant's eyes wavered, just slightly.|同じ人間だと言った。サーヴァントの目が、ほんの少し揺れた。|你说是同一个人。从者的眼神微微动摇了一下。
+그때와는 다르다|I'm different from then|あの時とは違う|和那时不一样了
+그때와는 다르다고 했다. 서번트는 고개를 끄덕였다.|You said you were different from back then. Your Servant nodded.|あの時とは違うと言った。サーヴァントは頷いた。|你说和那时不一样了。从者点了点头。
+그때도 이랬다|I was like this then, too|あの時もこうだった|那时也是这样
+그때도 이랬다고 했다. 서번트는 그 정직함을 오래 보았다.|You said you'd been like this back then, too. Your Servant regarded that honesty for a long time.|あの時もこうだったと言った。サーヴァントはその正直さを長く見つめた。|你说那时也是这样。从者久久地注视着那份坦诚。
+그날은 맑았다|It was clear that day|あの日は晴れていた|那天是晴天
+서번트의 말이 기억과 다르다|Your Servant's words don't match your memory|サーヴァントの言葉が記憶と違う|从者的话与你的记忆不符
+그날은 맑았다고 말했다. 서번트가 아주 잠깐 입을 다물었다.|You said it had been clear that day. For just a moment, your Servant fell silent.|あの日は晴れていたと言った。サーヴァントがほんの一瞬、口をつぐんだ。|你说那天是晴天。从者有那么一瞬间闭上了嘴。
+잔에서 손을 뗐다. 진짜 소원은 끝내 빌지 않았다.|You took your hand off the cup. In the end, you never made the true wish.|杯から手を離した。本当の願いは、ついに口にしなかった。|你把手从杯子上移开了。真正的愿望，终究没有说出口。
+잔을 내려놓은 손|The Hand That Set Down the Cup|杯を置いた手|放下杯子的手
+T {0~이} 당신 곁에 섰다. 바닥만 젖은 잔이 제단 위에 놓여 있다.|{0} stood beside you. The cup, wet only at the bottom, rests on the altar.|{0}があなたの隣に立った。底だけが濡れた杯が祭壇の上に置かれている。|{0}站到了你身旁。底部仅仅湿润的杯子放在祭坛上。
+함께 잔을 부순다|Break the cup together|共に杯を砕く|一起打碎杯子
+진짜 소원을 빌지 않고 서번트와 함께 잔을 부쉈다|Broke the cup together with your Servant without making the true wish|本当の願いを口にせず、サーヴァントと共に杯を砕いた|没有许下真正的愿望，与从者一起打碎了杯子
+T {0~이} 잔을 내리쳤다. 당신의 손도 그 위에 있었다.|{0} brought the cup down hard. Your hand was on it too.|{0}が杯を打ち砕いた。あなたの手もそこに重なっていた。|{0}猛地砸向杯子。你的手也覆在上面。
+잔은 둘의 손으로 부서졌다.|The cup broke in both your hands.|杯は二人の手で砕けた。|杯子在两人的手中碎裂了。
+T 잔의 빛으로 {0~을} 남긴다|Use the cup's light to keep {0} here|杯の光で{0}を残す|用杯子的光留下{0}
+남은 빛을 서번트가 몸을 얻는 데 쓴다|Use the remaining light to give your Servant a body|残った光でサーヴァントに体を与える|用剩下的光让从者获得肉身
+진짜 소원을 빌지 않고 서번트를 남겼다|Kept your Servant here without making the true wish|本当の願いを口にせず、サーヴァントを残した|没有许下真正的愿望，留下了从者
+T 바닥에 고였던 빛이 {0}에게 스며들었다. 잔은 그 자리에서 금이 갔다.|The light pooled at the bottom seeped into {0}. The cup cracked where it stood.|底に溜まっていた光が{0}に染み込んだ。杯はその場でひびが入った。|积在杯底的光渗入了{0}体内。杯子当场裂开了。
+진짜 소원 대신, 곁에 남는 쪽을 골랐다.|Instead of the true wish, you chose to have them stay by your side.|本当の願いの代わりに、そばに残ることを選んだ。|你没有选择真正的愿望，而是选择了让对方留在身边。
+잔이 가득 찼지만, 마음 가장 깊은 곳의 그 소원은 이제 거기 없었다. 나흘 사이에 무언가가 바뀌어 있었다.|The cup was full, but the wish in the deepest part of your heart was no longer there. Something had changed over those four days.|杯は満ちたが、心の最も深いところにあったあの願いは、もうそこになかった。四日のあいだに何かが変わっていた。|杯子满了，可内心最深处的那个愿望已经不在了。这四天里，有什么改变了。
+잔이 가득 찼다.|The cup was full.|杯が満ちた。|杯子满了。
+T 손등에 남은 령주가 없다. {0~이} 스스로 정했다.|There are no Command Seals left on your hand. {0} decided on their own.|手の甲に残る令呪はない。{0}が自ら決めた。|手背上已经没有令咒了。{0}自己做出了决定。
+마지막 밤|The Last Night|最後の夜|最后一夜
+T 잔이 가득 찼다. {0~은} 아직 정하지 못한 얼굴이다. 손등에 령주가 {1}획 남아 있다.|The cup is full. {0} still looks undecided. {1} Command Seal(s) remain on your hand.|杯が満ちた。{0}はまだ決めかねた顔をしている。手の甲には令呪が{1}画残っている。|杯子满了。{0}一脸尚未下定决心的样子。你手背上还剩{1}划令咒。
+령주로 명한다|Command with a Seal|令呪で命じる|以令咒命令
+T “함께 이 소원을 이뤄라.” 서번트를 묶는다 [령주 1획 · 남은 {0}획]|“Fulfill this wish with me.” Bind your Servant [1 Command Seal · {0} left]|「共にこの願いを叶えよ」サーヴァントを縛る [令呪1画 · 残り{0}画]|“与我一同实现这个愿望。”束缚从者 [令咒1划 · 剩余{0}划]
+함께 이 소원을 이뤄라|Fulfill this wish with me|共にこの願いを叶えよ|与我一同实现这个愿望
+T {0~이} 령주의 빛을 몸으로 받아 냈다. 대마력이 명령을 버텨 냈다.|{0} took the Command Seal's light with their whole body. Their Magic Resistance withstood the order.|{0}が令呪の光をその身で受け止めた。対魔力が命令を耐え抜いた。|{0}用身体承受了令咒之光。对魔力抵挡住了命令。
+령주는 서번트를 묶지 못했다.|The Command Seal failed to bind your Servant.|令呪はサーヴァントを縛れなかった。|令咒没能束缚住从者。
+T {0~은} 따랐다. 그 뒤로 입을 열지 않았다.|{0} obeyed. After that, they never spoke again.|{0}は従った。それ以降、口を開かなかった。|{0}服从了。从那以后，再也没有开口。
+그대로 둔다|Leave it be|そのままにする|就这样吧
+서번트가 스스로 정하게 둔다|Let your Servant decide for themselves|サーヴァント自身に決めさせる|让从者自己决定
+T {0~이} 오래 잔을 보았다.|{0} looked at the cup for a long time.|{0}が長いこと杯を見つめていた。|{0}久久地注视着杯子。
+T 셋째 날 물러났던 {0} 조가 돌아왔다. 잔을 막으러 온 것이다.|Team {0}, who withdrew on the third day, has returned. They've come to stop the cup.|三日目に退いた{0}組が戻ってきた。杯を止めに来たのだ。|第三天撤退的{0}组回来了。他们是来阻止杯子的。
+T {0} 조가 등을 돌렸다. 이 잔이 무엇을 바라는지 알아 버린 얼굴이다.|Team {0} has turned against you. Their faces say they've learned what this cup wants.|{0}組が背を向けた。この杯が何を望んでいるのか、知ってしまった顔だ。|{0}组倒戈了。那是已经知道这个杯子所求为何的表情。
+그 소원만큼은 이루게 둘 수 없어.|That wish, of all things, I can't let come true.|その願いだけは、叶えさせるわけにはいかない。|唯独那个愿望，我不能让它实现。
+T 잔이 당신의 소원을 받아 들었다. “{0}.”|The cup accepted your wish. “{0}.”|杯があなたの願いを受け取った。「{0}。」|杯子接受了你的愿望。“{0}。”
+진짜 소원이 이루어졌다.|The true wish came true.|本当の願いが叶った。|真正的愿望实现了。
+T 그 세계에는 {0}의 이름이 없다.|In that world, there is no name {0}.|その世界には、{0}の名前がない。|在那个世界里，没有{0}这个名字。
+T {0~은} 곁에 남았다. 마지막 령주를 쓰던 순간 뒤로, 입을 열지 않았다.|{0} stayed by your side. Since the moment you used that last Command Seal, they have not spoken.|{0}はそばに残った。最後の令呪を使ったあの瞬間から、口を開かなかった。|{0}留在了你身边。自你使用最后一道令咒的那一刻起，就再也没有开口。
+둘이 이긴 세계의 첫 아침이 왔다. 그 세계는 아주 조용했다.|The first morning came in the world the two of you had won. That world was very, very quiet.|二人が勝ち取った世界の、最初の朝が来た。その世界はとても静かだった。|你们二人赢来的世界，迎来了第一个早晨。那个世界非常安静。
+마지막은 함께 보자.|Let's see the end together.|最後は一緒に見よう。|最后就一起看吧。
+마지막은 함께 보시지요.|Let us see the end together.|最後はご一緒に見届けましょう。|最后就让我们一起见证吧。
+마지막은 함께 보자꾸나.|Let us witness the end together.|最後は共に見届けようではないか。|最后便一同见证吧。
+(서번트가 당신 곁에 선다. 등 뒤로.)|(Your Servant stands beside you. Behind you.)|（サーヴァントがあなたのそばに立つ。背後に。）|（从者站到你身边。在你身后。）
+T {0} 조가 잔을 막으러 왔다. {1~이} 당신 앞에 서서 칼을 뽑았다.|Team {0} has come to stop the cup. {1} stood in front of you and drew their weapon.|{0}組が杯を止めに来た。{1}があなたの前に立ち、刃を抜いた。|{0}组前来阻止杯子。{1}站到你身前，拔出了武器。
+세 합째. 서번트의 칼끝이 방향을 바꾸었다.|The third exchange. Your Servant's blade changed direction.|三合目。サーヴァントの切っ先が向きを変えた。|第三回合。从者的剑锋改变了方向。
+등 뒤에서 칼이 먼저 닿았다.|The blade reached you from behind first.|背後から刃が先に届いた。|剑刃先从背后刺了过来。
+등 뒤|Behind You|背後|背后
+등 뒤의 온기가 한 걸음 가까워졌다. 그리고 칼날이 공기를 가르는 소리.|The warmth behind you drew a step closer. Then, the sound of a blade cutting through the air.|背後のぬくもりが一歩近づいた。そして、刃が空気を裂く音。|背后的温度靠近了一步。接着，是刀刃划破空气的声音。
+령주로 멈춰라|Stop, by Command Seal|令呪で止まれ|以令咒命令停下
+T 칼이 닿기 전에 멈춰 세운다 [령주 1획 · 남은 {0}획]|Stop them before the blade lands [1 Command Seal · {0} left]|刃が届く前に止める [令呪1画 · 残り{0}画]|在剑刃触及之前令其停下 [令咒1划 · 剩余{0}划]
+멈춰라|Stop|止まれ|停下
+칼끝이 목 한 뼘 앞에서 멈췄다.|The point of the blade stopped a hand's breadth from your throat.|切っ先が喉の一寸手前で止まった。|剑尖停在了离你喉咙一拃远的地方。
+알면서 받아들인다|Accept it, knowing|知りながら受け入れる|明知如此仍然接受
+돌아보지 않았다.|You did not look back.|振り返らなかった。|你没有回头。
+알고 있었다. 그래도 돌아보지 않았다. 등 뒤의 온기, 그리고 칼.|You knew. You did not look back anyway. The warmth behind you, and then the blade.|知っていた。それでも振り返らなかった。背後のぬくもり、そして刃。|你早就知道了。即便如此也没有回头。背后的温度，然后是刀刃。
+등 뒤의 온기, 그리고 칼.|The warmth behind you, and then the blade.|背後のぬくもり、そして刃。|背后的温度，然后是刀刃。
+당신의 시점은 거기서 끊겼다. 끝까지, 당신이 고른 대로.|Your view ends there. To the very end, just as you chose.|あなたの視点はそこで途切れた。最後まで、あなたが選んだとおりに。|你的视角就此中断。直到最后，都如你所选择的那样。
+당신의 시점은 거기서 끊겼다.|Your view ends there.|あなたの視点はそこで途切れた。|你的视角就此中断。
+T {0~은} 남은 마력과 단독행동으로 잔을 부수고 사라졌다.|With the magical energy left and their Independent Action, {0} shattered the cup and vanished.|{0}は残った魔力と単独行動で杯を砕き、消えた。|{0}以残存的魔力和单独行动打碎了杯子，随后消失了。
+쓰러진 서번트가 손을 뻗다 말고 흩어졌다.|Your fallen Servant reached out, then scattered before the hand arrived.|倒れたサーヴァントが手を伸ばしかけて、そのまま散った。|倒下的从者伸出手，却在半途消散了。
+마스터와의 결투 끝에 흩어졌다|Scattered after a duel with their Master|マスターとの決闘の末に散った|在与御主的决斗之后消散
+T {0} 조는 더 버티지 못하고 물러났다.|Team {0} could hold out no longer and withdrew.|{0}組はそれ以上持ちこたえられず、退いた。|{0}组再也支撑不住，撤退了。
+T {0~은} 칼을 거두지 않았다.|{0} did not sheathe their blade.|{0}は刃を収めなかった。|{0}没有收起刀刃。
+서번트가 당신 손등의 령주 자국을 한 번 쓰다듬었다.|Your Servant stroked the Command Seal mark on the back of your hand, just once.|サーヴァントがあなたの手の甲の令呪の痕を一度撫でた。|从者抚摸了一下你手背上的令咒痕迹。
+그리고 잔을 부쉈다. 빛이 꺼지기 전에, 서번트도 새벽 속으로 흩어졌다.|Then they shattered the cup. Before the light went out, your Servant scattered into the dawn as well.|そして杯を砕いた。光が消える前に、サーヴァントも夜明けの中へ散っていった。|然后打碎了杯子。在光芒消逝之前，从者也消散在了黎明之中。
+T 쓰러진 {0~은} 끝까지 당신 쪽을 보고 있었다.|Fallen, {0} kept looking your way to the very end.|倒れた{0}は、最後まであなたのほうを見ていた。|倒下的{0}直到最后都望着你。
+T {0~이} 잔을 부쉈다. 부서진 조각 앞에서 한마디를 남겼다.|{0} shattered the cup and, standing over the broken pieces, left you a few words.|{0}が杯を砕いた。砕けた欠片の前で、ひと言残した。|{0}打碎了杯子。在碎片前留下了一句话。
+등 뒤의 칼|the blade from behind|背後の刃|背后的刀刃
+서번트와의 결투|a duel with their Servant|サーヴァントとの決闘|与从者的决斗
+마지막 해|The Final Year|最後の年|最后一年
+T 첫 해 · {0}달째|First Year · Month {0}|一年目 · {0}か月目|第一年 · 第{0}个月
+# 결말 연출
+검을 거두지 않은 자|The One Who Did Not Sheathe the Blade|剣を収めなかった者|未曾收剑之人
+잔이 당신의 소원을 받아 들었다.|The cup accepted your wish.|杯があなたの願いを受け取った。|杯子接受了你的愿望。
+막아선 서번트는 새벽이 오기 전에 흩어졌다.|The Servant who stood in your way scattered before dawn came.|立ちはだかったサーヴァントは、夜明けが来る前に散った。|挡在你面前的从者，在黎明到来之前消散了。
+둘이 이긴 세계|The World Two Won|二人が勝った世界|二人赢来的世界
+둘이 이긴 세계의 첫 아침이 왔다.|The first morning came in the world the two of you won.|二人が勝ち取った世界の、最初の朝が来た。|你们二人赢来的世界，迎来了第一个早晨。
+그 세계는 아주 조용했다.|That world was very, very quiet.|その世界はとても静かだった。|那个世界非常安静。
+묶인 잔|The Bound Cup|縛られた杯|被束缚的杯
+소원은 이루어졌다.|The wish came true.|願いは叶った。|愿望实现了。
+T {0~은} 곁에 남았다. 그 뒤로 입을 열지 않았다.|{0} stayed by your side. After that, they never spoke.|{0}はそばに残った。それ以降、口を開かなかった。|{0}留在了你身边。从那以后，再也没有开口。
+진짜 소원을 빌지 않았다.|You did not make the true wish.|本当の願いを口にしなかった。|你没有许下真正的愿望。
+손을 놓친 잔|The Cup That Slipped Away|手を離れた杯|脱手之杯
+동맹이 잔을 부쉈다.|Your ally shattered the cup.|同盟者が杯を砕いた。|同盟打碎了杯子。
+막아선 칼|The Blade That Stood in the Way|立ちはだかった刃|挡路之刃
+서번트가 당신을 멈췄다.|Your Servant stopped you.|サーヴァントがあなたを止めた。|从者阻止了你。
+잔은 새벽 속에서 부서졌다.|The cup broke in the dawn.|杯は夜明けの中で砕けた。|杯子在黎明中碎裂了。
+함께 가는 척했던 서번트가 잔을 부쉈다.|The Servant who pretended to go along with you shattered the cup.|共に行くふりをしていたサーヴァントが杯を砕いた。|假装与你同行的从者打碎了杯子。
+그 뒤|Afterward|その後|此后

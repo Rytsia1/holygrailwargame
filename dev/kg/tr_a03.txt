@@ -1,0 +1,69 @@
+a349b2|That person's house, that road, that shop. You were nowhere.|あの人の家、あの道、あの店。あなたはどこにもいなかった。|那个人的家、那条路、那家店。哪里都没有你。
+a350t|The Taste of That Day|あの日の味|那天的味道
+a350b1|Before vanishing, your Servant recalled what you'd eaten that day. Only your Servant had known it would be the last.|サーヴァントは消える前に、あの日食べたものを思い出した。あの日が最後だと知っていたのは、サーヴァントだけだった。|消失之前，从者想起了那天吃过的东西。只有从者知道，那天就是最后一天。
+a350b1@0|Before vanishing, your Servant recalled the road you'd walked that day. Only your Servant had known it would be the last.|サーヴァントは消える前に、あの日歩いた道を思い出した。あの日が最後だと知っていたのは、サーヴァントだけだった。|消失之前，从者想起了那天走过的路。只有从者知道，那天就是最后一天。
+a350b2|They couldn't remember the taste. Only your smiling face.|味は思い出せなかった。あなたが笑っていた顔だけを思い出した。|想不起是什么味道了。只记得你笑着的脸。
+a350b2@0|They couldn't remember the road. Only your smiling face.|道は思い出せなかった。あなたが笑っていた顔だけを思い出した。|想不起是什么样的路了。只记得你笑着的脸。
+a351t|One Who Knew|知っていた人|早已知道的人
+a351b1|You knew. Your Servant read it in your eyes.|あなたは知っていた。サーヴァントはそれを、あなたの目から読み取った。|你早就知道了。从者从你的眼睛里读出了这一点。
+a351b2|Still, the blade didn't stop. Your Servant had no reason to stop it.|それでも刃は止まらなかった。止める理由が、サーヴァントにはなかった。|即便如此，刀刃也没有停下。从者没有停下的理由。
+a352t|Since When|いつから|从何时开始
+a352b1|They wanted to ask since when you'd known. They didn't ask.|いつから知っていたのかと聞きたかった。聞かなかった。|很想问你，是从什么时候开始知道的。却没有问。
+a352b2|The cup is broken, and there's no one left to answer.|杯は砕け、答える人もいない。|杯子已碎，也没有人能回答了。
+a353t|The One Thing Not Calculated|計算できなかったこと|没能算到的事
+a353b1|Your Servant calculated everything. Everything but that you'd know, and stay still anyway.|サーヴァントはすべてを計算した。あなたが知りながら動かずにいることだけは、計算できなかった。|从者计算好了一切。唯独没有算到，你明知如此却一动不动。
+a353b1@0|Your Servant did not hesitate.|サーヴァントはためらわなかった。|从者没有犹豫。
+a353b2|That one thing stayed with them for a long time.|そのひとつが、長く残った。|唯独这一点，在心里留了很久。
+a353b2@0|That you didn't hesitate either stayed with them for a long time.|あなたがためらわなかったことが、長く残った。|你也没有犹豫这件事，在心里留了很久。
+a354t|A Back That Didn't Turn|振り返らなかった背中|没有回头的背影
+a354b1|Your Servant broke the cup and didn't look back.|サーヴァントは杯を砕き、振り返らなかった。|从者打碎杯子，没有回头。
+a354b2|Because if they had, they'd have seen what face you were making.|振り返れば、あなたがどんな顔をしていたのか知ってしまうから。|因为一旦回头，就会看到你是什么样的表情。
+a355t|One Who Did Not Choose|選ばなかった人|没有做出选择的人
+a355b1|You neither stopped it nor ran away.|あなたは止めもせず、逃げもしなかった。|你既没有阻止，也没有逃跑。
+a355b2|Only just before vanishing did your Servant realize that this, too, was a choice.|それもまた選択だったのだと、サーヴァントは消える直前になって気づいた。|直到即将消失之前，从者才明白，那也是一种选择。
+a356t|The End, Together|最後は共に|最后一起
+a356b1|They'd said 「Let's see the end together.」 It was a lie.|「最後は一緒に見よう」と言った。嘘だった。|说过「最后就一起看吧」。那是谎言。
+a356b2|All you saw together was your own end.|一緒に見たのは、あなたの最後だけだった。|一起看到的，只有你的结局。
+a357t|The Broken Cup|砕けた杯|碎掉的杯子
+a357b1|The cup broke more easily than expected.|杯は思ったより簡単に砕けた。|杯子比想象中更容易碎。
+a357b2|Your Servant found that strangely hollow. They had deceived you for this.|サーヴァントには、それが妙に虚しかった。このために、あなたを欺いたのだ。|从者觉得这莫名地空虚。就为了这个，欺骗了你。
+a358t|Five Slips|五つのずれ|五次破绽
+a358b1|There were five slips. You never once noticed.|五度、ずれがあった。あなたは一度も気づかなかった。|露出过五次破绽。你一次也没有察觉。
+a358b2|It meant you trusted your Servant that much. Your Servant tried not to think about that, to the very end.|それだけサーヴァントを信じていたということだった。サーヴァントは最後まで、そのことを考えないようにした。|那意味着你就是那样信任从者。从者直到最后都尽量不去想这件事。
+a359t|The Last Magical Energy|最後の魔力|最后的魔力
+a359b1|With their remaining magical energy, your Servant made one round of the city. A city in which nothing had changed.|残った魔力で、サーヴァントは街をひと回りした。何ひとつ変わらなかった街だった。|从者用剩下的魔力绕城走了一圈。那是一座什么都没有改变的城市。
+a359b2|Only after confirming that did your Servant vanish.|それを確かめてから、サーヴァントは消えた。|确认了这一点之后，从者才消失了。
+a360t|A Name|名前|名字
+a360b1|Your Servant called your name once. There was no one to hear it.|サーヴァントはあなたの名前を一度呼んだ。聞く者はいなかった。|从者叫了一次你的名字。没有人听见。
+a360b1@0|Instead of calling your name, your Servant let out a low howl. There was no one to hear it.|サーヴァントはあなたの名前を呼ぶ代わりに、低く唸った。聞く者はいなかった。|从者没有呼唤你的名字，而是低低地嚎了一声。没有人听见。
+a360b2|Whether that was an apology or a farewell, your Servant didn't know either.|それが謝罪だったのか別れだったのか、サーヴァントにもわからなかった。|那究竟是道歉还是告别，连从者自己也不知道。
+a361t|Someone Safe|無事な人|平安的人
+a361b1|They are safe. They don't know you protected them that winter.|その人は無事だ。あの冬あなたが守ったことを知らない。|那个人平安无事。不知道那个冬天是你守护了自己。
+a361b2|Nor do they know why you never came back.|あなたがなぜ戻らなかったのかも知らない。|也不知道你为何没有回来。
+a362t|One Who Vanished|消えた人|消失的人
+a362b1|You vanished that winter night. They never found you.|あなたはあの冬の夜に消えた。見つからなかった。|你在那个冬夜消失了。没有人找到你。
+a362b2|They still leave the porch light on.|その人は今も玄関の灯りを点けておく。|那个人至今仍开着玄关的灯。
+a363t|The Last Message|最後の連絡|最后的消息
+a363b1|That night, a short message came from you. "Take care."|あの夜、あなたから短い連絡が来た。「元気でな」|那天夜里，你发来一条简短的消息。"保重。"
+a363b2|They sent a reply. It never shows as read.|その人は返信を送った。既読はつかない。|那个人回了消息。却一直没有显示已读。
+a364t|A Sound at Dawn|夜明けの音|黎明的声音
+a364b1|At dawn that night, the sound of something breaking came from far away.|あの夜の明け方、遠くで何かが砕ける音がした。|那天夜里将近黎明时，远处传来什么东西碎裂的声音。
+a364b2|For no reason, they called your name. There was no answer.|その人はわけもなくあなたの名前を呼んだ。返事はなかった。|那个人莫名地叫了你的名字。没有回应。
+a365t|Something You Left|預けた物|留下的东西
+a365b1|There's something you left in their keeping. You said you'd come back for it.|あなたがその人に預けておいた物がひとつある。取りに来ると言っていた。|你托那个人保管着一样东西。说过会回来取。
+a365b2|They still haven't unwrapped it.|その人は、その物をまだ開けていない。|那个人至今还没有打开它。
+a366t|One Who Never Recovered|回復しなかった人|没能康复的人
+a366b1|They never recovered. You vanished that same winter.|その人は回復しなかった。あなたは同じ冬に消えた。|那个人没能康复。你也在同一个冬天消失了。
+a366b2|The one at their side doesn't think the two are connected. They were.|そばにいる人は、二つのことがつながっているとは思っていない。つながっていた。|守在身边的人并不认为这两件事有关联。可它们是相连的。
+a367t|Footsteps That Came to Visit|見舞いに来た足跡|来探望的脚步
+a367b1|The day before you vanished, you came as far as their hospital room door and turned back.|あなたは消える前日、その人の病室の前まで来て引き返した。|你消失的前一天，来到那个人的病房门口，又转身离开了。
+a367b2|A nurse told them about it. The one at their side often thinks of those footsteps.|看護師がその話をしてくれた。そばにいる人は、その足跡を長く思い出す。|护士讲起了这件事。守在身边的人常常想起那串脚步。
+a368t|A Winter for Two|二人の冬|两个人的冬天
+a368b1|That winter, they lost two people. One collapsed, and one vanished.|あの冬、二人を失った。ひとりは倒れ、ひとりは消えた。|那个冬天，失去了两个人。一个倒下了，一个消失了。
+a368b2|The one left behind hates it all the more because the city wears a face that knows nothing.|残された人は、街が何も知らない顔をしているのが、なおさら嫌だ。|留下来的人更加厌恶这座城市一副什么都不知道的样子。
+a369t|The Ally Who Withdrew|退いた同盟|撤退的同盟
+a369b1|The Master who was your ally survived that night. They leave flowers where the cup was broken.|あの夜、同盟だったマスターは生き延びた。杯が砕けた場所に花を置いていく。|那一夜，曾是你同盟的御主活了下来。在杯子碎裂之处放下了花。
+a369b2|Who those flowers are for, even they haven't decided.|その花が誰のためのものなのか、その人も決めかねている。|那束花是献给谁的，连那个人自己也没想好。
+a370t|A Photo of Your Hand|手の甲の写真|手背的照片
+a370b1|Your last photo shows the mark on the back of your hand. Beside it falls someone's shadow.|あなたの最後の写真には、手の甲の痕が写っている。その隣に誰かの影がかかっている。|你最后的照片上拍到了手背上的痕迹。旁边落着某个人的影子。
+a370b2|Those close to you never learn whose shadow it was.|身近な人は、その影が誰なのかついに知らない。|身边的人终究不知道那是谁的影子。

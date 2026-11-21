@@ -66,7 +66,7 @@
     if(S.flags.student) return {kind:'pupil',t:'제자'};
     return {kind:'nbr',t:'옆집 이웃'}; }
   function kgR(d){ const g=kgW(); if(!g||g.lock) return; g.R=Math.max(0,Math.min(100,g.R+d*kgMu(kgSt()))); }
-  const KG_DAYN=['첫째','둘째','셋째','넷째'];
+  const KG_DAYN=['첫째 날','둘째 날','셋째 날','넷째 날'];
   function kgStart(k,shared){ const w=W(), X=KG_W[k], h=hero();
     S.flags.wishText=X.wish; S.flags.kg=k; S.flags.kgShared=shared?1:0;
     const R=kgRes0(k);
@@ -82,7 +82,7 @@
   // 낮: 그날의 일
   function kgDay(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     g.d++; w.day++; w.tod='낮'; w.prog=0; mark('war');
-    log(`진짜 소원 · ${KG_DAYN[g.d-1]} 날`,'night');
+    log(`진짜 소원 · ${KG_DAYN[g.d-1]}`,'night');
     if(g.d===1){ const om=g.k==='zeal'&&!isMage()?KG_W.zeal.omenN:KG_W[g.k].omen;
       decide({title:'흔적',body:`아침 뉴스가 이상한 일을 짧게 전한다. ${om} 잔은 아직 바닥만 젖어 있다.`,war:true,choices:[
         {t:'보러 간다',d:'징조를 가까이서 본다',f:()=>{ lean(g.k,1); kgR(5); w.queue.push(()=>kgNight()); return '징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.'; }},
@@ -108,7 +108,7 @@
     w.queue.push(()=>kgNight()); }
   // 밤: 서번트가 말을 건다
   function kgNight(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
-    w.tod='밤'; log(`진짜 소원 · ${KG_DAYN[g.d-1]} 날 밤`,'night');
+    w.tod='밤'; log(`진짜 소원 · ${KG_DAYN[g.d-1]} 밤`,'night');
     const next=()=>w.queue.push(()=>kgDawn());
     if(g.d===1){ const q=g.bet?kgSay(h,['좋아. 네가 바라는 거라면 따르지.','좋습니다. 당신이 바라신다면 따르겠습니다.','좋다. 그대가 바란다면 짐도 따르마.','(서번트가 고개를 끄덕인다. 생각보다 빨랐다.)'])+'\n평소답지 않게, 대답이 너무 빨랐다.'
         :kgSay(h,['그 소원, 언제부터였어.','그 소원, 언제부터였습니까.','그 소원, 언제부터였느냐.','(서번트가 낮의 신문을 당신 앞에 내려놓는다. 묻는 눈이다.)']);

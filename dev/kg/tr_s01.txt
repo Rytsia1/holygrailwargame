@@ -1,0 +1,140 @@
+s:sigurd:0|I have read your wish. And so I stop it here. It was you who made me draw Gram.|貴殿の願いは読んだ。ゆえに、ここで止める。グラムを抜かせたのは貴殿だ。|阁下的愿望，我已读懂。所以我在此阻止。让我拔出格拉墨的，是阁下。
+s:sigurd:1|…This time, I will not forget. Nor what kind of person you were.|…今度は忘れない。貴殿がどのような人であったかも。|……这一次，我不会忘记。包括阁下是怎样的人。
+s:sigurd:2|My wisdom… fell short. Short of what it took to stop you.|知恵が…足りなかったか。貴殿を止めるほどには。|智慧……还是不够啊。不足以阻止阁下。
+s:sigurd:3|I will obey that order. My heart, I cannot give.|その命には従おう。心までは差し出せぬ。|我会遵从那道命令。但我的心无法交出。
+s:sigurd:4|Not one day passed that I forgot you. In all these years. That was my punishment.|貴殿を忘れた日は一日もなかった。この幾年のあいだ。それが私の罰だった。|这些年来，我没有一天忘记过阁下。那就是我的惩罚。
+s:sigurd:5|You remained yourself to the very end. As one who watched, I will bear witness.|貴殿は最後まで貴殿であった。見届けた者として証言しよう。|阁下直到最后都是阁下。作为见证者，我愿为此作证。
+s:sigurd:6|Tell my Master that this time, I leave without forgetting.|今度は忘れぬまま行くと。マスターに伝えてくれ。|请转告我的御主，这一次，我是带着记忆离去的。
+s:siegfried:0|No one asked this of me. Even so, I will stop you. For the first time, it is my own will.|誰にも頼まれていない。それでも、お前を止める。初めての、俺自身の意志だ。|没有任何人拜托我。即便如此，我也要阻止你。这是我第一次，出于自己的意志。
+s:siegfried:1|…It was you who turned your back. Still, I'm sorry.|…背を見せたのはお前だった。それでも、すまない。|……露出背后的是你。即便如此，对不起。
+s:siegfried:2|Something no one asked of me… is hard.|頼まれていないことは…難しいな。|没有被拜托的事……真难啊。
+s:siegfried:3|…Understood. I'll call this a request, too.|…わかった。これも頼みと呼ぼう。|……明白了。这也算是请求吧。
+s:siegfried:4|Failing to stop you was the first thing I ever couldn't do by my own will. I'm sorry.|お前を止められなかったのは、初めて自分の意志で果たせなかったことだった。すまない。|没能阻止你，是我第一次没能按自己的意志做到的事。对不起。
+s:siegfried:5|You turned back. Seeing that is enough.|お前は引き返した。それを見られただけで十分だ。|你回头了。能看到这一点，就足够了。
+s:siegfried:6|…That I fought because I wanted to. Just tell them that.|…俺が望んで戦ったと。それだけ伝えてくれればいい。|……就说我是自己想战斗的。只要转告这句就好。
+s:lancelot:0|(Within the black mist, the knight raises his sword and points it at you. The blade does not tremble.)|（黒い霧の中で、騎士が剣を掲げてあなたに向ける。切っ先は震えていない。）|（黑雾之中，骑士举剑指向你。剑尖纹丝不动。）
+s:lancelot:1|(A low sound leaks from the gap in his helm. The knight strokes the back of your hand for a long time and bows his head.)|（兜の隙間から低い声が漏れる。騎士はあなたの手の甲を長く撫で、頭を垂れる。）|（低沉的声音从头盔缝隙中漏出。骑士久久抚摸着你的手背，低下了头。）
+s:lancelot:2|(The knight reaches out while still on his knees, then withdraws his hand like a man receiving punishment.)|（騎士が膝をついたまま手を伸ばし、罰を受ける者のようにその手を引く。）|（骑士跪着伸出手，又像受罚之人般收了回去。）
+s:lancelot:3|(The knight clutches his helm and lets out a sound like a beast. Then he stops.)|（騎士が兜をつかみ、獣のような声を上げる。そして止まる。）|（骑士抓住头盔，发出野兽般的声音。然后停了下来。）
+s:lancelot:4|(For the first time in years, a hoarse voice spills from behind the helm.) …Master… the punishment… is this…|（何年ぶりかに、兜の向こうからかすれた声が漏れる。）…マスター…罰は…これで…|（多年来第一次，头盔后传出沙哑的声音。）……御主……惩罚……就这样……
+s:lancelot:5|(The knight kneels beside you and does not raise his head for a long time.)|（騎士はあなたのそばに膝をつき、長く顔を上げない。）|（骑士跪在你身旁，久久没有抬头。）
+s:lancelot:6|That knight kept his sword sheathed toward your side until the very end. I think that was his answer.|あの騎士は最後まで、あなたの側には剣を収めていました。それが答えだったのでしょう。|那位骑士直到最后，都没有把剑指向你那一边。那大概就是他的回答吧。
+s:arjuna:0|Master. I will not cling to the outcome. Just this once, I will act. To stop you.|マスター。結果には囚われません。今回だけは行います。あなたを止めることを。|御主。我不会执着于结果。唯独这一次，我要去做。去阻止您。
+s:arjuna:1|You were not someone I should have had to shoot. …Which is why my hand shook all the more.|あなたは射るべき相手ではありませんでした。…だからこそ、手が震えたのです。|您并不是我该射的对象。……所以我的手才更加颤抖。
+s:arjuna:2|This time I didn't set down my bow… and still, it doesn't reach.|今度は弓を下ろさなかったのに…それでも届きませんか。|这一次我没有放下弓……却依然够不到啊。
+s:arjuna:3|I will obey. Only, do not call this my will.|従います。ただ、これが私の意志だとは言わないでください。|我会遵从。只是，请不要说这是我的意志。
+s:arjuna:4|For years I searched for an answer. Whether it was right not to shoot you. The answer… was you, in the end.|何年も答えを探しました。あなたを射なかったことが正しかったのか。答えは…結局、あなたでした。|多年来我一直在寻找答案。没有射您是否正确。答案……终究就是您。
+s:arjuna:5|You set down your bow. Something I could never do.|あなたは弓を下ろされました。私にはできなかったことを。|您放下了弓。那是我未能做到的事。
+s:arjuna:6|Please tell my Master that this time, I stood without hesitation.|今度は迷わず立ったと。マスターにお伝えください。|请转告御主，这一次我毫不犹豫地站了出来。
+s:robin:0|Didn't leave the forest for something like this. Sorry, Master. This time I've gotta shoot you, not some ledger.|こんなことのために森を出たんじゃないんですがね。すまない、マスター。今回は帳簿じゃなく、あんたを撃たなきゃならない。|我可不是为了这种事才出森林的。抱歉，御主。这次要射的不是账本，是你。
+s:robin:1|It's fine. You stayed human, didn't you? That's enough.|いいさ。あんたは人のまま残ったんだ。それで十分だろ。|算了。你还是作为人留下来了嘛。这就够了。
+s:robin:2|Haha… couldn't even stop one lord.|ははっ…領主ひとり止められなかったか。|哈哈……连一个领主都没拦住啊。
+s:robin:3|Tch. I hate wearing chains.|ちっ。鎖をつけられるのは御免なんだがね。|啧。我最讨厌被锁住了。
+s:robin:4|This house wasn't a forest either. Still… I held out because it was by your side. That part's true.|この家も森じゃなかったな。それでも…あんたのそばだったから持ちこたえた。これは本当だ。|这个家也不是森林啊。不过……因为是在你身边，我才撑下来了。这是真的。
+s:robin:5|You never fired the arrow, right to the end. That makes you a decent person.|あんた、最後まで矢を放たなかったな。それなら上等な人間だよ。|你直到最后都没放箭啊。这样就算是个不错的人了。
+s:robin:6|Tell 'em even an outlaw kept what he had to keep.|無法者でも守るものは守ったって。あいつに伝えてくれ。|告诉那家伙，就算是亡命之徒，该守的也守住了。
+s:atalanta:0|That wish would swallow children too. So I'll shoot. Even if it's you.|その願いは子どもたちも呑み込む。だから私が射る。お前であっても。|那个愿望连孩子们也会吞噬。所以由我来射。即使是你。
+s:atalanta:1|…It's a world where children live. That's what you've left behind.|…子どもたちが生きる世界だ。お前が残したのはそれだ。|……这是孩子们生活的世界。你留下的就是这个。
+s:atalanta:2|The abandoned ones… will grow in number again.|捨てられるものが…また増えるな。|被遗弃的东西……又要变多了啊。
+s:atalanta:3|…If it's an order. But I won't close my eyes.|…命令なら。だが、目は閉じないぞ。|……如果是命令的话。但我不会闭上眼睛。
+s:atalanta:4|I watched for years. How children grow up in the world you wished for. …That much, I wanted to say.|何年も見てきた。お前が望んだ世界で、子どもたちがどう育つのかを。…それだけは、言っておきたかった。|我看了好多年。在你期望的世界里，孩子们是如何长大的。……至少这一点，我想说出来。
+s:atalanta:5|You turned back. Because of it, even one child lives.|お前は引き返した。そのおかげで、子どもひとりでも生きている。|你回头了。多亏如此，哪怕只有一个孩子也活了下来。
+s:atalanta:6|That the hunt is over. That they don't have to be chased anymore.|狩りは終わったと。あの人はもう追われなくていいと。|就说狩猎结束了。那个人再也不必被追逐了。
+s:cuchulainn:0|Ha, never wanted a fight like this. Still, I'll stand and block you to the end. Come on, Master.|はっ、こんな戦いは望んじゃいなかったがな。それでも最後まで立って止めてやる。来い、マスター。|哈，我可从没想过这样的战斗。不过，我会站到最后把你拦住。来吧，御主。
+s:cuchulainn:1|You were a good Master. Except for the end. …No, the end wasn't bad either.|いいマスターだったぜ。最後以外はな。…いや、最後も悪くなかった。|你是个好御主。除了最后。……不，最后也不坏。
+s:cuchulainn:2|Ha… didn't think I'd lose to my Master. Not bad.|はっ…マスターに負けるとはな。やるじゃねえか。|哈……没想到会输给御主。挺有一手嘛。
+s:cuchulainn:3|One more geis, then. Never defy your word.|禁戒がひとつ増えたな。お前の言葉には逆らわないこと。|又多了一条誓约。不得违抗你的话。
+s:cuchulainn:4|Felt a lot like being tied to that pillar. Still, I didn't fall. Not beside you. That much, I chose.|柱に縛られたのと似たようなもんだった。それでも倒れはしなかった。お前の隣で。それは俺が選んだことだ。|跟被绑在柱子上差不多。不过我没有倒下。在你身边。那是我自己选的。
+s:cuchulainn:5|You stayed standing to the end, Master. That's the hardest thing there is.|最後まで立ってたな、マスター。それがいちばん難しいんだ。|你一直站到了最后啊，御主。那才是最难的。
+s:cuchulainn:6|Doesn't matter if they don't believe it. Tell 'em it was a good fight.|あいつが信じなくてもいいから、いい戦いだったって伝えてくれ。|那家伙不信也无所谓，就告诉他那是一场好战斗。
+s:hector:0|Old man here hates this kind of thing, y'know. Sorry, Master, but this is where I close the gate.|おじさん、こういうのは苦手なんだがね。マスター、悪いが、ここで城門を閉める。|大叔我最讨厌这种事了。御主，抱歉，城门就在这里关上了。
+s:hector:1|…Can't exactly tell you to survive. Sorry.|…生き延びろとは言えないな。すまない。|……没法叫你活下去啊。对不起。
+s:hector:2|The walls… are falling again.|城壁が…また崩れるのか。|城墙……又要塌了啊。
+s:hector:3|Haha… an order, huh. A general's used to that.|ははっ…命令か。将はそういうのに慣れてるもんでね。|哈哈……命令啊。当将军的早就习惯了。
+s:hector:4|Watched for years. What you were trying to protect. Made me wonder if that was why the old man never managed to close the gate.|何年も見てきたよ。お前が守ろうとしたものが何なのか。おじさんが最後まで城門を閉められなかったのは、それだったのかと思ってな。|看了好多年。你想守护的到底是什么。我在想，大叔我始终没能关上城门，是不是就因为这个。
+s:hector:5|Coming back is something special. The old man never made it back.|戻ってこられた人は大したもんだ。おじさんは戻れなかったからな。|能回来的人可了不起。大叔我就没能回来。
+s:hector:6|Tell 'em that only in front of them did I take off my helmet to fight.|あいつの前でだけは兜を脱いで戦ったって伝えてくれ。|告诉那家伙，只有在他面前，我才摘下头盔战斗。
+s:leonidas:0|It's a narrow pass, Master. Here, I let nothing through. Not even your wish!|狭い道だ、マスター。ここは何ひとつ通さん。お前の願いもだ！|这是条窄道，御主。在这里，我一个也不放过去。连你的愿望也是！
+s:leonidas:1|I do not regret stopping you. I will remember your name.|お前を止めたことを悔いはしない。名は私が覚えておこう。|我不后悔阻止了你。你的名字，由我来记住。
+s:leonidas:2|The pass… has been broken through. Magnificent.|道が…破られたか。見事だ。|道路……被突破了吗。漂亮。
+s:leonidas:3|It's an order. Sparta obeys orders. …Though my heart stays here.|命令だ。スパルタは命令に従う。…心はここに置いていくがな。|这是命令。斯巴达服从命令。……只是我的心留在这里。
+s:leonidas:4|For years I guarded this narrow house. What I guarded wasn't you, but the things you cast aside.|何年もこの狭い家を守った。守ったのはお前ではなく、お前が捨てたものたちだった。|多年来，我守着这间窄小的屋子。我守护的不是你，而是你舍弃的那些东西。
+s:leonidas:5|Knowing when to fall back is courage too. You did that.|退くことを知るのもまた勇気だ。お前はそれをやった。|懂得退让也是一种勇气。你做到了。
+s:leonidas:6|Tell them I held my ground to the last.|最後まで持ち場に立っていたと伝えてくれ。|请转告，我坚守岗位到了最后。
+s:alexander:0|Hahaha! Master, that dream is far too narrow! I shall conquer it for you—wish and all!|はっはっは！マスターよ、その夢は狭すぎる！余が征服してくれよう。お前の願いごとな！|哈哈哈！御主啊，那个梦想太狭隘了！朕来为你征服它。连同你的愿望一起！
+s:alexander:1|You were a fine fellow. Your dream was just a little… small.|よい奴だった。夢が少し…小さかっただけだ。|你是个好家伙。只是梦想稍微……小了点。
+s:alexander:2|Haha… I, conquered. This too is a dream.|ははっ…余が征服されるとはな。これもまた夢か。|哈哈……朕竟被征服了。这也是一场梦啊。
+s:alexander:3|Hmph, binding a king with chains? …Very well, I shall go along. But my heart will not be bound.|ふん、鎖で王を縛るか。…よかろう、従ってやる。だが余の心は縛れんぞ。|哼，用锁链束缚王者吗。……好吧，朕就随你。但朕的心是束缚不住的。
+s:alexander:4|For years I watched over this small world. Instead of the endless sea. …Let's say it wasn't bad. For it was with you.|この小さな世界を何年も見守ってきた。果てなき海の代わりにな。…悪くなかったと言っておこう。お前と共にだったからな。|朕守望了这个小小的世界好多年。代替那无尽的大海。……就当作不坏吧。因为是和你在一起。
+s:alexander:5|So you turned back. That too is conquest. You have conquered yourself.|引き返したか。それもまた征服だ。己に勝ったのだからな。|你回头了啊。那也是征服。因为你战胜了自己。
+s:alexander:6|Tell them I went laughing! So that one doesn't cry.|余は笑って去ったと伝えよ！あ奴が泣かぬようにな。|告诉他，朕是笑着离开的！好让那家伙别哭。
+s:boudica:0|This isn't right. At the end of that wish are crying children. I'll stop you—I'm sorry.|こんなのは駄目。その願いの先には泣いてる子どもたちがいる。私が止めるね。ごめん。|不可以这样。那个愿望的尽头有哭泣的孩子们。我来阻止你。对不起。
+s:boudica:1|Sorry. I can't even tell you to come eat anymore.|ごめんね。もう、ご飯だよって言うこともできないね。|对不起。以后再也不能叫你吃饭了。
+s:boudica:2|I couldn't protect it… this time either.|今度も…守れなかったか。|这次也……没能守住啊。
+s:boudica:3|All right. I'll follow. …But don't cry. Not you, not me.|わかった。従うよ。…その代わり泣かないで。あなたも、私も。|好吧。我会听从。……但是别哭。你也是，我也是。
+s:boudica:4|For years I set the table. I know you never once said it was good. I never once ate it either, did I.|何年もご飯を用意したね。あなたが一度もおいしいって言わなかったの、知ってる。私も一度も食べなかったしね。|好多年我都在准备饭菜。我知道你一次也没说过好吃。我自己也一次都没吃过嘛。
+s:boudica:5|Welcome back. It's fine if you're late. You came back.|よく帰ってきたね。遅くてもいいの。帰ってきたんだから。|欢迎回来。晚一点也没关系。你回来了就好。
+s:boudica:6|Tell them not to be afraid. There's still ground left for them to stand on.|怖がらないでって。あの人が立てる場所はまだ残ってるって。|告诉那个人别害怕。还有可以站立的地方。
+s:achilles:0|I'm the fastest, Master. Faster than your wish, too. I end it here.|俺が最速だ、マスター。お前の願いよりもな。ここで終わらせる。|我是最快的，御主。比你的愿望还快。就在这里结束。
+s:achilles:1|…Thought I'd regret this like the day I lent out my armor. I don't. Strange.|…鎧を貸したあの日みたいに後悔すると思ってたんだがな。しない。妙なもんだ。|……还以为会像借出铠甲那天一样后悔。结果没有。真奇怪。
+s:achilles:2|In the end… and it wasn't even my heel this time.|結局…今回はかかとでもないのにな。|到头来……这次明明不是脚踵啊。
+s:achilles:3|Tch. Chains on a hero. …Fine. Just this once.|ちっ。英雄に鎖とはな。…いいだろう、今回だけだ。|啧。给英雄套上锁链啊。……好吧，就这一次。
+s:achilles:4|I stayed still for years. It's what I'm worst at. I held out because it was by your side.|何年もじっとしてた。俺がいちばん苦手なことだ。お前の隣だったから耐えられたんだ。|好几年都一动不动。这是我最不擅长的事。因为是在你身边，我才忍住了。
+s:achilles:5|Someone who knows how to stop is the truly fast one. You were fast.|止まれるやつが本当に速いやつだ。お前は速かったよ。|懂得停下的人才是真正快的人。你很快啊。
+s:achilles:6|Tell them this time I fought for no one but myself.|今度は誰かの代わりじゃなく、俺が戦ったって。あいつに伝えてくれ。|告诉那家伙，这次不是替谁，是我自己在战斗。
+s:medea:0|Throwing everything away for love—once was enough for me. I won't let you go that far.|恋のためにすべてを捨てるなんて、一度経験すれば十分よ。あなたをそこまで行かせはしない。|为了爱情抛弃一切，经历一次就够了。我不会让你走到那一步。
+s:medea:1|I'm used to being called a traitor. …This time, it was for you.|裏切り者と呼ばれるのには慣れてるわ。…今回は、あなたのためだった。|被叫作背叛者，我早就习惯了。……这一次，是为了你。
+s:medea:2|This time, I'm the one who missed the boat.|今度は私が船に乗り遅れたわね。|这次是我错过了船啊。
+s:medea:3|An order, to a witch. Fine. But remember: this was your command.|魔女に命令だなんて。いいわ。その代わり覚えておいて。あなたが命じたのよ。|居然命令魔女。好吧。但你要记住，这是你下的命令。
+s:medea:4|I kept my mouth shut for years. A witch is supposed to bewitch people with words. It never worked on you.|何年も口をつぐんでいたわね。魔女は言葉で人を惑わすものなのに。あなたにはそれが効かなかった。|我闭口不言了好多年。魔女本该用言语迷惑人心的。可对你偏偏没用。
+s:medea:5|You turned back. Something I never could. …I envy you.|引き返したのね。私にはできなかったことよ。…うらやましい。|你回头了呢。那是我做不到的事。……真羡慕。
+s:medea:6|That this time I betrayed nothing. Not that one, at least.|今度は何も裏切らなかったって。あの人にだけは。|就说这一次我什么也没背叛。至少没有背叛那个人。
+s:merlin:0|Ah, this isn't a happy ending. So, sorry—the storyteller's stepping in.|ああ、これはハッピーエンドじゃない。だから悪いね、語り手が割り込ませてもらうよ。|啊，这可不是幸福结局。所以抱歉了，讲故事的人要插一脚。
+s:merlin:1|So this is what it's like to see the end of a story. …I didn't want to see it.|物語の終わりを見るって、こういうことなんだね。…見たくなかったよ。|原来看到故事的结局是这种感觉啊。……我并不想看。
+s:merlin:2|Haha… an ending where the flowers fall. Not really my taste.|はは…花が散る結末とはね。僕の好みじゃないんだけど。|哈哈……花朵凋零的结局啊。不太合我的口味呢。
+s:merlin:3|Oh, this time I'm the one locked in the tower. …It's fine. I'm used to it.|おや、今度は僕が塔に閉じ込められる番か。…大丈夫、慣れてるよ。|哦，这次轮到我被关进塔里了啊。……没关系，我习惯了。
+s:merlin:4|For years I tried writing endings where you smile. None of them fit. So just this last time, I'll say it without lies. Thank you.|何年も、君が笑う結末を作ってみたよ。ひとつも合わなかった。だから最後だけは嘘なしで言うね。ありがとう。|好多年来，我试着编写你会笑的结局。一个都不合适。所以至少最后，我不说谎了。谢谢你。
+s:merlin:5|It wasn't a happy ending, but it was a good story. Truly.|ハッピーエンドじゃなかったけど、いい物語だったよ。本当に。|虽然不是幸福结局，但这是个好故事。真的。
+s:merlin:6|Tell them the story ends here. Tell them to write the next chapter themselves.|物語はここで終わりだって。次の章はあの人が書けばいいって伝えてくれ。|就说故事到此结束。下一章让那个人自己来写吧。
+s:paracelsus:0|Master. That wish is not medicine but poison. As a physician, I refuse to write that prescription.|マスター。その願いは薬ではなく毒です。医者として、処方を拒否いたします。|御主。那个愿望不是药，而是毒。作为医生，我拒绝开这个处方。
+s:paracelsus:1|Poison or medicine, I cannot say. But you, at least, I will record as medicine.|毒だったのか、薬だったのか。あなただけは薬だったと記しておきましょう。|是毒还是药，我说不清。但至少您，我会记作是药。
+s:paracelsus:2|The prescription… was wrong. Mine, that is.|処方が…誤っていましたか。私のほうが。|处方……错了啊。错的是我。
+s:paracelsus:3|If it is an order, I will follow. But do not write my name on this prescription.|命とあらば従いましょう。ですが、この処方箋に私の名は記さないでください。|若是命令，我会遵从。但请不要在这张处方上写下我的名字。
+s:paracelsus:4|For years I examined you. I never could put a name to the condition. It was in no book I know.|何年もあなたを診察しました。病名はついに付けられませんでした。私の知るどの書にも載っていなかったのです。|多年来我一直在为您诊察。始终没能给出病名。因为我所知的任何典籍中都没有记载。
+s:paracelsus:5|You chose your own medicine. That is the hardest cure of all.|あなたはご自分で薬を選ばれました。それこそ最も難しい治療です。|您亲自选择了药。那是最难的治疗。
+s:paracelsus:6|Please tell them the treatment is over, and to take care of their body now.|処方は終わったと、これからはお体を大切にと、その方にお伝えください。|请转告那位，治疗已经结束，今后请保重身体。
+s:jingke:0|This time I won't fall a hand's breadth short. Sorry, Master. You're the target.|今度はひと握りも足りないなんてことにはしないよ。ごめんね、マスター。標的は君だ。|这次我绝不会再差那一拃了。对不起，御主。目标是你。
+s:jingke:1|…It reached. This time it reached. And I'm not happy at all.|…届いた。今度は届いたよ。少しも嬉しくない。|……刺中了。这次刺中了。可我一点也不高兴。
+s:jingke:2|Fell… a hand's breadth short again.|また…ひと握り足りなかったか。|又……差了一拃啊。
+s:jingke:3|You want me to sheathe the dagger. Fine. This time I'm the one getting bound.|匕首を収めろってことか。わかった。今度は私が縛られる番だね。|是叫我收起匕首吧。好吧。这次轮到我被束缚了。
+s:jingke:4|I went years without a drink. There was a drink I wanted to share with you. …I never got to pour it.|何年も酒なしで耐えたよ。君と飲みたい酒があったんだ。…結局、注げなかったね。|好几年我都没沾酒。因为有一壶想和你一起喝的酒。……终究没能斟上。
+s:jingke:5|You turned back. Me, I crossed the Yi River anyway.|引き返したんだね。私は易水を渡ってしまったのに。|你回头了啊。我却还是渡过了易水。
+s:jingke:6|Tell them I didn't fall a hand's breadth short. I left it there on purpose.|ひと握り足りなかったんじゃない。わざと残したんだって伝えて。|告诉那个人，不是差了那一拃，是我故意留下的。
+s:heracles:0|(The giant roars and blocks your path. His eyes look closer to grief than madness.)|（巨人が咆哮し、あなたの前に立ちはだかる。その目は狂気よりも悲しみに近い。）|（巨人咆哮着挡在你面前。那双眼睛与其说是疯狂，不如说更接近悲伤。）
+s:heracles:1|(The giant kneels and, with one huge finger, carefully strokes the back of your hand.)|（巨人が膝をつき、大きな指一本で、あなたの手の甲をそっと撫でた。）|（巨人跪下，用一根粗大的手指，小心翼翼地抚过你的手背。）
+s:heracles:2|(Falling, the giant reaches out. Before it touches you, he draws his own hand back.)|（巨人が倒れながら手を伸ばす。触れる前に、自ら手を引く。）|（巨人倒下时伸出手。在碰到你之前，自己收回了手。）
+s:heracles:3|(The giant lets out a long howl toward the sky. Then falls silent.)|（巨人が天に向かって長く咆哮する。そして静かになる。）|（巨人仰天长啸。然后安静了下来。）
+s:heracles:4|(For the first time in years, something like a human voice escapes the giant's throat.) …Ah… th…|（何年ぶりかに、巨人の喉から人の声のようなものが漏れる。）…あ…こ…|（多年来第一次，巨人的喉咙里漏出近似人声的声音。）……啊……这……
+s:heracles:5|(The giant sits beside you and doesn't move for a long time. In the stance of a guardian.)|（巨人はあなたのそばに座り、長く動かない。守る者の姿勢で。）|（巨人坐在你身旁，久久不动。以守护者的姿态。）
+s:heracles:6|That giant stood guarding the side where you were, until the moment he fell.|あの巨人は倒れる瞬間まで、あなたのいる側を守って立っていました。|那位巨人直到倒下的那一刻，都挡在你所在的那一侧。
+s:spartacus:0|Ahh, tyranny! Master, your wish is a chain that binds the world! I shall break it!|ああ、圧制だ！マスターよ、君の願いは世界を縛る鎖だ！私が断ち切ってやろう！|啊啊，是压迫！御主啊，你的愿望是束缚世界的锁链！让我来斩断它！
+s:spartacus:1|The chain is broken… from your hands too. Smile, my friend.|鎖は断たれた…君の手からも。笑え、友よ。|锁链断了……你手上的也是。笑吧，朋友。
+s:spartacus:2|Tyranny… wins? Ahh, even so, I smile!|圧制が…勝つのか。ああ、それでも私は笑う！|压迫……赢了吗。啊啊，即便如此我也要笑！
+s:spartacus:3|Chains…! Haha, so these are chains! Good, I shall endure them smiling!|鎖…！はは、これが鎖か！よかろう、笑って耐えてみせよう！|锁链……！哈哈，这就是锁链啊！好，我会笑着忍受！
+s:spartacus:4|For years I did not smile. Not because the chain was heavy, but because you were at the end of it.|何年も私は笑わなかった。鎖が重かったからではない。その鎖の先に君がいたからだ。|多年来我没有笑过。不是因为锁链沉重，而是因为锁链的另一端是你。
+s:spartacus:5|You broke your own chains! This is true rebellion!|君は自ら鎖を断ち切った！これこそ反逆だ！|你亲手斩断了锁链！这才是真正的反抗！
+s:spartacus:6|Tell them I went smiling, free of chains!|鎖もなく、笑って去ったと伝えよ！|告诉他们，我是没有锁链、笑着离开的！
+s:lubu:0|(Lu Bu adjusts his grip on the halberd and looks down at you.) …Master. Again. Cut.|（呂布が戟を握り直し、あなたを見下ろす。）…主。また。斬る。|（吕布重新握紧画戟，俯视着你。）……主公。又。斩。
+s:lubu:1|(The giant warrior looks down at the scar on the back of your hand, then clumsily strokes it once.) …This time. No betray.|（大男があなたの手の甲の傷痕を見下ろし、不器用に一度撫でた。）…今度は。裏切らない。|（大汉低头看着你手背上的伤疤，笨拙地抚了一下。）……这次。不背叛。
+s:lubu:2|(He reaches out, then stops.) …This time. I. Lost.|（手を伸ばしかけて、止まる。）…今度は。俺が。負けた。|（伸出手，又停住。）……这次。我。输了。
+s:lubu:3|(The giant warrior grits his teeth. The halberd stabs into the ground.) …Again. Bound.|（大男が歯を食いしばる。戟が地面に突き立つ。）…また。縛られる。|（大汉咬紧牙关。画戟插进地面。）……又。被缚。
+s:lubu:4|(For the first time in years, a few short words come out.) …Master. To the end. Didn't cut.|（何年ぶりかに、短い言葉が出る。）…主。最後まで。斬らなかった。|（多年来第一次，说出了简短的话。）……主公。到最后。没斩。
+s:lubu:5|(The giant warrior stands behind you with his halberd upright. For a long, long time.)|（大男があなたの後ろで戟を立てたまま立っている。いつまでも。）|（大汉立着画戟站在你身后。久久不动。）
+s:lubu:6|That warrior kept repeating only that this time, he had not betrayed.|あの武将は、今度は裏切らなかったという言葉だけを繰り返していました。|那位武将只是一再重复着，这次他没有背叛。
+s:dantes:0|Kuhahaha! No one knows better than I what lies at the end of vengeance. Master, I will not let you open that door!|クハハハ！復讐の果てに何があるかは、俺が誰よりも知っている。マスター、その扉は開けさせん！|呼哈哈哈！复仇的尽头有什么，没有人比我更清楚。御主，我不会让你打开那扇门！
+s:dantes:1|Now you can wait for nothing at all. …That is what I have done.|お前はもう何も待てなくなったな。…それが俺のしたことだ。|你已经再也无法等待任何东西了。……那就是我所做的。
+s:dantes:2|Heh… you've felled an avenger. Now you are the avenger.|はっ…復讐鬼を倒したのだ。今度はお前が復讐鬼だ。|哈……你打倒了复仇鬼。现在轮到你成为复仇鬼了。
+s:dantes:3|Chains, is it. Thinner than the walls of the Château d'If. …I'll endure.|鎖か。シャトー・ディフの壁よりは薄いな。…耐えてやろう。|锁链吗。比伊夫堡的墙壁要薄啊。……我会忍受的。
+s:dantes:4|It was a prison of years. But in this prison, there was you. …That alone I do not resent.|何年もの牢獄だった。だがこの牢獄にはお前がいた。…それだけは恨まん。|这是一座关了好多年的牢狱。但这座牢狱里有你。……唯独这一点，我不怨恨。
+s:dantes:5|You turned back before vengeance. Something I could not do. You may be proud of it.|お前は復讐の前で引き返した。俺にはできなかったことだ。誇っていい。|你在复仇面前回头了。那是我没能做到的事。你可以为此自豪。
+s:dantes:6|Tell that one I leave hope behind this time.|今度は希望を残していくと。あいつに伝えろ。|告诉那家伙，这一次我留下了希望。

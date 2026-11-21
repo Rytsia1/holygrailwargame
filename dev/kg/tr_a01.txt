@@ -1,0 +1,160 @@
+a242t|Keepsakes|遺品|遗物
+a242b1|The tools you used came to your student. The handles are dark with the grime of your hands.|あなたが使っていた道具が弟子のもとに来た。握りに手垢が濃く残っている。|你用过的工具到了弟子手里。握柄上留着深深的手泽。
+a242b2|Your student didn't use them, and put them away in a box.|弟子はその道具を使わず、箱にしまっておいた。|弟子没有使用，而是把它们收进了箱子里。
+a243t|A Habit You Share|似てくる癖|渐渐相似的习惯
+a243b1|Before they knew it, your student had picked up your habit of staring out the window for a long time.|弟子はいつの間にか、あなたのように窓の外を長く見る癖がついた。|不知不觉间，弟子也养成了像你一样久久望着窗外的习惯。
+a243b2|They had wanted to ask what you were looking at. Now they don't even know what they're looking at themselves.|何を見ていたのか聞きたかったのに、今では自分が何を見ているのかもわからない。|本想问你在看什么，如今连自己在看什么都不知道了。
+a244t|That Winter's Cancelled Lessons|あの冬の休講|那个冬天的停课
+a244b1|For a few days that winter, you suddenly cancelled lessons. When you came back, you taught as if nothing had happened.|あの冬の数日、あなたは突然授業を休んだ。戻ってくると、何事もなかったように教えた。|那个冬天有几天，你突然停了课。回来后，又若无其事地继续教。
+a244b1@0|For a few days that winter, you suddenly skipped practice. When you came back, you worked as if nothing had happened.|あの冬の数日、あなたは突然稽古を休んだ。戻ってくると、何事もなかったように働いた。|那个冬天有几天，你突然没来练习。回来后，又若无其事地继续工作。
+a244b2|Your student regrets never asking about those days.|弟子は、その数日のことを尋ねなかったのを悔やんでいる。|弟子后悔当时没有问起那几天的事。
+a245t|The Student's Student|弟子の弟子|弟子的弟子
+a245b1|Your student took on a student of their own. On the first day, they said exactly what their teacher had said.|弟子が弟子をとった。初日、師が言ったことをそのまま口にした。|弟子收了自己的弟子。第一天，说的正是当年老师说过的话。
+a245b2|They couldn't teach why the one who'd said it had left.|その言葉を言った人がなぜ去ったのかは、教えられなかった。|却无法教给对方，说那句话的人为何离开了。
+a246t|Studies Left Unfinished|止まった勉強|中断的学业
+a246b1|After that winter, your student could never take up their studies again. Their teacher left that same winter.|弟子はあの冬以来、勉強を続けられなかった。師も同じ冬に去った。|那个冬天之后，弟子再也没能继续学业。老师也在同一个冬天离开了。
+a246b2|On your student's desk, the book is still open to the same page.|弟子の机には、開いたページがそのままだ。|弟子的书桌上，书依旧翻在那一页。
+a247t|The Teacher's Visit|師の訪問|老师的探望
+a247b1|Your student's family remembers the last day you came. You sat beside your student and murmured something for a long time.|弟子の家族は、あなたが最後に訪ねてきた日を覚えている。弟子のそばに座り、長いこと何かを呟いていた。|弟子的家人记得你最后一次来的那天。你坐在弟子身边，低声说了很久。
+a247b2|They said it sounded like an apology.|謝罪のように聞こえたと言った。|他们说，听起来像是在道歉。
+a248t|The Notebook Left Behind|残されたノート|留下的笔记本
+a248b1|Your student's notebook turned up on your desk. On the last page is one line in your handwriting: "This isn't what I taught."|あなたの机から弟子のノートが出てきた。最後のページに、あなたの字で一行書かれている。「これは私が教えたことではない」|你的书桌上发现了弟子的笔记本。最后一页用你的笔迹写着一行字："这不是我教的。"
+a249t|The Closed Classroom|閉じた教室|关闭的教室
+a249b1|The place where you used to teach is empty now. The notice on the door got soaked in the rain, and the writing has run.|あなたが教えていた場所は、今は空いている。扉に貼られた案内は雨に濡れて、字がにじんだ。|你曾授课的地方如今空无一人。门上的告示被雨淋湿，字迹已经晕开。
+a250t|The Same Mark|同じ痕|同样的痕迹
+a250b1|A family member wiping the back of your student's hand—your student who never recovered—mentioned something odd. They thought the teacher had a scar like this on the back of their hand too.|回復しなかった弟子の手の甲を拭いていた家族が、妙なことを口にした。師の手の甲にも、こんな傷痕があったような気がすると。|为那个没能康复的弟子擦拭手背的家人，说了件奇怪的事。说老师的手背上好像也有这样的伤疤。
+a250b2|There was nothing on your student's hand.|弟子の手の甲には、何もなかった。|弟子的手背上什么也没有。
+a251t|The Plant by the Door|玄関の鉢植え|门口的盆栽
+a251b1|Your neighbor waters the plant by your front door. No one asked them to.|隣人はあなたの家の玄関の鉢植えに水をやる。誰に頼まれたわけでもない。|邻居给你家门口的盆栽浇水。没有人拜托过。
+a251b2|They said it's because they remember you pacing in front of their house for a long time that winter.|あの冬、あなたが自分の家の前を長くうろうろしていたのを覚えているからだと言った。|邻居说，因为记得那个冬天你在自家门前徘徊了很久。
+a252t|Just Nodding Acquaintances|挨拶だけの仲|点头之交
+a252b1|Your neighbor only ever exchanged greetings with you. Yet when they heard of your death, they cried for a strangely long time.|隣人とあなたは挨拶を交わすだけの仲だった。なのに訃報を聞いて、妙に長く泣いた。|邻居和你只是点头之交。可听到你的死讯，却莫名地哭了很久。
+a252b2|On the nights they were sick that winter, it seemed you stood in their dream, blocking something in their place.|あの冬寝込んだ夜、夢の中で、あなたが自分の代わりに何かの前に立ちはだかったような気がした。|那年冬天病倒的那几夜，梦里仿佛是你替自己挡住了什么。
+a253t|The Dark Window|灯りの消えた窓|熄灯的窗
+a253b1|Your window, visible from your neighbor's, is always dark now.|隣人の窓から見えていたあなたの窓は、今はいつも暗い。|从邻居家窗口看得到的你家窗户，如今总是黑着。
+a253b2|That winter, when your light burned late into the night, was the last time.|夜遅くまで灯りが点いていたあの冬が、最後だった。|那个冬天灯亮到深夜，是最后一次。
+a254t|The New Neighbor|新しい隣人|新邻居
+a254b1|Someone new moved into your house. Your neighbor started to tell them about the previous owner, then stopped.|あなたの家に新しい人が入った。隣人は新しい人に前の家主の話をしかけて、やめた。|你家搬来了新住户。邻居本想跟新住户聊聊以前的房主，却又作罢了。
+a254b2|They knew almost nothing.|知っていることは、ほとんどなかった。|几乎一无所知。
+a255t|Shared Food|分けてくれた料理|分享的食物
+a255b1|At the end of that winter, you once shared some food with them. It was the first time, and the last.|あの冬の終わりに、あなたが料理を分けてくれたことがある。最初で最後だった。|那个冬天快结束时，你曾分给邻居一些食物。那是第一次，也是最后一次。
+a255b2|Your neighbor still hasn't returned the dish.|隣人は、その器をまだ返せていない。|邻居至今还没能把那只碗还回去。
+a256t|The Same Alley|同じ路地|同一条巷子
+a256b1|In the same alley, in the same winter, two houses went quiet.|同じ路地で、同じ冬に、二つの家が静かになった。|在同一条巷子里，同一个冬天，两户人家安静了下来。
+a256b2|The people of the neighborhood lower their voices when they walk down that alley.|町の人々は、その路地を通る時に声を落とす。|街坊们经过那条巷子时，都会压低声音。
+a257t|The Neighbor Who Never Recovered|回復しなかった隣人|没能康复的邻居
+a257b1|The family next door remembers that you came once that winter, and turned back at the door.|隣の家族は、あの冬あなたが一度訪ねてきて、戸口で引き返したことを覚えている。|邻居一家记得，那个冬天你曾来过一次，却在门口转身离去。
+a257b2|Why you left without a word, they'll never know now.|なぜそのまま帰ったのかは、もう知るすべがない。|为何就那样离开，如今已无从知晓。
+a258t|The House Moving Away|引っ越していく家|搬走的人家
+a258b1|The family of the neighbor who never recovered is moving away. While loading up, they glance once at your empty house.|回復しなかった隣人の家族が引っ越していく。荷物を積みながら、空き家になったあなたの家を一度見る。|没能康复的邻居一家要搬走了。装车时，他们朝你空荡的家望了一眼。
+a258b2|In a way, both households were leaving this alley.|どちらも、この路地を去ることになった。|可以说，两户人家都离开了这条巷子。
+a259t|The Mailbox Left Behind|残された郵便受け|留下的信箱
+a259b1|A letter meant for the house next door was mistakenly put in your mailbox. No one takes it out.|あなたの郵便受けに、隣の家宛ての手紙が間違って入っていた。誰も取り出さない。|你的信箱里误投了一封寄给邻居的信。没有人取走。
+a260t|Snow in the Alley|路地の雪|巷子里的雪
+a260b1|Snow like that winter's piled up in the alley. No one sweeps in front of the two houses.|あの冬と同じ雪が路地に積もった。二軒の前だけ、誰も雪かきをしない。|和那个冬天一样的雪积在了巷子里。只有那两户人家门前，没有人扫雪。
+a260b2|That it snowed the winter you first met—there's no one left who remembers.|初めて出会ったあの冬にも雪が降っていたことを、覚えている人はもういない。|初次相遇的那个冬天也下着雪——如今已没有人记得了。
+a261t|The Erased Names|消えた名前たち|被抹去的名字
+a261b1|Every time they open the newspaper, they notice another familiar name gone. All of them names that once crossed paths with you.|その人は新聞を開くたびに、知っている名前がひとつずつ消えていくのに気づく。皆、あなたと関わったことのある名前だ。|那个人每次翻开报纸，都会发现一个熟悉的名字消失了。全都是曾与你有过纠葛的名字。
+a261b2|They started to ask you, then stopped. Because you were smiling so quietly.|あなたに尋ねようとして、やめた。あなたがあまりに静かに笑っていたから。|本想问你，却又作罢了。因为你笑得太过安静。
+a262t|Someone Safe|無事な人|平安的人
+a262b1|They are safe. They don't know their name was on the list, or that you crossed it off.|その人は無事だ。名簿に自分の名があったことも、あなたがその名を消したことも知らない。|那个人平安无事。既不知道名单上有自己的名字，也不知道是你划掉了它。
+a262b2|They only sometimes feel you look at them for too long.|ただときどき、あなたが自分を長く見すぎると感じるだけだ。|只是有时会觉得，你看自己的时间太长了。
+a263t|One with Nothing Left to Repay|報いるもののない人|无可讨还的人
+a263b1|You no longer get angry at anyone. There's no one left to be angry at.|あなたはもう誰にも怒らない。怒る相手が残っていない。|你如今不再对任何人生气。已经没有可以生气的对象了。
+a263b2|They can't tell whether that's peace or something else.|その人には、それが平穏なのか、別の何かなのかわからない。|那个人分辨不出，这究竟是平静，还是别的什么。
+a264t|Where a Hand Reached Out|手を伸ばした場所|伸出手的地方
+a264b1|In one corner of your yard is a spot where no grass grows. When they ask, you say only that someone fell there.|あなたの家の庭の片隅に、草の生えない場所がある。その人が尋ねると、あなたはそこで誰かが倒れたとだけ言う。|你家院子的一角，有块寸草不生的地方。那个人问起时，你只说曾有人在那里倒下。
+a264b2|They couldn't bring themselves to ask who.|誰なのかは、尋ねられなかった。|是谁，对方没能问出口。
+a265t|An Old Quarrel|古いいさかい|旧日争执
+a265b1|The person you quarreled with long ago came to apologize. You said it was all right.|昔あなたといさかいをしたあの人が、謝りに来た。あなたは構わないと言った。|很久以前和你吵过架的那个人来道歉了。你说没关系。
+a265b2|Later, they confessed that those words had frightened them somehow.|その人は後になって、その言葉が妙に怖かったと打ち明けた。|后来那个人坦言，那句话不知为何让人害怕。
+a266t|The End of the List|名簿の終わり|名单的尽头
+a266b1|Their name was on the list too. After they collapsed, they never got up again.|名簿にはその人の名前もあった。その人は倒れたきり、起き上がれなかった。|名单上也有那个人的名字。那个人倒下之后，再也没能起来。
+a266b2|The one who watches over them doesn't know why you never once came to visit.|そばにいる人は、あなたが一度も見舞いに来なかった理由を知らない。|守在身边的人，不知道你为何一次也没来探望过。
+a267t|A Quiet Funeral|静かな葬儀|安静的葬礼
+a267b1|You came to the funeral. Without a word you lit incense, and without a word you left.|葬儀場にあなたが来た。何も言わずに香を焚き、何も言わずに帰った。|你来到了葬礼会场。一言不发地上香，一言不发地离开。
+a267b2|Their family knows only that you once quarreled with them.|その人の家族は、あなたがその人といさかいをしたことがあるとだけ知っている。|那个人的家人只知道你曾和那个人吵过架。
+a268t|What Was Repaid|報われたもの|讨还的东西
+a268b1|Their family hears a strange rumor. That everyone who'd been entangled with that person collapsed that winter.|その人の家族は妙な噂を耳にする。その人と関わった人々が、あの冬みな崩れていったと。|那个人的家人听到了奇怪的传言。说和那个人有过纠葛的人，那个冬天全都垮了。
+a268b2|No one says who did it. There's no one who could.|誰の仕業なのかは、誰も言わない。言える人がいない。|没有人说是谁干的。也没有人能说。
+a269t|The Empty Hospital Room|空いた病室|空了的病房
+a269b1|The hospital room is empty. Someone close to you remembers you spent that whole day staring out the window.|病室が空いた。あなたがその日一日中窓の外ばかり見ていたと、身近な誰かが覚えている。|病房空了。你身边的人记得，那一整天你都只是望着窗外。
+a269b2|Rubbing the scar on the back of your hand.|手の甲の傷痕をこすりながら。|一边揉着手背上的伤疤。
+a270t|After Everything Was Erased|すべて消えたあと|一切抹去之后
+a270b1|No names remain on the list. Someone close to you feels that lately, whenever you say their name, you pause just once.|名簿に残った名前はない。あなたの身近な誰かは、近ごろあなたが自分の名を呼ぶ時、一度だけ間を置くと感じている。|名单上已经没有剩下的名字了。你身边的人感觉到，最近你叫自己的名字时，总会停顿一下。
+a271t|A Table Without Quarrels|諍いのない食卓|没有争吵的餐桌
+a271b1|No one quarrels at their dinner table anymore. No one lies.|その人の家の食卓では、もう誰も言い争わない。誰も嘘をつかない。|那个人家的餐桌上，如今再也没有人争吵。没有人说谎。
+a271b2|Sometimes they miss the evenings of arguing. They don't say so, because it feels like they shouldn't.|その人はときどき、言い争っていた夕べが恋しい。そう言ってはいけない気がして、言わない。|那个人有时会怀念那些争吵的夜晚。却觉得不该这么说，所以没有说出口。
+a272t|A Greeting at the Same Hour|同じ時刻の挨拶|同一时刻的问候
+a272b1|At nine in the morning, everyone on the street gives the same greeting. So do they.|朝九時、街の皆が同じ挨拶をする。その人もする。|早上九点，街上所有人都说着同样的问候。那个人也是。
+a272b2|Only you don't. They've decided that's just like you.|あなただけがその挨拶をしない。その人は、それがあなたらしいと思うことにした。|只有你不说。那个人决定把这当作你的个性。
+a273t|The Lie Left Unspoken|言えない偽り|没能说出的谎言
+a273b1|They live holding a single small lie inside. Afraid they'll freeze if they let it out, they'll carry it all their life.|その人は小さな嘘をひとつ抱えて生きている。口にすれば固まってしまうかもしれないと、一生抱えて生きる。|那个人怀揣着一个小小的谎言活着。生怕说出口就会僵住，于是一辈子都藏在心里。
+a273b2|You don't know that lie was for your sake.|その嘘があなたのためのものだったことを、あなたは知らない。|你并不知道，那个谎言是为了你。
+a274t|A City Without Trials|裁判のない街|没有审判的城市
+a274b1|There are no trials in this city anymore. Nothing happens that would need one.|この街には、もう裁判がない。そんなことが起こらない。|这座城市里已经没有审判了。根本不会发生需要审判的事。
+a274b2|They were taught that this is a good thing. When they said so in front of you, you nodded. Very slowly.|その人は、それが良いことだと教わった。あなたの前でそう言うと、あなたは頷いた。ずいぶん遅れて。|那个人被教导说这是好事。在你面前这么说时，你点了点头。慢了很久。
+a275t|The Place of Scattering|散った場所|消散之地
+a275b1|Once every year, you go somewhere and stand for a long time. They followed you once.|あなたは毎年一日、ある場所へ行って長く立ち尽くす。その人は一度ついていったことがある。|你每年都有一天会去某个地方，在那里久久伫立。那个人曾跟去过一次。
+a275b2|There was nothing there. You said something to that empty place. For the first time, your face was not a just one.|何もない場所だった。あなたはそこに向かって何かを言った。初めて、正義の顔ではなかった。|那里什么也没有。你对着那里说了些什么。那是第一次，你的脸上没有正义的神情。
+a276t|The Frozen One|固まった人|僵住的人
+a276b1|They remain frozen over a single small lie. The one at their side doesn't know what that lie was.|その人は小さな嘘ひとつで固まったままだ。そばにいる人は、その嘘が何だったのか知らない。|那个人因为一个小小的谎言而僵住了，至今如此。守在身边的人不知道那是什么谎言。
+a276b2|You know. That lie was meant to protect you.|あなたは知っている。その嘘は、あなたをかばおうとしたものだった。|你知道。那个谎言是为了袒护你。
+a277t|The One at Their Side|そばを守る人|守在身边的人
+a277b1|The one watching over the frozen person asks you why the world has become like this.|固まったその人のそばを守る人が、あなたに尋ねる。この世界はなぜこうなったのかと。|守在那个僵住之人身边的人问你，这个世界为什么会变成这样。
+a277b2|You didn't answer. Any answer felt like it would be a lie.|あなたは答えなかった。答えれば嘘になりそうだった。|你没有回答。觉得一旦回答，就会成为谎言。
+a278t|The Same Greeting|同じ挨拶|同样的问候
+a278b1|Even before the frozen one, at nine every morning, everyone gives the same greeting.|固まったその人の前でも、朝九時になると皆が同じ挨拶をする。|即使在那个僵住的人面前，每天早上九点，大家也说着同样的问候。
+a278b2|Only they can't answer.|その人だけが答えられない。|只有那个人无法回应。
+a279t|The Guest Who Never Comes|訪ねてこない客|不来的客人
+a279b1|You never once went to see them. The one at their side thinks you're simply busy.|あなたは一度もその人を訪ねなかった。そばにいる人は、あなたが忙しいのだと思っている。|你一次也没有去看过那个人。守在身边的人以为你只是太忙。
+a279b2|You aren't busy. In this world, no one is busy.|あなたは忙しくない。この世界では、誰も忙しくない。|你并不忙。在这个世界里，没有人忙。
+a280t|The Letter Left Behind|残された手紙|留下的信
+a280b1|In a drawer is a letter they were writing before they froze. It was meant for you. The last line was never finished.|その人が固まる前に書いていた手紙が、引き出しにある。あなたに送るつもりだったものだ。最後の行は終わっていない。|抽屉里有一封那个人僵住之前在写的信。是打算寄给你的。最后一行没有写完。
+a281t|The One Who Survived|生き残った人|活下来的人
+a281b1|The one who was ill recovered. They became strong enough to survive in this world.|病んでいたその人は回復した。この世界で生き残れるほど強くなった。|那个病人康复了。变得足够强大，能在这个世界里活下去。
+a281b2|Walking through the city after all the hospital lights had gone out, they stopped for a long time on a street with no old people and no children.|病院の灯りがすべて消えたあとの街を歩いていて、老人も子どももいない通りで、長く立ち止まった。|那个人走在医院灯火全部熄灭后的城市里，在一条没有老人也没有孩子的街上，停了很久。
+a282t|The Playground|遊び場|游乐场
+a282b1|No one is at the playground. They watch a single swing sway in the wind.|遊び場には誰もいない。その人はブランコがひとつ風に揺れているのを見る。|游乐场里空无一人。那个人看着一架秋千在风中摇晃。
+a282b2|They asked you if there used to be children in this neighborhood. You said you couldn't remember.|この町に子どもがいたのかと、あなたに尋ねた。あなたは覚えていないと言った。|那个人问你，这一带以前有没有孩子。你说记不起来了。
+a283t|The Day of Growing Weak|弱っていく日|日渐虚弱
+a283b1|They are growing old. They know that someday it will be their turn to be erased from this world.|その人が老いていく。いつか自分もこの世界から消される番が来ると知っている。|那个人渐渐老去。知道总有一天，自己也会轮到被这个世界抹去。
+a283b2|You hold their hand for a long time. That hand trembled.|あなたはその人の手を長く握る。その手が震えた。|你久久地握着那个人的手。那只手在颤抖。
+a284t|The Stroller|ベビーカー|婴儿车
+a284b1|They found an old stroller in the storeroom. They asked why it had never been thrown out.|物置で古いベビーカーを見つけた。その人は、なぜこれを捨てなかったのかと尋ねた。|那个人在储藏室里找到一辆旧婴儿车。问你为什么没扔掉它。
+a284b2|You didn't know why either.|あなたにも理由はわからなかった。|你也不知道为什么。
+a285t|The Servant Who Reached Out|手を伸ばしたサーヴァント|伸出手的从者
+a285b1|They sometimes see you reach out into empty air. As if trying to grasp something that can't be caught.|その人は、あなたがときどき宙に手を伸ばすのを見る。つかめない何かをつかもうとするように。|那个人有时会看到你朝着虚空伸出手。像是想抓住什么抓不住的东西。
+a285b2|Then you draw your hand back. Just as someone did that winter.|そして手を引く。あの冬、誰かがそうしたように。|然后又收回手。就像那个冬天某个人做过的那样。
+a286t|A Breath Grown Faint|細くなった息|微弱的呼吸
+a286b1|The breathing of the one who was ill stopped that winter. The one at their side remembers that on the last day, you came as far as the hospital room door and turned back.|病んでいたその人の息は、あの冬に止まった。そばにいた人は、最後の日にあなたが病室の前まで来て引き返したのを覚えている。|那个病人的呼吸在那个冬天停止了。守在身边的人记得，最后一天你来到病房门口，却又转身离去。
+a287t|One Who Was the Weak Side|弱い側だった人|曾是弱者的人
+a287b1|They were the weak one. So they couldn't remain in this world.|その人は弱い側だった。だから、この世界に残れなかった。|那个人是弱者。所以没能留在这个世界。
+a287b2|The one at their side tries not to think about whose fault that was.|そばにいた人は、それが誰のせいなのか考えないようにしている。|守在身边的人尽量不去想，那是谁的过错。
+a288t|The Empty Bed|空いたベッド|空床
+a288b1|The day the hospital closed, the last bed was carried out. It was the bed they had used.|病院が閉まった日、最後のベッドがひとつ運び出された。その人が使っていたベッドだった。|医院关门那天，最后一张病床被抬了出去。那是那个人用过的床。
+a288b2|You were watching that scene from far away.|あなたはその光景を遠くから見ていた。|你远远地看着那一幕。
+a289t|The Leftover Medicine|残った薬|剩下的药
+a289b1|Their packets of medicine are still in the drawer. The one at their side can't throw them out.|その人の引き出しに、薬の袋がそのまま残っている。そばにいた人は捨てられない。|那个人的抽屉里，药袋还原封不动地放着。守在身边的人舍不得扔。
+a289b2|Because in this world, no one needs medicine.|この世界では、薬の要る人はいないのだから。|因为在这个世界里，没有人需要药了。
+a290t|A Still Heart|静かな心|平静的心
+a290b1|These days, seeing someone fall no longer makes your heart go still. Because no one falls anymore.|あなたはもう、倒れた人を見ても心が静かにならない。倒れる人がいないのだから。|如今你看到有人倒下，心里也不再平静了。因为已经没有人会倒下。
+a290b2|Someone close to you asks what has filled the space where that stillness used to be, but you don't say.|その静けさが消えた場所に何が入ってきたのか、身近な誰かが尋ねるが、あなたは言わない。|那份平静消失后，取而代之的是什么——身边的人问起，你却不说。
+a291t|The Open Door|開いた扉|敞开的门
+a291b1|Their door no longer closes. Even so, the things that come through do them no harm.|その人の家の扉は、もう閉まらない。それでも入ってくるものたちは、その人を傷つけない。|那个人家的门如今再也关不上了。即便如此，进来的那些东西也不会伤害那个人。
+a291b2|They don't know that you arranged it that way.|あなたがそう決めておいたことを、その人は知らない。|那个人并不知道，是你事先这样安排好的。
+a292t|The Mirror|鏡|镜子
+a292b1|They have a reflection in the mirror. Many people on the street don't.|その人は鏡に映る。街の多くの人は映らない。|那个人照得进镜子。街上的许多人却照不进。
+a292b2|Lately you appear a little faint, too. They tried wiping the mirror.|あなたも近ごろは少しぼやけて映る。その人は鏡を拭いてみた。|最近你在镜中的身影也有些模糊了。那个人试着擦了擦镜子。
+a293t|A Night Visitor|夜の客|夜里的访客
+a293b1|Every night, someone comes from beyond the door and talks with you. They know that voice does not belong to a person.|夜ごと、扉の向こうから誰かが訪ねてきて、あなたと話をする。その人は、その声が人のものではないと知っている。|每到夜里，都有谁从门的那一边来找你说话。那个人知道，那不是人的声音。
+a293b2|Still, it had been a long time since they'd heard you laugh.|それでも、あなたの笑い声は久しぶりだった。|即便如此，已经很久没听到你的笑声了。
+a294t|A Whole Shadow|欠けない影|完整的影子
+a294b1|Their shadow is whole. It's what you protected that winter.|その人の影は欠けていない。あなたがあの冬に守り抜いたものだ。|那个人的影子是完整的。那是你在那个冬天守护下来的。
+a294b2|Every evening at dusk, they watch their shadow stretch toward you.|その人は夕暮れのたび、自分の影があなたのほうへ伸びていくのを見る。|每到黄昏，那个人都会看着自己的影子朝你的方向延伸。
+a295t|The One Closed Door|閉じたひとつの扉|唯一关上的门
+a295b1|There is only one closed door in this city. It's the door in front of the place where your Servant scattered.|この街で、たったひとつ閉じた扉がある。サーヴァントが散った場所の前の扉だ。|这座城市里只有一扇门是关着的。就是从者消散之地前的那扇门。
+a295b2|You closed it yourself. They started to open it, then drew their hand back.|あなたが自ら閉めた。その人はその扉を開けようとして、手を引いた。|是你亲手关上的。那个人想打开，又收回了手。
+a296t|A Shadow Half Remaining|半分残った影|只剩一半的影子
+a296b1|Their shadow remains half-erased. The one at their side knows only that they avoid the sun.|その人の影は半分消えたままだ。そばにいる人は、その人が日差しを避けて歩くことだけを知っている。|那个人的影子依旧只剩一半。守在身边的人只知道，那个人总是避开阳光行走。
+a296b2|You know where the other half of that shadow is.|あなたは、その影の残り半分がどこにあるのか知っている。|你知道那影子的另一半在哪里。

@@ -1,0 +1,170 @@
+k119t|Moving Away|引っ越し|搬家
+k119b|Your neighbor is moving away. You watch them load their things. This person will remember you as an unremarkable neighbor.|隣人が引っ越していく。荷物を積む様子を見る。この人はあなたを、取るに足らない隣人として覚えているだろう。|邻居要搬走了。你看着对方装车。这个人会把你记成一个平平无奇的邻居吧。
+k119c1|Help with the boxes|荷物を手伝う|帮忙搬东西
+k119c2|Only watch from the window|窓から見ているだけにする|只在窗边看着
+k119c3|Say goodbye|別れの挨拶をする|道别
+k119r3|Your neighbor waved. You would never meet again.|隣人が手を振った。再び会うことはなかった。|邻居挥了挥手。你们再也没有见过面。
+k120t|A Late Obituary|遅い訃報|迟来的讣告
+k120b|Years later, you heard of that neighbor's death. An ordinary end. An end they had because you protected them that winter.|何年か後、あの隣人の訃報を聞いた。ありふれた最期だった。あの冬にあなたが守ったからこそ得られた最期だった。|几年后，你听说了那位邻居的死讯。那是平凡的结局。是那年冬天你守护了对方，才换来的结局。
+k120c1|Go to the funeral|葬儀に行く|去参加葬礼
+k120r1|No one recognized you.|誰もあなたに気づかなかった。|没有人认出你。
+k120c2|Just send flowers|花だけ送る|只送花
+k120c3|Don't go|行かない|不去
+k121t|News of an Old Enemy|昔の仇の便り|旧敌的消息
+k121b|You heard that the person who once trampled you is doing well. That winter, theirs was the name at the very top of the list.|あなたを踏みにじった人が元気にしていると聞いた。あの冬、名簿のいちばん上にあった名前だ。|你听说那个曾经践踏过你的人过得很好。那年冬天，那个名字就在名单的最上面。
+k121c1|Just let it pass|聞き流す|当作耳边风
+k121c2|Go and see them|会いに行ってみる|去看看
+k121r2|They didn't recognize you.|その人はあなたに気づかなかった。|那个人没有认出你。
+k121c3|Write the list again|名簿をまた書く|重写名单
+k121r3|Your hand moved on its own.|手が勝手に動いた。|手不由自主地动了起来。
+k122t|The Apology Never Received|もらえなかった謝罪|没有得到的道歉
+k122b|Something you never got an apology for came suddenly to mind, and you couldn't sleep all night.|謝ってもらえなかったことをふと思い出し、一晩中眠れなかった。|你忽然想起一件对方从未道歉的事，整夜都没睡好。
+k122c1|Contact that person|その人に連絡する|联系那个人
+k122r1|No apology came.|謝罪は来なかった。|道歉没有来。
+k122c2|Write it in your diary and close it|日記に書いて閉じる|写进日记，然后合上
+k122c3|Tell your Servant|サーヴァントに話す|告诉从者
+k122r3|Your Servant listened quietly.|サーヴァントが静かに聞いた。|从者静静地听着。
+k123t|The Obituaries|訃報欄|讣告栏
+k123b|You've gotten into the habit of opening the obituary column. You look for names you know. There's a name you want to find.|新聞の訃報欄を開く癖がついた。知っている名前を探す。見つけたい名前がある。|你养成了翻看报纸讣告栏的习惯。寻找认识的名字。有一个你想找到的名字。
+k123c1|Turn past the obituaries|訃報欄を飛ばす|翻过讣告栏
+k123c2|Read to the end|最後まで読む|读到最后
+k123r2|That name wasn't there. You were disappointed.|その名前はなかった。残念だった。|那个名字不在上面。你觉得有些遗憾。
+k123c3|Cancel the paper|新聞をやめる|退订报纸
+k124t|A New Insult|新たな侮辱|新的侮辱
+k124b|Someone belittled you in public. In that moment, it felt as if the cup from that winter were back in your grasp.|誰かがあなたを人前でこき下ろした。その瞬間、あの冬の杯がまた手の中にあるような気がした。|有人当众贬低你。那一瞬间，你仿佛又握住了那个冬天的杯子。
+k124c1|Endure it|耐える|忍下来
+k124c2|Repay them in kind|同じやり方で返す|以牙还牙
+k124c3|Leave|その場を去る|离开
+k125t|The Remaining List|残った名簿|剩下的名单
+k125b|That winter's list turned up deep in a drawer. You thought you'd burned it.|引き出しの奥から、あの冬の名簿が出てきた。燃やしたと思っていたのに。|抽屉深处翻出了那个冬天的名单。你还以为早就烧掉了。
+k125c1|Burn it now, at last|今になって燃やす|现在才烧掉
+k125r1|The ashes blew away.|灰が舞った。|灰烬飘散了。
+k125c2|Read the names one by one|名前をひとつずつ読む|逐一读那些名字
+k125r2|Most of them were already gone from this world.|ほとんどがもうこの世にいなかった。|大多数人都已不在人世。
+k125c3|Put it back|またしまっておく|放回去
+k126t|A Small Lie|小さな嘘|小小的谎言
+k126b|A shop clerk told a trivial lie. Had it been that winter, they would have frozen on the spot.|店員がささいな嘘をついた。あの冬なら、その人はその場で固まっていただろう。|店员撒了一个无关紧要的谎。若是那个冬天，那个人会当场僵住吧。
+k126c1|Let it go|見逃す|算了
+k126c2|Call them out|問い詰める|追究
+k126c3|Notice yourself thinking that|そう考えた自分を見る|审视有这种念头的自己
+k127t|Trial News|裁判のニュース|审判新闻
+k127b|The news reports that a grave crime ended with a light sentence. The back of your hand stings.|重い罪が軽い罰で終わったというニュースが流れる。手の甲がちりちりと痛む。|新闻报道一桩重罪以轻判收场。你的手背隐隐刺痛。
+k127c1|Change the channel|チャンネルを変える|换台
+k127c2|Watch to the end|最後まで見る|看到最后
+k127c3|Decide to do something|何かすることにする|决定做些什么
+k127r3|It cost you time and money.|時間と金がかかった。|花费了时间和金钱。
+k128t|The Same Words|同じ言葉|同样的话语
+k128b|In the square, people shout the same slogan. It resembles that winter's omen. But this time, the sound of arguing is mixed in.|広場で人々が同じスローガンを叫んでいる。あの冬の兆しに似ている。それでも今度は、言い争う声が混じっている。|广场上，人们高喊着同样的口号。这与那个冬天的征兆很像。但这一次，其中夹杂着彼此争吵的声音。
+k128c1|Feel relieved|安堵する|松了一口气
+k128c2|Join in the chant|スローガンを一緒に叫ぶ|跟着喊口号
+k128c3|Hurry away|急いで立ち去る|匆忙离开
+k129t|A Child's Lie|子どもの嘘|孩子的谎话
+k129b|A child tells a lie that's sure to be found out. The adults laugh. You can't.|子どもがすぐばれる嘘をつく。大人たちが笑う。あなたは笑えない。|一个孩子撒了个一戳就破的谎。大人们都笑了。你却笑不出来。
+k129c1|Try laughing along|一緒に笑ってみる|试着一起笑
+k129c2|Scold the child|子どもを叱る|训斥孩子
+k129c3|Leave|その場を離れる|离开
+k130t|Your Own Lie|あなたの嘘|你的谎言
+k130b|You told a small lie too. No one froze. That meant the world was alive.|あなたも小さな嘘をついた。誰も固まらなかった。それは世界が生きているということだった。|你也撒了一个小谎。没有人僵住。这意味着世界依然鲜活。
+k130c1|Accept it|受け入れる|接受
+k130c2|Correct yourself|言い直す|改口
+k130c3|Think of that winter|あの冬を思う|想起那个冬天
+k131t|The Hospital Waiting Room|病院の待合室|医院候诊室
+k131b|The hospital waiting room is crowded. Old people and children. That winter, these lights went out one by one.|病院の待合室が混んでいる。老人と子どもたち。あの冬、この灯りがひとつずつ消えていった。|医院候诊室里挤满了人。老人和孩子们。那年冬天，这些灯一盏盏熄灭了。
+k131c1|Give up your seat|席を譲る|让座
+k131c2|Close your eyes|目を閉じる|闭上眼睛
+k131c3|Look at each of them, one by one|人々をひとりひとり見る|逐一看着每一个人
+k131r3|Your heart went still. That frightened you.|心が静かになった。それが怖かった。|心变得平静。这让你害怕。
+k132t|An Injured Animal|傷ついた獣|受伤的动物
+k132b|You saw an injured animal on the road. You looked down at it for a long time.|道で傷ついた獣を見た。長いこと見下ろしていた。|你在路边看到一只受伤的动物。久久地低头看着它。
+k132c1|Take it home and care for it|連れ帰って世話をする|带回家照顾
+k132c1@0|Leave some water by the roadside|道端に水を置いてやる|在路边放些水
+k132c2|Walk past|通り過ぎる|走过去
+k132c3|Call someone and leave it with them|誰かを呼んで任せる|叫人来接手
+k133t|Slow Steps|遅い足取り|缓慢的脚步
+k133b|The old person walking ahead is slow. The path is blocked. Irritation rises. Beneath the irritation is something else.|前を歩く老人の足取りが遅い。道がふさがる。苛立ちが込み上げる。その苛立ちの下に、別のものがある。|走在前面的老人步伐缓慢。路被堵住了。烦躁涌了上来。在那份烦躁之下，还有别的什么。
+k133c1|Match their pace|歩調を合わせる|配合对方的步伐
+k133c2|Overtake them|追い越す|超过去
+k133c3|Take another way around|回り道をする|绕道而行
+k134t|The Day You Were the Weak One|弱い側になった日|成为弱者的那一天
+k134b|You fell ill and took to bed. In that winter's world, you would have been the first to vanish.|あなたが寝込んだ。あの冬の世界なら、真っ先に消えていたのはあなただっただろう。|你病倒卧床了。若是那个冬天的世界，最先消失的就会是你。
+k134c1|Hold on to that thought|その考えを握りしめる|紧抓着这个念头
+k134c2|Try to get up quickly|早く起きようとする|努力尽快起身
+k134c3|Ask someone for help|誰かに助けを求める|向人求助
+k135t|Someone Collapses|倒れた人|倒下的人
+k135b|Someone collapsed in the street. Just like long ago, your heart goes still. Your legs move first.|道で人が倒れた。昔のように、心が静かになる。足が先に動く。|街上有人倒下了。像很久以前那样，你的心变得平静。双腿却先动了起来。
+k135c1|Run to them|駆け寄る|跑过去
+k135c2|Watch|見守る|在一旁看着
+k135c3|Call for help|人を呼ぶ|叫人来
+k136t|The Unlocked Door|鍵のかかっていない扉|没锁的门
+k136b|You woke at night to find the front door slightly open. You're sure you locked it.|夜に起きると、玄関の扉が少し開いている。確かに鍵をかけたはずだ。|夜里醒来，发现大门微微敞开。你明明锁上了。
+k136c1|Close and lock it|閉めて鍵をかける|关上并锁好
+k136c2|Stand at the door|扉の前に立つ|站在门前
+k136r2|The darkness outside felt familiar.|外の闇に見覚えがあった。|外面的黑暗似曾相识。
+k136c3|Sleep with it left open|開けたまま寝る|就这样开着睡
+k137t|The Mirror|鏡|镜子
+k137b|It seemed as if the you in the mirror moved a beat late.|鏡の中のあなたが、一拍遅れて動いた気がした。|镜子里的你好像慢了一拍才动。
+k137c1|Cover the mirror|鏡を覆う|把镜子盖起来
+k137c2|Stare into it a long time|長くのぞき込む|久久凝视
+k137c3|Call your Servant|サーヴァントを呼ぶ|叫从者
+k137c3@0|Call someone|誰かを呼ぶ|叫人
+k137r3|Your Servant smashed the mirror. Their hand bled.|サーヴァントが鏡を割った。手から血が出た。|从者打碎了镜子。手流血了。
+k137r3@0|A neighbor came and turned the mirror around for you.|隣人が来て、鏡を裏返してくれた。|邻居过来帮你把镜子翻了过去。
+k138t|An Old Book|古い本|旧书
+k138b|At a secondhand bookshop you saw a book about what lies beyond the door. You know what's in it without opening it.|古書店で、扉の向こうについての本を見た。開かなくても中身がわかる。|你在旧书店看到一本关于门之彼方的书。不用翻开也知道里面写着什么。
+k138b@0|At a secondhand bookshop you saw a book about what lies beyond the door. The cover bears the pattern you saw that winter.|古書店で、扉の向こうについての本を見た。表紙に、あの冬に見た紋様が描かれている。|你在旧书店看到一本关于门之彼方的书。封面上画着那个冬天你见过的纹样。
+k138c1|Buy it|買う|买下
+k138c2|Put it down|置く|放下
+k138c3|Ask the owner to burn it|店主に燃やしてくれと頼む|请店主烧掉它
+k138r3|The owner gave you a strange look.|店主が怪訝な顔をした。|店主用奇怪的眼神看着你。
+k139t|Sounds in the Night|夜の音|夜里的声音
+k139b|Every night you hear a sound like something calling from beyond the door. Only you hear it.|夜ごと、扉の向こうから呼ぶような音が聞こえる。あなたにだけ。|每到夜里，都能听到门那边仿佛在呼唤的声音。只有你听得见。
+k139c1|Cover your ears|耳をふさぐ|捂住耳朵
+k139c2|Answer|応える|回应
+k139r2|The sound came closer.|音が近づいた。|声音靠近了。
+k139c3|Turn on the light and hold out until morning|灯りをつけて朝まで耐える|开灯撑到天亮
+k140t|How to Open It|開け方|开启之法
+k140t@0|Where the Door Was|扉のあった場所|门所在之处
+k140b|In the final year, you still remember how to open that door. Your hands remember.|最後の年、あなたは今もあの扉の開け方を覚えている。手が覚えている。|最后一年，你依然记得如何打开那扇门。你的手记得。
+k140b@0|In the final year, you still remember where you saw that door that winter. Your feet remember.|最後の年、あなたは今もあの冬に見た扉の場所を覚えている。足が覚えている。|最后一年，你依然记得那个冬天看到那扇门的位置。你的脚记得。
+k140c1|Try to forget|忘れようとする|试着忘记
+k140c2|Write it down for others|書き残す|写下来留给后人
+k140r2|Someone might find this one day.|誰かがこれを見つけるかもしれない。|也许有一天，会有人找到它。
+k140c3|Burn what you wrote|書いたものを燃やす|把写下的东西烧掉
+k141t|The Leaning Ley Lines|傾く霊脈|倾斜的灵脉
+k141b|The city's ley lines still remember that winter's direction. It feels as though touching them would open the way again.|街の霊脈は、今もあの冬の方向を覚えている。手を触れれば、また道が開きそうだ。|城市的灵脉依然记得那个冬天的方向。仿佛只要触碰，道路就会再次敞开。
+k141c1|Take your hand away|手を離す|把手移开
+k141c2|Try following the path|道に沿って歩いてみる|试着沿那条路走走
+k141c3|Scatter the ley lines|霊脈を散らす|打散灵脉
+k142t|A Sound That Interrupts the Calculation|計算を邪魔する音|打断计算的声音
+k142b|Outside the window, children are laughing. Just like long ago, your thoughts break off. This time you aren't angry. That's what's strange.|窓の外で子どもたちが笑っている。昔のように思考が途切れる。今度は腹が立たない。それが不思議だ。|窗外孩子们在笑。像很久以前一样，思绪被打断了。这次你却没有生气。这才是奇怪的地方。
+k142c1|Open the window|窓を開ける|打开窗户
+k142c2|Close the window|窓を閉める|关上窗户
+k142c3|Put your work away|していた仕事を閉じる|合上手头的工作
+k143t|The Notebook Put Away|閉じておいたノート|合上的笔记本
+k143b|You opened the notebook you used before that winter. On the last page is a calculation one step from completion.|あの冬より前に使っていたノートを、また開いた。最後のページに、あと一歩の計算がある。|你重新翻开那个冬天之前用过的笔记本。最后一页上，有一道只差一步的计算。
+k143b@0|You opened the notebook you used before that winter. On the last page is a question one step from an answer.|あの冬より前に使っていたノートを、また開いた。最後のページに、あと一歩の問いがある。|你重新翻开那个冬天之前用过的笔记本。最后一页上，有一个只差一步的问题。
+k143c1|Close it|閉じる|合上
+k143c2|Continue writing|続きを書く|接着写下去
+k143c3|Tear up the notebook|ノートを破る|撕掉笔记本
+k144t|Sleep That Won't Break|覚めない眠り|醒不来的睡眠
+k144b|Seeing someone without circuits sleeping deeply, your breath caught. It was just a nap.|回路のない誰かが深く眠っている姿を見て、息が止まった。ただの昼寝だった。|看到一个没有魔术回路的人睡得很沉，你屏住了呼吸。那只是午睡而已。
+k144b@0|Seeing someone close to you sleeping deeply, your breath caught. It was just a nap.|身近な誰かが深く眠っている姿を見て、息が止まった。ただの昼寝だった。|看到身边的人睡得很沉，你屏住了呼吸。那只是午睡而已。
+k144c1|Wake them|起こす|叫醒对方
+k144r1|They got annoyed. You were grateful for that annoyance.|相手が不機嫌になった。その不機嫌がありがたかった。|对方不耐烦了。你却对那份不耐烦心怀感激。
+k144c2|Watch over them|そばで見守る|在旁边看着
+k144c3|Quietly leave|静かに出ていく|悄悄离开
+k145t|One Step|一歩|一步
+k145b|The final year. The one step you left that winter is still there. Now you have no legs left to take it.|最後の年。あの冬に残した一歩が、まだそこにある。もう踏み出す足がない。|最后一年。那个冬天留下的一步依然在那里。如今已没有能迈出去的腿了。
+k145c1|Feel relieved|安堵する|松了一口气
+k145c2|Feel regret|惜しむ|感到惋惜
+k145c3|Tell someone where it is|誰かにその場所を教える|告诉某人那个地方
+k146t|A Broken Shard|砕けた欠片|碎片
+k146b|A shard of the cup you broke together that night was still in your pocket. Your Servant looks at it.|あの夜一緒に砕いた杯の欠片がひとつ、ポケットに残っていた。サーヴァントがその欠片を見る。|那一夜一起打碎的杯子，还有一块碎片留在你的口袋里。从者看着那块碎片。
+k146c1|Give it to your Servant|サーヴァントに渡す|交给从者
+k146r1|Your Servant took it and held it for a long time.|サーヴァントは受け取って、長く握りしめていた。|从者接过来，久久地握在手里。
+k146c2|Throw it away|捨てる|扔掉
+k146r2|Your Servant looked at that spot for a long time.|サーヴァントはその場所を長く見つめていた。|从者久久地看着那个地方。
+k146c3|Keep it|大事にしまう|珍藏起来
+k147t|Are You Still There|まだ残っていますか|你还在吗
+k147b|Your Servant asks whether the you of those four days is still there.|サーヴァントが尋ねる。あの四日間のあなたが、まだ残っているかと。|从者问你，那四天里的你是否还在。
+k147b@0|Your Servant points to the Command Seal mark on the back of your hand. Their eyes ask whether the you of those four days is still there.|サーヴァントが手の甲の令呪の痕を指さす。あの四日間のあなたが、まだ残っているかと問う目だ。|从者指着你手背上的令咒痕迹。那眼神在问，那四天里的你是否还在。

@@ -1,0 +1,160 @@
+a297t|One Without a Reflection|映らない人|照不出的人
+a297b1|They no longer appear in mirrors. They barely show up in photos, either.|その人は、もう鏡に映らない。写真にもあまり写らない。|那个人已经照不进镜子了。照片里也几乎拍不出来。
+a297b2|The one at their side worries that if they vanished one day, no one could prove they had ever existed.|そばにいる人は、その人がある日消えても誰も証明できないだろうと心配している。|守在身边的人担心，哪天那个人消失了，也没有人能证明其存在过。
+a298t|A Voice Beyond the Door|扉の向こうの声|门那边的声音
+a298b1|The one at their side says that every night they hear that person's voice from beyond the door. Even though that person is asleep inside the room.|そばにいる人は、夜ごと扉の向こうからその人の声が聞こえると言う。その人は部屋の中で眠っているのに。|守在身边的人说，每晚都能听到门那边传来那个人的声音。可那个人明明在房间里睡着。
+a298b2|You recognized that voice.|あなたはその声を聞き分けた。|你听出了那个声音。
+a299t|One Who Never Visits|訪ねない人|不去探望的人
+a299b1|You don't go to see them. It would only mean watching the other side of the door take them away.|あなたはその人のもとへ行かない。扉の向こうがその人を連れ去るのを見届けることになるから。|你不去看那个人。因为那只会是眼睁睁看着门的那一边把对方带走。
+a300t|The Day They Vanished|消えた日|消失的那一天
+a300b1|They vanished. The one at their side remembers the last face they turned back with, in front of the open door.|その人が消えた。そばにいた人は、開いた扉の前で振り返ったその人の最後の顔を覚えている。|那个人消失了。守在身边的人记得，那个人在敞开的门前回头时的最后一张脸。
+a300b2|You were standing before that door that day.|あなたはその日、その扉の前に立っていた。|那天，你就站在那扇门前。
+a301t|Slow Clocks|遅れる時計|变慢的钟
+a301b1|All the city's clocks run a little slow. Only their clock keeps the right time. You made it that way.|街の時計はどれも少しずつ遅れている。その人の時計だけが正しい時刻だ。あなたがそうしておいた。|城里所有的钟都慢了一点。只有那个人的钟是准的。是你这样安排的。
+a301b2|They feel as if they alone are living ahead of everyone.|その人は、自分だけが一人先を生きているような気がする。|那个人觉得，仿佛只有自己独自活在前面。
+a302t|One Who Is Far Away|遠くにいる人|身在远方的人
+a302b1|Even at home, you are far away. When they call you, you turn around only after a long while.|あなたは家にいても遠くにいる。その人が呼んでも、ずいぶん経ってから振り返る。|你即使在家，也像在远方。那个人叫你，你要过很久才回头。
+a302b2|When they ask where you've been, you only say it was a long way.|どこへ行っていたのかと聞くと、あなたは長かったとだけ言う。|问你去了哪里，你只说路很长。
+a303t|One Who Stays Awake|目覚めている人|醒着的人
+a303b1|They are awake. One of the few in this city without circuits who is.|その人は目覚めている。この街で回路のない人のうち、数少ない一人として。|那个人醒着。是这座城市里没有魔术回路的人当中，为数不多的一个。
+a303b2|Most of the neighbors have fallen into deep sleep and do not wake. Every morning, they walk past their houses.|近所の人々はほとんどが深く眠り込んで起きない。その人は毎朝、その家々の前を通る。|大多数邻居都陷入沉睡，再也没有醒来。那个人每天早上都从那些人家门前经过。
+a304t|The Calculation Notebook|計算ノート|计算笔记
+a304t@0|The Notebook Left Open|閉じないノート|不合上的笔记本
+a304b1|The notebook on your desk is always open. The last page is blank. Because it's all finished.|あなたの机の上のノートは、いつも開かれている。最後のページは空白だ。すべて終わったからだ。|你桌上的笔记本总是摊开着。最后一页是空白的。因为一切都已结束。
+a304b2|That blank page frightens them.|その人は、その空白のページが怖い。|那一页空白让那个人害怕。
+a305t|A Child's Laughter|子どもの笑い声|孩子的笑声
+a305b1|Outside the window, a child laughs. One of the few children in this city still awake.|窓の外で子どもが笑う。この街で数少ない、目覚めている子どもだ。|窗外有孩子在笑。是这座城市里为数不多还醒着的孩子。
+a305b2|You stop what you're doing and listen for a long time. They've never seen you like that before.|あなたはしていた手を止めて、長く聞き入る。その人は、そんなあなたを初めて見る。|你停下手头的事，久久地倾听。那个人是第一次见到这样的你。
+a306t|Sleep That Won't Break|覚めない眠り|醒不来的睡眠
+a306b1|Since that winter, they have not woken from sleep. The one at their side wonders if they dream.|その人はあの冬以来、眠りから覚めない。そばにいる人は、その人が夢を見ているのか気になっている。|那个冬天之后，那个人再也没有醒来。守在身边的人好奇，那个人是否在做梦。
+a306b2|Sometimes their lips move as if calling your name.|ときどき、その人の唇があなたの名を呼ぶように動く。|有时，那个人的嘴唇会动，像是在呼唤你的名字。
+a307t|Stepping Stone|踏み台|垫脚石
+a307b1|This entire city was a stepping stone. They were too.|この街すべてが踏み台だった。その人も。|这整座城市都是垫脚石。那个人也是。
+a307b2|The one at their side doesn't know those words. Only you do.|そばにいる人はその言葉を知らない。あなただけが知っている。|守在身边的人不懂这句话。只有你懂。
+a308t|Time Gone Slow|遅れた時間|变慢的时间
+a308b1|The clock in the sleeping one's room stopped at that winter. The one at their side changed the batteries, but it stopped again.|眠るその人の部屋の時計は、あの冬で止まった。そばにいる人が電池を替えたが、また止まった。|沉睡之人房间里的钟停在了那个冬天。守在身边的人换了电池，可它又停了。
+a309t|A Single Visit|一度の訪問|一次探望
+a309b1|You came once. You stood by the sleeping one's pillow for a long time, then left.|あなたが一度訪ねてきた。眠るその人の枕元に長く立って、帰っていった。|你来过一次。在沉睡之人的枕边站了很久，然后离开了。
+a309b2|The one at their side thought you were trying to wake them. You didn't know how.|そばにいる人は、あなたがその人を起こそうとしているのだと思った。あなたは起こし方を知らなかった。|守在身边的人以为你想叫醒那个人。可你并不知道该怎么做。
+a310t|The Clock Where They Scattered|散った場所の時計|消散之地的钟
+a310b1|Only where your Servant scattered does time flow properly. You only age while you sit there.|サーヴァントが散った場所でだけ、時間がまともに流れる。あなたはそこに座っている時だけ歳を取る。|只有在从者消散的地方，时间才正常流逝。你只有坐在那里时才会变老。
+a310b2|Someone close to you doesn't know why you go there so often.|身近な誰かは、あなたがなぜそこへよく行くのか知らない。|身边的人不知道你为什么总去那里。
+a311t|The Empty List|空の名簿|空白的名单
+a311b1|There are no names on the list anymore.|名簿には、もう何の名前もない。|名单上已经没有任何名字了。
+a311b2|The two of you eat breakfast with that blank sheet between you.|二人はその空の紙を挟んで朝食をとる。|两人隔着那张空白的纸吃早餐。
+a312t|The Same Road|同じ道|同一条路
+a312b1|Every day the two of you walk the roads of that winter. You never meet anyone on the way.|二人は毎日、あの冬の道を歩く。道で出会う人は、いつもいない。|两人每天都走在那个冬天的路上。路上从来遇不到任何人。
+a312b2|A world where no one tramples you was a world where no one comes walking toward you.|誰もあなたを踏みにじらない世界は、誰も歩いてこない世界だった。|没有人践踏你的世界，也是没有人朝你走来的世界。
+a313t|A Table for Two|二人だけの食卓|只属于两人的餐桌
+a313b1|Every day the two of you eat that meal. There are no customers at the shop besides you two.|二人は毎日あの料理を食べる。店には二人のほかに客がいない。|两人每天都吃那道菜。店里除了你们没有别的客人。
+a313b2|A world with nothing left to repay was far too quiet.|報いるものの残っていない世界は、あまりに静かだった。|一个再无可讨还的世界，安静得过分。
+a314t|The One Who Remains|残ったひとり|剩下的那个人
+a314b1|Your Servant asks who's left now.|サーヴァントが尋ねる。今残っているのは誰なのかと。|从者问，现在还剩下谁。
+a314b2|You looked at your Servant, and your Servant couldn't believe that answer for a long time.|あなたはサーヴァントを見た。サーヴァントは、その答えを長いこと信じられなかった。|你看着从者。从者很久都没能相信这个答案。
+a315t|The Last Name on the List|名簿の最後の名|名单上的最后一个名字
+a315b1|The last name on the list was that person.|名簿の最後の名前は、あの人だった。|名单上最后一个名字，就是那个人。
+a315b2|Neither of you ever speaks that name aloud.|二人は一度もその名を口にしない。|两人从未提起过那个名字。
+a316t|The Same Greeting|同じ挨拶|同样的问候
+a316b1|At nine in the morning, the world gives the same greeting.|朝九時、世界が同じ挨拶をする。|早上九点，整个世界都说着同样的问候。
+a316b2|Only the two of you don't. That alone is your lie.|二人だけがその挨拶をしない。それだけが二人の嘘だ。|只有你们两人不说。那是两人唯一的谎言。
+a317t|A Road Without Quarrels|諍いのない道|没有争吵的路
+a317b1|There's no sound of quarreling on that winter's road anymore.|あの冬の道には、もう言い争う声がない。|那个冬天的路上，已经没有争吵的声音了。
+a317b2|Only the sound of the two of you walking side by side is far too loud.|二人が並んで歩く音だけが、やけに大きく聞こえる。|只有两人并肩行走的声音，听起来格外响亮。
+a318t|An Honest Taste|正直な味|诚实的味道
+a318b1|The shop owner no longer fudges the flavor of the food.|店の主人は、もう料理の味をごまかさない。|店主如今不再在菜的味道上做手脚了。
+a318b2|The meal didn't taste as good as it had that winter. Neither of you said so.|その料理は、あの冬よりおいしくなかった。二人ともそうは言わなかった。|那道菜没有那个冬天好吃了。两人谁都没有说出口。
+a319t|A Secret for Two|二人の秘密|两人的秘密
+a319b1|In this world, only the two of you can lie.|この世界で嘘をつけるのは、二人だけだ。|在这个世界里，能说谎的只有你们两人。
+a319b2|So you decided to be honest only with each other. That was the hardest part.|だから二人は、互いにだけは正直でいることにした。それが何より難しかった。|所以两人决定只对彼此诚实。那是最难的。
+a320t|The Frozen One|固まった人|僵住的人
+a320b1|That person is still frozen.|その人は、まだ固まったままだ。|那个人依旧僵着。
+a320b2|The two of you never once went to see them. That was this world's justice.|二人は一度もその人に会いに行かなかった。それがこの世界の正義だった。|两人一次也没有去看过那个人。那就是这个世界的正义。
+a321t|Only the Strong|強いものだけ|只有强者
+a321b1|Only the strong remain in the city.|街には強いものだけが残った。|城里只剩下了强者。
+a321b2|Of them, the strongest two live the most quietly.|そのうち最も強い二人が、最も静かに暮らしている。|其中最强的两人，过得最为安静。
+a322t|A Road Without Slow Steps|遅い足取りのない道|没有缓慢脚步的路
+a322b1|There are no slow steps on that winter's road anymore.|あの冬の道には、もう遅い足取りがない。|那个冬天的路上，再也没有缓慢的脚步了。
+a322b2|Only your Servant sometimes slows down. As if waiting for someone.|サーヴァントだけが、ときどき歩みを緩める。誰かを待っているように。|只有从者有时会放慢脚步。像是在等什么人。
+a323t|The Empty Shop|空いた店|空了的店
+a323b1|The owner of the shop that sold that meal was an old person.|あの料理を出していた店の主人は、年老いた人だった。|卖那道菜的店主是个老人。
+a323b2|Now the two of you make it yourselves. It doesn't taste the same.|二人は今、その料理を自分たちで作る。あの味が出ない。|如今两人自己动手做那道菜。却做不出那个味道。
+a324t|The Day of Growing Weak|弱っていく日|日渐虚弱
+a324b1|Someday you'll grow weak too.|いつか、あなたも弱っていく。|总有一天，你也会变得虚弱。
+a324b2|When that day comes, your Servant will protect you in this world. The you this world will try to erase.|その日が来たら、サーヴァントはこの世界からあなたを守るだろう。この世界が消そうとするあなたを。|那一天到来时，从者会在这个世界里守护你。守护这个世界想要抹去的你。
+a325t|The Winter a Breath Stopped|息の止まった冬|呼吸停止的冬天
+a325b1|That person's breathing stopped that winter.|その人の息は、あの冬に止まった。|那个人的呼吸，在那个冬天停止了。
+a325b2|The two of you never talk about that winter. The strong don't tell stories like that.|二人はあの冬の話をしない。強いものたちは、そういう話をしないから。|两人从不谈起那个冬天。因为强者不讲那样的故事。
+a326t|Open Doors|開いた扉たち|敞开的门
+a326b1|The city's doors no longer close.|街の扉は、もう閉まらない。|城里的门再也关不上了。
+a326b2|Only the door to your room do you keep closed. Inside, neither of you asks what you're guarding.|二人の部屋の扉だけは、あなたが閉めておく。その中で、二人は何を守っているのか問わない。|只有你们房间的门，你会关着。在那里面，两人不问彼此在守护什么。
+a327t|A Road Without Shadows|影のない道|没有影子的路
+a327b1|You walk that winter's road. There are only two shadows.|あの冬の道を歩く。影は二つだけだ。|你们走在那个冬天的路上。影子只有两个。
+a327b2|The things passing around you have no shadows.|まわりを通り過ぎるものたちには、影がない。|从周围经过的那些东西，都没有影子。
+a328t|Two Portions|二人分|两人份
+a328b1|You order that meal at the shop. The owner brings out two portions.|店であの料理を頼む。主人が二人分を出してくる。|你在店里点了那道菜。店主端上了两人份。
+a328b2|The owner had no reflection in the mirror. The two of you pretend not to notice and eat.|主人は鏡に映らなかった。二人はそれを知らないふりをして食べる。|店主照不进镜子。两人装作没看见，吃着饭。
+a329t|Something from Beyond the Door|扉の向こうから来たもの|来自门那边的东西
+a329b1|Perhaps your Servant, too, is something that came from beyond the door.|サーヴァントも、もしかすると扉の向こうから来たものなのかもしれない。|也许从者也是从门那边来的东西。
+a329b2|In this world, that isn't strange in the least. That makes the two of you a little sad.|この世界では、それが少しもおかしくない。それが二人を少し悲しくさせる。|在这个世界里，这一点也不奇怪。这让两人有些悲伤。
+a330t|Half a Shadow|半分の影|一半的影子
+a330b1|That person's shadow never came back.|その人の影は、ついに戻らなかった。|那个人的影子终究没有回来。
+a330b2|Somewhere beyond the door is that missing half. The two of you don't open that door.|扉の向こうのどこかに、その半分がある。二人はその扉を開けない。|那一半就在门那边的某个地方。两人没有打开那扇门。
+a331t|Legs to Step With|踏み出す足|迈出的脚
+a331b1|Every stepping stone has been used. One step remains.|踏み台はすべて使われた。一歩が残った。|垫脚石已经全部用完。还剩下一步。
+a331b2|Before that one step, the two of you eat breakfast every morning.|その一歩の前で、二人は毎朝朝食をとる。|就在那一步之前，两人每天早上吃着早餐。
+a332t|A Road Where Time Stopped|止まった時間の道|时间停止的路
+a332b1|All the city's clocks have stopped. The sun doesn't set on that winter's road either.|街の時計はすべて止まった。あの冬の道にも日が沈まない。|城里所有的钟都停了。那个冬天的路上，太阳也不再落下。
+a332b2|You two could walk that road forever. Only the fact that it never ends wears you down.|二人はいつまでもその道を歩ける。終わりがないということだけが、二人を疲れさせる。|两人可以永远走在那条路上。只有永无尽头这件事，让两人疲惫。
+a333t|A Meal That Never Cools|冷めない料理|不会变凉的饭菜
+a333b1|That meal never cools now. Because time doesn't pass.|あの料理は、もう冷めない。時間が流れないから。|那道菜再也不会凉了。因为时间不再流逝。
+a333b2|The two of you can never finish it.|二人はその料理を、ついに食べきれない。|两人终究没能吃完那道菜。
+a334t|The Remaining Calculation|残った計算|剩下的计算
+a334b1|You never did the final calculation. Your Servant asked why.|あなたは最後の計算をしなかった。サーヴァントがなぜかと尋ねた。|你没有做最后的计算。从者问为什么。
+a334b1@0|You never took that last step. Your Servant asked why.|あなたは最後の一歩を踏み出さなかった。サーヴァントがなぜかと尋ねた。|你没有迈出最后一步。从者问为什么。
+a334b2|You didn't answer, and your Servant asked no more.|あなたは答えず、サーヴァントもそれ以上聞かなかった。|你没有回答，从者也没有再问。
+a335t|The Sleeping City|眠る街|沉睡的城市
+a335b1|That person doesn't wake. Many in the city are the same.|その人は目覚めない。街の多くの人がそうだ。|那个人醒不过来。城里的许多人都是这样。
+a335b2|Only the two who are awake tell each other not to fall asleep.|目覚めている二人だけが、互いに眠るなと言い合う。|只有醒着的两人，互相叮嘱不要睡着。
+a336t|A World Without That Name|名のない世界|没有那个名字的世界
+a336b1|In that world, there is no name for the Master who was your ally.|その世界には、同盟だったマスターの名がない。|在那个世界里，没有曾是你同盟的那位御主的名字。
+a336b2|The two of you decided to remember it. Though forgetting would have been easier.|二人はその名を覚えておくことにした。忘れたほうが楽だったろうに。|两人决定记住那个名字。尽管忘掉会更轻松。
+a337t|The Road Past That Place|あの場所を通る道|经过那个地方的路
+a337b1|That winter's road passes the place where your ally fell.|あの冬の道は、同盟が倒れた場所を通る。|那个冬天的路，经过同盟倒下的地方。
+a337b2|At that spot, your Servant always walks one step slower.|サーヴァントはその場所で、いつも一歩ぶんゆっくり歩く。|从者每次走到那里，都会再放慢一步。
+a338t|One More Place|もう一席|再多一个位置
+a338b1|Sometimes you set out one extra spoon at the table. Neither of you says for whom.|二人はときどき、食卓に箸をもう一膳置く。誰のものとは言わない。|两人有时会在餐桌上多摆一副餐具。谁都不说是给谁的。
+a338b2|In this world, no one was ever going to sit there.|この世界で、その席に座る人は初めからいなかった。|在这个世界里，那个位置从一开始就不会有人坐。
+a339t|The Wish We Could Have Made Together|共に願えたはずの願い|本可以一起许下的愿望
+a339b1|There was one line, a wish you'd agreed to make together.|共に願うと決めた願いが、一行あった。|曾有一行，是约定一起许下的愿望。
+a339b2|The two of you chose the line beneath it, and the one who would have written that line with you isn't in this world.|二人はその下の一行を選び、その一行を共に書くはずだった人は、この世界にいない。|两人选了它下面的那一行，而本该一起写下那一行的人，不在这个世界上。
+a340t|The Winning Side|勝った側|胜利的一方
+a340b1|That night, the two of you were the ones who won.|あの夜、勝ったのは二人だった。|那一夜，赢的是你们两人。
+a340b2|Sometimes your Servant looks at you with eyes that ask whether the winning side was right. You don't look away.|サーヴァントはときどき、勝った側が正しかったのかと問う目であなたを見る。あなたはその目をそらさない。|从者有时会用一种眼神看着你，像是在问胜利的一方是否正确。你没有回避那目光。
+a341t|One Who Knowingly Turned Their Back|知りながら背を預けた人|明知如此仍背过身的人
+a341b1|You knew. And still, you didn't turn around.|あなたは知っていた。それでも振り返らなかった。|你早就知道了。即便如此，你也没有回头。
+a341b2|Your Servant breaks the cup, and among the broken shards, remembers the warmth of that back for a long time.|サーヴァントは杯を砕き、砕けた欠片のあいだで、その背中のぬくもりを長く覚えている。|从者打碎了杯子，在碎片之间，久久记着那背影的温度。
+a342t|Still Who You Were|その人のままで|依然是那个人
+a342b1|You ended still as the person you were, to the very end.|あなたは最後まで、その人のままで終わった。|你直到最后，都以那个人的样子结束了。
+a342b2|That was what your Servant wanted. It went just as they wished, yet looking down at the last city, your Servant could not cry.|それを望んだのはサーヴァントだった。望みどおりになったのに、サーヴァントは最後の街を見下ろしながら泣けなかった。|那正是从者所期望的。一切如愿，从者俯瞰着最后的城市，却哭不出来。
+a343t|The Hand That Did Not Stop|止めなかった手|没有阻止的手
+a343b1|You could have stopped it with a Command Seal. You didn't.|令呪で止められた。あなたは止めなかった。|你本可以用令咒阻止。你却没有。
+a343b2|Until they vanished, your Servant thought about why hundreds of times, and never once put it into words.|サーヴァントは消えるまで、その理由を何百回も考え、一度も言葉にできなかった。|直到消失之前，从者把原因想了几百遍，却一次也没能化作言语。
+a344t|The Last Road Walked|最後に歩いた道|最后走过的路
+a344b1|After breaking the cup, your Servant walked the road from that day once more.|杯を砕いたあと、サーヴァントはあの日歩いた道をもう一度歩いた。|打碎杯子之后，从者又走了一遍那天走过的路。
+a344b1@0|After breaking the cup, your Servant ate a single bite of the meal from that day, alone.|杯を砕いたあと、サーヴァントはあの日食べた料理をひと口、一人で食べた。|打碎杯子之后，从者独自吃了一口那天吃过的菜。
+a344b2|Not three steps behind, but leaving the space beside them empty.|三歩後ろではなく、隣の場所を空けたまま。|不是落后三步，而是空着身旁的位置。
+a344b2@0|Leaving the seat across from them empty.|向かいの席を空けたまま。|空着对面的座位。
+a345t|Words of Thanks|ありがとうの言葉|感谢的话
+a345b1|What they said at dusk on the fourth day was not a lie.|四日目の夕暮れに言った言葉は、嘘ではなかった。|第四天黄昏时说的那句话，并不是谎言。
+a345b2|They hoped you would understand that much, at least. Your Servant never knew that you had.|それだけはわかってほしかった。あなたがわかっていたことを、サーヴァントはついに知らなかった。|至少希望你能明白这一点。从者终究不知道，你其实明白。
+a346t|Without Knowing|知らないまま|一无所知
+a346b1|You never knew, to the end. Your Servant tried to think of that as a mercy.|あなたは最後まで知らなかった。サーヴァントは、それが幸いだったと思おうとした。|你直到最后都不知道。从者试着把这当作一种幸运。
+a346b2|Clutching a shard of the cup, they held on to that thought for a long time.|杯の欠片を握りしめて、その思いを長く手放さなかった。|握着杯子的碎片，久久地抓着那个念头不放。
+a347t|A Warm Back|温かい背中|温暖的背影
+a347b1|The last thing it touched was your back. It was warm.|最後に触れたのは、あなたの背中だった。温かかった。|最后触碰到的，是你的背。很温暖。
+a347b2|Your Servant couldn't leave that spot until the warmth had faded.|サーヴァントは、そのぬくもりが冷めるまで、その場を離れられなかった。|从者直到那份温暖消散，都没能离开那个地方。
+a348t|As the Person You Were|その人のままで|保持那个人的样子
+a348b1|Your Servant wanted you to end as the person you were. It wasn't hatred.|サーヴァントは、あなたがその人のままで終わることを望んだ。憎しみではなかった。|从者希望你以那个人的样子结束。那并不是憎恨。
+a348b2|And yet, the one who ended that person was your Servant's own hand.|それなのに、その人を終わらせたのは、サーヴァント自身の手だった。|然而，结束那个人的，正是从者自己的手。
+a349t|The Last City|最後の街|最后的城市
+a349b1|The time they could last on Independent Action was short. Your Servant spent it looking at the things you had wanted to protect.|単独行動で持ちこたえられる時間は短かった。サーヴァントはその時間を、あなたが守りたかったものを見ることに使った。|单独行动能撑住的时间很短。从者把那段时间，用来看你想守护的那些东西。

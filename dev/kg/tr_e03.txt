@@ -1,0 +1,171 @@
+k46t|Words from Home|故郷の言葉|故乡的话
+k46b|You learned a greeting in the language of the land your Servant was born in, and offered it.|サーヴァントが生まれた土地の言葉で挨拶を覚えて、かけてみた。|你学了从者故乡的语言里的一句问候，说给对方听。
+k46c1|Say it again|もう一度かける|再说一次
+k46r1|Your Servant started to open their mouth, then closed it.|サーヴァントが口を開きかけて、閉じた。|从者正要开口，却又闭上了嘴。
+k46c2|Give up|やめる|放弃
+k46c3|Write the words down and stick them on the door|覚えた言葉を書いて扉に貼る|把学会的话写下来贴在门上
+k46r3|The paper was never taken down.|紙が剥がされることはなかった。|那张纸始终没被撕下。
+k47t|The Apology You Want|欲しい謝罪|想要的道歉
+k47b|You realized that, the other way around, there's something you want your Servant to apologize for.|逆に、サーヴァントに謝ってほしいことがあるのだと気づいた。|你意识到，反过来，你也有想让从者道歉的事。
+k47c1|Say so|言う|说出来
+k47r1|Your Servant bowed their head. You'd never seen them do that.|サーヴァントがうつむいた。初めて見る姿だった。|从者低下了头。那是你从未见过的样子。
+k47c2|Swallow it|飲み込む|咽回去
+k47c3|Write it down|書き留めておく|写下来
+k48t|Just for Today|今日だけ|只今天
+k48b|You asked them to speak, just for today.|今日一日だけは話してほしいと頼んだ。|你请求对方，就今天一天，开口说话。
+k48c1|Wait|待つ|等待
+k48r1|The sun went down.|日が暮れた。|太阳落山了。
+k48c2|Look down at your remaining Command Seal|残った令呪を見下ろす|低头看着剩下的令咒
+k48r2|The back of your hand grew hot. You didn't use it.|手の甲が熱くなった。使いはしなかった。|手背发烫了。你没有使用。
+k48c3|Withdraw the request|頼みを取り下げる|收回请求
+k49t|The Last Words You Heard|最後に聞いた言葉|最后听到的话
+k49b|You can't remember the last thing your Servant said. Whether it was the refusal that night, or something before.|サーヴァントが最後に言った言葉が何だったか、思い出せない。あの夜の拒絶だったのか、その前だったのか。|你想不起从者最后说的话是什么了。是那一夜的拒绝，还是在那之前。
+k49c1|Try to remember|思い出す|回想
+k49c2|Don't try to remember|思い出さない|不去回想
+k49c3|Ask your Servant|サーヴァントに尋ねる|问从者
+k49r3|Your Servant bit their lip.|サーヴァントが唇を噛んだ。|从者咬住了嘴唇。
+k50t|A Film Together|一緒に観る映画|一起看的电影
+k50b|You put on an old film. Your Servant watched to the end. When the credits rolled, they got up first.|古い映画をかけた。サーヴァントは最後まで観た。エンドロールが流れると、先に立ち上がった。|你放了一部老电影。从者看到了最后。片尾字幕升起时，对方先站了起来。
+k50c1|Stop them|引き止める|拉住对方
+k50c2|Pick the next film|次の映画を選ぶ|挑下一部电影
+k50r2|Your Servant didn't sit back down.|サーヴァントは座り直さなかった。|从者没有再坐下。
+k50c3|Watch the credits to the end|エンドロールを最後まで観る|把片尾看完
+k51t|The Erased List|消えた名簿|被抹去的名单
+k51b|Every name on the list has been crossed out. Your Servant looks down for a long time at the ashes of the burned list.|名簿の名前はすべて消えた。サーヴァントは、その名簿を燃やした灰を長く見下ろしている。|名单上的名字全被划掉了。从者久久地俯视着烧掉名单后留下的灰烬。
+k51c1|Clear away the ashes|灰を片づける|清理灰烬
+k51r1|Your Servant drew their hand back.|サーヴァントが手を引いた。|从者收回了手。
+k51c2|Call the list to mind again|名簿をもう一度思い浮かべる|再次回想那份名单
+k51r2|Not one name remained. Only emptiness remained.|ひとつも残っていなかった。虚しさだけが残った。|一个也没剩下。只剩下空虚。
+k51c3|Stand beside your Servant|サーヴァントの隣に立つ|站到从者身旁
+k51r3|Your Servant stepped back.|サーヴァントが一歩下がった。|从者后退了一步。
+k52t|A Day with Nothing to Repay|報いるもののない日|无可讨还的日子
+k52b|There's no one left to repay. Your hands look for something to do. Your Servant watches your hands.|報いる相手は誰も残っていない。手がやることを探している。サーヴァントがあなたの手を見る。|已经没有需要讨还的人了。你的手在找事可做。从者看着你的手。
+k52c1|Look for a new name|新しい名前を探す|寻找新的名字
+k52r1|For the first time, your Servant stood in your way. Without a word.|サーヴァントが初めてあなたの前に立ちはだかった。言葉はなかった。|从者第一次挡在了你面前。一言不发。
+k52c2|Lower your hands|手を下ろす|放下手
+k52c3|Use those hands to set out food for your Servant too|その手でサーヴァントの分まで食事を用意する|用那双手连从者的份也一起准备饭菜
+k52r3|The bowl stayed untouched.|器はそのままだった。|那只碗原封未动。
+k53t|Streets Without Quarrels|諍いのない街|没有争吵的街道
+k53b|The sound of quarreling has vanished from the streets. As if unable to bear that silence outside, your Servant closes the window.|街から言い争う声が消えた。サーヴァントは窓の外のその静けさに耐えられないかのように、窓を閉める。|街上的争吵声消失了。从者像是无法忍受窗外的寂静，关上了窗户。
+k53c1|Open the window again|窓をまた開ける|重新打开窗户
+k53c2|Keep it shut together|一緒に閉めておく|一起关着
+k53c3|Go out into the streets|街へ出てみる|到街上去看看
+k53r3|Everyone gave the same greeting at the same moment.|皆が同じ時刻に同じ挨拶をした。|所有人都在同一时刻说着同样的问候。
+k54t|A Small Lie|小さな嘘|小小的谎言
+k54b|In this world, a single lie can freeze a person solid. For the first time, your Servant is hiding something from you. All you have to do is ask what.|嘘ひとつで人が固まる世界だ。サーヴァントが初めて、あなたの前で何かを隠している。何なのか、尋ねさえすればいい。|这是一个一句谎言就能让人僵住的世界。从者第一次在你面前隐瞒着什么。只要你开口问就行了。
+k54c1|Ask|尋ねる|问出口
+k54r1|Your Servant shook their head. It felt as if the whole world were watching that moment.|サーヴァントは首を振った。その瞬間を世界が見張っているようだった。|从者摇了摇头。那一刻，仿佛整个世界都在注视着。
+k54c2|Don't ask|尋ねない|不问
+k54c3|Hide something of your own|あなたもひとつ隠す|你也隐瞒一件事
+k54r3|A distance opened between you, as wide as your secrets.|互いの秘密の分だけ、距離ができた。|彼此的秘密有多少，距离就有多远。
+k55t|The Darkened Ward|灯りの消えた病棟|熄灯的病房楼
+k55b|The hospital lights have gone out, down to the very last one. Your Servant stops in front of the building.|病院の灯りが最後のひとつまで消えた。サーヴァントがその建物の前で足を止める。|医院的灯熄灭到了最后一盏。从者在那栋楼前停下了脚步。
+k55c1|Stop with them|一緒に立ち止まる|一起停下
+k55r1|Your Servant was the first to move on.|サーヴァントが先に歩き出した。|从者先迈开了脚步。
+k55c2|Walk past|通り過ぎる|走过去
+k55c3|Look inside|中をのぞく|往里面看
+k55r3|No one was there. Only rows of beds.|誰もいなかった。ベッドだけが並んでいた。|里面一个人也没有。只有一排排病床。
+k56t|Streets Where Only the Strong Remain|強い者だけが残った街|只剩强者的街道
+k56b|Only the strong walk the streets. Your Servant stares for a long time at an empty stroller on the roadside.|街を歩くのは強い者だけだ。サーヴァントが道端の空のベビーカーを長く見つめている。|街上走着的只有强者。从者久久地望着路边一辆空婴儿车。
+k56c1|Move the stroller away|ベビーカーを片づける|把婴儿车挪走
+k56r1|Your Servant grabbed your wrist, then let go.|サーヴァントがあなたの手首をつかみ、そして放した。|从者抓住你的手腕，又放开了。
+k56c2|Leave it be|そのままにする|就这样放着
+k56c3|Take your Servant home|サーヴァントを連れて家に帰る|带从者回家
+k56r3|Your Servant came along. Because the Command Seal told them to.|サーヴァントはついてきた。令呪がそうしろと言ったから。|从者跟了过来。因为令咒要求这样做。
+k57t|The Open Doors|開いた扉|敞开的门
+k57b|The city's doors won't close. Something comes in from beyond them. Every night, your Servant stands before those doors.|街の扉が閉まらない。扉の向こうから何かが入ってくる。サーヴァントは夜ごと、その扉の前に立つ。|城里的门关不上了。有什么东西从门的另一边进来。从者每晚都站在那些门前。
+k57c1|Guard them together|一緒に守る|一起守着
+k57c2|Look beyond the door|扉の向こうを見る|望向门的彼方
+k57c3|Call your Servant inside|サーヴァントを呼び入れる|把从者叫进来
+k57r3|Your Servant came in. The door stayed open.|サーヴァントは入ってきた。扉は開いたままだった。|从者进来了。门依旧敞开着。
+k58t|Those Without Reflections|映らない人|照不出的人
+k58b|More and more people cast no reflection. This morning, your Servant's figure was faint in the mirror.|鏡に映らない人が増えた。今朝、サーヴァントの姿が鏡の中で薄かった。|照不进镜子的人变多了。今天早上，从者在镜中的身影很淡。
+k58c1|Put the mirror away|鏡を片づける|把镜子收起来
+k58c2|Call your Servant|サーヴァントを呼ぶ|叫从者
+k58r2|Your Servant didn't look toward the mirror.|サーヴァントは鏡のほうを見なかった。|从者没有看向镜子。
+k58c3|Stand before the mirror a long time|鏡の前に長く立つ|在镜子前站了很久
+k58r3|Your own reflection looked a little faint too.|あなたの姿も少し薄く見えた。|你自己的身影也显得有些淡了。
+k59t|The Slowed Clocks|遅れた時計|变慢的钟
+k59b|The city's clocks run slow. Your Servant doesn't even wear a watch, yet keeps looking up at the sky.|街の時計が遅れている。サーヴァントの手首に時計はないのに、サーヴァントはしきりに空を見上げる。|城里的钟走得很慢。从者手腕上明明没有表，却总是抬头望天。
+k59c1|Set the clocks right|時計を合わせる|把钟调准
+k59r1|By the next day they were slow again.|次の日にはまた遅れていた。|第二天又慢了。
+k59c2|Examine the ley lines|霊脈を調べる|探查灵脉
+k59c2@0|Count the ticking of the clocks|時計の音を数える|数着钟的滴答声
+k59c3|Look up at the sky together|一緒に空を見上げる|一起仰望天空
+k59r3|Your Servant lowered their gaze.|サーヴァントが顔を伏せた。|从者低下了头。
+k60t|Stepping Stone|踏み台|垫脚石
+k60b|This entire city has become a stepping stone. You've come right up to the door, but one step remains. Your Servant stands in front of that step.|この街すべてが踏み台になった。扉の前まで来たのに、あと一歩が残っている。サーヴァントがその一歩の前に立っている。|这整座城市都成了垫脚石。你已来到门前，只差最后一步。从者就站在那一步前面。
+k60c1|Ask them to step aside|どいてくれと言う|请对方让开
+k60r1|Your Servant stepped aside. The Command Seal's order was still alive.|サーヴァントはどいた。令呪の命はまだ生きていた。|从者让开了。令咒的命令依然有效。
+k60c2|Turn back|引き返す|转身离开
+k60c3|Ask your Servant to come with you|サーヴァントに一緒に行こうと言う|邀从者一起去
+k60r3|Your Servant didn't move.|サーヴァントは動かなかった。|从者一动不动。
+k61t|The One You Saved|守り抜いた人|守护下来的人
+k61b|The person you saved on the second day lives on in the changed world. Knowing nothing, they thank you.|二日目に守り抜いたあの人が、変わった世界で暮らしている。その人は何も知らずに、あなたに礼を言う。|第二天被你守护下来的那个人，生活在改变后的世界里。对方一无所知地向你道谢。
+k61c1|Smile at them|笑ってみせる|对对方笑笑
+k61r1|Your Servant turned away.|サーヴァントが顔をそむけた。|从者别过了脸。
+k61c2|Tell them the truth|本当のことを言う|说出真相
+k61r2|They didn't believe you.|その人は信じなかった。|对方不相信。
+k61c3|Excuse yourself|その場を離れる|找借口离开
+k62t|The One Who Never Recovered|回復しなかった人|没能康复的人
+k62b|The person you left alone on the second day never recovered. Every time your Servant passes that person's house, their steps slow.|二日目に放っておいたあの人は、ついに回復しなかった。サーヴァントはその人の家の前を通るたび、歩みが遅くなる。|第二天被你置之不理的那个人，终究没能康复。每次经过那个人的家门前，从者的脚步都会放慢。
+k62c1|Visit them together|一緒に訪ねる|一起去探望
+k62r1|The door didn't open.|扉は開かなかった。|门没有开。
+k62c2|Take a different route|道を変える|换一条路走
+k62c3|Visit them alone|一人で訪ねる|一个人去探望
+k62r3|You didn't know what to say.|何と言えばいいかわからなかった。|你不知道该说什么。
+k63t|Where the Cup Was|杯のあった場所|杯子所在之处
+k63b|You went back to the ground where you held the cup. Nothing is left. Your Servant didn't follow.|杯を手にしたあの土地に、もう一度行った。何も残っていない。サーヴァントはついてこなかった。|你又去了当初握住杯子的那片土地。什么也没留下。从者没有跟来。
+k63c1|Stand there a long time|長く立ち尽くす|久久伫立
+k63c2|Go home|帰る|回去
+k63r2|Your Servant was waiting at the door. Whether waiting, or ordered to—you couldn't tell.|サーヴァントは戸口で待っていた。待っていたのか、命がそうさせたのか。|从者在门边等着。是自己在等，还是命令让对方这样做。
+k63c3|Dig in the ground|土を掘る|挖开地面
+k63r3|Nothing came up.|何も出てこなかった。|什么也没挖出来。
+k64t|The Scar|傷痕|伤疤
+k64b|Only the place of the Command Seal you used that night remains on your hand, like a scar. Your Servant's eyes keep coming to rest on it.|あの夜使った令呪の跡だけが、傷痕のように手の甲に残った。サーヴァントの目がしきりにそこに留まる。|只有那一夜使用的令咒的位置，像伤疤一样留在了手背上。从者的目光总是停留在那里。
+k64c1|Wear gloves|手袋をはめる|戴上手套
+k64r1|Your Servant's eyes lost their resting place.|サーヴァントの目の留まる場所がなくなった。|从者的目光失去了停留之处。
+k64c2|Show them the scar|傷痕を見せる|露出伤疤
+k64r2|For the first time, your Servant closed their eyes.|サーヴァントが初めて目を閉じた。|从者第一次闭上了眼睛。
+k64c3|Rub the scar|傷痕をこする|揉搓伤疤
+k64r3|It wouldn't fade.|消えなかった。|擦不掉。
+k65t|The One Stroke Left|残った一画|剩下的一划
+k65b|A Command Seal still remains on the back of your hand. With this one stroke, you could set your Servant free—or bind them tighter.|手の甲にはまだ令呪が残っている。この一画があれば、サーヴァントを解き放つことも、さらに縛ることもできる。|手背上还留有令咒。凭这一划，你可以放从者自由，也可以将其束缚得更紧。
+k65c1|Use the Command Seal to set them free|その令呪で解き放つ|用那道令咒放对方自由
+k65r1|For the first time, your Servant looked straight at you. Then they vanished.|サーヴァントが初めてあなたをまっすぐ見た。そして消えた。|从者第一次直直地看着你。然后消失了。
+k65c2|Command them to speak|話せと命じる|命令对方开口
+k65r2|Your Servant opened their mouth. All that came out was your name. The Command Seal faded.|サーヴァントが口を開いた。出てきたのは、あなたの名前だけだった。令呪が消えた。|从者张开了嘴。说出来的只有你的名字。令咒消失了。
+k65r2@0|Your Servant drew a breath. That was all. The Command Seal faded.|サーヴァントが息を整えた。それがすべてだった。令呪が消えた。|从者调整了呼吸。仅此而已。令咒消失了。
+k65c3|Leave it be|そのままにする|就这样吧
+k66t|A Fading Outline|薄れゆく輪郭|渐淡的轮廓
+k66b|The cup is empty now, and only your circuits hold your Servant here. With every passing year, their outline grows fainter.|杯はすっかり空になり、サーヴァントを繋ぎとめているのはあなたの回路だけだ。年を追うごとに、サーヴァントの輪郭が薄い。|杯子已经空了，留住从者的只剩你的魔术回路。从者的轮廓一年比一年淡。
+k66c1|Open your circuits all the way|回路をすべて開く|把回路完全打开
+k66r1|For a moment, your Servant's outline sharpened.|サーヴァントの輪郭が一瞬くっきりした。|从者的轮廓短暂地清晰了起来。
+k66c2|Leave it be|そのままにする|就这样吧
+k66c3|Ask your Servant if they're all right|サーヴァントに大丈夫かと尋ねる|问从者还好吗
+k66r3|There was no answer. Only the outline wavered.|返事はなかった。輪郭が揺れただけだった。|没有回答。只有轮廓在晃动。
+k67t|A Heavy World|重い世界|沉重的世界
+k67b|The changed world is light for you. It seems heavy only for your Servant. Today, your Servant didn't get up.|変わった世界は、あなたには軽い。サーヴァントにだけ重いようだ。今日、サーヴァントは起き上がらなかった。|改变后的世界对你来说很轻。似乎只对从者来说很沉重。今天，从者没有起来。
+k67c1|Sit beside them|そばに座る|坐在旁边
+k67r1|No one moved until evening.|夕方まで、誰も動かなかった。|直到傍晚，谁也没有动。
+k67c2|Tell them to get up|起きろと言う|叫对方起来
+k67r2|Your Servant got up. Obeying the words.|サーヴァントは起きた。言葉に従ったのだった。|从者起来了。是在服从你的话。
+k67c3|Spend the day alone|一人で一日を過ごす|一个人度过这一天
+k68t|The Edge of the Order|命の端|命令的尽头
+k68b|Your Servant stops at the threshold. As if measuring how far the Command Seal's order reaches, they lift a foot, then set it down.|サーヴァントが敷居の前で止まる。令呪の命がどこまで及ぶのか測るように、片足を上げては下ろす。|从者在门槛前停下。像是在测量令咒的命令能延伸到哪里，抬起一只脚，又放了下来。
+k68c1|Watch|見守る|看着
+k68r1|In the end, your Servant turned back.|サーヴァントは結局引き返した。|从者最终还是转了回来。
+k68c2|Tell them to go|行けと言う|叫对方走
+k68r2|Your Servant didn't move. The order ran deeper than that.|サーヴァントは動かなかった。命はそれより深かった。|从者没有动。命令比那更深。
+k68c3|Close the door|扉を閉める|关上门
+k69t|A Secret Errand|こっそりすること|悄悄做的事
+k69b|Every night your Servant goes somewhere. When you follow, you find them secretly tending to something the changed world had pushed aside.|サーヴァントが夜ごとどこかへ出かけていく。ついていくと、変わった世界から押し出された何かを、こっそり世話していた。|从者每晚都会去某个地方。你跟过去，发现对方在悄悄照顾某个被改变后的世界排挤出去的东西。
+k69c1|Pretend not to know|知らないふりをする|装作不知道
+k69c2|Help|手伝う|帮忙
+k69r2|When you arrived, your Servant drew their hands back.|あなたが来ると、サーヴァントは手を引いた。|你一来，从者就收回了手。
+k69c3|Make them stop|やめさせる|让对方停下
+k69r3|Your Servant stopped. From that day on, they didn't go out even at night.|サーヴァントはやめた。その日から、夜も出かけなくなった。|从者停下了。从那天起，夜里也不再出门了。
+k70t|A Dream of the Cup|杯の夢|杯之梦
+k70b|In a dream, the cup is empty again. Someone asks what you'll wish for this time. When you wake, your Servant is standing by your pillow.|夢の中で、杯がまた空になっている。今度は何を願うのかと誰かが問う。目覚めると、サーヴァントが枕元に立っている。|梦里，杯子又空了。有人问你这次要许什么愿。醒来时，从者正站在你的枕边。
+k70c1|Answer: the same wish|同じ願いだと答える|回答同样的愿望
+k70r1|Your Servant left the room.|サーヴァントが部屋を出ていった。|从者离开了房间。

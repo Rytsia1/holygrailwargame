@@ -1,0 +1,159 @@
+k22t|Schedules That Never Meet|すれ違う時間割|错开的作息
+k22b|The two of you now live by schedules that never cross. You take turns with the kitchen and the living room.|二人は今、顔を合わせない時間割で暮らしている。台所も居間も交代で使う。|你们如今过着互不碰面的作息。厨房和客厅都轮流使用。
+k22c1|Match your schedules|時間を合わせる|调成同一时间
+k22r1|Your Servant changed their schedule again.|サーヴァントがまた時間を変えた。|从者又改了时间。
+k22c2|Go on living as you are|そのまま暮らす|就这样过下去
+k22c3|Write tomorrow's schedule on a note|メモに明日の時間を書いておく|在字条上写下明天的时间
+k22r3|The next day, a single small dot had been made beneath your note.|次の日、メモの下に小さな点がひとつ打たれていた。|第二天，字条下方多了一个小小的点。
+k23t|Draining Magical Energy|流れ出る魔力|流失的魔力
+k23b|The magical energy that keeps your Servant in this world drains out of you day by day. Your body grows a little heavier.|サーヴァントをこの世界に繋ぎとめる魔力が、日ごとにあなたから流れ出ていく。体が少しずつ重い。|将从者留在这个世界的魔力，一天天从你身上流失。身体渐渐变得沉重。
+k23c1|Send more magical energy|魔力をもっと送る|输送更多魔力
+k23c2|Reduce it|減らす|减少
+k23r2|Your Servant's outline grew fainter.|サーヴァントの輪郭が薄れた。|从者的轮廓变淡了。
+k23c3|Leave it be|そのままにする|就这样吧
+k24t|Winter Again|また冬|又是冬天
+k24b|It's winter again. It smells the same as that winter. Your Servant leaves the window open all night.|また冬だ。あの冬と同じ匂いがする。サーヴァントが一晩中窓を開けておく。|又到了冬天。闻起来和那个冬天一样。从者整夜开着窗。
+k24c1|Close the window|窓を閉める|关上窗户
+k24c2|Stand in the wind together|一緒に風に当たる|一起吹风
+k24c3|Take out another blanket|毛布をもう一枚出す|再拿出一条毯子
+k25t|The Stray Cat|野良猫|流浪猫
+k25b|A stray cat that wanders into the garden goes only to your Servant. And your Servant holds out a hand only to the cat.|庭に出入りする野良猫は、サーヴァントのところにだけ行く。サーヴァントは猫にだけ手を差し出す。|常在院子里出没的流浪猫只亲近从者。从者也只向那只猫伸出手。
+k25c1|Give the cat a name|猫に名前をつけてやる|给猫起个名字
+k25r1|Even so, the cat went only to your Servant.|それでも猫はサーヴァントのところにだけ行った。|即便如此，猫还是只去找从者。
+k25c2|Chase the cat away|猫を追い払う|把猫赶走
+k25c3|Watch the two of them from afar|遠くから二人を見る|远远看着它们
+k26t|An Apology|謝罪|道歉
+k26b|You rewrote the words “I'm sorry” over and over. When you finally said them, your voice cracked.|すまないという言葉を何度も書き直した。いざ口にすると、声がかすれた。|你把“对不起”这句话改写了好多遍。真正说出口时，声音却沙哑了。
+k26c1|Say it all the way through|最後まで言う|把话说完
+k26r1|Your Servant listened to the end. There was no answer.|サーヴァントは最後まで聞いた。返事はなかった。|从者听到了最后。没有回答。
+k26c2|Swallow the words|言葉を飲み込む|把话咽回去
+k26c3|Leave it in a note|メモに残す|写在字条上
+k26r3|The next day, the note was still folded just as you left it.|次の日、メモはたたまれたままだった。|第二天，字条依旧折着。
+k27t|The Old Name|昔の呼び方|过去的称呼
+k27b|Without thinking, you called them by the name you used that winter. For the first time, your Servant turned around.|思わず、あの冬に呼んでいた呼び方で呼んだ。サーヴァントが初めて振り返った。|你不经意间用那个冬天的称呼叫了对方。从者第一次回过头来。
+k27c1|Call once more|もう一度呼ぶ|再叫一次
+k27r1|Your Servant turned away again.|サーヴァントはまた顔をそむけた。|从者又转过了头。
+k27c2|Call them by their true name|名前をそのまま呼ぶ|直接叫对方的名字
+k27r2|Your Servant bowed their head. The name sounded like an order.|サーヴァントはうつむいた。その名は命令のように響いた。|从者低下了头。那个名字听起来像是命令。
+k27c3|Say nothing|何も言わない|什么也不说
+k27r3|The face that turned toward you stayed with you a long time.|振り返った顔が、長く心に残った。|那张转过来的脸，在你心里留了很久。
+k28t|Are You Still Angry|まだ怒っているのか|还在生气吗
+k28b|You asked if they were still angry. Instead of answering, your Servant looked out the window.|まだ怒っているのかと尋ねた。サーヴァントは答える代わりに窓の外を見た。|你问对方是不是还在生气。从者没有回答，而是望向了窗外。
+k28c1|Ask again|もう一度尋ねる|再问一次
+k28c2|Say that you are the one who's angry|自分は怒っていると言う|说你自己在生气
+k28r2|Your Servant looked at you, briefly.|サーヴァントが一瞬あなたを見た。|从者看了你一眼。
+k28c3|Decide not to ask|尋ねないことにする|决定不再问
+k29t|That Night's Promise|あの日の約束|那天的约定
+k29b|You brought up the promise from the second night. The promise that you would remain who you were then.|二日目の夜の約束を持ち出した。今のあなたのままでいると言った約束。|你提起了第二天夜里的约定。那个说要以当时的自己留下的约定。
+k29c1|Say you kept it|守ったと言う|说你守住了
+k29r1|Your Servant's shoulders stiffened.|サーヴァントの肩がこわばった。|从者的肩膀僵住了。
+k29c2|Say you didn't keep it|守れなかったと言う|说你没有守住
+k29r2|Your Servant's head dropped.|サーヴァントがうなだれた。|从者垂下了头。
+k29c3|Take back your words|言葉を引っ込める|把话收回
+k30t|The Promise Not Made|しなかった約束|没有许下的约定
+k30b|On the second night, you made no promise. That silence is coming back to you now.|二日目の夜、約束はしなかった。その沈黙が、今になって返ってくる。|第二天夜里，你没有许下约定。那份沉默，如今回到了你身上。
+k30c1|Promise now, even this late|今からでも約束する|即使现在也要许下约定
+k30r1|It was a promise made too late.|遅すぎる約束だった。|那是一个太迟的约定。
+k30c2|Explain why you didn't answer then|あの時なぜ答えなかったのかを話す|说明当时为什么没有回答
+k30r2|Your Servant listened to the end.|サーヴァントは最後まで聞いた。|从者听到了最后。
+k30c3|Let it go|やめておく|算了
+k31t|The Scene from the Third Night|三日目の夜の場面|第三夜的场景
+k31b|You recall the scene your Servant brought up on the third night. And the answer you gave.|三日目の夜にサーヴァントが持ち出した場面を思い出す。あの時のあなたの答えも。|你想起了第三天夜里从者提起的那个场景。还有你当时的回答。
+k31c1|Change your answer|その答えを変える|改变当时的回答
+k31r1|The changed answer hung in empty air.|変えた答えは宙に浮いた。|改过的回答悬在了半空。
+k31c2|Say it still stands|そのままだと言う|说你的回答没变
+k31c3|Talk only about that scene|その場面のことだけを話す|只谈那个场景
+k31r3|Your Servant closed their eyes.|サーヴァントが目を閉じた。|从者闭上了眼睛。
+k32t|A Dream of the Command Seal|令呪の夢|令咒之梦
+k32b|In a dream you use the Command Seal again. When you wake, your Servant is looking at the back of your hand.|夢の中で、あなたはまた令呪を使う。目覚めると、サーヴァントがあなたの手の甲を見ている。|梦里，你又一次使用了令咒。醒来时，从者正看着你的手背。
+k32c1|Hide your hand|手を隠す|把手藏起来
+k32c2|Hold out the back of your hand|手の甲を差し出す|伸出手背
+k32r2|Your Servant drew back just before touching it.|サーヴァントは触れる寸前で手を引いた。|从者在即将触碰的前一刻收回了手。
+k32c3|Apologize for that night|あの夜のことを謝る|为那一夜道歉
+k32r3|Your Servant closed their eyes.|サーヴァントは目を閉じた。|从者闭上了眼睛。
+k33t|A Letter|手紙|信
+k33b|If words wouldn't work, you decided to try writing. You wrote about that winter, the four days, and that night.|言葉で駄目なら、文字で試してみることにした。あの冬のこと、四日間のこと、あの夜のことを書いた。|既然说不出口，你决定写下来。你写了那个冬天的事、那四天的事、那一夜的事。
+k33c1|Leave it by your Servant's pillow|サーヴァントの枕元に置く|放在从者的枕边
+k33r1|In the morning the letter lay open. There was no reply.|朝、手紙は開かれていた。返事はなかった。|早上，信已被打开过。没有回信。
+k33c2|Burn it|燃やす|烧掉
+k33c3|Put it away in a drawer|引き出しにしまっておく|收进抽屉里
+k34t|A Turned Back|向けられた背中|转过去的背影
+k34b|Every time you try to speak, your Servant turns their back. Today that back looked a little smaller.|話しかけようとするたび、サーヴァントは背を向ける。今日はその背中が少し小さく見えた。|每当你想开口时，从者都会转过身去。今天那个背影看起来小了一些。
+k34c1|Speak to their back|背中に向かって話す|对着背影说话
+k34r1|You said everything. The back did not move.|言葉は最後まで届いた。背中は動かなかった。|话说完了。那个背影纹丝未动。
+k34c2|Walk around to stand in front of them|前へ回って立つ|绕到对方面前站着
+k34r2|Your Servant turned away again.|サーヴァントはまた背を向けた。|从者又转过身去。
+k34c3|Give up for today|今日はやめておく|今天就算了
+k35t|An Answer in a Dream|夢の中の答え|梦中的回答
+k35b|In your dreams, your Servant answers you the way they did that winter. When you wake, you can't remember the voice.|夢の中のサーヴァントは、あの冬のように答えてくれる。目覚めると、その声が思い出せない。|梦里的从者像那个冬天一样回应你。醒来后，却想不起那个声音。
+k35b@0|In your dreams, your Servant stands beside you the way they did that winter. When you wake, you can't remember the sound of their breathing.|夢の中のサーヴァントは、あの冬のようにそばに立つ。目覚めると、その息づかいが思い出せない。|梦里的从者像那个冬天一样站在你身旁。醒来后，却想不起那呼吸的声音。
+k35c1|Go back to sleep|また眠る|再睡一会儿
+k35c2|Get up and look at your Servant|起きてサーヴァントを見る|起身看看从者
+k35r2|Your Servant was pretending to be asleep.|サーヴァントは眠ったふりをしていた。|从者在装睡。
+k35c3|Try to recall the voice|声を思い出そうとする|努力回想那个声音
+k35c3@0|Try to recall the sound of their breathing|息づかいを思い出そうとする|努力回想那呼吸声
+k35r3|It never came back to you.|ついに思い出せなかった。|终究没能想起来。
+k36t|In Front of a Guest|客の前で|在客人面前
+k36b|You spoke to your Servant in front of a guest. When there was no answer, the guest grew flustered.|客の前でサーヴァントに話しかけた。返事がないので、客がうろたえる。|你在客人面前和从者说话。没有得到回应，客人显得很尴尬。
+k36c1|Laugh it off|笑ってごまかす|一笑置之
+k36c2|Speak to them again|もう一度話しかける|再搭话一次
+k36c3|See the guest out|客を見送る|送客人出门
+k37t|A Recording|録音|录音
+k37b|There's one recording left with your Servant's voice from that winter.|あの冬のサーヴァントの声が入った録音が、ひとつ残っている。|还留着一段录有那个冬天从者声音的录音。
+k37b@0|There's one recording left with your Servant's roar from that winter.|あの冬のサーヴァントの咆哮が入った録音が、ひとつ残っている。|还留着一段录有那个冬天从者咆哮的录音。
+k37c1|Play it in front of your Servant|サーヴァントの前で流す|在从者面前播放
+k37r1|Your Servant left the room.|サーヴァントが部屋を出ていった。|从者离开了房间。
+k37c2|Listen to it alone|一人で聴く|一个人听
+k37c3|Delete it|消す|删掉
+k38t|Just Nod|頷いてほしい|请点点头
+k38b|You held out a piece of paper with words on it. “I'm sorry. If you can accept that, please nod.”|書いた紙を差し出した。「すまない。受け入れてくれるなら、頷いてくれ」|你递出一张写了字的纸。“对不起。如果你愿意接受，就点点头吧。”
+k38c1|Wait|待つ|等待
+k38r1|Your Servant neither nodded nor shook their head.|サーヴァントは頷きも、首を振りもしなかった。|从者既没有点头，也没有摇头。
+k38c2|Take the paper back|紙を引っ込める|把纸收回来
+k38c3|Press the paper into their hand|紙を手に握らせる|把纸塞进对方手里
+k38r3|The paper crumpled in that hand.|紙はその手の中でくしゃくしゃになった。|那张纸在对方手里被揉皱了。
+k39t|Someone to Speak for You|代わりに伝えてくれる人|替你传话的人
+k39b|You asked a friend to talk to your Servant for you.|友人に、サーヴァントと話してくれるよう頼んだ。|你拜托朋友去和从者谈谈。
+k39c1|Leave it to them|任せる|交给朋友
+k39r1|Your Servant didn't speak to your friend either.|サーヴァントは友人にも口をきかなかった。|从者对朋友也一言不发。
+k39c2|Call it off|やめておく|算了
+k39c3|Speak to them yourself in front of your friend|友人の前で自分から話す|当着朋友的面亲自说
+k40t|Gestures|手ぶり|手势
+k40b|Instead of words, you asked with gestures whether they'd eaten.|言葉の代わりに、手ぶりで尋ねた。ご飯は食べたかと。|你没有开口，而是用手势问对方吃过饭没有。
+k40c1|Keep gesturing|続けて手ぶりをする|继续比划
+k40r1|Your Servant's fingers moved, just barely.|サーヴァントの指が、ほんの少し動いた。|从者的手指微微动了一下。
+k40c2|Give up|やめる|放弃
+k40c3|Smile|笑う|笑了
+k40r3|Your Servant turned their head away.|サーヴァントが顔をそむけた。|从者别过了头。
+k41t|A Diary in the Living Room|居間の日記|客厅里的日记
+k41b|You leave your diary in the living room so your Servant will see it.|サーヴァントに見せようと、日記を居間に置いておく。|为了让从者看见，你把日记放在了客厅。
+k41c1|Keep writing|書き続ける|继续写
+k41r1|The diary was in the same spot every day. There were signs it had been opened.|日記は毎日同じ場所にあった。開いた跡があった。|日记每天都在同一个地方。有被翻开过的痕迹。
+k41c2|Stop writing|書くのをやめる|不再写了
+k41c3|Write a question on the last page|最後のページに質問を書く|在最后一页写下一个问题
+k41r3|The space beneath the question stayed blank.|質問の下は空白のままだった。|问题下方一片空白。
+k42t|Your Own Silence|あなたの沈黙|你的沉默
+k42b|You decided not to ask why. Instead, you didn't speak for a whole day either.|理由は聞かないことにした。代わりに、あなたも一日黙っていた。|你决定不问原因。相反，你也一整天没有说话。
+k42c1|Hold out for one day|一日耐える|坚持一天
+k42r1|The house went completely silent.|家が完全に静かになった。|屋子里彻底安静了。
+k42c2|Speak partway through|途中で口を開く|中途开口
+k42c3|Hold out for three days|三日耐える|坚持三天
+k42r3|Your Servant left a glass of water in front of you.|サーヴァントがあなたの前に水を一杯置いていった。|从者在你面前放下一杯水，然后走开了。
+k43t|Sleep-Talking|寝言|梦话
+k43b|Your Servant talked in their sleep. The words were from that winter.|サーヴァントが寝言を言った。あの冬の言葉だった。|从者说了梦话。是那个冬天的话。
+k43c1|Wake them|起こす|叫醒对方
+k43c2|Listen to the end|最後まで聞く|听到最后
+k43c3|Tell them in the morning|朝になって教える|早上告诉对方
+k43r3|Your Servant pretended not to remember.|サーヴァントは覚えていないふりをした。|从者装作不记得。
+k44t|Names Not Spoken|呼ばれない名前|不再呼唤的名字
+k44b|In this house, neither of you calls the other by name.|この家で、二人は互いの名を呼ばない。|在这个家里，两人都不呼唤彼此的名字。
+k44c1|Say it today|今日は呼ぶ|今天叫一次
+k44r1|The name was left hanging, alone.|名前だけがひとり残った。|那个名字孤零零地留在了空中。
+k44c2|Don't say it|呼ばない|不叫
+k44c3|Write the name on a note|メモに名前を書く|在字条上写下名字
+k45t|What You Couldn't Ask|聞けなかったこと|没能问出口的事
+k45b|You want to ask what would have happened if you hadn't used the Command Seal that night.|あの夜、令呪を使わなかったらどうなっていたか、聞いてみたい。|你想问，如果那一夜你没有使用令咒，会变成怎样。
+k45c1|Ask|尋ねる|问出口
+k45r1|Your Servant looked at you for a long time. There was no answer.|サーヴァントはあなたを長く見つめた。答えはなかった。|从者久久地看着你。没有回答。
+k45c2|Don't ask|尋ねない|不问
+k45c3|Answer it yourself|自分で答える|自问自答

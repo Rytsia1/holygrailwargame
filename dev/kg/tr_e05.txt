@@ -1,0 +1,170 @@
+k93c2|Say you're sorry|すまないと言う|说对不起
+k93r2|Your Servant's hand stopped.|サーヴァントの手が止まった。|从者的手停住了。
+k93c3|Smile|笑う|笑了
+k93r3|Your Servant turned their face away.|サーヴァントが顔をそむけた。|从者别过了脸。
+k94t|One Word, At Last|最後のひと言|最后一句话
+k94b|Your last day. Your Servant's mouth, closed for years, opens.|あなたの最後の日。何年も閉ざされていたサーヴァントの口が開く。|你的最后一天。从者紧闭多年的嘴终于张开了。
+k94c1|Listen|聞く|倾听
+k94r1|Those became their first and last words.|それが最初で最後の言葉になった。|那成了第一句，也是最后一句话。
+k94c2|Answer|答える|回应
+k94r2|Your Servant listened to the end. Then they fell silent again.|サーヴァントは最後まで聞いた。そして、また口を閉ざした。|从者听到了最后。然后又闭上了嘴。
+k95t|That Name|あの呼び名|那个称呼
+k95b|Your Servant calls you by the name they used that winter. For the first time in years.|サーヴァントがあの冬に呼んでいた呼び方で、あなたを呼ぶ。何年ぶりだろう。|从者用那个冬天的称呼叫你。已经好多年了。
+k95b@0|Your Servant calls to you with a gesture from that winter. For the first time in years.|サーヴァントがあの冬の仕草で、あなたを呼ぶ。何年ぶりだろう。|从者用那个冬天的动作呼唤你。已经好多年了。
+k95c1|Answer|答える|回应
+k95r1|Your Servant called just once more. That was their farewell.|サーヴァントがもう一度だけ呼んだ。それが別れだった。|从者又叫了一次。那就是告别。
+k95c2|Burst into tears|泣いてしまう|哭了出来
+k95r2|Your Servant stayed beside you to the end.|サーヴァントは最後までそばにいた。|从者一直陪在你身边，直到最后。
+k96t|Before Scattering|散る前に|消散之前
+k96b|Your Servant's outline begins to scatter. Kneeling before you, your Servant takes your hand for the first time.|サーヴァントの輪郭が散り始める。サーヴァントがあなたの前に膝をつき、初めてあなたの手を取る。|从者的轮廓开始消散。从者跪在你面前，第一次握住了你的手。
+k96c1|Hold their hand back|手を握り返す|回握住那只手
+k96r1|The hand you held turned to light and slipped away.|握った手が光になってすり抜けていった。|握住的手化作光芒，从指间溜走了。
+k96c2|Say their name|名前を呼ぶ|叫对方的名字
+k96r2|Your Servant nodded. Then vanished.|サーヴァントが頷いた。そして消えた。|从者点了点头。然后消失了。
+k97t|The Order Never Lifted|解けなかった命|未曾解除的命令
+k97b|The Command Seal from that night was never lifted in all these years. Your Servant holds out the back of their hand, as if asking you to release them from it.|あの夜の令呪は、何年ものあいだ一度も解けなかった。サーヴァントが、その命を解いてほしいというように手の甲を差し出す。|那一夜的令咒，这些年来一次也没有解除。从者伸出手背，像是在请求你解除那道命令。
+k97c1|Say you release them|解いてやると言う|说你解除它
+k97r1|The Command Seal is long gone. Even so, your Servant bowed their head.|令呪はもうない。それでもサーヴァントは頭を下げた。|令咒早已不在。即便如此，从者还是低下了头。
+k97c2|Leave it be|そのままにする|就这样吧
+k97r2|Your Servant drew their hand back.|サーヴァントは手を引いた。|从者收回了手。
+k98t|A Name Only Two Know|二人だけが知る名|只有两人知道的名字
+k98b|You collapse. In this world, only you and your Servant still know the name of the Master who was your ally.|あなたが倒れる。この世界で、同盟だったあのマスターの名を知る者は、もうあなたとサーヴァントだけだ。|你倒下了。在这个世界上，知道那位曾是同盟的御主名字的，如今只剩你和从者。
+k98c1|Speak that name|その名を口にする|说出那个名字
+k98r1|Your Servant closed their eyes.|サーヴァントが目を閉じた。|从者闭上了眼睛。
+k98c2|Don't speak it|言わない|不说
+k98r2|That name vanished along with you.|その名も一緒に消えた。|那个名字也随之消失了。
+k99t|That Place|あの場所|那个地方
+k99b|For the last time, you go to the place where your Servant struck down your ally's Servant. Your Servant stands there for a long time.|サーヴァントが同盟のサーヴァントを倒したあの場所へ、最後に行く。サーヴァントはそこに長く立っている。|你最后一次去了从者击倒同盟从者的那个地方。从者在那里站了很久。
+k99c1|Stand beside them|隣に立つ|站到旁边
+k99r1|For the first time, your Servant looked at you. It was neither resentment nor forgiveness.|サーヴァントが初めてあなたを見た。恨みでも、赦しでもなかった。|从者第一次看向你。那既不是怨恨，也不是原谅。
+k99c2|Watch from a distance|遠くから見る|远远看着
+k99r2|Until the sun went down.|日が沈むまで。|直到日落。
+k100t|The End of the Victor|勝った側の終わり|胜者的结局
+k100b|That night, the one who won was you. In the world you won, you grew old alone, with a silent Servant at your side.|あの夜、勝ったのはあなただった。勝ち取った世界で、あなたは一人で老い、そばには物言わぬサーヴァントがいた。|那一夜，赢的人是你。在赢来的世界里，你独自老去，身边是一言不发的从者。
+k100c1|Think it was the right thing to do|正しいことだったと思う|认为那是对的
+k100r1|Only the thought remained.|思いだけが残った。|只剩下这个念头。
+k100c2|Think it was the wrong thing to do|間違ったことだったと思う|认为那是错的
+k100r2|Only the thought remained.|思いだけが残った。|只剩下这个念头。
+k100c3|Don't think about it|考えない|不去想
+k100r3|What happened that night passed quietly.|あの夜のことは、静かに過ぎていった。|那一夜的事，就这样静静地过去了。
+k101t|Greetings, Knowing Nothing|何も知らない便り|一无所知的问候
+k101b|The family member you protected on the second day got in touch. They say they've felt oddly light lately, and ask how you're doing.|二日目に守り抜いた家族から連絡が来た。近ごろなぜか体が軽いと、あなたは元気にしているかと。|第二天被你守护的家人联系了你。说最近身体莫名地轻松，问你过得好不好。
+k101c1|Say you're doing well|元気だと言う|说自己过得很好
+k101r1|After you hung up, your hands shook for a long time.|電話を切ったあと、しばらく手が震えていた。|挂断电话后，你的手抖了很久。
+k101c2|Ask what happened around that time|その頃何があったのか尋ねる|问那段时间发生了什么
+k101r2|Your family remembered nothing.|家族は何も覚えていなかった。|家人什么都不记得了。
+k101c3|Go to see them|会いに行く|去看望
+k101r3|Your family opened the door with a smile. You couldn't look at that face for long.|家族が笑顔で扉を開けた。その顔を長く見ていられなかった。|家人笑着开了门。你无法久久地看着那张脸。
+k102t|That Winter's Fever|あの冬の熱|那年冬天的病
+k102b|Your family mentions it in passing. For a few days that winter, they had a fever for no reason. They say you appeared in their dreams.|家族がついでのように言う。あの冬の数日、わけもなく熱を出したと。夢にあなたが出てきたと。|家人随口提起，那年冬天有几天莫名其妙地发烧，还梦见了你。
+k102c1|Ask what the dream was|どんな夢だったか尋ねる|问是什么样的梦
+k102r1|They said it was a dream of you turning your back on them from far away.|あなたが遠くで背を向ける夢だったと言った。|说是梦见你在远处转身背对着他们。
+k102c2|Change the subject|話をそらす|岔开话题
+k102c3|Tell the truth|本当のことを言う|说出真相
+k102r3|Your family didn't believe you. It was better that they didn't.|家族は信じなかった。信じないほうがよかった。|家人不相信。不相信反而更好。
+k103t|The Same Table|同じ食卓|同一张餐桌
+k103b|You sat at the same table as your family. If you hadn't set down the cup that day, this seat would be empty.|家族と同じ食卓についた。あの日、杯を置かなかったら、この席は空いていただろう。|你和家人坐在同一张餐桌旁。如果那天你没有放下杯子，这个座位会是空的。
+k103c1|Finish your meal|全部食べる|吃完
+k103r1|Your throat tightened.|喉が詰まった。|喉咙哽住了。
+k103c2|Get up first|先に席を立つ|先起身离席
+k103r2|Your family looked at you with concern.|家族が心配そうに見た。|家人担心地看着你。
+k103c3|Say thank you|ありがとうと言う|道谢
+k103r3|They asked what you were thanking them for. You couldn't answer.|何がありがたいのかと聞かれた。答えられなかった。|家人问你在谢什么。你答不上来。
+k104t|An Ordinary Illness|ありふれた病|普通的病
+k104b|Your family member was hospitalized. This time it's an ordinary illness, nothing to do with the cup. Which is why there's even less you can do.|家族が入院した。今度は杯とは何の関係もない、ありふれた病だ。だからこそ、なおさら何もできない。|家人住院了。这次是与杯子毫无关系的普通疾病。正因如此，你更是无能为力。
+k104c1|Stay by their side|そばにつく|守在身边
+k104c2|Think: if only I had that cup|あの杯があれば、と思う|心想：要是那个杯子还在就好了
+k104c3|Push the thought away|考えを押しのける|把这个念头推开
+k105t|Someone Who Doesn't Know You Protected Them|守られたことを知らない人|不知道被你守护的人
+k105b|Your family says you were always the kind of child who looked out for others, ever since you were small.|家族が言う。あなたは小さい頃から人を守ってあげる子だったと。|家人说，你从小就是个会保护别人的孩子。
+k105b@0|Your family says you were always the kind of child who looked out for others, ever since you first came to them.|家族が言う。あなたは初めて来た時から人を守ってあげる子だったと。|家人说，你从刚来的时候起，就是个会保护别人的孩子。
+k105c1|Say that's not true|違うと言う|说不是这样
+k105r1|Your family laughed. The laughter hurt.|家族が笑った。その笑顔が痛かった。|家人笑了。那笑声让你心痛。
+k105c2|Nod|頷く|点头
+k105c3|Start to bring up that day, then stop|あの日のことを言いかけて、やめる|想提起那天的事，又打住了
+k106t|A Second Message|二度目の連絡|第二次联系
+k106b|Your friend reached out again. For a few days that winter, they say, they kept thinking about you for some reason.|友人がまた連絡してきた。あの冬の数日間、なぜかあなたのことを思い出していたと。|朋友又联系了你。说那年冬天有几天，不知为何总想起你。
+k106c1|Go to meet them|会いに行く|去见面
+k106r1|Your friend was the same as ever. Only you had changed.|友人は相変わらずだった。変わったのはあなただけだった。|朋友还是老样子。只有你变了。
+k106c2|Say you're busy|忙しいと言う|说自己很忙
+k106c3|Ask about those few days|その数日のことを尋ねる|问那几天的事
+k106r3|Your friend said their memory of it was hazy.|友人は記憶がぼんやりしていると言った。|朋友说记忆很模糊。
+k107t|A Celebration|祝いの席|庆祝会
+k107b|Something good happened to your friend, and people gathered. At the end of the table, you raise your glass. The word "cup" catches in your throat.|友人に良いことがあって人が集まった。あなたは席の端で杯を上げる。杯という言葉が喉に引っかかる。|朋友遇到了好事，大家聚在一起。你在席位的一端举起杯子。"杯"这个字卡在了喉咙里。
+k107c1|Make a toast|乾杯する|干杯
+k107r1|Your hand shook.|手が震えた。|手在发抖。
+k107c2|Slip out early|早めに抜け出す|提早溜走
+k107c3|Congratulate your friend privately|友人をこっそり祝う|私下祝贺朋友
+k107r3|Your friend hugged you. You didn't know if you deserved that warmth.|友人があなたを抱きしめた。そのぬくもりを受け取る資格があるのか、わからなかった。|朋友拥抱了你。你不知道自己是否配得上那份温暖。
+k108t|Growing Distance|遠ざかる距離|渐远的距离
+k108b|You realized you've been avoiding your friend. Every time you see them, you remember the choice you made that day.|自分が友人を避けていることに気づいた。会うたびに、あの日の選択を思い出す。|你发现自己一直在躲着朋友。每次见面，都会想起那天的选择。
+k108c1|Meet them anyway|それでも会う|还是去见面
+k108r1|You kept in touch.|関係は続いた。|关系维持下来了。
+k108c2|Get in touch less often|連絡を減らす|减少联系
+k108c3|Confide the reason|理由を打ち明ける|说出原因
+k108r3|Your friend listened for a long time and said nothing.|友人は長いこと聞いて、何も言わなかった。|朋友听了很久，什么也没说。
+k109t|An Apology for Nothing|謝ることではない謝罪|不必要的道歉
+k109b|Your friend suddenly apologizes. You've felt distant lately, they say, and they wondered if they'd done something wrong.|友人が突然謝る。近ごろあなたが遠く感じられて、自分が何か悪いことをしたのかと思ったと。|朋友突然向你道歉。说最近觉得你很疏远，以为是自己做错了什么。
+k109c1|Say it isn't their fault|お前のせいじゃないと言う|说这不是对方的错
+k109r1|Your friend still felt sorry.|友人はそれでも申し訳なさそうだった。|朋友还是很过意不去。
+k109c2|Just accept it|そのまま受け入れる|就这样接受
+k109c3|Say you're the one who did something wrong|悪いのは自分のほうだと言う|说是自己做错了事
+k109r3|You never managed to say what.|何が悪かったのかは、ついに言えなかった。|究竟做错了什么，你终究没能说出口。
+k110t|A Day They'll Never Know|その人が知らない一日|那个人不知道的一天
+k110b|It's your friend's birthday. They'll never know what you chose that day. Still, the candles are lit.|友人の誕生日だ。あの日あなたが何を選んだのか、友人は永遠に知らないだろう。それでも蝋燭は灯る。|今天是朋友的生日。朋友永远不会知道那天你做了什么选择。即便如此，蜡烛依然点亮了。
+k110c1|Give them a present|プレゼントを渡す|送上礼物
+k110c1@0|Give them a handwritten letter|手紙を渡す|送上一封亲笔信
+k110c2|Send congratulations from afar|遠くから祝いの言葉だけ送る|远远地送上祝福
+k110c3|Do nothing|何もしない|什么也不做
+k111t|The Student Returns|戻ってきた弟子|回来的弟子
+k111b|Your student came to lessons as if nothing had happened. Their face shows they've forgotten even the few days they were ill that winter.|弟子が何事もなかったように授業に来た。あの冬に数日寝込んだことも忘れた顔だ。|弟子若无其事地来上课了。那副神情，像是连那年冬天病了几天都忘了。
+k111b@0|Your student came to practice as if nothing had happened. Their face shows they've forgotten even the few days they were ill that winter.|弟子が何事もなかったように稽古に来た。あの冬に数日寝込んだことも忘れた顔だ。|弟子若无其事地来练习了。那副神情，像是连那年冬天病了几天都忘了。
+k111c1|Teach as usual|いつも通り教える|照常教导
+k111r1|Your voice kept breaking.|声が何度も途切れた。|你的声音一再中断。
+k111c2|Suggest taking the day off|今日は休もうと言う|提议今天休息
+k111r2|Your student looked at you with concern.|弟子が心配そうに見た。|弟子担心地看着你。
+k111c3|Say you're glad they came|よく来てくれたと言う|说很高兴对方能来
+k111r3|Your student had no idea what you meant.|弟子はわけがわからなかった。|弟子一头雾水。
+k112t|The Student's Question|弟子の問い|弟子的提问
+k112b|Your student asks whether you know what happened in this city that winter. There are rumors going around, they say.|弟子が尋ねる。あの冬この街で起きたことを知っているかと。噂が流れていると。|弟子问你是否知道那年冬天这座城市发生了什么。说外面有传言。
+k112c1|Say you don't know|知らないと言う|说不知道
+k112c2|Tell them a little|少しだけ話す|透露一点
+k112r2|Your student's eyes lit up. That look frightened you.|弟子の目が輝いた。その眼差しが怖かった。|弟子的眼睛亮了起来。那眼神让你害怕。
+k112c3|Tell them never to ask again|二度と聞くなと言う|叫对方别再问
+k113t|The Same Shadow|同じ影|同样的阴影
+k113b|You see a familiar shadow in your student. Eyes that say they'd do anything for what they want.|弟子の中に見覚えのある影を見る。望むもののためなら何でもするという目。|你在弟子身上看到了熟悉的阴影。那是为了想要的东西不惜一切的眼神。
+k113c1|Stop them|止める|阻止
+k113r1|Your student asked why. You couldn't answer.|弟子は理由を尋ねた。答えられなかった。|弟子问为什么。你答不上来。
+k113c2|Pretend not to notice|知らないふりをする|装作没注意
+k113c3|Tell them your story|自分の話を聞かせる|讲你自己的故事
+k113r3|For the first time, your student was afraid of you.|弟子が初めてあなたを恐れた。|弟子第一次对你感到害怕。
+k114t|The Student Departs|旅立つ弟子|离去的弟子
+k114b|Your student leaves, saying there's nothing more to learn. If not for the cup you set down that day, this day would never have come.|弟子が、もう学ぶことはないと言って旅立つ。あの日置いた杯がなければ、この日は来なかった。|弟子说已经没什么可学的了，便离开了。若不是那天你放下了杯子，这一天根本不会到来。
+k114c1|See them off|見送る|送行
+k114r1|At the last, your student bowed deeply. You stood there a long time.|弟子が最後に深く頭を下げた。あなたは長くその場に立っていた。|弟子最后深深鞠了一躬。你在原地站了很久。
+k114c2|Ask them to stay|引き止める|挽留
+k114c3|Don't see them off|見送らない|不去送行
+k115t|A Student Who Surpassed You|越えていった弟子|超越你的弟子
+k115b|Your student's name is spoken more highly than yours. If you hadn't protected them that winter, that name wouldn't exist.|弟子の名があなたより高く呼ばれる。あの冬あなたが守らなければ、その名はなかった。|弟子的名声已经超过了你。如果那年冬天你没有守护对方，这个名字就不会存在。
+k115c1|Be glad|喜ぶ|为对方高兴
+k115r1|Along with the joy, something else rose up.|喜びと一緒に、別の何かが込み上げてきた。|喜悦之中，还涌上了别的什么。
+k115c2|Feel jealous|嫉妬する|嫉妒
+k115c3|Write a letter|手紙を書く|写信
+k115r3|A reply came. 「It's all thanks to you, Teacher.」 You stared at that single line for a long time.|返事が来た。「先生のおかげです」。その一行を長く見つめた。|回信来了。「多亏了老师」。你久久地凝视着那一行字。
+k116t|A Greeting at the Door|玄関の挨拶|门口的问候
+k116b|Your neighbor greets you at the front door. They were laid up sick for a few days that winter, they say, but they're better now.|隣人が玄関先で挨拶する。あの冬に数日寝込んだが、もう治ったと。|邻居在门口跟你打招呼。说那年冬天卧病了几天，现在好了。
+k116c1|Say you're relieved|よかったと言う|说太好了
+k116r1|You sounded so sincere that your neighbor was startled.|声があまりに本気で、隣人が驚いた。|你的语气太过真诚，邻居吓了一跳。
+k116c2|Just bow your head lightly|軽く会釈するだけにする|只是轻轻点头
+k116c3|Ask about those few days|その数日のことを尋ねる|问那几天的事
+k116r3|Your neighbor remembered only that they'd had a high fever.|隣人は熱が高かったことしか覚えていなかった。|邻居只记得自己发了高烧。
+k117t|The Light Next Door|隣家の灯り|邻家的灯光
+k117b|Late at night, your neighbor's light is on. Only you know that it's still burning because of the choice you made that day.|夜遅く、隣家の灯りが点いている。その灯りが消えなかったのはあの日のあなたの選択のおかげだと、あなただけが知っている。|深夜，邻居家的灯还亮着。只有你知道，那盏灯之所以没有熄灭，是因为那天你的选择。
+k117c1|Watch it a long time|長く見つめる|看了很久
+k117c2|Draw the curtains|カーテンを引く|拉上窗帘
+k117c3|Go out for a walk since you can't sleep|眠れなくて散歩に出る|睡不着，出去散步
+k118t|Shared Food|分けてもらった料理|分享的食物
+k118b|Your neighbor shared some food with you. As thanks, they say. Even your neighbor doesn't know for what.|隣人が料理を分けてくれた。お礼だという。何へのお礼なのかは、隣人自身も知らない。|邻居分了些食物给你。说是表示感谢。至于在感谢什么，邻居自己也不知道。
+k118c1|Accept it|受け取る|收下
+k118c2|Give it back|返す|还回去
+k118c3|Return the favor|お返しをする|回礼

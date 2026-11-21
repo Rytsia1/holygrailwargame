@@ -1,0 +1,161 @@
+s:ozymandias:0|Under My light, such a wish shall not be permitted! The Sun King himself shall stop it!|余の光の下で、そのような願いは許されぬ！太陽王自ら止めてくれよう！|在余的光辉之下，那样的愿望不被允许！太阳王亲自来阻止！
+s:ozymandias:1|You received My light. And I have taken that light back. This too is a king's duty.|そなたは余の光を受けた。その光を余が収めた。これもまた王の務めだ。|你沐浴过余的光辉。那光辉由余亲手收回了。这也是王的职责。
+s:ozymandias:2|The sun… sets? By your hand.|太陽が…傾くか。そなたの手で。|太阳……西沉了吗。在你的手中。
+s:ozymandias:3|You command Me! …Very well. But the sun is not bound by chains.|余に命じるか！…よかろう。だが太陽は鎖には縛られぬ。|你在命令余吗！……好吧。但太阳是锁链束缚不住的。
+s:ozymandias:4|For years My light stayed within this house alone. Shining on you, and you alone.|何年も、余の光はこの家の中にだけ留まった。そなた一人を照らすために。|好多年来，余的光辉只留在这个家里。只为照耀你一人。
+s:ozymandias:5|You chose the light yourself! I shall acknowledge it!|そなたは自ら光を選んだ！余が認めよう！|你亲自选择了光明！余认可你！
+s:ozymandias:6|Tell them I shone upon them to the very end.|余は最後までそなたを照らしたと、伝えよ。|告诉他，余直到最后都在照耀着他。
+s:medb:0|Oh my, Master. That wish isn't pretty at all. A queen doesn't take things that aren't pretty.|あら、マスター。その願い、ちっとも可愛くないわ。女王は可愛くないものは手に入れないの。|哎呀，御主。那个愿望一点也不可爱。女王可不要不可爱的东西。
+s:medb:1|You were mine. And I ruined you with my own hands.|私のものだったのに。この手で壊しちゃった。|明明是我的。却被我亲手毁掉了。
+s:medb:2|Ha… a queen, defeated. The worst.|はぁ…女王が負けるなんて。最悪。|哈……女王竟然输了。糟透了。
+s:medb:3|Chains on a queen! …Hmph. Then at least tie them prettily.|女王に鎖だなんて！…ふん。その代わり可愛く縛ってよね。|竟然给女王上锁链！……哼。那至少要绑得漂亮点。
+s:medb:4|For years I owned nothing. A queen, living empty-handed. That much… consider it given to you.|何年も何も手に入れなかったわ。女王が手ぶらで過ごしたのよ。その分は…あなたにあげたと思って。|好多年我什么都没得到。女王两手空空地过日子。那一份……就当作是送给你了吧。
+s:medb:5|Hmph, a pretty choice. The queen will acknowledge it.|ふん、可愛い選択ね。女王が認めてあげる。|哼，挺可爱的选择嘛。女王就认可你吧。
+s:medb:6|Tell them the queen stayed pretty to the end.|女王は最後まで可愛かったって伝えて。|告诉那个人，女王到最后都很可爱。
+s:ushiwaka:0|Master! I did this to my brother too. I ran toward what I believed was right. And now I'm in front of you!|マスター！兄上にもこうしました。正しいと信じるほうへ駆けました。今はあなたの前です！|御主！我对兄长也是这样做的。朝着自己相信是正确的方向奔去。现在就站在您面前！
+s:ushiwaka:1|I won… but there's no one to praise me.|勝ちました…でも、褒めてくれる人がいませんね。|我赢了……可是没有人夸奖我了。
+s:ushiwaka:2|Brother… no, Master. I lost.|兄上…いえ、マスター。私、負けました。|兄长……不，御主。我输了。
+s:ushiwaka:3|…Understood. I'll follow. I wanted to be acknowledged, but not like this.|…わかりました。従います。認めてほしかったけど、こういう形じゃなかった。|……明白了。我会听从。我想得到认可，可不是以这种方式。
+s:ushiwaka:4|For years I didn't say a word. I didn't do anything worth praise, either. …But just one thing. Not leaving your side wasn't only because of the order.|何年も、私は何も言いませんでした。褒められることもしませんでした。…でも、ひとつだけ。あなたのそばを離れなかったのは、命令のせいだけではありませんでした。|好多年我一句话也没说。也没做什么值得夸奖的事。……但是只有一点。我没有离开您身边，并不只是因为命令。
+s:ushiwaka:5|Master, you did so well! I'll praise you myself!|マスター、本当によくできました！私が褒めてあげます！|御主，您做得真好！让我来夸奖您！
+s:ushiwaka:6|Please tell them I ran to the very end!|最後まで駆け抜けたと、その方にお伝えください！|请转告那位，我一直奔跑到了最后！
+s:ivan:0|I shed much blood to protect Rus'. Your wish would spill even more. I shall stop it.|余はルーシを守るため多くの血を流した。そなたの願いはそれ以上に流させる。止めよう。|余为守护罗斯流了许多血。你的愿望会让更多的血流淌。余来阻止。
+s:ivan:1|Once more I have struck down one close to me with this hand… Rus', do not forgive me.|余はまた近しい者をこの手で…ルーシよ、余を許すな。|余又一次亲手对亲近之人……罗斯啊，不要原谅余。
+s:ivan:2|I… fall? Rus' is not yet done.|余が…倒れるか。ルーシはまだだ。|余……倒下了吗。罗斯还没有结束。
+s:ivan:3|You bind Me. You are a tsar more fearsome than I.|余を縛るか。そなたは余より恐ろしいツァーリだな。|要束缚余吗。你是比余更可怕的沙皇啊。
+s:ivan:4|For years I did not rage. For Me, it is a miracle. Because I was at your side.|何年も余は怒らなかった。余にとっては奇跡だ。そなたのそばだったからだ。|好多年余都没有发怒。对余而言是奇迹。因为在你身边。
+s:ivan:5|You mastered your rage. Something I never could.|そなたは怒りを治めた。余にもできなかったことだ。|你平息了怒火。那是余都没能做到的。
+s:ivan:6|Tell them that this time, I protected.|余は今度こそ守ったと、伝えよ。|告诉他，余这一次守住了。
+s:odysseus:0|Says the man who brought down a city with a wooden horse. That wish is a wooden horse. I know what's hidden inside.|木馬で城を落とした男が言おう。その願いは木馬だ。中に何が入っているか、俺は知っている。|用木马攻陷城池的人来说一句。那个愿望就是木马。里面藏着什么，我很清楚。
+s:odysseus:1|I won by cunning… but this time there's nowhere to return to.|知略で勝ったが…今回は帰る場所がないな。|靠智谋赢了……可这次没有可以回去的地方了啊。
+s:odysseus:2|Ha… Ithaca grows distant again.|はっ…イタカがまた遠のくか。|哈……伊萨卡又远去了啊。
+s:odysseus:3|I've been tied to a mast before. Back then I could at least hear a song. This time, I hear nothing.|帆柱に縛られたことはある。あの時は歌が聞こえたが、今回は何も聞こえないな。|我曾被绑在桅杆上。那时至少还能听到歌声，这次却什么也听不见。
+s:odysseus:4|For years I thought about the way home. From this house, to where? I never saw the road. Because wherever you were was home.|何年も帰り道を考えた。この家から、どこへ。道はついに見えなかった。お前のいる場所が家だったからな。|好多年来，我一直在想回家的路。从这个家，回到哪里。路始终没有出现。因为有你的地方就是家。
+s:odysseus:5|You came back. Homecoming always arrives late.|戻ってきたか。帰郷とはいつも遅れてやって来るものだ。|你回来了啊。归乡总是姗姗来迟。
+s:odysseus:6|That I found the way home. To that one.|帰り道は見つけたと。あいつに。|就说我找到回家的路了。转告那家伙。
+s:hippolyta:0|As Queen of the Amazons, I cannot accept that wish. By the war god's girdle, I will stop it.|アマゾネスの女王として、その願いは受け入れられない。軍神の帯にかけて止める。|作为亚马逊的女王，我不能接受那个愿望。以战神的腰带之名，我要阻止。
+s:hippolyta:1|I struck you down. I won't be able to boast of it to my sisters.|お前を倒した。姉妹たちには誇れないな。|我打倒了你。这可没法向姐妹们炫耀啊。
+s:hippolyta:2|Sisters… this is as far as I go.|姉妹たちよ…私はここまでだ。|姐妹们……我就到这里了。
+s:hippolyta:3|I hate chains. But a queen keeps her promises. I will obey.|鎖は嫌いだ。だが女王は約束を守る。従おう。|我讨厌锁链。但女王会遵守约定。我会遵从。
+s:hippolyta:4|For years I didn't run. An Amazon who doesn't run is as good as dead. Still… it was I who chose to stay by your side.|何年も走らなかった。走らないアマゾネスは死んだも同然だ。それでも…お前のそばに留まると決めたのは私だ。|好多年我都没有奔跑。不奔跑的亚马逊等同于死去。即便如此……选择留在你身边的是我。
+s:hippolyta:5|You stopped on your own. That too is freedom.|自ら止まったか。それもまた自由だ。|你自己停下了啊。那也是自由。
+s:hippolyta:6|Tell them I went in a way I needn't be ashamed of before my sisters.|姉妹たちに恥じぬよう去ったと伝えてくれ。|告诉他，我离去时无愧于姐妹们。
+s:gilles:0|Ohh, Master… your wish is the same as burning Jeanne once more. I cannot allow it!|おお、マスター…あなたの願いは、ジャンヌを再び焼くことと同じです。許すわけにはまいりません！|哦哦，御主……您的愿望无异于再次烧死贞德。我绝不能允许！
+s:gilles:1|Jeanne… once again I have destroyed something precious with these hands… ohh…|ジャンヌ…私はまた、大切なものをこの手で…おお…|贞德……我又一次亲手毁掉了珍贵之物……哦哦……
+s:gilles:2|Jeanne… once again I cannot go to you.|ジャンヌ…今度もあなたのもとへ行けないのですね。|贞德……这次也去不了您身边啊。
+s:gilles:3|Ohh, chains! Very well. I have been bound since long, long ago.|おお、鎖とは！よろしい。私はもうずっと昔から縛られておりますゆえ。|哦哦，锁链！很好。因为我早在很久以前就已经被束缚了。
+s:gilles:4|For years I did not go mad. A miracle. …Perhaps because you resemble Jeanne, just a little.|何年も私は狂いませんでした。奇跡でしょう。…あなたがジャンヌに少し似ていたからかもしれません。|好多年我都没有发狂。这是奇迹吧。……也许是因为您和贞德有一点相像。
+s:gilles:5|You walked out of the flames. You did not become like Jeanne.|あなたは炎の中から歩み出られた。ジャンヌのようにはなられなかった。|您从火焰中走了出来。没有落得像贞德那样。
+s:gilles:6|Please tell them that this time, I stood on the right side.|今度は正しい側に立ったと、お伝えください。|请转告那位，这一次我站在了正确的一方。
+s:tamamo:0|Oh my, Master. That's not something a good master does. Tamamo will have to scold you.|あらあら、ご主人様。それは良いご主人様のすることではありませんよ。タマモが叱ってさしあげます。|哎呀哎呀，主人。那可不是好主人该做的事哦。就让玉藻来训斥您吧。
+s:tamamo:1|What was I to you, Master? With these hands, I…|私はご主人様にとって何だったのでしょう。この手で、ご主人様を。|我对主人来说，究竟是什么呢。竟用这双手，对主人……
+s:tamamo:2|Ah… this hurts more than the day my true form was exposed.|あぁ…正体がばれた日より痛いですね。|啊……比被识破真身的那天还要痛呢。
+s:tamamo:3|Hmm, chains? Foxes aren't supposed to be tamed. …Just this once.|ふぅん、鎖ですか？狐はもともと飼い慣らされないものなのですけど。…今回だけですよ。|嗯哼，锁链吗？狐狸本来就不会被驯服的。……就这一次哦。
+s:tamamo:4|For years I didn't wag a single tail. So unlike Tamamo. That's how much… being by your side hurt.|何年も尻尾一本振りませんでした。タマモらしくないでしょう。それだけ…ご主人様のそばはつらかったのです。|好多年来一条尾巴都没摇过。真不像玉藻吧。可见……待在主人身边有多痛苦。
+s:tamamo:5|Master, well done! Tamamo will applaud you with her tails!|ご主人様、よくできました！タマモが尻尾で拍手しますね！|主人，做得好！玉藻用尾巴为您鼓掌！
+s:tamamo:6|Please tell them I was on my master's side to the very end.|最後までご主人様の味方だったとお伝えください。|请转告那位，我直到最后都站在主人这边。
+s:andersen:0|Hmph. I know how this story ends. Terribly. So I'm tearing up the manuscript. You included.|ふん。この話の結末は知っている。最悪だ。だから原稿を破る。お前ごとな。|哼。这个故事的结局我知道。糟透了。所以我要撕掉原稿。连同你一起。
+s:andersen:1|I always said happy endings are lies. …This time, I wished this one were a lie.|ハッピーエンドは嘘だといつも言っていたな。…今回は、嘘であってほしかったよ。|我总说幸福结局是谎言。……这一次，我希望这个才是谎言。
+s:andersen:2|Missed the deadline and ended on bad prose.|締め切りも守れず、駄文で終わるか。|连截稿日期都没赶上，以拙劣的文字收尾啊。
+s:andersen:3|Hmph. You can bind the author, but not the pen. …No, it binds too. Damn it.|ふん。作家を縛ってもペンは縛れん。…いや、縛られるな。くそっ。|哼。就算束缚了作家，也束缚不了笔。……不，笔也被束缚了。可恶。
+s:andersen:4|For years I didn't write a single line. I feared it would be too accurate. I'll write just the last one. You were not a bad reader.|何年も一行も書かなかった。書けば正確すぎる気がしてな。最後の一行だけ書く。お前は悪い読者ではなかった。|好多年我一行也没写。总觉得写出来会太过准确。只写最后一行。你不是个坏读者。
+s:andersen:5|You rewrote the ending. Better than the author.|結末を書き直したか。作家より上だな。|你改写了结局啊。比作家还强。
+s:andersen:6|That the manuscript is finished. Tell that reader.|原稿は書き終えたと。その読者に伝えろ。|就说原稿已经写完了。转告那位读者。
+s:shakespeare:0|Ohh, a tragedy! But I shall not put such an act in this play! The playwright shall take the stage himself!|おお、悲劇ですな！ですがこの劇にそのような幕は入れませぬ！作家自ら舞台に上がりましょう！|哦哦，是悲剧啊！但这出戏里我可不会写那样的一幕！编剧要亲自登台了！
+s:shakespeare:1|The curtain has fallen. Applause… please, don't. Not today.|幕が下りました。拍手は…なさらないでください。今日だけは。|帷幕落下了。掌声……请不要鼓掌。唯独今天。
+s:shakespeare:2|Ohh… the playwright collapsing on stage. This wasn't in the script.|おお…作家が舞台で倒れるとは。これは脚本にありませんでしたな。|哦哦……编剧竟在舞台上倒下了。这可不在剧本里。
+s:shakespeare:3|Chains for an actor! Very well. This too is a scene.|役者に鎖とは！よろしい。これもひとつの場面ですな。|给演员上锁链！很好。这也是一个场景嘛。
+s:shakespeare:4|For years I stood on stage without a single line. The worst role imaginable. But my scene partner… was the finest.|何年も台詞ひとつなく舞台に立ちました。最悪の役柄でしたな。ですが相手役は…最高でした。|好多年来，我一句台词都没有地站在舞台上。真是最糟的角色。但对手戏的那位……是最好的。
+s:shakespeare:5|Bravo! The protagonist rewrote the ending himself!|ブラボー！主人公が自ら結末を書き換えましたな！|好极了！主角亲手改写了结局！
+s:shakespeare:6|Please tell them the final act was a good one.|最後の幕は良かったと、その方にお伝えください。|请转告那位，最后一幕很精彩。
+s:davinci:0|This genius ran the numbers, and that wish is the wrong answer. So I'll correct it for you. It'll sting a little.|天才が計算してみたけど、その願いは誤答だね。だから私が直してあげる。ちょっと痛いよ。|天才计算了一下，那个愿望是错误答案。所以让我来帮你订正。会有点痛哦。
+s:davinci:1|So even a genius can be wrong. I got the right answer, and it still feels wrong.|天才でも間違えることがあるんだね。正解したのに、間違えた気分だよ。|原来天才也会出错啊。明明答对了，却感觉答错了。
+s:davinci:2|Aha… my calculation was off. That's a first.|あはは…私の計算が間違ってたか。初めてだよ。|啊哈……我的计算出错了啊。还是第一次。
+s:davinci:3|Binding a genius—how bold. …Fine. You can't bind my mind, after all.|天才を縛るなんて、大胆だね。…いいよ。頭は縛れないからね。|竟然束缚天才，真大胆。……好吧。反正脑袋是绑不住的。
+s:davinci:4|For years I didn't invent a thing. There was only one thing I wanted to build. A machine to make you smile again. In the end, I couldn't design it.|何年も何も発明しなかった。ひとつだけ作りたかったんだ。君をまた笑わせる機械を。結局、設計できなかったよ。|好多年我什么也没发明。只有一样东西想做。能让你重新笑起来的机器。到最后还是没能设计出来。
+s:davinci:5|That's the right answer! A genius guarantees it!|正解だよ！天才が保証する！|这就是正确答案！天才来担保！
+s:davinci:6|That I stayed curious to the end. Tell them that.|最後まで気になってたって。あの人に伝えて。|就说我到最后都充满了好奇。转告那个人。
+s:nitocris:0|Master! As a pharaoh, I cannot permit such a wish! In the name of the underworld, I will stop it!|マスター！ファラオとして、そのような願いは許せません！冥界の名において止めます！|御主！作为法老，我不能允许那样的愿望！以冥界之名，我要阻止！
+s:nitocris:1|As a pharaoh, I was right. …As a person, I'm not so sure.|ファラオとしては正しかったです。…人としては、よくわかりません。|作为法老，我是对的。……作为人，我就不太清楚了。
+s:nitocris:2|Oh no… a pharaoh, defeated. How embarrassing.|そんな…ファラオが負けるなんて。恥ずかしいです。|怎么会……法老竟然输了。好丢人。
+s:nitocris:3|Commanding a pharaoh…! …Very well. I'll bear it just this once.|ファラオに命令を…！…わかりました。今回だけは我慢します。|竟然命令法老……！……好吧。就忍这一次。
+s:nitocris:4|For years I couldn't act like a pharaoh. I couldn't say a word. But I guarded your side. I think that, at least, was befitting a pharaoh.|何年もファラオらしく振る舞えませんでした。何も言えませんでしたから。でも、あなたのそばは守りました。それはファラオらしかったと思います。|好多年来，我都没能表现得像个法老。因为什么都说不出口。但我守护在您身边。我觉得那还算像个法老。
+s:nitocris:5|Splendid, Master! The pharaoh will praise you!|お見事です、マスター！ファラオが褒めてさしあげます！|了不起，御主！法老来夸奖您！
+s:nitocris:6|Please tell them I won't wait for them in the underworld—that they should live long.|冥界で待つつもりはないと、長生きしてくださいとお伝えください。|请转告那位，我不会在冥界等候，要长命百岁。
+s:mozart:0|That wish is a dissonance. The really bad kind. So I'm taking the baton from you.|その願いは不協和音だよ。すごく悪いほうのね。だから僕が指揮棒を取り上げる。|那个愿望是不协和音。非常糟糕的那种。所以我要夺走你的指挥棒。
+s:mozart:1|I knew I'd write a requiem. I didn't know I'd write one for you.|レクイエムを書くことは知ってたけど、君のために書くことになるとは思わなかった。|我知道自己会写安魂曲，却没想到会为你而写。
+s:mozart:2|Haha… the last note was wrong. Mine.|はは…最後の音を間違えたね。僕が。|哈哈……最后一个音弹错了。是我。
+s:mozart:3|Play it as written, you mean. Okay. No improvising.|楽譜どおりに弾けってことか。わかった。即興はしないよ。|是叫我照谱演奏吧。好吧。不即兴发挥了。
+s:mozart:4|For years I didn't make a single sound. For me, that's hell. But in my head, I kept writing a piece for you the whole time.|何年も一音も出さなかった。僕にとっては地獄だよ。でも頭の中では、ずっと君のための曲を書いてた。|好多年我一个音都没发出。对我来说那就是地狱。但在脑海里，我一直在为你写曲子。
+s:mozart:5|A fine cadence! Perfect!|いい終止形だ！完璧！|漂亮的终止式！完美！
+s:mozart:6|Tell them the last piece is theirs.|最後の曲はあの人のものだって伝えて。|告诉那个人，最后一首曲子是属于他的。
+s:sanzang:0|Master! As your teacher, that's absolutely not allowed! When a disciple goes astray, the teacher stops them!|マスター！師匠として、それは絶対ダメ！弟子が道を外れたら止めるのが師匠よ！|御主！作为师父，那绝对不行！弟子走错路，师父就要阻止！
+s:sanzang:1|This time, I can't even manage a sutra.|今回はお経も出てこないわ。|这次连经都念不出来了。
+s:sanzang:2|A teacher losing to her disciple… that's not in any scripture.|師匠が弟子に負けるなんて…これはお経にないわ。|师父竟然输给弟子……这可不在经文里。
+s:sanzang:3|I'm supposed to be the one putting on the golden headband! …Fine, I'll follow.|輪っかをはめるのは私のほうだったのに！…わかった、従うわ。|戴紧箍的本来该是我这边啊！……好吧，我听你的。
+s:sanzang:4|For years I couldn't chant a sutra. There was no sutra that could save you. But I'll chant just one. That you may be saved.|何年もお経を唱えられなかった。あなたを救うお経がなかったから。でも、ひとつだけ唱えるわ。あなたが救われますように。|好多年我都念不出经来。因为没有能救你的经。但我只念一句。愿你得救。
+s:sanzang:5|Well done, my disciple! You've come back by a road longer than the way to India!|偉いわ、弟子よ！天竺より遠い道を戻ってきたのね！|干得好，徒儿！你走过了比天竺还远的路回来了！
+s:sanzang:6|Tell them I believed in my disciple to the end!|弟子を最後まで信じてたって伝えて！|告诉那个人，我直到最后都相信着徒儿！
+s:circe:0|Hmm, that wish? It's so bad I want to turn it into a pig. The witch will stop it.|ふぅん、その願い？豚にしてやりたいくらいイマイチね。魔女が止めてあげる。|嗯哼，那个愿望？糟糕得让我想把它变成猪。魔女来帮你阻止。
+s:circe:1|Would it have been better if I'd turned you into a pig? …If I'd known it would end like this.|豚にしておけばよかったかしら。…こうなるとわかってたら。|要是把你变成猪会不会更好呢。……早知道会变成这样的话。
+s:circe:2|Ha… a witch ending like this. Odysseus would laugh at me.|はぁ…魔女がこんな終わり方なんて。オデュッセウスに笑われちゃう。|哈……魔女竟然这样收场。会被奥德修斯笑话的。
+s:circe:3|Chains on a witch. Fine. But I'm turning you into a pig later.|魔女に鎖だなんて。いいわ。その代わり、あとで豚にしてあげるから。|给魔女上锁链啊。好吧。但之后我要把你变成猪。
+s:circe:4|For years I didn't cast a single spell. I wanted to change you, but I was afraid if I did, you wouldn't be you.|何年も魔法ひとつ使わなかった。あなたを変えたかったけど、変えたらあなたじゃなくなる気がして。|好多年我一个魔法都没用过。我想改变你，可又怕改变了你就不再是你了。
+s:circe:5|Hmph, smarter than a pig. That's a compliment.|ふん、豚よりは賢いわね。褒めてるのよ。|哼，比猪聪明嘛。这是夸你哦。
+s:circe:6|Tell them the witch was kind to the very end.|魔女は最後まで親切だったって伝えて。|告诉那个人，魔女直到最后都很亲切。
+s:avicebron:0|I despise people. But I despise that wish more. I will stop it.|私は人が嫌いだ。だがその願いはもっと嫌いだ。止める。|我讨厌人类。但我更讨厌那个愿望。我要阻止。
+s:avicebron:1|With the hands that sought to mold paradise, I ended you.|楽園を形作ろうとした手で、お前を終わらせた。|用想要塑造乐园的双手，终结了你。
+s:avicebron:2|Returning… to clay.|泥へ…還るか。|回归……泥土了吗。
+s:avicebron:3|Bind me. A golem moves as it is ordered.|縛れ。ゴーレムとは命令どおりに動くものだ。|束缚我吧。魔像本就按命令行事。
+s:avicebron:4|For years I didn't take off my mask. I had no face to show you. At the end, I will say one thing. You were one of the few people I didn't despise.|何年も仮面を外さなかった。お前に見せる顔がなかったからだ。最後にひとつ言う。お前は、私が嫌わなかった数少ない人間だった。|好多年我都没有摘下面具。因为没有脸可以给你看。最后说一句。你是我为数不多不讨厌的人。
+s:avicebron:5|I despise people, but I don't despise your choice.|人は嫌いだが、お前の選択は嫌いではない。|我讨厌人类，但我不讨厌你的选择。
+s:avicebron:6|Tell them I smiled beneath the mask.|仮面の下で笑ったと伝えろ。|告诉他，我在面具之下笑了。
+s:prelati:0|Ahaha, that wish looks fun… no, it's not fun. Seriously. I'll stop it.|あはは、その願い面白そう…いや、面白くない。本当に。私が止めるよ。|啊哈哈，那个愿望看起来很有趣……不，一点也不有趣。真的。我来阻止。
+s:prelati:1|I wish it were an illusion. Really. Just this once.|幻だったらいいのに。本当に。今回だけは。|要是幻觉就好了。真的。唯独这一次。
+s:prelati:2|Aha… was I the one fooled? This time?|あは…騙されたのは私？今回は？|啊哈……被骗的是我？这一次？
+s:prelati:3|Chains? Fun. No, not fun at all.|鎖？面白いね。いや、ちっとも面白くない。|锁链？真有趣。不，一点也不有趣。
+s:prelati:4|For years I didn't fool anyone. For me, that's huge. At the end, I'll say just one true thing. It was fun. With you.|何年も誰も騙さなかった。私にとってはすごいことだよ。最後にひとつだけ本当のことを言うね。楽しかった。君と。|好多年我谁也没骗过。对我来说这可是件大事。最后说一句真话吧。很开心。和你在一起。
+s:prelati:5|Wow, a twist! Now this is really fun!|わあ、どんでん返しだ！これは本当に面白い！|哇，反转了！这个真的很有趣！
+s:prelati:6|Tell them that this time I didn't fool anyone.|今回は誰も騙さなかったって伝えて。|告诉那个人，这一次我谁也没骗。
+s:kojiro:0|Haha, a fine night. I never thought I'd cross blades with my Master. Come, don't hold back.|はは、良い夜だ。マスターと刃を交えることになるとはな。遠慮せず来るがいい。|哈哈，真是个好夜晚。没想到会与御主刀剑相向。不必客气，来吧。
+s:kojiro:1|I can't call that a fine match. Not this time.|良い勝負だったとは言えぬな。今回ばかりは。|没法说这是一场好较量啊。唯独这一次。
+s:kojiro:2|Haha… my long blade is broken. That was a fine sword, Master.|はは…長刀が折れたか。良い太刀であったぞ、マスター。|哈哈……长刀折了啊。那是一记好刀，御主。
+s:kojiro:3|Let's call being bound a form of elegance. …No, this is not elegance.|縛られるのも風流としよう。…いや、これは風流ではないな。|就把被束缚也当作一种风雅吧。……不，这可不是风雅。
+s:kojiro:4|For years I did not draw my sword. A nameless swordsman stayed beside someone with a name. That is enough.|何年も刀を抜かなかった。名もなき剣士が、名のある人のそばにいた。それで十分だ。|好多年我都没有拔刀。一个无名剑士陪伴在有名有姓之人身边。这就够了。
+s:kojiro:5|You sheathed your blade. That too is a kind of swordsmanship.|刀を収めたか。それもまたひとつの剣術だ。|你收刀了啊。那也是一种剑术。
+s:kojiro:6|Tell them the nameless swordsman went smiling.|名もなき剣士は笑って去ったと伝えてくれ。|告诉他，无名剑士是笑着离开的。
+s:cursedarm:0|Master. An assassin follows orders. But today, by my own will, I will target you.|マスター。暗殺者は命令に従います。ですが今日は、私自身の意志であなたを狙います。|御主。暗杀者遵从命令。但今天，我要以自己的意志瞄准您。
+s:cursedarm:1|I wanted to leave a name behind. Not like this.|名を残したかった。このような形で残したくはなかった。|我想留下名字。可不想以这种方式留下。
+s:cursedarm:2|My right arm… doesn't reach.|右腕が…届きませんか。|右臂……够不到啊。
+s:cursedarm:3|I will obey. An assassin is a shadow, after all.|従います。暗殺者はもとより影ですから。|我会遵从。暗杀者本就是影子。
+s:cursedarm:4|For years I remained only a shadow. Unseen even by you. At the end, at least, I'll show you my face.|何年も影でいました。あなたにも見えないように。最後だけは顔をお見せしましょう。|好多年来我一直只是个影子。连您都看不见。至少最后，让您看看我的脸。
+s:cursedarm:5|You did not stain your name.|あなたは名を汚されませんでした。|您没有玷污自己的名字。
+s:cursedarm:6|Please tell them the shadow stayed by its master to the end.|影は最後まで主のそばにいたと、お伝えください。|请转告那位，影子直到最后都在主人身边。
+s:hundred:0|Master. For the first time, all our opinions have become one. To stop you.|マスター。我らの意見が初めてひとつにまとまりました。あなたを止めると。|御主。我们的意见第一次统一了。要阻止您。
+s:hundred:1|We were one. Only in the moment we struck you down.|我らはひとつでした。あなたを倒した、その瞬間だけ。|我们曾是一体。仅在打倒您的那一瞬间。
+s:hundred:2|We… are scattering. This time we have no regrets.|我らが…散っていきます。今回は惜しくありません。|我们……正在消散。这一次并不遗憾。
+s:hundred:3|All of us will obey. Every last one.|我ら全員が従います。一人残らず。|我们所有人都会遵从。一个不落。
+s:hundred:4|For years, all hundred of us didn't say a word. Now just one of us will speak. All of us cherished you.|何年も、我ら百人は一言も話しませんでした。今、一人だけ話します。我ら皆、あなたを大切に思っていました。|好多年来，我们一百个人一句话也没说。现在只让一个人说吧。我们所有人都珍惜着您。
+s:hundred:5|All of us are proud of you.|我ら皆、あなたを誇りに思います。|我们所有人都为您感到骄傲。
+s:hundred:6|Please tell them that all one hundred of us stayed by their side to the end.|百人全員が最後までそばにいたと伝えてください。|请转告那位，我们一百人直到最后都在身边。
+s:serenity:0|Master… if I touch someone, they die. Today… I've come to touch you.|マスター…私は触れると人を殺します。今日は…触れに来ました。|御主……我一触碰就会杀死别人。今天……我是来触碰您的。
+s:serenity:1|I touched you for the first time. I didn't want to touch you like this.|初めてあなたに触れましたね。こんなふうに触れたくはありませんでした。|第一次触碰到了您。我并不想以这种方式触碰。
+s:serenity:2|I couldn't… touch you. I'm glad. You'll live.|触れられ…ませんでした。よかった。あなたは生きます。|没能……触碰到。太好了。您会活下去。
+s:serenity:3|…I'll obey. I was never able to touch anyone anyway.|…従います。私はもともと誰にも触れられないのですから。|……我会遵从。反正我本来就无法触碰任何人。
+s:serenity:4|For years I sat beside you. A hand's breadth away. That hand's breadth was all I had.|何年もあなたの隣に座っていました。ひと握り離れて。そのひと握りが、私のすべてでした。|好多年来，我一直坐在您身旁。隔着一拃的距离。那一拃，就是我的全部。
+s:serenity:5|You didn't become poison. Unlike me.|あなたは毒になりませんでした。私と違って。|您没有变成毒。和我不一样。
+s:serenity:6|Please tell them I'm glad I didn't touch them at the end.|最後に触れなくてよかったと、その方にお伝えください。|请转告那位，最后没有触碰到真是太好了。
+s:kinghassan:0|The evening bell has tolled. For your name. Offer up your neck, contractor.|晩鐘は鳴った。汝の名のために。首を出せ、契約者よ。|晚钟已经敲响。为了汝之名。献上首级吧，契约者。
+s:kinghassan:1|The bell has ceased. What tolled for you this time was my own hand.|鐘は止んだ。汝のために鳴ったのは、今度は我が手であった。|钟声已止。这一次为汝而鸣的，是吾之手。
+s:kinghassan:2|The bell… has fallen silent. Splendid.|鐘の音が…止んだか。見事だ。|钟声……停止了吗。了不起。
+s:kinghassan:3|I will obey. The blade heeds not orders, but the bell. Today, you hold that bell.|従おう。剣は命ではなく鐘に従う。今日は、その鐘を汝が握った。|吾会遵从。剑不听从命令，而听从钟声。今日，那钟由汝执掌。
+s:kinghassan:4|For years the bell never tolled once. At your side. That was the only thing this skull ever wished for.|幾年ものあいだ、鐘は一度も鳴らなかった。汝のそばで。それがこの髑髏の願った唯一のことであった。|多年来，钟声一次也没有响起。在汝身边。那是这具骷髅唯一的愿望。
+s:kinghassan:5|The bell does not toll. For you stopped of your own accord.|鐘は鳴らぬ。汝は自ら止まったのだから。|钟不会响。因为汝自己停下了。
+s:kinghassan:6|Tell them the bell did not toll for them.|その者のための鐘は鳴らなかったと伝えよ。|告诉那人，为其而鸣的钟没有响起。
+s:semiramis:0|If it's a dream of ruling the world, I was there first. But that dream's poison runs too thick. I'll skim it off for you.|世界を統べる夢なら、私が先だ。だがその夢は毒が濃すぎる。取り除いてやろう。|若是统治世界的梦，我早就做过了。但那个梦的毒太浓了。我来替你除去。
+s:semiramis:1|Poison is mine to handle. It was not for you to drink.|毒は私が扱うものだ。お前が飲むものではなかった。|毒是由我来掌控的。不是该由你来饮下的。
+s:semiramis:2|Hmph… the empress kneels. Remember this.|ふん…女帝が膝をつくか。覚えておくがいい。|哼……女帝竟然屈膝了。给我记住。
+s:semiramis:3|Chains on the empress? Good. Even doves enter cages.|女帝に鎖を？よかろう。鳩も籠に入るものだ。|给女帝上锁链？好吧。鸽子也会进笼子的。
+s:semiramis:4|For years I didn't mix a single poison. Unlike an empress. Let's say you made me weak.|何年も毒ひとつ混ぜなかった。女帝らしくない。お前のせいで弱くなったと言っておこう。|好多年我一滴毒都没有调。真不像女帝。就当是你让我变弱了吧。
+s:semiramis:5|Hmph, declining the throne. Foolish—and not bad.|ふん、玉座を辞退するとは。愚かで、悪くない。|哼，竟然推辞王座。愚蠢，却也不坏。
+s:semiramis:6|Tell them the empress remained the empress to the end.|女帝は最後まで女帝だったと伝えよ。|告诉他，女帝直到最后都是女帝。

@@ -6,3 +6,4 @@ dev/base.html
 dev/build/
 dev/*.uicheck.html
 dev/zh/__pycache__/
+dev/kg/__pycache__/

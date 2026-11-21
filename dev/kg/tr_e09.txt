@@ -1,0 +1,160 @@
+k203c3|Continue it for them|続きを書いてやる|替对方接着写下去
+k204t|The Dark House Next Door|灯りの消えた隣家|熄灯的邻家
+k204b|The light next door doesn't come on. Not since that winter.|隣家の灯りが点かない。あの冬から。|邻居家的灯不再亮起。从那个冬天开始。
+k204c1|Knock on the door|扉を叩く|敲门
+k204r1|A family member came out and shook their head.|家族が出てきて首を振った。|家人出来摇了摇头。
+k204c2|Walk past|通り過ぎる|走过去
+k204c3|Leave something at the door|扉の前に何かを置いてくる|在门口放下些东西
+k205t|The Neighbors Move|隣人の引っ越し|邻居搬家
+k205b|The neighbor's family is moving away. Taking with them the one who never recovered.|隣人の家族が引っ越していく。回復しなかったあの人を連れて。|邻居一家要搬走了。带着那个没能康复的人。
+k205c1|Help with the boxes|荷物を手伝う|帮忙搬东西
+k205c2|Watch from behind the curtain|カーテンの陰から見る|在窗帘后看着
+k205c3|Do nothing|何もしない|什么也不做
+k206t|Walking That Road Alone|一人で歩くあの道|独自走那条路
+k206b|You walk alone the road you walked with your Servant on the fourth day. That day was a day when nothing happened.|四日目にサーヴァントと歩いたあの道を、一人で歩く。あの日は何もない日だった。|你独自走上第四天和从者一起走过的那条路。那天是什么都没发生的一天。
+k206c1|Walk to the end|最後まで歩く|走到尽头
+k206c2|Stop halfway|途中で止まる|中途停下
+k206c3|Wait at the spot where you stopped that day|あの日立ち止まった場所で待つ|在那天停下的地方等着
+k206r3|No one came.|誰も来なかった。|没有人来。
+k207t|The Words of That Day|あの日の言葉|那天的话
+k207b|At the end of that road, your Servant said something. You can't remember exactly what.|あの道の終わりで、サーヴァントが何か言っていた。正確には思い出せない。|在那条路的尽头，从者说过些什么。你记不清了。
+k207c1|Try to remember|思い出そうとする|努力回想
+k207c2|Let it be|そのままにする|就这样吧
+k207c3|Write their name at that spot|その場所に名前を書いておく|在那个地方写下对方的名字
+k208t|A Road in a New Season|季節の変わった道|换了季节的路
+k208b|The season has changed on that road. It's a different scene from that winter.|あの道の季節が変わった。あの冬とは違う景色だ。|那条路换了季节。景色已与那个冬天不同。
+k208c1|Look for the same scenery|同じ景色を探す|寻找同样的景色
+k208r1|You couldn't find it.|見つからなかった。|没能找到。
+k208c2|Look at the new scenery|新しい景色を見る|看看新的景色
+k208c3|Take a different road|別の道を行く|走另一条路
+k209t|Walking with Someone|誰かと歩く道|与人同行的路
+k209b|Someone close to you asks you to take a walk together. Of all roads, it's that one.|身近な誰かが一緒に歩こうと言う。よりによって、あの道だ。|身边的人邀你一起散步。偏偏就是那条路。
+k209c1|Walk together|一緒に歩く|一起走
+k209r1|They noticed the spot where your steps slowed.|その人は、あなたの歩みが遅くなる場所に気づいた。|对方察觉到了你脚步放慢的地方。
+k209c2|Suggest a different road|別の道にしようと言う|提议换条路
+k209c3|Say you'll walk alone|一人で歩くと言う|说要一个人走
+k210t|The Last Day to Walk It|最後に歩く日|最后一次走那条路
+k210b|Construction is starting on that road. By next month it will be gone.|あの道で工事が始まる。来月にはなくなる。|那条路要开始施工了。下个月就会消失。
+k210c1|Walk it one last time|最後にもう一度歩く|最后走一次
+k210c2|Don't go|行かない|不去
+k210c3|Take photographs|写真を残す|拍照留念
+k211t|That Meal, Ordered Alone|一人で頼んだあの料理|独自点的那道菜
+k211b|You ordered, alone, the meal you shared with your Servant on the fourth day.|四日目にサーヴァントと食べたあの料理を、一人で頼んだ。|你一个人点了第四天和从者一起吃过的那道菜。
+k211c1|Finish it|全部食べる|吃完
+k211c2|Leave some|残す|剩下一些
+k211c3|Order two portions|二人前を頼む|点两份
+k212t|The Shop Owner|店の主人|店主
+k212b|The shop owner asks where the person who came with you that time has gone.|店の主人が尋ねる。あの時一緒に来ていた方はどこへ行ったのかと。|店主问你，那时和你一起来的那位去哪儿了。
+k212c1|Say they went far away|遠くへ行ったと言う|说去了很远的地方
+k212r1|The owner nodded and gave you a little extra.|主人は頷いて、おまけを添えてくれた。|店主点点头，多给了你一些。
+k212c2|Don't answer|答えない|不回答
+k212c3|Leave the shop|店を出る|离开店里
+k213t|A Taste Made by Hand|自分で作った味|亲手做的味道
+k213b|You tried making that meal yourself. It doesn't taste the same.|あの料理を自分で作ってみた。あの味が出ない。|你试着亲手做那道菜。做不出那个味道。
+k213c1|Make it again|また作る|再做一次
+k213c2|Give up|やめる|放弃
+k213c3|Serve it to someone|誰かに振る舞う|做给别人吃
+k213r3|They said it was delicious. It wasn't that taste.|その人はおいしいと言った。あの味ではなかった。|对方说很好吃。却不是那个味道。
+k214t|The Shop That Closed|閉じた店|关门的店
+k214b|That shop has closed. A single sheet of paper is taped to the shutter.|あの店が閉まった。シャッターに紙が一枚貼られている。|那家店关门了。卷帘门上贴着一张纸。
+k214c1|Read the paper|紙を読む|读那张纸
+k214r1|It was a note of thanks. To the customers, and to you as you were that day.|お礼の挨拶だった。客たちへ、あの日のあなたへも。|那是一封感谢信。写给客人们，也写给那天的你。
+k214c2|Walk past|通り過ぎる|走过去
+k214c3|Go find the owner|主人を訪ねる|去找店主
+k214r3|The owner remembered you.|主人はあなたを覚えていた。|店主记得你。
+k215t|A Meal You Can No Longer Eat|食べられなくなった料理|再也吃不下的菜
+k215b|You can no longer eat that meal. Just the smell takes you back to that day.|あの料理が食べられなくなった。匂いを嗅ぐだけで、あの日に戻ってしまう。|你再也吃不下那道菜了。光是闻到气味，就会回到那一天。
+k215c1|Force yourself to eat it|無理に食べる|硬着头皮吃
+k215c2|Avoid it|避ける|避开
+k215c3|Breathe in the smell a long time|匂いを長く嗅ぐ|久久地闻着那气味
+k216t|The Last Gaze|最後の眼差し|最后的目光
+k216b|Your fallen Servant kept looking your way to the very end. Every night you read that look differently.|倒れたサーヴァントは、最後まであなたのほうを見ていた。その目が何を意味していたのか、毎晩違うふうに読める。|倒下的从者直到最后都望着你。那眼神是什么意思，每晚都读出不同的含义。
+k216c1|Think it was resentment|恨みだったと思う|认为那是怨恨
+k216c2|Think it was worry|心配だったと思う|认为那是担忧
+k216c3|Decide not to read it|読まないことにする|决定不再揣测
+k217t|The Back of Your Hand|手の甲|手背
+k217b|The Command Seal mark is fading. It's the hand that lost its Servant. It has no more use.|令呪の痕が薄れていく。サーヴァントを失った手だ。使い道がない。|令咒的痕迹渐渐变淡。这是失去了从者的手。再也派不上用场。
+k217c1|Stroke the mark|痕を撫でる|抚摸那痕迹
+k217c2|Wear gloves|手袋をはめる|戴上手套
+k217c3|Try to keep the mark|痕を残そうとする|试着留住那痕迹
+k218t|Where Your Servant Used to Sit|サーヴァントが座っていた場所|从者常坐的位置
+k218b|At your base, the spot where your Servant always sat is empty. Dust settles differently there alone.|拠点で、サーヴァントがいつも座っていた場所が空いている。そこだけ埃の積もり方が違う。|据点里，从者总坐的那个位置空着。只有那里的灰尘积得不一样。
+k218c1|Clean it|片づける|收拾
+k218c2|Leave it as it is|そのままにしておく|保持原样
+k218c3|Try sitting there|そこに座ってみる|坐上去试试
+k218r3|You could see the window your Servant used to look through.|サーヴァントが見ていた窓が見えた。|你看见了从者曾凝望的那扇窗。
+k219t|Your Servant in a Dream|夢の中のサーヴァント|梦中的从者
+k219b|Your Servant appeared in your dream. With the face from before those four days. They ask nothing.|夢にサーヴァントが出てきた。あの四日間より前の顔で。何も尋ねない。|从者出现在你的梦里。是那四天之前的面容。什么也没有问。
+k219c1|Speak to them|話しかける|搭话
+k219r1|Your Servant smiled. Then the dream ended.|サーヴァントが笑った。そして夢が終わった。|从者笑了。然后梦醒了。
+k219c2|Just watch them|じっと見る|静静看着
+k219c3|Apologize|謝る|道歉
+k219r3|Your Servant shook their head. You couldn't tell what it meant.|サーヴァントが首を振った。それが何を意味するのか、わからなかった。|从者摇了摇头。你不明白那是什么意思。
+k220t|The Record of That Night|あの夜の記録|那一夜的记录
+k220b|You open your war journal. The pen stopped on the page for the fourth night.|戦争日誌を開く。四日目の夜のページで、ペンが止まっている。|你翻开战争日志。笔停在了第四天夜里的那一页。
+k220b@0|You open your notes from that winter. The pen stopped on the page for the fourth night.|あの冬のメモを開く。四日目の夜のページで、ペンが止まっている。|你翻开那个冬天的笔记。笔停在了第四天夜里的那一页。
+k220c1|Write the last page|最後のページを書く|写下最后一页
+k220c2|Close it|閉じる|合上
+k220c3|Tear out that page|そのページを破る|撕掉那一页
+a221t|Hands Sorting Through|片づける手|整理遗物的手
+a221b1|Your family sorts through your room. Every drawer holds only small, ordinary things.|家族があなたの部屋を片づける。どの引き出しにも、取るに足らないものばかりだ。|家人整理着你的房间。每个抽屉里都只有些不起眼的东西。
+a221b2|From the bottom drawer came a single photo from that winter. You stand there with a strange mark on the back of your hand, neither smiling nor crying.|いちばん下の段から、あの冬の写真が一枚出てきた。手の甲に見慣れない痕のあるあなたが、笑いも泣きもしない顔で立っている。|最下层抽屉里翻出了一张那个冬天的照片。照片里的你手背上有个陌生的痕迹，脸上既没有笑也没有哭。
+a222t|That Winter's Fever|あの冬の熱|那年冬天的病
+a222b1|Your family often recalls the few days they were sick that winter. On the night the fever broke, it seemed you came to the door, then turned and left without coming in.|家族は、あの冬に数日寝込んだことをよく思い出す。熱が下がった夜、あなたが戸口まで来て、入らずに帰っていったような気がしたと。|家人常常想起那年冬天病倒的那几天。退烧的那一夜，似乎你来到了门前，却没有进来就转身离开了。
+a222b2|That was the last time they saw your back.|それが最後に見た後ろ姿だった。|那是最后一次看到你的背影。
+a223t|The Empty Chair|空いた椅子|空椅子
+a223b1|Every holiday, your family sets out one extra chair. No one speaks of it.|節目のたびに、家族は椅子をひとつ多く置く。誰もその椅子のことは口にしない。|每逢节日，家人都会多摆一把椅子。谁也不提起那把椅子。
+a223b2|No one left in this world knows why the person who should sit in it never came back.|その椅子に座るはずの人がなぜ戻らなかったのか、知る者はこの世にいない。|那把椅子的主人为何没有回来，这世上已无人知晓。
+a224t|The Last Call|最後の電話|最后的电话
+a224b1|Your family's phone holds a short voice message you left that winter. "Everything's all right? Then that's enough."|家族の携帯には、あの冬あなたが残した短い留守電がある。「何もないか。ならいい」|家人的手机里存着那年冬天你留下的一段简短语音。"一切都好吧。那就好。"
+a224b2|Your family still doesn't know what that question was really asking.|家族は今も、その言葉が何を問うていたのか知らない。|家人至今仍不明白，那句话究竟在问什么。
+a225t|Someone Safe|無事な人|平安的人
+a225b1|Your family member lived a long life. After that winter, they never fell seriously ill once.|家族は長生きした。あの冬のあと、大きな病気ひとつしなかった。|家人活得很长。那个冬天之后，一次大病都没有生过。
+a225b2|Sometimes, they said, they felt grateful for no reason. They never knew to whom.|ときどき、わけもなくありがたいと思うことがあると言った。誰に対してなのかは知らなかった。|家人说，有时会莫名地心生感激。却不知道是对谁。
+a226t|A Bedside That Never Wakes|覚めない枕元|醒不来的床边
+a226b1|After that winter, your family member never recovered. The one keeping watch at their side heard of your death.|あの冬以来、家族は回復しなかった。その枕元を守っていた人が、あなたの訃報を聞いた。|那个冬天之后，家人始终没能康复。守在床边的人听到了你的死讯。
+a226b2|Someone said quietly that it was as if they'd lost two people in the same winter.|同じ冬に二人を失ったようなものだと、誰かが静かに言った。|有人轻声说，这就像在同一个冬天失去了两个人。
+a227t|Flowers in the Hospital Room|病室の花|病房里的花
+a227b1|Wilted flowers stand by the window of your family member's hospital room. The nurse said you left them the last day you visited.|家族の病室の窓辺に、しおれた花が挿してある。あなたが最後に来た日に置いていった花だと、看護師が言った。|家人病房的窗边插着枯萎的花。护士说，那是你最后一次来探望时留下的。
+a227b2|And that you stood there a long time before you left.|あの日あなたが長く立ち尽くしてから帰ったことも。|还说那天你在那里站了很久才离开。
+a228t|The Same Winter|同じ冬|同一个冬天
+a228b1|The two death anniversaries are three days apart. Every year, those three days are long.|二人の命日は三日違いだ。毎年、その三日間が長い。|两人的忌日只差三天。每年，那三天都格外漫长。
+a228b2|Those left behind decided not to ask what happened that winter.|残された人々は、あの冬に何があったのかを尋ねないことにした。|留下来的人们决定，不去问那个冬天发生了什么。
+a229t|The Unsent Letter|出せなかった手紙|未寄出的信
+a229b1|A letter to your family turned up on your desk. Only the first line was written: "I'm sorry."|あなたの机から、家族に宛てた手紙が出てきた。最初の一行だけが書かれていた。「すまない」|你的书桌上发现了一封写给家人的信。只写了第一行："对不起。"
+a229b2|The rest was blank.|その先は空白だった。|后面一片空白。
+a230t|A Photo of Your Hand|手の甲の写真|手背的照片
+a230b1|In a box your family left behind is a photo of you. One where you hid the back of your hand.|家族が残した箱に、あなたの写真がある。手の甲を隠して撮った写真だ。|家人留下的箱子里有一张你的照片。是把手背藏起来拍的。
+a230b2|No one remembers what was on the back of that hand.|その手の甲に何があったのか、誰も覚えていない。|谁也不记得那手背上曾有过什么。
+a231t|The Promised Drinks|約束した酒の席|约好的酒局
+a231b1|Your friend still seems to be waiting for the drinks you promised that winter.|友人は、あの冬に約束した酒の席を、今も待っているようだ。|朋友似乎至今仍在等那个冬天约好的酒局。
+a231b2|The place you picked has long since closed. Each time your friend passes it, their steps slow.|あなたが選んだ店はもう閉まった。友人はその前を通るたび、歩みを緩める。|你挑的那家店早已关门。朋友每次经过那里，都会放慢脚步。
+a232t|A Strange Few Days|奇妙な数日|奇怪的几天
+a232b1|Your friend remembers a strange few days that winter. Their body felt heavy, and in their dreams someone stood blocking their way.|友人は、あの冬に奇妙な数日を過ごしたと覚えている。体が重く、夢の中で誰かが自分の前に立ちはだかった。|朋友记得那个冬天度过了奇怪的几天。身体沉重，梦里有人挡在自己面前。
+a232b2|When they woke, there were three missed calls from you on their phone.|目覚めると、携帯にあなたからの不在着信が三件あった。|醒来时，手机上有三通你打来的未接电话。
+a233t|The Eulogy|弔辞|悼词
+a233b1|Your friend read the eulogy at the funeral. You were a good person, they said.|友人が葬儀で弔辞を読んだ。あなたはいい人だったと。|朋友在葬礼上念了悼词。说你是个好人。
+a233b2|Partway through, your friend stopped. Not because they doubted it, but because they hardly knew who you'd been those last few years.|読む途中で友人は止まった。本当にそうだったか自信がないからではなく、最後の数年のあなたをよく知らなかったからだ。|念到一半，朋友停了下来。不是因为怀疑这句话，而是因为对你最后那几年几乎一无所知。
+a234t|The Borrowed Book|借りた本|借来的书
+a234b1|On your friend's bookshelf sits a book they borrowed from you. There's no one to return it to.|友人の本棚に、あなたから借りた本が挿さっている。返す相手がいない。|朋友的书架上放着一本从你那里借来的书。已经没有人可以还了。
+a234b2|The receipt tucked between its pages is dated the fourth day of that winter.|本に挟んだレシートの日付は、あの冬の四日目だ。|夹在书页间的收据，日期是那个冬天的第四天。
+a235t|Words of Thanks|ありがとうの言葉|感谢的话
+a235b1|Your friend sometimes says it bothers them that they never thanked you.|友人はときどき、あなたに礼を言えなかったのが心残りだと言う。|朋友有时会说，没能向你道谢让人耿耿于怀。
+a235b2|They can never explain what they were thankful for.|何がありがたかったのかは、ついに説明できない。|究竟在感谢什么，却始终说不清楚。
+a236t|Two Obituaries|二度の訃報|两份讣告
+a236b1|Three days after your friend collapsed, news of your death arrived.|友人が倒れて三日後、あなたの訃報が届いた。|朋友倒下的第三天，传来了你的死讯。
+a236b2|The group chat has been quiet ever since.|仲間のグループチャットは、その日から静かになった。|那天之后，大家的群聊就安静了下来。
+a237t|The Last Visit|最後の見舞い|最后一次探病
+a237b1|Your friend's family remembers the last day you came to visit. You sat a long while without a word, then left.|友人の家族は、あなたが最後に見舞いに来た日を覚えている。何も言わずに長く座って、帰っていった。|朋友的家人记得你最后一次来探病的那天。你一言不发地坐了很久，然后离开了。
+a237b2|They said your back looked very small as you went.|帰っていく背中がずいぶん小さく見えたと言った。|他们说，你离去的背影显得很小。
+a238t|The Photo That Remains|残った写真|留下的照片
+a238b1|Two faces are missing from the group photo. Those who remain don't take new ones.|仲間の集合写真から、二つの顔が抜けた。残った人たちは新しい写真を撮らない。|大家的合影里少了两张脸。留下的人们不再拍新照片。
+a239t|The Day You Fought|言い争った日|吵架的那天
+a239b1|Long ago, there was a day you and your friend had a bitter fight. Neither of you apologized first.|昔、友人とひどく言い争った日があった。どちらも先に謝らなかった。|很久以前，你和朋友大吵过一架。谁都没有先道歉。
+a239b2|Now there's no one to apologize, and no one to accept it.|今はもう、謝る人も、受け取る人もいない。|如今，已没有道歉的人，也没有接受道歉的人了。
+a240t|Visits That Crossed|すれ違った見舞い|错过的探望
+a240b1|Someone placed your photo by the pillow of your friend who never recovered. Two people who could never visit each other, they said.|回復しなかった友人の枕元に、誰かがあなたの写真を置いた。互いに見舞いに行けなかった二人だからと。|有人把你的照片放在了那个没能康复的朋友枕边。说这是两个没能互相探望的人。
+a240b2|In the photo, you're hiding the back of your hand.|写真の中のあなたは、手の甲を隠している。|照片里的你，把手背藏了起来。
+a241t|The Teaching That Remains|残った教え|留下的教诲
+a241b1|Your student still uses what you taught them every day.|弟子は、あなたが教えたことを今も毎日使っている。|弟子至今每天都在运用你教的东西。
+a241b2|Sometimes they feel they never learned the most important thing. They don't know what it was.|ときどき、いちばん大事なことを学べなかった気がする。それが何なのかはわからない。|有时会觉得，最重要的东西没能学到。却不知道那是什么。

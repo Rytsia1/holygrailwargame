@@ -1,0 +1,140 @@
+k1t|A Dinner Laid Out|用意した夕食|备好的晚饭
+k1b|You laid out dinner for two. Your Servant sat across from you but never picked up the spoon. The steam from the bowls died first.|二人分の夕食を用意した。サーヴァントは向かいに座ったが、箸を取らなかった。器の湯気のほうが先に消えた。|你准备了两人份的晚饭。从者坐在对面，却没有拿起餐具。碗里的热气先散尽了。
+k1c1|Eat it all yourself|一人で全部食べる|一个人全吃完
+k1r1|Your throat tightened.|喉が詰まった。|喉咙哽住了。
+k1c2|Push the bowl toward your Servant|器をサーヴァントの前へ押しやる|把碗推到从者面前
+k1r2|The bowl stayed there all night.|器は一晩中そこにあった。|那只碗整夜都留在原处。
+k1c3|Set out only one bowl from now on|次から一人分だけ用意する|以后只准备一碗
+k1r3|The table grew wider.|食卓が広くなった。|餐桌变宽了。
+k2t|A Different Window|別の窓|另一扇窗
+k2b|Even in the same room, your Servant always looks out a different window. Outside is the world you wished for.|同じ部屋にいても、サーヴァントはいつも別の窓を見ている。窓の外は、あなたが望んだ世界だ。|即使在同一个房间，从者也总是望着另一扇窗。窗外是你所期望的世界。
+k2c1|Move to stand at the same window|同じ窓のほうへ移って立つ|走到同一扇窗前站着
+k2r1|Your Servant stepped aside, one pace.|サーヴァントが一歩よけた。|从者往旁边让了一步。
+k2c2|Draw the curtains|カーテンを引く|拉上窗帘
+k2r2|The room went dark. Your Servant kept looking that way anyway.|部屋が暗くなった。それでもサーヴァントはそちらを見ていた。|房间暗了下来。从者却依旧望着那个方向。
+k2c3|Leave it be|そのままにする|就这样吧
+k3t|A Shadow in the Doorway|戸口の影|门边的影子
+k3b|When you wake at night, your Servant is standing in the doorway. Whether guarding you or unable to leave, you can't tell.|夜中に目覚めると、サーヴァントが戸口に立っている。守っているのか、離れられないのか、わからない。|夜里醒来，从者总站在门边。是在守护，还是无法离开，你分辨不出。
+k3c1|Tell them to come in|入っておいでと言う|叫对方进来
+k3r1|Your Servant did not come in.|サーヴァントは入ってこなかった。|从者没有进来。
+k3c2|Pretend not to notice and lie back down|気づかないふりをして横になる|装作没看见，重新躺下
+k3c3|Stand in the doorway together|一緒に戸口に立つ|一起站在门边
+k3r3|Neither of you spoke until dawn.|夜明けまで、二人とも何も言わなかった。|直到天亮，两人都没有说话。
+k4t|Laundry|洗濯物|洗好的衣服
+k4b|Your Servant silently folds the laundry. Only your clothes. Their own are left as they are.|サーヴァントが黙って洗濯物をたたむ。あなたの服だけをたたみ、自分のものはそのままにしておく。|从者默默地叠着衣服。只叠你的，自己的就那样放着。
+k4c1|Fold your Servant's clothes for them|サーヴァントの服を代わりにたたむ|替从者叠好衣服
+k4r1|The next day, those clothes were rumpled again.|次の日、その服はまた乱れていた。|第二天，那些衣服又被弄乱了。
+k4c2|Say thank you|ありがとうと言う|道谢
+k4r2|Their hands paused for a moment.|手が一瞬止まった。|手停了一下。
+k4c3|Leave it alone|そっとしておく|随它去
+k5t|A Dark Living Room|灯りの消えた居間|熄了灯的客厅
+k5b|You came home late to find the living room lights off. Your Servant was sitting in the dark. Waiting, or simply sitting—you couldn't say.|遅く帰ると、居間の灯りが消えていた。サーヴァントは暗闇の中に座っていた。待っていたのか、ただ座っていただけなのか。|你很晚才回家，客厅的灯熄着。从者坐在黑暗里。是在等你，还是只是坐着。
+k5c1|Turn on the light|灯りをつける|开灯
+k5r1|Your Servant shielded their eyes.|サーヴァントが目を覆った。|从者遮住了眼睛。
+k5c2|Sit down beside them|隣に座る|坐到旁边
+k5r2|The two of you stayed like that until your eyes adjusted to the dark.|二人は暗闇に目が慣れるまで、そのままでいた。|两人就那样待着，直到眼睛适应了黑暗。
+k5c3|Go to your room first|先に部屋へ入る|先回房间
+k6t|Good Morning|朝の挨拶|早安
+k6b|You ask if they slept well. Instead of an answer, a single nod. Each day the nod grows a little smaller.|よく眠れたかと尋ねる。返事の代わりに、一度だけ頷く。その頷きが、日ごとに少しずつ小さくなっていく。|你问对方睡得好不好。回应你的不是话语，而是一次点头。那点头一天比一天轻微。
+k6c1|Ask every day|毎日尋ねる|每天都问
+k6c2|Decide to stop asking|尋ねるのをやめる|决定不再问
+k6c3|Wait until they answer|答えるまで待つ|等到对方回答为止
+k6r3|The sun climbed high into the sky.|日が高く昇った。|太阳升到了半空。
+k7t|In the Rain|雨の中|雨中
+k7b|It's raining. Your Servant stands in the yard without an umbrella.|雨が降っている。サーヴァントは傘もささずに庭に立っている。|下雨了。从者没有打伞，站在院子里。
+k7c1|Hold an umbrella over them|傘をさしかける|为对方撑伞
+k7r1|Your Servant stepped back into the rain.|サーヴァントは一歩下がって雨に打たれた。|从者后退一步，又站回了雨里。
+k7c2|Stand in the rain together|一緒に雨に打たれる|一起淋雨
+k7c3|Watch from inside the window|窓の内側から見る|在窗内看着
+k8t|The News|ニュース|新闻
+k8b|The news reports on the world you wished for. Your Servant picks up the remote and mutes it.|ニュースが、あなたの願った世界の出来事を伝える。サーヴァントがリモコンを取って音を消す。|新闻在播报你所祈愿的那个世界的消息。从者拿起遥控器，把声音关掉了。
+k8c1|Turn it back on|また音をつける|重新打开声音
+k8c2|Leave it be|そのままにする|就这样吧
+k8c3|Get rid of the television|テレビを片づける|把电视收起来
+k8r3|That night, your Servant lingered in the living room a little longer.|その夜、サーヴァントは居間に少し長くいた。|那天晚上，从者在客厅里多待了一会儿。
+k9t|Three Steps Behind|三歩後ろ|三步之后
+k9b|When you go out shopping, your Servant follows three steps behind. That winter, you walked side by side.|買い物に出ると、サーヴァントは三歩後ろからついてくる。あの冬は並んで歩いていた。|出门买东西时，从者总在身后三步跟着。那个冬天，你们是并肩而行的。
+k9c1|Slow your pace|歩みを緩める|放慢脚步
+k9r1|Your Servant slowed down too. The distance stayed the same.|サーヴァントも歩みを緩めた。距離はそのままだった。|从者也放慢了脚步。距离依旧。
+k9c2|Say you'll go alone|一人で行ってくると言う|说你一个人去
+k9r2|Your Servant stayed at the front door.|サーヴァントは玄関に残った。|从者留在了玄关。
+k9c3|Turn around and hold out your hand|振り返って手を差し出す|回头伸出手
+k9r3|Your Servant only looked at your hand.|サーヴァントは手を見つめるだけだった。|从者只是看着你的手。
+k10t|First Snow|初雪|初雪
+k10b|The first snow fell. It snowed that winter when you first met, too. Your Servant stands by the window as if letting the snow fall on them.|初雪が降った。初めて出会ったあの冬にも雪が降っていた。サーヴァントは雪に打たれるように窓辺に立っている。|初雪落下了。初次相遇的那个冬天也下着雪。从者站在窗边，仿佛在迎着落雪。
+k10c1|Bring up that winter|あの冬の話を切り出す|提起那个冬天
+k10r1|Your Servant's shoulders trembled once. That was all.|サーヴァントの肩が一度震えた。それだけだった。|从者的肩膀颤了一下。仅此而已。
+k10c2|Hand them something warm|温かいものを差し出す|递上热饮
+k10r2|They held the cup in their hands until it went cold.|杯は冷めるまで手の中にあった。|那杯饮品一直握在手里，直到凉透。
+k10c3|Go out alone to see the snow|一人で雪を見に出る|一个人出去看雪
+k11t|The Usual Shop|行きつけの店|常去的店
+k11b|The owner of your usual shop looks at the two of you and says, “You two don't laugh together these days.”|行きつけの店の主人が二人を見て言う。「近ごろは一緒に笑わないんですね」|常去的那家店的老板看着你们说：“最近你们都不一起笑了呢。”
+k11c1|Force a smile|笑ってみせる|挤出一个笑
+k11r1|The smile froze.|笑顔がこわばった。|笑容僵住了。
+k11c2|Don't answer|答えない|不回答
+k11c3|Switch to a different shop|別の店に変える|换一家店
+k12t|A Move with No Luggage|荷物のない引っ越し|没有行李的搬家
+k12b|You suggested moving. Your Servant packed nothing. They followed you to the new house, but never had any belongings.|引っ越そうと言った。サーヴァントは荷造りをしなかった。新しい家にもついてきたが、荷物はついになかった。|你提议搬家。从者什么也没收拾。虽然也跟到了新家，却始终没有任何行李。
+k12c1|Decorate a room for your Servant|サーヴァントの部屋を整えてやる|为从者布置一个房间
+k12r1|The room was never used.|部屋が使われることはなかった。|那个房间从没被用过。
+k12c2|Leave them without a room|部屋を用意しないでおく|不另设房间
+k12c3|Call off the move|引っ越しをやめる|取消搬家
+k13t|Birthday|誕生日|生日
+k13b|It's your birthday. There's nothing on the table. After sundown, a single flower was left at the front door.|あなたの誕生日だ。食卓には何もない。日が暮れてから、玄関先に花が一輪置かれていた。|今天是你的生日。餐桌上什么也没有。太阳落山后，门口放着一朵花。
+k13c1|Thank your Servant|サーヴァントにありがとうと言う|向从者道谢
+k13r1|Your Servant pretended not to know.|サーヴァントは知らないふりをした。|从者装作不知道。
+k13c2|Put the flower in a vase|花を生けておく|把花插起来
+k13r2|The flower wilted in three days.|花は三日でしおれた。|花三天就谢了。
+k13c3|Return the flower to your Servant's door|花をサーヴァントの部屋の前に戻しておく|把花放回从者的房门前
+k14t|A Night with Fever|熱の出た夜|发烧的夜晚
+k14b|You ran a fever. Your Servant changed the damp cloth all night. When you opened your eyes, they had already left the room.|熱が出た。サーヴァントが一晩中、濡れタオルを替えてくれた。目を開けると、サーヴァントはもう部屋を出ていた。|你发烧了。从者整夜为你更换湿毛巾。睁开眼时，从者早已离开了房间。
+k14c1|Call out|呼ぶ|呼唤
+k14r1|Your Servant didn't come.|サーヴァントは来なかった。|从者没有来。
+k14c2|Leave a thank-you note|お礼のメモを残す|留下一张道谢的字条
+k14r2|The note disappeared. There was no reply.|メモは消えた。返事はなかった。|字条不见了。没有回音。
+k14c3|Act as if nothing happened|何もなかったふりをする|装作什么都没发生
+k15t|Dressed for That Winter|あの冬の装い|那个冬天的装束
+k15b|The weather turned cold. Your Servant is still dressed exactly as they were that winter.|寒くなった。サーヴァントはあの冬のままの装いだ。|天冷了。从者还是那个冬天的那身打扮。
+k15c1|Buy them new clothes|新しい服を買ってくる|买新衣服回来
+k15r1|The clothes stayed folded, untouched.|服はたたまれたまま、そのままだった。|衣服一直叠着，原封未动。
+k15c2|Drape a blanket over them|毛布を掛けてやる|给对方披上毯子
+k15r2|The blanket stayed on their shoulders until morning.|毛布は朝まで肩に掛かっていた。|毯子一直披在肩上，直到早晨。
+k15c3|Say nothing|何も言わない|什么也不说
+k16t|The Bench|ベンチ|长椅
+k16b|You went to the park you often visited. Your Servant sits at the far end of the bench. The middle is left empty.|よく行った公園に出かけた。サーヴァントはベンチの端に座る。真ん中が空いた。|你去了常去的公园。从者坐在长椅的一端。中间空着。
+k16c1|Move to sit in the middle|真ん中へ移って座る|挪到中间坐
+k16r1|Your Servant stood up.|サーヴァントが立ち上がった。|从者站了起来。
+k16c2|Sit at the opposite end|反対側の端に座る|坐到另一端
+k16c3|Stand up and walk|立って歩く|起身走走
+k17t|Photos That Stopped|止まった写真|停住的照片
+k17b|The photos on your phone stop at that winter. There are none of the two of you together after that.|携帯の写真はあの冬で止まっている。それ以来、二人一緒に写った写真はない。|手机里的照片停在了那个冬天。此后再没有两人的合影。
+k17c1|Ask to take one together|一緒に撮ろうと言う|提议一起拍一张
+k17r1|In the photo, your Servant was looking off the edge of the screen.|写真の中のサーヴァントは、画面の外を見ていた。|照片里的从者望着画面之外。
+k17c2|Scroll through old photos|昔の写真をめくる|翻看旧照片
+k17c3|Delete the photos|写真を消す|删掉照片
+k18t|The Porch Light Left On|点けておいた玄関の灯り|留着的玄关灯
+k18b|You came home late on purpose. The porch light was on. Your Servant had only switched it on and gone into their room.|わざと遅く帰ってみた。玄関の灯りが点いている。サーヴァントは灯りだけ点けて、部屋に入っていた。|你故意晚归了一次。玄关的灯亮着。从者只是把灯打开，就回了房间。
+k18c1|Turn off the light and go to bed|灯りを消して寝る|关灯睡觉
+k18c2|Knock on their door|部屋の戸を叩く|敲对方的房门
+k18r2|There was no answer.|返事はなかった。|没有回应。
+k18c3|Come home early the next day|次の日は早く帰る|第二天早点回家
+k19t|That Song|あの曲|那首曲子
+k19b|The house was so quiet you put on some music. When the song your Servant loved that winter came on, they left the room.|家があまりに静かで、音楽をかけた。あの冬にサーヴァントが好きだった曲が流れると、サーヴァントは部屋を出ていった。|屋里太安静了，你放了音乐。那个冬天从者喜欢的曲子一响起，从者便离开了房间。
+k19c1|Change the song|曲を変える|换一首
+k19c2|Leave it on|そのままにする|就这样放着
+k19c3|Turn off the music|音楽を止める|关掉音乐
+k19r3|It went quiet again.|また静かになった。|又安静下来了。
+k20t|Sunrise|日の出|日出
+k20b|On New Year's Day, you suggested going to see the sunrise. Your Servant came along. While the sun rose, your Servant looked only at your shadow.|元日、初日の出を見に行こうと言った。サーヴァントはついてきた。日が昇るあいだ、サーヴァントはあなたの影だけを見ていた。|新年第一天，你提议去看日出。从者跟着去了。太阳升起时，从者只看着你的影子。
+k20c1|Make a wish|願いをかける|许愿
+k20r1|You couldn't decide what to wish for.|何を願うか決められなかった。|你没能决定许什么愿。
+k20c2|Ask your Servant for their wish|サーヴァントに願いを尋ねる|问从者的愿望
+k20r2|Your Servant closed their eyes.|サーヴァントは目を閉じた。|从者闭上了眼睛。
+k20c3|Turn back first|先に背を向ける|先转身离开
+k21t|A Corner of the Yard|庭の片隅|院子一角
+k21b|Your Servant tends a corner of the yard. When you approach, their hands stop.|サーヴァントが庭の片隅を手入れしている。あなたが近づくと、手を止める。|从者打理着院子的一角。你一走近，对方就停下了手。
+k21c1|Watch from a distance|遠くから見る|远远看着
+k21r1|The flowers bloomed. Your Servant did not pick them.|花が咲いた。サーヴァントはその花を摘まなかった。|花开了。从者没有摘下它们。
+k21c2|Lend a hand|手伝う|帮忙
+k21r2|Your Servant walked away.|サーヴァントが席を外した。|从者走开了。
+k21c3|Leave that spot alone|その場所を空けておく|把那块地方留着
