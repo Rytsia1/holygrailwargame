@@ -102,4 +102,5 @@ python3 cross2_apply.py build/game.html            # 갈림길 61장면 추가 �
 python3 life2_apply.py build/game.html             # 삶 성향 사건 46개 · 성향 사건 1.5배 · 마술 사건 2.2배 · 한 해 최대 2개(삶+성장) (11-20)
 python3 epi3_apply.py build/game.html             # 에필로그 성향 사건 50개(짙음 4 · 깊음 5) · 서번트가 떠난 삶의 봄 열나흘 · 첫 해 사건 100개 (11-21)
 python3 talkally_apply.py build/game.html          # 전투 중 대화로 상대가 무기를 거두면 동맹은 저절로가 아니라 「동맹 제안」 창에서 고른다(자동 진행은 거절) (11-21)
+python3 duel_apply.py build/game.html           # 마스터 대 서번트 결투 엔진(상세안 6판): 환산 · 잔의 힘 · 오드 · 망설임 · 칼끝 · 비기 · 령주 멈춰라 · 말을 건다 · 동행 (11-21)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)

@@ -1,0 +1,142 @@
+# 마스터 대 서번트 결투 (duel_apply.py) — 한국어|영어|일본어|간체. 'T '로 시작하면 문장 틀
+# 비기 이름
+원소 마술 비기|Elemental Secret Art|元素魔術の秘技|元素魔术秘技
+보석 마술 비기|Jewel Secret Art|宝石魔術の秘技|宝石魔术秘技
+몸의 비기|Secret Art of the Body|体の秘技|体之秘技
+성언의 비기|Secret Art of the Holy Word|聖言の秘技|圣言秘技
+룬 마술 비기|Rune Secret Art|ルーン魔術の秘技|卢恩魔术秘技
+저주의 비기|Secret Art of Curses|呪いの秘技|诅咒秘技
+정신 간섭 비기|Mind Interference Secret Art|精神干渉の秘技|精神干涉秘技
+강령술 비기|Necromancy Secret Art|降霊術の秘技|降灵术秘技
+점성술 비기|Astrology Secret Art|占星術の秘技|占星术秘技
+사역마 비기|Familiar Secret Art|使い魔の秘技|使魔秘技
+결계 마술 비기|Bounded Field Secret Art|結界魔術の秘技|结界魔术秘技
+인형술 비기|Puppetry Secret Art|人形術の秘技|人偶术秘技
+치유 마술 비기|Healing Secret Art|治癒魔術の秘技|治愈魔术秘技
+연금술 비기|Alchemy Secret Art|錬金術の秘技|炼金术秘技
+# 칼끝 · 묶음 · 카드
+굳다|Steady|揺るがない|坚定
+흔들린다|Wavering|揺らいでいる|动摇
+크게 흔들린다|Badly shaken|大きく揺らいでいる|剧烈动摇
+칼끝|Blade|切っ先|剑锋
+고위 기술|Advanced arts|高位技術|高位技术
+이번 결투|This duel|この決闘|本次决斗
+나|Me|私|我
+마술 소양 없음|No magecraft training|魔術の素養なし|无魔术素养
+T 마술 소양 {0}|Magecraft training {0}|魔術の素養 {0}|魔术素养 {0}
+T 오드 {0} / {1}|Od {0} / {1}|オド {0} / {1}|奥德 {0} / {1}
+T 나의 서번트였던 자 · {0}|Once my Servant · {0}|かつての私のサーヴァント · {0}|曾经的我的从者 · {0}
+T {0} · {1}합|{0} · Round {1}|{0} · {1}合目|{0} · 第{1}回合
+T 상대 {0} · 우리 {1} · 칼끝 {2}|Them: {0} · Us: {1} · Blade: {2}|相手 {0} · 味方 {1} · 切っ先 {2}|对方 {0} · 我方 {1} · 剑锋 {2}
+T 상대 {0} · 우리 {1} · 칼끝 {2} · 망설인다|Them: {0} · Us: {1} · Blade: {2} · Hesitating|相手 {0} · 味方 {1} · 切っ先 {2} · ためらっている|对方 {0} · 我方 {1} · 剑锋 {2} · 犹豫中
+# 공격 방식
+체술로 맞선다|Fight hand to hand|体術で立ち向かう|以体术迎战
+오드 부족|Not enough Od|オド不足|奥德不足
+# 마스터 행동
+이번 합 마스터 전투력이 오른다|Your power rises this round|この合、マスターの戦闘力が上がる|本回合御主战斗力上升
+이번 합 서번트 전투력이 떨어진다 · 대마력이면 절반|The Servant's power drops this round · Halved against Magic Resistance|この合、サーヴァントの戦闘力が下がる · 対魔力があれば半分|本回合从者战斗力下降 · 有对魔力则减半
+이번 합 마스터가 받는 피해가 준다 · 보구는 막지 못한다|You take less damage this round · Cannot stop a Noble Phantasm|この合、マスターが受けるダメージが減る · 宝具は防げない|本回合御主受到的伤害减少 · 挡不住宝具
+마스터 건강 +12 · 결투에서 한 번|Your Health +12 · Once per duel|マスターの健康 +12 · 決闘で一度|御主健康 +12 · 决斗中一次
+이번 합 서번트 전투력이 떨어진다 · 어벤저에게는 두 배 · 대마력이면 절반 · 결투에서 한 번|The Servant's power drops this round · Doubled against Avengers · Halved against Magic Resistance · Once per duel|この合、サーヴァントの戦闘力が下がる · アヴェンジャーには二倍 · 対魔力があれば半分 · 決闘で一度|本回合从者战斗力下降 · 对复仇者加倍 · 有对魔力则减半 · 决斗中一次
+이번 합 서번트 전투력이 떨어진다|The Servant's power drops this round|この合、サーヴァントの戦闘力が下がる|本回合从者战斗力下降
+이번 합 서번트 전투력이 크게 떨어진다|The Servant's power drops sharply this round|この合、サーヴァントの戦闘力が大きく下がる|本回合从者战斗力大幅下降
+# 마안
+이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다|The Servant may falter once more this round · The Servant's power drops|この合、サーヴァントがもう一度ためらう · サーヴァントの戦闘力が下がる|本回合从者会再迟疑一次 · 从者战斗力下降
+세 합 동안 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다 · 결투에서 한 번|The Servant stiffens for three rounds · Weaker against high Magic Resistance · Once per duel|三合のあいだサーヴァントが固まる · 対魔力が高いほど効きにくい · 決闘で一度|三回合内从者僵住 · 对魔力越高越难生效 · 决斗中一次
+세 합 동안 받는 피해를 크게 줄인다 · 결투에서 한 번|Greatly reduces damage taken for three rounds · Once per duel|三合のあいだ受けるダメージを大きく減らす · 決闘で一度|三回合内大幅减少受到的伤害 · 决斗中一次
+흉 표식을 새긴다 · 표식 하나마다 서번트 전투력 −5|Carves an ill-omen mark · −5 to the Servant's power per mark|凶の印を刻む · 印ひとつごとにサーヴァントの戦闘力 −5|刻下凶兆印记 · 每个印记使从者战斗力 −5
+세 합 동안 서번트의 공격 방식을 정한다 · 대마력이면 두 합 · 결투에서 한 번|Dictates how the Servant attacks for three rounds · Two rounds against Magic Resistance · Once per duel|三合のあいだサーヴァントの攻撃方法を決める · 対魔力があれば二合 · 決闘で一度|三回合内决定从者的攻击方式 · 有对魔力则两回合 · 决斗中一次
+이번 합 받는 피해를 줄인다|Reduces damage taken this round|この合、受けるダメージを減らす|本回合减少受到的伤害
+# 비기 설명
+T 힘 겨루기 없이 피해 {0} · 대마력에 깎인다 · 그 합의 공격을 대신한다 · 보구에는 진다|{0} damage with no clash of power · Reduced by Magic Resistance · Replaces that round's attack · Loses to a Noble Phantasm|力比べなしでダメージ {0} · 対魔力で削られる · その合の攻撃の代わりになる · 宝具には負ける|无需比拼力量造成伤害 {0} · 会被对魔力削减 · 代替该回合的攻击 · 敌不过宝具
+T 힘 겨루기 없이 피해 {0} · 대마력을 무시한다 · 그 합의 공격을 대신한다 · 보구에는 진다|{0} damage with no clash of power · Ignores Magic Resistance · Replaces that round's attack · Loses to a Noble Phantasm|力比べなしでダメージ {0} · 対魔力を無視する · その合の攻撃の代わりになる · 宝具には負ける|无需比拼力量造成伤害 {0} · 无视对魔力 · 代替该回合的攻击 · 敌不过宝具
+T 힘 겨루기 없이 피해 {0} · 대마력에 깎인다 · 어벤저에게는 두 배 · 그 합의 공격을 대신한다 · 보구에는 진다|{0} damage with no clash of power · Reduced by Magic Resistance · Doubled against Avengers · Replaces that round's attack · Loses to a Noble Phantasm|力比べなしでダメージ {0} · 対魔力で削られる · アヴェンジャーには二倍 · その合の攻撃の代わりになる · 宝具には負ける|无需比拼力量造成伤害 {0} · 会被对魔力削减 · 对复仇者加倍 · 代替该回合的攻击 · 敌不过宝具
+T 네 합 동안 서번트 전투력 −{0} · 대마력이면 −{1} · 걸고 나서 공격도 한다 · 보구에는 진다|The Servant's power −{0} for four rounds · −{1} against Magic Resistance · You still attack after casting · Loses to a Noble Phantasm|四合のあいだサーヴァントの戦闘力 −{0} · 対魔力があれば −{1} · かけた後で攻撃もする · 宝具には負ける|四回合内从者战斗力 −{0} · 有对魔力则 −{1} · 施加后仍会攻击 · 敌不过宝具
+세 합 동안 서번트의 평소 공격이 닿지 않는다 · 그 합의 공격을 대신한다 · 보구에는 진다|The Servant's normal attacks can't reach you for three rounds · Replaces that round's attack · Loses to a Noble Phantasm|三合のあいだサーヴァントの通常攻撃が届かない · その合の攻撃の代わりになる · 宝具には負ける|三回合内从者的普通攻击无法触及 · 代替该回合的攻击 · 敌不过宝具
+T 마스터 건강 +{0} · 보구를 맞는 합에도 회복된다 · 그 합의 공격을 대신한다|Your Health +{0} · Heals even in a round you're hit by a Noble Phantasm · Replaces that round's attack|マスターの健康 +{0} · 宝具を受ける合でも回復する · その合の攻撃の代わりになる|御主健康 +{0} · 即使在承受宝具的回合也会恢复 · 代替该回合的攻击
+T 오드 −{0} · 재산 −{1}|Od −{0} · Wealth −{1}|オド −{0} · 財産 −{1}|奥德 −{0} · 财产 −{1}
+# 령주
+멈춰라|Stop|止まれ|停下
+령주: 멈춰라|Command Spell: Stop|令呪：止まれ|令咒：停下
+이번 합 서번트 전투력이 크게 떨어지고, 이번 합 보구를 쓰지 못한다|The Servant's power drops sharply and it cannot use its Noble Phantasm this round|この合、サーヴァントの戦闘力が大きく下がり、この合は宝具を使えない|本回合从者战斗力大幅下降，且本回合无法使用宝具
+T 이번 합 서번트 전투력이 크게 떨어지고, 이번 합 보구를 쓰지 못한다 · 대마력 {0}%만 듣는다|The Servant's power drops sharply and it cannot use its Noble Phantasm this round · Only {0}% effective against Magic Resistance|この合、サーヴァントの戦闘力が大きく下がり、この合は宝具を使えない · 対魔力により{0}%しか効かない|本回合从者战斗力大幅下降，且本回合无法使用宝具 · 因对魔力只生效{0}%
+# 말을 건다
+그날의 약속|That day's promise|あの日の約束|那天的约定
+그날의 기억|That day's memory|あの日の記憶|那天的记忆
+인연|Bond|縁|羁绊
+인연 배율|Bond multiplier|縁の倍率|羁绊倍率
+T 인연 배율 {0}|Bond multiplier {0}|縁の倍率 {0}|羁绊倍率 {0}
+둘째 날 밤, 지금의 당신으로 남겠다고 한 약속을 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up the promise from the second night, to stay as you are now · The blade shakes badly · You don't attack that round|二日目の夜、今のあなたのままでいると交わした約束を持ち出す · 切っ先が大きく揺らぐ · その合は攻撃しない|提起第二天夜里、说要保持现在的自己的那个约定 · 剑锋剧烈动摇 · 该回合不攻击
+지키지 못한 약속을 꺼낸다 · 칼끝이 오히려 굳는다 · 그 합에는 공격하지 않는다|Bring up the promise you couldn't keep · The blade only steadies · You don't attack that round|守れなかった約束を持ち出す · 切っ先がかえって固まる · その合は攻撃しない|提起没能遵守的约定 · 剑锋反而更坚定 · 该回合不攻击
+셋째 날 밤의 대답, 「그때도 이랬다」를 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It was like this back then, too” · The blade shakes badly · You don't attack that round|三日目の夜の答え、「あの時もこうだった」を持ち出す · 切っ先が大きく揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“那时候也是这样” · 剑锋剧烈动摇 · 该回合不攻击
+셋째 날 밤의 대답, 「같은 사람이다」를 꺼낸다 · 칼끝이 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It's the same person” · The blade wavers · You don't attack that round|三日目の夜の答え、「同じ人だ」を持ち出す · 切っ先が揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“是同一个人” · 剑锋动摇 · 该回合不攻击
+셋째 날 밤의 대답, 「그때와는 다르다」를 꺼낸다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It's different from back then” · You don't attack that round|三日目の夜の答え、「あの時とは違う」を持ち出す · その合は攻撃しない|提起第三天夜里的回答：“和那时候不一样” · 该回合不攻击
+# 기록
+T 잔이 가득 찼다. {0~이} 당신과 마주 섰다.|The cup is full. {0} stood facing you.|杯が満ちた。{0}があなたと向かい合った。|圣杯已满。{0}与你相对而立。
+그 소원만큼은 내가 막겠다.|That wish, at least, I will stop.|その願いだけは、私が止める。|唯独那个愿望，由我来阻止。
+T {0}: “그 소원만큼은 내가 막겠다.”|{0}: “That wish, at least, I will stop.”|{0}：「その願いだけは、私が止める。」|{0}：“唯独那个愿望，由我来阻止。”
+T {0} 조가 {1} 곁에 섰다. 잔을 막으러 온 것이다.|The {0} team took its place beside {1}. They had come to stop the cup.|{0}組が{1}の傍らに立った。杯を止めに来たのだ。|{0}组站到了{1}身旁。他们是来阻止圣杯的。
+T {0}의 칼끝이 한순간 흔들렸다.|For an instant, {0}'s blade wavered.|{0}の切っ先が一瞬揺らいだ。|{0}的剑锋一瞬间动摇了。
+T {0~이} 숨을 한 번 삼켰다. 칼이 늦었다.|{0} swallowed a breath. The blade came late.|{0}が息をひとつ呑んだ。剣が遅れた。|{0}屏住了一口气。剑慢了一拍。
+T 당신의 저주가 {0}에게 감겼다. 「{1}」.|Your curse coiled around {0}. 「{1}」.|あなたの呪いが{0}に絡みついた。「{1}」。|你的诅咒缠上了{0}。「{1}」。
+T {0}의 몸이 굳었다. 그러나 대마력이 령주를 반쯤 밀어냈다.|{0}'s body stiffened. But Magic Resistance pushed back half the Command Spell.|{0}の体が固まった。だが対魔力が令呪を半ば押し返した。|{0}的身体僵住了。但对魔力挡回了一半令咒。
+T {0}의 몸이 령주에 묶여 굳었다.|Bound by the Command Spell, {0}'s body stiffened.|令呪に縛られ、{0}の体が固まった。|被令咒束缚，{0}的身体僵住了。
+T 당신의 눈이 {0~을} 붙잡았다. 「{1}」.|Your eyes caught {0}. 「{1}」.|あなたの眼が{0}を捕らえた。「{1}」。|你的眼睛捕捉住了{0}。「{1}」。
+T {0~이} 당신의 눈을 피하지 못했다. 칼끝이 늦었다.|{0} couldn't escape your gaze. The blade came late.|{0}はあなたの眼から逃れられなかった。切っ先が遅れた。|{0}没能避开你的目光。剑锋慢了一拍。
+오드가 바닥났다. 회로를 혹사해 억지로 끌어냈다.|Your Od ran dry. You forced it out by driving your circuits to the limit.|オドが底をついた。回路を酷使して無理やり引き出した。|奥德见底了。你强行驱使回路硬是挤了出来。
+T {0~이} 보구를 해방했다. “{1}.”|{0} released a Noble Phantasm. “{1}.”|{0}が宝具を解放した。「{1}」。|{0}解放了宝具。“{1}。”
+보구의 방벽이 서번트를 감쌌다.|The Noble Phantasm's barrier wrapped around the Servant.|宝具の防壁がサーヴァントを包んだ。|宝具的屏障包裹住了从者。
+보구의 빛이 서번트의 상처를 메웠다.|The Noble Phantasm's light closed the Servant's wounds.|宝具の光がサーヴァントの傷を塞いだ。|宝具的光芒填补了从者的伤口。
+보구의 힘이 서번트를 떠받쳤다.|The Noble Phantasm's power bore the Servant up.|宝具の力がサーヴァントを支えた。|宝具的力量支撑着从者。
+T “지금의 나로 남겠다고 했지.” {0}의 칼끝이 떨렸다.|“You said I'd stay as I am now.” {0}'s blade trembled.|「今の私のままでいると言ったでしょう」{0}の切っ先が震えた。|“你说过，会让我保持现在的自己吧。”{0}的剑锋颤抖了。
+…그 약속을, 지금 꺼내는 건가.|…You bring up that promise, now?|…その約束を、今持ち出すのか。|……那个约定，你要在现在提起吗。
+T {0}: “…그 약속을, 지금 꺼내는 건가.”|{0}: “…You bring up that promise, now?”|{0}：「…その約束を、今持ち出すのか。」|{0}：“……那个约定，你要在现在提起吗。”
+T 지키지 못한 약속을 꺼냈다. {0}의 눈이 차가워졌다.|You brought up the promise you couldn't keep. {0}'s eyes went cold.|守れなかった約束を持ち出した。{0}の目が冷たくなった。|你提起了没能遵守的约定。{0}的眼神冷了下来。
+그 말을 할 자격이, 그대에게 있나.|Do you have the right to say that?|その言葉を口にする資格が、そなたにあるのか。|你有资格说那句话吗。
+T {0}: “그 말을 할 자격이, 그대에게 있나.”|{0}: “Do you have the right to say that?”|{0}：「その言葉を口にする資格が、そなたにあるのか。」|{0}：“你有资格说那句话吗。”
+T 셋째 날 밤의 대답을 꺼냈다. {0~이} 한순간 눈을 감았다.|You brought up your answer from the third night. For an instant, {0} closed their eyes.|三日目の夜の答えを持ち出した。{0}が一瞬目を閉じた。|你提起了第三天夜里的回答。{0}一瞬间闭上了眼睛。
+T 셋째 날 밤의 대답을 꺼냈다. {0~은} 아무것도 말하지 않았다.|You brought up your answer from the third night. {0} said nothing.|三日目の夜の答えを持ち出した。{0}は何も言わなかった。|你提起了第三天夜里的回答。{0}什么也没说。
+T 상처가 빛 속에서 닫혔다. 「{0}」.|Your wounds closed in the light. 「{0}」.|傷が光の中で塞がった。「{0}」。|伤口在光芒中愈合了。「{0}」。
+T 보구 앞에서 비기가 꺾였다. 「{0}」.|Your secret art broke before the Noble Phantasm. 「{0}」.|宝具の前で秘技が折れた。「{0}」。|秘技在宝具面前折断了。「{0}」。
+T 힘 겨루기를 건너뛰고, 비기가 {0}에게 닿았다. 「{1}」.|Skipping the clash of power, your secret art reached {0}. 「{1}」.|力比べを飛び越えて、秘技が{0}に届いた。「{1}」。|跳过了力量的比拼，秘技击中了{0}。「{1}」。
+T 당신의 둘레에 결계가 섰다. 서번트의 칼이 닿지 않는다. 「{0}」.|A bounded field rose around you. The Servant's blade can't reach you. 「{0}」.|あなたの周りに結界が立った。サーヴァントの剣が届かない。「{0}」。|你的周围立起了结界。从者的剑无法触及你。「{0}」。
+보구가 결계를 깨뜨렸다.|The Noble Phantasm shattered the bounded field.|宝具が結界を打ち砕いた。|宝具击碎了结界。
+칼끝과 마력이 몇 번이고 엇갈렸다. 승부가 나지 않는다.|Blade and magic crossed again and again. Neither side gave.|切っ先と魔力が幾度も交錯した。勝負がつかない。|剑锋与魔力一次次交错。胜负未分。
+서로 한 걸음씩 물러섰다. 숨을 고른다.|Both stepped back a pace. Catching their breath.|互いに一歩ずつ退いた。息を整える。|双方各退了一步。调整呼吸。
+T 밀리던 당신이 한순간 틈을 비집고 들어갔다. 일격이 {0}에게 닿았다.|Though pressed back, you forced your way into an opening for an instant. A blow reached {0}.|押されていたあなたが、一瞬の隙をこじ開けた。一撃が{0}に届いた。|一直处于下风的你一瞬间钻进了破绽。一击打中了{0}。
+T 몰아붙이던 순간, {0}의 칼이 먼저 닿았다.|Just as you pressed in, {0}'s blade reached you first.|押し込んだその瞬間、{0}の剣が先に届いた。|就在你步步紧逼的瞬间，{0}的剑先一步落下。
+T {0~이} 당신의 공격을 흘려 냈다.|{0} turned your attack aside.|{0}があなたの攻撃を受け流した。|{0}化解了你的攻击。
+T 마탄이 {0}의 어깨를 꿰뚫었다.|Your magic bullet pierced {0}'s shoulder.|魔弾が{0}の肩を貫いた。|魔弹贯穿了{0}的肩膀。
+T 당신의 마술이 {0~을} 덮쳤다.|Your magecraft engulfed {0}.|あなたの魔術が{0}を襲った。|你的魔术吞没了{0}。
+T 강화를 두른 팔로 자루를 걷어 내고, {0}의 품으로 파고들었다.|With a reinforced arm you knocked the haft aside and drove in close to {0}.|強化をまとった腕で柄を払い、{0}の懐へ踏み込んだ。|你用施加了强化的手臂拨开武器，冲进了{0}的怀中。
+T 당신의 일격이 {0}의 옆구리에 꽂혔다.|Your blow landed in {0}'s side.|あなたの一撃が{0}の脇腹に突き刺さった。|你的一击命中了{0}的侧腹。
+T {0}의 일격을 간신히 피했다.|You barely dodged {0}'s blow.|{0}の一撃をかろうじて避けた。|你勉强躲开了{0}的一击。
+T {0}의 칼이 당신을 베고 지나갔다.|{0}'s blade cut across you.|{0}の剣があなたを斬り裂いていった。|{0}的剑从你身上划过。
+T 피할 틈이 없었다. {0}의 일격이 당신에게 꽂혔다.|There was no room to dodge. {0}'s blow struck you.|避ける隙はなかった。{0}の一撃があなたに突き刺さった。|没有躲闪的余地。{0}的一击命中了你。
+망설임 — 서번트의 공격이 한 박자 늦었다|Hesitation — the Servant's attack came a beat late|ためらい — サーヴァントの攻撃が一拍遅れた|犹豫 — 从者的攻击慢了一拍
+결계 — 서번트의 칼이 닿지 않았다|Bounded field — the Servant's blade didn't reach you|結界 — サーヴァントの剣が届かなかった|结界 — 从者的剑没能触及
+T 보구 해방 — {0}의 「{1}」. 당신이 빛에 휩쓸렸다.|Noble Phantasm released — {0}'s 「{1}」. The light swept over you.|宝具解放 — {0}の「{1}」。あなたが光に呑まれた。|宝具解放 — {0}的「{1}」。你被光芒吞没了。
+T {0~이} 사이로 뛰어들어 서번트에게 향하던 일격을 대신 받았다.|{0} leapt between you and took the blow meant for the Servant.|{0}が間に飛び込み、サーヴァントへ向かった一撃を代わりに受けた。|{0}冲到中间，替从者挡下了那一击。
+T {0~이} 옆에서 당신의 발을 묶었다.|{0} pinned your feet from the side.|{0}が横からあなたの足を止めた。|{0}从侧面绊住了你的脚步。
+T {0~이} 옆에서 파고들었다. 당신의 옆구리가 베였다.|{0} cut in from the side. Your flank was slashed.|{0}が横から踏み込んだ。あなたの脇腹が斬られた。|{0}从侧面切入。你的侧腹被砍中了。
+T {0} 조가 더 버티지 못하고 물러났다.|The {0} team couldn't hold out any longer and withdrew.|{0}組がこれ以上持ちこたえられず退いた。|{0}组再也撑不住，撤退了。
+결투가 끝났다. 당신이 서 있었다.|The duel was over. You were the one standing.|決闘が終わった。立っていたのはあなただった。|决斗结束了。站着的是你。
+결투가 끝났다. 서번트의 칼이 당신 앞에서 멈췄다.|The duel was over. The Servant's blade stopped before you.|決闘が終わった。サーヴァントの剣があなたの前で止まった。|决斗结束了。从者的剑停在了你面前。
+T {0~이} 무릎을 꿇었다. 칼이 손에서 미끄러졌다.|{0} fell to one knee. The blade slipped from their hand.|{0}が膝をついた。剣が手から滑り落ちた。|{0}跪了下来。剑从手中滑落。
+T {0}의 칼끝이 당신의 목 앞에서 멈췄다.|{0}'s blade stopped at your throat.|{0}の切っ先があなたの喉元で止まった。|{0}的剑锋停在了你的喉前。
+# 보정 칩
+잔의 힘|Power of the Cup|杯の力|圣杯之力
+가득 찬 잔을 쥔 사람이다. 회로가 그릇이고, 고위 기술이 그 힘을 다루는 솜씨다|You hold the brimming cup. Your circuits are the vessel; your advanced arts are the skill to wield its power|満ちた杯を握る者だ。回路が器であり、高位技術がその力を扱う腕前だ|你是握着满溢之杯的人。回路是容器，高位技术是驾驭其力量的本领
+T 회로 {0} · 고위 기술 {1}|Circuits {0} · Advanced arts {1}|回路 {0} · 高位技術 {1}|回路 {0} · 高位技术 {1}
+협공을 받는다|Ganged up on|挟撃を受ける|遭到夹击
+동행 조가 발을 묶었다|The accompanying team pinned your feet|同行組に足を止められた|同行的组绊住了你的脚步
+오드 바닥|Od run dry|オド切れ|奥德见底
+오드가 바닥났다. 공격할 때마다 건강을 깎는다|Your Od has run dry. Each attack now costs Health|オドが底をついた。攻撃するたびに健康を削る|奥德见底了。每次攻击都会消耗健康
+마술로 칠 때 힘이 깎이고, 마술 피해도 줄어든다|Weakens your power when you strike with magecraft, and reduces magecraft damage|魔術で攻めると力が削られ、魔術のダメージも減る|用魔术攻击时力量会被削弱，魔术伤害也会减少
+마스터 지원 없음|No Master support|マスターの支援なし|无御主支援
+마스터가 보태던 몫 없이, 서번트 혼자의 힘으로 싸운다|Fights on its own strength alone, without what a Master would add|マスターが上乗せしていた分なしに、サーヴァント一騎の力で戦う|没有御主的加成，仅凭从者自身的力量战斗
+망설임|Hesitation|ためらい|犹豫
+칼끝이 흔들려 이번 합 공격이 늦다 · 보구를 쓰지 않는다|The blade wavers, so this round's attack comes late · Won't use its Noble Phantasm|切っ先が揺らぎ、この合の攻撃が遅れる · 宝具を使わない|剑锋动摇，本回合的攻击慢了一拍 · 不会使用宝具
+비기의 저주가 몸을 묶고 있다|The secret art's curse binds its body|秘技の呪いが体を縛っている|秘技的诅咒束缚着身体
+서번트의 평소 공격이 닿지 않는다 · 보구에는 깨진다|The Servant's normal attacks can't reach you · Shattered by a Noble Phantasm|サーヴァントの通常攻撃が届かない · 宝具には砕かれる|从者的普通攻击无法触及 · 会被宝具击碎
+T {0}합|{0} rounds|{0}合|{0}回合
