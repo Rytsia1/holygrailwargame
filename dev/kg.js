@@ -91,6 +91,8 @@
   function kgDay(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     g.d++; w.day++; w.tod='낮'; w.prog=0; mark('war');
     log(`진심 · ${KG_DAYN[g.d-1]}`,'night',{fx:{t:'kgday',d:g.d,ev:['흔적','가까운 사람','다른 손','평범한 하루'][g.d-1]}});
+    w.queue.unshift(()=>kgDayEv()); }   // 11-22: 날 카드 연출이 끝난 뒤(연출 동안 진행이 멈춘다) 그날 사건
+  function kgDayEv(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     if(g.d===1){ const om=g.k==='zeal'&&!isMage()?KG_W.zeal.omenN:KG_W[g.k].omen;
       decide({title:'흔적',body:`아침 뉴스가 이상한 일을 짧게 전한다. ${om} 잔은 아직 바닥만 젖어 있다.`,war:true,choices:[
         {t:'보러 간다',d:'징조를 가까이서 본다',chips:kgCh({a:1,R:5}),f:()=>{ lean(g.k,1); kgR(5); w.queue.push(()=>kgNight()); return '징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.'; }},
@@ -244,15 +246,15 @@
     S.once.crest=1; S.phase='epi'; S.warState='done'; S.clock=0; S.epi={i:999,n:1,used:[],kgNo:1}; H.phase('epi'); H.save(); H.change(); }
   // 쓰러지는 결말(① 서번트 승 · ④): 죽음 뒤에 후일담
   function kgDie(k){ const w=W(); w.ended=true; w.queue=[];
-    // 11-22: 쓰러지던 순간의 기록 몇 줄을 첫 후일담 창에 함께 싣는다 (창이 떠 있는 동안에는 기록을 볼 수 없으므로)
-    const LG=(S.log||[]).filter(e=>e&&typeof e.t==='string'&&['war','loss','voice','enemy','n'].includes(e.k)&&!/^진심 · /.test(e.t)).slice(-4).map(e=>e.t);
+    // 11-22: 쓰러지던 순간의 기록 몇 줄을 첫 후일담 창의 '지금까지' 칸에 싣는다 (창이 떠 있는 동안에는 기록을 볼 수 없으므로)
+    const LG=(S.log||[]).filter(e=>e&&typeof e.t==='string'&&['war','loss','voice','enemy','n','seal'].includes(e.k)&&!/^진심 · /.test(e.t)).slice(-6).map(e=>({...e}));
     w.myOut={d:w.day,tod:w.tod,why:k==='f'?'당신을 베고 잔을 부순 뒤 사라졌다':'결투 끝에 잔을 부수고 새벽 속으로 흩어졌다'};   // 11-22: 결과 화면의 서번트 결과
     S.flags.war='dead'; S.flags.endFx=k==='f'?'kgF':'kgS'; fxOnly(endFxOf());
     die(k==='f'?'등 뒤의 칼':'서번트와의 결투');
     // 11-22: 후일담이 '마지막으로' 창 뒤에 묻혀 바로 기록으로 넘어가는 것처럼 보이던 것 → 기록 줄에도 남기고, 창으로 먼저 보여 준 뒤 닫으면 마지막 말
     const A=(k==='f'?[['그 뒤 · 서번트',kgAfPick('f')],['그 뒤 · 가까운 사람',kgAfPick('fn')]]:[['그 뒤',kgAfPick(k)]]).filter(a=>a[1]);
     A.forEach(([hd,x])=>kgAfShow(x,hd));
-    const P0=S.pending, go=i=>{ if(i>=A.length){ if(P0) decide(P0); return null; } const [hd,x]=A[i]; decide({title:`${hd} · ${x.t()}`,body:(i===0&&LG.length?['마지막 순간',...LG,'']:[]).concat(x.b()).join('\n'),war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>go(i+1)}]}); return null; };
+    const P0=S.pending, go=i=>{ if(i>=A.length){ if(P0) decide(P0); return null; } const [hd,x]=A[i]; decide({title:`${hd} · ${x.t()}`,body:x.b().join('\n'),recap:i===0&&LG.length?LG:undefined,war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>go(i+1)}]}); return null; };
     if(P0&&A.length){ S.pending=null; go(0); } }
   // 후일담: 결말마다 그 뒤의 장면 하나 (조건이 가장 많이 맞는 줄들 가운데 하나)
   function kgAfPick(k){ const c=KG_AF.filter(x=>x.k===k&&(!x.c||x.c())); if(!c.length) return null; const m=Math.max(...c.map(x=>x.sp)); return pick(c.filter(x=>x.sp===m)); }

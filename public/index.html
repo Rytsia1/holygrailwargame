@@ -2199,6 +2199,9 @@ const Sim = (() => {
   const rnd=()=>R(), ri=(a,b)=>a+Math.floor(R()*(b-a+1)), ch=p=>R()<p, pick=a=>a[Math.floor(R()*a.length)];
   const clamp=(v,a=0,b=100)=>Math.max(a,Math.min(b,v));
   const DIST=35; // 이 아래면 「불신」
+  // 11-22: 삶 · 성장 사건 선택지의 성향 변화 칩(「복수」 성향 ↑) — 선택지 함수의 lean('k',숫자)를 읽는다. 능력치 칩 뒤에 붙는다(end)
+  const affChipsOf=f=>{ const m={}; (String(f||'').match(/lean\('\w+',\s*-?\d+\)/g)||[]).forEach(x=>{ const r=x.match(/lean\('(\w+)',\s*(-?\d+)\)/); if(r&&AFFN[r[1]]) m[r[1]]=(m[r[1]]||0)+(+r[2]); });
+    const A=Object.keys(m).filter(k=>m[k]).map(k=>({l:`「${AFFN[k]}」 성향 ${m[k]>0?'↑':'↓'}`,c:'',end:1})); return A.length?A:undefined; };
   function evLk(e){ if(e._lk) return e._lk; const k={}; (e.ch||[]).forEach(c=>{ const m=String(c.f).match(/lean\('(\w+)',\s*\d/g)||[]; m.forEach(x=>{ k[x.slice(6,x.indexOf("'",6))]=1; }); }); return e._lk=Object.keys(k); }
   function evW(e){ const A=S.aff||{}; let v=0; evLk(e).forEach(k=>{ v=Math.max(v,A[k]||0); }); return e.w*(v<=0?1:v<3?1.4:v<6?1.9:2.4); }
   function wpick(arr,wf){let tot=0;const ws=arr.map(x=>{const w=Math.max(0,wf(x)||0);tot+=w;return w});if(tot<=0)return null;let r=R()*tot;for(let i=0;i<arr.length;i++){r-=ws[i];if(r<=0)return arr[i]}return arr[arr.length-1]}
@@ -6593,7 +6596,7 @@ const Sim = (() => {
     const K0=S.resumeEv&&S.resumeEv.src==='GROW'&&S.resumeEv.id===e.id&&S.resumeEv.body?S.resumeEv:null; if(K0&&K0.rel) S._rel=K0.rel;
     S.resumeEv={src:'GROW',id:e.id};
     const fv=v=>typeof v==='function'?v():v;
-    const choices=e.ch.map(c=>({t:orf(c.t),d:c.d,st:fv(c.st),auto:fv(c.auto),off:c.off?c.off():false,src:c.f,f:()=>{ const r=c.f(); return typeof r==='string'?orf(r):r; }}));
+    const choices=e.ch.map(c=>({t:orf(c.t),d:c.d,chips:c.chips||affChipsOf(c.f),st:fv(c.st),auto:fv(c.auto),off:c.off?c.off():false,src:c.f,f:()=>{ const r=c.f(); return typeof r==='string'?orf(r):r; }}));
     if(choices.every(c=>c.off)) choices[0].off=false;
     const body=K0?K0.body:orf(e.txt()); S.resumeEv.body=body; S.resumeEv.rel=S._rel||null;
     decide({title:`${S.age}세`,body,choices});
@@ -6611,7 +6614,7 @@ const Sim = (() => {
     const K0=S.resumeEv&&S.resumeEv.src==='EV'&&S.resumeEv.id===e.id&&S.resumeEv.body?S.resumeEv:null; if(K0&&K0.rel) S._rel=K0.rel;
     S.resumeEv={src:'EV',id:e.id};
     const body=K0?K0.body:orf(e.txt()); S.resumeEv.body=body; S.resumeEv.rel=S._rel||null;
-    const choices=e.ch.map(c=>({t:orf(c.t),d:c.d,auto:c.auto,k:c.k,off:c.off?c.off():false,src:c.f,f:()=>{ const r=c.f(); return typeof r==='string'?orf(r):r; }}));
+    const choices=e.ch.map(c=>({t:orf(c.t),d:c.d,chips:c.chips||affChipsOf(c.f),auto:c.auto,k:c.k,off:c.off?c.off():false,src:c.f,f:()=>{ const r=c.f(); return typeof r==='string'?orf(r):r; }}));
     if(choices.every(c=>c.off)) choices[0].off=false;
     decide({title:`${S.age}세`,body,choices});
   }
@@ -10638,6 +10641,8 @@ const Sim = (() => {
   function kgDay(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     g.d++; w.day++; w.tod='낮'; w.prog=0; mark('war');
     log(`진심 · ${KG_DAYN[g.d-1]}`,'night',{fx:{t:'kgday',d:g.d,ev:['흔적','가까운 사람','다른 손','평범한 하루'][g.d-1]}});
+    w.queue.unshift(()=>kgDayEv()); }   // 11-22: 날 카드 연출이 끝난 뒤(연출 동안 진행이 멈춘다) 그날 사건
+  function kgDayEv(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     if(g.d===1){ const om=g.k==='zeal'&&!isMage()?KG_W.zeal.omenN:KG_W[g.k].omen;
       decide({title:'흔적',body:`아침 뉴스가 이상한 일을 짧게 전한다. ${om} 잔은 아직 바닥만 젖어 있다.`,war:true,choices:[
         {t:'보러 간다',d:'징조를 가까이서 본다',chips:kgCh({a:1,R:5}),f:()=>{ lean(g.k,1); kgR(5); w.queue.push(()=>kgNight()); return '징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.'; }},
@@ -10791,15 +10796,15 @@ const Sim = (() => {
     S.once.crest=1; S.phase='epi'; S.warState='done'; S.clock=0; S.epi={i:999,n:1,used:[],kgNo:1}; H.phase('epi'); H.save(); H.change(); }
   // 쓰러지는 결말(① 서번트 승 · ④): 죽음 뒤에 후일담
   function kgDie(k){ const w=W(); w.ended=true; w.queue=[];
-    // 11-22: 쓰러지던 순간의 기록 몇 줄을 첫 후일담 창에 함께 싣는다 (창이 떠 있는 동안에는 기록을 볼 수 없으므로)
-    const LG=(S.log||[]).filter(e=>e&&typeof e.t==='string'&&['war','loss','voice','enemy','n'].includes(e.k)&&!/^진심 · /.test(e.t)).slice(-4).map(e=>e.t);
+    // 11-22: 쓰러지던 순간의 기록 몇 줄을 첫 후일담 창의 '지금까지' 칸에 싣는다 (창이 떠 있는 동안에는 기록을 볼 수 없으므로)
+    const LG=(S.log||[]).filter(e=>e&&typeof e.t==='string'&&['war','loss','voice','enemy','n','seal'].includes(e.k)&&!/^진심 · /.test(e.t)).slice(-6).map(e=>({...e}));
     w.myOut={d:w.day,tod:w.tod,why:k==='f'?'당신을 베고 잔을 부순 뒤 사라졌다':'결투 끝에 잔을 부수고 새벽 속으로 흩어졌다'};   // 11-22: 결과 화면의 서번트 결과
     S.flags.war='dead'; S.flags.endFx=k==='f'?'kgF':'kgS'; fxOnly(endFxOf());
     die(k==='f'?'등 뒤의 칼':'서번트와의 결투');
     // 11-22: 후일담이 '마지막으로' 창 뒤에 묻혀 바로 기록으로 넘어가는 것처럼 보이던 것 → 기록 줄에도 남기고, 창으로 먼저 보여 준 뒤 닫으면 마지막 말
     const A=(k==='f'?[['그 뒤 · 서번트',kgAfPick('f')],['그 뒤 · 가까운 사람',kgAfPick('fn')]]:[['그 뒤',kgAfPick(k)]]).filter(a=>a[1]);
     A.forEach(([hd,x])=>kgAfShow(x,hd));
-    const P0=S.pending, go=i=>{ if(i>=A.length){ if(P0) decide(P0); return null; } const [hd,x]=A[i]; decide({title:`${hd} · ${x.t()}`,body:(i===0&&LG.length?['마지막 순간',...LG,'']:[]).concat(x.b()).join('\n'),war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>go(i+1)}]}); return null; };
+    const P0=S.pending, go=i=>{ if(i>=A.length){ if(P0) decide(P0); return null; } const [hd,x]=A[i]; decide({title:`${hd} · ${x.t()}`,body:x.b().join('\n'),recap:i===0&&LG.length?LG:undefined,war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>go(i+1)}]}); return null; };
     if(P0&&A.length){ S.pending=null; go(0); } }
   // 후일담: 결말마다 그 뒤의 장면 하나 (조건이 가장 많이 맞는 줄들 가운데 하나)
   function kgAfPick(k){ const c=KG_AF.filter(x=>x.k===k&&(!x.c||x.c())); if(!c.length) return null; const m=Math.max(...c.map(x=>x.sp)); return pick(c.filter(x=>x.sp===m)); }
@@ -18028,7 +18033,7 @@ function showDecision(d){
   if(d.war&&!d.summon){
     const S=Sim.S, L=S.log; const cur=L[L.length-1]; let k=L.length-1, items=[];
     while(k>=0&&items.length<40){ const e=L[k]; if(!cur||e.n!==cur.n||e.tod!==cur.tod) break; if(e.k==='night') break; items.unshift(e); k--; }
-    if(d.battle){ let st=0; for(let i=items.length-1;i>=0;i--){ if(/거처에 들이닥쳤다|결계를 두드렸다|마주쳤다|마주 섰다|먼저 와 있었다/.test(items[i].t)){ st=i; break; } } items=items.slice(Math.max(0,st)); } items=items.slice(-24);
+    if(d.battle){ let st=0; for(let i=items.length-1;i>=0;i--){ if(/거처에 들이닥쳤다|결계를 두드렸다|마주쳤다|마주 섰다|먼저 와 있었다/.test(items[i].t)){ st=i; break; } } items=items.slice(Math.max(0,st)); } items=items.slice(-24); if(d.recap) items=d.recap.slice(-24);   // 11-22: 창이 넘겨준 기록(후일담 창의 마지막 순간)
     // 결과 팝업: 마지막 선택 뒤에 쌓인 결과·판정·변화는 본문에서 크게 보여 주고, '지금까지'에서는 빼서 겹치지 않게 한다
     if(d.res&&d.resLog){ // 이 선택으로 생긴 기록만 본문에 (지금까지 칸은 띄우지 않는다)
       const bd=$('#dBody'); bd.textContent=''; bd.classList.add('res');
@@ -18088,7 +18093,7 @@ const LST='(?:마력|지식|정신|관계|건강|재산|신뢰|노출)', ARW=/((
 const lTok=(pre,T)=>(pre?`<em>${esc(pre)}</em> `:'')+T.map(([a,r])=>`<b>${esc(a)}</b> ${r}`).join(' ');
 let CH_WM=false, CH_WE=false;
 function lParts(c){ let d0=c.d||''; const keep=[], chips=[], G0=[]; let ch=false; const ck=c.ck&&c.ck.length;
-  if(c.chips&&c.chips.length){ c.chips.forEach(x=>chips.push({h:esc(x.l),c:x.c||''})); ch=true; }
+  if(c.chips&&c.chips.length){ c.chips.forEach(x=>{ if(!x.end) chips.push({h:esc(x.l),c:x.c||''}); }); ch=true; }
   if(c.foot&&c.foot.length){ c.foot.forEach(([l,T])=>G0.push([l,T.map(x=>`<i>${esc(x)}</i>`)])); ch=true; }
   if(CH_WM||CH_WE){ const m=d0.match(/\s*\[([^\]]+)\]\s*$/); if(m){ d0=d0.slice(0,m.index); ch=true; m[1].split(' · ').forEach(x=>{ const n=x.match(/^(.+) (\d+) 필요$/); if(n) G0.unshift(['필요',[`<i>${esc(n[1])} ${n[2]}</i>`]]); else chips.push({h:esc(x),c:/\+\d/.test(x)&&!/^노출/.test(x)?'up':'dn'}); }); } }
   const STX=new RegExp(`^(${LST}|서번트 마력|서번트 건강|결계|령주)\\s?[+\\-−]\\s?\\d+$`);
@@ -18107,6 +18112,7 @@ function lParts(c){ let d0=c.d||''; const keep=[], chips=[], G0=[]; let ch=false
       const cm=sg.match(/^(성공하면|이기면|버티면) (.+)$/); if(cm&&/[↑↓]/.test(cm[2])&&only(cm[2])){ chips.push({h:lTok(cm[1],[...cm[2].matchAll(ARW)].map(t=>[t[1],t[2]])),c:'up'}); ch=true; continue; }
       const nm=sg.match(new RegExp(`^(${LST}|서번트 마력|서번트 건강|결계|령주)\\s?([+\\-−])\\s?(\\d+)$`)); if(nm){ const neg=nm[2]!=='+'; chips.push({h:`<b>${esc(nm[1])}</b> ${neg?'−':'+'}${nm[3]}`,c:neg!==(nm[1]==='노출')?'dn':'up'}); ch=true; continue; } }
     keep.push(sg); }
+  (c.chips||[]).forEach(x=>{ if(x.end) chips.push({h:esc(x.l),c:x.c||''}); });
   if(CH_WE&&!ck&&c.st&&c.st.length&&!c.st.some(x=>x.art)){ G0.push(['현재',c.st.map(x=>`<i>${esc(x.l)} ${x.v}</i>`)]); ch=true; }
   if(!ch&&!ck) return null;
   const G=[...G0]; if(ck){ G.push(['판정',c.ck.map(x=>`<i>${esc(x.l)} ${x.v}</i>`)]); if(c.st&&c.st.length) G.push(['영향',c.st.map(x=>`<i>${esc(x.l)} ${x.v}</i>`)]); }

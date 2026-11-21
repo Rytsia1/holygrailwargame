@@ -40,6 +40,7 @@ _n = len(re.findall(r"  SCN\.kg[FST]=scnAs\([^\n]*\n", s))
 if _n != 3: miss.append(('SCN.kgF/S/T', _n))
 s = re.sub(r"  SCN\.kgT=scnAs\([^\n]*\n", '', s); s = re.sub(r"  SCN\.kgS=scnAs\([^\n]*\n", '', s)
 s = re.sub(r"  SCN\.kgF=scnAs\([^\n]*\n", lambda m: open(os.path.join(HERE, 'kgend.js'), encoding='utf-8').read(), s)
+rp(" items=items.slice(-24);\n    // 결과 팝업", " items=items.slice(-24); if(d.recap) items=d.recap.slice(-24);   // 11-22: 창이 넘겨준 기록(후일담 창의 마지막 순간)\n    // 결과 팝업")
 rp("const END_SK={", "const END_SK={kgF:'j_end_kgF',kgS:'j_end_kgS',kgT:'j_end_kgT',")
 if miss:
     for x in miss: print('못 찾음', x)
