@@ -21,7 +21,7 @@ CH = {'Ebm': ['Eb', 'Gb', 'Bb'], 'Cb': ['Cb', 'Eb', 'Gb'], 'Abm': ['Ab', 'Cb', '
       'Gm': ['G', 'Bb', 'D'], 'Eb': ['Eb', 'G', 'Bb'], 'Cm': ['C', 'Eb', 'G'], 'Ab': ['Ab', 'C', 'Eb'], 'Abmaj7': ['Ab', 'C', 'G'], 'D': ['D', 'F#', 'A'], 'Dsus': ['D', 'G', 'A'],
       'F': ['F', 'A', 'C'], 'Fm': ['F', 'Ab', 'C'], 'G': ['G', 'B', 'D'], 'Gsus': ['G', 'C', 'D'], 'Bbmaj': ['Bb', 'D', 'F'], 'Gm/Bb': ['Bb', 'D', 'G'], 'Ebmaj7': ['Eb', 'G', 'D'],
       'Bm': ['B', 'D', 'F#'], 'Gmaj7': ['G', 'B', 'F#'], 'D/F#': ['F#', 'A', 'D'], 'Em': ['E', 'G', 'B'], 'Cmaj7': ['C', 'E', 'B'], 'F#sus': ['F#', 'B', 'C#'], 'F#m': ['F#', 'A', 'C#'], 'Bm/D': ['D', 'F#', 'B'],
-      'Dm': ['D', 'F', 'A'], 'C': ['C', 'E', 'G'], 'A': ['A', 'C#', 'E'], 'Am': ['A', 'C', 'E'], 'Ebm': ['Eb', 'Gb', 'Bb'], 'B': ['B', 'D#', 'F#'], 'E': ['E', 'G#', 'B'], 'E5': ['E', 'B', 'E'], 'D/E': ['D', 'F#', 'A'], 'Bsus': ['B', 'E', 'F#'], 'A/E': ['A', 'C#', 'E'], 'A7': ['A', 'C#', 'G'], 'Bb/E': ['Bb', 'D', 'F'], 'Em7': ['E', 'G', 'D'], 'Emaj7': ['E', 'G#', 'D#']}
+      'Dm': ['D', 'F', 'A'], 'C': ['C', 'E', 'G'], 'A': ['A', 'C#', 'E'], 'Am': ['A', 'C', 'E'], 'Ebm': ['Eb', 'Gb', 'Bb'], 'B': ['B', 'D#', 'F#'], 'E': ['E', 'G#', 'B'], 'E5': ['E', 'B', 'E'], 'D/E': ['D', 'F#', 'A'], 'Bsus': ['B', 'E', 'F#'], 'A/E': ['A', 'C#', 'E'], 'A7': ['A', 'C#', 'G'], 'Bb/E': ['Bb', 'D', 'F'], 'Em7': ['E', 'G', 'D'], 'Emaj7': ['E', 'G#', 'D#'], 'Bb/D': ['D', 'F', 'Bb'], 'Eb/G': ['G', 'Bb', 'Eb'], 'Eb/Bb': ['Bb', 'Eb', 'G'], 'G7': ['G', 'B', 'F'], 'Bbsus4': ['Bb', 'Eb', 'F'], 'Bdim': ['B', 'D', 'F'], 'Dbmaj': ['Db', 'F', 'Ab']}
 def tone(name, octv): return nn(name + str(octv))
 
 class Song:

@@ -6,7 +6,7 @@
 - j_kg_back_h  동맹 앞에서 등 뒤의 칼이 먼저 닿음 (4초): '쉭' → 무겁게 베임 (쓰러지지 않음)
 - j_kg_day1~4  날 카드 (2.9초) · j_kg_full_r/g 잔이 가득 참 (4.8초) · j_kg_duel 결투 시작 (5.6초)
 - j_kg_mr 대마력이 령주를 버팀 (5.8초) · j_kg_ally 동맹이 등을 돌림 (5.4초)
-- j_end_kgF · j_end_kgS · j_end_kgT 결말 전용 장면 효과 + 결말 곡(c · c · a)
+- j_end_kgF · j_end_kgS · j_end_kgT 결말 전용 장면 효과 + 검귀 엔딩 곡 앞부분(j_end_kg, K5)
 사용: python3 sumsnd_kg.py <출력 폴더> [이름,이름]"""
 import sys, os, subprocess, numpy as np
 from scipy.signal import fftconvolve, butter, sosfilt
@@ -164,21 +164,21 @@ def end_kgF():  # 등 뒤의 칼 (결말): 붉은 잔의 울림 → '슥' 칼이
     put(B, glass(1.2), 1.62, 0, .35); put(B, thump(60, 1.0), 1.6, 0, .9); put(B, lp(noise(.6), 900) * np.exp(-T(.6) / .15), 1.62, 0, .25)
     for i, b in enumerate((2.6, 3.15)): put(B, thump(52, .25), b, 0, .8 - .3 * i); put(B, thump(46, .22), b + .14, 0, .55 - .2 * i)
     put(B, tone(880, 1.5, .05, 1.3), 3.7, 0, .03)
-    return with_song(reverb(B, 2.2, .3), 'j_end_c', 3.9, .8)
+    return with_song(reverb(B, 2.2, .3), 'j_end_kg', 3.9, .8)
 def end_kgS():  # 막아선 칼 (결말): 낮은 바람 → 잦아듦 → 작게 금 가는 소리 · 맑은 종 → 칼날의 희미한 쇳소리 → 결말 곡(c)
     d = 5.0; B = buf(d)
     put(B, lp(noise(3.2), 450) * adsr(3.2, .6, 1.4), 0, 0, .35); put(B, tone(44, 2.6, .8, 1.2), 0, 0, .3)
     put(B, bp(noise(.35), 2400, 3800) * np.exp(-T(.35) / .08), 2.5, .1, .25); put(B, bell(1318.5, 2.4), 2.55, -.2, .14); put(B, bell(1975.5, 2.2), 2.63, .2, .1); put(B, bell(659.25, 3.0), 2.7, 0, .12)
     put(B, tone(2637, .9, .05, .8) + tone(2652, .9, .05, .8), 3.15, -.3, .03)
     put(B, pad([196.0, 293.66, 392.0], 2.6, .6, 1.8, 1400), 3.4, 0, .2)
-    return with_song(reverb(B, 2.4, .32), 'j_end_c', 3.9, .8)
+    return with_song(reverb(B, 2.4, .32), 'j_end_kg', 3.9, .8)
 def end_kgT():  # 둘이 이긴 세계 (결말): 잔의 울림 → 깊게 차오름 · 불이 하나씩 꺼지는 작은 소리 → 거의 무음 · 작은 종 하나 → 결말 곡(a)
     d = 5.2; B = buf(d)
     put(B, tone(55, 1.4, .4, .4), 0, 0, .3); put(B, pad([220.0, 277.18, 329.63], 1.3, .4, .3, 1200), .1, 0, .2)
     put(B, glide(40, 30, 1.8, .5, 1.2), 1.15, 0, .7); put(B, lp(noise(1.7), 700) * adsr(1.7, .6, 1.0), 1.15, 0, .3); put(B, pad([146.83, 174.61, 220.0], 1.6, .5, 1.0, 900), 1.2, 0, .15)
     for i in range(10): put(B, hp(noise(.01), 2500) * np.exp(-T(.01) / .003), 1.4 + i * .14 + rng.uniform(-.03, .03), rng.uniform(-.8, .8), .12)
     put(B, bell(1975.5, 2.6), 3.9, 0, .06)
-    return with_song(reverb(B, 2.4, .3), 'j_end_a', 4.4, .75)
+    return with_song(reverb(B, 2.4, .3), 'j_end_kg', 4.4, .75)
 
 os.makedirs(OUT, exist_ok=True)
 F = {'j_end_kgF': end_kgF, 'j_end_kgS': end_kgS, 'j_end_kgT': end_kgT, 'j_kg_mr': kg_mr, 'j_kg_ally': kg_ally, 'j_kg_day1': lambda: kg_day(1), 'j_kg_day2': lambda: kg_day(2), 'j_kg_day3': lambda: kg_day(3), 'j_kg_day4': lambda: kg_day(4), 'j_kg_full_r': lambda: kg_full('r'), 'j_kg_full_g': lambda: kg_full('g'), 'j_kg_duel': kg_duel, 'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}

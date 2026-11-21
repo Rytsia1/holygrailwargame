@@ -116,6 +116,7 @@ function kgBackShow(fx){
   const lit=[0,0,0], si=Math.max(0,Math.min(2,fx.i??1));
   function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_(), cx=W/2, base=H*.6, top=H*.6;
     const FZ=v==='b'?2.05:99, tf=Math.min(t,FZ), frozen=v==='b'?seg(t,2.05,2.35):0, inA=io(seg(t,0,.35)), hush=seg(t,1.4,1.6);
+    const outA=io(seg(t,T-.45,T)); c.save(); c.canvas.style.opacity=(Math.min(1,inA*1.5)*(1-outA)).toFixed(3);   // 화면 전체를 한 덩어리로 들어오고 나가게: 시작에 잔이 게임 화면 위로 먼저 튀어나오지 않게 · 끝에 게임 화면으로 갑자기 끊기지 않게(암전 아래 그림이 비치지 않게)
     c.fillStyle=`rgba(4,4,10,${inA})`; c.fillRect(0,0,W,H);
     P.night(inA,tf); P.pool(hush>0?Math.min(tf,1.5):tf,top,inA);
     c.save(); c.beginPath(); c.rect(0,0,W,top+6*D); c.clip(); P.cupLight(cx,base,s,(1.15+.18*Math.sin(Math.min(tf,1.5)*5))*inA); c.restore();
@@ -146,7 +147,8 @@ function kgBackShow(fx){
     if(black>0){ c.fillStyle=`rgba(0,0,0,${black})`; c.fillRect(0,0,W,H); }
     if(v==='a'&&t>=2.2){ const k=seg(t,2.2,2.9); if(k<1){ c.save(); c.fillStyle=`rgba(230,50,70,${.95*(1-k)})`; c.shadowColor='rgba(255,60,80,1)'; c.shadowBlur=10*D; c.fillRect(0,H*.5-D,W*oc(seg(t,2.2,2.34)),Math.max(1,1.5*D)); c.restore(); }
       if(t>=3.7){ if(!SH) SH=P.burst(46,cx,base-160*s,40,170,90,23,1.6,2.6,420); c.save(); c.globalCompositeOperation='lighter'; P.sparks(SH,dt,1,'255,214,150'); c.restore(); P.glow(cx,base-160*s,60*s,'255,214,150',.25*pulse(t,3.75,.15)); } }
-    X.w(t,.25,v==='c'?2.6:1.7,'255,220,150'); X.txt(t,{a:2.75,b:2.6,c:3.6,h:2.5}[v]??2.6,v==='b'?4.2:null); kgShake(V,P); }
+    c.restore();
+    X.w(t,.25,v==='c'?2.6:1.7,'255,220,150'); X.txt(t,{a:2.75,b:2.6,c:3.6,h:2.5}[v]??2.6,v==='b'?4.2:null); V.o.querySelector('.xd-txt').style.opacity=(1-outA).toFixed(3); kgShake(V,P); }
 }
 
 /* ---- 11-21 2차: 날마다 바뀌는 카드 · 잔이 가득 차는 순간 · 결투 시작 (시안 9판) ---- */

@@ -149,7 +149,7 @@
     return ''; }
   function kgClose(){ const w=W(); if(w.kg) w.kg.done=true; S.flags.kgSt=kgSt(); S.flags.kgSus=w.kg?w.kg.sus:0; S.flags.kgLover=kgLover()?1:0; }
   // 마지막 밤의 갈래 (시트 35줄)
-  function kgFinal(){ const w=W(), g=w.kg; const a=kgAlly(); const gone=((S.aff&&S.aff[g.k])||0)<8;
+  function kgFinal(){ const w=W(), g=w.kg; g.fin=1; const a=kgAlly(); const gone=((S.aff&&S.aff[g.k])||0)<8;
     fxOnly({t:'kgfull',v:gone?'g':'r'});   // 잔이 가득 차는 순간 (성향이 옅어졌으면 금빛)
     if(gone){ g.done=true; S.flags.kgOff=1; log('잔이 가득 찼지만, 마음 가장 깊은 곳의 그 소원은 이제 거기 없었다. 나흘 사이에 무언가가 바뀌어 있었다.','war'); w.queue=[]; finale(a&&S.flags.kgShared?a:null); return; }
     if(g.bet&&g.R>=60){ log('잔이 가득 찼다.','war'); return kgBetray(); }
