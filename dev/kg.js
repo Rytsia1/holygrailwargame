@@ -42,7 +42,7 @@
   // 진짜 소원을 고를 수 있는가: 성향이 깊음(8 이상) · 서번트가 곁에 있다 · 검은 성배 위기가 아니다
   function kgCan(){ const w=W(); return !!kgDeep()&&w.heroAlive&&!w.crisis&&!w.arsNova&&!w.selfGone&&!S.flags.kgOff; }
   function kgOffer(ch_,shared){ if(!kgCan()) return; const k=kgDeep(), X=KG_W[k];
-    ch_.push({t:`진짜 소원: “${X.wish}”`,d:`마음 가장 깊은 곳의 「${AFFN[k]}」. 잔이 가득 차기까지 나흘이 걸린다`,f:()=>kgStart(k,shared)}); }
+    ch_.push({t:`본성 속 진심: “${X.wish}”`,d:`마음 가장 깊은 곳의 「${AFFN[k]}」. 잔이 가득 차기까지 나흘이 걸린다`,f:()=>kgStart(k,shared)}); }
   // 결심 시작값 (시트 20~26줄)
   function kgRes0(k){ const h=hero(), w=W(), st=kgSt(), t=Math.max(.5,Math.min(1.5,w.trust/60)); let R=40;
     for(const x of h.traits) R+=x==='명예'?10:x==='연민'?15*(1+.25*st):x==='자유'?5:x==='충성'?-5*t:x==='야망'?-10*t:0;
@@ -75,14 +75,14 @@
     w.ended=true; w.queue=[]; w.final=false;
     log(`성배 앞에서 손을 거두었다. 목록 맨 아래, 아무에게도 말하지 않은 소원이 하나 있었다. “${X.wish}.”`,'war');
     log('잔은 그 소원을 받아 들었다. 다만 바닥만 젖었을 뿐, 아직 차지 않았다. 가득 차기까지 나흘이 걸린다.','war');
-    wrec('hint',`진짜 소원 — ${X.wish}`);
+    wrec('hint',`본성 속 진심 — ${X.wish}`);
     w.queue.push(()=>kgDay());
     return ''; }
-  const kgPut=()=>({t:'잔을 내려놓는다',d:kgW()&&kgW().d>=4?'마지막 기회. 진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다':'진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다',f:()=>kgPutDown()});
+  const kgPut=()=>({t:'잔을 내려놓는다',d:kgW()&&kgW().d>=4?'마지막 기회. 그 진심을 잔에 맡기지 않고, 서번트와 함께 잔을 부순다':'그 진심을 잔에 맡기지 않고, 서번트와 함께 잔을 부순다',f:()=>kgPutDown()});
   // 낮: 그날의 일
   function kgDay(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
     g.d++; w.day++; w.tod='낮'; w.prog=0; mark('war');
-    log(`진짜 소원 · ${KG_DAYN[g.d-1]}`,'night');
+    log(`진심 · ${KG_DAYN[g.d-1]}`,'night');
     if(g.d===1){ const om=g.k==='zeal'&&!isMage()?KG_W.zeal.omenN:KG_W[g.k].omen;
       decide({title:'흔적',body:`아침 뉴스가 이상한 일을 짧게 전한다. ${om} 잔은 아직 바닥만 젖어 있다.`,war:true,choices:[
         {t:'보러 간다',d:'징조를 가까이서 본다',f:()=>{ lean(g.k,1); kgR(5); w.queue.push(()=>kgNight()); return '징조를 가까이서 보았다. 그것은 당신이 바란 모양을 하고 있었다.'; }},
@@ -108,7 +108,7 @@
     w.queue.push(()=>kgNight()); }
   // 밤: 서번트가 말을 건다
   function kgNight(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; const h=hero();
-    w.tod='밤'; log(`진짜 소원 · ${KG_DAYN[g.d-1]} 밤`,'night');
+    w.tod='밤'; log(`진심 · ${KG_DAYN[g.d-1]} 밤`,'night');
     const next=()=>w.queue.push(()=>kgDawn());
     if(g.d===1){ const q=g.bet?kgSay(h,['좋아. 네가 바라는 거라면 따르지.','좋습니다. 당신이 바라신다면 따르겠습니다.','좋다. 그대가 바란다면 짐도 따르마.','(서번트가 고개를 끄덕인다. 생각보다 빨랐다.)'])+'\n평소답지 않게, 대답이 너무 빨랐다.'
         :kgSay(h,['그 소원, 언제부터였어.','그 소원, 언제부터였습니까.','그 소원, 언제부터였느냐.','(서번트가 낮의 신문을 당신 앞에 내려놓는다. 묻는 눈이다.)']);
@@ -138,13 +138,13 @@
     w.queue.push(()=>kgDay()); }
   // 잔을 내려놓는다 → ⑤
   function kgPutDown(){ const w=W(), g=w.kg, h=hero(); g.done=true; g.end='p'; S.flags.kgEnd='p'; S.flags.kg5=1;
-    log('잔에서 손을 뗐다. 진짜 소원은 끝내 빌지 않았다.','war'); lean(g.k,-3);
+    log('잔에서 손을 뗐다. 본성 속 진심은 끝내 잔에 맡기지 않았다.','war'); lean(g.k,-3);
     const ok=w.trust>=STAY_NEED;
     w.queue.push(()=>decide({title:'잔을 내려놓은 손',body:`${h.name}${J(h.name,이)} 당신 곁에 섰다. 바닥만 젖은 잔이 제단 위에 놓여 있다.`,war:true,choices:[
-      {t:'함께 잔을 부순다',auto:true,f:()=>{ S.flags.brokeCup=1; S.flags.wishText='진짜 소원을 빌지 않고 서번트와 함께 잔을 부쉈다'; add({will:8}); S.flags.endFx='kgP';
+      {t:'함께 잔을 부순다',auto:true,f:()=>{ S.flags.brokeCup=1; S.flags.wishText='본성 속 진심을 잔에 맡기지 않고 서번트와 함께 잔을 부쉈다'; add({will:8}); S.flags.endFx='kgP';
         log(`${h.name}${J(h.name,이)} 잔을 내리쳤다. 당신의 손도 그 위에 있었다.`,'war'); kgClose(); farewell(); return '잔은 둘의 손으로 부서졌다.'; }},
-      {t:`잔의 빛으로 ${h.name}${J(h.name,을)} 남긴다`,off:!ok,d:ok?'남은 빛을 서번트가 몸을 얻는 데 쓴다':'신뢰가 모자라 서번트를 이 세계에 붙잡아 둘 수 없다',foot:ok?undefined:[['필요',[`신뢰 ${STAY_NEED}`]],['현재',[`신뢰 ${Math.round(w.trust)}`]]],f:()=>{ S.flags.wishText='진짜 소원을 빌지 않고 서번트를 남겼다'; S.flags.stay=h.id; add({bond:6}); S.flags.endFx='kgP2';
-        log(`바닥에 고였던 빛이 ${h.name}에게 스며들었다. 잔은 그 자리에서 금이 갔다.`,'war'); kgClose(); warOver(); return '진짜 소원 대신, 곁에 남는 쪽을 골랐다.'; }}]}));
+      {t:`잔의 빛으로 ${h.name}${J(h.name,을)} 남긴다`,off:!ok,d:ok?'남은 빛을 서번트가 몸을 얻는 데 쓴다':'신뢰가 모자라 서번트를 이 세계에 붙잡아 둘 수 없다',foot:ok?undefined:[['필요',[`신뢰 ${STAY_NEED}`]],['현재',[`신뢰 ${Math.round(w.trust)}`]]],f:()=>{ S.flags.wishText='본성 속 진심을 잔에 맡기지 않고 서번트를 남겼다'; S.flags.stay=h.id; add({bond:6}); S.flags.endFx='kgP2';
+        log(`바닥에 고였던 빛이 ${h.name}에게 스며들었다. 잔은 그 자리에서 금이 갔다.`,'war'); kgClose(); warOver(); return '그 진심 대신, 곁에 남는 쪽을 골랐다.'; }}]}));
     return ''; }
   function kgClose(){ const w=W(); if(w.kg) w.kg.done=true; S.flags.kgSt=kgSt(); S.flags.kgSus=w.kg?w.kg.sus:0; S.flags.kgLover=kgLover()?1:0; }
   // 마지막 밤의 갈래 (시트 35줄)
@@ -178,7 +178,7 @@
     w.queue.push(()=>battle(a,{final:true,kgAlly:true}),()=>kgAfterAlly(a,bound)); }
   // 잔을 쥔 쪽의 작은 보정 · 령주에 묶인 몸이면 그만큼 깎인다
   const kgAllyMod=()=>{ const g=kgW(); return g&&g.bound?-8:8; };
-  function kgGrant(){ const k=S.flags.kg; log(`잔이 당신의 소원을 받아 들었다. “${KG_W[k].wish}.”`,'war'); log('진짜 소원이 이루어졌다.','loss'); S.flags.endWish=KG_W[k].wish; mark('war'); }
+  function kgGrant(){ const k=S.flags.kg; log(`잔이 당신의 소원을 받아 들었다. “${KG_W[k].wish}.”`,'war'); log('본성 속의 진심이 이루어졌다.','loss'); S.flags.endWish=KG_W[k].wish; mark('war'); }
   function kgEndTB(bound){ const w=W(), g=w.kg, h=hero(); kgClose(); g.end=bound?'b':'t'; S.flags.kgEnd=g.end;
     kgGrant();
     if(S.flags.kgAllyWin) log(`그 세계에는 ${S.flags.kgAllyN||'동맹'}의 이름이 없다.`,'n');

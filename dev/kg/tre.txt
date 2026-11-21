@@ -33,20 +33,20 @@ T 마력 회로가 없는 {0~이} 잠에서 깨지 않는다.|{0}, who has no ma
 옆집 이웃|your next-door neighbor|隣の家の人|隔壁邻居
 이번 생에 실제로 있는 사람이다.|This is someone who truly exists in this life.|この人生に実在する人だ。|这是此生真实存在的人。
 잔이 무엇을 대가로 차오르는지, 이제 알았다.|Now you know what the cup fills itself with.|杯が何を代償に満ちていくのか、今わかった。|现在你明白了，杯子是以什么为代价被注满的。
-T 진짜 소원: “{0}”|True Wish: “{0}”|本当の願い：「{0}」|真正的愿望：“{0}”
+T 본성 속 진심: “{0}”|The Truth Beneath Your Nature: “{0}”|本性に潜む本心：「{0}」|本性深处的真心：“{0}”
 T 마음 가장 깊은 곳의 「{0}」. 잔이 가득 차기까지 나흘이 걸린다|The 「{0}」 in the deepest part of your heart. The cup will take four days to fill|心の最も深いところにある「{0}」。杯が満ちるまで四日かかる|内心最深处的「{0}」。杯子要四天才会注满
 T 성배 앞에서 손을 거두었다. 목록 맨 아래, 아무에게도 말하지 않은 소원이 하나 있었다. “{0}.”|You drew your hand back before the Grail. At the very bottom of the list was a wish you had never told anyone. “{0}.”|聖杯の前で手を引いた。リストのいちばん下に、誰にも言ったことのない願いがひとつあった。「{0}。」|你在圣杯前收回了手。在清单的最底部，有一个从未对任何人说过的愿望。“{0}。”
 잔은 그 소원을 받아 들었다. 다만 바닥만 젖었을 뿐, 아직 차지 않았다. 가득 차기까지 나흘이 걸린다.|The cup accepted the wish. But only its bottom was wet; it was not yet full. It would take four days to fill.|杯はその願いを受け取った。ただ底が濡れただけで、まだ満ちてはいない。満ちるまで四日かかる。|杯子接受了那个愿望。只是杯底刚被沾湿，还远未注满。要注满需要四天。
-T 진짜 소원 — {0}|True Wish — {0}|本当の願い — {0}|真正的愿望 — {0}
+T 본성 속 진심 — {0}|The Truth Beneath Your Nature — {0}|本性に潜む本心 — {0}|本性深处的真心 — {0}
 잔을 내려놓는다|Set down the cup|杯を置く|放下杯子
-마지막 기회. 진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다|Last chance. Do not make the true wish; break the cup together with your Servant|最後の機会。本当の願いを口にせず、サーヴァントと共に杯を砕く|最后的机会。不许下真正的愿望，与从者一起打碎杯子
-진짜 소원을 빌지 않고, 서번트와 함께 잔을 부순다|Do not make the true wish; break the cup together with your Servant|本当の願いを口にせず、サーヴァントと共に杯を砕く|不许下真正的愿望，与从者一起打碎杯子
+마지막 기회. 그 진심을 잔에 맡기지 않고, 서번트와 함께 잔을 부순다|Last chance. Don't entrust that truth to the cup; break it together with your Servant|最後の機会。その本心を杯に託さず、サーヴァントと共に杯を砕く|最后的机会。不把那份真心托付给杯子，与从者一起打碎它
+그 진심을 잔에 맡기지 않고, 서번트와 함께 잔을 부순다|Don't entrust that truth to the cup; break it together with your Servant|その本心を杯に託さず、サーヴァントと共に杯を砕く|不把那份真心托付给杯子，与从者一起打碎它
 첫째 날|Day One|一日目|第一天
 둘째 날|Day Two|二日目|第二天
 셋째 날|Day Three|三日目|第三天
 넷째 날|Day Four|四日目|第四天
-T 진짜 소원 · {0}|True Wish · {0}|本当の願い · {0}|真正的愿望 · {0}
-T 진짜 소원 · {0} 밤|True Wish · {0}, Night|本当の願い · {0}の夜|真正的愿望 · {0}夜
+T 진심 · {0}|True Heart · {0}|本心 · {0}|真心 · {0}
+T 진심 · {0} 밤|True Heart · {0}, Night|本心 · {0}の夜|真心 · {0}夜
 흔적|Traces|痕跡|痕迹
 아침 뉴스가 이상한 일을 짧게 전한다.|The morning news briefly reports something strange.|朝のニュースが、奇妙な出来事を短く伝える。|早间新闻简短地报道了一件怪事。
 잔은 아직 바닥만 젖어 있다.|Only the bottom of the cup is wet yet.|杯はまだ底が濡れているだけだ。|杯子还只是底部湿着。
@@ -147,18 +147,18 @@ T {0~은} 자신의 소원을 이야기했다. “{1}.”|{0} told you their own
 그날은 맑았다|It was clear that day|あの日は晴れていた|那天是晴天
 서번트의 말이 기억과 다르다|Your Servant's words don't match your memory|サーヴァントの言葉が記憶と違う|从者的话与你的记忆不符
 그날은 맑았다고 말했다. 서번트가 아주 잠깐 입을 다물었다.|You said it had been clear that day. For just a moment, your Servant fell silent.|あの日は晴れていたと言った。サーヴァントがほんの一瞬、口をつぐんだ。|你说那天是晴天。从者有那么一瞬间闭上了嘴。
-잔에서 손을 뗐다. 진짜 소원은 끝내 빌지 않았다.|You took your hand off the cup. In the end, you never made the true wish.|杯から手を離した。本当の願いは、ついに口にしなかった。|你把手从杯子上移开了。真正的愿望，终究没有说出口。
+잔에서 손을 뗐다. 본성 속 진심은 끝내 잔에 맡기지 않았다.|You took your hand off the cup. In the end, you never entrusted the truth beneath your nature to it.|杯から手を離した。本性に潜む本心は、ついに杯に託さなかった。|你把手从杯子上移开了。本性深处的真心，终究没有托付给杯子。
 잔을 내려놓은 손|The Hand That Set Down the Cup|杯を置いた手|放下杯子的手
 T {0~이} 당신 곁에 섰다. 바닥만 젖은 잔이 제단 위에 놓여 있다.|{0} stood beside you. The cup, wet only at the bottom, rests on the altar.|{0}があなたの隣に立った。底だけが濡れた杯が祭壇の上に置かれている。|{0}站到了你身旁。底部仅仅湿润的杯子放在祭坛上。
 함께 잔을 부순다|Break the cup together|共に杯を砕く|一起打碎杯子
-진짜 소원을 빌지 않고 서번트와 함께 잔을 부쉈다|Broke the cup together with your Servant without making the true wish|本当の願いを口にせず、サーヴァントと共に杯を砕いた|没有许下真正的愿望，与从者一起打碎了杯子
+본성 속 진심을 잔에 맡기지 않고 서번트와 함께 잔을 부쉈다|Broke the cup together with your Servant without entrusting the truth beneath your nature to it|本性に潜む本心を杯に託さず、サーヴァントと共に杯を砕いた|没有把本性深处的真心托付给杯子，与从者一起打碎了它
 T {0~이} 잔을 내리쳤다. 당신의 손도 그 위에 있었다.|{0} brought the cup down hard. Your hand was on it too.|{0}が杯を打ち砕いた。あなたの手もそこに重なっていた。|{0}猛地砸向杯子。你的手也覆在上面。
 잔은 둘의 손으로 부서졌다.|The cup broke in both your hands.|杯は二人の手で砕けた。|杯子在两人的手中碎裂了。
 T 잔의 빛으로 {0~을} 남긴다|Use the cup's light to keep {0} here|杯の光で{0}を残す|用杯子的光留下{0}
 남은 빛을 서번트가 몸을 얻는 데 쓴다|Use the remaining light to give your Servant a body|残った光でサーヴァントに体を与える|用剩下的光让从者获得肉身
-진짜 소원을 빌지 않고 서번트를 남겼다|Kept your Servant here without making the true wish|本当の願いを口にせず、サーヴァントを残した|没有许下真正的愿望，留下了从者
+본성 속 진심을 잔에 맡기지 않고 서번트를 남겼다|Kept your Servant here without entrusting the truth beneath your nature to the cup|本性に潜む本心を杯に託さず、サーヴァントを残した|没有把本性深处的真心托付给杯子，留下了从者
 T 바닥에 고였던 빛이 {0}에게 스며들었다. 잔은 그 자리에서 금이 갔다.|The light pooled at the bottom seeped into {0}. The cup cracked where it stood.|底に溜まっていた光が{0}に染み込んだ。杯はその場でひびが入った。|积在杯底的光渗入了{0}体内。杯子当场裂开了。
-진짜 소원 대신, 곁에 남는 쪽을 골랐다.|Instead of the true wish, you chose to have them stay by your side.|本当の願いの代わりに、そばに残ることを選んだ。|你没有选择真正的愿望，而是选择了让对方留在身边。
+그 진심 대신, 곁에 남는 쪽을 골랐다.|Instead of that truth, you chose to have them stay by your side.|その本心の代わりに、そばに残ることを選んだ。|你没有选择那份真心，而是选择了让对方留在身边。
 잔이 가득 찼지만, 마음 가장 깊은 곳의 그 소원은 이제 거기 없었다. 나흘 사이에 무언가가 바뀌어 있었다.|The cup was full, but the wish in the deepest part of your heart was no longer there. Something had changed over those four days.|杯は満ちたが、心の最も深いところにあったあの願いは、もうそこになかった。四日のあいだに何かが変わっていた。|杯子满了，可内心最深处的那个愿望已经不在了。这四天里，有什么改变了。
 잔이 가득 찼다.|The cup was full.|杯が満ちた。|杯子满了。
 T 손등에 남은 령주가 없다. {0~이} 스스로 정했다.|There are no Command Seals left on your hand. {0} decided on their own.|手の甲に残る令呪はない。{0}が自ら決めた。|手背上已经没有令咒了。{0}自己做出了决定。
@@ -177,7 +177,7 @@ T 셋째 날 물러났던 {0} 조가 돌아왔다. 잔을 막으러 온 것이�
 T {0} 조가 등을 돌렸다. 이 잔이 무엇을 바라는지 알아 버린 얼굴이다.|Team {0} has turned against you. Their faces say they've learned what this cup wants.|{0}組が背を向けた。この杯が何を望んでいるのか、知ってしまった顔だ。|{0}组倒戈了。那是已经知道这个杯子所求为何的表情。
 그 소원만큼은 이루게 둘 수 없어.|That wish, of all things, I can't let come true.|その願いだけは、叶えさせるわけにはいかない。|唯独那个愿望，我不能让它实现。
 T 잔이 당신의 소원을 받아 들었다. “{0}.”|The cup accepted your wish. “{0}.”|杯があなたの願いを受け取った。「{0}。」|杯子接受了你的愿望。“{0}。”
-진짜 소원이 이루어졌다.|The true wish came true.|本当の願いが叶った。|真正的愿望实现了。
+본성 속의 진심이 이루어졌다.|The truth beneath your nature came true.|本性に潜む本心が叶った。|本性深处的真心实现了。
 T 그 세계에는 {0}의 이름이 없다.|In that world, there is no name {0}.|その世界には、{0}の名前がない。|在那个世界里，没有{0}这个名字。
 T {0~은} 곁에 남았다. 마지막 령주를 쓰던 순간 뒤로, 입을 열지 않았다.|{0} stayed by your side. Since the moment you used that last Command Seal, they have not spoken.|{0}はそばに残った。最後の令呪を使ったあの瞬間から、口を開かなかった。|{0}留在了你身边。自你使用最后一道令咒的那一刻起，就再也没有开口。
 둘이 이긴 세계의 첫 아침이 왔다. 그 세계는 아주 조용했다.|The first morning came in the world the two of you had won. That world was very, very quiet.|二人が勝ち取った世界の、最初の朝が来た。その世界はとても静かだった。|你们二人赢来的世界，迎来了第一个早晨。那个世界非常安静。
@@ -223,7 +223,7 @@ T 첫 해 · {0}달째|First Year · Month {0}|一年目 · {0}か月目|第一�
 묶인 잔|The Bound Cup|縛られた杯|被束缚的杯
 소원은 이루어졌다.|The wish came true.|願いは叶った。|愿望实现了。
 T {0~은} 곁에 남았다. 그 뒤로 입을 열지 않았다.|{0} stayed by your side. After that, they never spoke.|{0}はそばに残った。それ以降、口を開かなかった。|{0}留在了你身边。从那以后，再也没有开口。
-진짜 소원을 빌지 않았다.|You did not make the true wish.|本当の願いを口にしなかった。|你没有许下真正的愿望。
+본성 속 진심을 잔에 맡기지 않았다.|You did not entrust the truth beneath your nature to the cup.|本性に潜む本心を杯に託さなかった。|你没有把本性深处的真心托付给杯子。
 손을 놓친 잔|The Cup That Slipped Away|手を離れた杯|脱手之杯
 동맹이 잔을 부쉈다.|Your ally shattered the cup.|同盟者が杯を砕いた。|同盟打碎了杯子。
 막아선 칼|The Blade That Stood in the Way|立ちはだかった刃|挡路之刃
