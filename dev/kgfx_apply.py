@@ -19,7 +19,7 @@ SND = os.path.join(HERE, '..', 'public', 'assets', 'sound')
 def dur(n):
     try: return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(SND, n + '.mp3')], capture_output=True, text=True).stdout.strip()), 2)
     except Exception: return 6.0
-SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel', 'j_kg_mr', 'j_kg_ally']
+SNDS = ['j_end_kgF', 'j_end_kgS', 'j_end_kgT', 'j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel', 'j_kg_mr', 'j_kg_ally']
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
        ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
@@ -30,6 +30,13 @@ rp("function bxOrderFx(fx){", js + "\nfunction bxOrderFx(fx){")
 rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx,kgmr:kgMrFx,kgally:kgAllyFx};")
 rp('"j_bx_order":{"d":4.63}', '"j_bx_order":{"d":4.63},' + ','.join(f'"{n}":{{"d":{dur(n)}}}' for n in SNDS))
 rp(".xd-rule.bx{", CSS + ".xd-rule.bx{")
+# 결말 전용 장면(시안 8~10): kg_apply가 빌려 쓰던 장면을 바꿔 끼운다 · 소리는 효과 + 결말 곡을 붙인 판
+import re
+_n = len(re.findall(r"  SCN\.kg[FST]=scnAs\([^\n]*\n", s))
+if _n != 3: miss.append(('SCN.kgF/S/T', _n))
+s = re.sub(r"  SCN\.kgT=scnAs\([^\n]*\n", '', s); s = re.sub(r"  SCN\.kgS=scnAs\([^\n]*\n", '', s)
+s = re.sub(r"  SCN\.kgF=scnAs\([^\n]*\n", lambda m: open(os.path.join(HERE, 'kgend.js'), encoding='utf-8').read(), s)
+rp("const END_SK={", "const END_SK={kgF:'j_end_kgF',kgS:'j_end_kgS',kgT:'j_end_kgT',")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
@@ -58,6 +65,10 @@ D = [
  ('동맹이 등을 돌렸다.', 'Your ally turned against you.', '同盟が背を向けた。', '同盟背弃了你。', '同盟背棄了你。'),
  ('셋째 날 물러났던 동맹이 잔을 막으러 돌아왔다.', 'The ally who withdrew on the third day came back to stop the cup.', '三日目に退いた同盟が、杯を止めに戻ってきた。', '第三天退走的同盟回来阻止杯子了。', '第三天退走的同盟回來阻止杯子了。'),
  ('나', 'Me', '私', '我', '我'),
+ ('찰나의 순간, 잔과 함께 등을 베였다.', 'In an instant, your back was cut, and the cup with it.', '刹那のうちに、杯もろとも背を斬られた。', '刹那之间，你连同杯子一起被从背后斩开。', '剎那之間，你連同杯子一起被從背後斬開。'),
+ ('당신의 사고는 이어지지 않았다.', 'Your thoughts went no further.', 'あなたの思考は、その先へ続かなかった。', '你的思绪没能再延续下去。', '你的思緒沒能再延續下去。'),
+ ('무자비한 본성은 저지되었고,', 'Your merciless nature was stopped,', '無慈悲な本性は阻まれ、', '无情的本性被阻止了，', '無情的本性被阻止了，'),
+ ('서번트의 표정에는 연민만이 가득했다.', 'and your Servant’s face held nothing but pity.', 'サーヴァントの表情には、憐れみだけが満ちていた。', '从者的脸上只剩下满满的怜悯。', '從者的臉上只剩下滿滿的憐憫。'),
 ]
 s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [])
 open(P, 'w', encoding='utf-8').write(s)
