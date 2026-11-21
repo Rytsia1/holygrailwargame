@@ -6,8 +6,9 @@ const ctx={console};ctx.globalThis=ctx;ctx.window=ctx;vm.createContext(ctx);vm.r
 const Sim=ctx.Sim,T=ctx.__T;Sim.setHooks(new Proxy({},{get:()=>()=>{}}));
 function toWar(seed){ Sim.newLife({seed,len:20});Sim.start();let g=0;while(Sim.S&&!Sim.S.dead&&g++<400000&&!(Sim.S.phase==='war'&&Sim.S.war&&Sim.S.war.heroAlive)){const S=Sim.S;if(S.pending){Sim.resolve(Sim.autoChoice(S.pending));continue;}Sim.tick(1);} return Sim.S.phase==='war'; }
 // pol: {제목: 고를 선택(앞부분 일치)}
+const SEEN=new Set(); const see=x=>{ if(typeof x==='string'&&/[가-힣]/.test(x)) x.split('\n').forEach(l=>{ l=l.trim(); if(l) SEEN.add(l); }); };
 function drive(pol,lim=300000,stop){ let g=0; while(g++<lim){ const S=Sim.S; if(!S) break; if(stop&&stop(S)) break;
-    if(S.pending){ const d=S.pending; let i=-1; const want=pol[d.title]; if(want!=null) i=d.choices.findIndex(c=>!c.off&&c.t.startsWith(want)); if(i<0) i=Sim.autoChoice(d); Sim.resolve(i); continue; }
+    if(S.pending){ const d=S.pending; see(d.title); see(d.body); (d.choices||[]).forEach(c=>{ see(c.t); see(c.d); }); let i=-1; const want=pol[d.title]; if(want!=null) i=d.choices.findIndex(c=>!c.off&&c.t.startsWith(want)); if(i<0) i=Sim.autoChoice(d); Sim.resolve(i); continue; }
     if(S.dead) break; Sim.tick(1); } }
 let seed=11, bad=0;
 const sel=process.argv[3];
@@ -42,9 +43,11 @@ for(const o of C){ if(sel&&!o.n.includes(sel)) continue;
     const end=S.flags.kgEnd; let ok=o.want instanceof RegExp?o.want.test(end||''):end===o.want;
     let ep='';
     if(o.epi&&!S.dead){ const n1=S.log.length; drive(o.pol||{},900000); const ks=(S.epi&&S.epi.kgU)||[]; ep=` · 에필로그 ${S.dead?'끝('+S.age+'세 '+S.cause+')':'안 끝남'} · 검귀 사건 ${ks.length}개 [${ks.slice(0,8).join(' ')}]`; if(!S.dead) ok=false; }
+    S.log.slice(n0).forEach(e=>{ if(!['q','delta','check'].includes(e.k)) see(e.t); });
     if(!ok) bad++;
     const F=S.flags; console.log(ok?'✓':'✗',o.n,'→',end,F.endFx||'',ep,['kgAllyFight','kgAllyWin','kgLastDone','kgGone','kgFree'].filter(k=>F[k]).join(','));
     if(process.env.V) S.log.slice(n0).forEach(e=>e.t&&console.log('   ',(e.k||'').padEnd(6),String(e.t).replace(/\n/g,' / ').slice(0,170)));
   }catch(e){ bad++; console.log('✗',o.n,'오류',e.stack.split('\n').slice(0,4).join(' | ')); }
 }
 console.log(bad?'실패 '+bad:'모두 통과');
+if(process.env.DUMP) fs.writeFileSync(process.env.DUMP,JSON.stringify([...SEEN]));
