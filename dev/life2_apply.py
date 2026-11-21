@@ -38,6 +38,12 @@ mul('|'.join(re.escape(x) for x in OLD), 1.5, len(OLD))
 mul(r"m[ctaw]_[a-z_0-9]+", 2.2, 39)
 
 rp("  ];\n  const FOCUS_PICK=", G + "  ];\n  const FOCUS_PICK=")
+# 11-22: 이미 기운 성향의 사건이 더 자주 — 선택지에서 그 성향을 올리는 사건은 성향 점수에 따라 ×1.4~×2.4
+rp("  function wpick(arr,wf){", """  function evLk(e){ if(e._lk) return e._lk; const k={}; (e.ch||[]).forEach(c=>{ const m=String(c.f).match(/lean\\('(\\w+)',\\s*\\d/g)||[]; m.forEach(x=>{ k[x.slice(6,x.indexOf("'",6))]=1; }); }); return e._lk=Object.keys(k); }
+  function evW(e){ const A=S.aff||{}; let v=0; evLk(e).forEach(k=>{ v=Math.max(v,A[k]||0); }); return e.w*(v<=0?1:v<3?1.4:v<6?1.9:2.4); }
+  function wpick(arr,wf){""")
+rp("wpick(elig,x=>x.w); if(!e) return;\n    S.once[e.id]=1; (S.onceAt", "wpick(elig,evW); if(!e) return;\n    S.once[e.id]=1; (S.onceAt")
+rp("const e=wpick(elig,x=>x.w); S.once[e.id]=1; mark('event');\n    showGrow(e);", "const e=wpick(elig,evW); S.once[e.id]=1; mark('event');\n    showGrow(e);")
 rp("\n  ];\n  function relicRoom(){", "\n" + E.rstrip('\n') + "\n  ];\n  function relicRoom(){")
 # 한 해 최대 2개
 rp("    if(!S.pending&&!S.dead) artEvent();\n    if(!S.pending&&!S.dead) rollEvent();\n    if(!S.pending&&!S.dead&&S.age>=3&&S.age<=15&&ch(.8)) growthEvent();",
@@ -45,9 +51,9 @@ rp("    if(!S.pending&&!S.dead) artEvent();\n    if(!S.pending&&!S.dead) rollEve
     const artY=!!S.pending;   // 11-20: 마안·기술 사건이 뜬 해는 그것 하나만
     if(!S.pending&&!S.dead) rollEvent();
     // 11-20: 삶 사건과 성장 사건은 따로 굴린다(한 해 최대 2개). 삶 사건이 떠 있으면 그 창을 닫은 뒤 같은 나이에 성장 사건
-    if(!artY&&!S.dead&&S.age>=3&&S.age<=15&&ch(.8)){ if(!S.pending) growthEvent(); else S.growNext=S.age; }""")
+    if(!artY&&!S.dead&&S.age>=3&&S.age<=15&&ch(.8)){ if(!S.pending) growthEvent(); else { S.growNext=S.age; S.growWait=1.3; } }""")
 rp("    if(S._resume){ const r=S._resume; S._resume=null; resumeAt(r); if(S.pending) return; }",
-   "    if(S._resume){ const r=S._resume; S._resume=null; resumeAt(r); if(S.pending) return; }\n    if(S.phase==='life'&&S.growNext!=null){ const a=S.growNext; S.growNext=null; if(a===S.age&&!S.dead){ growthEvent(); H.change(); if(S.pending) return; } }")
+   "    if(S._resume){ const r=S._resume; S._resume=null; resumeAt(r); if(S.pending) return; }\n    if(S.phase==='life'&&S.growNext!=null){ if((S.growWait||0)>0){ S.growWait-=dt; return; }   // 11-22: 두 번째 사건은 잠깐 쉬었다가\n      const a=S.growNext; S.growNext=null; if(a===S.age&&!S.dead){ growthEvent(); H.change(); if(S.pending) return; } }")
 
 if miss:
     for x in miss: print('못 찾음', x)

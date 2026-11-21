@@ -219,7 +219,7 @@ function kgFullShow(fx){
 /* 결투 시작: 서번트 초상이 돌아서서 당신을 본다 · 테두리가 핏빛으로 금 간다 · 칼이 세워진다 · 첫마디 (5.4초) */
 function kgDuelShow(fx){
   const {seg,io,oc}=XF, T=5.4;
-  const V=xfxOpen('kgx',`${tr(fx.name||'')} · ${tr('나의 서번트였던 자')}`,kgTxtH(fx.name||'',`${tr('나의 서번트였던 자')}${fx.cls?' · '+tr(fx.cls):''}`,tr('서번트가 당신의 앞을 막아섰다.')),T,frame); fxSnd(V.o,'j_kg_duel');
+  const V=xfxOpen('kgx',`${tr(fx.name||'')} · ${tr('나의 서번트였던 자')}`,kgTxtH(fx.name||'',`${tr('나의 서번트였던 자')}${fx.cls?' · '+tr(fx.cls):''}`,tr('서번트가 당신의 앞을 막아섰다.')),T,frame,()=>fxCurOff()); fxSnd(V.o,'j_kg_duel');
   const P=kgPaint(V), X=kgTxt(V); X.setW(fx.line?kgLine(fx.line):''); X.red(true);
   const img=new Image(); img.src=`assets/portraits/${fx.id}.webp`;
   function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_(), cx=W/2, top=H*.62, inA=io(seg(t,0,.4)), out=io(seg(t,T-.5,T));

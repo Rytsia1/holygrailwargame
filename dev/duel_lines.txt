@@ -18,7 +18,7 @@
 굳다|Steady|揺るがない|坚定
 흔들린다|Wavering|揺らいでいる|动摇
 크게 흔들린다|Badly shaken|大きく揺らいでいる|剧烈动摇
-칼끝|Blade|切っ先|剑锋
+결심|Resolve|決意|决心
 고위 기술|Advanced arts|高位技術|高位技术
 이번 결투|This duel|この決闘|本次决斗
 나|Me|私|我
@@ -27,8 +27,8 @@ T 마술 소양 {0}|Magecraft training {0}|魔術の素養 {0}|魔术素养 {0}
 T 오드 {0} / {1}|Od {0} / {1}|オド {0} / {1}|奥德 {0} / {1}
 T 나의 서번트였던 자 · {0}|Once my Servant · {0}|かつての私のサーヴァント · {0}|曾经的我的从者 · {0}
 T {0} · {1}합|{0} · Round {1}|{0} · {1}合目|{0} · 第{1}回合
-T 상대 {0} · 우리 {1} · 칼끝 {2}|Them: {0} · Us: {1} · Blade: {2}|相手 {0} · 味方 {1} · 切っ先 {2}|对方 {0} · 我方 {1} · 剑锋 {2}
-T 상대 {0} · 우리 {1} · 칼끝 {2} · 망설인다|Them: {0} · Us: {1} · Blade: {2} · Hesitating|相手 {0} · 味方 {1} · 切っ先 {2} · ためらっている|对方 {0} · 我方 {1} · 剑锋 {2} · 犹豫中
+T 상대 {0} · 우리 {1} · 결심 {2}|Them: {0} · Us: {1} · Resolve: {2}|相手 {0} · 味方 {1} · 決意 {2}|对方 {0} · 我方 {1} · 决心 {2}
+T 상대 {0} · 우리 {1} · 결심 {2} · 망설인다|Them: {0} · Us: {1} · Resolve: {2} · Hesitating|相手 {0} · 味方 {1} · 決意 {2} · ためらっている|对方 {0} · 我方 {1} · 决心 {2} · 犹豫中
 # 공격 방식
 체술로 맞선다|Fight hand to hand|体術で立ち向かう|以体术迎战
 오드 부족|Not enough Od|オド不足|奥德不足
@@ -66,10 +66,10 @@ T 이번 합 서번트 전투력이 크게 떨어지고, 이번 합 보구를 �
 인연|Bond|縁|羁绊
 인연 배율|Bond multiplier|縁の倍率|羁绊倍率
 T 인연 배율 {0}|Bond multiplier {0}|縁の倍率 {0}|羁绊倍率 {0}
-둘째 날 밤, 지금의 당신으로 남겠다고 한 약속을 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up the promise from the second night, to stay as you are now · The blade shakes badly · You don't attack that round|二日目の夜、今のあなたのままでいると交わした約束を持ち出す · 切っ先が大きく揺らぐ · その合は攻撃しない|提起第二天夜里、说要保持现在的自己的那个约定 · 剑锋剧烈动摇 · 该回合不攻击
-지키지 못한 약속을 꺼낸다 · 칼끝이 오히려 굳는다 · 그 합에는 공격하지 않는다|Bring up the promise you couldn't keep · The blade only steadies · You don't attack that round|守れなかった約束を持ち出す · 切っ先がかえって固まる · その合は攻撃しない|提起没能遵守的约定 · 剑锋反而更坚定 · 该回合不攻击
-셋째 날 밤의 대답, 「그때도 이랬다」를 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It was like this back then, too” · The blade shakes badly · You don't attack that round|三日目の夜の答え、「あの時もこうだった」を持ち出す · 切っ先が大きく揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“那时候也是这样” · 剑锋剧烈动摇 · 该回合不攻击
-셋째 날 밤의 대답, 「같은 사람이다」를 꺼낸다 · 칼끝이 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It's the same person” · The blade wavers · You don't attack that round|三日目の夜の答え、「同じ人だ」を持ち出す · 切っ先が揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“是同一个人” · 剑锋动摇 · 该回合不攻击
+둘째 날 밤, 지금의 당신으로 남겠다고 한 약속을 꺼낸다 · 결심이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up the promise from the second night, to stay as you are now · Their resolve shakes badly · You don't attack that round|二日目の夜、今のあなたのままでいると交わした約束を持ち出す · 決意が大きく揺らぐ · その合は攻撃しない|提起第二天夜里、说要保持现在的自己的那个约定 · 决心剧烈动摇 · 该回合不攻击
+지키지 못한 약속을 꺼낸다 · 결심이 오히려 굳는다 · 그 합에는 공격하지 않는다|Bring up the promise you couldn't keep · Their resolve only hardens · You don't attack that round|守れなかった約束を持ち出す · 決意がかえって固まる · その合は攻撃しない|提起没能遵守的约定 · 决心反而更坚定 · 该回合不攻击
+셋째 날 밤의 대답, 「그때도 이랬다」를 꺼낸다 · 결심이 크게 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It was like this back then, too” · Their resolve shakes badly · You don't attack that round|三日目の夜の答え、「あの時もこうだった」を持ち出す · 決意が大きく揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“那时候也是这样” · 决心剧烈动摇 · 该回合不攻击
+셋째 날 밤의 대답, 「같은 사람이다」를 꺼낸다 · 결심이 흔들린다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It's the same person” · Their resolve wavers · You don't attack that round|三日目の夜の答え、「同じ人だ」を持ち出す · 決意が揺らぐ · その合は攻撃しない|提起第三天夜里的回答：“是同一个人” · 决心动摇 · 该回合不攻击
 셋째 날 밤의 대답, 「그때와는 다르다」를 꺼낸다 · 그 합에는 공격하지 않는다|Bring up your answer from the third night: “It's different from back then” · You don't attack that round|三日目の夜の答え、「あの時とは違う」を持ち出す · その合は攻撃しない|提起第三天夜里的回答：“和那时候不一样” · 该回合不攻击
 # 기록
 T 잔이 가득 찼다. {0~이} 당신과 마주 섰다.|The cup is full. {0} stood facing you.|杯が満ちた。{0}があなたと向かい合った。|圣杯已满。{0}与你相对而立。
@@ -136,7 +136,7 @@ T 회로 {0} · 고위 기술 {1}|Circuits {0} · Advanced arts {1}|回路 {0} �
 마스터 지원 없음|No Master support|マスターの支援なし|无御主支援
 마스터가 보태던 몫 없이, 서번트 혼자의 힘으로 싸운다|Fights on its own strength alone, without what a Master would add|マスターが上乗せしていた分なしに、サーヴァント一騎の力で戦う|没有御主的加成，仅凭从者自身的力量战斗
 망설임|Hesitation|ためらい|犹豫
-칼끝이 흔들려 이번 합 공격이 늦다 · 보구를 쓰지 않는다|The blade wavers, so this round's attack comes late · Won't use its Noble Phantasm|切っ先が揺らぎ、この合の攻撃が遅れる · 宝具を使わない|剑锋动摇，本回合的攻击慢了一拍 · 不会使用宝具
+결심이 흔들려 이번 합 공격이 늦다 · 보구를 쓰지 않는다|Their resolve wavers, so this round's attack comes late · Won't use its Noble Phantasm|決意が揺らぎ、この合の攻撃が遅れる · 宝具を使わない|决心动摇，本回合的攻击慢了一拍 · 不会使用宝具
 비기의 저주가 몸을 묶고 있다|The secret art's curse binds its body|秘技の呪いが体を縛っている|秘技的诅咒束缚着身体
 서번트의 평소 공격이 닿지 않는다 · 보구에는 깨진다|The Servant's normal attacks can't reach you · Shattered by a Noble Phantasm|サーヴァントの通常攻撃が届かない · 宝具には砕かれる|从者的普通攻击无法触及 · 会被宝具击碎
 T {0}합|{0} rounds|{0}合|{0}回合

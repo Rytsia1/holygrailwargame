@@ -1,4 +1,4 @@
-// 11-21: 마스터 대 서번트 결투 카드 (상세안 6판) — 왼쪽은 마스터(마름모 「나 마스터」), 오른쪽은 서번트(칼끝 · 함께 싸우는 조)
+// 11-21: 마스터 대 서번트 결투 카드 (상세안 6판) — 왼쪽은 마스터(마름모 「나 마스터」), 오른쪽은 서번트(결심 · 함께 싸우는 조)
 function duelVsHtml(){ const V=Sim.duelView&&Sim.duelView(); if(!V) return '';
   const grid=r=>`<div class="pg">${ORD.map(i=>`<div><small>${PL[i]}</small><b>${esc(r[i])}</b></div>`).join('')}</div>`;
   const hw=v=>v>70?'멀쩡함':v>40?'다침':'크게 다침', M=V.me, Sv=V.sv, c=V.comp;
@@ -12,5 +12,5 @@ function duelVsHtml(){ const V=Sim.duelView&&Sim.duelView(); if(!V) return '';
     <div class="hb"><i style="width:${Math.max(0,Sv.hp)}%"></i></div><div class="hb sm"><i style="width:${Math.max(0,Sv.sm)}%"></i></div>
     <div class="meta"><span>건강 ${Sv.hp}</span><span>마력 ${Sv.sm}</span>${Sv.mr?`<span>대마력 ${esc(Sv.mr)}</span>`:''}</div>
     <div class="np2">보구 ${esc(Sv.np)}</div>
-    <div class="hes"><span>칼끝</span><span class="lv">${[0,1,2].map(i=>`<i class="${i<=Sv.blade?'on':''}"></i>`).join('')}</span><b>${['굳다','흔들린다','크게 흔들린다'][Sv.blade]}</b></div>${cr}${modsHtml(Sv.mods,'en')}</div>`;
+    <div class="hes"><span>결심</span><span class="lv">${[0,1,2].map(i=>`<i class="${i<=Sv.blade?'on':''}"></i>`).join('')}</span><b>${['굳다','흔들린다','크게 흔들린다'][Sv.blade]}</b></div>${cr}${modsHtml(Sv.mods,'en')}</div>`;
   return me+sv; }

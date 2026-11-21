@@ -42,6 +42,13 @@ else: miss.append('html2canvas')
 o = '  return {cn,ACH:'
 if s.count(o) == 1: s = s.replace(o, "  globalThis.__KGT={start:(k,R)=>{ const w=S&&S.war; if(!w||S.phase!=='war'||!w.heroAlive) return '성배전쟁 중(서번트가 살아 있을 때)에만 쓸 수 있습니다'; if(w.kg) return '이미 검귀 루트 중입니다'; S.aff=S.aff||{}; S.aff[k]=Math.max(9,S.aff[k]||0); w.queue=[]; S.pending=null; w.ended=false; kgStart(k,null,[]); if(w.kg&&R>=0) w.kg.R=Math.max(0,Math.min(100,R)); return ''; }};\n" + o)
 else: miss.append('kg hook')
+# 11-22: 조절판의 익힌 기술 · 성향 · 마술회로 · 검귀 결심 손잡이, 마스터 대 서번트 결투의 내 힘 보정
+o = '  globalThis.__KGT={'
+if s.count(o) == 1: s = s.replace(o, "  globalThis.__ARTT={list:()=>Object.keys(ARTS).map(k=>[k,ARTS[k].n,ARTS[k].br]),get:()=>arts(),set:(k,lv)=>{ if(!S) return; const A=arts(); if(lv<=0) delete A[k]; else if(A[k]) A[k].lv=lv; else A[k]={lv,q:1,xp:0}; H.change(); },aff:()=>S.aff||(S.aff={avenger:0,judge:0}),circ:v=>{ if(v!=null){ S.circuit=v; H.change(); } return S.circuit||1; },kg:()=>S&&S.war&&S.war.kg&&!S.war.kg.done?S.war.kg:null};\n" + o)
+else: miss.append('arts hook')
+o = "+M.gi+(P0.pow||0)+(rnd()*36-18)"
+if s.count(o) == 1: s = s.replace(o, "+M.gi+(P0.pow||0)+((globalThis.__TEST&&globalThis.__TEST.dpow)||0)+(rnd()*36-18)")
+else: miss.append('duel pow hook')
 # 풀사운드: 소리를 data URL로 넣고, 소리를 읽는 자리에서 먼저 그것을 쓴다
 if SOUND:
     SD = os.path.join(A, 'sound'); M = {}

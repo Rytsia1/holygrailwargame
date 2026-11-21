@@ -18,6 +18,8 @@ M = {'kgally': (81.668, 4.272, 81.168), 'kgduel': (99.5, 15.0, 99.0), 'kgday': (
      'kgbound': (71.75, 11.25, 71.25), 'kglast': (56.5, 8.0, 56.0), 'end_kg': (140.02, 30.52, 139.52)}
 M.pop('kgnight')   # 11-22: 나흘의 밤도 낮 곡(K2)으로 통일 — K3은 쓰지 않는다(악보 dev/kgbgm/k3_night.py는 남겨 둠)
 rp('"final":{"d":73.93,"ls":10.07,"le":73.43}', '"final":{"d":73.93,"ls":10.07,"le":73.43},' + ','.join(f'"{k}":{{"d":{d},"ls":{a},"le":{b}}}' for k, (d, a, b) in M.items()) + ',"j_end_kg":{"d":14.04}')
+# 11-22: 검귀 루트에서 쓰러진 뒤 '마지막으로' 창에는 작별 곡을 틀지 않는다 (서번트와 작별하는 장면이 아니다)
+rp("if(w&&w.ended&&w.heroAlive) Snd.jingle('j_farewell');", "if(w&&w.ended&&w.heroAlive&&!w.kg) Snd.jingle('j_farewell');")
 rp("if(S.phase==='epi') return 'epi';", "if(S.phase==='epi') return S.flags.kgEnd==='b'?'kgbound':'epi';")
 rp("  const b=w.battle; if(b&&b.e){", "  if((w.duel&&w.duel.ctx)||(w.duelLast&&w.kg&&!w.kg.done)) return 'kgduel';   // 결투가 끝난 뒤 결과 창 · 결말까지 결투 곡을 이어서\n  const b=w.battle; if(b&&b.e){")
 rp("if(b.ctx&&b.ctx.final) return 'final';", "if(b.ctx&&b.ctx.kgAlly) return 'kgally'; if(b.ctx&&b.ctx.final) return 'final';")

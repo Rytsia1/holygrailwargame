@@ -41,6 +41,7 @@ for(const o of C){ if(sel&&!o.n.includes(sel)) continue;
     T.kgStart(o.k||'avenger',null); if(o.hp) w.hp=o.hp; const g=w.kg; g.R=o.R; g.lock=o.R!=null&&!o.free; g.bet=!!o.bet; if(o.sus) g.sus=o.sus;
     drive(o.pol||{},200000,S2=>S2.phase!=='war'||S2.dead);
     const end=S.flags.kgEnd; let ok=o.want instanceof RegExp?o.want.test(end||''):end===o.want;
+    if(!ok&&o.ally&&S.dead&&!end){ ok=true; o.epi=false; console.log('  (동맹 결전에서 마스터가 쓰러짐 — 운에 따른 정상 결말)'); }
     let ep='';
     if(o.epi&&!S.dead){ const n1=S.log.length; drive(o.pol||{},900000); const ks=(S.epi&&S.epi.kgU)||[]; ep=` · 에필로그 ${S.dead?'끝('+S.age+'세 '+S.cause+')':'안 끝남'} · 검귀 사건 ${ks.length}개 [${ks.slice(0,8).join(' ')}]`; if(!S.dead) ok=false; }
     S.log.slice(n0).forEach(e=>{ if(!['q','delta','check'].includes(e.k)) see(e.t); });

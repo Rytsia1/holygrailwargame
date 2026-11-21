@@ -79,10 +79,10 @@
       if(w.seals>0) cs.push({grp:'seal',t:'령주: 멈춰라',d:`이번 합 서번트 전투력이 크게 떨어지고, 이번 합 보구를 쓰지 못한다${mr?` · 대마력 ${Math.round(Math.max(.4,1-.1*mr)*100)}%만 듣는다`:''} [령주 1획]`,seal:true,f:()=>{ useSeal('멈춰라'); const k=Math.max(.4,1-.1*mr); D.pre={...(D.pre||{}),stop:Math.round(20*k),stopNP:true}; log(k<1?`${h.name}의 몸이 굳었다. 그러나 대마력이 령주를 반쯤 밀어냈다.`:`${h.name}의 몸이 령주에 묶여 굳었다.`,'seal'); return duelPre('령주: 멈춰라'); }}); }
     // 말을 건다
     const T=D.ctx, mu=duelMu(T.stage);
-    if(T.promise&&!D.talked.p) cs.push({grp:'talk',t:'그날의 약속',d:T.promise==='kept'?'둘째 날 밤, 지금의 당신으로 남겠다고 한 약속을 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다':'지키지 못한 약속을 꺼낸다 · 칼끝이 오히려 굳는다 · 그 합에는 공격하지 않는다',st:[{l:'인연 배율',v:'×'+mu}],stL:'인연',f:()=>duelClash('talkP')});
-    if(T.memory&&!D.talked.m) cs.push({grp:'talk',t:'그날의 기억',d:T.memory==='again'?'셋째 날 밤의 대답, 「그때도 이랬다」를 꺼낸다 · 칼끝이 크게 흔들린다 · 그 합에는 공격하지 않는다':T.memory==='same'?'셋째 날 밤의 대답, 「같은 사람이다」를 꺼낸다 · 칼끝이 흔들린다 · 그 합에는 공격하지 않는다':'셋째 날 밤의 대답, 「그때와는 다르다」를 꺼낸다 · 그 합에는 공격하지 않는다',st:[{l:'인연 배율',v:'×'+mu}],stL:'인연',f:()=>duelClash('talkM')});
+    if(T.promise&&!D.talked.p) cs.push({grp:'talk',t:'그날의 약속',d:T.promise==='kept'?'둘째 날 밤, 지금의 당신으로 남겠다고 한 약속을 꺼낸다 · 결심이 크게 흔들린다 · 그 합에는 공격하지 않는다':'지키지 못한 약속을 꺼낸다 · 결심이 오히려 굳는다 · 그 합에는 공격하지 않는다',st:[{l:'인연 배율',v:'×'+mu}],stL:'인연',f:()=>duelClash('talkP')});
+    if(T.memory&&!D.talked.m) cs.push({grp:'talk',t:'그날의 기억',d:T.memory==='again'?'셋째 날 밤의 대답, 「그때도 이랬다」를 꺼낸다 · 결심이 크게 흔들린다 · 그 합에는 공격하지 않는다':T.memory==='same'?'셋째 날 밤의 대답, 「같은 사람이다」를 꺼낸다 · 결심이 흔들린다 · 그 합에는 공격하지 않는다':'셋째 날 밤의 대답, 「그때와는 다르다」를 꺼낸다 · 그 합에는 공격하지 않는다',st:[{l:'인연 배율',v:'×'+mu}],stL:'인연',f:()=>duelClash('talkM')});
     const sw=hpWord(D.shp), mw=hpWord(D.mhp);
-    decide({title:`${h.name} · ${D.r}합`,body:`상대 ${sw} · 우리 ${mw} · 칼끝 ${DUEL_BW[duelBlade(D.R)]}${D.hes?' · 망설인다':''}`,war:true,battle:true,duel:true,choices:cs}); }
+    decide({title:`${h.name} · ${D.r}합`,body:`상대 ${sw} · 우리 ${mw} · 결심 ${DUEL_BW[duelBlade(D.R)]}${D.hes?' · 망설인다':''}`,war:true,battle:true,duel:true,choices:cs}); }
   // 마스터 행동을 쓴 뒤: 같은 합에서 공격 방식을 고른다
   function duelPre(t){ const D=W().duel; D.mR=D.r; soon(()=>duelRound(),.9); return ''; }
   const DUEL_EYE={charm:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',bind:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',flame:'이번 합 서번트 전투력이 크게 떨어진다',stone:'세 합 동안 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다',future:'세 합 동안 받는 피해를 크게 줄인다',jinx:'흉 표식을 새긴다 · 표식 하나마다 서번트 전투력 −5',compel:'세 합 동안 서번트의 공격 방식을 정한다 · 대마력이면 두 합',telek:'이번 합 받는 피해를 줄인다'};
@@ -185,7 +185,7 @@
     if(D.od<=0) mods.me.push({n:'오드 바닥',v:-DUEL_K.odd0,d:'오드가 바닥났다. 공격할 때마다 건강을 깎는다'});
     if(mr) mods.en.push({n:'대마력',v:mr*1.2,d:'마술로 칠 때 힘이 깎이고, 마술 피해도 줄어든다',x:skillsOf(h).filter(x=>x.k==='mr').map(x=>`${x.n} ${x.r}`).join(' · ')});
     mods.en.push({n:'마스터 지원 없음',v:-6,d:'마스터가 보태던 몫 없이, 서번트 혼자의 힘으로 싸운다'});
-    if(D.hes) mods.en.push({n:'망설임',v:-DUEL_K.hP,d:'칼끝이 흔들려 이번 합 공격이 늦다 · 보구를 쓰지 않는다',dur:'이번 합'});
+    if(D.hes) mods.en.push({n:'망설임',v:-DUEL_K.hP,d:'결심이 흔들려 이번 합 공격이 늦다 · 보구를 쓰지 않는다',dur:'이번 합'});
     if(D.curse&&D.curse.until>=D.r) mods.en.push({n:'저주',v:-D.curse.v,d:'비기의 저주가 몸을 묶고 있다',dur:`${D.curse.until-D.r+1}합`});
     if(D.wallM>=D.r) mods.me.push({n:'결계',v:8,d:'서번트의 평소 공격이 닿지 않는다 · 보구에는 깨진다',dur:`${D.wallM-D.r+1}합`});
     const comp=D.ctx.ally!=null?(()=>{ const p=w.pairs.find(x=>x.i===D.ctx.ally); return p?{hero:p.hero,name:pName(p),rev:!!p.revealed,hp:p.hp,alive:p.alive,out:D.compOut,np:D.compNP}:null; })():null;
