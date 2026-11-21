@@ -18606,6 +18606,19 @@ function warReport(r){
   </div>`;
 }
 function J2(w,f){ const c=w.charCodeAt(w.length-1); const has=c>=0xac00&&c<=0xd7a3&&(c-0xac00)%28; return f==='과'?(has?'과':'와'):f; }
+// 「기록 복사」 문구: 화면 언어를 따른다 (11-21)
+function shareText(r){
+  const bt=r.wd&&r.wd.bt;
+  if(LANG==='ko') return `성배가 차는 밤 — ${r.name} (${r.born}–${r.died}, ${r.age}세)\n${r.origin}\n${r.warYear}년 겨울: ${r.hero?r.hero.cls+' '+wa(r.hero.name)+' 함께, ':''}${warTxt(r)}${r.wish?' · '+r.wish:''}${bt?`\n전적: 교전 ${bt.n} · 격파 ${r.wd.kills} · 령주 ${r.wd.seals.length}획`:''}\n떠난 이유: ${r.cause}${r.last?'\n'+(r.lastTo?r.lastTo+'에게: ':'')+'“'+r.last+'”':''}`;
+  const T=x=>x==null?'':tr(String(x)), cj=LANG!=='en', C=cj?'：':': ';
+  const wt0=T(warTxt(r)), wt=LANG==='en'&&r.hero&&/^[A-Z][a-z]/.test(wt0)?wt0[0].toLowerCase()+wt0.slice(1):wt0;
+  const nm=T(r.name), hn=r.hero?T(r.hero.name):'', hc=r.hero?T(r.hero.cls):'';
+  const head=LANG==='en'?`${nm} (${r.born}–${r.died}, age ${r.age})`:LANG==='ja'?`${nm}（${r.born}–${r.died}、${r.age}歳）`:`${nm}（${r.born}–${r.died}，${r.age}${LANG==='zhs'?'岁':'歲'}）`;
+  const withH=!r.hero?'':LANG==='en'?`with ${hc} ${hn}, `:LANG==='ja'?`${hc} ${hn}と共に、`:`${LANG==='zhs'?'与':'與'}${hc}${hn}一起，`;
+  const q=x=>LANG==='ja'||LANG==='zht'?'「'+x.replace(/。$/,LANG==='ja'?'':'。')+'」':'“'+x+'”';
+  const to=!r.lastTo?'':LANG==='en'?`To ${T(r.lastTo)}: `:LANG==='ja'?`${T(r.lastTo)}へ：`:`致${T(r.lastTo)}：`;
+  return `${T('성배가 차는 밤')} — ${head}\n${T(r.origin)}\n${T(r.warYear+'년 겨울')}${C}${withH}${wt}${r.wish?' · '+T(r.wish):''}${bt?`\n${T('전적')}${C}${T('교전')} ${bt.n} · ${T('격파')} ${r.wd.kills} · ${T('령주 '+r.wd.seals.length+'획')}`:''}\n${T('떠난 이유')}${C}${T(r.cause)}${r.last?'\n'+to+q(T(r.last)):''}`;
+}
 function showEnding(r,fromHistory){
   cancelAnimationFrame(raf);
   $('#intro').classList.add('hidden'); $('#game').classList.add('hidden'); $('#dlg').classList.add('hidden');
@@ -18632,7 +18645,7 @@ function showEnding(r,fromHistory){
   $('#againBtn').onclick=birth;
   $('#homeBtn').onclick=showIntro;
   $('#capBtn').onclick=()=>capOpen(r,fromHistory);
-  $('#copyBtn').onclick=()=>{ const t=`성배가 차는 밤 — ${r.name} (${r.born}–${r.died}, ${r.age}세)\n${r.origin}\n${r.warYear}년 겨울: ${r.hero?r.hero.cls+' '+wa(r.hero.name)+' 함께, ':''}${warTxt(r)}${r.wish?' · '+r.wish:''}${r.wd&&r.wd.bt?`\n전적: 교전 ${r.wd.bt.n} · 격파 ${r.wd.kills} · 령주 ${r.wd.seals.length}획`:''}\n떠난 이유: ${r.cause}${r.last?'\n'+(r.lastTo?r.lastTo+'에게: ':'')+'“'+r.last+'”':''}`;
+  $('#copyBtn').onclick=()=>{ const t=shareText(r);
     const ok=()=>toast('기록을 복사했습니다'); try{ navigator.clipboard.writeText(t).then(ok,()=>toast('복사할 수 없습니다. 직접 선택해 주세요')); }catch(e){ toast('복사할 수 없습니다. 직접 선택해 주세요'); } };
   ghWire(r,fromHistory); { const R=ghNewsFor(r); if(R.some(gnUnseen)){ gnSeen(R); ghNewsCard(); } }
   window.scrollTo(0,0);
