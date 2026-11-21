@@ -10694,7 +10694,8 @@ const Sim = (() => {
     // 넷째 날 밤: 잔이 가득 찬다
     kgFinal(); }
   function kgDawn(){ const w=W(), g=w.kg; if(!g||g.done||S.dead) return; w.tod='새벽';
-    w.hp=clamp(w.hp+4); smRegen(6);
+    // 11-22: 성배전쟁 새벽과 같은 회복 — 서번트 건강은 dawn() 공식(마력 · 결계 · 재생/치유 스킬 · 영맥), 마력은 smRegen(6). 마스터 건강은 쉬는 밤처럼 +4
+    { const h=hero(); w.hp=clamp(w.hp+2+S.st.mana*.06+Math.min(w.fort||0,50)*.03+SV(h,'regen')*1+SV(h,'heal')*.6+2*wsF()); } smRegen(6); S.st.health=Math.min(100,S.st.health+4);
     w.queue.push(()=>kgDay()); }
   // 잔을 내려놓는다 → ⑤
   function kgPutDown(){ const w=W(), g=w.kg, h=hero(); g.done=true; g.end='p'; S.flags.kgEnd='p'; S.flags.kg5=1;
