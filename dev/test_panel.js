@@ -42,6 +42,7 @@ pan.innerHTML=`<h4>전투</h4>
 <h4>시작 조건 (다음 생부터)</h4>
 <label style="grid-template-columns:1fr">소환될 서번트<select id="tpHero"><option value="">고정하지 않음</option>${HO()}</select></label>
 <label style="grid-template-columns:1fr">후반 위기<select id="tpCx"><option value="nat">자연 (설정대로)</option><option value="off">없음</option><option value="black">검은 성배</option><option value="beast3R">비스트 Ⅲ/R</option></select></label>
+<h4>검귀 루트</h4><div id="tpKg"><div class="g"><label style="grid-template-columns:1fr">성향<select id="tpKgK"><option value="avenger">복수</option><option value="judge">정의</option><option value="cruel">잔혹</option><option value="taboo">금기</option><option value="zeal">근원 집착</option></select></label><label>결심 <input type="number" id="tpKgR" min="0" max="100" value="50"></label></div><div class="row"><button type="button" id="tpKgGo">본성 속 진심으로 바로 들어가기</button></div><p class="note">성배전쟁 중(서번트 생존)에만. 결심 60 이상 ①④ · 35~59 ③ 령주 창 · 34 이하 ②. 동맹이 살아 있으면 동맹 결전이 먼저 온다.</p></div>
 <h4>진행</h4><div class="row"><button type="button" data-sp="16">×16</button><button type="button" data-sp="32">×32</button><button type="button" data-sp="1">×1로</button></div>
 <div class="row"><button type="button" id="tpReset">보정 모두 끄기</button></div>
 <p class="note">이 조절판은 테스트용 파일에만 있습니다. 보정을 켠 채로 얻은 업적 · 기록도 이 브라우저에 그대로 남습니다.</p>`;
@@ -53,7 +54,7 @@ function fill(){ $('#tpPow').value=T.pow; $('#tpIn').value=T.dmgIn; $('#tpOut').
 function live(){ const S=Sim.S; const g=$('#tpSt');
   if(!g.children.length) g.innerHTML=Object.entries(STL).map(([k,n])=>`<label>${n} <input type="number" data-k="${k}" min="0" max="100"></label>`).join('')+`<label>재산 <input type="number" data-k="wealth" min="0"></label>`;
   g.querySelectorAll('input').forEach(i=>{ if(document.activeElement===i) return; const k=i.dataset.k; i.value=!S?'':k==='wealth'?Math.round(S.wealth||0):Math.round((S.st||{})[k]||0); });
-  const w=S&&S.war, wa=!!(w&&S.phase==='war'); $('#tpSv').classList.toggle('dim',!wa); $('#tpSvNote').hidden=wa;
+  const w=S&&S.war, wa=!!(w&&S.phase==='war'); $('#tpSv').classList.toggle('dim',!wa); $('#tpKg').classList.toggle('dim',!(wa&&w.heroAlive&&!w.kg)); $('#tpSvNote').hidden=wa;
   if(wa){ if(document.activeElement!==$('#tpTrust')) $('#tpTrust').value=Math.round(w.trust||0); if(document.activeElement!==$('#tpSeals')) $('#tpSeals').value=w.seals||0; } }
 btn.onclick=()=>{ pan.hidden=!pan.hidden; if(!pan.hidden) fill(); };
 setInterval(()=>{ if(!pan.hidden) live(); },800);
@@ -67,6 +68,7 @@ $('#tpFill').onclick=()=>{ const w=Sim.S&&Sim.S.war; if(!w) return; w.hp=100; w.
 $('#tpTrust').onchange=e=>{ const w=Sim.S&&Sim.S.war; if(w) w.trust=Math.max(0,Math.min(100,+e.target.value||0)); };
 $('#tpSeals').onchange=e=>{ const w=Sim.S&&Sim.S.war; if(w) w.seals=Math.max(0,Math.min(3,+e.target.value||0)); };
 pan.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{ if(Sim.S) Sim.S.speed=+b.dataset.sp; });
+$('#tpKgGo').onclick=()=>{ const m=globalThis.__KGT&&globalThis.__KGT.start($('#tpKgK').value,+$('#tpKgR').value); if(m) alert(m); else pan.hidden=true; };
 $('#tpReset').onclick=()=>{ T=Object.assign({},D); save(); fill(); };
 apply();
 })();

@@ -1,8 +1,10 @@
-"""테스트용 HTML 한 장 만들기: 로비 하늘 · 초상화를 파일 안에 넣어, 내려받아 바로 열어도 그림이 나오게 한다(소리는 빠짐).
+"""테스트용 HTML 한 장 만들기: 로비 하늘 · 초상화를 파일 안에 넣어, 내려받아 바로 열어도 그림이 나오게 한다.
+--sound를 붙이면 소리 파일(assets/sound/*.mp3)도 모두 파일 안에 넣는다(풀사운드, 파일이 100MB 넘게 커짐).
 테스트 조절판(test_panel.js)도 이 파일에만 넣는다: 전투 보정 · 마스터 스탯 · 서번트 상태 · 서번트 · 위기 고정 · 빠른 배속.
 사용: python3 dev/mktest.py public/index.html dev/build/test.html"""
 import sys, os, base64, re, json
-src, out = sys.argv[1], sys.argv[2]
+args = [a for a in sys.argv[1:] if not a.startswith('--')]; SOUND = '--sound' in sys.argv
+src, out = args[0], args[1]
 A = os.path.join(os.path.dirname(os.path.abspath(src)), 'assets')
 s = open(src, encoding='utf-8').read(); miss = []
 du = lambda p: 'data:image/webp;base64,' + base64.b64encode(open(p, 'rb').read()).decode()
@@ -36,5 +38,20 @@ if os.path.exists(H2):
     a = s.rindex('<script>', 0, s.index('(() => {\nconst $=s=>document.querySelector(s);'))
     s = s[:a] + '<script>\n' + open(H2, encoding='utf-8').read() + '\n</script>\n' + s[a:]
 else: miss.append('html2canvas')
+# 검귀 루트 바로 들어가기(조절판 단추): 전쟁 중 상태에서 성향을 깊게 하고 본성 속 진심을 시작한다
+o = '  return {cn,ACH:'
+if s.count(o) == 1: s = s.replace(o, "  globalThis.__KGT={start:(k,R)=>{ const w=S&&S.war; if(!w||S.phase!=='war'||!w.heroAlive) return '성배전쟁 중(서번트가 살아 있을 때)에만 쓸 수 있습니다'; if(w.kg) return '이미 검귀 루트 중입니다'; S.aff=S.aff||{}; S.aff[k]=Math.max(9,S.aff[k]||0); w.queue=[]; S.pending=null; w.ended=false; kgStart(k,null,[]); if(w.kg&&R>=0) w.kg.R=Math.max(0,Math.min(100,R)); return ''; }};\n" + o)
+else: miss.append('kg hook')
+# 풀사운드: 소리를 data URL로 넣고, 소리를 읽는 자리에서 먼저 그것을 쓴다
+if SOUND:
+    SD = os.path.join(A, 'sound'); M = {}
+    for f in sorted(os.listdir(SD)):
+        if f.endswith('.mp3'): M[f[:-4]] = 'data:audio/mpeg;base64,' + base64.b64encode(open(os.path.join(SD, f), 'rb').read()).decode()
+    o = "fetch('assets/sound/'+k+'.mp3')"
+    n = s.count(o)
+    if n: s = s.replace(o, "fetch((window.__SND||{})[k]||'assets/sound/'+k+'.mp3')")
+    else: miss.append('sound fetch')
+    s = s.replace('<body>\n', '<body>\n<script>window.__SND=' + json.dumps(M) + ';</script>\n', 1)
+    print('sound files', len(M), 'fetch sites', n)
 open(out, 'w', encoding='utf-8').write(s)
 print('test miss', miss, 'portraits', len(P), 'lobby', len(L), 'MB', round(len(s.encode()) / 1e6, 1))
