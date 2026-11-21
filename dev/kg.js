@@ -162,13 +162,14 @@
     const self=()=>{ if(g.R>=50) kgDuel(g.R); else kgTogether(false); };
     if(w.seals<1){ log(`손등에 남은 령주가 없다. ${h.name}${J(h.name,이)} 스스로 정했다.`,'war'); return self(); }
     decide({title:'마지막 밤',body:`잔이 가득 찼다. ${h.name}${J(h.name,은)} 아직 정하지 못한 얼굴이다. 손등에 령주가 ${w.seals}획 남아 있다.`,war:true,choices:[
-      {t:'령주로 명한다',seal:true,d:`“함께 이 소원을 이뤄라.” 서번트를 묶는다 [령주 1획 · 남은 ${w.seals}획]`,f:()=>{ useSeal('함께 이 소원을 이뤄라');
-        if(kgMR(h)){ log(`${h.name}${J(h.name,이)} 령주의 빛을 몸으로 받아 냈다. 대마력이 명령을 버텨 냈다.`,'war'); w.queue.push(()=>kgDuel(g.R)); return '령주는 서번트를 묶지 못했다.'; }
+      {t:'령주로 명한다',seal:true,d:`“함께 이 소원을 이뤄라.” 서번트를 묶는다 [령주 1획 · 남은 ${w.seals}획]`,f:()=>{ const mr=kgMR(h); useSeal('함께 이 소원을 이뤄라',mr?{t:'kgmr',id:h.id,rank:((SK[h.id]||[]).find(x=>/^대마력/.test(x[0]))||[])[1]||'A',i:Math.min(2,w.seals-1)}:undefined);
+        if(mr){ log(`${h.name}${J(h.name,이)} 령주의 빛을 몸으로 받아 냈다. 대마력이 명령을 버텨 냈다.`,'war'); w.queue.push(()=>kgDuel(g.R)); return '령주는 서번트를 묶지 못했다.'; }
         g.bound=true; const l=kgSV(h,3); if(l) log(l,'voice'); w.queue.push(()=>kgTogether(true)); return `${h.name}${J(h.name,은)} 따랐다. 그 뒤로 입을 열지 않았다.`; }},
       {t:'그대로 둔다',auto:true,d:'서번트가 스스로 정하게 둔다',f:()=>{ w.queue.push(self); return `${h.name}${J(h.name,이)} 오래 잔을 보았다.`; }}]}); }
   // 함께 간다(②) · 묶인 잔(③). 살아 있는 동맹이 있으면 먼저 동맹 결전
   function kgTogether(bound){ const w=W(), g=w.kg, a=kgAlly(); g.bound=bound;
     if(a){ S.flags.kgAllyFight=1; S.flags.kgAllyI=a.i; S.flags.kgAllyN=a.mname||'';
+      { const ah=H_BY[a.hero]; fxOnly({t:'kgally',back:!!a.kgBack,mname:a.mname||'',hero:a.revealed&&ah?ah.id:'',hname:a.revealed&&ah?ah.name:'',cls:ah&&CLS[ah.cls]?CLS[ah.cls].n:''}); }
       log(a.kgBack?`셋째 날 물러났던 ${pName(a)} 조가 돌아왔다. 잔을 막으러 온 것이다.`:`${pName(a)} 조가 등을 돌렸다. 이 잔이 무엇을 바라는지 알아 버린 얼굴이다.`,'war');
       log(`${a.mname}: “그 소원만큼은 이루게 둘 수 없어.”`,'enemy');
       a.ally=false; a.truce=false; a.intent='betray';

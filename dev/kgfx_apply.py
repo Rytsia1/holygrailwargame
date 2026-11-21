@@ -19,7 +19,7 @@ SND = os.path.join(HERE, '..', 'public', 'assets', 'sound')
 def dur(n):
     try: return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(SND, n + '.mp3')], capture_output=True, text=True).stdout.strip()), 2)
     except Exception: return 6.0
-SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel']
+SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h', 'j_kg_day1', 'j_kg_day2', 'j_kg_day3', 'j_kg_day4', 'j_kg_full_r', 'j_kg_full_g', 'j_kg_duel', 'j_kg_mr', 'j_kg_ally']
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
        ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
@@ -27,7 +27,7 @@ CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;p
 
 js = open(os.path.join(HERE, 'kgfx.js'), encoding='utf-8').read()
 rp("function bxOrderFx(fx){", js + "\nfunction bxOrderFx(fx){")
-rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx};")
+rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx,kgmr:kgMrFx,kgally:kgAllyFx};")
 rp('"j_bx_order":{"d":4.63}', '"j_bx_order":{"d":4.63},' + ','.join(f'"{n}":{{"d":{dur(n)}}}' for n in SNDS))
 rp(".xd-rule.bx{", CSS + ".xd-rule.bx{")
 if miss:
@@ -51,6 +51,13 @@ D = [
  ('흘러넘치던 본성이 고요해졌다.', 'The nature that had been spilling over fell still.', '溢れ出していた本性が、静まった。', '满溢而出的本性归于平静。', '滿溢而出的本性歸於平靜。'),
  ('나의 서번트였던 자', 'The one who was your Servant', 'かつて我がサーヴァントだった者', '曾是我的从者之人', '曾是我的從者之人'),
  ('서번트가 당신의 앞을 막아섰다.', 'Your Servant stands in your way.', 'サーヴァントが、あなたの前に立ちはだかった。', '从者挡在了你的面前。', '從者擋在了你的面前。'),
+ ('대마력', 'Magic Resistance', '対魔力', '对魔力', '對魔力'),
+ ('령주가 닿지 못했다.', 'The Command Spell could not reach.', '令呪は届かなかった。', '令咒没能触及。', '令咒沒能觸及。'),
+ ('서번트가 강렬한 의지로 저항했다.', 'Your Servant resisted with fierce will.', 'サーヴァントが、強烈な意志で抗った。', '从者以强烈的意志抵抗了。', '從者以強烈的意志抵抗了。'),
+ ('동맹', 'Ally', '同盟', '同盟', '同盟'),
+ ('동맹이 등을 돌렸다.', 'Your ally turned against you.', '同盟が背を向けた。', '同盟背弃了你。', '同盟背棄了你。'),
+ ('셋째 날 물러났던 동맹이 잔을 막으러 돌아왔다.', 'The ally who withdrew on the third day came back to stop the cup.', '三日目に退いた同盟が、杯を止めに戻ってきた。', '第三天退走的同盟回来阻止杯子了。', '第三天退走的同盟回來阻止杯子了。'),
+ ('나', 'Me', '私', '我', '我'),
 ]
 s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [])
 open(P, 'w', encoding='utf-8').write(s)

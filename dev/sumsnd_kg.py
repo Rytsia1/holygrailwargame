@@ -5,6 +5,7 @@
 - j_kg_back_c  알면서 그대로 둔다 (6.2초): 화음이 끝까지 이어지다 '쉭' 뒤 함께 가라앉음
 - j_kg_back_h  동맹 앞에서 등 뒤의 칼이 먼저 닿음 (4초): '쉭' → 무겁게 베임 (쓰러지지 않음)
 - j_kg_day1~4  날 카드 (2.9초) · j_kg_full_r/g 잔이 가득 참 (4.8초) · j_kg_duel 결투 시작 (5.6초)
+- j_kg_mr 대마력이 령주를 버팀 (5.8초) · j_kg_ally 동맹이 등을 돌림 (5.4초)
 사용: python3 sumsnd_kg.py <출력 폴더> [이름,이름]"""
 import sys, os, subprocess, numpy as np
 from scipy.signal import fftconvolve, butter, sosfilt
@@ -127,7 +128,29 @@ def kg_duel():  # 결투 시작: 잔의 울림 → 돌아서는 '스릉' → '�
     put(B, pad([146.83, 174.61, 220.0], 3.2, .3, 2.0, 1200), 2.0, 0, .25)
     return reverb(B, 2.2, .3)
 
+def kg_mr():  # 대마력이 령주를 버팀: 령주가 달아오름 → 막이 켜짐 → 길항(갈리는 웅웅거림이 높고 거칠어짐) → 밀어냄(터짐 · 쿵)
+    L = 5.8; B = buf(L)
+    put(B, glide(98, 196, .9, .5, .2), .3, 0, .25); put(B, pad([523.25, 622.25], .6, .3, .2, 3000), .5, 0, .12)
+    x = T(.6); put(B, bp(noise(.6), 400, 3000) * np.minimum(1, x / .4) * np.clip((.6 - x) / .1, 0, 1), .95, 0, .3)
+    put(B, bell(2093, 1.0), 1.45, .2, .2); put(B, bell(2637, .8), 1.46, .2, .12)
+    x = T(1.4); f = 70 * (150 / 70) ** (x / 1.4)
+    saw = lambda ff: (2 * ((np.cumsum(ff) / SR) % 1) - 1)
+    grind = (saw(f) + saw(f * 1.04)) * .5 * (1 + .5 * np.sin(2 * np.pi * 11 * x)) * np.minimum(1, x / .2) * np.clip((1.4 - x) / .1, 0, 1)
+    put(B, lp(grind, 1800), 1.5, 0, .35); put(B, bp(noise(1.4), 600, 2600) * np.minimum(1, x / .6), 1.5, 0, .12)
+    for i in range(9): put(B, bell(rng.uniform(1400, 3000), .15), 1.6 + i * .13, rng.uniform(-.5, .5), .05)
+    put(B, hp(noise(.7), 2400) * np.exp(-T(.7) / .15), 2.85, 0, .35); put(B, glass(1.0), 2.86, 0, .25)
+    put(B, thump(56, 1.4), 2.85, 0, .9); put(B, tone(1760, 1.6, .002, 1.5), 2.86, 0, .07)
+    return reverb(B, 2.4, .32)
+def kg_ally():  # 동맹이 등을 돌림: 잔의 울림 · 떨리는 실 → '툭' 끊어짐 · 줄이 튕김 → 낮은 쿵 · 어두운 화음
+    L = 5.4; B = buf(L)
+    put(B, tone(55, 1.6, .4, .4), 0, 0, .3); put(B, tone(1760, 1.2, .3, .2) + tone(1777.6, 1.2, .3, .2), .3, 0, .05)
+    x = T(.45); put(B, np.sin(2 * np.pi * np.cumsum(1760 * (1 + .08 * x / .45) * (1 + .01 * np.sin(2 * np.pi * 40 * x))) / SR) * adsr(.45, .05, .1), 1.2, 0, .1)
+    put(B, bp(noise(.12), 1500, 4000) * np.exp(-T(.12) / .03), 1.62, 0, .7)
+    put(B, glide(330, 110, .6, .002, .55), 1.63, -.4, .2); put(B, glide(294, 98, .6, .002, .55), 1.65, .4, .17)
+    put(B, thump(52, 1.4), 1.9, 0, .8); put(B, pad([146.83, 174.61, 207.65], 2.8, .3, 2.0, 1200), 2.0, 0, .25)
+    return reverb(B, 2.2, .3)
+
 os.makedirs(OUT, exist_ok=True)
-F = {'j_kg_day1': lambda: kg_day(1), 'j_kg_day2': lambda: kg_day(2), 'j_kg_day3': lambda: kg_day(3), 'j_kg_day4': lambda: kg_day(4), 'j_kg_full_r': lambda: kg_full('r'), 'j_kg_full_g': lambda: kg_full('g'), 'j_kg_duel': kg_duel, 'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}
+F = {'j_kg_mr': kg_mr, 'j_kg_ally': kg_ally, 'j_kg_day1': lambda: kg_day(1), 'j_kg_day2': lambda: kg_day(2), 'j_kg_day3': lambda: kg_day(3), 'j_kg_day4': lambda: kg_day(4), 'j_kg_full_r': lambda: kg_full('r'), 'j_kg_full_g': lambda: kg_full('g'), 'j_kg_duel': kg_duel, 'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}
 ONLY = sys.argv[2].split(',') if len(sys.argv) > 2 else list(F)
 for n in ONLY: save(n, F[n]())
