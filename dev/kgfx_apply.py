@@ -21,7 +21,7 @@ def dur(n):
     except Exception: return 6.0
 SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h']
 CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
-       ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span{display:inline-block;opacity:0}"
+       ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span.c{display:inline-block;opacity:0}.kgx .kgx-w .ww{display:inline-block;white-space:nowrap}"
        ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
        ".kgx .xd-s{color:#efe2cf;line-height:1.65;word-break:keep-all;max-width:26em;margin:0 auto;text-shadow:0 0 4px #000,0 0 12px #000}.kgx .kgx-s2{margin-top:6px;opacity:0}")
 

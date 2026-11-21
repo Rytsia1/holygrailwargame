@@ -39,7 +39,7 @@ function kgTxt(V){ const {seg,io,oc}=XF, o=V.o, CH=[...o.querySelectorAll('.xd-d
   if(!CH.length) rule.style.display='none';
   let WC=[];
   return {
-    setW(t){ W.innerHTML=[...t].map(ch=>`<span>${ch===' '?'&nbsp;':esc(ch)}</span>`).join(''); WC=[...W.querySelectorAll('span')]; },
+    setW(t){ W.innerHTML=kgWrap(W,t).map(l=>l.split(' ').map(w=>`<span class="ww">${[...w].map(ch=>`<span class="c">${esc(ch)}</span>`).join('')}</span>`).join(' ')).join('<br>'); WC=[...W.querySelectorAll('span.c')]; },
     red(on){ W.classList.toggle('red',on); },
     w(t,a,fadeAt,col){ const gap=Math.min(.06,1.2/Math.max(1,WC.length)), out=fadeAt==null?0:io(seg(t,fadeAt,fadeAt+.7)); W.style.opacity=(seg(t,a-.1,a+.1)*(1-out)).toFixed(3);
       WC.forEach((el,i)=>{ const k=seg(t,a+i*gap,a+i*gap+.4); el.style.opacity=oc(k).toFixed(3); el.style.textShadow=`0 0 ${(4+14*(1-k)).toFixed(1)}px rgba(${col},.9)`; }); },
@@ -48,6 +48,13 @@ function kgTxt(V){ const {seg,io,oc}=XF, o=V.o, CH=[...o.querySelectorAll('.xd-d
       if(CH.length){ const r=oc(seg(t,a+.45,a+1.05)); rule.style.width=(r*Math.min(260,innerWidth*.6))+'px'; rule.style.opacity=r; }
       const s=oc(seg(t,a+(CH.length?.6:0),a+(CH.length?1.15:.55))); s1.style.opacity=s; s1.style.filter=`blur(${((1-s)*4).toFixed(2)}px)`;
       s2.style.opacity=s2At!=null?oc(seg(t,s2At,s2At+.5)):0; } }; }
+// 줄바꿈: 한 줄에 다 들어가지 않으면 문장이 끝나는 자리에서 먼저 나누고, 그래도 길면 띄어쓰기에서만 넘어간다 (글자 중간에서 끊기지 않게)
+function kgWrap(el,text){ try{ const st=getComputedStyle(el), cv=kgWrap.c||(kgWrap.c=document.createElement('canvas')), x=cv.getContext('2d'); x.font=`${st.fontSize} ${st.fontFamily}`;
+  const maxW=Math.max(40,el.clientWidth-parseFloat(st.paddingLeft||0)-parseFloat(st.paddingRight||0))*.98, wd=t=>x.measureText(t).width;
+  if(wd(text)<=maxW) return [text];
+  const S=text.match(/[^.!?…。！？]+(?:[.!?…。！？]+[”’」』)]*)?\s*|[.!?…。！？]+\s*/g)||[text], L=[]; let cur='';
+  for(const sn of S){ const nx=cur+sn; if(cur&&wd(nx.trim())>maxW){ L.push(cur.trim()); cur=sn; } else cur=nx; }
+  if(cur.trim()) L.push(cur.trim()); return L; }catch(e){ return [text]; } }
 const kgShake=(V,P)=>{ const s=P.shk(), cv=V.o.querySelector('canvas'); cv.style.transform=s>0?`translate(${((Math.random()-.5)*s).toFixed(1)}px,${((Math.random()-.5)*s).toFixed(1)}px)`:''; };
 const kgQ=w=>{ const q=tr('“'+w+'.”'); return /[가-힣]/.test(q)&&LANG!=='ko'?(LANG==='ja'||LANG==='zht'?'「'+tr(w)+'」':'“'+tr(w)+'.”'):q; };
 
