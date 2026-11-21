@@ -113,4 +113,5 @@ python3 i18nfix21_apply.py build/game.html         # 번역 캐시가 깊이 제
 python3 pwa_apply.py build/game.html                # 홈 화면 앱: 창이 상태 표시줄 아래로 · 창 안 스크롤이 뒤로 새지 않게 · 캡처 창 스크롤 (커뮤니티 제보 11-21)
 python3 share_apply.py build/game.html            # 「기록 복사」 문구가 화면 언어를 따른다 (커뮤니티 제보 11-20 · 11-21)
 python3 kgrec_apply.py build/game.html             # 검귀 결과 화면 글: 결말 이름표 · 한 줄 · 판정 · 나의 조 결과 · 기록 복사 (11-22)
+python3 kgepi_apply.py build/game.html             # 검귀 결말과 공용 에필로그가 어긋나지 않게: survivor 빼기 · 이루어진 진심과 부딪치는 성향 사건 빼기 (11-22)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)

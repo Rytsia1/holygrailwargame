@@ -13677,7 +13677,9 @@ const Sim = (() => {
   const epiUsed=id=>((S.epi||{}).used||[]).includes(id);
   // 11-13: 검은 성배 전용 사건은 비스트 생에서 빼고, 단꿈의 생에서는 도시가 평소처럼 굴러가는 사건을 뺀다
   const EPI_DREAM_NO=["other_master", "lookalike", "redevelop", "memorial", "overseer", "marked_child", "judge_eye", "ward_house", "host_saved", "friend_key"];
-  const epiBlock=id=>(/^cx_/.test(id)&&((S.war||{}).crisis||{}).type==='beast3R')||(!!S.flags.bxDream&&EPI_DREAM_NO.includes(id));
+  const KG_WISH_NO={"avenger": ["af_av09", "af_av10"], "judge": ["af_jd02", "af_jd05", "af_jd06", "af_jd08", "af_jd09", "judge_eye"], "cruel": ["af_cr01", "af_cr07"], "taboo": [], "zeal": ["af_zl01", "af_zl04", "af_zl05", "af_zl06", "af_zl09", "root_step"]};   // 11-22: 진심이 이루어진 검귀 결말에서 빼는 공용 사건 (kgepi_apply)
+  const kgWishDone=()=>['b','t','m'].includes(S.flags.kgEnd);
+  const epiBlock=id=>(id==='survivor'&&!!S.flags.kgEnd)||(kgWishDone()&&(KG_WISH_NO[S.flags.kg]||[]).includes(id))||(/^cx_/.test(id)&&((S.war||{}).crisis||{}).type==='beast3R')||(!!S.flags.bxDream&&EPI_DREAM_NO.includes(id));
   // {N은} {N이} {N을} {N과} {N} → 서번트 이름 + 조사
   const nf=(s,h)=>s.replace(/\{N(은|이|을|과|으로)?\}/g,(_,j)=>j?({은,이,을,과,으로})[j](h.name):h.name);
   // 검은 성배 에필로그: {N}=내 서번트, {M}=성배를 빌거나 부순 다른 조의 마스터
