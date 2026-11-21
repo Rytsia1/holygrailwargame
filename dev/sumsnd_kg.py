@@ -1,5 +1,5 @@
 """검귀 루트 연출 소리 (11-21). 모두 직접 합성 (악기 · 다른 곡의 소리 없음).
-- j_kg_in      본성 속 진심 진입 (8.4초): 금빛 울림과 화음 → 손을 거두면 뚝 끊기고 높은 음 하나 → 글자마다 긁힘 → 방울 '톡' · 낮은 쿵 → 낮은 종 넷(나흘)
+- j_kg_in      본성 속 진심 진입 (11.6초 · 11-22 1.35배로 늘림): 금빛 울림과 화음 → 손을 거두면 뚝 끊기고 높은 음 하나 → 글자마다 긁힘 → 방울 '톡' · 낮은 쿵 → 낮은 종 넷(나흘)
 - j_kg_back_a  등 뒤의 칼 · 눈치채지 못함 (6초): 따뜻한 화음 → 정적 · 칼빛 '칭' → '쉭' → 둔한 '퍽' 뒤 무음 → 멀리서 잔이 깨짐
 - j_kg_back_b  령주로 멈춰라 (6.6초): ... '쉭'이 되감기듯 멎음 → 령주의 저음 · 떨리는 화음
 - j_kg_back_c  알면서 그대로 둔다 (6.2초): 화음이 끝까지 이어지다 '쉭' 뒤 함께 가라앉음
@@ -66,18 +66,18 @@ def save(name, B, lufs=-16.5):
     subprocess.run(['ffmpeg', '-hide_banner', '-y', '-loglevel', 'error', '-i', w, '-af', f'volume={G}dB,alimiter=limit=0.89:level=false:attack=2:release=60', '-ar', '48000', '-b:a', '160k', os.path.join(OUT, name + '.mp3')]); os.remove(w); print(name, round(B.shape[1] / SR, 2))
 
 GOLD = [659.25, 783.99, 987.77]
-def kg_in():
-    d = 8.6; B = buf(d)
-    put(B, tone(55, 1.75, .5, .08), 0, 0, .5); put(B, tone(82.41, 1.65, .6, .08), .1, 0, .3)
-    put(B, pad(GOLD, 1.5, .35, .1), .3, 0, .22)
-    for k in range(8): put(B, bell(GOLD[k % 3] * 2, .5), .4 + k * .13, rng.uniform(-.6, .6), .03)
-    put(B, tone(1318.5, 3.0, .02, 2.8), 1.65, .1, .05)                 # 손을 거둔 뒤 남는 높은 음
-    put(B, lp(noise(.5), 300) * np.exp(-T(.5) / .15), 1.6, 0, .25)   # 꺼질 때 숨이 빠지는 듯한 낮은 바람
-    for i in range(14): put(B, scratch(), 2.65 + i * .085 + rng.uniform(-.01, .01), rng.uniform(-.3, .3), .35)
-    put(B, glide(1180, 520, .35, .003, .33), 4.98, 0, .28); put(B, lp(noise(.5), 900) * np.exp(-T(.5) / .15), 5.0, 0, .06)
-    put(B, thump(58, .6), 5.3, 0, .5)
-    for i, f in enumerate([196, 174.61, 164.81, 146.83]): put(B, bell(f, 2.2), 6.1 + i * .32, (i - 1.5) * .25, .3)
-    put(B, tone(41.2, 2.4, .8, 1.2), 6.0, 0, .35)
+def kg_in():   # 11-22: 화면을 1.35배 느리게 풀어서 소리도 같은 비율로 늘림(K). 마지막 장면은 누를 때까지 멈춰 있고, 그동안 낮은 울림이 길게 남는다
+    K = 1.35; d = 8.6 * K + 3.0; B = buf(d)
+    put(B, tone(55, 1.75 * K, .5, .08), 0, 0, .5); put(B, tone(82.41, 1.65 * K, .6, .08), .1 * K, 0, .3)
+    put(B, pad(GOLD, 1.5 * K, .35, .1), .3 * K, 0, .22)
+    for k in range(8): put(B, bell(GOLD[k % 3] * 2, .5), (.4 + k * .13) * K, rng.uniform(-.6, .6), .03)
+    put(B, tone(1318.5, 3.0 * K, .02, 2.8 * K), 1.65 * K, .1, .05)
+    put(B, lp(noise(.5), 300) * np.exp(-T(.5) / .15), 1.6 * K, 0, .25)
+    for i in range(14): put(B, scratch(), (2.65 + i * .085) * K + rng.uniform(-.01, .01), rng.uniform(-.3, .3), .35)
+    put(B, glide(1180, 520, .35 * K, .003, .33 * K), 4.98 * K, 0, .28); put(B, lp(noise(.5), 900) * np.exp(-T(.5) / .15), 5.0 * K, 0, .06)
+    put(B, thump(58, .6), 5.3 * K, 0, .5)
+    for i, f in enumerate([196, 174.61, 164.81, 146.83]): put(B, bell(f, 2.6), (6.1 + i * .32) * K, (i - 1.5) * .25, .3)
+    put(B, tone(41.2, 2.4 * K + 3.0, .8, 3.0), 6.0 * K, 0, .35)
     return reverb(B)
 WARM = [261.63, 329.63, 392.0]
 def back(v):

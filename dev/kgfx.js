@@ -65,16 +65,22 @@ const kgQ=w=>{ const q=tr('“'+w+'.”'); return /[가-힣]/.test(q)&&LANG!=='k
 
 /* 본성 속 진심: 성배 선택 창의 줄들이 금빛으로 떴다가 흩어지고, 맨 아래 한 줄이 핏빛으로 다시 새겨진다 → 불 꺼진 잔 · 한 방울 · 나흘 (8.4초) */
 function kgInShow(fx){
-  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, T=8.4, wish=fx.wish||'';
-  const V=xfxOpen('kgx',tr('본성 속 진심'),kgTxtH('본성 속 진심','잔은 바닥만 젖었다.',tr('가득 차기까지 나흘.')),T,frame); fxSnd(V.o,'j_kg_in');
+  // 11-22: 1.35배 느리게 풀고(약 10.9초), 마지막 장면에서 멈춰 누를 때까지 기다린다. 도중에 누르면 마지막 장면으로, 마지막 장면에서 누르면 천천히 닫힌다
+  const {seg,io,oc}=XF, lerp=(a,b,k)=>a+(b-a)*k, T=8.4, K=1.35, HOLD=8.1, wish=fx.wish||'';
+  const V=xfxOpen('kgx',tr('본성 속 진심'),kgTxtH('본성 속 진심','잔은 바닥만 젖었다.',tr('가득 차기까지 나흘.'))+`<div class="kgx-hint">${esc(tr('누르면 닫힘'))}</div>`,1e9,frame); fxSnd(V.o,'j_kg_in'); V.o._sndFade=.8;
+  let tNow=0, jump=0, closeAt=null; const HINT=V.o.querySelector('.kgx-hint');
+  const act=()=>{ if((tNow+jump)/K<HOLD) jump=HOLD*K-tNow; else if(closeAt==null){ closeAt=tNow; try{ fxSndStop(V.o,.8); }catch(e){} } };
+  V.o.removeEventListener('click',cfxSkip); V.o.addEventListener('click',act); V.o._key=act;
   const P=kgPaint(V), X=kgTxt(V); X.setW(kgQ(wish)); X.red(true);
   const L=(fx.lines&&fx.lines.length?fx.lines:['본성 속 진심: “'+wish+'”']).map(x=>tr(x)), n=L.length;
   const FS=(()=>{ try{ return getComputedStyle(document.documentElement).getPropertyValue('--f-story').trim()||'serif'; }catch(e){ return 'serif'; } })();
-  function frame(t,dt){ const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.85, cx=W/2, base=H*.53, inA=io(seg(t,0,.45)), out=io(seg(t,T-.6,T));
+  function frame(t0,dt){ tNow=t0; if(closeAt!=null&&t0>=closeAt+.8){ cfxEnd(); return; }
+    const tm=t0/K, t=Math.min(HOLD,(t0+jump)/K), held=t>=HOLD, out=closeAt==null?0:io(seg(t0,closeAt,closeAt+.8));
+    const {c}=V, W=V.W, H=V.H, D=V.D; c.clearRect(0,0,W,H); const s=P.S_()*.85, cx=W/2, base=H*.53, inA=io(seg(t,0,.45));
     const off=seg(t,1.6,2.3), top=H*.6;
     c.fillStyle=`rgba(4,4,10,${inA*(1-out)})`; c.fillRect(0,0,W,H);   // 뒤의 게임 화면이 비치지 않게
     c.save(); c.globalAlpha=1-out;
-    P.night(inA,t); P.pool(t,top,inA*oc(seg(t,.1,.9))*(1-off*.7));
+    P.night(inA,tm); P.pool(tm,top,inA*oc(seg(t,.1,.9))*(1-off*.7));
     P.glow(cx,H*.3,Math.max(W,H)*.5,'255,214,140',.22*seg(t,.2,.9)*(1-off));
     const red=seg(t,1.8,2.8); if(red>0){ const g=c.createRadialGradient(cx,H*.45,Math.min(W,H)*.22,cx,H*.45,Math.max(W,H)*.78); g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1,`rgba(80,6,20,${.6*red})`); c.fillStyle=g; c.fillRect(0,0,W,H); }
     // 선택 창의 줄들 (맨 아래가 고른 줄)
@@ -101,7 +107,10 @@ function kgInShow(fx){
     for(let i=0;i<4;i++){ const a=seg(t,Q+i*.32,Q+.3+i*.32); if(a<=0) continue; const x=cx+(i-1.5)*gap, r=5.5*s*(.6+.4*oc(a));
       c.save(); c.globalAlpha*=a; c.strokeStyle='rgba(255,226,170,.9)'; c.lineWidth=1.3*D; c.shadowColor='rgba(255,210,140,.9)'; c.shadowBlur=8*D*(1-a*.5); c.beginPath(); c.moveTo(x,ny-r); c.lineTo(x+r,ny); c.lineTo(x,ny+r); c.lineTo(x-r,ny); c.closePath(); c.stroke(); c.restore(); }
     c.restore();
-    X.w(t,2.6,T-.6,'235,60,85'); X.txt(t,Q+.4,Q+1.2); V.o.querySelector('.xd-txt').style.opacity=(1-out).toFixed(3); kgShake(V,P); }
+    X.w(t,2.6,null,'235,60,85'); X.txt(t,Q+.4,Q+1.2); V.o.querySelector('.xd-txt').style.opacity=(1-out).toFixed(3);   // 제목 글자가 다 새겨진 뒤(8.1)에 멈춘다
+    const WW=V.o.querySelector('.kgx-w'); WW.style.opacity=((+WW.style.opacity||0)*(1-out)).toFixed(3);
+    const SK=V.o.querySelector('.xf-skip'); if(SK) SK.style.visibility=held?'hidden':'';
+    HINT.style.opacity=held&&closeAt==null?((.55+.35*Math.sin((t0-HOLD*K)*3))*seg(t0,HOLD*K,HOLD*K+.6)).toFixed(3):0; kgShake(V,P); }
 }
 
 /* 등 뒤의 칼: 가득 찬 잔 · 등 뒤의 온기 → 정적 · 칼빛 → 칼이 가른다. a 즉시 암전 / b 령주로 멈춰라 / c 알면서 둔다 / h 동맹 앞에서 칼이 먼저 닿는다 */
