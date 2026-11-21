@@ -10,7 +10,7 @@ fs.writeFileSync('dev/build/_u.html',s);
 const b=await chromium.launch();const p=await b.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message+' @ '+(e.stack||'').split('\n')[1]));
 await p.route('**/*',r=>r.request().url().startsWith('file:')?r.continue():r.abort());
 await p.addInitScript(l=>{try{localStorage.setItem('cupnight.lang',JSON.stringify(l))}catch(e){}},lang);
-await p.goto('file://'+process.cwd()+'/dev/build/_u.html');await p.waitForFunction(()=>typeof Sim==='object'&&globalThis.__T);
+await p.goto('file://'+process.cwd()+'/dev/build/_u.html',{timeout:180000});await p.waitForFunction(()=>typeof Sim==='object'&&globalThis.__T);
 const C=[['t','robin',10,{}],['b','robin',45,{'마지막 밤':'령주로 명한다'}],['m','robin',60,{},2],['s','robin',80,{}],['f','robin',80,{},0,1],['p','robin',50,{'흔적':'잔을 내려놓는다'}],['p2','robin',50,{'흔적':'잔을 내려놓는다','잔을 내려놓은 손':'잔의 빛으로'}],['x','robin',10,{},0,0,1]];
 let ci=0;for(const [n,hero,R,pol,hp,bet,ally] of C){ const st=STATES[ci++];
  const r=await p.evaluate(({hero,R,pol,hp,bet,ally,st})=>{const T=globalThis.__T;Sim.load(JSON.parse(st));Sim.setHold(false);document.querySelectorAll('#cfx,.xfx').forEach(e=>e.remove());

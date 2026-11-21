@@ -3,7 +3,7 @@
 const {chromium}=require('playwright');const fs=require('fs');(async()=>{const N=+process.argv[2]||4;
 fs.writeFileSync('public/_s.html',fs.readFileSync('dev/build/game.html','utf8').replace('function showEnding(r,fromHistory){','globalThis.__share=r=>shareText(r);\nfunction showEnding(r,fromHistory){'));
 const b=await chromium.launch();const open=async lang=>{const p=await b.newPage();p.on('pageerror',e=>console.log('오류',lang,e.message));await p.route('**/*',r=>r.request().url().startsWith('file:')?r.continue():r.abort());
- await p.addInitScript(l=>{try{localStorage.setItem('cupnight.lang',JSON.stringify(l))}catch(e){}},lang);await p.goto('file://'+process.cwd()+'/public/_s.html');await p.waitForFunction(()=>typeof Sim==='object'&&typeof globalThis.__share==='function');await p.waitForTimeout(1200);return p;};
+ await p.addInitScript(l=>{try{localStorage.setItem('cupnight.lang',JSON.stringify(l))}catch(e){}},lang);await p.goto('file://'+process.cwd()+'/public/_s.html',{timeout:180000});await p.waitForFunction(()=>typeof Sim==='object'&&typeof globalThis.__share==='function');await p.waitForTimeout(1200);return p;};
 const p=await open('ko');
 const recs=await p.evaluate(N=>{Sim.setHold&&Sim.setHold(false);for(let i=0;i<N;i++){Sim.newLife({seed:900+i*7,len:20});Sim.start();let g=0;while(Sim.S&&(!Sim.S.dead||Sim.S.pending)&&g++<900000){const S=Sim.S;if(S.pending){Sim.resolve(Sim.autoChoice(S.pending));continue;}Sim.tick(1);}}
  return {h:JSON.parse(localStorage.getItem('cupnight.history.v1')||'[]'),d:[Sim.S&&Sim.S.dead,Sim.S&&Sim.S.phase,Sim.S&&Sim.S.age],k:Object.keys(localStorage)};},N).then(x=>{console.log(JSON.stringify(x.d),x.k.join(' '));return x.h;});

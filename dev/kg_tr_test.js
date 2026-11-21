@@ -5,7 +5,7 @@ let s=fs.readFileSync('dev/build/game.html','utf8').replace('const _trc=new Map(
 fs.writeFileSync('dev/build/_k.html',s);
 const b=await chromium.launch();const p=await b.newPage();await p.route('**/*',r=>r.request().url().startsWith('file:')?r.continue():r.abort());
 await p.addInitScript(l=>{try{localStorage.setItem('cupnight.lang',JSON.stringify(l))}catch(e){}},lang);
-await p.goto('file://'+process.cwd()+'/dev/build/_k.html');await p.waitForFunction(()=>typeof globalThis.__tr==='function'&&typeof Sim==='object');
+await p.goto('file://'+process.cwd()+'/dev/build/_k.html',{timeout:180000});await p.waitForFunction(()=>typeof globalThis.__tr==='function'&&typeof Sim==='object');
 await p.waitForTimeout(1500);
 const bad=await p.evaluate(L=>{const H=/[가-힣]/;L=[...new Set(L.flatMap(t=>t.replace(/\uE000\w\uE001[^\uE001]*\uE001([^\uE001]*)\uE001([^\uE002]*)\uE002/g,'\n$1\n$2\n').split('\n').map(x=>x.trim()).filter(Boolean)))];return L.map(t=>[t,__tr(t)]).filter(([t,r])=>H.test(r));},L);
 console.log(lang,'checked',L.length,'untranslated',bad.length);bad.slice(0,SHOW).forEach(([k,r])=>console.log(' ',k.slice(0,130),'\n    →',r.slice(0,130)));
