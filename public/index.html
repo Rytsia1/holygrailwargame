@@ -17949,7 +17949,7 @@ const fitWord=f=>(f??60)>=70?'잘 맞음':(f??60)<50?'어긋남':'보통';
 function heroAffRows(h,w){ const al=Sim.alName(h.id);
   return `<div class="af-box"><div class="af-row"><span class="af-lb">성향</span>${h.traits.map(t=>`<span class="af-c">${esc(t)}</span>`).join('')}${al?`<span class="af-lb af-lb2">속성</span><span class="af-c">${esc(al)}</span>`:''}</div>
     <div class="af-row"><span class="af-lb">궁합</span><b class="af-ft">${fitWord(w.fit)}</b><span class="af-sub">·</span><span class="af-sub">소환할 때</span><span class="af-sub">${fitWord(w.fit0??w.fit)}</span></div></div>`; }
-const AF_K=['avenger','judge','cruel','taboo','zeal'], AF_N={avenger:'복수',judge:'정의',cruel:'잔혹',taboo:'금기',zeal:'근원 집착'}, AF_TH={avenger:3,judge:3,cruel:4,taboo:4,zeal:4};
+const AF_K=['avenger','judge','cruel','taboo','zeal'], AF_N={avenger:'복수',judge:'정의',cruel:'잔혹',taboo:'금기',zeal:'근원 집착'}, AF_TH={avenger:4,judge:4,cruel:4,taboo:4,zeal:4};   // 11-22: 칩의 옅음 · 짙음 글은 다섯 성향 모두 4부터(궁합 계산 기준 FIT_TH · fitScore는 그대로 정의 · 복수 3)
 const AF_TIP={
   avenger:['복수 · 아직 옅습니다. 짙어지면 「연민」을 중시하는 서번트와 멀어지고, 「자유」·「야망」을 따르는 서번트와 가까워집니다. 쌓일수록 어벤저가 응답하기 쉬워집니다.','복수 · 「연민」을 중시하는 서번트와 멀어지고, 「자유」·「야망」을 따르는 서번트와 가까워집니다. 어벤저가 응답하기 쉬워집니다.'],
   judge:['정의 · 아직 옅습니다. 짙어지면 「명예」·「연민」을 중시하는 서번트와 가까워집니다. 쌓일수록 룰러가 응답하기 쉬워집니다.','정의 · 「명예」·「연민」을 중시하는 서번트와 가까워집니다. 룰러가 응답하기 쉬워집니다.'],
