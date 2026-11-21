@@ -1,0 +1,56 @@
+"""11-21: 검귀 루트 연출 ① 본성 속 진심(진입) ② 등 뒤의 칼 (갈래 a 눈치채지 못함 · b 령주로 멈춰라 · c 알면서 둔다 · h 동맹 앞에서 먼저 닿음)
+- 화면: dev/kgfx.js (결말 연출의 맑은 성배 · 밤 · 빛의 수면 · 파동과 같은 그림, 공통 틀 xfxOpen · 누르면 넘어감)
+- 소리: dev/sumsnd_kg.py가 만든 j_kg_in · j_kg_back_a/b/c/h (public/assets/sound)
+- 엔진(kg.js)이 기록 줄에 fx {t:'kgin'} · {t:'kgback',v}를 붙인다. 령주로 멈춰라는 useSeal에 이 연출을 넘겨 공통 령주 연출과 겹치지 않는다
+사용: python3 kgfx_apply.py <game.html>"""
+import sys, os, json, subprocess
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+import i18n
+P = sys.argv[1]
+s = open(P, encoding='utf-8').read()
+if 'function kgInFx(' in s: print('이미 적용됨'); sys.exit(0)
+miss = []
+def rp(o, n, c=1):
+    global s
+    k = s.count(o)
+    if k != c: miss.append((o[:90], k)); return
+    s = s.replace(o, n)
+SND = os.path.join(HERE, '..', 'public', 'assets', 'sound')
+def dur(n):
+    try: return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(SND, n + '.mp3')], capture_output=True, text=True).stdout.strip()), 2)
+    except Exception: return 6.0
+SNDS = ['j_kg_in', 'j_kg_back_a', 'j_kg_back_b', 'j_kg_back_c', 'j_kg_back_h']
+CSS = (".kgx .kgx-w{position:absolute;left:0;right:0;top:12%;text-align:center;padding:0 22px;font-family:var(--f-story);font-size:clamp(16px,3.6vw,22px);line-height:1.7;color:#fff4dc;opacity:0;pointer-events:none;word-break:keep-all}"
+       ".kgx .kgx-w.red{color:#ffe9ec}.kgx .kgx-w span{display:inline-block;opacity:0}"
+       ".kgx .xd-txt{bottom:12%}.kgx .xd-d.long{letter-spacing:.12em;font-size:clamp(24px,5.6vw,38px)}"
+       ".kgx .xd-s{color:#efe2cf;line-height:1.65;word-break:keep-all;max-width:26em;margin:0 auto;text-shadow:0 0 4px #000,0 0 12px #000}.kgx .kgx-s2{margin-top:6px;opacity:0}")
+
+js = open(os.path.join(HERE, 'kgfx.js'), encoding='utf-8').read()
+rp("function bxOrderFx(fx){", js + "\nfunction bxOrderFx(fx){")
+rp("bxconf:bxConfFx,bxorder:bxOrderFx};", "bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx};")
+rp('"j_bx_order":{"d":4.63}', '"j_bx_order":{"d":4.63},' + ','.join(f'"{n}":{{"d":{dur(n)}}}' for n in SNDS))
+rp(".xd-rule.bx{", CSS + ".xd-rule.bx{")
+if miss:
+    for x in miss: print('못 찾음', x)
+    sys.exit(1)
+# 새 글 (한국어 · 영어 · 일본어 · 간체 · 번체)
+D = [
+ ('본성 속 진심', 'The Truth Beneath Your Nature', '本性に潜む本心', '本性深处的真心', '本性深處的真心'),
+ ('잔은 바닥만 젖었다.', 'Only the bottom of the cup is wet.', '杯は底だけが濡れている。', '杯子只有底部湿了。', '杯子只有底部濕了。'),
+ ('가득 차기까지 나흘.', 'Four days until it is full.', '満ちるまで、四日。', '距离盛满，还有四天。', '距離盛滿，還有四天。'),
+ ('등 뒤의 온기가 한 걸음 가까워졌다.', 'The warmth at your back came one step closer.', '背中の温もりが、一歩近づいた。', '背后的温度靠近了一步。', '背後的溫度靠近了一步。'),
+ ('알고 있었다. 그래도 돌아보지 않았다.', 'You knew. Even so, you did not look back.', 'わかっていた。それでも振り返らなかった。', '你早就知道。即便如此，你也没有回头。', '你早就知道。即便如此，你也沒有回頭。'),
+ ('끝까지, 당신이 고른 대로.', 'To the very end, as you chose.', '最後まで、あなたが選んだとおりに。', '直到最后，都如你所选。', '直到最後，都如你所選。'),
+ ('당신의 시점은 거기서 끊겼다.', 'Your point of view ended there.', 'あなたの視点はそこで途切れた。', '你的视角就此中断。', '你的視角就此中斷。'),
+ ('칼끝이 목 한 뼘 앞에서 멈췄다.', 'The blade stopped a hand’s breadth from your throat.', '刃先が喉の一寸手前で止まった。', '刀尖停在了离喉咙一拃远的地方。', '刀尖停在了離喉嚨一拃遠的地方。'),
+ ('등 뒤에서 칼이 먼저 닿았다.', 'The blade at your back reached you first.', '背後から、刃が先に届いた。', '背后的刀先一步碰到了你。', '背後的刀先一步碰到了你。'),
+ ('등 뒤의 칼', 'The Blade at Your Back', '背後の刃', '背后的刀', '背後的刀'),
+]
+s, nd, _ = i18n.add(s, [(a, b, c) for a, b, c, *_ in D], [])
+open(P, 'w', encoding='utf-8').write(s)
+zp = os.path.join(HERE, 'zh', 'done.json')
+Z = json.load(open(zp, encoding='utf-8')); n = 0
+for a, _b, _c, d, e in D:
+    if a not in Z: Z[a] = [d, e]; n += 1
+json.dump(Z, open(zp, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+print('적용 끝 · 사전', nd, '· 중국어', n)

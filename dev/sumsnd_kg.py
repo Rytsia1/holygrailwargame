@@ -1,0 +1,105 @@
+"""검귀 루트 연출 소리 (11-21). 모두 직접 합성 (악기 · 다른 곡의 소리 없음).
+- j_kg_in      본성 속 진심 진입 (8.4초): 금빛 울림과 화음 → 손을 거두면 뚝 끊기고 높은 음 하나 → 글자마다 긁힘 → 방울 '톡' · 낮은 쿵 → 낮은 종 넷(나흘)
+- j_kg_back_a  등 뒤의 칼 · 눈치채지 못함 (6초): 따뜻한 화음 → 정적 · 칼빛 '칭' → '쉭' → 둔한 '퍽' 뒤 무음 → 멀리서 잔이 깨짐
+- j_kg_back_b  령주로 멈춰라 (6.6초): ... '쉭'이 되감기듯 멎음 → 령주의 저음 · 떨리는 화음
+- j_kg_back_c  알면서 그대로 둔다 (6.2초): 화음이 끝까지 이어지다 '쉭' 뒤 함께 가라앉음
+- j_kg_back_h  동맹 앞에서 등 뒤의 칼이 먼저 닿음 (4초): '쉭' → 무겁게 베임 (쓰러지지 않음)
+사용: python3 sumsnd_kg.py <출력 폴더> [이름,이름]"""
+import sys, os, subprocess, numpy as np
+from scipy.signal import fftconvolve, butter, sosfilt
+SR = 48000; rng = np.random.default_rng(21)
+OUT = sys.argv[1]
+def T(d): return np.arange(int(d * SR)) / SR
+def buf(d): return np.zeros((2, int(d * SR)))
+def put(B, x, at, pan=0., g=1.):
+    i = int(at * SR); n = min(len(x), B.shape[1] - i)
+    if n <= 0: return
+    B[0, i:i + n] += x[:n] * g * np.sqrt(.5 * (1 - pan)); B[1, i:i + n] += x[:n] * g * np.sqrt(.5 * (1 + pan))
+def bp(x, lo, hi, o=2): return sosfilt(butter(o, [lo, hi], 'band', fs=SR, output='sos'), x)
+def lp(x, f, o=2): return sosfilt(butter(o, f, 'low', fs=SR, output='sos'), x)
+def hp(x, f, o=2): return sosfilt(butter(o, f, 'high', fs=SR, output='sos'), x)
+def noise(d): return rng.standard_normal(int(d * SR))
+def adsr(d, a, r):
+    x = T(d); return np.minimum(1, x / max(a, 1e-4)) * np.clip((d - x) / max(r, 1e-4), 0, 1)
+def tone(f, d, a=.01, r=None, kind='sine'):
+    x = T(d); ph = 2 * np.pi * f * x
+    y = np.sin(ph) if kind == 'sine' else (2 / np.pi) * np.arcsin(np.sin(ph))
+    return y * adsr(d, a, r if r is not None else d * .6)
+def glide(f0, f1, d, a=.005, r=None):
+    x = T(d); f = f0 * (f1 / f0) ** (x / d); return np.sin(2 * np.pi * np.cumsum(f) / SR) * adsr(d, a, r if r is not None else d * .9)
+def bell(f, d):
+    x = T(d); m = 1.6 * np.exp(-x / (d * .3)); return np.sin(2 * np.pi * f * x + m * np.sin(2 * np.pi * f * 2.76 * x)) * np.exp(-x / (d * .32))
+def pad(freqs, d, a, r, bright=2400):
+    x = T(d); y = np.zeros(len(x))
+    for f in freqs:
+        for k in (-1, 0, 1):
+            y += np.sin(2 * np.pi * f * (1 + .003 * k) * x + rng.random() * 6) * .33
+    return lp(y, bright) * adsr(d, a, r) / len(freqs)
+def whoosh(d, lo, hi, g=1.):
+    n = int(d * SR); s = noise(d); y = np.zeros(n); seg = 1200; u = np.linspace(0, 1, n)
+    for k in range(0, n, seg): f = lo * (hi / lo) ** u[k]; y[k:k + seg] = bp(s[k:k + seg], f * .7, min(f * 1.4, 20000), 1)
+    return y * np.sin(np.pi * u) ** 1.2 * g
+def thump(f=60, d=.5): x = T(d); return np.sin(2 * np.pi * f * x * (1 + .7 * np.exp(-x / .03))) * np.exp(-x / (d * .35))
+def scratch(d=.07):
+    return bp(noise(d), 2600, 6200) * np.exp(-T(d) / .02)
+def glass(d=1.2):
+    y = np.zeros(int(d * SR))
+    for k in range(9):
+        at = rng.uniform(0, .45); f = rng.uniform(2300, 5200); s = bell(f, rng.uniform(.18, .4)) * rng.uniform(.3, 1)
+        i = int(at * SR); n = min(len(s), len(y) - i); y[i:i + n] += s[:n]
+    y += hp(noise(d), 3000) * np.exp(-T(d) / .12) * .5
+    return y
+def reverb(B, sec=2.4, wet=.32):
+    n = int(sec * SR); x = np.arange(n) / SR; out = np.zeros_like(B)
+    for c in range(2):
+        ir = rng.standard_normal(n) * np.exp(-x / (sec / 6.9)); ir = lp(ir, 7000); ir /= np.sqrt((ir ** 2).sum()); out[c] = B[c] + wet * fftconvolve(B[c], ir)[:B.shape[1]]
+    return out
+def save(name, B, lufs=-16.5):
+    import wave
+    B = B / (np.abs(B).max() + 1e-9) * .89; w = os.path.join(OUT, name + '.wav')
+    ww = wave.open(w, 'wb'); ww.setnchannels(2); ww.setsampwidth(2); ww.setframerate(SR); ww.writeframes((np.clip(B.T, -1, 1) * 32767).astype('<i2').tobytes()); ww.close()
+    I = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', w, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    I = float([l for l in I.split('\n') if l.strip().startswith('I:')][-1].split()[1]); G = lufs - I
+    subprocess.run(['ffmpeg', '-hide_banner', '-y', '-loglevel', 'error', '-i', w, '-af', f'volume={G}dB,alimiter=limit=0.89:level=false:attack=2:release=60', '-ar', '48000', '-b:a', '160k', os.path.join(OUT, name + '.mp3')]); os.remove(w); print(name, round(B.shape[1] / SR, 2))
+
+GOLD = [659.25, 783.99, 987.77]
+def kg_in():
+    d = 8.6; B = buf(d)
+    put(B, tone(55, 1.75, .5, .08), 0, 0, .5); put(B, tone(82.41, 1.65, .6, .08), .1, 0, .3)
+    put(B, pad(GOLD, 1.5, .35, .1), .3, 0, .22)
+    for k in range(8): put(B, bell(GOLD[k % 3] * 2, .5), .4 + k * .13, rng.uniform(-.6, .6), .03)
+    put(B, tone(1318.5, 3.0, .02, 2.8), 1.65, .1, .05)                 # 손을 거둔 뒤 남는 높은 음
+    put(B, lp(noise(.5), 300) * np.exp(-T(.5) / .15), 1.6, 0, .25)   # 꺼질 때 숨이 빠지는 듯한 낮은 바람
+    for i in range(14): put(B, scratch(), 2.65 + i * .085 + rng.uniform(-.01, .01), rng.uniform(-.3, .3), .35)
+    put(B, glide(1180, 520, .35, .003, .33), 4.98, 0, .28); put(B, lp(noise(.5), 900) * np.exp(-T(.5) / .15), 5.0, 0, .06)
+    put(B, thump(58, .6), 5.3, 0, .5)
+    for i, f in enumerate([196, 174.61, 164.81, 146.83]): put(B, bell(f, 2.2), 6.1 + i * .32, (i - 1.5) * .25, .3)
+    put(B, tone(41.2, 2.4, .8, 1.2), 6.0, 0, .35)
+    return reverb(B)
+WARM = [261.63, 329.63, 392.0]
+def back(v):
+    d = {'a': 6.0, 'b': 6.6, 'c': 6.2, 'h': 4.0}[v]; B = buf(d)
+    pd = 3.5 if v == 'c' else 1.45
+    put(B, pad(WARM + [523.25], pd, .5, min(.6, pd * .3)), 0, 0, .26); put(B, tone(130.81, pd, .6, min(.6, pd * .3)), 0, 0, .16)
+    put(B, bell(3150, .9), 1.55, .7, .12); put(B, bell(4730, .5), 1.56, .7, .05)     # 칼빛 '칭'
+    S0 = 2.05 if v == 'b' else 1.93
+    put(B, whoosh(.32, 500, 5200, 1), S0 - .02, .4, .55)
+    if v == 'a':
+        put(B, thump(62, .4), 2.2, 0, .9); put(B, lp(noise(.12), 500) * np.exp(-T(.12) / .04), 2.2, 0, .4)
+        put(B, glass(1.4), 3.7, -.1, .22)
+    if v == 'h':
+        put(B, thump(70, .5), 2.18, 0, .9); put(B, bp(noise(.4), 400, 2600) * np.exp(-T(.4) / .08), 2.18, 0, .45)
+        put(B, tone(110, 1.4, .02, 1.2), 2.2, 0, .2)
+    if v == 'b':
+        x = T(.5); put(B, np.sin(2 * np.pi * np.cumsum(880 * (110 / 880) ** (x / .5)) / SR) * adsr(.5, .01, .45) * .5, 2.05, 0, .3)   # 되감기듯 멎음
+        put(B, thump(49, 2.2), 2.12, 0, .9); put(B, lp(noise(.6), 220) * np.exp(-T(.6) / .2), 2.12, 0, .5)
+        put(B, pad([523.25, 622.25, 783.99], 2.0, .05, 1.6, 3600), 2.15, 0, .18)
+        put(B, tone(98, 2.6, .6, 1.6), 2.6, 0, .2)
+    if v == 'c':
+        put(B, lp(noise(1.2), 700) * np.exp(-T(1.2) / .5), 2.3, 0, .12)
+    return reverb(B, 2.2, .3)
+
+os.makedirs(OUT, exist_ok=True)
+F = {'j_kg_in': kg_in, 'j_kg_back_a': lambda: back('a'), 'j_kg_back_b': lambda: back('b'), 'j_kg_back_c': lambda: back('c'), 'j_kg_back_h': lambda: back('h')}
+ONLY = sys.argv[2].split(',') if len(sys.argv) > 2 else list(F)
+for n in ONLY: save(n, F[n]())

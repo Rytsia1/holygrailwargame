@@ -42,7 +42,8 @@
   // 진짜 소원을 고를 수 있는가: 성향이 깊음(8 이상) · 서번트가 곁에 있다 · 검은 성배 위기가 아니다
   function kgCan(){ const w=W(); return !!kgDeep()&&w.heroAlive&&!w.crisis&&!w.arsNova&&!w.selfGone&&!S.flags.kgOff; }
   function kgOffer(ch_,shared){ if(!kgCan()) return; const k=kgDeep(), X=KG_W[k];
-    ch_.push({t:`본성 속 진심: “${X.wish}”`,d:`마음 가장 깊은 곳의 「${AFFN[k]}」. 잔이 가득 차기까지 나흘이 걸린다`,f:()=>kgStart(k,shared)}); }
+    const lab=`본성 속 진심: “${X.wish}”`, L=ch_.map(c=>c.t).concat(lab);   // 진입 연출: 성배 선택 창의 줄들 그대로
+    ch_.push({t:lab,d:`마음 가장 깊은 곳의 「${AFFN[k]}」. 잔이 가득 차기까지 나흘이 걸린다`,f:()=>kgStart(k,shared,L)}); }
   // 결심 시작값 (시트 20~26줄)
   function kgRes0(k){ const h=hero(), w=W(), st=kgSt(), t=Math.max(.5,Math.min(1.5,w.trust/60)); let R=40;
     for(const x of h.traits) R+=x==='명예'?10:x==='연민'?15*(1+.25*st):x==='자유'?5:x==='충성'?-5*t:x==='야망'?-10*t:0;
@@ -67,13 +68,13 @@
     return {kind:'nbr',t:'옆집 이웃'}; }
   function kgR(d){ const g=kgW(); if(!g||g.lock) return; g.R=Math.max(0,Math.min(100,g.R+d*kgMu(kgSt()))); }
   const KG_DAYN=['첫째 날','둘째 날','셋째 날','넷째 날'];
-  function kgStart(k,shared){ const w=W(), X=KG_W[k], h=hero();
+  function kgStart(k,shared,lines){ const w=W(), X=KG_W[k], h=hero();
     S.flags.wishText=X.wish; S.flags.kg=k; S.flags.kgShared=shared?1:0;
     const R=kgRes0(k);
     w.kg={k,d:0,R,R0:R,sus:0,bet:kgBetrayOK(h,R),lock:false,prom:null,mem:null,walk:null,who:null,saved:null,ally:shared?shared.i:null,done:false};
     if(w.kg.ally==null){ const a=(w.pairs||[]).find(p=>p.alive&&p.ally); if(a) w.kg.ally=a.i; }
     w.ended=true; w.queue=[]; w.final=false;
-    log(`성배 앞에서 손을 거두었다. 목록 맨 아래, 아무에게도 말하지 않은 소원이 하나 있었다. “${X.wish}.”`,'war');
+    log(`성배 앞에서 손을 거두었다. 목록 맨 아래, 아무에게도 말하지 않은 소원이 하나 있었다. “${X.wish}.”`,'war',{fx:{t:'kgin',wish:X.wish,lines:lines||[]}});
     log('잔은 그 소원을 받아 들었다. 다만 바닥만 젖었을 뿐, 아직 차지 않았다. 가득 차기까지 나흘이 걸린다.','war');
     wrec('hint',`본성 속 진심 — ${X.wish}`);
     w.queue.push(()=>kgDay());
@@ -196,16 +197,16 @@
       log(`${pName(a)} 조가 잔을 막으러 왔다. ${h.name}${J(h.name,이)} 당신 앞에 서서 칼을 뽑았다.`,'war');
       log('세 합째. 서번트의 칼끝이 방향을 바꾸었다.','war');
       if(g.sus>=2) return duelStart(st());
-      log('등 뒤에서 칼이 먼저 닿았다.','loss'); S.st.health=Math.max(5,S.st.health-30);
+      log('등 뒤에서 칼이 먼저 닿았다.','loss',{fx:{t:'kgback',v:'h'}}); S.st.health=Math.max(5,S.st.health-30);
       return duelStart({...st(),first:null}); }
     if(g.sus>=2&&w.seals>=1){
       decide({title:'등 뒤',body:'등 뒤의 온기가 한 걸음 가까워졌다. 그리고 칼날이 공기를 가르는 소리.',war:true,choices:[
-        {t:'령주로 멈춰라',seal:true,d:`칼이 닿기 전에 멈춰 세운다 [령주 1획 · 남은 ${w.seals}획]`,f:()=>{ useSeal('멈춰라'); w.queue.push(()=>duelStart(st())); return '칼끝이 목 한 뼘 앞에서 멈췄다.'; }},
+        {t:'령주로 멈춰라',seal:true,d:`칼이 닿기 전에 멈춰 세운다 [령주 1획 · 남은 ${w.seals}획]`,f:()=>{ useSeal('멈춰라',{t:'kgback',v:'b',i:Math.min(2,w.seals-1),line:kgSayRaw(h,KG_WHEN)}); w.queue.push(()=>duelStart(st())); return '칼끝이 목 한 뼘 앞에서 멈췄다.'; }},
         {t:'그대로 둔다',auto:true,d:'알면서 받아들인다',f:()=>{ S.flags.kgKnew2=1; w.queue.push(()=>kgFallBack(true)); return '돌아보지 않았다.'; }}]}); return; }
     kgFallBack(false); }
   // ④ 등 뒤의 칼: 마스터가 쓰러진다
   function kgFallBack(knew){ const w=W(), g=w.kg, h=hero(); kgClose(); g.end='f'; S.flags.kgEnd='f';
-    log(knew?'알고 있었다. 그래도 돌아보지 않았다. 등 뒤의 온기, 그리고 칼.':'등 뒤의 온기, 그리고 칼.','loss');
+    log(knew?'알고 있었다. 그래도 돌아보지 않았다. 등 뒤의 온기, 그리고 칼.':'등 뒤의 온기, 그리고 칼.','loss',{fx:{t:'kgback',v:knew?'c':'a'}});
     log(knew?'당신의 시점은 거기서 끊겼다. 끝까지, 당신이 고른 대로.':'당신의 시점은 거기서 끊겼다.','loss');
     log(`${h.name}${J(h.name,은)} 남은 마력과 단독행동으로 잔을 부수고 사라졌다.`,'war'); S.flags.brokeCup=1;
     kgDie('f'); }
