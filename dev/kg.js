@@ -359,11 +359,13 @@
   // 봄 · 첫 해의 사건 하나: 날이 정해진 사건 → 이뤄진 세계 사건 · ②용 사건 → (①) 서번트가 떠난 삶 · (②) 함께 사는 생에서 걸러 섞은 것
   function kgWPick(){ if(S.pending||S.dead) return; const E=S.epi, ph=E.ph, t=E.kw==='t';
     if(!t){ const fx=EP3_EV.find(x=>x.must&&kgLoneOk(x)); if(fx){ kgPaced(fx); return ep3Go(fx); } }
-    else { const r=relOf(), fx=EP2_EV.find(e=>e.day&&e.day===E.d&&ph==='A'&&kgStayOk(e)&&ep2EvOk(e,r)); if(fx){ kgPaced(fx); return ep2EvGo(fx); } }
+    else { const r=relOf(), fx=EP2_EV.find(e=>e.day&&e.day===E.d&&ph==='A'&&kgStayOk(e)&&ep2EvOk(e,r)); if(fx){ kgPaced(fx); return ep2EvGo(fx); }
+      if(r&&relDue()){ return relScene(); } }   // 11-22: ②에서도 인연 단계가 오르면 그 장면 (kgrel_apply)
     if(!ch(KG_RATE[ph]||.7)) return;
     const c=KG_EV.filter(x=>(x.e==='w'||x.e==='t')&&x.ph===ph&&!(E.kgU||[]).includes(x.id)&&(!x.c||x.c())).map(x=>({x,w:KGW_W*kgPace(x),go:()=>kgEpGo(x)}));
     if(!t) EP3_EV.filter(x=>!x.must&&kgLoneOk(x)).forEach(x=>c.push({x,w:(x.w||1)*kgPace(x),go:()=>ep3Go(x)}));
-    else { const r=relOf(); EP2_EV.filter(e=>!e.day&&kgStayOk(e)&&ep2EvOk(e,r)).forEach(e=>c.push({x:e,w:1.5*kgPace(e),go:()=>ep2EvGo(e)})); }
+    else { const r=relOf(); EP2_EV.filter(e=>!e.day&&kgStayOk(e)&&ep2EvOk(e,r)).forEach(e=>c.push({x:e,w:1.5*kgPace(e),go:()=>ep2EvGo(e)}));
+      if(r) EP_REL.filter(x=>x.w>0&&!(E.relUsed||[]).includes(x.id)&&x.c(r)).forEach(x=>c.push({x,w:2*kgPace(x),go:()=>x.f()})); }   // 11-22: 세계에 맞는 인연 사건 (relHome · KG_REL_OK)
     if(!c.length) return; const o=wpick(c,o=>o.w); kgPaced(o.x); o.go(); }
   // ③ 아홉 해: 공용 에필로그 사건 자리에서 하나 (이뤄진 세계 사건 · 걸러진 공용 사건. 연작은 빼고)
   function kgPoolMix(){ const E=S.epi; E.used=E.used||[];
