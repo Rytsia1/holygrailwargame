@@ -21061,7 +21061,7 @@ function sndScene(){
   if(!$('#intro').classList.contains('hidden')) return lobbyBgm();
   const S=Sim.S; if(!S||$('#game').classList.contains('hidden')) return null;
   if(S.phase==='life') return 'life';
-  if(S.phase==='epi') return S.flags.kgEnd==='b'?'kgbound':'epi';
+  if(S.phase==='epi') return ['b','t'].includes(S.flags.kgEnd)?'kgbound':'epi';   // 11-22: ② 둘이 이긴 세계도 K4
   if(S.phase==='dead') return undefined;
   const w=S.war; if(!w) return 'life';
   if((w.duel&&w.duel.ctx)||(w.duelLast&&w.kg&&!w.kg.done)) return 'kgduel';   // 결투가 끝난 뒤 결과 창 · 결말까지 결투 곡을 이어서
@@ -21071,7 +21071,7 @@ function sndScene(){
   return w.tod==='밤'?'night':'day';
 }
 function sndSync(){ let k=sndScene(); const L=window.__bgmLock; if(L){ if(k===L.k||performance.now()>L.until) window.__bgmLock=null; else k=L.k; } if(k!==undefined) Snd.bgm(k); }
-function kgEndBgm(key){ if(!/^kg/.test(key||'')) return; try{ const S=Sim.S, f=(S&&S.flags)||{}; const k=(S&&S.dead)||['f','s'].includes(f.kgEnd)?'end_kg':f.kgEnd==='b'?'kgbound':'epi';
+function kgEndBgm(key){ if(!/^kg/.test(key||'')) return; try{ const S=Sim.S, f=(S&&S.flags)||{}; const k=(S&&S.dead)||['f','s'].includes(f.kgEnd)?'end_kg':['b','t'].includes(f.kgEnd)?'kgbound':'epi';
   window.__bgmLock={k,until:performance.now()+120000}; if(k==='end_kg') Snd.setEnd('end_kg'); Snd.bgm(k,7); }catch(e){} }
 // 로비 단추 소리: 사람이 직접 누른 단추 · 링크만(자기 소리가 있는 단추 · 소리 끄기는 빼고), 닫기는 낮고 부드럽게
 document.addEventListener('click',e=>{ try{ if(!e.isTrusted||$('#intro').classList.contains('hidden')) return;
