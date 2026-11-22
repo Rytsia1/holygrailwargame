@@ -22,7 +22,12 @@ L = {f[:-5]: du(os.path.join(A, 'lobby', f)) for f in os.listdir(os.path.join(A,
 o = "im.src='assets/lobby/'+B.f+'.webp'"
 if o in s: s = s.replace(o, "im.src=(window.__LOBBY||{})[B.f]||'assets/lobby/'+B.f+'.webp'")
 else: miss.append('lobby')
-pre = '<script>window.__PORT=' + json.dumps(P) + ';window.__LOBBY=' + json.dumps(L) + ';</script>\n'
+# 11-22: 영어 · 일본어 사전이 따로 떨어져 있으면(dev/release.py) 파일 안에 넣는다
+LP = ''
+if 'window.I18N_EN)||{}' in s:
+    for lg in ('en', 'ja'):
+        LP += '<script>\n' + open(os.path.join(A, 'i18n', lg + '.js'), encoding='utf-8').read() + '\n</script>\n'
+pre = LP + '<script>window.__PORT=' + json.dumps(P) + ';window.__LOBBY=' + json.dumps(L) + ';</script>\n'
 s = s.replace('<body>\n', '<body>\n' + pre, 1)
 # 테스트 조절판: 내 판정 보정 자리를 엔진에 하나 열고, 조절판 스크립트를 맨 끝에 붙인다
 o = "+npFxP(b,'me'); b.judged=false;"

@@ -120,3 +120,4 @@ python3 patch202_apply.py build/game.html          # 패치 노트 2.02 「새 �
 python3 sndtab_apply.py build/game.html             # 새로고침 · 새 창에서 소리 겹침: 가장 최근에 쓴 페이지만 소리 (커뮤니티 제보 11-21)
 python3 disc_apply.py build/game.html              # 비공식 표기: 소개 창 맨 아래 · 로비 맨 아래 한 줄 (11-22)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
+python3 lang_apply.py build/game.html               # 로딩 화면이 고른 언어를 게임도 그대로(언어팩을 따로 받기 위해, 11-22)

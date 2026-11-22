@@ -1,0 +1,22 @@
+"""11-22: 언어팩을 따로 받기 위한 준비 — 로딩 화면 스크립트가 정한 언어를 게임도 그대로 쓴다
+- 예전: 로딩 스크립트는 저장소(localStorage)를 못 읽으면 기기 언어를 보지 않고 한국어로 두고, 게임은 기기 언어를 봐서 둘이 어긋날 수 있었다.
+  사전을 따로 받게 되면(dev/release.py) 어긋난 언어는 사전 없이 한국어로 나오므로, 로딩 스크립트가 고른 언어(window.__LANG)를 게임이 그대로 쓴다.
+- 주소 ?lang= 도 저장소가 막혀 있어도 그 페이지에서는 따른다
+사용: python3 lang_apply.py <game.html>"""
+import sys
+P = sys.argv[1]
+s = open(P, encoding='utf-8').read(); miss = []
+def rp(o, n):
+    global s
+    if s.count(o) != 1: miss.append((o[:70], s.count(o))); return
+    s = s.replace(o, n)
+rp("try{const q=new URLSearchParams(location.search).get('lang');if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));const v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');if(LS.includes(v))L=v;else{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}}catch(e){}",
+   "let q=null,v=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');}catch(e){}"
+   "if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;")
+rp("const LANG=(()=>{ try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'null'); if(LANGS.includes(v)) return v; }catch(e){}",
+   "const LANG=(()=>{ if(typeof window!=='undefined'&&LANGS.includes(window.__LANG)) return window.__LANG;   // 로딩 화면이 고른 언어(사전도 그 언어로 받았다)\n  try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'null'); if(LANGS.includes(v)) return v; }catch(e){}")
+if miss:
+    for x in miss: print('못 찾음', x)
+    sys.exit(1)
+open(P, 'w', encoding='utf-8').write(s)
+print('lang 적용')
