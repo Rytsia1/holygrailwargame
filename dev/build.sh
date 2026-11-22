@@ -115,6 +115,7 @@ python3 share_apply.py build/game.html            # 「기록 복사」 문구�
 python3 kgrec_apply.py build/game.html             # 검귀 결과 화면 글: 결말 이름표 · 한 줄 · 판정 · 나의 조 결과 · 기록 복사 (11-22)
 python3 kgepi_apply.py build/game.html             # 검귀 결말과 공용 에필로그가 어긋나지 않게: survivor 빼기 · 이루어진 진심과 부딪치는 성향 사건 빼기 (11-22)
 python3 kgrel_apply.py build/game.html              # 검귀 결말과 인연: ② · ③ 곁에 서번트가 있으면 떠난 뒤 사건 빼기 · ②에서 인연이 자람 (11-22)
+python3 kgach_apply.py build/game.html              # 본성 속 진심 업적 23개: 결말 · 진입 · 성향별 · 숨겨진 · 일곱 갈래 (11-22)
 python3 sndtab_apply.py build/game.html             # 새로고침 · 새 창에서 소리 겹침: 가장 최근에 쓴 페이지만 소리 (커뮤니티 제보 11-21)
 python3 disc_apply.py build/game.html              # 비공식 표기: 소개 창 맨 아래 · 로비 맨 아래 한 줄 (11-22)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
