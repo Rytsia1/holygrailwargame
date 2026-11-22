@@ -21006,7 +21006,7 @@ const Snd=(()=>{
   const track=s=>{ act.add(s); s.onended=()=>act.delete(s); };
   const bLv=()=>Math.pow(cfg().bgm/100,1.6)*.9, sLv=()=>Math.pow(cfg().sfx/100,1.6);
   function vol(){ if(!ctx) return; const n=ctx.currentTime; gB.gain.cancelScheduledValues(n); gB.gain.setValueAtTime(bLv(),n); gS.gain.setValueAtTime(sLv(),n); }
-  function wake(){ const c=ac(); if(c&&c.state==='suspended'&&!document.hidden) c.resume().catch(()=>{}); return c; }
+  function wake(){ const c=ac(); if(c&&c.state==='suspended'&&!document.hidden&&!yielded) c.resume().catch(()=>{}); return c; }
   function load(k){ if(buf[k]) return Promise.resolve(buf[k]); if(loading[k]) return loading[k]; const c=ac(); if(!c||!SND_M[k]) return Promise.reject(0);
     loading[k]=fetch('assets/sound/'+k+'.mp3').then(r=>{ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(a=>new Promise((ok,ng)=>{ const p=c.decodeAudioData(a,ok,ng); if(p&&p.catch) p.catch(ng); }))
@@ -21048,7 +21048,13 @@ const Snd=(()=>{
     else if(c){ const n=c.currentTime; act.forEach(s=>{ try{ s.stop(n+.12); }catch(e){} }); act.clear();
       gM.gain.cancelScheduledValues(n); gM.gain.setValueAtTime(gM.gain.value,n); gM.gain.linearRampToValueAtTime(0,n+.15);
       setTimeout(()=>{ if(!on()) c.suspend().catch(()=>{}); },200); } }
-  document.addEventListener('visibilitychange',()=>{ if(!ctx) return; if(document.hidden) ctx.suspend().catch(()=>{}); else if(on()) ctx.resume().catch(()=>{}); });
+  // 11-22: 소리는 가장 최근에 쓴 게임 페이지 하나에서만 (새 창 · 새로고침에서 겹치던 것)
+  let yielded=false; const tabId=Math.random().toString(36).slice(2); let bc=null;
+  try{ bc=new BroadcastChannel('cupnight.snd'); bc.onmessage=e=>{ if(e.data&&e.data.id!==tabId){ yielded=true; if(ctx) ctx.suspend().catch(()=>{}); } }; }catch(e){}
+  const claim=()=>{ if(document.hidden) return; yielded=false; try{ bc&&bc.postMessage({id:tabId}); }catch(e){} if(ctx&&on()) ctx.resume().catch(()=>{}); };
+  claim(); window.addEventListener('focus',claim); document.addEventListener('pointerdown',claim,true); document.addEventListener('keydown',claim,true);
+  window.addEventListener('pagehide',()=>{ try{ if(ctx) ctx.suspend(); }catch(e){} });
+  document.addEventListener('visibilitychange',()=>{ if(!ctx) return; if(document.hidden) ctx.suspend().catch(()=>{}); else claim(); });
   document.addEventListener('pointerdown',()=>{ if(on()) wake(); },{passive:true});
   document.addEventListener('keydown',e=>{ if(on()&&!e.repeat) wake(); },true); // 키보드로 시작해도 소리를 깨운다
   if(on()) setTimeout(preload,1500);
