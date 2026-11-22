@@ -115,4 +115,5 @@ python3 share_apply.py build/game.html            # 「기록 복사」 문구�
 python3 kgrec_apply.py build/game.html             # 검귀 결과 화면 글: 결말 이름표 · 한 줄 · 판정 · 나의 조 결과 · 기록 복사 (11-22)
 python3 kgepi_apply.py build/game.html             # 검귀 결말과 공용 에필로그가 어긋나지 않게: survivor 빼기 · 이루어진 진심과 부딪치는 성향 사건 빼기 (11-22)
 python3 sndtab_apply.py build/game.html             # 새로고침 · 새 창에서 소리 겹침: 가장 최근에 쓴 페이지만 소리 (커뮤니티 제보 11-21)
+python3 support_apply.py build/game.html            # 서버비 후원 안내: 로비 버튼 · 결과 화면 한 줄 · 패치 노트 아래 (토스 주소는 --toss) (11-22)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
