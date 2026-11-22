@@ -1,0 +1,221 @@
+# 11-22 「검귀 에필로그 추가안」 N1~N26 · 번호|영어|일본어|간체
+n1t|The Empty Reunion|空っぽの同窓会|空荡荡的同学会
+n1b|A notice came for a class reunion. Nearly half the list reads "Unreachable." Every one of them is a name once tangled up with yours.|同窓会の案内状が届いた。名簿の半分近くが「連絡不通」だ。どれもあなたと関わった名前だった。|收到了同学会的通知。名单上将近一半写着「联系不上」。全是曾与你纠缠过的名字。
+n1b@0|A notice came for a class reunion. Nearly half the list reads "Unreachable." Every one of them is a name once tangled up with yours. Your Servant leafed through the list and muttered that there were fewer places to go now.|同窓会の案内状が届いた。名簿の半分近くが「連絡不通」だ。どれもあなたと関わった名前だった。サーヴァントが名簿をめくりながら、行く場所が減ったなと呟いた。|收到了同学会的通知。名单上将近一半写着「联系不上」。全是曾与你纠缠过的名字。从者翻着名单，嘟囔说能去的地方变少了。
+n1c1|Go anyway|行ってみる|去看看
+n1r1|No one remembered you. Everyone greeted you like a stranger.|あなたを覚えている人はいなかった。皆、初対面のように挨拶した。|没有人记得你。大家都像初次见面一样打招呼。
+n1c2|Burn the list|名簿を燃やす|烧掉名单
+n1r2|There was less ash than you expected.|灰は思ったより少なかった。|灰烬比想象的少。
+n1c3|Do not reply|返事をしない|不回复
+n2t|The New Neighbor|新しい隣人|新邻居
+n2b|Someone new moved in next door. They come over with rice cakes and greet you warmly. In this world, they are the first to approach you first.|隣に新しい人が越してきた。餅を手に、にこやかに挨拶に来る。この世界で、初めてあなたに自分から近づいてきた人だ。|隔壁搬来了新住户。对方带着年糕来热情地打招呼。这是这个世界里第一个主动向你走来的人。
+n2c1|Take them and smile|受け取って笑う|接过来，笑一笑
+n2r1|For the first time in a while, you had tea with a neighbor.|久しぶりに隣人とお茶を飲んだ。|你久违地和邻居喝了杯茶。
+n2c2|Size them up as someone who might trample you one day|いつか自分を踏みにじる相手か見定める|打量对方是不是有朝一日会践踏你的人
+n2r2|They flinched at the look in your eyes and never came again.|その人はあなたの目つきに驚いて、二度と来なかった。|对方被你的眼神吓到，再也没来过。
+n2c3|Do not open the door|扉を開けない|不开门
+n2r3|A plate of rice cakes was left at your door.|餅の皿が扉の前に置かれていた。|一盘年糕放在了门口。
+n3t|A Dream of an Erased Name|消えた名前の夢|被抹去的名字之梦
+n3b|One of the erased names appeared in a dream. You remember the face but not the name. Only what that person did to you is clear.|夢に消えた名前のひとつが出てきた。顔は覚えているのに名前が浮かばない。その人があなたに何をしたかだけが、はっきりしている。|梦里出现了一个被抹去的名字。你记得那张脸，却想不起名字。只有那人对你做过什么，清清楚楚。
+n3c1|Try to remember the name|名前を思い出そうとする|努力回想那个名字
+n3r1|You sat up until dawn. It never came back.|明け方まで座っていた。とうとう浮かばなかった。|你一直坐到天亮。终究没能想起。
+n3c2|Let it go|そのまま忘れる|就此忘掉
+n3r2|Forgetting was the end of repaying.|忘れることが、返すことの終わりだった。|遗忘，就是偿还的终点。
+n3c3|Write the dream down|夢を書き留める|把梦记下来
+n3r3|One more page in the notebook.|ノートが一枚増えた。|笔记本多了一页。
+n4t|A Year with No One to Be Angry At|怒る相手のいない年|无人可怒的一年
+n4b|This year you were not angry even once. No one is left to be angry at. Only the scar on the back of your hand burns now and then.|今年、あなたは一度も怒らなかった。怒る相手が残っていない。手の甲の傷跡だけが時々熱くなる。|今年你一次也没有生气。已经没有可以生气的人了。只有手背上的伤痕偶尔发烫。
+n4b@0|This year you were not angry even once. No one is left to be angry at. Only the scar on the back of your hand burns now and then. Your Servant looks out the same window beside you.|今年、あなたは一度も怒らなかった。怒る相手が残っていない。手の甲の傷跡だけが時々熱くなる。サーヴァントが隣で同じ窓を見ている。|今年你一次也没有生气。已经没有可以生气的人了。只有手背上的伤痕偶尔发烫。从者在你身旁望着同一扇窗。
+n4c1|Write a letter. There is no one to receive it|手紙を書く。受け取る人はいない|写一封信。没有收信人
+n4r1|You sealed it with the address left blank.|宛先の欄を空けたまま封をした。|你把收信人一栏空着，封上了信。
+n4c2|Rub the scar for a long time|傷跡を長いあいだ撫でる|久久地摩挲伤痕
+n4r2|You remembered the place where the blade stopped that winter.|あの冬、切っ先が止まった場所を思い出した。|你想起了那个冬天剑尖停下的地方。
+n4r2@0|You remembered the night the two of you stood side by side before the Grail that winter.|あの冬、杯の前に二人並んで立った夜を思い出した。|你想起了那个冬天你们两人并肩站在杯前的夜晚。
+n4c3|Open the window|窓を開ける|打开窗
+n4r3|The wind came in. No one came.|風が入ってきた。誰も来なかった。|风吹了进来。谁也没有来。
+n5t|The Nine O'Clock Greeting|九時の挨拶|九点的问候
+n5b|Nine in the morning. Everyone on the street says the same greeting. Your turn has come.|朝九時。通りの誰もが同じ挨拶をする。あなたの番が来た。|早上九点。街上所有人都说着同样的问候。轮到你了。
+n5b@0|Nine in the morning. Everyone on the street says the same greeting. Your turn has come. Your Servant keeps their mouth shut.|朝九時。通りの誰もが同じ挨拶をする。あなたの番が来た。サーヴァントは口を閉ざしている。|早上九点。街上所有人都说着同样的问候。轮到你了。从者闭口不言。
+n5c1|Say it too|真似をする|跟着说
+n5r1|Your mouth moved on its own. That was more frightening.|口がひとりでに動いた。そのほうが怖かった。|嘴巴自己动了起来。这更可怕。
+n5c2|Do not say it|しない|不说
+n5r2|People glanced at you for a moment and moved on.|人々が一瞬あなたを見て、通り過ぎていった。|人们看了你一眼，便走开了。
+n5c3|Say it a little late|少し遅れて言う|稍晚一点说
+n5r3|Only you were off the beat. No one blamed you.|あなただけ拍子がずれた。誰も責めなかった。|只有你慢了一拍。没有人责怪你。
+n6t|The Frozen Neighbor|固まった隣人|僵住的邻居
+n6b|A neighbor stands frozen on the stairs. People whisper that it was over one small lie.|隣人がひとり、階段で固まっている。小さな嘘ひとつのせいだと、人々が囁き合う。|一位邻居僵在楼梯上。人们窃窃私语，说是因为一个小小的谎言。
+n6c1|Stay by their side|そばにいる|守在身边
+n6r1|You stayed until sunset. They never moved.|日が暮れるまでそばにいた。その人はとうとう動かなかった。|你一直守到日落。那人始终一动不动。
+n6c2|Walk past|通り過ぎる|走过去
+n6r2|A justice no one can defy was what you wished for.|誰も逆らえない正義は、あなたが望んだものだった。|无人能违抗的正义，正是你所祈求的。
+n6c3|Find out what the lie was|何の嘘だったのか調べる|打听是什么谎言
+n6r3|They had told a child that they had finished their homework.|子どもに、宿題はもう済ませたと言ったのだった。|那人对孩子说自己作业写完了。
+n7t|Your Lie Alone|あなただけの嘘|只属于你的谎言
+n7b|In this world, you are the only one who can lie. Someone close to you asks if you are unwell. You are.|この世界で嘘をつけるのはあなただけだ。身近な誰かが、具合が悪いのかと尋ねる。あなたは具合が悪い。|这个世界上能说谎的只有你。身边的某个人问你是不是不舒服。你确实不舒服。
+n7b@0|In this world, only you and your Servant can lie. Someone close to you asks if you are unwell. You are.|この世界で嘘をつけるのは、あなたとサーヴァントだけだ。身近な誰かが、具合が悪いのかと尋ねる。あなたは具合が悪い。|这个世界上能说谎的只有你和从者。身边的某个人问你是不是不舒服。你确实不舒服。
+n7b@1|In this world, you are the only one who can lie. Someone you met on the street asks if you are unwell. You are.|この世界で嘘をつけるのはあなただけだ。道で出会った人が、具合が悪いのかと尋ねる。あなたは具合が悪い。|这个世界上能说谎的只有你。路上遇到的人问你是不是不舒服。你确实不舒服。
+n7c1|Lie and say you are fine|大丈夫だと嘘をつく|撒谎说没事
+n7r1|They were relieved. One more lie only you know about.|その人は安心した。あなただけが知る嘘が、またひとつ増えた。|那人放下心来。只有你知道的谎言又多了一个。
+n7c2|Say you are unwell|具合が悪いと言う|说自己不舒服
+n7r2|For the first time, they worried about you.|その人が初めてあなたを心配した。|那人第一次为你担心。
+n7c3|Do not answer|答えない|不回答
+n7r3|Silence does not freeze.|沈黙は固まらない。|沉默不会僵住。
+n8t|The Empty Courthouse|空っぽの裁判所|空荡荡的法院
+n8b|The city courthouse has become a library. No cases ever come up. You were invited to the opening too.|街の裁判所が図書館になった。裁くことが起きないのだから。開館式にあなたも呼ばれた。|城里的法院变成了图书馆。因为再也没有需要审判的事。开馆仪式也请了你。
+n8c1|Give a speech|祝辞を述べる|致辞
+n8r1|Words praising the world you wished for caught in your throat.|自分が望んだ世界を讃える言葉が、喉につかえた。|赞美你所祈求的世界的话卡在了喉咙里。
+n8c2|Stand at the back|後ろに立っている|站在后面
+n8r2|Children climbed into the judge's seat and read books.|子どもたちが裁判官席に上がって本を読んだ。|孩子们爬上法官席读起了书。
+n8c3|Do not go|行かない|不去
+n8r3|That evening the paper ran a photo. Your seat was empty.|その晩の新聞に写真が載った。あなたの席は空いていた。|当晚报纸登了照片。你的座位是空的。
+n9t|The Closed Clinic|閉じた病院|关门的医院
+n9b|A sign reading "Closed" went up on the neighborhood clinic's door. It will not open again. No one falls ill anymore.|町の病院の扉に「休業」の貼り紙が出た。もう開くことはないだろう。病む人がいないのだから。|街区医院的门上贴出了「停业」。再也不会开了。因为没有人生病。
+n9c1|Look inside|中を覗く|往里看看
+n9r1|Empty beds stood in rows.|空のベッドが並んでいた。|空病床排成一列。
+n9c2|Walk past|通り過ぎる|走过去
+n9r2|The street was quiet. There were no slow steps.|道は静かだった。遅い足取りはなかった。|路上很安静。没有慢吞吞的脚步。
+n9c3|Take the sign down and keep it|看板を外して持ち帰る|把招牌摘下带走
+n9r3|One more sign in your storeroom.|物置に看板がひとつ増えた。|储藏室里多了一块招牌。
+n10t|The Day You Fell|転んだ日|摔倒的那天
+n10b|You fell on the street. Your knee is bleeding. No one passing by offers a hand. This is a world that does not look at weak things.|道で転んだ。膝から血が出ている。通りすがりの誰も手を差し伸べない。弱いものを見ない世界だ。|你在路上摔倒了。膝盖流着血。路过的人没有一个伸出手。这是一个对弱者视而不见的世界。
+n10c1|Get up on your own|ひとりで立ち上がる|自己站起来
+n10r1|You limped home.|足を引きずって帰った。|你一瘸一拐地回了家。
+n10r1@0|As you tried to get up, your Servant silently held out a hand. You took it and went home.|立ち上がろうとすると、サーヴァントが黙って手を差し出した。その手を取って帰った。|你正要起身，从者默默地伸出了手。你握着那只手回了家。
+n10c2|Stay sitting there|そのまま座っている|就那样坐着
+n10r2|After a long while someone approached, stopped, and turned back.|しばらくして誰かが近づき、立ち止まって引き返していった。|过了很久，有人走近，停下，又转身离开了。
+n10c3|Ask someone to give you a hand|手を貸してほしいと言う|请人拉你一把
+n10r3|Your voice was smaller than you thought. No one heard it.|声は思ったより小さかった。誰にも届かなかった。|你的声音比想象中小。谁也没听见。
+n11t|The Street of the Strong|強いものたちの通り|强者之街
+n11b|Only strong people walk the streets. Fast, tireless, waiting for no one. Lately your steps have slowed a little.|通りには強い人しか歩いていない。速く、疲れず、誰も待たない。あなたは近頃、少し歩みが遅くなった。|街上只走着强者。快速，不知疲倦，不等任何人。你最近脚步慢了一些。
+n11c1|Keep pace|歩調を合わせる|跟上步伐
+n11r1|You were out of breath. No one noticed.|息が切れた。誰も気づかなかった。|你喘不过气。谁也没有察觉。
+n11c2|Walk slowly|ゆっくり歩く|慢慢走
+n11r2|People stepped around you. For the first time, the road felt wide.|人々があなたを避けて通った。初めて道が広く感じられた。|人们绕开了你。你第一次觉得路很宽。
+n11c3|Slip into an alley|路地に入る|拐进小巷
+n11r3|It was an alley with no one in it.|誰もいない路地だった。|是一条空无一人的小巷。
+n12t|White Hair|白い髪|白发
+n12b|There is more white hair in the mirror. This world leaves nothing weak behind. You know your turn is coming.|鏡の中の白髪が増えた。この世界は弱いものを残さない。自分の番が近づいていることを知っている。|镜中的白发多了。这个世界不会留下弱者。你知道轮到你的那天快来了。
+n12b@0|There is more white hair in the mirror. This world leaves nothing weak behind. You know your turn is coming. Your Servant said they would be at your side even when that day comes.|鏡の中の白髪が増えた。この世界は弱いものを残さない。自分の番が近づいていることを知っている。その日が来てもそばにいると、サーヴァントは言った。|镜中的白发多了。这个世界不会留下弱者。你知道轮到你的那天快来了。从者说，即使那天到来，也会在你身边。
+n12c1|Dye your hair|髪を染める|染发
+n12r1|The face in the mirror looked a little unfamiliar.|鏡の中の顔が少し見慣れなかった。|镜中的脸有些陌生。
+n12c2|Leave it be|そのままにする|随它去
+n12r2|The white hair grew by a few strands each day.|白髪は一日に数本ずつ増えていった。|白发每天多出几根。
+n12c3|Put the mirror away|鏡を片付ける|收起镜子
+n12r3|There are no mirrors in your room now.|部屋から鏡がなくなった。|房间里没有镜子了。
+n13t|The Door That Will Not Close|閉まらない玄関|关不上的大门
+n13b|The front door will not close. A day after you fix it, it is open again. At night something passes through the gap.|玄関の扉が閉まらない。直して一日で、また開いている。夜になると、隙間を何かが通り抜ける。|大门关不上。修好才一天，又开着了。一到夜里，就有什么东西从门缝间经过。
+n13c1|Call a locksmith|鍵屋を呼ぶ|叫锁匠
+n13r1|The locksmith did not show in the mirror either.|鍵屋も鏡に映らなかった。|锁匠也没有映在镜子里。
+n13c2|Leave it be|そのままにする|随它去
+n13r2|The things passing through did not come into your room.|通り抜けるものたちは、あなたの部屋には入ってこなかった。|经过的东西没有进你的房间。
+n13c3|Scatter salt by the door|扉の前に塩を撒く|在门口撒盐
+n13r3|In the morning the salt had been swept into a single line.|朝、塩が一列に掃き寄せられていた。|早上，盐被扫成了一条线。
+n14t|Counting Shadows|影を数える|数影子
+n14b|A crosswalk at dusk. Twelve people, but seven shadows. Yours is a little faint.|夕暮れの横断歩道。人は十二人なのに、影は七つ。あなたの影は少し薄い。|黄昏的斑马线。有十二个人，却只有七道影子。你的影子有点淡。
+n14b@0|A crosswalk at dusk. Twelve people, but seven shadows. Yours is a little faint. Only your Servant's shadow is dark.|夕暮れの横断歩道。人は十二人なのに、影は七つ。あなたの影は少し薄い。サーヴァントの影だけは濃い。|黄昏的斑马线。有十二个人，却只有七道影子。你的影子有点淡。只有从者的影子很浓。
+n14c1|Look at the shadowless ones|影のない方を見る|看向没有影子的人
+n14r1|They looked back at you.|向こうもあなたを見た。|对方也看向了你。
+n14c2|Stand on your own shadow|自分の影を踏んで立つ|踩住自己的影子站着
+n14r2|Your shadow was still stuck to your feet.|影はまだ足元にくっついていた。|影子还贴在脚下。
+n14c3|Cross with your head down|うつむいて渡る|低着头过马路
+n14r3|All you heard was the signal changing.|信号の変わる音だけが聞こえた。|只听见信号灯变换的声音。
+n15t|The Changed Neighbor|変わった隣人|换了的邻居
+n15b|The person next door greets you with the same face as yesterday. They do not show in the mirror. Still, the greeting is exactly the same as yesterday.|隣の人が昨日と同じ顔で挨拶する。鏡には映らない。それでも挨拶は昨日とまったく同じだ。|隔壁的人用和昨天一样的脸打招呼。镜子里映不出来。可问候和昨天一模一样。
+n15c1|Return the greeting|挨拶を返す|回应问候
+n15r1|In the evening, the smell of soup came from their home.|夕方、その家から汁物の匂いがした。|傍晚，那家飘出了汤的香味。
+n15c2|Ask their name|名前を尋ねる|问对方的名字
+n15r2|They gave yesterday's person's name. A little late.|昨日のあの人の名前を答えた。少し遅れて。|对方报出了昨天那个人的名字。慢了一点。
+n15c3|Look into moving|引っ越しを考える|打听搬家
+n15r3|Every neighborhood was the same.|どの町も同じだった。|哪个街区都一样。
+n16t|The Last Door to Close|最後に閉める扉|最后关上的门
+n16b|In this city, only you can close a door. Today it feels like you must decide which door to close.|この街で扉を閉められるのはあなただけだ。今日は、どの扉を閉めるか決めなければならない気がする。|这座城市里只有你能关门。今天，似乎必须决定关上哪一扇门。
+n16c1|Close the door to your room|自分の部屋の扉を閉める|关上自己房间的门
+n16r1|For the first time, you slept deeply.|初めて深く眠った。|你第一次睡得很沉。
+n16c2|Close the door before the place where your Servant scattered|サーヴァントが散った場所の前の扉を閉める|关上从者消散之处前的那扇门
+n16c2@0|Close the door of the room where your Servant stands|サーヴァントが立っている部屋の扉を閉める|关上从者所在房间的门
+n16r2|That door never opened again.|その扉は二度と開かなかった。|那扇门再也没有打开。
+n16r2@0|Your Servant nodded.|サーヴァントが頷いた。|从者点了点头。
+n16c3|Close no door|どの扉も閉めない|一扇门也不关
+n16r3|From beyond a door, someone called your name.|扉の向こうで、誰かがあなたの名前を呼んだ。|门的另一边，有人叫了你的名字。
+n17t|The Slow Clocks|遅れる時計|走慢的钟
+n17b|The clocks are all a little slow. It is seven in the morning, yet the streets are quiet as dawn. People without circuits do not wake up.|時計がどれも少しずつ遅れている。朝七時なのに、通りは明け方のように静かだ。回路のない人々が起きてこない。|钟都慢了一点。明明是早上七点，街上却安静得像黎明。没有回路的人们没有醒来。
+n17c1|Set the clocks|時計を合わせる|对准时钟
+n17r1|The next day they were slow again.|翌日、また遅れていた。|第二天又慢了。
+n17c2|Go out into the street|通りに出てみる|走到街上看看
+n17r2|Every window had its curtains drawn.|どの窓もカーテンが引かれていた。|每扇窗都拉着窗帘。
+n17c3|Continue your calculations|計算を続ける|继续计算
+n17c3@0|Continue your thoughts|考えを続ける|继续思考
+n17r3|The last page of the notebook is blank.|ノートの最後のページは白い。|笔记本的最后一页是空白的。
+n18t|The Sleeping House|眠る家|沉睡的家
+n18b|The home of someone close to you. They have no circuits. They have not woken since that winter.|身近な誰かの家。その人には回路がない。あの冬から目を覚まさない。|身边某个人的家。那人没有回路。自那个冬天起就没有醒来。
+n18b@0|A neighbor's home. They have no circuits. They have not woken since that winter.|隣人の家。その人には回路がない。あの冬から目を覚まさない。|邻居的家。那人没有回路。自那个冬天起就没有醒来。
+n18c1|Sit by their pillow|枕元に座る|坐在枕边
+n18r1|Their breathing is steady. Whether they dream, you cannot tell.|息は穏やかだ。夢を見ているのかはわからない。|呼吸很平稳。不知道是否在做梦。
+n18c2|Look for a way to wake them|起こす方法を探す|寻找唤醒的方法
+n18r2|You devoted days to it. You found nothing.|何日もかけた。見つからなかった。|你苦苦钻研了好几天。没有找到。
+n18c3|Do not come again|二度と来ない|不再来了
+n18r3|You started taking the long way around that house.|その家の前を遠回りして通るようになった。|你开始绕开那户人家走。
+n19t|Someone Awake|起きている人|醒着的人
+n19b|One stall is open at the market. The vendor has a few circuits. One of the few people still awake in this city.|市場に一軒だけ店が開いている。回路を少し持つ露店の主だ。この街に残る、数少ない目覚めた人だ。|市场上开着一家店。是个有一点回路的摊贩。这座城市里为数不多还醒着的人。
+n19c1|Buy something|物を買う|买点东西
+n19r1|You got a little extra. For the first time in a while, you laughed with someone.|おまけをもらった。久しぶりに人と笑った。|对方多送了你一点。你久违地和人一起笑了。
+n19c2|Examine their circuits|その人の回路を探る|查看那人的回路
+n19r2|Too small to use as a stepping stone.|踏み石に使うには小さすぎた。|小得不足以当作垫脚石。
+n19c3|Do not speak to them|話しかけない|不搭话
+n20t|The Last Step|残った一歩|剩下的一步
+n20b|The stepping stones have all been used. One step remains. You grew old in front of that one step.|踏み石はすべて使われた。一歩が残った。その一歩の前で、あなたは年老いた。|垫脚石都已用尽。还剩一步。你在那一步前老去了。
+n20c1|Take it|踏み出す|迈出去
+n20r1|What came next is not in the record.|その先は記録にない。|之后的事没有记载。
+n20c2|Turn back|引き返す|转身回去
+n20r2|One stopped clock started again.|止まった時計がひとつ、また動き出した。|一座停了的钟又走了起来。
+n20c3|Sit down right there|その場に座る|就地坐下
+n20r3|The step ahead was always the same distance.|一歩先はいつも同じ距離だった。|前方那一步，始终是同样的距离。
+n21t|A Roster for Two|二人だけの名簿|两人的名册
+n21b|Your Servant folds the empty list and uses it as a bookmark. They say there are no names left to write on it.|サーヴァントが空の名簿を折って栞にしている。もうこの紙に書く名前はないと言う。|从者把空名单折起来当书签用。说这张纸上已经没有要写的名字了。
+n21c1|Write your Servant's name|サーヴァントの名前を書く|写下从者的名字
+n21r1|Your Servant smiled. That name was never erased.|サーヴァントが笑った。その名前は消えなかった。|从者笑了。那个名字没有被抹去。
+n21c2|Take the list back|名簿を返してもらう|把名单要回来
+n21r2|You put it deep in a drawer.|引き出しの奥にしまった。|你把它放进了抽屉深处。
+n21c3|Burn it together|一緒に燃やす|一起烧掉
+n21r3|Your two shadows overlapped on the ashes.|灰の上で、二人の影が重なった。|灰烬上，两人的影子交叠在一起。
+n22t|A Lie Only Two Can Tell|二人だけの嘘|只有两人能说的谎
+n22b|At the breakfast table your Servant tells a small lie. That the weather is lovely today. It is raining.|朝の食卓で、サーヴァントが小さな嘘をつく。今日はいい天気だと。雨が降っているのに。|早餐桌上，从者说了个小谎。说今天天气真好。外面明明在下雨。
+n22c1|Answer with the same lie|同じ嘘で返す|用同样的谎回应
+n22r1|You both laughed. A joke only the two of you can laugh at in this world.|二人とも笑った。この世界で二人にしか笑えない冗談だ。|你们都笑了。这是这个世界上只有你们两人能笑的玩笑。
+n22c2|Correct them|訂正する|纠正
+n22r2|Your Servant looked out the window and nodded.|サーヴァントが窓の外を見て頷いた。|从者看向窗外，点了点头。
+n22c3|Pretend not to hear|聞こえないふりをする|假装没听见
+n22r3|No one spoke until the rain stopped.|雨が止むまで、誰も口をきかなかった。|直到雨停，谁都没有说话。
+n23t|The Slower One|遅い方|慢的一方
+n23b|Lately your Servant has been slowing down on purpose. To match your steps. In this world, only the two of you walk like that.|サーヴァントが近頃わざと歩みを緩める。あなたの歩調に合わせているのだ。この世界でそんな歩き方をするのは二人だけだ。|从者最近故意放慢了脚步。是为了配合你的步子。这个世界上那样走路的只有你们两人。
+n23c1|Say thank you|ありがとうと言う|道谢
+n23r1|Your Servant pretended not to hear.|サーヴァントは聞こえないふりをした。|从者假装没听见。
+n23c2|Walk ahead|先に歩く|走在前面
+n23r2|Your Servant followed. One step behind.|サーヴァントがついてきた。一歩後ろから。|从者跟了上来。落后一步。
+n23c3|Stop and wait|立ち止まって待つ|停下来等
+n23r3|For the first time, your Servant walked ahead.|初めてサーヴァントが先を歩いた。|从者第一次走在了前面。
+n24t|The Two Who Reflect|映る二人|映出的两人
+n24b|In the bathroom mirror, the two of you stand side by side. In this city, those who show in mirrors can be counted on one hand.|浴室の鏡に、二人が並んで映っている。この街で鏡に映る人は数えるほどしかいない。|浴室的镜子里映着并肩的两人。这座城市里能映在镜中的人屈指可数。
+n24c1|Take a photo|写真を撮る|拍张照
+n24r1|You both showed up in the photo too.|写真にも二人が写った。|照片里也拍到了两人。
+n24c2|Cover the mirror|鏡を覆う|遮住镜子
+n24r2|Your Servant did not ask why.|サーヴァントは理由を訊かなかった。|从者没有问为什么。
+n24c3|Look for a long time|長く見つめる|久久凝视
+n24r3|Your Servant looked away first.|サーヴァントが先に目を逸らした。|从者先移开了目光。
+n25t|The Stopped Afternoon|止まった午後|停住的午后
+n25b|An afternoon when every clock in the city has stopped. The sun does not set. Your Servant says they like how long the day is.|街の時計がすべて止まった午後。日が沈まない。一日が長くていいと、サーヴァントが言う。|城里所有的钟都停了的午后。太阳不落。从者说日子长真好。
+n25c1|Walk together|一緒に歩く|一起走
+n25r1|You walked an endless road. You did not tire.|果てしない道を歩いた。疲れなかった。|你们走了一条没有尽头的路。并不觉得累。
+n25c2|Open your notebook of calculations|計算ノートを開く|翻开计算笔记
+n25c2@0|Fall into thought|考えにふける|陷入沉思
+n25r2|Your Servant watched from beside you.|サーヴァントが隣で見守っていた。|从者在一旁看着。
+n25c3|Go buy a clock|時計をひとつ買ってくる|买一座钟回来
+n25r3|Only that clock ticked.|その時計だけが時を刻んだ。|只有那座钟在滴答作响。
+n26t|The Last Year of the Winners|勝った側の最後の年|胜者的最后一年
+n26b|Your Servant asks whether the side that won that winter was right. The world the two of you won is very quiet again today.|サーヴァントが尋ねる。あの冬に勝った側が正しかったのかと。二人が勝った世界は、今日もとても静かだ。|从者问你，那个冬天胜利的一方是对的吗。你们两人赢来的世界，今天也非常安静。
+n26c1|Say it was|正しかったと言う|说是对的
+n26r1|Your Servant looked at you for a long time.|サーヴァントが長いことあなたを見ていた。|从者久久地看着你。
+n26c2|Say you do not know|わからないと言う|说不知道
+n26r2|Your Servant gave the same answer.|サーヴァントも同じ答えを返した。|从者给出了同样的回答。
+n26c3|Take their hand instead of answering|答える代わりに手を握る|不回答，握住对方的手
+n26r3|That hand was as warm as it was that winter.|その手はあの冬のように温かかった。|那只手和那个冬天一样温暖。

@@ -68,3 +68,50 @@ OMENW 3 b p 가끔 네가 무서워. 그래도 옆에 있을 거야.|Sometimes y
 OMENW 3 b o 가끔 당신이 두렵습니다. 그래도 곁에 있겠습니다.|At times I fear you. Even so, I will stay by your side.|時々、あなたが恐ろしい。それでも、おそばにいます。|有时我会畏惧您。即便如此，我也会留在您身边。
 OMENW 3 b r 이따금 그대가 두렵다. 그래도 짐은 곁에 있으마.|At times I fear you. Still, I shall remain at your side.|時折、そなたが恐ろしい。それでも余はそばにおろう。|有时，朕会畏惧汝。即便如此，朕仍会留在汝身边。
 OMENW 3 b m (잠든 당신을 서번트가 오래 지켜본다. 손을 뻗다가, 거두고, 다시 곁에 앉는다.)|(Your Servant watches over you as you sleep for a long time. They reach out, draw back, and sit beside you again.)|（眠るあなたを、サーヴァントが長く見守る。手を伸ばしかけて引っ込め、またそばに座る。）|（从者久久守着熟睡的你。伸出手，又缩回，再次坐回你身旁。）
+# 11-22: 진심이 이루어진 세계(①·②)의 봄 열나흘 · 성향별 하루 8줄 · 열나흘째 · 바꾸는 달 문장
+WDAY avenger 아침 신문을 펼쳤다. 부고란이 유난히 짧았다.|You opened the morning paper. The obituaries were oddly short.|朝刊を広げた。訃報欄がやけに短かった。|你翻开晨报。讣告栏短得出奇。
+WDAY avenger 휴대전화 연락처를 넘겨 보았다. 지운 기억이 없는 이름들이 빠져 있었다.|You scrolled through your contacts. Names you never deleted were gone.|携帯の連絡先をめくってみた。消した覚えのない名前が抜けていた。|你翻看手机通讯录。几个你从没删过的名字不见了。
+WDAY avenger 길에서 아무와도 눈이 마주치지 않았다. 다들 당신을 비켜 갔다.|You met no one's eyes on the street. Everyone stepped around you.|道で誰とも目が合わなかった。皆があなたを避けて通った。|街上没有一个人与你对视。大家都绕开了你。
+WDAY avenger 우편함이 비어 있었다. 오늘도, 어제도.|The mailbox was empty. Today, and yesterday.|郵便受けは空だった。今日も、昨日も。|信箱是空的。今天是，昨天也是。
+WDAY avenger 오래 묵은 원한 하나가 떠올랐다가, 갚을 상대가 없다는 걸 알고 가라앉았다.|An old grudge surfaced, then sank again when it found no one left to repay.|古い恨みがひとつ浮かび、返す相手がいないと知って沈んでいった。|一桩陈年旧怨浮上心头，发觉已无人可报，又沉了下去。
+WDAY avenger 밤이 조용했다. 누구의 이름도 떠오르지 않는 밤이었다.|The night was quiet. A night when no one's name came to mind.|夜は静かだった。誰の名前も浮かばない夜だった。|夜很安静。是一个想不起任何人名字的夜晚。
+WDAY avenger 거울 속 얼굴이 생각보다 평온했다. 그게 조금 낯설었다.|The face in the mirror was calmer than you expected. That felt a little strange.|鏡の中の顔は思ったより穏やかだった。それが少し見慣れなかった。|镜中的脸比想象中平静。这让你有些陌生。
+WDAY avenger 손등의 흉터가 오후 내내 따뜻했다.|The scar on the back of your hand stayed warm all afternoon.|手の甲の傷跡が、午後のあいだずっと温かかった。|手背上的伤痕整个下午都是温热的。
+WDAYL avenger 열나흘째 밤이었다. 갚을 것이 하나도 남지 않은 채로 그 겨울과 같은 길이를 보냈다.|It was the fourteenth night. You had spent as long as that winter with nothing left to repay.|十四日目の夜だった。返すものがひとつも残らないまま、あの冬と同じ長さを過ごした。|第十四个夜晚。你在无仇可报中度过了与那个冬天同样长的时间。
+WDAY judge 식당 메뉴판의 사진이 실물과 똑같아졌다.|The photos on restaurant menus now looked exactly like the food.|食堂のメニューの写真が、実物とそっくり同じになった。|餐馆菜单上的照片和实物变得一模一样了。
+WDAY judge 시장에 흥정하는 소리가 없었다. 값은 모두 정직했다.|There was no haggling at the market. Every price was honest.|市場に値切る声がなかった。値段はどれも正直だった。|市场上听不到讨价还价。每个价格都很诚实。
+WDAY judge 신문의 사건 사고란이 비어 있었다. 대신 날씨 기사가 길었다.|The crime and accident column was empty. The weather report ran long instead.|新聞の事件事故欄が空いていた。代わりに天気の記事が長かった。|报纸的社会新闻栏空着。天气报道倒写得很长。
+WDAY judge 버스 기사가 거스름돈을 마지막 한 푼까지 세어 주었다.|The bus driver counted out your change down to the last coin.|バスの運転手が、お釣りを最後の一円まで数えてくれた。|公交司机把找零一分不差地数给了你。
+WDAY judge 거리에서 다투는 소리가 한 번도 들리지 않았다.|Not once did you hear an argument in the street.|通りで言い争う声は一度も聞こえなかった。|街上一次争吵声也没有听到。
+WDAY judge 이웃이 어제 빌려 간 우산을 정확히 아홉 시에 돌려주었다.|The neighbor returned the umbrella borrowed yesterday at exactly nine.|昨日傘を借りていった隣人が、きっかり九時に返しに来た。|邻居昨天借走的伞，九点整准时还了回来。
+WDAY judge 무심코 작은 거짓말을 하려다 입을 다물었다. 당신은 굳지 않는다는 걸 알면서도.|You almost told a small lie without thinking, then shut your mouth. Even knowing you would not freeze.|うっかり小さな嘘をつきかけて、口をつぐんだ。自分は固まらないと知っていながら。|你差点随口撒个小谎，又闭上了嘴。明知自己不会僵住。
+WDAY judge 밤이 조용했다. 이 도시에서 아무도 숨기는 것이 없는 밤이었다.|The night was quiet. A night when no one in this city was hiding anything.|夜は静かだった。この街の誰も、何も隠していない夜だった。|夜很安静。这座城市里没有人隐瞒任何事的夜晚。
+WDAYL judge 열나흘째 밤이었다. 단 한 번의 다툼도 없이 그 겨울과 같은 길이가 지나갔다.|It was the fourteenth night. As long as that winter had passed without a single quarrel.|十四日目の夜だった。一度の諍いもなく、あの冬と同じ長さが過ぎた。|第十四个夜晚。与那个冬天同样长的时间，在没有一次争执中过去了。
+WDAY cruel 아침 거리에 느린 걸음이 없었다. 모두가 같은 속도로 걸었다.|There were no slow steps on the morning street. Everyone walked at the same pace.|朝の通りに遅い足取りはなかった。誰もが同じ速さで歩いた。|清晨的街上没有慢吞吞的脚步。所有人都以同样的速度走着。
+WDAY cruel 놀이터의 그네가 바람에만 흔들렸다.|The playground swing moved only in the wind.|公園のブランコは、風にだけ揺れていた。|游乐场的秋千只在风里晃动。
+WDAY cruel 버스에 노약자석이 없어졌다. 아무도 이상하게 여기지 않았다.|The priority seats were gone from the bus. No one found it strange.|バスから優先席がなくなった。誰も不思議に思わなかった。|公交车上的老弱病残专座不见了。没有人觉得奇怪。
+WDAY cruel 운동장에 사람이 붐볐다. 벤치에 앉아 쉬는 사람은 없었다.|The sports ground was crowded. No one sat resting on the benches.|運動場は人で賑わっていた。ベンチで休む人はいなかった。|运动场上人头攒动。没有人坐在长椅上休息。
+WDAY cruel 기침하는 사람이 한 명도 없었다. 겨울 끝인데도.|No one was coughing. Even at the end of winter.|咳をする人がひとりもいなかった。冬の終わりだというのに。|没有一个人在咳嗽。明明是冬末。
+WDAY cruel 계단을 오르다 숨이 조금 찼다. 아무에게도 들키지 않으려고 걸음을 늦추지 않았다.|You got a little winded on the stairs. You did not slow down, so no one would notice.|階段を上っていて少し息が切れた。誰にも気づかれないよう、足は緩めなかった。|爬楼梯时你有点喘。为了不被人察觉，你没有放慢脚步。
+WDAY cruel 동네가 조용했다. 우는 아이가 없는 동네는 이렇게 조용했다.|The neighborhood was quiet. This is how quiet a neighborhood is with no crying children.|町は静かだった。泣く子のいない町は、これほど静かだった。|街区很安静。没有孩子哭闹的街区，原来这么安静。
+WDAY cruel 텔레비전에서 체력 대회 중계가 나왔다. 꼴찌가 없는 경기였다.|A fitness contest was on TV. A competition with no one in last place.|テレビで体力大会の中継をやっていた。最下位のいない競技だった。|电视上在转播体能大赛。是一场没有最后一名的比赛。
+WDAYL cruel 열나흘째 밤이었다. 강한 것만 남은 세계에서 그 겨울과 같은 길이를 보냈다.|It was the fourteenth night. You had spent as long as that winter in a world where only the strong remained.|十四日目の夜だった。強いものだけが残った世界で、あの冬と同じ長さを過ごした。|第十四个夜晚。你在只剩强者的世界里，度过了与那个冬天同样长的时间。
+WDAY taboo 아침에 현관문이 또 열려 있었다. 이제는 닫으려고 애쓰지 않는다.|In the morning the front door was open again. You no longer try to close it.|朝、玄関の扉がまた開いていた。もう閉めようとはしない。|早上大门又开着。你已经不再费心去关。
+WDAY taboo 엘리베이터 거울에 비친 사람이 넷 중 하나였다.|Of the four people in the elevator, only one showed in the mirror.|エレベーターの鏡に映ったのは、四人のうち一人だけだった。|电梯里的四个人，镜子里只映出一个。
+WDAY taboo 밤새 창밖으로 그림자 없는 것들이 지나갔다. 아무도 당신 집에는 들어오지 않았다.|All night, shadowless things passed outside the window. None of them came into your home.|一晩中、窓の外を影のないものたちが通り過ぎた。誰もあなたの家には入ってこなかった。|整夜都有没有影子的东西从窗外经过。没有一个进了你的家。
+WDAY taboo 거울을 보았다. 당신은 조금 흐릿하게 비쳤다.|You looked in the mirror. Your reflection was a little faint.|鏡を見た。あなたは少しぼんやりと映っていた。|你照了照镜子。你的身影映得有些模糊。
+WDAY taboo 우체통에 주소 없는 편지가 꽂혀 있었다. 봉투가 차가웠다.|A letter with no address was stuck in the mailbox. The envelope was cold.|郵便受けに宛先のない手紙が挟まっていた。封筒が冷たかった。|信箱里插着一封没有地址的信。信封是冰凉的。
+WDAY taboo 길모퉁이에서 누가 당신 이름을 불렀다. 돌아보니 아무도 없었다.|Someone called your name at the street corner. When you turned, no one was there.|曲がり角で誰かがあなたの名前を呼んだ。振り向くと誰もいなかった。|街角有人叫你的名字。回头一看，一个人也没有。
+WDAY taboo 가로등 아래 그림자가 하나 남았다. 주인은 보이지 않았다.|A shadow was left under the streetlight. Its owner was nowhere to be seen.|街灯の下に影がひとつ残っていた。持ち主は見えなかった。|路灯下留着一道影子。看不见它的主人。
+WDAY taboo 고양이들이 열린 문 너머를 오래 바라보았다.|The cats stared through the open door for a long time.|猫たちが、開いた扉の向こうを長いあいだ見つめていた。|猫们久久地望着敞开的门的另一边。
+WDAYL taboo 열나흘째 밤이었다. 열린 문들 사이에서 그 겨울과 같은 길이를 보냈다.|It was the fourteenth night. You had spent as long as that winter among the open doors.|十四日目の夜だった。開いた扉のあいだで、あの冬と同じ長さを過ごした。|第十四个夜晚。你在敞开的门之间，度过了与那个冬天同样长的时间。
+WDAY zeal 출근 시간인데 버스 정류장에 아무도 없었다. 버스도 오지 않았다.|It was rush hour, but no one was at the bus stop. No bus came either.|通勤時間なのに、バス停には誰もいなかった。バスも来なかった。|明明是上班时间，公交站却空无一人。公交车也没来。
+WDAY zeal 이웃집 창에 커튼이 그대로였다. 그 겨울 이후로 한 번도 걷히지 않았다.|The curtains in the neighbor's window had not moved. They had not been opened once since that winter.|隣家の窓のカーテンはそのままだった。あの冬から一度も開けられていない。|邻居家的窗帘还是原样。自那个冬天以来一次也没拉开过。
+WDAY zeal 손목시계가 또 늦었다. 맞추는 것을 그만두었다.|Your watch was slow again. You stopped resetting it.|腕時計がまた遅れていた。合わせるのはやめた。|手表又慢了。你不再去调它。
+WDAY zeal 영맥이 고요했다. 쓸 만큼 쓴 땅의 고요였다.|The ley lines were still. The stillness of land that had been used up.|霊脈は静かだった。使えるだけ使われた土地の静けさだった。|灵脉一片寂静。那是被用尽了的土地的寂静。
+WDAY zeal 깨어 있는 사람 몇이 서로에게 고개만 까딱이고 지나갔다.|The few people still awake only nodded to each other as they passed.|起きている数人が、互いに軽く会釈だけして通り過ぎた。|几个醒着的人只是互相点点头，便擦肩而过。
+WDAY zeal 신호등만 제 할 일을 했다. 건너는 사람은 당신뿐이었다.|Only the traffic lights did their job. You were the only one crossing.|信号機だけが自分の仕事をしていた。渡るのはあなただけだった。|只有红绿灯还在尽职。过马路的只有你一个。
+WDAY zeal 해가 늦게 졌다. 아니, 시계가 늦게 갔다.|The sun set late. No, the clocks ran slow.|日が沈むのが遅かった。いや、時計が遅れていたのだ。|太阳落得很晚。不，是钟走得慢。
+WDAY zeal 꿈을 꾸지 않는 깊은 잠이 도시를 덮고 있었다. 당신만 깨어 그것을 들었다.|A deep, dreamless sleep lay over the city. Only you were awake to hear it.|夢を見ない深い眠りが街を覆っていた。あなただけが目覚めて、それを聞いていた。|一场无梦的沉睡笼罩着城市。只有你醒着，听着它。
+WDAYL zeal 열나흘째 밤이었다. 잠든 도시 위로 그 겨울과 같은 길이가 흘렀다.|It was the fourteenth night. As long as that winter had flowed over the sleeping city.|十四日目の夜だった。眠る街の上を、あの冬と同じ長さが流れていった。|第十四个夜晚。与那个冬天同样长的时间，流过了沉睡的城市。
+WMONX zeal 6 여름의 끝이었다. 불꽃을 쏘아 올릴 사람이 없는 밤이 조용히 지나갔다.|It was the end of summer. A night with no one to set off fireworks passed quietly.|夏の終わりだった。花火を打ち上げる人のいない夜が、静かに過ぎていった。|夏天结束了。没有人放烟花的夜晚静静过去了。

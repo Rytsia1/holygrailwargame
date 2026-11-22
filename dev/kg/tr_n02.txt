@@ -1,0 +1,255 @@
+# 11-22 「검귀 에필로그 추가안」 N27~N56 · 번호|영어|일본어|간체
+n27t|A Heaping Bowl|大盛りの飯|堆成山的饭
+n27b|The always-curt owner of the soup restaurant closed up shop that winter. The new owner heaps rice into your bowl like a mountain. Even though you are a customer they have never seen.|いつも無愛想だったクッパ屋の主人が、あの冬に店をたたんだ。新しく入った主人は、ご飯を山のように盛ってくれる。初めて見る客なのに。|那个总是冷着脸的汤饭店老板，在那个冬天关了店。新来的老板给你盛的饭堆得像座山。明明你是第一次来的客人。
+n27c1|Eat it all|全部食べる|全部吃完
+n27r1|You feel ready to burst. You laughed for the first time in a while.|お腹がはち切れそうだ。久しぶりに笑った。|肚子快撑破了。你久违地笑了。
+n27c2|Ask about the old owner|前の主人のことを尋ねる|问起以前的老板
+n27r2|The new owner said they knew no such person.|新しい主人は、そんな人は知らないと言った。|新老板说不认识那样的人。
+n27c3|Ask them to take half back|半分減らしてもらう|请对方减掉一半
+n27r3|The owner looked hurt and brought out one more side dish.|主人が残念そうな顔で、おかずをもう一品出してきた。|老板一脸失落，又端来一碟小菜。
+n28t|A Meeting That Ended Early|早く終わった会議|提早结束的会议
+n28b|The person who always cut you off is gone. The meeting ended in thirty minutes. Your coworkers look at each other, bewildered.|いつもあなたの話を遮っていた人がいない。会議は三十分で終わった。同僚たちが狐につままれた顔で顔を見合わせる。|那个总是打断你说话的人不在了。会议三十分钟就结束了。同事们一脸茫然地面面相觑。
+n28b@0|The person who always cut you off is gone. The neighborhood meeting ended in thirty minutes. The neighbors look at each other, bewildered.|いつもあなたの話を遮っていた人がいない。町内の集まりは三十分で終わった。近所の人たちが狐につままれた顔で顔を見合わせる。|那个总是打断你说话的人不在了。街坊聚会三十分钟就结束了。邻居们一脸茫然地面面相觑。
+n28c1|Take a walk with the time left|余った時間で散歩する|用剩下的时间散步
+n28r1|The spring breeze was warmer than you expected.|春風は思ったより暖かかった。|春风比想象中温暖。
+n28c2|Do more work|もっと仕事をする|多做些工作
+n28c2@0|Take on more of the group's work|集まりの仕事をもっと引き受ける|多承担些聚会的事务
+n28r2|For the first time, you were praised.|初めて褒められた。|你第一次受到了称赞。
+n28r2@0|For the first time, someone thanked you.|初めてありがとうと言われた。|第一次有人对你道谢。
+n28c3|Stare at the empty seat|空いた席を長く見る|久久看着空位
+n28r3|One chair was left over.|椅子がひとつ余っていた。|多出了一把椅子。
+n29t|The Cat at the Door|戸口の猫|门口的猫
+n29b|A stray cat comes to your door every day. In this world, it is the only thing that approaches you first.|野良猫が一匹、毎日戸口にやって来る。この世界で、あなたに自分から近づいてくるのはあいつだけだ。|一只流浪猫每天都来你家门口。在这个世界上，主动靠近你的只有它。
+n29c1|Give it a name|名前をつけてやる|给它起个名字
+n29r1|When you call it, it flicks its tail once.|呼ぶと、尻尾を一度振る。|叫它时，它会甩一下尾巴。
+n29r1@0|Your Servant joined in the naming. Now it has two names. The cat flicks its tail at both.|サーヴァントが名付けに割り込んできた。名前がふたつになった。猫はどちらにも尻尾を振る。|从者也来插手起名。结果有了两个名字。猫对哪个都甩尾巴。
+n29c2|Just leave food out|餌だけ置いておく|只放些吃的
+n29r2|The next day the bowl was empty.|翌日、器は空になっていた。|第二天碗空了。
+n29c3|Chase it away|追い払う|赶走它
+n29r3|The cat came again the next day.|猫は翌日もまた来た。|第二天猫又来了。
+n30t|A Letter with the Reasons|事情の書かれた手紙|写着缘由的信
+n30b|A letter came from the family of an erased name. It explains why that person lived the way they did. Reasons you never knew.|消えた名前の家族から手紙が来た。その人がなぜあんなふうに生きたのかが書かれている。あなたの知らなかった事情だ。|被抹去之人的家属寄来了一封信。信里写着那人为何会那样活着。是你不知道的缘由。
+n30c1|Read it to the end|最後まで読む|读到最后
+n30r1|Your hand stopped at the last line.|最後の行で手が止まった。|读到最后一行，你的手停住了。
+n30c2|Throw it away unopened|開けずに捨てる|不拆开就扔掉
+n30r2|The wastebasket looked heavy for a long time.|ゴミ箱がずっと重そうに見えた。|垃圾桶看起来沉了很久。
+n30c3|Write a reply|返事を書く|写回信
+n30r3|You never sent it.|出しはしなかった。|你没有寄出去。
+n31t|The Photo Studio|写真館|照相馆
+n31b|You went to get an ID photo taken. The photographer tells you to smile. A face that has had nothing to smile about does not move easily.|証明写真を撮りに行った。写真師が笑ってくださいと言う。笑うことのなかった顔は、うまく動かない。|你去拍证件照。摄影师让你笑一笑。一张许久没有笑容的脸，怎么也动不起来。
+n31c1|Force a smile|無理に笑う|勉强笑
+n31r1|The person in the photo looked like a stranger.|写真の中の人が見知らぬ人に見えた。|照片里的人很陌生。
+n31c2|Do not smile|笑わない|不笑
+n31r2|The photographer said that was better.|写真師は、そのほうがいいと言った。|摄影师说这样更好。
+n31c3|Make the photographer laugh|写真師を笑わせる|逗摄影师笑
+n31r3|You both laughed so hard you had to retake it.|二人とも笑ってしまって撮り直した。|两人都笑了，只好重拍。
+n32t|The Blank Line on the List|名簿の空欄|名单上的空行
+n32b|There is one blank line at the bottom of the list. You feel someone will write your name there someday. Because you, too, trampled someone.|名簿のいちばん下に空欄がひとつ残っている。いつか誰かがそこにあなたの名前を書きそうな気がする。あなたも誰かを踏みにじったのだから。|名单最下面留着一行空白。总觉得有朝一日会有人在那里写下你的名字。因为你也践踏过别人。
+n32c1|Tear off the blank line|空欄を破り取る|撕掉空行
+n32r1|The paper was tougher than you expected.|紙は思ったより丈夫だった。|纸比想象中结实。
+n32c2|Leave it be|そのままにする|随它去
+n32r2|You kept the list at the very top of the drawer.|名簿を引き出しのいちばん上に置いた。|你把名单放在抽屉最上面。
+n32c3|Visit someone you once trampled|自分が踏みにじった人を訪ねる|去拜访你曾践踏过的人
+n32r3|The door did not open. You left something in front of it.|扉は開かなかった。扉の前に何かを置いてきた。|门没有开。你在门前留下了些东西。
+n33t|Honest Scales|正直な秤|诚实的秤
+n33b|The market vendor weighs things with neither extra nor cheating. The sound of haggling has vanished from the market.|市場の商人が、おまけもごまかしもなく目方を量る。値切る声が市場から消えた。|市场摊主称重时既不多给也不缺斤短两。讨价还价的声音从市场上消失了。
+n33c1|Try haggling|値切ってみる|试着讲价
+n33r1|The vendor smiled awkwardly. The price stayed the same.|商人が困った顔で笑った。値段はそのままだった。|摊主为难地笑了。价格没变。
+n33c2|Buy it as it is|そのまま買う|照价买下
+n33r2|Your shopping bag was exactly as heavy as it should be.|買い物袋はきっちり重かった。|购物袋重得分毫不差。
+n33c3|Beg for a little extra|おまけをねだる|缠着要搭头
+n33r3|After much thought, the vendor added one tangerine. It was not a lie, after all.|商人はしばらく悩んでから、みかんをひとつ載せた。嘘ではないのだから。|摊主犹豫了半天，加了一个橘子。毕竟这不算说谎。
+n34t|"It Isn't Good"|まずいという言葉|「不好吃」
+n34b|You invited a guest and served them a meal. They took one spoonful and said honestly that it was not good.|客を招いて料理をふるまった。客はひと匙すくうと、正直に言った。まずいと。|你请客人来吃饭。客人尝了一勺，老实地说：不好吃。
+n34b@0|You invited a guest and served them a meal. They took one spoonful and said honestly that it was not good. Beside you, your Servant lied that they thought it was delicious.|客を招いて料理をふるまった。客はひと匙すくうと、正直に言った。まずいと。隣でサーヴァントが、自分はおいしいと嘘をついた。|你请客人来吃饭。客人尝了一勺，老实地说：不好吃。从者在一旁撒谎说自己觉得很好吃。
+n34c1|Laugh along|一緒に笑う|一起笑
+n34r1|The two of you ordered delivery.|二人で出前を頼んだ。|两人叫了外卖。
+n34c2|Make it again|作り直してくる|重做一份
+n34r2|The second one was not good either. The guest said that too.|二度目もまずかった。客はそれも言った。|第二份也不好吃。客人也照实说了。
+n34c3|Feel hurt|気分を害する|不高兴
+n34r3|In this world no one apologized. There were no lies to apologize for.|この世界では誰も謝らなかった。謝るべき嘘がないのだから。|在这个世界里没有人道歉。因为没有需要道歉的谎言。
+n35t|The Reason for Being Late|遅刻の理由|迟到的理由
+n35b|A coworker who was late for the morning meeting gives their reason. "I overslept. I slept very deeply." The meeting room laughs quietly.|朝の会議に遅れた同僚が理由を言う。寝坊しました。とても深く眠りました。会議室が静かに笑う。|早会迟到的同事说明理由。我睡过头了。睡得非常沉。会议室里响起低低的笑声。
+n35b@0|A neighbor who was late for the neighborhood meeting gives their reason. "I overslept. I slept very deeply." Everyone gathered there laughs quietly.|町内会に遅れた隣人が理由を言う。寝坊しました。とても深く眠りました。集まった人たちが静かに笑う。|街坊会迟到的邻居说明理由。我睡过头了。睡得非常沉。在场的人们低低地笑了。
+n35c1|Laugh along|一緒に笑う|一起笑
+n35r1|For the first time in a while, the meeting felt warm.|久しぶりに会議が温かかった。|会议久违地有了暖意。
+n35r1@0|For the first time in a while, the neighborhood meeting felt warm.|久しぶりに町内会が温かかった。|街坊会久违地有了暖意。
+n35c2|Tell your own story about oversleeping|あなたも寝坊の話をする|你也讲个睡过头的故事
+n35r2|No one can tell whether what you say is a lie.|あなたの話が嘘かどうか、誰にもわからない。|谁也不知道你说的是真是假。
+n35c3|Record the lateness|遅刻を記録する|记下迟到
+n35c3@0|Make a note of the lateness|遅れたことを書き留める|记下迟到的事
+n35r3|Your coworker nodded. They did not resent it.|同僚は頷いた。恨みはしなかった。|同事点了点头。并没有怨言。
+n35r3@0|The neighbor nodded. They did not resent it.|隣人は頷いた。恨みはしなかった。|邻居点了点头。并没有怨言。
+n36t|The Confessional|告解室|告解室
+n36b|The church's confessional stands empty. The priest tells you there is no one left who carries a sin to confess. Except you.|教会の告解室が空になった。司祭があなたに言う。打ち明ける罪を抱えた人は、もういないと。あなたを除いては。|教堂的告解室空了。神父对你说，已经没有怀着罪需要倾诉的人了。除了你。
+n36c1|Enter the confessional|告解室に入る|走进告解室
+n36r1|You sat there a long time before coming out. What you said, only the two of you know.|長いこと座ってから出てきた。何を話したかは二人だけが知っている。|你坐了很久才出来。说了什么，只有你们两人知道。
+n36c2|Smile and walk past|笑って通り過ぎる|笑着走过
+n36r2|The priest watched your back for a long time.|司祭は長いことあなたの背中を見ていた。|神父久久地望着你的背影。
+n36c3|Say you have no sins either|自分にも罪はないと言う|说自己也没有罪
+n36r3|Your mouth did not freeze.|あなたの口は固まらなかった。|你的嘴没有僵住。
+n37t|The One Who Does Not Freeze|固まらない人|不会僵住的人
+n37b|Someone close to you noticed your lie. Yet you did not freeze. They ask you why.|身近な誰かが、あなたの嘘に気づいた。なのにあなたは固まらなかった。その人がなぜかと尋ねる。|身边的某个人察觉了你的谎言。可你并没有僵住。那人问你为什么。
+n37b@0|A neighbor noticed your lie. Yet you did not freeze. They ask you why.|隣人のひとりが、あなたの嘘に気づいた。なのにあなたは固まらなかった。その人がなぜかと尋ねる。|一位邻居察觉了你的谎言。可你并没有僵住。那人问你为什么。
+n37c1|Tell the truth|本当のことを話す|说实话
+n37r1|They were silent for a long time. Since that day, they have been a little afraid of you.|その人は長いこと黙っていた。その日から、少しあなたを怖がっている。|那人沉默了很久。从那天起，就有些怕你。
+n37c2|Lie again|また嘘をつく|再撒一次谎
+n37r2|You did not freeze at that lie either. The look in their eyes changed.|その嘘にもあなたは固まらなかった。その人の目の色が変わった。|那个谎言也没有让你僵住。那人的眼神变了。
+n37c3|Do not answer|答えない|不回答
+n37r3|The silence lingered between you for a long time.|沈黙が二人のあいだに長く残った。|沉默在两人之间久久不散。
+n38t|Judging the Gift|贈り物の評価|对礼物的评价
+n38b|You do not like the gift you got for your birthday. In this world, you are the only one who can say so. The giver looks at you with expectant eyes.|誕生日にもらった贈り物が気に入らない。この世界でそれを言えるのはあなただけだ。贈った人が期待に満ちた目で見ている。|生日收到的礼物你不喜欢。这个世界上能把这话说出口的只有你。送礼的人满怀期待地看着你。
+n38b@0|You do not like the gift you got for your birthday. In this world, only you and your Servant can say so. The giver looks at you with expectant eyes.|誕生日にもらった贈り物が気に入らない。この世界でそれを言えるのは、あなたとサーヴァントだけだ。贈った人が期待に満ちた目で見ている。|生日收到的礼物你不喜欢。这个世界上能把这话说出口的只有你和从者。送礼的人满怀期待地看着你。
+n38c1|Lie and say you love it|気に入ったと嘘をつく|撒谎说喜欢
+n38r1|They beamed. It was a good lie.|その人がぱっと笑った。いい嘘だった。|那人笑得很灿烂。这是个好谎言。
+n38c2|Say so honestly|正直に言う|老实说
+n38r2|They took out the receipt. The two of you went to exchange it together.|その人がレシートを取り出した。二人で一緒に交換しに行った。|那人掏出了收据。两人一起去换了。
+n38c3|Hug them without a word|黙って抱きしめる|一言不发地拥抱对方
+n38r3|That, too, was an answer.|それも答えになった。|这也成了回答。
+n39t|The Plant That Will Not Die|枯れない鉢植え|不会死的盆栽
+n39b|You forgot to water it a month ago, yet the plant is perfectly fine. In this world, not even grass grows weak.|水やりを忘れてひと月なのに、鉢植えはぴんぴんしている。この世界では草さえ弱く育たない。|你一个月没浇水了，盆栽却好好的。在这个世界里，连草都不会长得柔弱。
+n39c1|Water it|水をやる|浇水
+n39r1|The plant grew a hand's width taller.|鉢植えがひと回り伸びた。|盆栽又长高了一拃。
+n39c2|Leave it alone|放っておく|不管它
+n39r2|The plant was still fine. That was a little frightening.|鉢植えは相変わらず元気だった。それが少し怖かった。|盆栽依旧好好的。这让你有点害怕。
+n39c3|Stick a label on it|名札を貼る|贴个标签
+n39r3|You wrote "Survivor."|「生き残ったもの」と書いた。|你写上了「幸存者」。
+n40t|Neighborhood Arm Wrestling|町内の腕相撲|街坊掰手腕
+n40b|An arm-wrestling contest is held at the neighborhood bar. There are no weak arms left here. The final has gone on for an hour.|町の酒場で腕相撲大会が開かれた。この町にはもう弱い腕はない。決勝は一時間も終わらない。|街坊酒馆举办掰手腕大赛。这一带已经没有软弱的手臂了。决赛进行了一个小时还没结束。
+n40c1|Enter|参加する|参加
+n40r1|You lost in the first round. Your opponent clapped you on the shoulder.|一回戦で負けた。相手があなたの肩を叩いた。|你第一轮就输了。对手拍了拍你的肩膀。
+n40c2|Watch|見物する|观战
+n40r2|The final was a draw. The bar shook with laughter.|決勝は引き分けだった。酒場が揺れるほど笑った。|决赛打成平手。酒馆里笑声震天。
+n40r2@0|Your Servant rolled up their sleeves, went out, and conquered the neighborhood. The bar shook with laughter.|サーヴァントが袖をまくって出ていき、町を制した。酒場が揺れるほど笑った。|从者卷起袖子上场，横扫了整个街坊。酒馆里笑声震天。
+n40c3|Referee|審判をする|当裁判
+n40r3|No one cheated. They competed with strength alone.|誰も反則しなかった。力だけで競った。|没有人犯规。只凭力气较量。
+n41t|The Closed Pharmacy|閉じた薬局|关门的药店
+n41b|The pharmacy has closed. The cold medicine in your drawer may be the last medicine left in this neighborhood.|薬局が店を閉めた。引き出しの風邪薬が、この町に残る最後の薬かもしれない。|药店关门了。你抽屉里的感冒药，也许是这一带剩下的最后一份药。
+n41c1|Throw it away|捨てる|扔掉
+n41r1|There was no use for it.|使い道がなかった。|用不上了。
+n41c2|Keep it|そのままにする|留着
+n41r2|It felt like a day to use it might come.|いつか使う日が来る気がした。|总觉得会有用上的一天。
+n41c3|Visit the pharmacist|薬剤師を訪ねる|去找药剂师
+n41r3|The pharmacist had become a gym coach.|薬剤師はジムのコーチになっていた。|药剂师成了健身房的教练。
+n42t|The Full Course|フルコース|全程
+n42b|Every runner in the neighborhood marathon finished. There is no last place. At the ceremony, the host struggles to find someone to give the last-place prize to.|町内マラソンで参加者全員が完走した。最下位がいない。表彰式で、司会がビリ賞を渡す相手を探すのに苦労している。|街坊马拉松全员完赛。没有最后一名。颁奖礼上，主持人为找不到人领「最后一名奖」而发愁。
+n42c1|Raise your hand for the last-place prize|ビリ賞をもらうと手を挙げる|举手要领最后一名奖
+n42r1|People laughed. The prize was a single towel.|皆が笑った。賞品はタオル一枚だった。|大家都笑了。奖品是一条毛巾。
+n42c2|Just check your time|記録だけ確かめる|只看看成绩
+n42r2|Your time was not bad either.|あなたの記録も悪くなかった。|你的成绩也不差。
+n42c3|Slip out of the ceremony|表彰式を抜け出す|溜出颁奖礼
+n42r3|The road was completely empty.|道はがらんとしていた。|路上空空荡荡。
+n43t|The Nest|巣|鸟巢
+n43b|It is spring, yet no chicks cry from the nest under the eaves. Only grown birds come and go.|春なのに、軒下の巣から雛の鳴き声がしない。成鳥だけが行き来している。|明明是春天，屋檐下的鸟巢里却听不到雏鸟的叫声。只有成鸟来来往往。
+n43c1|Look up at the nest|巣を見上げる|抬头看鸟巢
+n43r1|A single empty eggshell hung there.|空の卵の殻がひとつ引っかかっていた。|挂着一枚空蛋壳。
+n43c2|Leave out birdseed|餌を置いておく|放些鸟食
+n43r2|The grown birds came, ate, and left.|成鳥たちが来て食べていった。|成鸟们来吃完就走了。
+n43c3|Clear away the nest|巣を片付ける|清掉鸟巢
+n43r3|The eaves are clean now.|軒下がきれいになった。|屋檐变干净了。
+n44t|The Last Walk|最後の散歩|最后的散步
+n44b|The strongest neighbor on the block has slowed down lately. You both know what that means in this world. He asks you to walk with him.|町でいちばん強かった隣人が、近頃歩みが遅くなった。この世界でそれが何を意味するか、二人とも知っている。彼が一緒に散歩しようと言う。|街坊里最强壮的邻居最近脚步慢了下来。在这个世界里那意味着什么，你们都清楚。他邀你一起散步。
+n44c1|Walk with him|一緒に歩く|陪他走
+n44r1|You walked at his pace. The next week, the lights in his house went out.|彼の歩調に合わせて歩いた。翌週、その家の灯りが消えた。|你配合着他的步子走。下一周，他家的灯熄了。
+n44c2|Say you are busy|忙しいと言う|说自己很忙
+n44r2|Through the window you saw him walking alone.|窓の外に、ひとりで歩く彼が見えた。|你从窗外看见他一个人走着。
+n44c3|Hide him|彼を匿う|把他藏起来
+n44r3|He did not last the day. This world found even what was hidden.|一日ももたなかった。この世界は、隠したものさえ見つけ出した。|他没能撑过一天。这个世界连藏起来的东西也找了出来。
+n45t|The Shadowless Courier|影のない配達員|没有影子的快递员
+n45b|A package arrived. The courier has no shadow. Still, they insist they must get your signature.|宅配便が来た。配達員には影がない。それでも、サインは必ずもらわなければならないと言う。|快递到了。快递员没有影子。即便如此，对方还是坚持一定要你签收。
+n45c1|Sign|サインする|签收
+n45r1|The courier bowed politely and left through the wall.|配達員は丁寧にお辞儀をして、壁を抜けて出ていった。|快递员彬彬有礼地鞠了一躬，穿墙而去。
+n45c2|Joke that you could lend them your shadow|影を貸してあげると冗談を言う|开玩笑说可以把影子借给对方
+n45r2|The courier considered it seriously.|配達員は真剣に考え込んだ。|快递员认真地考虑了起来。
+n45c3|Close the door|扉を閉める|关上门
+n45r3|The box was already sitting in the middle of the living room.|箱はもう居間の真ん中にあった。|箱子已经在客厅正中央了。
+n46t|The Cat's Gift|猫の贈り物|猫的礼物
+n46b|The neighborhood cat goes in and out through the doors beyond and brings things back. Today it is a coin from a hundred years ago.|町の猫が扉の向こうを出入りして、何かをくわえてくる。今日は百年前の硬貨だ。|街坊的猫在门的那边进进出出，叼回些东西。今天是一枚一百年前的硬币。
+n46c1|Keep it|受け取っておく|收下
+n46r1|The coins pile up in your drawer.|引き出しに硬貨が溜まっていく。|抽屉里的硬币越积越多。
+n46c2|Send it back|返してやる|让它还回去
+n46r2|The cat took the coin in its mouth and went back through the door.|猫は硬貨をくわえ直して、扉の向こうへ去った。|猫叼起硬币，回到了门的那边。
+n46c3|Follow the cat|猫について行く|跟着猫走
+n46r3|At the door, the cat blocked your way. As if to say, this far and no further.|扉の前で、猫があなたを止めた。ここまでだと言うように。|到了门前，猫拦住了你。仿佛在说到此为止。
+n47t|An Old Address|古い宛先|旧地址
+n47b|A letter came in the mailbox. The handwriting belongs to someone who died ten years ago. It was sent yesterday.|郵便受けに手紙が届いた。十年前に亡くなった人の筆跡だ。差出日は昨日になっている。|信箱里来了一封信。是十年前去世之人的笔迹。寄出日期是昨天。
+n47c1|Write a reply|返事を書く|写回信
+n47r1|The next day, a reply to your reply arrived.|翌日、返事への返事が来た。|第二天，回信的回信来了。
+n47c2|Just read it|読むだけにする|只是读一读
+n47r2|It was a short letter asking how you were.|安否を尋ねる短い手紙だった。|是一封问候近况的短信。
+n47c3|Burn it|燃やす|烧掉
+n47r3|The ashes gave off a familiar scent.|灰から懐かしい香りがした。|灰烬里飘出熟悉的香气。
+n48t|The Night Market|夜の市|夜市
+n48b|A market that opens only at night has appeared. The merchants do not show in mirrors, but their goods are real. The price is one story each.|夜にだけ立つ市ができた。商人たちは鏡に映らないが、品物は本物だ。代金は話をひとつずつ。|出现了只在夜里开张的集市。商人们映不在镜子里，货物却是真的。价钱是每样一段故事。
+n48c1|Sell a story and buy something|話をひとつ売って何か買う|卖一段故事，买点东西
+n48r1|You bought a small oil lamp. It never goes out.|小さなランプを買った。消えることがない。|你买了一盏小油灯。它永远不会熄灭。
+n48r1@0|You bought a small oil lamp. It never goes out. Your Servant gazed at the lamp for a long time.|小さなランプを買った。消えることがない。サーヴァントがそのランプを長いこと見つめていた。|你买了一盏小油灯。它永远不会熄灭。从者久久地凝视着那盏灯。
+n48r1@1|Your Servant did the haggling. You bought a small lamp that never goes out.|値段の交渉はサーヴァントが引き受けた。消えない小さなランプを買った。|讨价还价由从者包办。你们买了一盏永不熄灭的小灯。
+n48c2|Just browse|見物だけする|只是逛逛
+n48r2|The merchants recognized you and greeted you.|商人たちがあなたに気づいて挨拶した。|商人们认出你，向你打招呼。
+n48c3|Sell the story of that winter|あの冬の話を売る|卖掉那个冬天的故事
+n48r3|The merchant paid far too much for it.|商人は値をつけすぎた。|商人出的价太高了。
+n49t|The Shadow Leaning the Other Way|別の方へ傾く影|偏向另一边的影子
+n49b|At dusk, your shadow leans away from the sun, the wrong way. There is a door in that direction.|夕暮れ、あなたの影が太陽とは違う方へ傾いている。そちらに扉がひとつある。|黄昏时分，你的影子朝着与太阳不同的方向倾斜。那边有一扇门。
+n49c1|Follow the shadow|影について行く|跟着影子走
+n49r1|At the door, your shadow snapped back into place.|扉の前で、影が元の位置に戻った。|到了门前，影子又回到了原处。
+n49c2|Pin the shadow down with your foot|足で影を押さえる|用脚踩住影子
+n49r2|The shadow resisted a moment, then followed.|影はしばらく抵抗して、ついてきた。|影子挣扎了一会儿，还是跟了上来。
+n49c3|Leave it be|そのままにする|随它去
+n49r3|The next day, your shadow was back to normal.|翌日、影は元通りだった。|第二天，影子恢复了原样。
+n50t|The Half-Remaining Person|半分残った人|只剩一半的人
+n50b|On the street, a person whose shadow is half erased grabs you. They say they know you are the one who opened the doors. They ask you to find the other half.|道で、影が半分消えた人があなたを引き留める。扉を開けたのがあなただと知っていると言う。残りの半分を探してほしいと言う。|街上，一个影子被抹去一半的人拉住了你。说知道打开门的人就是你。求你帮忙找回另一半。
+n50c1|Find it for them|探してやる|帮对方找
+n50r1|You went beyond the door and brought back the half. In exchange, your own shadow grew a little fainter.|扉の向こうまで行って半分を持ち帰った。代わりに、あなたの影が少し薄くなった。|你去到门的另一边，带回了那一半。作为代价，你的影子淡了一些。
+n50c2|Pretend not to know|知らないふりをする|装作不知道
+n50r2|They called your name. You did not look back.|その人があなたの名前を呼んだ。振り返らなかった。|那人叫了你的名字。你没有回头。
+n50c3|Stand before the door with them|一緒に扉の前に立つ|陪对方站在门前
+n50r3|The two of you stood there a long time. The door did not open.|二人で長いこと立っていた。扉は開かなかった。|两人站了很久。门没有开。
+n51t|Noodles That Never Go Soggy|伸びないラーメン|不会泡软的拉面
+n51b|Thanks to the slow clocks, the ramen barely goes soggy. Five minutes in and the noodles are the same.|時計が遅れるおかげで、ラーメンがなかなか伸びない。五分経っても同じ麺だ。|多亏钟走得慢，拉面怎么也泡不软。过了五分钟，面还是原样。
+n51c1|Eat slowly|ゆっくり食べる|慢慢吃
+n51r1|You had never had such a leisurely meal.|こんなにのんびりした食事は初めてだった。|你从没吃过这么悠闲的一顿饭。
+n51c2|Eat while poring over your calculations|計算ノートを広げながら食べる|边翻计算笔记边吃
+n51r2|The noodles stayed firm to the end.|麺は最後までしこしこだった。|面一直到最后都很筋道。
+n51c3|Cook another bowl|もう一杯作る|再煮一碗
+n51r3|You were full. Almost no time had passed.|お腹がいっぱいになった。時間はほとんど流れていなかった。|你吃饱了。时间几乎没有流逝。
+n52t|The Waking Cats|起きている猫たち|醒着的猫
+n52b|Even without circuits, animals stay awake. Cats have taken over the empty streets. When you walk by, they all stare at once.|回路がなくても、獣たちは起きている。がらんとした通りを猫たちが占領した。あなたが通ると一斉にこちらを見る。|即使没有回路，动物们也醒着。猫占领了空荡荡的街道。你一走过，它们就齐刷刷地盯着你。
+n52c1|Greet them|挨拶する|打招呼
+n52r1|One of them followed you. All the way home.|一匹がついてきた。家まで。|有一只跟着你。一直跟到家。
+n52c2|Buy them food|餌を買ってくる|买些吃的来
+n52r2|The cats grew to thirty.|猫が三十匹に増えた。|猫增加到了三十只。
+n52c3|Walk past|通り過ぎる|走过去
+n52r3|The cats watched until you disappeared.|猫たちは、あなたが見えなくなるまで見ていた。|猫们一直看着你，直到你消失。
+n53t|The Stopped Subway|止まった地下鉄|停驶的地铁
+n53b|The subway has stopped. The driver fell asleep. A few people who are awake walk along the tracks. You have to walk too.|地下鉄が止まっている。運転士が眠ってしまった。起きている数人が線路沿いに歩いていく。あなたも歩かなければならない。|地铁停了。司机睡着了。几个醒着的人沿着轨道走。你也只能步行。
+n53c1|Walk with them|一緒に歩く|和他们一起走
+n53r1|You became traveling companions with a magus you had never met.|初めて会う魔術師と道連れになった。|你和一位素不相识的魔术师成了同路人。
+n53c2|Go another way alone|ひとりで別の道を行く|独自走另一条路
+n53r2|You crossed the city. Only the traffic lights were awake.|街を横切った。起きているのは信号機だけだった。|你穿过了整座城市。醒着的只有红绿灯。
+n53c3|Look in on the sleeping driver|眠る運転士を覗き込む|看看熟睡的司机
+n53r3|The corners of their mouth were smiling.|口元が笑っていた。|对方嘴角带着笑。
+n54t|A Meeting of the Wakeful|起きている人々の町内会|醒着的人们的街坊会
+n54b|The magi who are still awake gather to discuss how to run the city. Who takes out the trash? The agenda is humbler than you expected.|起きている魔術師たちが集まって、街をどう回していくか会議をする。ゴミは誰が片付けるのか。議題は思ったより素朴だ。|醒着的魔术师们聚在一起，商量如何维持城市的运转。垃圾由谁来清理。议题比想象的朴素。
+n54c1|Volunteer for a duty|当番を引き受ける|接下值班
+n54r1|You became the Monday trash duty.|月曜のゴミ当番になった。|你成了周一的垃圾值班员。
+n54c2|Chair the meeting|会議を仕切る|主持会议
+n54r2|The meeting took three hours. The conclusion was put off to next week.|会議は三時間かかった。結論は来週に持ち越した。|会议开了三个小时。结论推到了下周。
+n54c3|Do not go|行かない|不去
+n54r3|The next day a duty roster was taped to your door.|翌日、扉の前に当番表が貼られていた。|第二天，你家门口贴上了值班表。
+n55t|Dreams Flowing In|流れ込む夢|流入的梦
+n55b|At night, the dreams of the sleepers flow in along the ley lines. Tonight it is someone's dream of the seaside.|夜になると、眠る人々の夢が霊脈を伝って流れ込んでくる。今夜は誰かの海辺の夢だ。|一到夜里，沉睡之人的梦便顺着灵脉流进来。今晚是某个人梦见的海边。
+n55c1|Watch the dream to the end|その夢を最後まで見る|把那个梦看到最后
+n55r1|When you woke, you smelled salt.|目覚めると潮の匂いがした。|醒来时闻到了海盐的气味。
+n55c2|Block the dreams|夢を防ぐ|挡住梦
+n55r2|The bounded field held for one night.|結界は一晩もった。|结界撑过了一夜。
+n55c3|Record the dreams|夢を記録する|记录梦境
+n55r3|Other people's dreams pile up in your notebook.|ノートに他人の夢が溜まっていく。|笔记本里积攒着别人的梦。
+n56t|The One Who Woke Briefly|少しだけ目覚めた人|短暂醒来的人
+n56b|Someone asleep opened their eyes for the first time in years. For about five minutes. They look at you and ask what year it is.|眠っていた誰かが、何年ぶりかに目を開けた。五分ほど。その人があなたを見て、今は何年かと尋ねる。|某个沉睡的人时隔多年睁开了眼睛。大约五分钟。那人看着你，问现在是哪一年。
+n56c1|Tell the truth|本当のことを言う|说实话
+n56r1|They nodded and fell asleep again.|その人は頷いて、また眠りについた。|那人点点头，又睡了过去。
+n56c2|Lie and say it is still that winter|あの冬だと嘘をつく|撒谎说还是那个冬天
+n56r2|They fell asleep again with a relieved face.|その人は安心した顔で、また眠りについた。|那人一脸安心地又睡了过去。
+n56c3|Ask how to wake them|起こす方法を尋ねる|问怎样才能叫醒对方
+n56r3|They fell asleep before they could answer.|その人は答える前に眠ってしまった。|那人还没回答就睡着了。

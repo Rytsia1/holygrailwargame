@@ -9,6 +9,7 @@ D0 = os.path.dirname(os.path.abspath(__file__)); KD = os.path.join(D0, 'kg')
 sys.path.insert(0, D0); sys.path.insert(0, KD)
 import i18n
 from ov import OV
+from ov2 import OV2
 try:
     from opencc import OpenCC; CC = OpenCC('s2tw')
 except ImportError: CC = None
@@ -173,6 +174,59 @@ for r in ROWS:
         AFX.append("    {k:'%s',sp:%d,c:()=>(%s),t:()=>%s,b:()=>[%s]}" % (k, sp, cj, tE, ','.join(bs)))
 assert len(EV) + len(POOLX) == 220 and len(AFX) == 150, (len(EV), len(POOLX), len(AFX))
 
+# ---------- 11-22: 「검귀 에필로그 추가안」 93개 (kg/epi2.json · kg/ov2.py) ----------
+# 이뤄진 세계(w: ①②③ 공통, 진심 성향별) · ② 둘이 이긴 세계(t) · ③ 묶인 잔 열 해 뒤(b) · ⑥ 손을 놓친 잔 그 뒤(x)
+# 봄 · 첫 해 · 마지막 해는 KG_EV에, 둘째 해 이후 · 열 해 뒤는 공용 에필로그 사건 자리(EPI_POOL)에. 무게 l · n · h
+ROWS2 = json.load(open(os.path.join(KD, 'epi2.json'), encoding='utf-8'))[2:]
+assert len(ROWS2) == 93
+PH2 = {'첫 열나흘': 'A', '첫 해': 'B', '둘째 해 이후': 'C', '마지막 해': 'Z', '열 해 뒤': 'L'}
+WT2 = {'가벼움': 'l', '보통': 'n', '무거움': 'h'}
+EFF['마력'] = 'mana'
+AR_RE = re.compile(r'^(정신|건강|재산|지식|관계|인연|마력)(↑↑|↓↓|↑|↓)$')
+EV2, POOL2 = [], []
+for r in ROWS2:
+    n = int(r[0][1:]); grp = r[1]; ov = OV2.get(n, {})
+    toks = [x.strip() for x in r[2].split(' · ')]
+    ph = PH2[toks[0]]; wt = WT2.get(toks[1], 'n') if len(toks) > 1 else 'n'
+    g = [x.strip() for x in grp.split(' · ')]
+    if g[0] == '이뤄진 세계': e, k = 'w', TR[g[1]]
+    elif g[0] == '② 둘이 이긴 세계': e, k = 't', TR.get(g[1])
+    elif g[0] == '③ 묶인 잔': e, k = 'b', None
+    elif g[0] == '⑥ 손을 놓친 잔': e, k = 'x', None
+    else: raise SystemExit('모르는 구분 %s' % grp)
+    cs = {'w': ["['m','t','b','g'].includes(kgCtx())"], 't': ["kgCtx()==='t'"], 'b': ["kgCtx()==='b'"], 'x': ['!!S.flags.kg6']}[e][:]
+    if k: cs.append("S.flags.kg==='%s'" % k)
+    if ov.get('c'): cs.append(ov['c'])
+    tE, _ = fieldexpr(n, 'n', 't', r[3], ov); bE, _ = fieldexpr(n, 'n', 'b', r[4], ov)
+    chs = []
+    for i in (1, 2, 3):
+        ct, rt, at = r[2 + 3 * i].strip(), r[3 + 3 * i].strip(), r[4 + 3 * i].strip()
+        if not ct: continue
+        for fld, a, b in ov.get('rep', []):
+            if fld == 'r%d' % i: assert a in rt, (n, a); rt = rt.replace(a, b).strip()
+        src = ' · '.join(x for x in (rt, at) if x)
+        rtext, code = efx(src, 'N%d-%d' % (n, i))
+        code = code.replace('kgRel(', 'kgRelW(')
+        if i in ov.get('fx', {}): code = ov['fx'][i]
+        if i in ov.get('fxa', {}): code += ov['fxa'][i]
+        if i in ov.get('fxv', {}): vc, vj = ov['fxv'][i]; code = 'if(%s){%s}else{%s}' % (vc, vj, code)
+        cE, _ = fieldexpr(n, 'n', 'c%d' % i, ct, ov)
+        ov2 = {'var': ov.get('var', [])}
+        rE, _ = fieldexpr(n, 'n', 'r%d' % i, rtext, ov2) if (rtext or any(v[1] == 'r%d' % i for v in ov.get('var', []))) else ("''", '')
+        res = ov.get('res', {}).get(i, '')
+        if ph == 'Z': body = '%s{ const r_=%s; if(r_) log(r_,\'n\'); }%sif(then) then(); return \'\';' % (code, rE, res)
+        else: body = '%s%sreturn %s;' % (code, res, rE)
+        chs.append('{t:%s%s,f:()=>{%s}}' % (cE, ',auto:true' if i == ov.get('auto', 1) else '', body))
+    assert len(chs) >= 2, n
+    dec = 'decide({title:%s,body:%s,choices:[%s]})' % (tE, bE, ','.join(chs))
+    cj = '&&'.join('(%s)' % x for x in cs)
+    if ph in ('C', 'L'):
+        w = {'w': 10, 't': 10, 'b': 8, 'x': 4}[e]
+        POOL2.append("    {id:'kgn%d',w:%d,ke:'%s'%s,c:()=>(%s),f:()=>{ %s%s; }},\n" % (n, w, e, ',hv:1' if wt == 'h' else '', cj, ov.get('pre', ''), dec))
+    else:
+        EV2.append("    {id:'n%d',e:'%s',ph:'%s',wt:'%s',c:()=>(%s),f:(then)=>{ %s%s; }}" % (n, e, ph, wt, cj, ov.get('pre', ''), dec))
+assert len(EV2) + len(POOL2) == 93
+
 # ---------- 서번트별 대사 ----------
 SVR = json.load(open(os.path.join(KD, 'sv.json'), encoding='utf-8'))
 SV = {}
@@ -193,6 +247,7 @@ def L4(x, where):
     if len(p) != 4 or not all(p): raise SystemExit('칸이 4개가 아님 (%s): %s' % (where, x[:60]))
     TRL[p[0]] = tuple(p[1:]); return p[0]
 DAY, DAYL, MON, YR, OMEN, OMENW = [], None, {}, [], {}, {}
+WDAY, WDAYL, WMONX = {}, {}, {}
 for ln in open(os.path.join(KD, 'lines.txt'), encoding='utf-8'):
     ln = ln.rstrip('\n')
     if not ln.strip() or ln.startswith('#'): continue
@@ -201,6 +256,9 @@ for ln in open(os.path.join(KD, 'lines.txt'), encoding='utf-8'):
     elif tag == 'DAYL': DAYL = L4(rest, tag)
     elif tag == 'MON': m, t = rest.split(' ', 1); MON[m] = L4(t, tag)
     elif tag == 'YR': YR.append(L4(rest, tag))
+    elif tag == 'WDAY': k, t = rest.split(' ', 1); WDAY.setdefault(k, []).append(L4(t, tag))
+    elif tag == 'WDAYL': k, t = rest.split(' ', 1); WDAYL[k] = L4(t, tag)
+    elif tag == 'WMONX': k, m, t = rest.split(' ', 2); WMONX.setdefault(k, {})[m] = L4(t, tag)
     elif tag == 'OMEN': k, t = rest.split(' ', 1); OMEN.setdefault(k, []).append(L4(t, tag))
     elif tag == 'OMENW':
         st, a, rg, t = rest.split(' ', 3)
@@ -211,7 +269,10 @@ J = lambda o: json.dumps(o, ensure_ascii=False)
 data = ('  const KG_SV=%s;\n  const KG_WHEN=%s, KG_ALLYV=%s;\n' % (J(SV), J(WHEN), J(ALLYV))
         + '  const KG_DAY=%s, KG_DAYL=%s, KG_MON=%s, KG_YR=%s, KG_OMEN=%s, KG_OMENW=%s;\n' % (J(DAY), J(DAYL), J(MON), J(YR), J(OMEN), J(OW))
         + '  const KG_EV=[\n' + ',\n'.join(EV) + '\n  ];\n  const KG_AF=[\n' + ',\n'.join(AFX) + '\n  ];\n'
-        + "  const kgTag=t=>((HLK[S.hero]||{})[t]||0)>0;\n")
+        + "  const kgTag=t=>((HLK[S.hero]||{})[t]||0)>0;\n"
+        + '  KG_EV.push(\n' + ',\n'.join(EV2) + '\n  );\n'
+        + '  const KGW_DAY=%s, KGW_DAYL=%s, KGW_MONX=%s;\n' % (J(WDAY), J(WDAYL), J(WMONX)))
+assert sorted(WDAY) == sorted(TR.values()) and sorted(WDAYL) == sorted(TR.values()), (sorted(WDAY), sorted(WDAYL))
 eng = open(os.path.join(D0, 'kg.js'), encoding='utf-8').read().replace('  /*KG_DATA*/\n', data)
 eng = eng.replace('for(const l of x.b) log(l', 'for(const l of x.b()) log(l').replace('${head} · ${x.t}`', '${head} · ${x.t()}`')
 
@@ -231,13 +292,13 @@ rp("    log(`잔이 가득 찼다. ${n}${J(n,이)} 당신과 마주 섰다.`,'wa
    "    if(ctx.intro!=='') log(ctx.intro||`잔이 가득 찼다. ${n}${J(n,이)} 당신과 마주 섰다.`,'war');\n    if(ctx.first!==null) log(ctx.first?voiceLine(h,ctx.first):`${n}: “그 소원만큼은 내가 막겠다.”`,'voice');\n")
 # 에필로그
 rp("    if(!E.ph){ const lk=E.i===1&&loneKind(); if(E.i===1&&stayHome()&&relOf()) ep2Start(); else if(lk) ep3Start(lk); else return false; }\n    if(E.ph==='D') return false;\n",
-   "    if(!E.ph){ const lk=E.i===1&&loneKind(); if(E.i===1&&S.flags.kgB&&!S.flags.kgGone) kgEpStart(); else if(E.i===1&&stayHome()&&relOf()) ep2Start(); else if(lk) ep3Start(lk); else return false; }\n    if(E.ph==='D') return false;\n    if(E.kg) return kgEpStep();   // 11-21: 묶인 잔\n")
+   "    if(!E.ph){ const lk=E.i===1&&loneKind(); if(E.i===1&&(E.kw||S.flags.kgB&&!S.flags.kgGone)) kgEpStart(); else if(E.i===1&&stayHome()&&relOf()) ep2Start(); else if(lk) ep3Start(lk); else return false; }\n    if(E.ph==='D') return false;\n    if(E.kg) return kgEpStep();   // 11-21: 묶인 잔\n")
 rp("  function ep2Pick(){ const E=S.epi, r=relOf(), ph=E.ph; if(S.pending) return true;\n",
    "  function ep2Pick(){ const E=S.epi, r=relOf(), ph=E.ph; if(S.pending) return true;\n    if(kgMix()) return true;   // 11-21: 돌아선 삶\n")
 rp("  function ep3Pick(){ if(S.pending||S.dead) return; const E=S.epi;\n",
    "  function ep3Pick(){ if(S.pending||S.dead) return; const E=S.epi;\n    if(kgMix()) return;   // 11-21: 돌아선 삶 · 손을 놓친 잔\n")
 rp("    if(id.startsWith('@lone')){", "    if(id.startsWith('@kg')){ kgResume(id.slice(3)); return; }\n    if(id.startsWith('@lone')){")
-rp("const EPI_POOL=[\n", "const EPI_POOL=[\n" + ''.join(POOLX))
+rp("const EPI_POOL=[\n", "const EPI_POOL=[\n" + ''.join(POOLX) + ''.join(POOL2))
 # 세상을 떠나는 자리: 묶인 잔 · 돌아선 삶의 마지막 해
 rp("    if(ch(Math.min(.6,q)) || S.st.health<=0 || S.age>=104){ if(stayHome()) lastNight(); else relMeet(); die(causeFor()); }",
    "    if(ch(Math.min(.6,q)) || S.st.health<=0 || S.age>=104){ if(kgDeath(()=>{ if(stayHome()) lastNight(); else relMeet(); die(causeFor()); })) return; if(stayHome()) lastNight(); else relMeet(); die(causeFor()); }")
@@ -308,4 +369,4 @@ for a, d in zh:
         if e is None: raise SystemExit('OpenCC 없음')
         Z[a] = [d, e]; n += 1
 json.dump(Z, open(zp, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
-print('적용 끝 · 사건', len(EV), '+', len(POOLX), '· 후일담', len(AFX), '· 서번트', len(SV), '· 글', len(KO), '· 사전', nd, '틀', nt, '· 중국어', n)
+print('적용 끝 · 사건', len(EV), '+', len(POOLX), '· 추가안', len(EV2), '+', len(POOL2), '· 후일담', len(AFX), '· 서번트', len(SV), '· 글', len(KO), '· 사전', nd, '틀', nt, '· 중국어', n)

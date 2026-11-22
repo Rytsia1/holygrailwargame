@@ -23,6 +23,14 @@ rp("const epiBlock=id=>(/^cx_/.test(id)&&",
    "const KG_WISH_NO=" + json.dumps(NO) + ";   // 11-22: 진심이 이루어진 검귀 결말에서 빼는 공용 사건 (kgepi_apply)\n"
    "  const kgWishDone=()=>['b','t','m'].includes(S.flags.kgEnd);\n"
    "  const epiBlock=id=>(id==='survivor'&&!!S.flags.kgEnd)||(kgWishDone()&&(KG_WISH_NO[S.flags.kg]||[]).includes(id))||(/^cx_/.test(id)&&")
+# 11-22: 진심이 이루어진 세계(①·②·③)에서 그 세계의 규칙과 부딪치는 공용 사건 빼기(kgWorldNo, kg.js) ·
+#        무거운 사건 다음 차례는 가볍거나 보통인 사건 ×2 · ⑥은 사건 13~15개를 1~3년 간격으로 · 근원 집착 세계에는 「다시 차오르는 성배」 뉴스가 없다(도시가 잠듦)
+rp("(kgWishDone()&&(KG_WISH_NO[S.flags.kg]||[]).includes(id))||", "(kgWishDone()&&(KG_WISH_NO[S.flags.kg]||[]).includes(id))||kgWorldNo(id)||")
+rp("const E=S.epi; E.used=E.used||[]; E.n=E.n||ri(8,10);", "const E=S.epi; E.used=E.used||[]; E.n=E.n||(S.flags.kg6?ri(13,15):ri(8,10));")
+rp("if(c.length){ sc=wpick(c,x=>x.w||1); E.used.push(sc.id); if(sc.arc) E.arcN=(E.arcN||0)+1; sc={yrs:()=>ri(1,4),f:sc.f,rid:'@pool'+sc.id}; }",
+   "if(c.length){ sc=wpick(c,x=>(x.w||1)*kgPace(x)); kgPaced(sc); E.used.push(sc.id); if(sc.arc) E.arcN=(E.arcN||0)+1; sc={yrs:()=>ri(1,S.flags.kg6||E.kw?3:4),f:sc.f,rid:'@pool'+sc.id}; }")
+rp("const EPI_END={yrs:()=>Math.max(1,S.warYear+58-S.year),c:()=>{const d=S.warYear+58-S.year;return d>0&&d<45&&S.age+d<100},",
+   "const EPI_END={yrs:()=>Math.max(1,S.warYear+58-S.year),c:()=>{const d=S.warYear+58-S.year;return d>0&&d<45&&S.age+d<100&&!(kgCtx()&&S.flags.kg==='zeal')},")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)

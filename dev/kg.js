@@ -197,7 +197,7 @@
     if(S.flags.kgAllyWin) log(`그 세계에는 ${S.flags.kgAllyN||'동맹'}의 이름이 없다.`,'n');
     if(bound){ S.flags.kgB=h.id; S.flags.endFx='kgB'; log(`${h.name}${J(h.name,은)} 곁에 남았다. 마지막 령주를 쓰던 순간 뒤로, 입을 열지 않았다.`,'voice'); warOver(); return; }
     S.flags.endFx='kgT'; log('둘이 이긴 세계의 첫 아침이 왔다. 그 세계는 아주 조용했다.','n');
-    kgAfter('t'); kgNoEpi(); }
+    kgNoEpi(kgAfter('t')); }
   // 막아선다(①): 실제 결투
   function kgDuel(R){ const w=W(), g=w.kg, h=hero(), a=kgAlly(); g.duel=1; if(a){ S.flags.kgAllyI=a.i; S.flags.kgAllyN=a.mname||''; }
     fxOnly({t:'kgduel',id:h.id,name:h.name,cls:CLS[h.cls]&&CLS[h.cls].n||'',line:(KG_SV[h.id]||[])[0]||''});   // 결투 시작
@@ -229,7 +229,7 @@
     if(win){ g.end='m'; S.flags.kgEnd='m'; const l=kgSV(h,2); log('쓰러진 서번트가 손을 뻗다 말고 흩어졌다.','war'); if(l) log(l,'voice');
       w.heroAlive=false; w.hp=0; w.myOut={d:w.day,tod:w.tod,why:'마스터와의 결투 끝에 흩어졌다'};
       if(a) log(`${pName(a)} 조는 더 버티지 못하고 물러났다.`,'war');
-      kgGrant(); S.flags.endFx='kgM'; kgAfter('m'); kgNoEpi(); return; }
+      kgGrant(); S.flags.endFx='kgM'; kgNoEpi(kgAfter('m')); return; }
     if(kind==='kg4'){ g.end='f'; S.flags.kgEnd='f'; log(`${h.name}${J(h.name,은)} 칼을 거두지 않았다.`,'loss'); log(`${h.name}${J(h.name,은)} 남은 마력과 단독행동으로 잔을 부수고 사라졌다.`,'war'); S.flags.brokeCup=1; kgDie('f'); return; }
     g.end='s'; S.flags.kgEnd='s'; const l=kgSV(h,1);
     log('서번트가 당신 손등의 령주 자국을 한 번 쓰다듬었다.','war'); if(l) log(l,'voice');
@@ -242,9 +242,11 @@
     kgAllySay();
     S.flags.wishText=''; S.flags.war='lost'; S.flags.brokeCup=1; S.flags.endFx='kgX'; if(ch(.15)) S.flags.kgAllyFell=1;
     warOver(); }
-  // 에필로그 없이 끝나는 결말: 남은 세월을 빠르게 흘려보낸다
-  function kgNoEpi(){ const w=W(); w.ended=true; w.queue=[]; fxOnly(endFxOf()); mark('war'); add({will:4,lore:3});
-    S.once.crest=1; S.phase='epi'; S.warState='done'; S.clock=0; S.epi={i:999,n:1,used:[],kgNo:1}; H.phase('epi'); H.save(); H.change(); }
+  // ① 검을 거두지 않은 자 · ② 둘이 이긴 세계: 진심이 이루어진 세계의 에필로그 (11-22, 예전에는 남은 세월을 한 번에 흘려보냈다)
+  // 후일담은 결말 연출 뒤에 창으로 먼저 한 번 보여 준다(쓰러지는 결말과 같게). 고른 줄은 봄 열나흘의 한 줄에서 뺀다
+  function kgNoEpi(A){ const w=W(); w.ended=true; w.queue=[]; fxOnly(endFxOf()); mark('war'); add({will:4,lore:3});
+    S.once.crest=1; S.phase='epi'; S.warState='done'; S.clock=0; S.epi={i:0,used:[],kw:S.flags.kgEnd,afU:(A||[]).map(x=>KG_AF.indexOf(x))}; H.phase('epi'); H.save(); H.change();
+    const x=(A||[])[0]; if(x) decide({title:`그 뒤 · ${x.t()}`,body:x.b().join('\n'),war:true,silent:true,choices:[{t:'닫기',auto:true,f:()=>null}]}); }
   // 쓰러지는 결말(① 서번트 승 · ④): 죽음 뒤에 후일담
   function kgDie(k){ const w=W(); w.ended=true; w.queue=[];
     // 11-22: 쓰러지던 순간의 기록 몇 줄을 첫 후일담 창의 '지금까지' 칸에 싣는다 (창이 떠 있는 동안에는 기록을 볼 수 없으므로)
@@ -260,33 +262,36 @@
   // 후일담: 결말마다 그 뒤의 장면 하나 (조건이 가장 많이 맞는 줄들 가운데 하나)
   function kgAfPick(k){ const c=KG_AF.filter(x=>x.k===k&&(!x.c||x.c())); if(!c.length) return null; const m=Math.max(...c.map(x=>x.sp)); return pick(c.filter(x=>x.sp===m)); }
   function kgAfShow(x,head){ if(!x) return; log(`${head} · ${x.t}`,'night'); for(const l of x.b) log(l,'n'); }
-  function kgAfter(k){ if(k==='f'){ kgAfShow(kgAfPick('f'),'그 뒤 · 서번트'); kgAfShow(kgAfPick('fn'),'그 뒤 · 가까운 사람'); return; }
-    kgAfShow(kgAfPick(k),'그 뒤'); }
+  function kgAfter(k){ if(k==='f'){ const a=kgAfPick('f'), b=kgAfPick('fn'); kgAfShow(a,'그 뒤 · 서번트'); kgAfShow(b,'그 뒤 · 가까운 사람'); return [a,b].filter(Boolean); }
+    const x=kgAfPick(k); kgAfShow(x,'그 뒤'); return x?[x]:[]; }
   /* ---------- 에필로그 ---------- */
   // 묶인 잔(③): 날 → 달 → 해. ③ 전용 사건만 나온다
   const KG_N={A:14,B:12,C:9}, KG_RATE={A:.7,B:.75,C:.6};
   function kgEpOk(x){ const E=S.epi; if(x.e!=='b'||x.ph!==E.ph||(E.kgU||[]).includes(x.id)) return false; if(x.mon&&E.m!==x.mon) return false; return !x.c||x.c(); }
   function kgEpGo(x){ const E=S.epi; (E.kgU=E.kgU||[]).push(x.id); S.resumeEv={src:'EP2',id:'@kg'+x.id}; x.f(); if(!S.pending) S.resumeEv=null; }
   function kgEpStart(){ const E=S.epi; E.kg=1; E.ph='A'; E.d=0; E.m=1; E.cy=0; E.k=0; E.dayU=[]; E.kgU=E.kgU||[]; }
-  function kgEpEnd(){ const E=S.epi; E.ph='D'; if(S.flags.kgB&&!S.flags.kgGone) E.i=Math.max(E.i,EPI_START.length+(E.n||8)); }
+  // 끝: 공용 에필로그 흐름으로. ①·② · 열 해를 넘긴 ③은 「그 뒤의 길」 없이 사건 자리로 가서 몇 해 간격으로 이어 간다 (11-22, ③은 예전에 남은 세월을 한 번에 흘려보냈다)
+  function kgEpEnd(){ const E=S.epi; E.ph='D'; if(E.kw||(S.flags.kgB&&!S.flags.kgGone)){ E.i=Math.max(E.i,EPI_START.length); E.n=E.i-EPI_START.length+(E.kw?ri(19,21):ri(12,14)); } }
   function kgEpStep(){ const E=S.epi;
-    if(!S.flags.kgB||S.flags.kgGone){ kgEpEnd(); return false; }
+    if(!E.kw&&(!S.flags.kgB||S.flags.kgGone)){ kgEpEnd(); return false; }
     if(E.ph==='A'){
       if(E.d>=KG_N.A){ E.ph='B'; log('열나흘이 지났다. 이제 달이 지나간다.','sys'); return kgEpStep(); }
       E.d++; E.k++; log(`봄 · ${E.d}일째`,'night');
-      if(E.d>=KG_N.A) log(KG_DAYL,'n'); else { const pool=KG_DAY.map((_,i)=>i).filter(i=>!E.dayU.includes(i)); if(pool.length){ const i=pick(pool); E.dayU.push(i); log(KG_DAY[i],'n'); } }
+      if(E.kw){ if(E.d>=KG_N.A) log(KGW_DAYL[S.flags.kg]||EP3_DAYL.d,'n'); else kgWDay(); kgWPick(); H.change(); return true; }
+      if(E.d>=KG_N.A) log(KG_DAYL,'n'); else { const pool=KG_DAY.map((_,i)=>i).filter(i=>!E.dayU.includes(i)&&!(KG_DAY_NO[S.flags.kg]||[]).includes(i)); if(pool.length){ const i=pick(pool); E.dayU.push(i); log(KG_DAY[i],'n'); } }
       kgEpPick(); H.change(); return true; }
     if(E.ph==='B'){
-      if(E.m>=KG_N.B){ E.ph='C'; log('한 해가 지났다. 이제 해가 지나간다.','sys'); return kgEpStep(); }
-      E.m++; E.k++; log(`첫 해 · ${E.m}달째`,'night'); log(KG_MON[E.m]||'','n');
+      if(E.m>=KG_N.B){ if(E.kw){ log(EP3_END,'sys'); kgEpEnd(); H.change(); return true; } E.ph='C'; log('한 해가 지났다. 이제 해가 지나간다.','sys'); return kgEpStep(); }
+      E.m++; E.k++; log(`첫 해 · ${E.m}달째`,'night'); log(E.kw?kgWMon(E.m):(KG_MON[E.m]||''),'n');
       if(E.m===KG_N.B){ S.age++; S.year++; mark('calm'); if(S.age>=40) add({health:-ageWear()}); famYear(); if(S.pending) S.pending=null; }
-      kgEpPick(); H.change(); return true; }
+      if(E.kw) kgWPick(); else kgEpPick(); H.change(); return true; }
     if(E.ph==='C'){
       if(E.cy>=KG_N.C){ kgFadeTry(); kgEpEnd(); return !!S.pending; }
       E.cy++; E.k++; passYears(1); if(S.dead||S.pending) return true; const yu=E.yrU=E.yrU||[], yp=KG_YR.map((_,i)=>i).filter(i=>!yu.includes(i)); if(yp.length){ const i=pick(yp); yu.push(i); log(KG_YR[i],'n'); }
       kgEpPick(); H.change(); return true; }
     return false; }
   function kgEpPick(){ if(S.pending||S.dead) return; const E=S.epi; if(!ch(KG_RATE[E.ph]||.6)) return;
+    if(E.ph==='C'&&ch(.5)&&kgPoolMix()) return;   // 11-22: 아홉 해 동안은 절반쯤 이뤄진 세계 사건 · 공용 사건
     const c=KG_EV.filter(kgEpOk); if(c.length) kgEpGo(pick(c)); }
   // 열 해가 지난 뒤: 서번트가 먼저 사라지는 해 (인연 0~1단계 · 3단계에서)
   function kgFadeTry(){ if(S.pending||S.flags.kgGone) return; const st=kgS();
@@ -295,13 +300,75 @@
   function kgRelease(){ S.flags.kgGone=1; S.flags.kgFree=1; }
   // 마지막 해: 세상을 떠나는 장면 (③ 묶인 잔 · ⑤ 돌아선 삶). 선택은 결과만 바꾸고, 고른 뒤에 then이 원래의 마지막을 잇는다
   function kgDeath(then){ if(S.flags.kgLastDone||!S.hero) return false;
-    const e=S.flags.kgB&&!S.flags.kgGone?'b':S.flags.kg5?'p':null; if(!e) return false;
-    const z=KG_EV.filter(x=>x.e===e&&x.ph==='Z'&&(!x.c||x.c())); if(!z.length) return false;
+    const e=S.flags.kgB&&!S.flags.kgGone?'b':S.flags.kg5?'p':S.flags.kg6?'x':null, c=kgCtx();
+    const z=c==='m'||c==='t'||c==='g'?KG_EV.filter(x=>(x.e==='w'||(c==='t'&&x.e==='t'))&&x.ph==='Z'&&(!x.c||x.c())):e?KG_EV.filter(x=>x.e===e&&x.ph==='Z'&&(!x.c||x.c())):[]; if(!z.length) return false;
     S.flags.kgLastDone=1; log('마지막 해','night'); pick(z).f(then); return true; }
   // ⑤ 돌아선 삶 · ⑥ 손을 놓친 잔: 에필로그의 봄 · 첫 해에 섞인다
-  function kgMix(){ const E=S.epi; if(!E||S.pending||S.dead) return false; const k=S.flags.kg5?'p':S.flags.kg6?'x':null; if(!k||!ch(.45)) return false;
+  function kgMix(){ const E=S.epi; if(!E||S.pending||S.dead) return false; const k=S.flags.kg5?'p':S.flags.kg6?'x':null; if(!k||!ch(k==='x'?.7:.45)) return false;   // 11-22: ⑥은 70%
     const c=KG_EV.filter(x=>x.e===k&&x.ph===E.ph&&!(E.kgU||[]).includes(x.id)&&(!x.mon||x.mon===E.m)&&(!x.c||x.c())); if(!c.length) return false;
     kgEpGo(pick(c)); return true; }
+  /* ---------- 11-22: 진심이 이루어진 세계의 에필로그 ----------
+     ① 검을 거두지 않은 자(m) · ② 둘이 이긴 세계(t): 봄 열나흘(하루씩) → 첫 해(한 달씩) → 그 뒤(공용 흐름에 「이뤄진 세계」 사건을 섞어 몇 해 간격) → 마지막 해 장면
+     ③ 묶인 잔(b): 아홉 해 동안 절반쯤 이뤄진 세계 · 공용 사건을 섞고, 열 해 뒤에도 몇 해 간격으로 이어 간다. 서번트가 먼저 사라졌거나 놓아줬으면 g
+     섞는 사건은 진심 성향마다 그 세계의 규칙과 부딪치지 않는 것만 (시트 「검귀 에필로그 추가안」 5 · 6 · 11)
+     무게: 무거운 사건 다음 차례는 가볍거나 보통인 사건이 두 배 잘 뜬다 */
+  const KG_DAY_NO={avenger:[12],taboo:[7],zeal:[7,12]};   // ③ 하루 줄: 「이상한 일이 없는 신문」 · 「손님을 묻는 이웃」이 그 세계와 부딪치는 것
+  const kgCtx=()=>{ const e=S.flags.kgEnd; return e==='m'?'m':e==='t'?'t':e==='b'?(S.flags.kgGone?'g':'b'):null; };
+  const kgRelW=n=>{ const c=kgCtx(); if(c==='t'||c==='b') kgRel(n); };   // 인연은 서번트가 곁에 있을 때만
+  const kgHeavy=x=>!!x&&(x.hv===1||x.wt==='h');
+  const kgPace=x=>{ const E=S.epi; return E&&E.kgHv&&!kgHeavy(x)?2:1; };
+  const kgPaced=x=>{ if(S.epi) S.epi.kgHv=kgHeavy(x); };
+  const KGW_W=8;   // 이뤄진 세계 사건 하나의 무게 (섞는 사건은 1~1.5)
+  // 공용 에필로그 사건: 이뤄진 세계에서 뺄 것
+  const KGW_NO={all:['wish_after','survivor'],
+    tb:['partner','anniversary','first_snow','lookalike','left_behind','bond_dream','distrust','echo_dream','echo_summon','echo_habit','echo_letter','bedtime','marked_child','movie','homeland','scar_rain'],
+    avenger:['af_jd01','other_master'], taboo:[], judge:['table','memorial','af_jd03'],
+    cruel:['af_jd04','af_av01','other_master','checkup','kid','legacy','grandkid','bedtime','marked_child','mentor_last','family_knew','friend_key','host_saved','host_hurt','host_lost'],
+    zeal:['af_jd01','af_jd04','af_jd07','af_av01','other_master','kid','legacy','grandkid','bedtime','marked_child','victims','memorial','redevelop','movie','mentor_last','family_knew','friend_key','host_saved','host_hurt','host_lost','arc_leyline']};
+  const kgWorldNo=id=>{ const c=kgCtx(); if(!c) return false; const k=S.flags.kg;
+    if(KGW_NO.all.includes(id)||(KGW_NO[k]||[]).includes(id)) return true;
+    if((c==='t'||c==='b')&&KGW_NO.tb.includes(id)) return true;
+    return id==='ally_letter'&&(c==='m'||c==='t')&&!!S.flags.kgAllyFight; };
+  // ① 섞는 「서번트가 떠난 삶」 사건(봄 · 첫 해)에서 뺄 것: 도시가 평소대로라는 전제 · 그 세계에 없는 사람들
+  const KGW_LONE_NO={all:[],
+    avenger:['la22','lb07','lb23','lb32'],
+    judge:['la11','la26','lb21','lb48'],
+    cruel:['lb13','lb26','lb03','lb35','lb48','la42'],
+    taboo:[],
+    zeal:['la06','la07','la08','la11','la22','la26','la29','la39','la42','lb03','lb07','lb08','lb21','lb23','lb26','lb27','lb31','lb32','lb35','lb39','lb41','lb43','lb48']};
+  // ② 섞는 「함께 사는 생」 사건(봄 · 첫 해): 서번트와 둘이서 겪는 것은 모두, 동네 · 가게 · 사람이 나오는 것은 세계마다
+  const KGW_STAY={all:['a_sleep','a_rain','a_phone','a_wish','a_last','a_cook','a_scar','a_cat','a_arms','a_shop_m','a_dream','a_patrol','a_clean','a_body','a_hunger','a_cut','a_board','a_song','a_stars','a_wash','a_church',
+      'b_room','b_alone','b_wish','b_year','b_pot','b_storm','b_bday','b_hday','b_fade','b_rumor','b_lease'],
+    avenger:['a_clothes','a_key','a_face','a_train','a_field','a_market','a_hair','a_book','a_coin','a_work','a_flower','b_pay','b_summer','b_cold','b_study','b_study_s','b_bike','b_friend','b_trip','b_museum','b_fever','b_shop','b_frame','b_hero','b_gift'],
+    judge:['a_clothes','a_key','a_face','a_train','a_field','a_market','a_hair','a_book','a_coin','a_work','a_flower','a_name','a_neighbor','a_call','b_pay','b_summer','b_cold','b_study','b_study_s','b_bike','b_friend','b_trip','b_museum','b_fever','b_shop','b_frame','b_side','b_home','b_gift'],
+    cruel:['a_clothes','a_key','a_face','a_train','a_field','a_market','a_hair','a_book','a_coin','a_work','a_flower','a_name','a_call','b_pay','b_summer','b_study','b_study_s','b_bike','b_friend','b_trip','b_museum','b_shop','b_frame','b_side','b_home','b_gift'],
+    taboo:['a_clothes','a_key','a_face','a_train','a_field','a_market','a_hair','a_book','a_coin','a_work','a_flower','a_name','a_neighbor','a_call','b_pay','b_summer','b_cold','b_study','b_study_s','b_bike','b_friend','b_trip','b_museum','b_fever','b_shop','b_frame','b_hero','b_side','b_home','b_gift'],
+    zeal:[]};
+  const kgLoneOk=x=>{ const E=S.epi; if(x.ph!==E.ph||(E.lu||[]).includes(x.id)) return false;
+    if(x.k&&!x.k.includes('lost')&&!x.k.includes('win')) return false;
+    if(x.day&&(E.d<x.day[0]||E.d>x.day[1])) return false; if(x.mon&&(E.m<x.mon[0]||E.m>x.mon[1])) return false;
+    if((KGW_LONE_NO.all||[]).includes(x.id)||(KGW_LONE_NO[S.flags.kg]||[]).includes(x.id)) return false;
+    return !x.c||x.c(); };
+  const kgStayOk=e=>(KGW_STAY.all||[]).concat(KGW_STAY[S.flags.kg]||[]).includes(e.id);
+  // 봄 열나흘의 한 줄: 그 세계의 하루 + 후일담 줄(①은 「마스터 승」, ②는 「마지막 두 줄」에서 조건이 맞고 창에 나오지 않은 것)
+  function kgWDay(){ const E=S.epi, k=S.flags.kg, af=E.kw==='t'?'t':'m', D=KGW_DAY[k]||[];
+    const rows=KG_AF.map((_,i)=>i).filter(i=>KG_AF[i].k===af&&!(E.afU||[]).includes(i)&&(!KG_AF[i].c||KG_AF[i].c()));
+    const pool=D.map((_,i)=>'d'+i).concat(rows.map(i=>'a'+i)).filter(i=>!E.dayU.includes(i)); if(!pool.length) return;
+    const i=pick(pool); E.dayU.push(i); if(i[0]==='d') log(D[+i.slice(1)],'n'); else for(const l of KG_AF[+i.slice(1)].b()) log(l,'n'); }
+  function kgWMon(m){ const x=(KGW_MONX[S.flags.kg]||{})[m]; if(x) return x; return S.epi.kw==='t'?ep2N(EP2_MON[m]||''):(EP3_MON[m]||''); }
+  // 봄 · 첫 해의 사건 하나: 날이 정해진 사건 → 이뤄진 세계 사건 · ②용 사건 → (①) 서번트가 떠난 삶 · (②) 함께 사는 생에서 걸러 섞은 것
+  function kgWPick(){ if(S.pending||S.dead) return; const E=S.epi, ph=E.ph, t=E.kw==='t';
+    if(!t){ const fx=EP3_EV.find(x=>x.must&&kgLoneOk(x)); if(fx){ kgPaced(fx); return ep3Go(fx); } }
+    else { const r=relOf(), fx=EP2_EV.find(e=>e.day&&e.day===E.d&&ph==='A'&&kgStayOk(e)&&ep2EvOk(e,r)); if(fx){ kgPaced(fx); return ep2EvGo(fx); } }
+    if(!ch(KG_RATE[ph]||.7)) return;
+    const c=KG_EV.filter(x=>(x.e==='w'||x.e==='t')&&x.ph===ph&&!(E.kgU||[]).includes(x.id)&&(!x.c||x.c())).map(x=>({x,w:KGW_W*kgPace(x),go:()=>kgEpGo(x)}));
+    if(!t) EP3_EV.filter(x=>!x.must&&kgLoneOk(x)).forEach(x=>c.push({x,w:(x.w||1)*kgPace(x),go:()=>ep3Go(x)}));
+    else { const r=relOf(); EP2_EV.filter(e=>!e.day&&kgStayOk(e)&&ep2EvOk(e,r)).forEach(e=>c.push({x:e,w:1.5*kgPace(e),go:()=>ep2EvGo(e)})); }
+    if(!c.length) return; const o=wpick(c,o=>o.w); kgPaced(o.x); o.go(); }
+  // ③ 아홉 해: 공용 에필로그 사건 자리에서 하나 (이뤄진 세계 사건 · 걸러진 공용 사건. 연작은 빼고)
+  function kgPoolMix(){ const E=S.epi; E.used=E.used||[];
+    const c=EPI_POOL.filter(x=>!E.used.includes(x.id)&&!x.arc&&(!x.ke||x.ke==='w')&&x.c()&&!epiBlock(x.id)); if(!c.length) return false;
+    const x=wpick(c,x=>(x.w||1)*kgPace(x)); kgPaced(x); E.used.push(x.id); S.resumeEv={src:'EP2',id:'@pool'+x.id}; x.f(); if(!S.pending) S.resumeEv=null; return true; }
   function kgResume(id){ const x=KG_EV.find(x=>x.id===id); if(x){ S.resumeEv={src:'EP2',id:'@kg'+id}; x.f(()=>die(causeFor())); } }
   // 삶 파트 · 전쟁의 복선 (시트 10~11줄)
   function kgOmenLife(){ if(S.phase!=='life') return; S.once=S.once||{}; if((S.once.kgOm||0)>=4) return; const k=kgDeep(); if(!k||!ch(.3)) return;

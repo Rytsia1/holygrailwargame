@@ -1,0 +1,296 @@
+# 11-22 「검귀 에필로그 추가안」 N57~N93 · 번호|영어|일본어|간체
+n57t|Karaoke for Two|二人きりのカラオケ|只有两人的KTV
+n57b|There are only two customers at the karaoke place. Your Servant has both microphones and will not let go.|カラオケの客は二人だけだ。サーヴァントがマイクを二本とも握って離さない。|KTV里只有两位客人。从者把两支麦克风都攥在手里不放。
+n57c1|Steal a microphone|マイクを奪う|抢过麦克风
+n57r1|Your score was lower than your Servant's.|点数がサーヴァントより低かった。|你的分数比从者低。
+n57c2|Just listen|聴くだけにする|只是听
+n57r2|Your Servant sang for three hours.|サーヴァントは三時間歌った。|从者唱了三个小时。
+n57c3|Sing together|一緒に歌う|一起唱
+n57r3|For the first time in this world, it was a noisy night.|この世界で初めての、騒がしい夜だった。|这是这个世界里第一个热闹的夜晚。
+n58t|Your Servant's Birthday|サーヴァントの誕生日|从者的生日
+n58b|Your Servant says they do not know their own birthday. They suggest making it today. The day you summoned them that winter.|サーヴァントが、自分の誕生日を知らないと言う。今日にしようと言う。あの冬、あなたが呼んだ日だ。|从者说不知道自己的生日。提议就定在今天。那个冬天你召唤它的日子。
+n58c1|Buy a cake|ケーキを買う|买蛋糕
+n58r1|You argued for a long time over how many candles to put on it.|ろうそくを何本立てるかで長いこと揉めた。|为了插几根蜡烛争了半天。
+n58c2|Suggest another day|別の日にしようと言う|提议换一天
+n58r2|Your Servant said then you should choose it.|サーヴァントは、ならあなたが選んでくれと言った。|从者说那就由你来选。
+n58c3|Just circle it on the calendar|カレンダーに丸をつけるだけにする|只在日历上画个圈
+n58r3|Every year that circle grew darker.|年ごとにその丸が濃くなった。|那个圈一年比一年深。
+n59t|The Back of the List|名簿の裏|名单的背面
+n59b|Your Servant shows you the back of the list. Your name is written there in pencil. That winter, your Servant wrote it down in secret. A list of people to protect, they say.|サーヴァントが名簿の裏を見せる。そこにあなたの名前が鉛筆で書かれている。あの冬、サーヴァントがこっそり書いておいたものだ。守るための名簿だったと。|从者给你看名单的背面。上面用铅笔写着你的名字。是那个冬天从者偷偷写下的。说那是一份要守护的名单。
+n59c1|Erase it|消しゴムで消す|用橡皮擦掉
+n59r1|Your Servant did not stop you.|サーヴァントは止めなかった。|从者没有阻止。
+n59c2|Leave it|そのままにする|留着
+n59r2|The pencil faded a little more every year.|鉛筆の字は年ごとに薄れていった。|铅笔字一年比一年淡。
+n59c3|Write your Servant's name beside it|隣にサーヴァントの名前を書く|在旁边写上从者的名字
+n59r3|The list now has two names.|名簿は今や二人分の名前だ。|名单上现在有两个名字。
+n60t|Your Servant's Cooking|サーヴァントの料理|从者的料理
+n60b|Your Servant cooked for the first time. It is not good. In this world, you are the only one who can lie and call it delicious.|サーヴァントが初めて料理をした。まずい。この世界で、おいしいと嘘をついてあげられるのはあなただけだ。|从者第一次下厨。不好吃。在这个世界上，能撒谎说好吃的只有你。
+n60c1|Say it is delicious|おいしいと言う|说好吃
+n60r1|Your Servant made that dish every day.|サーヴァントは毎日その料理を作った。|从者每天都做那道菜。
+n60c2|Say it is not good|まずいと言う|说不好吃
+n60r2|Your Servant bought a cookbook.|サーヴァントが料理本を買った。|从者买了本菜谱。
+n60c3|Let your face do the talking|表情だけで伝える|只用表情表达
+n60r3|Your Servant burst out laughing first.|サーヴァントが先に吹き出した。|从者先笑出了声。
+n61t|Avoiding Nine O'Clock|九時を避けて|避开九点
+n61b|At nine every morning the whole street says the same greeting. Your Servant has mapped out a walking route that avoids that hour. The map is covered in red lines.|朝九時になると、通りじゅうが同じ挨拶をする。サーヴァントがその時間を避ける散歩道を考えてきた。地図が赤い線でいっぱいだ。|每天早上九点，整条街都说着同样的问候。从者设计了一条避开那个时间的散步路线。地图上画满了红线。
+n61c1|Take that route|その道を行く|走那条路
+n61r1|You met no one. The two of you walked alone.|誰とも会わなかった。二人きりで歩いた。|谁也没遇到。只有你们两人走着。
+n61c2|Go out at nine on purpose|わざと九時に出かける|故意九点出门
+n61r2|Only the two of you did not greet. Your Servant shrugged.|二人だけが挨拶しなかった。サーヴァントが肩をすくめた。|只有你们两人没打招呼。从者耸了耸肩。
+n61c3|Improve the map|地図を直してやる|帮忙改地图
+n61r3|You found a shorter route.|もっと短い道が見つかった。|找到了一条更近的路。
+n62t|The Servant Forgetting How to Lie|嘘を忘れていくサーヴァント|渐渐忘了怎么说谎的从者
+n62b|Lately your Servant is bad at lying. They say staying long in this world seems to make them forget how. Will the two of you freeze someday?|サーヴァントが近頃うまく嘘をつけない。この世界に長くいると忘れてしまうらしいと言う。いつか二人とも固まってしまうのだろうか。|从者最近不太会说谎了。说是在这个世界待久了，好像就会忘掉。总有一天你们两人都会僵住吗。
+n62c1|Practice one lie a day|毎日ひとつ嘘を練習する|每天练习一个谎言
+n62r1|A notebook of lies appeared on the dining table.|食卓に嘘のノートができた。|餐桌上多了一本谎言笔记。
+n62c2|Leave it be|そのままにする|随它去
+n62r2|Your Servant's words grew more and more honest.|サーヴァントの言葉はどんどん正直になっていった。|从者说的话越来越诚实了。
+n62c3|Make your Servant tell a lie|サーヴァントに嘘をつかせる|让从者说个谎
+n62r3|After long hesitation, your Servant said they hated you. You both laughed.|サーヴァントは長いこと迷ってから、あなたが嫌いだと言った。二人とも笑った。|从者犹豫了很久，说讨厌你。你们俩都笑了。
+n63t|Neighborhood Champion|町内の力士|街坊大力士
+n63b|Your Servant entered the neighborhood wrestling match. The strong people of this world fall onto the sand one after another.|町内の相撲大会にサーヴァントが出た。この世界の強い人たちが、次々と砂の上に倒れていく。|从者参加了街坊的摔跤比赛。这个世界的强者们一个接一个倒在沙地上。
+n63c1|Cheer them on|応援する|加油助威
+n63r1|Your Servant came home carrying a sack of rice as the prize.|サーヴァントが賞品の米俵を担いで帰ってきた。|从者扛着一袋大米奖品回来了。
+n63c2|Stop them|止める|劝阻
+n63r2|Your Servant came back looking disappointed.|サーヴァントは残念そうな顔で戻ってきた。|从者一脸遗憾地回来了。
+n63c3|Enter too|一緒に出る|一起上场
+n63r3|In the first round you faced your Servant. Your Servant let you win.|一回戦でサーヴァントと当たった。サーヴァントが負けてくれた。|第一轮你就碰上了从者。从者让你赢了。
+n64t|The Hidden Puppy|隠した子犬|藏起来的小狗
+n64b|Your Servant secretly brought home a puppy with a limp. This world leaves nothing weak behind. You both know it.|サーヴァントが足を引きずる子犬をこっそり連れてきた。この世界は弱いものを残さない。二人ともそれを知っている。|从者偷偷带回了一只瘸腿的小狗。这个世界不会留下弱者。你们俩都清楚。
+n64c1|Hide it and raise it together|一緒に隠して育てる|一起偷偷养
+n64r1|It lasted three months. One morning the basket was empty.|三か月もった。ある朝、籠が空になっていた。|撑了三个月。某天早上，篮子空了。
+n64c2|Tell them to take it back|戻してこいと言う|让对方送回去
+n64r2|Your Servant obeyed without a word.|サーヴァントは黙って従った。|从者一言不发地照做了。
+n64c3|Heal its leg|足を治してやる|治好它的腿
+n64r3|The puppy came to run faster than the other dogs. Your Servant smiled a strange smile.|子犬はほかの犬より速く走れるようになった。サーヴァントが妙な顔で笑った。|小狗跑得比别的狗还快。从者露出了古怪的笑容。
+n65t|Plans for the Day You Weaken|弱くなる日の計画|变弱之日的计划
+n65b|Your Servant is writing something on a sheet of paper. Places to hide you from this world on the day you grow weak. There are already twelve.|サーヴァントが紙に何かを書いている。あなたが弱くなる日に、この世界からあなたを隠す場所だ。もう十二か所ある。|从者在纸上写着什么。是你变弱那天，用来把你从这个世界藏起来的地方。已经有十二处了。
+n65c1|Choose them together|一緒に選ぶ|一起挑选
+n65r1|Now there are places only the two of you know.|二人だけが知る場所ができた。|有了只有你们两人知道的地方。
+n65c2|Say it is not necessary|必要ないと言う|说没有必要
+n65r2|Your Servant folded the paper and tucked it away.|サーヴァントは紙を畳んで懐にしまった。|从者把纸折好，揣进怀里。
+n65c3|Take the paper and burn it|紙を受け取って燃やす|接过纸烧掉
+n65r3|Your Servant started writing down a thirteenth place.|サーヴァントは十三か所目を書き始めた。|从者又开始写第十三处。
+n66t|Entertaining a Guest|客のもてなし|招待客人
+n66b|A guest from beyond the doors sits in your living room. Your Servant serves tea. The guest does not show in the teacup.|扉の向こうから来た客が居間に座っている。サーヴァントがお茶を出す。客は湯呑みに映らない。|从门那边来的客人坐在客厅里。从者端上了茶。茶杯里映不出客人的身影。
+n66c1|Have tea together|一緒にお茶を飲む|一起喝茶
+n66r1|The guest asked about this world's weather. The three of you talked about the weather.|客がこの世界の天気を尋ねた。三人で天気の話をした。|客人问起这个世界的天气。三人聊起了天气。
+n66c2|See the guest out|客を見送る|送客
+n66r2|Your Servant walked them to the door.|サーヴァントが戸口まで送っていった。|从者一直送到门口。
+n66c3|Ask your Servant who the guest is|客が誰なのかサーヴァントに訊く|问从者客人是谁
+n66r3|Your Servant said they did not know either. But the tea was good, they said.|サーヴァントも知らないと言った。それでもお茶はおいしかったと。|从者说它也不知道。不过茶很好喝。
+n67t|Shadow Play|影絵|手影戏
+n67b|On a night of blackout, your Servant makes shadows with their hands before a candle. One of the shadows on the wall moves differently from your Servant's hands.|停電の夜、サーヴァントがろうそくの前で手で影絵を作る。壁に映った影のひとつが、サーヴァントの手と違う動きをする。|停电的夜里，从者在烛光前用手做出影子。墙上的影子里，有一个的动作和从者的手不一样。
+n67c1|Play along|一緒に遊ぶ|一起玩
+n67r1|One more shadow appeared on the wall. The three of you played.|壁の影がもうひとつ増えた。三人で遊んだ。|墙上又多了一个影子。三个一起玩。
+n67c2|Blow out the candle|ろうそくを消す|吹灭蜡烛
+n67r2|Your Servant laughed in the dark.|暗闇の中でサーヴァントが笑った。|从者在黑暗中笑了。
+n67c3|Give that shadow a name|その影に名前をつける|给那个影子起名
+n67r3|At the next blackout, that shadow was already waiting.|次の停電のとき、その影が先に来ていた。|下次停电时，那个影子已经先到了。
+n68t|A Door Back|帰れる扉|能回去的门
+n68b|Your Servant has stood before a certain door for a long time. They say what lies beyond connects to the place they came from. That they could go back.|サーヴァントがある扉の前に長いこと立っている。その向こうは自分が来た場所につながっていると言う。帰れるのだと。|从者在一扇门前站了很久。说门的那边连着它来的地方。说它能回去。
+n68c1|Ask them not to go|行かないでと言う|求它别走
+n68r1|Your Servant took their hand off the door.|サーヴァントが扉から手を離した。|从者把手从门上收了回来。
+n68c2|Tell them to go if they want to|行きたければ行けと言う|说想走就走吧
+n68r2|Your Servant looked at you for a long time, then turned. Not toward the door, but toward you.|サーヴァントは長いことあなたを見て、振り返った。扉の方ではなく、あなたの方へ。|从者久久地看着你，然后转过身。不是朝向门，而是朝向你。
+n68c3|Shut the door|扉を閉めてしまう|把门关上
+n68r3|Your Servant nodded without a word.|サーヴァントは黙って頷いた。|从者默默地点了点头。
+n69t|Tea That Never Cools|冷めないお茶|不会凉的茶
+n69b|It is an afternoon when the clocks have stopped, so the tea never cools. Your Servant is taking advantage of it, brewing their tenth cup.|時計の止まった午後だから、お茶が冷めない。サーヴァントがそれをいいことに、十杯目を淹れている。|因为是钟都停了的午后，茶永远不会凉。从者趁机泡到了第十杯。
+n69c1|Drink them all|全部飲む|全部喝掉
+n69r1|Your stomach sloshed.|お腹がちゃぷちゃぷした。|肚子里咕咚作响。
+n69c2|Drink just one|一杯だけ飲む|只喝一杯
+n69r2|Your Servant drank the other nine.|サーヴァントが残りの九杯を飲み干した。|从者喝光了剩下的九杯。
+n69c3|Wind the clock again|時計を巻き直す|重新给钟上发条
+n69r3|Only then did the tea start to cool. Your Servant looked sorry about it.|お茶はようやく冷め始めた。サーヴァントは残念がった。|茶这才开始变凉。从者一脸惋惜。
+n70t|A Long Nap|長い昼寝|漫长的午睡
+n70b|On an afternoon when the sun does not set, your Servant took a nap for the first time. They had said Servants do not sleep.|日の沈まない午後、サーヴァントが初めて昼寝をした。サーヴァントは眠らないと言っていたのに。|在太阳不落的午后，从者第一次睡了午觉。它曾说过从者是不睡觉的。
+n70c1|Read beside them|そばで本を読む|在旁边看书
+n70r1|You finished an entire book. Your Servant was still asleep.|本を一冊読み終えた。サーヴァントはまだ眠っていた。|你读完了一整本书。从者还在睡。
+n70c2|Wake them|起こす|叫醒它
+n70r2|Your Servant said they had dreamed. They did not say what.|サーヴァントは夢を見たと言った。どんな夢かは言わなかった。|从者说做了个梦。没说是什么梦。
+n70c3|Sleep too|一緒に眠る|一起睡
+n70r3|When you both woke, the sun was in the same place.|二人が目覚めたときも、太陽は同じ場所にあった。|你们醒来时，太阳还在原处。
+n71t|One Step Taken Together|一緒に踏み出す一歩|一同迈出的一步
+n71b|Your Servant stands before the one remaining step. They ask you to take it together. Whatever lies beyond.|サーヴァントが残った一歩の前に立っている。一緒に踏み出そうと言う。その先に何があろうと。|从者站在剩下的那一步前。邀你一起迈出去。无论那边有什么。
+n71c1|Take their hand and step|手を取って踏み出す|牵起手迈出去
+n71r1|What came next is not in the record.|その先は記録にない。|之后的事没有记载。
+n71c2|Say not yet|まだだと言う|说还不是时候
+n71r2|Your Servant said they would wait. However many years it took.|サーヴァントは待つと言った。何年経っても。|从者说它会等。不管过多少年。
+n71c3|Pull your Servant back from that spot|サーヴァントをその場から引き戻す|把从者从那里拉回来
+n71r3|That day you had your first big fight. In the evening you ate dinner together.|二人はその日初めて大喧嘩をした。夕方には一緒にご飯を食べた。|那天你们第一次大吵了一架。到了傍晚，还是一起吃了饭。
+n72t|The Sunny Spot|日の当たる場所|阳光照进来的地方
+n72b|At three in the afternoon, sunlight falls on one corner of the living room. At some point your Servant started sitting there. Your chair is in the shade.|午後三時になると、居間の片隅に日が差す。いつからかサーヴァントがそこに座るようになった。あなたの椅子は日陰にある。|下午三点，阳光会照进客厅一角。不知从何时起，从者开始坐在那里。你的椅子在阴影里。
+n72c1|Move your chair|椅子を移す|挪动椅子
+n72r1|The two of you basked in the same sunlight.|二人で同じ日差しを浴びた。|两人晒着同一片阳光。
+n72c2|Leave it be|そのままにする|随它去
+n72r2|Your Servant shifted over a little.|サーヴァントが少し横にずれて座った。|从者往旁边挪了挪。
+n72c3|Hang a curtain|カーテンを付ける|挂上窗帘
+n72r3|The sunlight was split in half.|日差しが半分に分かれた。|阳光被分成了两半。
+n73t|The Repaired Radio|直されたラジオ|修好的收音机
+n73b|The broken radio is playing again on the table. Your Servant seems to have fixed it overnight. One screw is left over.|壊れたラジオが食卓の上でまた鳴っている。サーヴァントが夜通し直したらしい。ねじがひとつ余っている。|坏掉的收音机又在餐桌上响了起来。看样子是从者熬夜修好的。多出了一颗螺丝。
+n73c1|Say thank you|ありがとうと言う|道谢
+n73r1|Your Servant set the screw in your palm.|サーヴァントがねじをあなたの手のひらに載せた。|从者把螺丝放在了你的掌心。
+n73c2|Look for where the screw goes|余ったねじの場所を探す|找螺丝该装在哪
+n73r2|The radio worked fine without the screw.|ラジオはねじがなくてもよく鳴った。|没有那颗螺丝，收音机也响得很好。
+n73c3|Listen together|一緒に聴く|一起听
+n73r3|A song you used to hear that winter came on. Your Servant turned the volume up a little.|あの冬に聴いていた曲が流れた。サーヴァントが音量を少し上げた。|播出了那个冬天常听的曲子。从者把音量调大了一点。
+n74t|The Flower in the Book|栞の花|书里的花
+n74b|You open a book and find a pressed flower inside. You did not put it there.|本を開くと、押し花が挟まっている。あなたが挟んだものではない。|翻开书，里面夹着一朵压花。不是你夹的。
+n74c1|Leave the flower where it is|花をそのままにしておく|让花留在原处
+n74r1|There was a flower in the next book too.|次の本にも花があった。|下一本书里也有花。
+n74c2|Look up the flower's name|花の名前を調べる|查查花的名字
+n74r2|Its meaning was "remembrance."|花言葉は「記憶」だった。|花语是「记忆」。
+n74c3|Tuck something in as thanks|お返しに何かを挟んでおく|夹点东西作为回礼
+n74r3|The next day that book had moved to your Servant's shelf.|翌日、その本はサーヴァントの本棚に移っていた。|第二天，那本书挪到了从者的书架上。
+n75t|A Guest's Question|客の問い|客人的问题
+n75b|A guest who has not visited in a long time asks who that person is. The one who has not said a single word in years.|久しぶりに訪ねてきた客が尋ねる。あの人は誰なのかと。何年も一言も話さない、あの人は。|许久没来的客人问，那人是谁。那个好几年一句话也不说的人。
+n75c1|Say they are family|家族だと言う|说是家人
+n75r1|Your Servant set down their teacup a little loudly.|サーヴァントが湯呑みを置く音が少し大きかった。|从者放下茶杯的声音有点重。
+n75c2|Say they are an old friend|古い友人だと言う|说是老朋友
+n75r2|The guest nodded. Your Servant looked out the window.|客は頷いた。サーヴァントは窓の外を見た。|客人点了点头。从者看向窗外。
+n75c3|Do not answer|答えない|不回答
+n75r3|The guest left early.|客は早めに帰っていった。|客人早早地走了。
+n76t|One Umbrella|傘ひとつ|一把伞
+n76b|A sudden shower came. There is only one umbrella. Your Servant stands there as if getting soaked does not matter.|にわか雨が降ってきた。傘はひとつしかない。サーヴァントは濡れても構わないというように立っている。|下起了阵雨。只有一把伞。从者站在那里，仿佛淋湿也无所谓。
+n76c1|Tilt the umbrella toward them|傘を傾けてやる|把伞倾向对方
+n76r1|Your shoulder got soaked through.|あなたの肩がすっかり濡れた。|你的肩膀全湿透了。
+n76c2|Run together|一緒に走る|一起跑
+n76r2|You both got drenched. For the first time, your Servant missed a step.|二人ともずぶ濡れになった。サーヴァントが初めて足を踏み外した。|两人都淋得透湿。从者第一次踩空了一步。
+n76c3|Stand under the eaves until the rain stops|雨が止むまで軒下に立つ|在屋檐下等雨停
+n76r3|The two of you listened to the same rain.|二人で同じ雨音を聴いた。|两人听着同样的雨声。
+n77t|Only You Grow Old|あなただけが老いる|只有你在变老
+n77b|You leaf through the photo album. In the photos from the first year and from this year, your Servant is the same. Only you have aged.|アルバムをめくる。最初の年の写真と今年の写真で、サーヴァントは変わらない。あなただけが老いた。|你翻着相册。第一年的照片和今年的照片里，从者都一模一样。只有你老了。
+n77c1|Set the photos side by side|写真を並べる|把照片并排放
+n77r1|Your Servant gazed at this year's photo for a long time.|サーヴァントが今年の写真を長いこと見つめていた。|从者久久地凝视着今年的照片。
+n77c2|Suggest taking a new photo|新しい写真を撮ろうと言う|提议拍张新照片
+n77r2|For the first time, your Servant looked at the camera.|サーヴァントが初めてカメラを見た。|从者第一次看向了镜头。
+n77c3|Close the album|アルバムを閉じる|合上相册
+n78t|A Night of Fever|病む夜|病中之夜
+n78b|You fell gravely ill. On a fevered night, your Servant, who always stood by the door, came to your bedside for the first time.|あなたは重い病にかかった。熱にうかされた夜、いつも戸口に立っていたサーヴァントが、初めて寝台のそばまで来た。|你病得很重。发烧的夜里，总是站在门边的从者，第一次走到了床边。
+n78c1|Reach out your hand|手を伸ばす|伸出手
+n78r1|Your Servant took your hand. They did not let go until dawn.|サーヴァントがその手を握った。夜明けまで離さなかった。|从者握住了那只手。直到天亮都没有放开。
+n78c2|Say you are fine|大丈夫だと言う|说没事
+n78r2|Your Servant went back to the door. They stayed there all night.|サーヴァントは戸口に戻った。一晩中そこにいた。|从者回到了门边。整夜都守在那里。
+n78c3|Show them the mark of the Command Seals|令呪の痕を見せる|让它看令咒的痕迹
+n78r3|Your Servant laid a hand on the mark. It was cold.|サーヴァントがその痕に手を置いた。冷たかった。|从者把手放在那道痕迹上。冰凉的。
+n79t|The Walking Route|散歩道|散步路线
+n79b|You have walked the same path for years. Your Servant always follows three steps behind. Today, at a fork, your Servant went the other way first.|何年も同じ道を歩いている。サーヴァントはいつも三歩後ろをついてくる。今日は分かれ道で、サーヴァントが先に別の方へ歩き出した。|多年来你一直走同一条路。从者总在身后三步跟着。今天在岔路口，从者先往另一边走去。
+n79c1|Follow|ついて行く|跟上去
+n79r1|A park you had never seen appeared.|初めて見る公園が現れた。|出现了一座从没见过的公园。
+n79c2|Take the usual way|いつもの道を行く|走原来的路
+n79r2|Your Servant followed a little later.|サーヴァントは少し遅れてついてきた。|从者过了一会儿跟了上来。
+n79c3|Wait right there|その場で待つ|在原地等
+n79r3|Your Servant came back and stood beside you.|サーヴァントが戻ってきて、あなたの隣に立った。|从者走回来，站在你身旁。
+n80t|The Date of That Winter|あの冬の日付|那个冬天的日子
+n80b|The day you summoned your Servant that winter has come again. Since morning your Servant has been out in the yard.|あの冬、あなたがサーヴァントを呼んだ日がまた来た。サーヴァントが朝から庭に出ている。|那个冬天你召唤从者的日子又到了。从者从早上就待在院子里。
+n80c1|Stand in the yard together|一緒に庭に立つ|一起站在院子里
+n80r1|The two of you stood where the summoning circle had been.|召喚陣のあった場所に、二人で立った。|两人站在曾经画着召唤阵的地方。
+n80c2|Leave them alone|ひとりにしておく|让它独处
+n80r2|In the evening your Servant came in with dirt on their hands.|夕方、サーヴァントが土のついた手で入ってきた。|傍晚，从者带着一手泥土走了进来。
+n80c3|Take out two cups|杯をふたつ出す|拿出两只杯子
+n80r3|Your Servant accepted the cup. They did not drink.|サーヴァントは杯を受け取った。飲みはしなかった。|从者接过了杯子。没有喝。
+n81t|The Year You Could Let Go|手放せる年|能够放手的一年
+n81b|The mark of the Command Seals on the back of your hand has nearly vanished. It feels like it could be used once more. This time, for an order to let them go.|手の甲の令呪の痕がほとんど消えた。もう一度だけ使えそうな気がする。今度は、手放せという命令に。|手背上的令咒痕迹几乎消失了。感觉似乎还能再用一次。这一次，用来下达放手的命令。
+n81c1|Let them go|手放す|放手
+n81r1|For the first time, your Servant looked straight at you. And then left.|サーヴァントが初めてあなたをまっすぐ見た。そして去った。|从者第一次直视着你。然后离开了。
+n81c2|Do not use it|使わない|不使用
+n81r2|The mark disappeared completely that winter.|痕はその冬、すっかり消えた。|那个冬天，痕迹彻底消失了。
+n81c3|Let your Servant choose|サーヴァントに選ばせる|让从者来选
+n81r3|Your Servant chose nothing. That was the answer.|サーヴァントは何も選ばなかった。それが答えだった。|从者什么也没选。那就是回答。
+n82t|Shopping Together|買い物する二人|一起买菜的两人
+n82b|The market vendors recognize the two of you now. The silent one always picks the radishes, and the aging one always haggles.|市場の商人たちが、もう二人の顔を覚えている。無口な方はいつも大根を選び、老いていく方はいつも値切る。|市场的商贩们如今都认得你们俩了。沉默的那个总是挑萝卜，渐渐老去的那个总是讲价。
+n82b@0|The vendor at the stall that is still awake recognizes the two of you now. The silent one always picks the radishes, and the aging one always haggles.|起きている露店の主が、もう二人の顔を覚えている。無口な方はいつも大根を選び、老いていく方はいつも値切る。|那个醒着的摊主如今认得你们俩了。沉默的那个总是挑萝卜，渐渐老去的那个总是讲价。
+n82b@1|The market vendors recognize the two of you now. The silent one always picks the radishes, and you always haggle.|市場の商人たちが、もう二人の顔を覚えている。無口な方はいつも大根を選び、あなたはいつも値切る。|市场的商贩们如今都认得你们俩了。沉默的那个总是挑萝卜，你总是讲价。
+n82c1|Let them pick the radishes|大根を選ばせる|让它挑萝卜
+n82r1|It was a good radish again.|今回もいい大根だった。|这次也是好萝卜。
+n82c2|Do not haggle|値切らない|不讲价
+n82r2|The vendor added some green onions for free.|商人がおまけにネギを載せた。|商贩额外送了一把葱。
+n82c3|Tell your Servant to try haggling|サーヴァントに値切らせてみる|让从者试着讲价
+n82r3|Your Servant looked at the vendor steadily. The vendor lowered the price first.|サーヴァントが商人をじっと見た。商人のほうが先に値を下げた。|从者静静地看着商贩。商贩先降了价。
+n83t|Preparing for the Last Winter|最後の冬支度|最后的过冬准备
+n83b|Winter is coming. Your Servant is sealing the gaps in the windows. They do it every year, but this year they are especially thorough.|冬が来る。サーヴァントが窓の隙間を塞いでいる。毎年のことだが、今年はやけに念入りだ。|冬天要来了。从者在堵窗户的缝隙。每年都做，今年却格外仔细。
+n83c1|Seal them together|一緒に塞ぐ|一起堵
+n83r1|The room grew warm.|部屋が暖かくなった。|房间暖和起来了。
+n83c2|Say they can stop|もういいと言う|说可以了
+n83r2|Your Servant let go only after sealing the very last gap.|サーヴァントは最後の隙間まで塞いでから、ようやく手を離した。|从者把最后一道缝隙也堵上，才松开手。
+n83c3|Watch from behind|後ろから見守る|在身后看着
+n83r3|Your Servant's back looked exactly as it did that winter.|サーヴァントの背中は、あの冬とまったく同じだった。|从者的背影和那个冬天一模一样。
+n84t|Construction on That Road|あの道の工事|那条路的施工
+n84b|The road you walked with your Servant on the fourth day has disappeared under construction. The new road has been given a name.|四日目にサーヴァントと歩いた道が、工事で消えた。新しい道には名前がついた。|第四天你和从者走过的那条路，因施工消失了。新路有了名字。
+n84c1|Try walking the new road|新しい道を歩いてみる|走走新路
+n84r1|The pavement was smooth. It was not the road your feet remembered.|路面は滑らかだった。足が覚えている道ではなかった。|路面很平整。不是你的脚记得的那条路。
+n84c2|Stand before the construction site for a moment|工事現場の前にしばらく立つ|在工地前站一会儿
+n84r2|A worker asked what you were looking for.|作業員が何を探しているのかと尋ねた。|工人问你在找什么。
+n84c3|Buy an old map|古い地図を買う|买一张旧地图
+n84r3|That road remains on your desk.|机の上にあの道が残った。|那条路留在了你的书桌上。
+n85t|The Ally's Wedding|同盟の結婚式|盟友的婚礼
+n85b|A wedding invitation came from the allied Master who broke the cup that night. Beside the bride's and groom's names, in small writing: "Please come."|あの夜杯を壊した同盟のマスターから、招待状が届いた。新郎新婦の名前の横に、小さな字で「ぜひ来てください」。|那晚打碎杯子的盟友御主寄来了请柬。新郎新娘的名字旁，用小字写着「请一定要来」。
+n85c1|Go|行く|去
+n85r1|Instead of singing, you applauded for a long time.|歌の代わりに、長いこと拍手をした。|你没有唱歌，而是久久地鼓掌。
+n85c2|Just send a gift of money|ご祝儀だけ送る|只寄去礼金
+n85r2|A photo came back in reply.|返事に写真が一枚届いた。|对方回了一张照片。
+n85c3|Do not go|行かない|不去
+n85r3|The invitation went into a drawer.|招待状は引き出しにしまわれた。|请柬被收进了抽屉。
+n86t|The Shop That Looks Like Your Servant|サーヴァントに似た店|像从者的店
+n86b|The sign of a new shop bears a picture that looks like your Servant. The owner says it is just a figure from an old story.|新しくできた店の看板に、サーヴァントに似た絵が描かれている。主人は、ただの昔話の人物だと言う。|新开的店铺招牌上画着一个很像从者的人。店主说那只是古老故事里的人物。
+n86c1|Become a regular|常連になる|成为常客
+n86r1|The owner always gave you a little extra.|主人はいつもあなたの分を少し多めに盛った。|店主总给你多盛一点。
+n86c2|Tell them about the picture|絵の話をしてやる|给店主讲讲那幅画
+n86r2|The owner listened seriously. The next day, one line had been added to the sign.|主人は真剣に聞いた。翌日、看板に一行増えていた。|店主认真地听了。第二天，招牌上多了一行字。
+n86c3|Walk past|通り過ぎる|走过去
+n87t|News of a Cup Filling Again|また満ちる杯の便り|又将盈满之杯的消息
+n87b|Rumor says a Holy Grail in another city is filling. Someone in that city will wish for something before the cup too.|よその街の聖杯が満ちつつあるという噂が聞こえる。その街の誰かも、杯の前で何かを願うのだろう。|传闻另一座城市的圣杯正在充盈。那座城市里也会有人在杯前许下什么愿望吧。
+n87c1|Send a warning letter to that city|その街に警告の手紙を送る|给那座城市寄去警告信
+n87r1|No reply came.|返事は来なかった。|没有回音。
+n87c2|Pay it no mind|気にしない|不放在心上
+n87c3|Go see that city|その街へ行ってみる|去那座城市看看
+n87r3|It smelled the same as that winter. You came back after a day.|あの冬と同じ匂いがした。一日で帰ってきた。|那里的气味和那个冬天一样。你一天就回来了。
+n88t|The Same Dream|同じ夢|同样的梦
+n88b|For years you have had the same dream. The cup fills, the ally stands in the way, your Servant falls. Today the Servant in the dream turned to look at you.|何年も同じ夢を見る。杯が満ち、同盟が立ちはだかり、サーヴァントが倒れる。今日は夢の中のサーヴァントが、あなたの方を振り返った。|多年来你一直做着同一个梦。杯子盈满，盟友挡在面前，从者倒下。今天，梦里的从者回头看向了你。
+n88c1|Call your Servant in the dream|夢の中でサーヴァントを呼ぶ|在梦里呼唤从者
+n88r1|When you woke, your voice was hoarse.|目覚めると声が嗄れていた。|醒来时嗓子哑了。
+n88c2|Set the cup down in the dream|夢の中で杯を置く|在梦里放下杯子
+n88r2|After that day, you never had that dream again.|その日から、あの夢を見なくなった。|从那天起，你再也没做过那个梦。
+n88c3|Write the dream down|夢を書き留める|把梦记下来
+n88r3|A whole notebook was filled.|ノートが一冊埋まった。|写满了一整本笔记。
+n89t|A Consultation About the Mark|手の甲の痕の相談|手背痕迹的问诊
+n89b|A dermatologist looks at the faint mark on the back of your hand and asks if it is a tattoo you stopped removing halfway.|皮膚科の医師が手の甲の薄い痕を見て、刺青を消しかけてやめたのかと尋ねる。|皮肤科医生看着你手背上淡淡的痕迹，问是不是没洗干净的纹身。
+n89c1|Say yes|そうだと言う|说是
+n89r1|The doctor offered to remove it. You said you would do it next time.|医師は消してあげると言った。また今度にすると答えた。|医生说可以帮你去掉。你说下次再说。
+n89c2|Say it is the trace of an old promise|古い約束の痕だと言う|说是一个旧约定的痕迹
+n89r2|The doctor asked nothing more.|医師はそれ以上訊かなかった。|医生没有再问。
+n89c3|Ask them to remove it|消してほしいと言う|请医生去掉
+n89r3|The mark would not come off. The doctor shook their head, puzzled.|痕は消えなかった。医師がおかしいと首を振った。|痕迹去不掉。医生直摇头说奇怪。
+n90t|News of the Ally's Servant|同盟のサーヴァントの便り|盟友从者的消息
+n90b|Word came that the Servant who struck down your Servant that night has finally vanished. The allied Master called you personally.|あの夜あなたのサーヴァントを倒したサーヴァントが、とうとう消えたという知らせが来た。同盟のマスターが自ら電話をくれた。|传来消息，那晚击倒你的从者的那位从者终于消失了。盟友御主亲自打来了电话。
+n90c1|Comfort them|慰める|安慰对方
+n90r1|The allied Master cried for a long time on the other end of the line.|同盟のマスターが電話の向こうで長いこと泣いた。|盟友御主在电话那头哭了很久。
+n90c2|Just listen|聞くだけにする|只是听着
+n90r2|After the call ended, you stayed where you were for a long while.|電話が切れたあと、しばらくその場にいた。|挂断电话后，你在原地待了很久。
+n90c3|Feel glad|喜ぶ|感到高兴
+n90r3|The gladness did not last long.|その喜びは長続きしなかった。|那份喜悦没有持续多久。
+n91t|What Your Servant Loved|サーヴァントが好きだったもの|从者喜欢的东西
+n91b|Each year you try one thing your Servant loved. This year it is something your Servant never got to try.|サーヴァントが好きだったものを、毎年ひとつずつやってみる。今年は、サーヴァントがとうとうやれなかったものの番だ。|每年你都会试一样从者喜欢的东西。今年轮到的，是从者终究没能尝试的事。
+n91c1|Try it|やってみる|试试看
+n91r1|It was more fun than you expected. You think you understand a little why they loved it.|思ったより楽しかった。なぜ好きだったのか、少しわかる気がする。|比想象中有趣。你似乎有点明白它为什么喜欢了。
+n91c2|Put it off until next year|来年に延ばす|推到明年
+n91r2|One line remains on the list.|リストに一行が残った。|清单上还剩一行。
+n91c3|Do it with someone|誰かと一緒にやる|和谁一起做
+n91r3|The person you did it with asked to do it again next time.|一緒にやった人が、また今度もやろうと言った。|一起做的人说下次还要一起。
+n92t|The Year the True Heart Returns|真心が戻る年|真心归来的一年
+n92b|Something long quiet raises its head again. The heart you meant to entrust to the cup that winter. There is no cup anymore.|長く静まっていたものが、また頭をもたげる。あの冬、杯に託そうとした心。杯はもうない。|沉寂已久的那个东西又抬起了头。那个冬天你想托付给杯子的心。杯子已经不在了。
+n92c1|Seize it again|また掴む|再次抓住
+n92r1|The back of your hand burned.|手の甲が熱かった。|手背发烫。
+n92c2|Let it flow away|流してしまう|任它流走
+n92r2|For the first time, that heart felt a little lighter.|初めてその心が少し軽くなった。|那颗心第一次轻了一些。
+n92c3|Think of your Servant|サーヴァントを思い出す|想起从者
+n92r3|You wondered why your Servant fought to the end that night.|サーヴァントがあの夜、なぜ最後まで戦ったのかを考えた。|你想着从者那晚为何战斗到了最后。
+n93t|The Last Other One|残ったひとり|最后剩下的人
+n93b|Now only you and the allied Master remember that winter. They ask to see you one last time.|あの冬を知る人は、もう同盟のマスターとあなただけだ。その人が、最後に会おうと言う。|如今记得那个冬天的，只剩盟友御主和你了。对方说想见最后一面。
+n93c1|Go to meet them|会いに行く|去见面
+n93r1|For the first time, the two of you talked about that night all the way to the end.|二人であの夜の話を、初めて最後までした。|你们第一次把那晚的事从头到尾说完了。
+n93c2|Answer by letter|手紙で返事をする|写信回复
+n93r2|No reply came. An obituary arrived first.|返事は来なかった。先に訃報が届いた。|没有回信。讣告先到了。
+n93c3|Do not go|行かない|不去
+n93r3|The photo they sent was the last thing.|その人が送ってきた写真が、最後になった。|对方寄来的那张照片，成了最后的东西。
