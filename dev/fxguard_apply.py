@@ -24,6 +24,18 @@ rp("if(e.fx) (F[e.fx.t]||clashFx)(e.fx);",
 # ② 화면 갱신 고리: 한 프레임에서 오류가 나도 다음 프레임은 돈다
 rp("const f=t=>{ const dt=Math.min(.25,(t-last)/1000); last=t; Sim.tick(dt); prog(); raf=requestAnimationFrame(f); };",
    "const f=t=>{ const dt=Math.min(.25,(t-last)/1000); last=t; try{ Sim.tick(dt); prog(); }catch(err){ try{ console.error('tick',err); }catch(_){} } raf=requestAnimationFrame(f); };")
+# ③ 화면 전체 연출 · 결말 장면 · 작별 장면의 시간을 실제 시간으로 센다 (11-23)
+#    예전엔 한 프레임에 더하는 시간을 0.05초로 막아, 초당 20프레임이 안 나오는 폰에서는 연출이 느린 화면처럼 길어졌다
+#    (초당 5프레임이면 9.6초짜리 키아라 강림이 38초). 0.7초보다 긴 틈(탭을 내렸다 돌아옴 등)만 0.05초로 친다
+import re
+n0 = s.count("const dt=Math.min(.05,(now-last)/1000);")
+if n0 != 5: miss.append(('loop dt', n0))
+else:
+    s = s.replace("const dt=Math.min(.05,(now-last)/1000);", "const rd=(now-last)/1000, dt=rd>.7?.05:rd; globalThis.XDT_=dt;")
+    # 짧은 번쩍임(가우스 폭 0.05~0.12초)은 프레임 간격이 넓으면 프레임 사이에 끼어 안 보인다 → 폭을 프레임 간격의 0.6배 아래로 줄이지 않는다
+    pat = re.compile(r"exp\(-Math\.pow\(\(t-([^()]*)\)/(\.\d+|w),2\)\)")
+    s, k = pat.subn(lambda m: f"exp(-Math.pow((t-{m.group(1)})/Math.max({m.group(2)},(globalThis.XDT_||.016)*.6),2))", s)
+    if k != 26: miss.append(('flash', k))
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
