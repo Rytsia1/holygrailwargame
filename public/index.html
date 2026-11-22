@@ -1903,6 +1903,16 @@ body.ld-on #intro{opacity:0!important}
 .af-c.on{border-color:rgba(226,196,138,.7);color:#f0dcae}.af-c.on i{color:#e2c48a}.af-c.sel{background:rgba(226,196,138,.12)}
 .af-ft{color:var(--gold2,#e2c48a);font-weight:500}.af-sub{color:#8f8878;font-size:11.5px}
 .af-h{font-size:11.5px;color:#8f8878;margin:2px 0 0;line-height:1.55}
+
+/* 11-22 비공식 표기 (disc_apply) */
+.lb-disc{display:none}
+body.lb-on .lb-disc{display:block;position:fixed;left:0;right:0;bottom:max(8px,env(safe-area-inset-bottom,0px));margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));text-align:center;font-size:11px;line-height:1.5;color:rgba(235,229,216,.42);z-index:5;pointer-events:none;text-wrap:balance}
+body.lb-wide.lb-on .lb-disc{left:380px}
+@media (max-height:519px){body.lb-wide.lb-on .lb-disc{left:300px}}
+body.lb-on.lb-s2:not(.lb-wide) .lb-disc{display:none}
+#lb2 .l2-disc{display:none}
+body.lb-s2:not(.lb-wide) #lb2 .l2-disc{display:block;order:9;margin:14px 0 0;text-align:center;font-size:11px;line-height:1.5;color:rgba(235,229,216,.42);text-wrap:balance}
+body.lb-reading .lb-disc,body.lb-hideui .lb-disc,body.lb-rec .lb-disc,body.lb-hideui #lb2 .l2-disc{display:none!important}
 </style>
 </head>
 <body>
@@ -21178,6 +21188,7 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
     zht:{more:'這一夜的故事與規則',go:'入場',spoil:'※ 可能包含有關TYPE-MOON世界觀的劇透。',none:'還沒有亮燈的窗，<br>也沒有升起的星。',lit:(a,b)=>`<b>${a}</b>段人生點亮了燈火，<br><b>${b}</b>位英靈化作了星辰。`,close:'關閉',snd:'聲音開關',set:'設定'}}[typeof LANG==='string'&&['en','ja','zhs','zht'].includes(LANG)?LANG:'ko'];
   const el=(t,c,h)=>{ const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e; };
   const mv=(p,...s)=>s.forEach(x=>{ const n=typeof x==='string'?$q(x):x; if(n) p.appendChild(n); });
+  const DISC={"ko": "「성배가 차는 밤」은 팬이 만든 비공식 2차 창작 게임이며, TYPE-MOON 및 공식 권리자와는 관계가 없습니다.", "en": "“The Night the Grail Fills” is an unofficial fan-made game and is not affiliated with TYPE-MOON or any official rights holders.", "ja": "『聖杯が満ちる夜』はファンが制作した非公式の二次創作ゲームであり、TYPE-MOONおよび公式の権利者とは関係ありません。", "zhs": "《圣杯盈满之夜》是粉丝制作的非官方同人游戏，与TYPE-MOON及官方权利方无关。", "zht": "《聖杯盈滿之夜》是粉絲製作的非官方同人遊戲，與TYPE-MOON及官方權利方無關。"}[typeof LANG==='string'&&['en','ja','zhs','zht'].includes(LANG)?LANG:'ko']; window.__DISC=DISC;   // 11-22 비공식 표기 (disc_apply)
   intro.classList.add('lb');
   { const t=intro.querySelector('h1.title'); if(t) t.innerHTML=t.innerHTML.replace(/<br\s*\/?>/gi,CJK?'':' '); }
   const scr=el('div','lb-screen'), top=el('div','lb-top'), tools=el('div','lb-tools'), pr=el('div','lb-pickrow');
@@ -21193,13 +21204,14 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
   const foot=el('div','lb-foot'); mv(foot,'#patchBtn','#scnBtn','#achNewBtn','#fbBtn','#installBtn');
   mv(scr,acts,foot,intro.querySelector('.keys'),'#ghNews','#ghnRow');
   intro.insertBefore(scr,intro.firstChild);
+  { const d=el('p','lb-disc'); d.textContent=DISC; document.body.appendChild(d); }
   // 이야기와 규칙: 소개글 · 숫자 · 규칙 · 안내문을 옮겨 담는다
   const ab=el('section'); ab.id='lbAbout'; ab.hidden=true; ab.setAttribute('aria-label',TX.more);
   const veil=el('div','ab-veil'), inn=el('div','ab-in'); inn.tabIndex=-1;
   const x=el('button','ab-x','✕'); x.type='button'; x.setAttribute('aria-label',TX.close);
   const ey=el('div','eyebrow',(intro.querySelector('.eyebrow')||{}).innerHTML||''), h=el('div','ab-h');
   const go=el('button','btn primary ab-go',TX.go); go.type='button';
-  mv(inn,x,ey,h,intro.querySelector('.lede'),intro.querySelector('.counter'),intro.querySelector('.rules'),intro.querySelector('.warn'),intro.querySelector('.agenote'),el('p','ab-spoil',TX.spoil),go);
+  mv(inn,x,ey,h,intro.querySelector('.lede'),intro.querySelector('.counter'),intro.querySelector('.rules'),intro.querySelector('.warn'),intro.querySelector('.agenote'),el('p','ab-spoil',TX.spoil),el('p','ab-spoil','※ '+DISC),go);
   ab.append(veil,inn); document.body.appendChild(ab);
   let tm=0; const open=()=>{ clearTimeout(tm); const t=$q('#intro h1.title'); h.innerHTML=t?t.innerHTML:''; ab.hidden=false; document.body.classList.add('lb-reading'); more.setAttribute('aria-expanded','true'); requestAnimationFrame(()=>requestAnimationFrame(()=>{ ab.classList.add('open'); inn.focus({preventScroll:true}); })); };
   const close=()=>{ ab.classList.remove('open'); document.body.classList.remove('lb-reading'); more.setAttribute('aria-expanded','false'); tm=setTimeout(()=>{ ab.hidden=true; },550); };
@@ -21213,7 +21225,7 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
     if(LOBBY.active) return;
     const s=stats(); lit.innerHTML=s.lives===0&&s.met===0?TX.none:TX.lit(s.lives,s.met);
     row.hidden=$q('#pastWrap').classList.contains('hidden'); const an=$q('#achNewBtn'); const ab2=row.querySelector('[data-v=ach]'); ab2.querySelector('.lb-dot')?.remove(); if(an&&!an.classList.contains('hidden')) ab2.appendChild(el('i','lb-dot'));
-    sndSt(); LOBBY.enter(s); requestAnimationFrame(()=>LOBBY.fit());
+    sndSt(); LOBBY.enter(s); document.querySelectorAll('#lb2 .l2-disc').forEach(e=>{ if(!e.textContent) e.textContent=DISC; }); requestAnimationFrame(()=>LOBBY.fit());
     if(!firstShown){ firstShown=true; let sv=null; try{ sv=store.get(K_SAVE); }catch(e){} if(s.lives===0&&!sv) setTimeout(()=>{ if(!intro.classList.contains('hidden')) open(); },1600); } };
   new MutationObserver(sync).observe(intro,{attributes:true,attributeFilter:['class']});
   ['#contBtn','#pastWrap','#bondPanel','#sndAsk','#ghNews','#langNote'].forEach(s=>{ const n=$q(s); if(n) new MutationObserver(()=>LOBBY.active&&LOBBY.fit()).observe(n,{attributes:true,attributeFilter:['class','hidden']}); });
@@ -21351,7 +21363,7 @@ window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.
     <div class="l2-scnw"></div>
     <div class="l2-menu"></div>
     <div class="l2-newsw"></div>
-    <div class="l2-foot"><div class="l2-links"></div><div class="l2-keys"></div><button type="button" class="l2-back p">${I.back}<span></span></button></div>
+    <p class="l2-disc">${window.__DISC||''}</p><div class="l2-foot"><div class="l2-links"></div><div class="l2-keys"></div><button type="button" class="l2-back p">${I.back}<span></span></button></div>
    </div></div>
    <div class="l2-ver"></div>
   </div><button type="button" class="l2-show">${I.eye}<span></span></button>`;
