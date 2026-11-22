@@ -45,11 +45,14 @@
     const lab=`본성 속 진심: “${X.wish}”`, L=ch_.map(c=>c.t).concat(lab);   // 진입 연출: 성배 선택 창의 줄들 그대로
     ch_.push({t:lab,d:`마음 가장 깊은 곳의 「${AFFN[k]}」. 잔이 가득 차기까지 나흘이 걸린다`,f:()=>kgStart(k,shared,L)}); }
   // 결심 시작값 (시트 20~26줄)
-  function kgRes0(k){ const h=hero(), w=W(), st=kgSt(), t=Math.max(.5,Math.min(1.5,w.trust/60)); let R=40;
-    for(const x of h.traits) R+=x==='명예'?10:x==='연민'?15*(1+.25*st):x==='자유'?5:x==='충성'?-5*t:x==='야망'?-10*t:0;
-    const al=(HAL[h.id]||'NB')[1]; R+=al==='G'?10:al==='E'?-10:0;
+  // 11-22: 신뢰가 결심을 움직이는 폭을 서번트마다 다르게 — 성향 배율(두 성향 평균) × 질서 · 혼돈 배율. 선악은 ±15
+  const KG_TF={충성:1.5,야망:1,자유:0,명예:1,연민:-.5}, KG_AX={L:1.5,N:1,C:.5};
+  function kgRes0(k){ const h=hero(), w=W(), st=kgSt(); let R=40;
+    for(const x of h.traits) R+=x==='명예'?10:x==='연민'?15*(1+.25*st):x==='자유'?5:x==='충성'?-5:x==='야망'?-10:0;
+    const A=HAL[h.id]||'NB', al=A[1]; R+=al==='G'?15:al==='E'?-15:0;
     const L=HLK[h.id]||{}, X=KG_W[k]; for(const g of X.ok) if((L[g]||0)>0) R-=10; for(const g of X.ng) if((L[g]||0)>0) R+=10;
-    R+=w.trust>=80?-10:w.trust>=60?-5:w.trust>=40?0:10;
+    const tf=h.traits.length?h.traits.reduce((a,x)=>a+(KG_TF[x]??1),0)/h.traits.length:1;
+    R+=(w.trust>=80?-10:w.trust>=60?-5:w.trust>=40?0:10)*tf*(KG_AX[A[0]]??1);
     R+=[0,5,10,15][st];
     return Math.max(0,Math.min(100,Math.round(R))); }
   // 배신 갈래: 결심 60 이상 · 계략이나 무자비를 좋아하거나 혼돈 · 첫째 성향이 명예가 아님 · 아이 서번트는 아님
