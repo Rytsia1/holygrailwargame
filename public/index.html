@@ -17581,7 +17581,7 @@ function enterGame(fresh){
   window.scrollTo(0,0); if(typeof sndTick==='function') sndTick();
 }
 try{document.getElementById('heroCount').textContent=Sim.HEROES.length;}catch(e){}
-function loop(){ cancelAnimationFrame(raf); last=performance.now(); const f=t=>{ const dt=Math.min(.25,(t-last)/1000); last=t; Sim.tick(dt); prog(); raf=requestAnimationFrame(f); }; raf=requestAnimationFrame(f); }
+function loop(){ cancelAnimationFrame(raf); last=performance.now(); const f=t=>{ const dt=Math.min(.25,(t-last)/1000); last=t; try{ Sim.tick(dt); prog(); }catch(err){ try{ console.error('tick',err); }catch(_){} } raf=requestAnimationFrame(f); }; raf=requestAnimationFrame(f); }
 function prog(){ const S=Sim.S; if(!S) return; busyCheck(); $('#gProg').style.width=(Sim.yearProgress()*100).toFixed(1)+'%'; }
 function stamp(e){ return e.kd? `${e.a}세 · 진심${e.kd}${e.tod?' '+e.tod:''}` : e.n? `${e.a}세 · 제${e.n}일${e.tod?' '+e.tod:''}` : `${e.a}세 · ${e.y}`; }
 let group=null, groupKey='';
@@ -19076,7 +19076,8 @@ function fxNext(){ const f=FXQ.shift(); if(f) f(); }
 function fxSnd(o,k,opt){ try{ const h=Snd.cue(k,Object.assign({sync:true},opt||{})); (o._snd=o._snd||[]).push(h); return h; }catch(e){ return null; } }
 function fxSndStop(o,t){ if(o&&o._snd){ o._snd.forEach(h=>{ try{ h.stop(t); }catch(e){} }); o._snd=null; } }
 function cfxSkip(){ fxSndStop($('#cfx'),.3); cfxEnd(); }
-function cfxEnd(all){ clearTimeout(cfxT); cfxT=null; const o=$('#cfx'); if(o){ if(all) fxSndStop(o,.2); else if(o._sndFade) fxSndStop(o,o._sndFade); if(o._end) o._end(); o.remove(); } if(all) FXQ=[]; if(FXQ.length){ fxNext(); return; } try{ Sim.setHold(false); }catch(e){} }
+function fxSafe(f,fx){ try{ f(fx); }catch(err){ try{ console.error('fx',fx&&fx.t,err); }catch(_){} const o=$('#cfx'); if(o) o.remove(); if(!$('#cfx')){ try{ Sim.setHold(false); }catch(_){} if(FXQ.length) cfxEnd(); } } }   // 11-23
+function cfxEnd(all){ clearTimeout(cfxT); cfxT=null; const o=$('#cfx'); if(o){ if(all) fxSndStop(o,.2); else if(o._sndFade) fxSndStop(o,o._sndFade); if(o._end) o._end(); o.remove(); } if(all) FXQ=[]; if(FXQ.length){ try{ fxNext(); return; }catch(err){ try{ console.error('fxq',err); }catch(_){} const o2=$('#cfx'); if(o2) o2.remove(); return cfxEnd(); } } try{ Sim.setHold(false); }catch(e){} }
 // 탭이 숨겨졌을 때만 조용히. 기기의 '애니메이션 줄이기' 설정은 따르지 않는다(끄기는 보구·령주 연출 옵션으로)
 const fxQuiet=()=>{ try{ return document.hidden; }catch(e){ return false; } };
 const sndClashK=fx=>fx.t!=='block'&&(fx.res==='me'||fx.res==='en')?'j_pierce_'+fx.res:'j_cancel'; // 꿰뚫음은 이긴 쪽에서 진 쪽으로 뚫고 나간다(아군 왼쪽 · 적군 오른쪽)
@@ -21194,7 +21195,7 @@ if($('#sndNo')) $('#sndNo').onclick=()=>{ Snd.enable(false); sndBtn(); };
 
 Sim.setHooks({
   sfx:(k,x)=>{ try{ sndHook(k,x); }catch(err){} },
-  log:e=>{ const F={seal:sealFx,descent:descentFx,boss:bossFx,bossp2:bossP2Fx,defect:defectFx,end:endFx,bxseal:bxSealFx,bxdesc:bxDescFx,bxkp:bxKpFx,bxfree:bxFreeFx,bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx,kgmr:kgMrFx,kgally:kgAllyFx}; sndTick(); if(e.k==='fx'){ if(e.fx&&F[e.fx.t]) F[e.fx.t](e.fx); return; } if(e.k==='check'){ const ok=(e.t.match(/✓/g)||[]).length, ng=(e.t.match(/✗/g)||[]).length; if(ok||ng) Snd.sfx(ng>ok?'u_ng':'u_ok',{group:'chk'}); } addEntry(e); if(e.fx) (F[e.fx.t]||clashFx)(e.fx); if(e.k==='q') setNow({...e,t:`${e.title} → ${e.pick}`}); else if(e.k!=='delta'&&e.k!=='check') setNow(e); },
+  log:e=>{ const F={seal:sealFx,descent:descentFx,boss:bossFx,bossp2:bossP2Fx,defect:defectFx,end:endFx,bxseal:bxSealFx,bxdesc:bxDescFx,bxkp:bxKpFx,bxfree:bxFreeFx,bxconf:bxConfFx,bxorder:bxOrderFx,kgin:kgInFx,kgback:kgBackFx,kgday:kgDayFx,kgfull:kgFullFx,kgduel:kgDuelFx,kgmr:kgMrFx,kgally:kgAllyFx}; sndTick(); if(e.k==='fx'){ if(e.fx&&F[e.fx.t]) fxSafe(F[e.fx.t],e.fx); return; } if(e.k==='check'){ const ok=(e.t.match(/✓/g)||[]).length, ng=(e.t.match(/✗/g)||[]).length; if(ok||ng) Snd.sfx(ng>ok?'u_ng':'u_ok',{group:'chk'}); } addEntry(e); if(e.fx) fxSafe(F[e.fx.t]||clashFx,e.fx); if(e.k==='q') setNow({...e,t:`${e.title} → ${e.pick}`}); else if(e.k!=='delta'&&e.k!=='check') setNow(e); },
   decide:d=>{ sndTick(); if(d.input==='last'){ const w=Sim.S&&Sim.S.war; if(w&&w.ended&&w.heroAlive&&!w.kg) Snd.jingle('j_farewell'); } else if(!d.battle&&!d.silent&&!(d.summon&&sumFxDue())) Snd.sfx('u_popup',{group:'pop'}); showDecision(d); },
   change:()=>{ render(); sndTick(); },
   phase:()=>{ render(); if(Sim.S&&Sim.S.war) ghShown(); sndTick(); },
