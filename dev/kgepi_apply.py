@@ -31,6 +31,21 @@ rp("if(c.length){ sc=wpick(c,x=>x.w||1); E.used.push(sc.id); if(sc.arc) E.arcN=(
    "if(c.length){ sc=wpick(c,x=>(x.w||1)*kgPace(x)); kgPaced(sc); E.used.push(sc.id); if(sc.arc) E.arcN=(E.arcN||0)+1; sc={yrs:()=>ri(1,S.flags.kg6||E.kw?3:4),f:sc.f,rid:'@pool'+sc.id}; }")
 rp("const EPI_END={yrs:()=>Math.max(1,S.warYear+58-S.year),c:()=>{const d=S.warYear+58-S.year;return d>0&&d<45&&S.age+d<100},",
    "const EPI_END={yrs:()=>Math.max(1,S.warYear+58-S.year),c:()=>{const d=S.warYear+58-S.year;return d>0&&d<45&&S.age+d<100&&!(kgCtx()&&S.flags.kg==='zeal')},")
+# 11-22: 진심 나흘의 기록 왼쪽 칸이 성배전쟁 날짜(성배를 고른 다음 날부터 하나씩 밀림)라 머리줄 「진심 · 셋째 날」과 어긋나 보이던 것
+#        → 진심 나흘(과 그 밤의 결전 · 결투)은 기록에 진심 날수(kd)를 남기고, 왼쪽 칸 · 기록 복사 줄을 「진심3 낮」으로
+#        중국어 날짜 칸의 낮 · 밤 · 새벽이 영어(Night)로 나오던 것도 함께 고침(정규식 번역의 {2} 대신 낱말을 바로)
+rp("n:inW?S.war.day:0,tod:inW?S.war.tod:undefined,", "n:inW?S.war.day:0,tod:inW?S.war.tod:undefined,kd:inW&&S.war.kg&&S.war.kg.d?S.war.kg.d:undefined,")
+rp("function stamp(e){ return e.n? `${e.a}세 · 제${e.n}일${e.tod?' '+e.tod:''}`", "function stamp(e){ return e.kd? `${e.a}세 · 진심${e.kd}${e.tod?' '+e.tod:''}` : e.n? `${e.a}세 · 제${e.n}일${e.tod?' '+e.tod:''}`")
+rp("d.querySelector('.t').textContent=e.n?`${e.n}일${e.tod?' '+e.tod:''}`", "d.querySelector('.t').textContent=e.kd?`진심${e.kd}${e.tod?' '+e.tod:''}`:e.n?`${e.n}일${e.tod?' '+e.tod:''}`")
+rp("ph.textContent=war?`제${S.war.day||0}일 · ${S.war.tod||'낮'}`", "ph.textContent=war?(S.war.kg&&S.war.kg.d?`진심${S.war.kg.d} · ${S.war.tod||'낮'}`:`제${S.war.day||0}일 · ${S.war.tod||'낮'}`)")   # 위쪽 날짜 표시도
+rp("return d.phase==='war'&&w?`제${w.day}일 · ${w.tod||'낮'}`", "return d.phase==='war'&&w?(w.kg&&w.kg.d?`진심${w.kg.d} · ${w.tod||'낮'}`:`제${w.day}일 · ${w.tod||'낮'}`)")   # 저장 칸
+TOD = {'낮': ('Day', '昼'), '밤': ('Night', '夜'), '새벽': ('Dawn', '明け方')}
+pats = ''   # 중국어는 zh_apply가 zh_data.PAT의 같은 자리에서 덧붙인다(그쪽에도 7줄 넣어 둠)
+for ko, (en, ja) in TOD.items():
+    pats += "  [/^진심(\\d+) %s$/, {en:'True Heart $1 · %s', ja:'本心$1 %s'}],\n" % (ko, en, ja)
+    pats += "  [/^(\\d+)일 %s$/, {en:'Day $1 · %s', ja:'$1日目 %s'}],\n" % (ko, en, ja)
+pats += "  [/^진심(\\d+)$/, {en:'True Heart $1', ja:'本心$1'}],\n"
+rp("  [/^(\\d+)일 (낮|밤|새벽)$/,", pats + "  [/^(\\d+)일 (낮|밤|새벽)$/,")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)

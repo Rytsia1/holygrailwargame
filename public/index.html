@@ -5561,7 +5561,7 @@ const Sim = (() => {
   const fixQ=t=>typeof t==='string'&&t.includes('???')?t.replace(/\?\?\?(으로|에게|이|가|은|는|을|를|과|와|로|의|다|도|만)/g,(m,j)=>'정체 모를 서번트'+QJ[j]):t;
   function fxOnly(fx){ if(!S._buf) H.log({k:'fx',t:'',fx}); }
   const lvMine=t=>{ const h=S.hero&&H_BY[S.hero], m=t.match(/^([^:“”\n]{1,40}): [“(]/); if(m) return !!h&&m[1]===h.name; if(/— BB”$/.test(t)) return false; const m2=t.match(/^(.{1,30}?)(?:이|가|은|는) /); if(m2&&h&&m2[1]!==h.name){ if(!lvMine.N) lvMine.N=new Set(Object.values(H_BY).map(x=>x.name)); if(lvMine.N.has(m2[1])) return false; } return true; }; // 11-14
-  function log(t,k='n',x){ t=fixQ(t); if(typeof t==='string'&&t.includes('\uE000')){ x={...(x||{}),m:t}; t=unSpk(t); } const inW=S.war&&S.phase==='war';if(inW&&k==='voice'&&(t.includes('“')||t.startsWith('('))&&lvMine(t))S.war.lastVoice=t;const e={y:S.year,a:S.age,t,k,n:inW?S.war.day:0,tod:inW?S.war.tod:undefined,...(x||{})};if(S._buf){S._buf.push(e);return;}S.log.push(e);if(S.log.length>500)S.log.shift();H.log(e);}
+  function log(t,k='n',x){ t=fixQ(t); if(typeof t==='string'&&t.includes('\uE000')){ x={...(x||{}),m:t}; t=unSpk(t); } const inW=S.war&&S.phase==='war';if(inW&&k==='voice'&&(t.includes('“')||t.startsWith('('))&&lvMine(t))S.war.lastVoice=t;const e={y:S.year,a:S.age,t,k,n:inW?S.war.day:0,tod:inW?S.war.tod:undefined,kd:inW&&S.war.kg&&S.war.kg.d?S.war.kg.d:undefined,...(x||{})};if(S._buf){S._buf.push(e);return;}S.log.push(e);if(S.log.length>500)S.log.shift();H.log(e);}
 
   /* ---------- 결정 ---------- */
   const STAT_L={mana:'마력',lore:'지식',will:'정신',bond:'관계',health:'건강'};
@@ -16073,6 +16073,13 @@ const I18N_PAT=[
   [/^그 후 (\d+)년$/, {en:'$1 years later', ja:'その後$1年', zhs:'此后$1年', zht:'此後$1年'}],
   [/^(.+)에게 마지막으로 전할 말 \(선택\)$/, {en:'Last words to {1} (optional)', ja:'{1}に最後に伝える言葉（任意）', zhs:'想对{1}说的最后一句话（选填）', zht:'想對{1}說的最後一句話（選填）'}],
   [/^(.+), (\d{4})–(\d{4})\.$/, {en:'{1}, $2–$3.', ja:'{1}、$2–$3。', zhs:'{1}，$2–$3。', zht:'{1}，$2–$3。'}],
+  [/^진심(\d+) 낮$/, {en:'True Heart $1 · Day', ja:'本心$1 昼', zhs:'真心$1 白天', zht:'真心$1 白天'}],
+  [/^(\d+)일 낮$/, {en:'Day $1 · Day', ja:'$1日目 昼', zhs:'第$1天 白天', zht:'第$1天 白天'}],
+  [/^진심(\d+) 밤$/, {en:'True Heart $1 · Night', ja:'本心$1 夜', zhs:'真心$1 夜晚', zht:'真心$1 夜晚'}],
+  [/^(\d+)일 밤$/, {en:'Day $1 · Night', ja:'$1日目 夜', zhs:'第$1天 夜晚', zht:'第$1天 夜晚'}],
+  [/^진심(\d+) 새벽$/, {en:'True Heart $1 · Dawn', ja:'本心$1 明け方', zhs:'真心$1 黎明', zht:'真心$1 黎明'}],
+  [/^(\d+)일 새벽$/, {en:'Day $1 · Dawn', ja:'$1日目 明け方', zhs:'第$1天 黎明', zht:'第$1天 黎明'}],
+  [/^진심(\d+)$/, {en:'True Heart $1', ja:'本心$1', zhs:'真心$1', zht:'真心$1'}],
   [/^(\d+)일 (낮|밤|새벽)$/, {en:'Day $1 · {2}', ja:'$1日目 {2}', zhs:'第$1天 {2}', zht:'第$1天 {2}'}],
   [/^(.+) → (.+)$/, {en:'{1} → {2}', ja:'{1} → {2}', zhs:'{1} → {2}', zht:'{1} → {2}'}],
   [/^(.+), (\d+)세$/, {en:'{1}, $2', ja:'{1}、$2歳', zhs:'{1}，$2岁', zht:'{1}，$2歲'}],
@@ -17531,7 +17538,7 @@ function enterGame(fresh){
 try{document.getElementById('heroCount').textContent=Sim.HEROES.length;}catch(e){}
 function loop(){ cancelAnimationFrame(raf); last=performance.now(); const f=t=>{ const dt=Math.min(.25,(t-last)/1000); last=t; Sim.tick(dt); prog(); raf=requestAnimationFrame(f); }; raf=requestAnimationFrame(f); }
 function prog(){ const S=Sim.S; if(!S) return; busyCheck(); $('#gProg').style.width=(Sim.yearProgress()*100).toFixed(1)+'%'; }
-function stamp(e){ return e.n? `${e.a}세 · 제${e.n}일${e.tod?' '+e.tod:''}` : `${e.a}세 · ${e.y}`; }
+function stamp(e){ return e.kd? `${e.a}세 · 진심${e.kd}${e.tod?' '+e.tod:''}` : e.n? `${e.a}세 · 제${e.n}일${e.tod?' '+e.tod:''}` : `${e.a}세 · ${e.y}`; }
 let group=null, groupKey='';
 const BREAK=['n','night','sys','note','dead','q'];
 function chipBox(e){
@@ -17560,7 +17567,7 @@ function addEntry(e){
   }
   const d=document.createElement('div'); d.className='entry '+e.k;
   d.innerHTML='<span class="t mono"></span><span class="b"></span>';
-  d.querySelector('.t').textContent=e.n?`${e.n}일${e.tod?' '+e.tod:''}`:`${e.a}세`;
+  d.querySelector('.t').textContent=e.kd?`진심${e.kd}${e.tod?' '+e.tod:''}`:e.n?`${e.n}일${e.tod?' '+e.tod:''}`:`${e.a}세`;
   const b=d.querySelector('.b');
   if(e.k==='q'){
     const qt=document.createElement('span');qt.className='qt';qt.textContent=e.title||'';
@@ -17650,7 +17657,7 @@ function render(){
   $('#game').classList.toggle('war',!!war); { const c=war&&S.war.crisis, st=c&&!c.done?c.stage:0, bx=!!(c&&c.type==='beast3R'); for(const k of [1,2,3]){ $('#game').classList.toggle('cx'+k,!bx&&st===k); $('#game').classList.toggle('bx'+k,bx&&st===k); } }
   $('#gName').textContent=S.name; $('#gSex').textContent=S.sex==='f'?'여성':'남성'; $('#gAge').textContent=`${S.age}세`;
   { const o=Sim.ORIGINS.find(x=>x.id===S.origin); $('#prof').innerHTML=`<span>${S.sex==='f'?'여성':'남성'}</span><i>·</i><span>${S.age}세</span>${o?`<i>·</i><span>${esc(o.label)}</span>`:''}`; }   // 상태 카드 첫 줄: 성별 · 나이 · 출신 $('#gYear').textContent=`${S.city?S.city.n+' · ':''}${S.year}년`;
-  const ph=$('#gPhase'); ph.textContent=war?`제${S.war.day||0}일 · ${S.war.tod||'낮'}`:S.dead?'끝':S.phase==='epi'?((w2=>w2?(w2.u==='d'?`봄 · ${w2.n}일째`:`첫 해 · ${w2.n}달째`):'에필로그')(Sim.ep2When())):'삶'; ph.classList.toggle('war',!!war);
+  const ph=$('#gPhase'); ph.textContent=war?(S.war.kg&&S.war.kg.d?`진심${S.war.kg.d} · ${S.war.tod||'낮'}`:`제${S.war.day||0}일 · ${S.war.tod||'낮'}`):S.dead?'끝':S.phase==='epi'?((w2=>w2?(w2.u==='d'?`봄 · ${w2.n}일째`:`첫 해 · ${w2.n}달째`):'에필로그')(Sim.ep2When())):'삶'; ph.classList.toggle('war',!!war);
   $('#circ').innerHTML=`마술 회로 <b>${S.circuit?letter(S.circuit):'없음'}</b>`;
   $('#stats').innerHTML=Object.entries(ST_LABEL).map(([k,l])=>bar(l,S.st[k],k)).join('')+bar('재산',S.wealth||0,'wealth');
   affRender(S);
@@ -20882,7 +20889,7 @@ function savePick(done){ const a=store.get(K_SYNCALT), d=store.get(K_SAVE); if(!
   const stg=d=>d.phase==='war'?1:(d.phase==='epi'||d.warState==='done')?2:0, TOD={'새벽':0,'낮':1,'밤':2};
   const prog=x=>{ const d=x.d, w=d.war; return (d.age||0)*1e7+stg(d)*1e6+(d.phase==='war'&&w?(w.day||0)*1e3+(TOD[w.tod]||0)*1e2:0)+Math.min(99,(d.log||[]).length%100); };
   const m=store.get(K_SAVEM)||{}, L=[{d,at:m.at||0},{d:a.d,at:a.at||0}].sort((x,y)=>prog(y)-prog(x)||y.at-x.at);
-  const where=x=>{ const d=x.d, w=d.war; return d.phase==='war'&&w?`제${w.day}일 · ${w.tod||'낮'}`:stg(d)===2?'에필로그':'성배전쟁 전'; };
+  const where=x=>{ const d=x.d, w=d.war; return d.phase==='war'&&w?(w.kg&&w.kg.d?`진심${w.kg.d} · ${w.tod||'낮'}`:`제${w.day}일 · ${w.tod||'낮'}`):stg(d)===2?'에필로그':'성배전쟁 전'; };
   // 두 기록을 가려 볼 수 있게 마지막 사건 한 줄(번역은 기록 그대로 맞물리게 자르지 않고 화면에서 말줄임)
   const lastEv=x=>{ const lg=x.d.log||[]; for(let i=lg.length-1;i>=0;i--){ const e=lg[i]; if(e&&e.t&&!/^(delta|night|check|fx)$/.test(e.k)&&e.t.length>=6) return e.t; } return ''; };
   // 두 기록이 같은 곳에 멈춰 있으면(같은 진행·같은 마지막 사건) 물어볼 것 없이 이어 간다
