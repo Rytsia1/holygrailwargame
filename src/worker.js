@@ -108,6 +108,12 @@ const SCHEMA = [
   `CREATE INDEX IF NOT EXISTS sync_devs_gid ON sync_devs(gid)`,
   // 통계 스냅숏: 합친 결과를 한 줄로 남겨 둔다. busy = 지금 다시 세고 있는 요청이 잡은 시각
   `CREATE TABLE IF NOT EXISTS stats_snap (k TEXT PRIMARY KEY, at INTEGER NOT NULL, busy INTEGER NOT NULL DEFAULT 0, body TEXT NOT NULL)`,
+  // 11-22: 전체 통계용 누적 수. 트리거가 lives · dev_ach에 줄이 들어갈 때마다 더한다(처음 한 번만 CNT_SETUP이 채움)
+  `CREATE TABLE IF NOT EXISTS c_tot (k TEXT PRIMARY KEY, v INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS c_hero (hero TEXT PRIMARY KEY, n INTEGER NOT NULL, g INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS c_end (ending TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS c_cup (cup TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS c_ach (ach TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
 ];
 // 스키마 준비: 한 번 끝나면 표시만 남긴다. 준비 중인 promise를 여러 요청이 나눠 기다리면, 그 promise를 만든 요청이
 // 먼저 끝났을 때 나머지가 'This promise was created by a request that has since ended'로 실패하므로 요청마다 직접 기다린다.
@@ -580,6 +586,90 @@ const cxOut = (rows, cls) => ({
 // 신규 서번트(2026.10.30) — 통계 페이지의 '신규 서번트 이후' 기준점
 const NEW_HEROES = ['baobhan','barghest','melusine','muramasa','ishtar','ereshkigal','lanling','habetrot','quetzalcoatl','kama','sheba','asclepius','constantine','huyan','lilith','yuyoku','nameless'];
 const tsArg = v => { const n = Number(v); return Number.isFinite(n) && n > 0 && n < 1e14 ? Math.floor(n) : null; };
+// 11-22: 전체 통계를 매번 lives(약 68만 줄) · dev_ach(약 1,170만 줄)에서 GROUP BY로 세면 한 번에 15~20초가 걸리고,
+// D1은 쿼리를 하나씩 처리하므로 그동안 다른 요청이 모두 밀려 'D1 DB is overloaded'(7429)로 실패했다(요청의 약 30%).
+// → 줄이 들어갈 때 트리거로 누적 수(c_*)를 더하고, 전체 통계는 누적 수만 읽는다.
+// 처음 채우기: ① 트리거를 만들면서 그 순간의 MAX(rowid)를 meta에 적고(한 batch = 한 트랜잭션이라 그 뒤 줄은 트리거가 센다)
+//              ② 그 rowid까지를 조각(CNT_STEP 줄)씩 나눠 더한다. 조각마다 진행 위치를 같은 batch로 적어, 끊겨도 이어서 센다.
+// 다 채우기 전에는 지난 스냅숏을 그대로 준다.
+const CNT = {
+  lives: {
+    step: 100000,
+    setup: [
+      `DELETE FROM c_tot`, `DELETE FROM c_hero`, `DELETE FROM c_end`, `DELETE FROM c_cup`,
+      `CREATE TRIGGER IF NOT EXISTS c_lives_ins AFTER INSERT ON lives BEGIN
+         INSERT INTO c_tot (k, v) VALUES ('lives', 1) ON CONFLICT(k) DO UPDATE SET v = v + 1;
+         INSERT INTO c_tot (k, v) SELECT 'war', 1 WHERE NEW.hero IS NOT NULL ON CONFLICT(k) DO UPDATE SET v = v + 1;
+         INSERT INTO c_tot (k, v) SELECT 'agesum', NEW.age WHERE NEW.age IS NOT NULL ON CONFLICT(k) DO UPDATE SET v = v + excluded.v;
+         INSERT INTO c_tot (k, v) SELECT 'agecnt', 1 WHERE NEW.age IS NOT NULL ON CONFLICT(k) DO UPDATE SET v = v + 1;
+         INSERT INTO c_hero (hero, n, g) SELECT NEW.hero, 1, NEW.ending IN ('victor', 'shared') WHERE NEW.hero IS NOT NULL ON CONFLICT(hero) DO UPDATE SET n = n + 1, g = g + excluded.g;
+         INSERT INTO c_end (ending, n) VALUES (NEW.ending, 1) ON CONFLICT(ending) DO UPDATE SET n = n + 1;
+         INSERT INTO c_cup (cup, n) SELECT NEW.cup, 1 WHERE NEW.cup IS NOT NULL ON CONFLICT(cup) DO UPDATE SET n = n + 1;
+       END`,
+      // /api/life/fix: 서번트 칸이 비어 있던 생에 서번트를 채울 때 (아직 조각이 세지 않은 옛 줄이면 그 조각이 고친 값을 세므로 건너뛴다)
+      `CREATE TRIGGER IF NOT EXISTS c_lives_fix AFTER UPDATE OF hero ON lives
+         WHEN OLD.hero IS NULL AND NEW.hero IS NOT NULL AND (NEW.rowid <= (SELECT CAST(v AS INTEGER) FROM meta WHERE k = 'cnt_lives_at')
+                                                         OR NEW.rowid > (SELECT CAST(v AS INTEGER) FROM meta WHERE k = 'cnt_lives_max')) BEGIN
+         INSERT INTO c_tot (k, v) VALUES ('war', 1) ON CONFLICT(k) DO UPDATE SET v = v + 1;
+         INSERT INTO c_hero (hero, n, g) VALUES (NEW.hero, 1, NEW.ending IN ('victor', 'shared')) ON CONFLICT(hero) DO UPDATE SET n = n + 1, g = g + excluded.g;
+       END`,
+    ],
+    chunk: [
+      `INSERT INTO c_tot (k, v) SELECT 'lives', COUNT(*) FROM lives WHERE rowid > ?1 AND rowid <= ?2 ON CONFLICT(k) DO UPDATE SET v = v + excluded.v`,
+      `INSERT INTO c_tot (k, v) SELECT 'war', COUNT(*) FROM lives WHERE rowid > ?1 AND rowid <= ?2 AND hero IS NOT NULL ON CONFLICT(k) DO UPDATE SET v = v + excluded.v`,
+      `INSERT INTO c_tot (k, v) SELECT 'agesum', COALESCE(SUM(age), 0) FROM lives WHERE rowid > ?1 AND rowid <= ?2 ON CONFLICT(k) DO UPDATE SET v = v + excluded.v`,
+      `INSERT INTO c_tot (k, v) SELECT 'agecnt', COUNT(age) FROM lives WHERE rowid > ?1 AND rowid <= ?2 ON CONFLICT(k) DO UPDATE SET v = v + excluded.v`,
+      `INSERT INTO c_hero (hero, n, g) SELECT hero, COUNT(*), SUM(ending IN ('victor', 'shared')) FROM lives WHERE rowid > ?1 AND rowid <= ?2 AND hero IS NOT NULL GROUP BY hero
+         ON CONFLICT(hero) DO UPDATE SET n = n + excluded.n, g = g + excluded.g`,
+      `INSERT INTO c_end (ending, n) SELECT ending, COUNT(*) FROM lives WHERE rowid > ?1 AND rowid <= ?2 GROUP BY ending ON CONFLICT(ending) DO UPDATE SET n = n + excluded.n`,
+      `INSERT INTO c_cup (cup, n) SELECT cup, COUNT(*) FROM lives WHERE rowid > ?1 AND rowid <= ?2 AND cup IS NOT NULL GROUP BY cup ON CONFLICT(cup) DO UPDATE SET n = n + excluded.n`,
+    ],
+  },
+  ach: {
+    step: 500000,
+    setup: [
+      `DELETE FROM c_ach`,
+      `CREATE TRIGGER IF NOT EXISTS c_ach_ins AFTER INSERT ON dev_ach BEGIN
+         INSERT INTO c_ach (ach, n) VALUES (NEW.ach, 1) ON CONFLICT(ach) DO UPDATE SET n = n + 1;
+       END`,
+    ],
+    chunk: [
+      `INSERT INTO c_ach (ach, n) SELECT ach, COUNT(*) FROM dev_ach WHERE rowid > ?1 AND rowid <= ?2 GROUP BY ach ON CONFLICT(ach) DO UPDATE SET n = n + excluded.n`,
+    ],
+  },
+};
+const TBL = { lives: 'lives', ach: 'dev_ach' };
+class NotReady extends Error {}
+// 누적 수가 준비됐으면 true. 아니면 budget(ms) 안에서 조각을 더 세고 false. 전체 통계를 다시 세는 차례를 잡은 요청(한 번에 하나)만 부른다
+async function cntReady(env, budget) {
+  const t0 = Date.now(), M = {};
+  const keys = Object.keys(CNT).flatMap(n => [`cnt_${n}`, `cnt_${n}_max`, `cnt_${n}_at`]);
+  const { results } = await env.DB.prepare(`SELECT k, v FROM meta WHERE k IN (${keys.map(() => '?').join(', ')})`).bind(...keys).all();
+  for (const r of results) M[r.k] = r.v;
+  let ready = true;
+  for (const name of Object.keys(CNT)) {
+    if (M[`cnt_${name}`] === '1') continue;
+    const C = CNT[name];
+    if (M[`cnt_${name}_max`] == null) {
+      await env.DB.batch([...C.setup.map(q => env.DB.prepare(q)),
+        env.DB.prepare(`INSERT OR REPLACE INTO meta (k, v) SELECT 'cnt_${name}_max', CAST(COALESCE(MAX(rowid), 0) AS TEXT) FROM ${TBL[name]}`),
+        env.DB.prepare(`INSERT OR REPLACE INTO meta (k, v) VALUES ('cnt_${name}_at', '0')`)]);
+      const r = await env.DB.prepare(`SELECT v FROM meta WHERE k = ?`).bind(`cnt_${name}_max`).first();
+      M[`cnt_${name}_max`] = r.v; M[`cnt_${name}_at`] = '0';
+    }
+    const max = +M[`cnt_${name}_max`]; let at = +M[`cnt_${name}_at`];
+    for (let first = true; at < max && (first || Date.now() - t0 < budget); first = false) {   // 적어도 한 조각은 센다
+      const hi = Math.min(max, at + C.step);
+      await env.DB.batch([...C.chunk.map(q => env.DB.prepare(q).bind(at, hi)),
+        env.DB.prepare(`INSERT OR REPLACE INTO meta (k, v) VALUES (?, ?)`).bind(`cnt_${name}_at`, String(hi))]);
+      at = hi;
+    }
+    if (at >= max) await env.DB.prepare(`INSERT OR REPLACE INTO meta (k, v) VALUES (?, '1')`).bind(`cnt_${name}`).run();
+    else ready = false;
+  }
+  return ready;
+}
+
 // 통계 스냅숏: 합친 결과를 stats_snap에 한 줄로 두고, 10분이 지나면 한 요청만 다시 센다.
 // (예전에는 Cache API에 10분 캐시했는데, 데이터센터마다 따로라 거의 매번 전체를 다시 셌다)
 // 다시 세는 동안 다른 요청은 지난 결과를 받는다. 처음이라 지난 결과가 없을 때만 기다린다.
@@ -595,19 +685,21 @@ async function snapStats(env, ctx, key, build) {
   const mine = !!(claim.meta && claim.meta.changes);
   const redo = async () => {
     try {
-      const body = JSON.stringify(await build());
+      const body = JSON.stringify(await build({ old: !!(row && row.body) }));
       await env.DB.batch([
         env.DB.prepare(`UPDATE stats_snap SET at = ?, busy = 0, body = ? WHERE k = ?`).bind(Date.now(), body, key),
         env.DB.prepare(`DELETE FROM stats_snap WHERE k != 'all' AND at < ? AND busy < ?`).bind(now - 86400000, now - SNAP_LOCK),   // 하루 넘게 안 쓴 기간 통계는 지운다
       ]);
       return body;
     } catch (e) {
-      await env.DB.prepare(`UPDATE stats_snap SET busy = 0 WHERE k = ?`).bind(key).run().catch(() => {});
+      // 11-22: 실패해도 차례(busy)는 바로 풀지 않는다 — 풀면 다음 요청이 곧바로 다시 세어 무거운 쿼리가 몰렸다. SNAP_LOCK(2분)이 지나면 다시 잡을 수 있다.
+      // 누적 수를 조각으로 채우는 중(NotReady)이면 다음 요청이 이어서 세도록 푼다
+      if (e instanceof NotReady) await env.DB.prepare(`UPDATE stats_snap SET busy = 0 WHERE k = ?`).bind(key).run().catch(() => {});
       throw e;
     }
   };
   if (row && row.body) {               // 지난 결과가 있으면 그것을 바로 주고, 차례를 잡았으면 뒤에서 다시 센다
-    if (mine) ctx.waitUntil(redo().catch(e => console.error('stats redo', e && e.message)));
+    if (mine) ctx.waitUntil(redo().catch(e => { if (!(e instanceof NotReady)) console.error('stats redo', e && e.message); }));
     return row.body;
   }
   return mine ? redo() : JSON.stringify(await build());   // 처음: 지난 결과가 없으니 센다
@@ -657,15 +749,18 @@ async function getStats(request, env, ctx) {
   const url = new URL(request.url);
   if (url.searchParams.has('since') || url.searchParams.has('until')) return getStatsRange(request, env, ctx, url);
   await ensureSchema(env);
-  const body = await snapStats(env, ctx, 'all', async () => {
+  const body = await snapStats(env, ctx, 'all', async ({ old }) => {
+    // 11-22: 누적 수에서 읽는다. 아직 채우는 중이면 지난 스냅숏을 두고(한 번에 3초까지만 센다), 지난 것이 없으면 끝까지 센다
+    if (!(await cntReady(env, old ? 3000 : Infinity))) throw new NotReady();
     const [tot, heroes, ends, cups, ach, cxr, cxc] = await env.DB.batch([
-      env.DB.prepare(`SELECT (SELECT COUNT(*) FROM lives) AS lives, (SELECT COUNT(*) FROM devices) AS players,
-                             (SELECT MIN(ts) FROM lives) AS since, (SELECT ROUND(AVG(age), 1) FROM lives) AS avgAge,
-                             (SELECT COUNT(*) FROM lives WHERE hero IS NOT NULL) AS warLives`),
-      env.DB.prepare(`SELECT hero, COUNT(*) AS n, SUM(ending IN ('victor', 'shared')) AS g FROM lives WHERE hero IS NOT NULL GROUP BY hero`),
-      env.DB.prepare(`SELECT ending, COUNT(*) AS n FROM lives GROUP BY ending`),
-      env.DB.prepare(`SELECT cup, COUNT(*) AS n FROM lives WHERE cup IS NOT NULL GROUP BY cup`),
-      env.DB.prepare(`SELECT ach, COUNT(*) AS n FROM dev_ach GROUP BY ach`),
+      env.DB.prepare(`SELECT (SELECT v FROM c_tot WHERE k = 'lives') AS lives, (SELECT COUNT(*) FROM devices) AS players,
+                             (SELECT MIN(ts) FROM lives) AS since,
+                             (SELECT ROUND(1.0 * (SELECT v FROM c_tot WHERE k = 'agesum') / NULLIF((SELECT v FROM c_tot WHERE k = 'agecnt'), 0), 1)) AS avgAge,
+                             (SELECT v FROM c_tot WHERE k = 'war') AS warLives`),
+      env.DB.prepare(`SELECT hero, n, g FROM c_hero WHERE n > 0`),
+      env.DB.prepare(`SELECT ending, n FROM c_end WHERE n > 0`),
+      env.DB.prepare(`SELECT cup, n FROM c_cup WHERE n > 0`),
+      env.DB.prepare(`SELECT ach, n FROM c_ach WHERE n > 0`),
       ...cxQ(env, 'ts >= ?', [0]),
     ]);
     const t = tot.results[0] || {};
