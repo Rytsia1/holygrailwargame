@@ -15,6 +15,11 @@ rp("try{const q=new URLSearchParams(location.search).get('lang');if(LS.includes(
    "if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;")
 rp("const LANG=(()=>{ try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'null'); if(LANGS.includes(v)) return v; }catch(e){}",
    "const LANG=(()=>{ if(typeof window!=='undefined'&&LANGS.includes(window.__LANG)) return window.__LANG;   // 로딩 화면이 고른 언어(사전도 그 언어로 받았다)\n  try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'null'); if(LANGS.includes(v)) return v; }catch(e){}")
+# 11-22: 화면 글자를 옮길 때 <script> 본문 글자는 건너뛴다.
+# HTML을 읽는 도중 뒤쪽 <script>의 본문 글자가 따로 붙으며 감시(MutationObserver)에 걸려, 코드 332자를 문장 틀 수천 개에 맞춰 보느라
+# 영어 · 중국어 첫 화면이 PC에서도 1분, 느린 폰에서는 4분 넘게 멈췄다
+rp("  if(root.nodeType===3){ const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }",
+   "  if(root.nodeType===3){ const pa=root.parentNode; if(pa&&(pa.nodeName==='SCRIPT'||pa.nodeName==='STYLE'||pa.nodeName==='TEXTAREA'||(pa.closest&&pa.closest('[data-notr]')))) return;   // 스크립트 본문은 옮기지 않는다 (11-22)\n    const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)

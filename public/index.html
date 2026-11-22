@@ -16375,7 +16375,8 @@ function _trChip(t){
 const I18N_ATTR=['placeholder','title','aria-label'];
 function trNode(root){
   if(LANG==='ko') return;
-  if(root.nodeType===3){ const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }
+  if(root.nodeType===3){ const pa=root.parentNode; if(pa&&(pa.nodeName==='SCRIPT'||pa.nodeName==='STYLE'||pa.nodeName==='TEXTAREA'||(pa.closest&&pa.closest('[data-notr]')))) return;   // 스크립트 본문은 옮기지 않는다 (11-22)
+    const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }
   if(root.nodeType!==1||root.closest&&root.closest('[data-notr],script,style,textarea')) return;
   const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,{acceptNode:n=>n.nodeType===1&&(n.tagName==='SCRIPT'||n.tagName==='STYLE'||n.hasAttribute('data-notr'))?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   let n=root;
