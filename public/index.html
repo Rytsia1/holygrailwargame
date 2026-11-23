@@ -16191,11 +16191,12 @@ function _trName(t){
   return null;
 }
 const _trc=new Map();
+const TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0;
 function tr(s){
   if(LANG==='ko'||!s||!HANGUL.test(s)) return s;
   const hit=_trc.get(s); if(hit!==undefined) return hit;
-  const c0=_tplCut, d0=_tplDepth;
-  let r=_tr1(s); if(LANG==='ja') r=r.replace(/。」/g,'」').replace(/。）/g,'）'); if(ZH) r=r.replace(/([。！？」”』…])[ ]+(?=\S)/g,'$1'); if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0))) _trc.set(s,r); return r;
+  const c0=_tplCut, d0=_tplDepth, top=_trNest===0; if(top){ _tplSteps=0; _tplOver=false; }
+  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; } if(LANG==='ja') r=r.replace(/。」/g,'」').replace(/。）/g,'）'); if(ZH) r=r.replace(/([。！？」”』…])[ ]+(?=\S)/g,'$1'); if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0)||(top&&_tplOver))) _trc.set(s,r); return r;
 }
 function _tr1(s,nosplit){
   const lead=s.match(/^\s*/)[0], trail=s.match(/\s*$/)[0], t=s.trim();
@@ -16270,7 +16271,7 @@ const I18N_TPLS=(()=>{ const L=ZH?(()=>{ const z=_ZHD?_ZHD.t:[], h=new Set(z.map
     const lits=toks.filter(x=>x.l!=null).map(x=>x.l); const an=lits.reduce((a,b)=>b.length>a.length?b:a,'');
     return {toks,v,an,x,nl:k.includes('\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort((a,b)=>b.w-a.w||b.nc-a.nc); })();
 function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말이 문장 여럿을 삼키지 못하게
-  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(_tplSteps===TPL_STEPS+1) _tplCut++; return false; } if(i===toks.length) return pos===s.length;
+  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(!_tplOver){ _tplOver=true; _tplCut++; } return false; } if(i===toks.length) return pos===s.length;
     const t=toks[i];
     if(t.l!=null) return s.startsWith(t.l,pos)&&go(i+1,pos+t.l.length);
     if(t.c==null){ for(const j of t.j) if(s.startsWith(j,pos)&&go(i+1,pos+j.length)) return true; return false; }
@@ -16290,8 +16291,7 @@ function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말
 let _UN=null, _UNt=0; function _userNm(v){ const now=Date.now(); if(!_UN||now-_UNt>1000){ _UN=new Set(); _UNt=now; try{ const S=Sim.S, f=S&&S.fam, a=x=>{ if(x&&typeof x==='string'&&/[가-힣]/.test(x)) _UN.add(x.trim()); };
   if(S){ a(S.name); if(f){ a(f.sibName); if(f.spouse) a(f.spouse.name); for(const k of f.kids||[]) a(k&&k.name); } } }catch(e){} } return _UN.has(String(v).trim()); }
 let _tplDepth=0, _tplCut=0;   // _tplCut: 깊이 제한에 걸린 횟수 (그 사이 얻은 실패는 캐시에 남기지 않는다 · 11-21)
-const TPL_STEPS=window.__TPL_STEPS||40000; let _tplSteps=0;
-function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplDepth===0) _tplSteps=0; else if(_tplSteps>TPL_STEPS) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
+function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
 function _trTpl0(t){ const nl=t.includes('\n');
   for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;
     const m=_tplMatch(T.toks,t,T.x); if(!m) continue;

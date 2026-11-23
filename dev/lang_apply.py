@@ -40,13 +40,17 @@ rp("let _tplDepth=0, _tplCut=0;",
    "let _UN=null, _UNt=0; function _userNm(v){ const now=Date.now(); if(!_UN||now-_UNt>1000){ _UN=new Set(); _UNt=now; try{ const S=Sim.S, f=S&&S.fam, a=x=>{ if(x&&typeof x==='string'&&/[가-힣]/.test(x)) _UN.add(x.trim()); };\n"
    "  if(S){ a(S.name); if(f){ a(f.sibName); if(f.spouse) a(f.spouse.name); for(const k of f.kids||[]) a(k&&k.name); } } }catch(e){} } return _UN.has(String(v).trim()); }\n"
    "let _tplDepth=0, _tplCut=0;")
-# 11-23: 문장 틀 되맞춤에 걸음 수 상한(맨 바깥 문장 하나당 TPL_STEPS). 넘으면 그 문장은 틀 대신 문장 · 조각 단위 번역으로 넘긴다
-# (긴 대사 한 줄이 PC에서도 0.4~1초, 폰에서는 몇 초씩 화면을 멈추게 했다)
-rp("function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }",
-   "const TPL_STEPS=window.__TPL_STEPS||40000; let _tplSteps=0;\n"
-   "function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplDepth===0) _tplSteps=0; else if(_tplSteps>TPL_STEPS) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }")
+# 11-23: 문장 틀 되맞춤에 걸음 수 상한 — 맨 바깥 tr() 한 번(그 안의 조각 · 문장 나눔 포함)에 TPL_STEPS까지.
+# 넘으면 남은 틀 맞춤을 건너뛰고(문장 · 조각 단위 번역은 계속) 그 결과를 그대로 기억한다.
+# (서번트 대사가 든 긴 한 줄이 PC에서도 2~68초, 폰에서는 몇 분씩 화면을 멈추게 했다: 인연 사건 · 꿈 · 소환 첫 대사 등)
+rp("const _trc=new Map();\nfunction tr(s){\n  if(LANG==='ko'||!s||!HANGUL.test(s)) return s;\n  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth;\n  let r=_tr1(s);",
+   "const _trc=new Map();\nconst TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0;\nfunction tr(s){\n  if(LANG==='ko'||!s||!HANGUL.test(s)) return s;\n  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth, top=_trNest===0; if(top){ _tplSteps=0; _tplOver=false; }\n  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; }")
+rp("if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0))) _trc.set(s,r); return r;",
+   "if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0)||(top&&_tplOver))) _trc.set(s,r); return r;")
+rp("function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } _tplDepth++;",
+   "function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++;")
 rp("  const go=(i,pos)=>{ if(i===toks.length) return pos===s.length;",
-   "  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(_tplSteps===TPL_STEPS+1) _tplCut++; return false; } if(i===toks.length) return pos===s.length;")
+   "  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(!_tplOver){ _tplOver=true; _tplCut++; } return false; } if(i===toks.length) return pos===s.length;")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
