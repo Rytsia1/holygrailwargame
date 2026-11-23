@@ -44,13 +44,30 @@ rp("let _tplDepth=0, _tplCut=0;",
 # 넘으면 남은 틀 맞춤을 건너뛰고(문장 · 조각 단위 번역은 계속) 그 결과를 그대로 기억한다.
 # (서번트 대사가 든 긴 한 줄이 PC에서도 2~68초, 폰에서는 몇 분씩 화면을 멈추게 했다: 인연 사건 · 꿈 · 소환 첫 대사 등)
 rp("const _trc=new Map();\nfunction tr(s){\n  if(LANG==='ko'||!s||!HANGUL.test(s)) return s;\n  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth;\n  let r=_tr1(s);",
-   "const _trc=new Map();\nconst TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0;\nfunction tr(s){\n  if(LANG==='ko'||!s||!HANGUL.test(s)) return s;\n  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth, top=_trNest===0; if(top){ _tplSteps=0; _tplOver=false; }\n  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; }")
+   "const _trc=new Map();\nconst TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0; const _trcD=new Map();\nfunction tr(s){\n  if(LANG==='ko'||!s||!HANGUL.test(s)) return s;\n  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth, top=_trNest===0; if(top){ _tplSteps=0; _tplOver=false; }\n  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; }")
 rp("if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0))) _trc.set(s,r); return r;",
-   "if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0)||(top&&_tplOver))) _trc.set(s,r); return r;")
+   "if(s.length<240&&(!HANGUL.test(r)||_tplCut===c0||(top&&_tplOver))) _trc.set(s,r); else if(s.length<240&&!_tplOver){ const o=_trcD.get(s); if(!o||d0<o[0]){ if(_trcD.size>40000) _trcD.clear(); _trcD.set(s,[d0,r]); } } return r;")
+# 깊이 제한에 걸린 결과는 「그 깊이에서」의 결과로 기억한다: 같은 깊이이거나 더 깊은 곳에서 다시 부르면 그대로 쓴다
+# (긴 대사 한 줄에서 같은 조각 400개를 43만 번 다시 옮기던 것, 11-23)
+rp("  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  const c0=_tplCut, d0=_tplDepth, top=_trNest===0;",
+   "  const hit=_trc.get(s); if(hit!==undefined) return hit;\n  { const dc=_trcD.get(s); if(dc&&dc[0]<=_tplDepth) return dc[1]; }\n  const c0=_tplCut, d0=_tplDepth, top=_trNest===0;")   # 깊이 제한에 걸리지 않았으면 안쪽(끼워 넣을 말 후보)에서 실패한 결과도 기억한다 — 같은 후보를 틀마다 다시 옮기던 것
 rp("function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } _tplDepth++;",
-   "function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++;")
+   "const _tplMemo=new Map();   // 같은 조각을 틀 6천여 개에 거듭 맞춰 보지 않게: 조각 → 결과(깊이 제한에 걸리지 않은 것만, 11-23)\n"
+   "function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; if(_tplMemo.has(t)) return _tplMemo.get(t); const m0=_tplCut; _tplDepth++; let mr; try{ mr=_trTpl0(t); } finally{ _tplDepth--; } if(_tplCut===m0){ if(_tplMemo.size>40000) _tplMemo.clear(); _tplMemo.set(t,mr); } return mr; }\n"
+   "function _trTpl_old(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++;")
 rp("  const go=(i,pos)=>{ if(i===toks.length) return pos===s.length;",
    "  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(!_tplOver){ _tplOver=true; _tplCut++; } return false; } if(i===toks.length) return pos===s.length;")
+# 11-23: 틀 후보 색인 — 틀마다 닻(가장 긴 고정 글자)에서 가장 드문 두 글자를 열쇠로 둔다. 닻이 글 안에 있으면 그 두 글자도 있으므로
+# 글의 두 글자 조각으로 후보만 모아 본다. (끼워 넣을 말 후보마다 틀 6천여 개를 다 훑느라 긴 대사 한 줄에 2~68초가 걸렸다)
+rp("    return {toks,v,an,x,nl:k.includes('\\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort((a,b)=>b.w-a.w||b.nc-a.nc); })();",
+   "    return {toks,v,an,x,nl:k.includes('\\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort((a,b)=>b.w-a.w||b.nc-a.nc); })();\n"
+   "const _TPL_IX=(()=>{ const bg=a=>{ const o=new Set(); for(let i=0;i<a.length-1;i++) o.add(a.substr(i,2)); return o; }, f=new Map(), any=[], m=new Map();\n"
+   "  const B=I18N_TPLS.map(T=>T.an&&T.an.length>=2?bg(T.an):null); for(const o of B) if(o) for(const k of o) f.set(k,(f.get(k)||0)+1);\n"
+   "  B.forEach((o,i)=>{ if(!o){ any.push(i); return; } let best=null; for(const k of o) if(best===null||f.get(k)<f.get(best)) best=k; let l=m.get(best); if(!l) m.set(best,l=[]); l.push(i); });\n"
+   "  return {m,any}; })();\n"
+   "function _tplCands(t){ const S=new Set(_TPL_IX.any); for(let i=0;i<t.length-1;i++){ const l=_TPL_IX.m.get(t.substr(i,2)); if(l) for(const x of l) S.add(x); } return [...S].sort((a,b)=>a-b); }")
+rp("  for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;",
+   "  for(const ci of _tplCands(t)){ const T=I18N_TPLS[ci]; if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)

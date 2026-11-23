@@ -16191,12 +16191,13 @@ function _trName(t){
   return null;
 }
 const _trc=new Map();
-const TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0;
+const TPL_STEPS=window.__TPL_STEPS||300000; let _tplSteps=0, _tplOver=false, _trNest=0; const _trcD=new Map();
 function tr(s){
   if(LANG==='ko'||!s||!HANGUL.test(s)) return s;
   const hit=_trc.get(s); if(hit!==undefined) return hit;
+  { const dc=_trcD.get(s); if(dc&&dc[0]<=_tplDepth) return dc[1]; }
   const c0=_tplCut, d0=_tplDepth, top=_trNest===0; if(top){ _tplSteps=0; _tplOver=false; }
-  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; } if(LANG==='ja') r=r.replace(/。」/g,'」').replace(/。）/g,'）'); if(ZH) r=r.replace(/([。！？」”』…])[ ]+(?=\S)/g,'$1'); if(s.length<240&&(!HANGUL.test(r)||(d0===0&&_tplCut===c0)||(top&&_tplOver))) _trc.set(s,r); return r;
+  let r; _trNest++; try{ r=_tr1(s); } finally{ _trNest--; } if(LANG==='ja') r=r.replace(/。」/g,'」').replace(/。）/g,'）'); if(ZH) r=r.replace(/([。！？」”』…])[ ]+(?=\S)/g,'$1'); if(s.length<240&&(!HANGUL.test(r)||_tplCut===c0||(top&&_tplOver))) _trc.set(s,r); else if(s.length<240&&!_tplOver){ const o=_trcD.get(s); if(!o||d0<o[0]){ if(_trcD.size>40000) _trcD.clear(); _trcD.set(s,[d0,r]); } } return r;
 }
 function _tr1(s,nosplit){
   const lead=s.match(/^\s*/)[0], trail=s.match(/\s*$/)[0], t=s.trim();
@@ -16270,6 +16271,11 @@ const I18N_TPLS=(()=>{ const L=ZH?(()=>{ const z=_ZHD?_ZHD.t:[], h=new Set(z.map
     if(last<k.length) toks.push({l:k.slice(last)});
     const lits=toks.filter(x=>x.l!=null).map(x=>x.l); const an=lits.reduce((a,b)=>b.length>a.length?b:a,'');
     return {toks,v,an,x,nl:k.includes('\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort((a,b)=>b.w-a.w||b.nc-a.nc); })();
+const _TPL_IX=(()=>{ const bg=a=>{ const o=new Set(); for(let i=0;i<a.length-1;i++) o.add(a.substr(i,2)); return o; }, f=new Map(), any=[], m=new Map();
+  const B=I18N_TPLS.map(T=>T.an&&T.an.length>=2?bg(T.an):null); for(const o of B) if(o) for(const k of o) f.set(k,(f.get(k)||0)+1);
+  B.forEach((o,i)=>{ if(!o){ any.push(i); return; } let best=null; for(const k of o) if(best===null||f.get(k)<f.get(best)) best=k; let l=m.get(best); if(!l) m.set(best,l=[]); l.push(i); });
+  return {m,any}; })();
+function _tplCands(t){ const S=new Set(_TPL_IX.any); for(let i=0;i<t.length-1;i++){ const l=_TPL_IX.m.get(t.substr(i,2)); if(l) for(const x of l) S.add(x); } return [...S].sort((a,b)=>a-b); }
 function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말이 문장 여럿을 삼키지 못하게
   const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(!_tplOver){ _tplOver=true; _tplCut++; } return false; } if(i===toks.length) return pos===s.length;
     const t=toks[i];
@@ -16291,9 +16297,11 @@ function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말
 let _UN=null, _UNt=0; function _userNm(v){ const now=Date.now(); if(!_UN||now-_UNt>1000){ _UN=new Set(); _UNt=now; try{ const S=Sim.S, f=S&&S.fam, a=x=>{ if(x&&typeof x==='string'&&/[가-힣]/.test(x)) _UN.add(x.trim()); };
   if(S){ a(S.name); if(f){ a(f.sibName); if(f.spouse) a(f.spouse.name); for(const k of f.kids||[]) a(k&&k.name); } } }catch(e){} } return _UN.has(String(v).trim()); }
 let _tplDepth=0, _tplCut=0;   // _tplCut: 깊이 제한에 걸린 횟수 (그 사이 얻은 실패는 캐시에 남기지 않는다 · 11-21)
-function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
+const _tplMemo=new Map();   // 같은 조각을 틀 6천여 개에 거듭 맞춰 보지 않게: 조각 → 결과(깊이 제한에 걸리지 않은 것만, 11-23)
+function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; if(_tplMemo.has(t)) return _tplMemo.get(t); const m0=_tplCut; _tplDepth++; let mr; try{ mr=_trTpl0(t); } finally{ _tplDepth--; } if(_tplCut===m0){ if(_tplMemo.size>40000) _tplMemo.clear(); _tplMemo.set(t,mr); } return mr; }
+function _trTpl_old(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplOver) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
 function _trTpl0(t){ const nl=t.includes('\n');
-  for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;
+  for(const ci of _tplCands(t)){ const T=I18N_TPLS[ci]; if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;
     const m=_tplMatch(T.toks,t,T.x); if(!m) continue;
     let out=T.v.replace(/\{(\d)(?::(\w+))?\}/g,(_,i,f)=>{ const q=m.caps[+i]??''; if(f){ const p=_PRON[(m.raw[+i]||'').trim()]; if(p) return LANG==='ja'?p.ja:ZH?p.zh:(p[f]||q); } return _autoCap.get(q)??q; });
     if(LANG==='en'){ const o2=out.replace(/^(\W*)([a-z])/,(_,a,b)=>a+b.toUpperCase()); if(o2!==out) _autoCap.set(o2,out); out=o2; }
