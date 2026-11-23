@@ -20,6 +20,13 @@ rp("const LANG=(()=>{ try{ const v=JSON.parse(localStorage.getItem(K_LANG)||'nul
 # 영어 · 중국어 첫 화면이 PC에서도 1분, 느린 폰에서는 4분 넘게 멈췄다
 rp("  if(root.nodeType===3){ const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }",
    "  if(root.nodeType===3){ const pa=root.parentNode; if(pa&&(pa.nodeName==='SCRIPT'||pa.nodeName==='STYLE'||pa.nodeName==='TEXTAREA'||(pa.closest&&pa.closest('[data-notr]')))) return;   // 스크립트 본문은 옮기지 않는다 (11-22)\n    const v=root.nodeValue, r=tr(v); if(r!==v) root.nodeValue=r; return; }")
+# 11-23: 여러 줄 글(소환 직후 안내 등)을 문장 틀 수천 개에 통째로 맞춰 보느라 영어 · 일본어 · 중국어에서
+# 서번트를 부른 직후 화면이 PC에서도 16~20초, 폰에서는 몇 분 멈췄다(검은 막이 걷히지 않음).
+# 줄바꿈이 든 글에는 줄바꿈이 든 틀(10개)만 맞춰 보고, 나머지는 아래의 줄 단위 번역으로 넘긴다
+rp("    return {toks,v,an,x,w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort(",
+   "    return {toks,v,an,x,nl:k.includes('\\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort(")
+rp("function _trTpl0(t){\n  for(const T of I18N_TPLS){ if(T.an&&!t.includes(T.an)) continue;",
+   "function _trTpl0(t){ const nl=t.includes('\\n');\n  for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
