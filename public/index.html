@@ -1919,7 +1919,7 @@ body.lb-reading .lb-disc,body.lb-hideui .lb-disc,body.lb-rec .lb-disc,body.lb-hi
 <div id="ldScr" data-notr role="status" aria-live="polite"><canvas id="ldBg"></canvas><canvas id="ldCup"></canvas><p id="ldTxt"><span></span><b>0%</b></p></div>
 <script>
 (()=>{let L='ko';const ZO=true,LS=['ko','en','ja','zhs','zht'];let q=null,v=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');}catch(e){}if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;
- if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=52610ac1"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=109d70f8"><\/script>');
+ if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=1488245e"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=109d70f8"><\/script>');
  if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'05fa82d8',zht:'3487a56a'}[L]+'"><\/script>');
  document.querySelector('#ldTxt span').textContent={ko:'성배에 마력이 차오른다',en:'Mana is filling the Grail',ja:'聖杯に魔力が満ちていく',zhs:'魔力正在注满圣杯',zht:'魔力正在注滿聖杯'}[L];})();
 /* ===== 로딩 화면 (11-13): 하늘에서 금빛 줄기가 졸졸 떨어져 성배를 채우고, 넘쳐 쏟아진 뒤 성배와 검은 배경이 픽셀로 흩어진다 =====

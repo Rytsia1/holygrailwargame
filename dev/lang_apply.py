@@ -27,6 +27,10 @@ rp("    return {toks,v,an,x,w:lits.join('').length,nc:toks.filter(x=>x.c!=null).
    "    return {toks,v,an,x,nl:k.includes('\\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort(")
 rp("function _trTpl0(t){\n  for(const T of I18N_TPLS){ if(T.an&&!t.includes(T.an)) continue;",
    "function _trTpl0(t){ const nl=t.includes('\\n');\n  for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;")
+# 11-23: 능력치 「정신」은 영어로 Spirit인데, 「정신 +n」 틀만 Will로 남아 있었다
+rp('["정신 +{0}","Will +{0}"]', '["정신 +{0}","Spirit +{0}"]')
+rp('"정신 +1":"Will +1"', '"정신 +1":"Spirit +1"')
+rp('"정신 +2":"Will +2"', '"정신 +2":"Spirit +2"')
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)
