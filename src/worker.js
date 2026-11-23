@@ -114,6 +114,9 @@ const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS c_end (ending TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS c_cup (cup TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS c_ach (ach TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
+  // 11-23: 검은 성배 집계 누적 수(빈 값은 '' · -1로 두어 같은 줄로 묶이게 한다)
+  `CREATE TABLE IF NOT EXISTS c_cxr (cx_end TEXT NOT NULL, by_who TEXT NOT NULL, fate TEXT NOT NULL, comp INTEGER NOT NULL, mode TEXT NOT NULL, n INTEGER NOT NULL, tr INTEGER NOT NULL, PRIMARY KEY (cx_end, by_who, fate, comp, mode))`,
+  `CREATE TABLE IF NOT EXISTS c_cxc (cls TEXT NOT NULL, mode TEXT NOT NULL, n INTEGER NOT NULL, me INTEGER NOT NULL, alive INTEGER NOT NULL, PRIMARY KEY (cls, mode))`,
 ];
 // 스키마 준비: 한 번 끝나면 표시만 남긴다. 준비 중인 promise를 여러 요청이 나눠 기다리면, 그 promise를 만든 요청이
 // 먼저 끝났을 때 나머지가 'This promise was created by a request that has since ended'로 실패하므로 요청마다 직접 기다린다.
@@ -273,7 +276,16 @@ async function getGhost(request, url, env) {
     `SELECT id, data FROM ghosts WHERE id ${op} ? AND hidden = 0 AND dev != ? AND +year BETWEEN ? AND ? ORDER BY id LIMIT 12`
   ).bind(pivot, dev, year - 40, year - 1).all();
   let { results } = await pick('>=');
-  if (results.length < 12) results = results.concat((await pick('<')).results).slice(0, 12);   // 끝에 닿으면 처음부터 이어서
+  if (results.length < 12) {   // 끝에 닿으면 처음부터 이어서
+    // 11-23: 조가 드문 연도대에서는 처음부터 id 순으로 훑으면 표 대부분(수만 줄, 0.5~0.8초)을 읽어 D1을 막았다.
+    // pivot 뒤 구간(f)에서 찾은 수로 전체를 어림해, 드물면 연도 색인으로 그 연도대만 읽는다
+    const f = 1 - parseInt(pivot.slice(1, 9), 16) / 2 ** 32, est = f > 0.02 ? results.length / f : 0;
+    const rest = est < 3000
+      ? await env.DB.prepare(`SELECT id, data FROM ghosts INDEXED BY ghosts_year WHERE year BETWEEN ? AND ? AND id < ? AND hidden = 0 AND dev != ? ORDER BY id LIMIT 12`)
+          .bind(year - 40, year - 1, pivot, dev).all()
+      : await pick('<');
+    results = results.concat(rest.results).slice(0, 12);
+  }
   for (let i = results.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [results[i], results[j]] = [results[j], results[i]]; }
   const list = results.slice(0, 4).map(r => ({ id: r.id, ...JSON.parse(r.data) }));
   return json({ ok: true, list });
@@ -639,7 +651,25 @@ const CNT = {
     ],
   },
 };
-const TBL = { lives: 'lives', ach: 'dev_ach' };
+CNT.cx = {
+  step: 100000,
+  setup: [
+    `DELETE FROM c_cxr`, `DELETE FROM c_cxc`,
+    `CREATE TRIGGER IF NOT EXISTS c_cx_ins AFTER INSERT ON cx_lives BEGIN
+       INSERT INTO c_cxr (cx_end, by_who, fate, comp, mode, n, tr) VALUES (NEW.cx_end, NEW.by_who, NEW.fate, COALESCE(NEW.comp, -1), COALESCE(NEW.mode, ''), 1, COALESCE(NEW.tries, 0))
+         ON CONFLICT(cx_end, by_who, fate, comp, mode) DO UPDATE SET n = n + 1, tr = tr + excluded.tr;
+       INSERT INTO c_cxc (cls, mode, n, me, alive) VALUES (COALESCE(NEW.cls, ''), COALESCE(NEW.mode, ''), 1, NEW.by_who = 'me', NEW.fate = 'alive')
+         ON CONFLICT(cls, mode) DO UPDATE SET n = n + 1, me = me + excluded.me, alive = alive + excluded.alive;
+     END`,
+  ],
+  chunk: [
+    `INSERT INTO c_cxr (cx_end, by_who, fate, comp, mode, n, tr) SELECT cx_end, by_who, fate, COALESCE(comp, -1), COALESCE(mode, ''), COUNT(*), COALESCE(SUM(tries), 0)
+       FROM cx_lives WHERE rowid > ?1 AND rowid <= ?2 GROUP BY 1, 2, 3, 4, 5 ON CONFLICT(cx_end, by_who, fate, comp, mode) DO UPDATE SET n = n + excluded.n, tr = tr + excluded.tr`,
+    `INSERT INTO c_cxc (cls, mode, n, me, alive) SELECT COALESCE(cls, ''), COALESCE(mode, ''), COUNT(*), SUM(by_who = 'me'), SUM(fate = 'alive')
+       FROM cx_lives WHERE rowid > ?1 AND rowid <= ?2 GROUP BY 1, 2 ON CONFLICT(cls, mode) DO UPDATE SET n = n + excluded.n, me = me + excluded.me, alive = alive + excluded.alive`,
+  ],
+};
+const TBL = { lives: 'lives', ach: 'dev_ach', cx: 'cx_lives' };
 class NotReady extends Error {}
 // 누적 수가 준비됐으면 true. 아니면 budget(ms) 안에서 조각을 더 세고 false. 전체 통계를 다시 세는 차례를 잡은 요청(한 번에 하나)만 부른다
 async function cntReady(env, budget) {
@@ -675,10 +705,12 @@ async function cntReady(env, budget) {
 // (예전에는 Cache API에 10분 캐시했는데, 데이터센터마다 따로라 거의 매번 전체를 다시 셌다)
 // 다시 세는 동안 다른 요청은 지난 결과를 받는다. 처음이라 지난 결과가 없을 때만 기다린다.
 const SNAP_TTL = 10 * 60000, SNAP_LOCK = 2 * 60000;
+// 11-23: 기간 통계(since/until)는 lives를 기간으로 GROUP BY해 한 번에 3~5초 D1을 잡으므로 1시간에 한 번만 다시 센다
+const snapTtl = key => (key === 'all' ? SNAP_TTL : 60 * 60000);
 async function snapStats(env, ctx, key, build) {
   const now = Date.now();
   const row = await env.DB.prepare(`SELECT at, body FROM stats_snap WHERE k = ?`).bind(key).first();
-  if (row && row.body && now - row.at < SNAP_TTL) return row.body;
+  if (row && row.body && now - row.at < snapTtl(key)) return row.body;
   // 다시 셀 차례를 잡는다: busy가 비었거나 너무 오래된 경우에만 한 요청이 잡는다
   const claim = await env.DB.prepare(
     `INSERT INTO stats_snap (k, at, busy, body) VALUES (?, 0, ?, '') ON CONFLICT(k) DO UPDATE SET busy = excluded.busy WHERE stats_snap.busy < ?`
@@ -762,7 +794,9 @@ async function getStats(request, env, ctx) {
       env.DB.prepare(`SELECT ending, n FROM c_end WHERE n > 0`),
       env.DB.prepare(`SELECT cup, n FROM c_cup WHERE n > 0`),
       env.DB.prepare(`SELECT ach, n FROM c_ach WHERE n > 0`),
-      ...cxQ(env, 'ts >= ?', [0]),
+      // 11-23: 검은 성배 집계도 누적 수에서 (cx_lives 전체 GROUP BY가 한 번에 0.2~0.3초씩 D1을 잡았다)
+      env.DB.prepare(`SELECT cx_end, by_who, fate, NULLIF(comp, -1) AS comp, NULLIF(mode, '') AS mode, n, tr FROM c_cxr WHERE n > 0`),
+      env.DB.prepare(`SELECT NULLIF(cls, '') AS cls, NULLIF(mode, '') AS mode, n, me, alive FROM c_cxc WHERE n > 0`),
     ]);
     const t = tot.results[0] || {};
     return {
