@@ -10,7 +10,7 @@ function done(o){try{for(var k in o){if(k.indexOf('cupnight.')===0&&localStorage
 function bytes(s){s=s.replace(/-/g,'+').replace(/_/g,'/');var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
 try{if(d[0]==='z'){new Response(new Blob([bytes(d.slice(1))]).stream().pipeThrough(new DecompressionStream('gzip'))).text().then(function(t){done(JSON.parse(t))},function(){done({})});}else done(JSON.parse(new TextDecoder().decode(bytes(d.slice(1)))));}catch(e){done({})}})();
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark"><!-- fix1123 ③ -->
 <meta name="description" content="비공식 팬 제작 성배전쟁 시뮬레이션. 무작위로 태어나, 성배전쟁이 벌어지는 도시에서 한 사람의 일생을 살아 보는 게임.">
 <meta property="og:title" content="성배가 차는 밤">
 <meta property="og:description" content="비공식 팬 제작 성배전쟁 시뮬레이션. 무작위로 태어나, 성배전쟁이 벌어지는 도시에서 한 사람의 일생을 살아 보는 게임.">
@@ -6134,7 +6134,7 @@ const Sim = (() => {
     {id:'c_festival',a:[4,10],w:3,txt:()=>`${cityN()}에 축제가 열렸다. 밤하늘에 등불이 올라갔다.`,ch:[
       {t:'소원을 빈다',auto:true,f:()=>{add({will:1});return '무엇을 빌었는지는 금방 잊었다. 등불 색은 오래 기억났다.'}},
       {t:'등불이 떨어지는 곳까지 쫓아간다',f:()=>{add({health:-1,mana:1});return '강 건너 숲까지 갔다. 등불은 땅에 닿기 전에 사라졌다.'}}]},
-    {id:'c_sib',a:[2,8],w:4,c:()=>S.fam.sib&&S.origin!=='noble2'&&!S.once.c_sib,txt:()=>'동생이 태어났다. 모두가 그 작은 아이만 바라봤다.',ch:[
+    {id:'c_sib',a:[2,8],w:4,c:()=>S.fam.sib&&S.origin!=='noble2'&&!S.once.c_sib&&!!(S.fam.mother&&S.fam.mother.alive),   /* fix1123 ④ */txt:()=>'동생이 태어났다. 모두가 그 작은 아이만 바라봤다.',ch:[
       {t:'형/언니 노릇을 한다',auto:true,f:()=>{add({bond:4});return '기저귀 가는 법을 배웠다. 동생이 처음 부른 이름은 당신 이름이었다.'}},
       {t:'몰래 샘을 낸다',f:()=>{add({will:1,bond:-1});return '동생 장난감을 숨겼다가 밤에 몰래 돌려놓았다.'}}]},
     {id:'fever',a:[1,12],w:3,txt:()=>'열이 3일째 내리지 않았다.',ch:[{t:'버틴다',auto:true,f:()=>{if(ch(.85)){add({health:-3,will:2});return '4일째 아침, 열이 거짓말처럼 내렸다.'}add({health:-12});return '1달을 앓았다. 그 뒤로 몸이 약해졌다.'}}]},
@@ -8430,7 +8430,7 @@ const Sim = (() => {
   function relView(){ const w=S.war; if(!w||!S.hero) return null; const r=relOf(), h=H_BY[S.hero];
     const done=S.warState==='done'||S.phase==='epi'||S.phase==='after';
     return {id:h.id,name:h.name,cls:cn(h),trust:Math.round(w.trust),tier:trustTier(w.trust),track:r.track,why:r.track==='friend'?r.why||null:null,stage:r.stage,rel:relName(r),open:!!r.open,max:r.stage>=3,
-      when:ep2When(),stay:stayHome(),away:!!S.flags.stayAway&&!S.flags.stayDied,died:!!S.flags.stayDied,wed:!!S.flags.relWed,gone:done&&!stayHome(),alive:!!w.heroAlive,yrs:Math.max(0,S.year-S.warYear),swapped:!!r.swapped,human:!!S.flags.solomonHuman&&S.hero==='solomon',
+      when:ep2When(),stay:stayHome(),away:!!S.flags.stayAway&&!S.flags.stayDied,died:!!S.flags.stayDied,wed:!!S.flags.relWed,gone:done&&!stayHome()&&!kgSide(),   /* fix1123 ② */alive:!!w.heroAlive,yrs:Math.max(0,S.year-S.warYear),swapped:!!r.swapped,human:!!S.flags.solomonHuman&&S.hero==='solomon',
       pick:!!(r.pick&&!r.stage),next:r.stage<3?{n:r.pick&&!r.stage?'호감 · 전우':REL_ST[r.track][r.stage+1],req:REL_REQ[r.stage+1],ok:w.trust>=REL_REQ[r.stage+1]}:null}; }
   const crossFoe=()=>pick(contracted().filter(p=>!p.ally&&!p.truce));
   // 11-20: 결전 날(14일째 · 위기의 마지막 날)에는 결판을 약속하지 않는다. 그날 밤은 결전이다
@@ -13471,7 +13471,7 @@ const Sim = (() => {
     if(w.frag<h.frags.length&&ch(.35)){ log(`꿈을 꾸었다. 서번트와 이어진 마스터는 이따금 그 과거를 꿈으로 본다. ${h.frags[w.frag].replace(/^\((.*)\)$/,'$1')}`,'voice'); w.frag++; w.trust=clamp(w.trust+4); return; }
     if(ch(.45)){ const own=(HDAY[h.id]||[]).filter(t=>!(w.hdayUsed||[]).includes(t));
       if(own.length&&ch(.75)){ const t=pick(own); w.hdayUsed=(w.hdayUsed||[]).concat(t); log(boardLoc(t),'voice'); }
-      else log(pick([`${h.name}${J(h.name,이)} 새벽까지 창가를 지켰다.`,`${h.name}${J(h.name,은)} 해가 뜨는 쪽을 오래 보았다.`,sayV(h,'dawn'),`새벽녘 ${h.name}${J(h.name,이)} 상처를 숨기려 하는 것을 보았다.`]),'voice'); }
+      else log(pick([`${h.name}${J(h.name,이)} 새벽까지 창가를 지켰다.`,`${h.name}${J(h.name,은)} 해가 뜨는 쪽을 오래 보았다.`,sayV(h,'dawn'),...(w.hp<80?[`새벽녘 ${h.name}${J(h.name,이)} 상처를 숨기려 하는 것을 보았다.`]:[])])   /* fix1123 ① */,'voice'); }
   }
 
   /* ---------- 결말 ---------- */
@@ -16270,7 +16270,7 @@ const I18N_TPLS=(()=>{ const L=ZH?(()=>{ const z=_ZHD?_ZHD.t:[], h=new Set(z.map
     const lits=toks.filter(x=>x.l!=null).map(x=>x.l); const an=lits.reduce((a,b)=>b.length>a.length?b:a,'');
     return {toks,v,an,x,nl:k.includes('\n'),w:lits.join('').length,nc:toks.filter(x=>x.c!=null).length}; }).sort((a,b)=>b.w-a.w||b.nc-a.nc); })();
 function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말이 문장 여럿을 삼키지 못하게
-  const go=(i,pos)=>{ if(i===toks.length) return pos===s.length;
+  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(_tplSteps===TPL_STEPS+1) _tplCut++; return false; } if(i===toks.length) return pos===s.length;
     const t=toks[i];
     if(t.l!=null) return s.startsWith(t.l,pos)&&go(i+1,pos+t.l.length);
     if(t.c==null){ for(const j of t.j) if(s.startsWith(j,pos)&&go(i+1,pos+j.length)) return true; return false; }
@@ -16282,12 +16282,16 @@ function _tplMatch(toks,s,one){ const caps=[], raw=[]; // one: 끼워 넣는 말
       if(t.j){ const j=t.j.find(j=>v.length>j.length&&v.endsWith(j)); if(!j) continue; v=v.slice(0,-j.length); }
       if(!v&&i>0&&toks[i-1].c!=null) continue;
       if(one&&i===0&&/[.!?…”」)]\s/.test(v)) continue;
-      const q=/^(은|는|이|가|을|를|과|와|으로|로|이나|나|이라|라|이라는|라는|이다|다|의|에|에게|도|만)$/.test(v)?'':tr(v); if(HANGUL.test(q)) continue;
+      const q=/^(은|는|이|가|을|를|과|와|으로|로|이나|나|이라|라|이라는|라는|이다|다|의|에|에게|도|만)$/.test(v)?'':tr(v); if(HANGUL.test(q)&&!_userNm(v)) continue;
       caps[t.c]=q; raw[t.c]=v; if(go(i+1,e)) return true; }
     return false; };
   return go(0,0)?{caps,raw}:null; }
+// 플레이어가 직접 지은 이름(1초마다 다시 모음, 11-23)
+let _UN=null, _UNt=0; function _userNm(v){ const now=Date.now(); if(!_UN||now-_UNt>1000){ _UN=new Set(); _UNt=now; try{ const S=Sim.S, f=S&&S.fam, a=x=>{ if(x&&typeof x==='string'&&/[가-힣]/.test(x)) _UN.add(x.trim()); };
+  if(S){ a(S.name); if(f){ a(f.sibName); if(f.spouse) a(f.spouse.name); for(const k of f.kids||[]) a(k&&k.name); } } }catch(e){} } return _UN.has(String(v).trim()); }
 let _tplDepth=0, _tplCut=0;   // _tplCut: 깊이 제한에 걸린 횟수 (그 사이 얻은 실패는 캐시에 남기지 않는다 · 11-21)
-function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
+const TPL_STEPS=window.__TPL_STEPS||40000; let _tplSteps=0;
+function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplDepth===0) _tplSteps=0; else if(_tplSteps>TPL_STEPS) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }
 function _trTpl0(t){ const nl=t.includes('\n');
   for(const T of I18N_TPLS){ if(nl&&!T.nl) continue; if(T.an&&!t.includes(T.an)) continue;
     const m=_tplMatch(T.toks,t,T.x); if(!m) continue;

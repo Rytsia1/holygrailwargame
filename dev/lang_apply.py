@@ -31,6 +31,22 @@ rp("function _trTpl0(t){\n  for(const T of I18N_TPLS){ if(T.an&&!t.includes(T.an
 rp('["정신 +{0}","Will +{0}"]', '["정신 +{0}","Spirit +{0}"]')
 rp('"정신 +1":"Will +1"', '"정신 +1":"Spirit +1"')
 rp('"정신 +2":"Will +2"', '"정신 +2":"Spirit +2"')
+# 11-23: 플레이어가 한글로 지은 이름(나 · 배우자 · 아이 · 형제)이 든 문장은 틀에 끼운 이름이 한글로 남는다는 이유로 틀 전체를 버려
+# 일본어 · 영어 화면에서 그 문장이 통째로 한국어로 나왔다. 직접 지은 이름은 그대로 두고 나머지를 옮긴다
+rp("const q=/^(은|는|이|가|을|를|과|와|으로|로|이나|나|이라|라|이라는|라는|이다|다|의|에|에게|도|만)$/.test(v)?'':tr(v); if(HANGUL.test(q)) continue;",
+   "const q=/^(은|는|이|가|을|를|과|와|으로|로|이나|나|이라|라|이라는|라는|이다|다|의|에|에게|도|만)$/.test(v)?'':tr(v); if(HANGUL.test(q)&&!_userNm(v)) continue;")
+rp("let _tplDepth=0, _tplCut=0;",
+   "// 플레이어가 직접 지은 이름(1초마다 다시 모음, 11-23)\n"
+   "let _UN=null, _UNt=0; function _userNm(v){ const now=Date.now(); if(!_UN||now-_UNt>1000){ _UN=new Set(); _UNt=now; try{ const S=Sim.S, f=S&&S.fam, a=x=>{ if(x&&typeof x==='string'&&/[가-힣]/.test(x)) _UN.add(x.trim()); };\n"
+   "  if(S){ a(S.name); if(f){ a(f.sibName); if(f.spouse) a(f.spouse.name); for(const k of f.kids||[]) a(k&&k.name); } } }catch(e){} } return _UN.has(String(v).trim()); }\n"
+   "let _tplDepth=0, _tplCut=0;")
+# 11-23: 문장 틀 되맞춤에 걸음 수 상한(맨 바깥 문장 하나당 TPL_STEPS). 넘으면 그 문장은 틀 대신 문장 · 조각 단위 번역으로 넘긴다
+# (긴 대사 한 줄이 PC에서도 0.4~1초, 폰에서는 몇 초씩 화면을 멈추게 했다)
+rp("function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }",
+   "const TPL_STEPS=window.__TPL_STEPS||40000; let _tplSteps=0;\n"
+   "function _trTpl(t){ if(_tplDepth>=4||t.length>600){ if(_tplDepth>=4) _tplCut++; return null; } if(_tplDepth===0) _tplSteps=0; else if(_tplSteps>TPL_STEPS) return null; _tplDepth++; try{ return _trTpl0(t); } finally{ _tplDepth--; } }")
+rp("  const go=(i,pos)=>{ if(i===toks.length) return pos===s.length;",
+   "  const go=(i,pos)=>{ if(++_tplSteps>TPL_STEPS){ if(_tplSteps===TPL_STEPS+1) _tplCut++; return false; } if(i===toks.length) return pos===s.length;")
 if miss:
     for x in miss: print('못 찾음', x)
     sys.exit(1)

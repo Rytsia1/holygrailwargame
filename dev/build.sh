@@ -119,6 +119,7 @@ python3 kgach_apply.py build/game.html              # 본성 속 진심 업적 2
 python3 patch202_apply.py build/game.html          # 패치 노트 2.02 「새 루트 「본성 속 진심」과 성향 콘텐츠 확장」 (11-22)
 python3 sndtab_apply.py build/game.html             # 새로고침 · 새 창에서 소리 겹침: 가장 최근에 쓴 페이지만 소리 (커뮤니티 제보 11-21)
 python3 disc_apply.py build/game.html              # 비공식 표기: 소개 창 맨 아래 · 로비 맨 아래 한 줄 (11-22)
+python3 fix1123_apply.py build/game.html            # 11-23 커뮤니티 버그: 새벽 상처 한 줄 · 본성 속 진심 서번트 카드 · 강제 다크 모드
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
 python3 lang_apply.py build/game.html               # 로딩 화면이 고른 언어를 게임도 그대로(언어팩을 따로 받기 위해, 11-22)
 python3 fxguard_apply.py build/game.html            # 연출에서 오류가 나도 진행이 멈추지 않게 (보구 사용 중 멈춤 문의, 11-23)
