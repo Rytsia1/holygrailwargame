@@ -173,7 +173,8 @@ async function postLife(request, env) {
       `INSERT INTO devices (dev, first, last, lives) VALUES (?, ?, ?, ?)
        ON CONFLICT(dev) DO UPDATE SET last = excluded.last, lives = devices.lives + excluded.lives`
     ).bind(dev, now, now, fresh ? 1 : 0),
-    ...ach.map(a => env.DB.prepare(`INSERT OR IGNORE INTO dev_ach (dev, ach) VALUES (?, ?)`).bind(dev, a)),
+    // 업적은 한 문장으로 넣는다 (11-23: 업적마다 한 문장씩이라 한 판에 평균 60개, 전체 쿼리의 절반이 이것이었다 → D1 overloaded)
+    ...(ach.length ? [env.DB.prepare(`INSERT OR IGNORE INTO dev_ach (dev, ach) SELECT ?1, value FROM json_each(?2)`).bind(dev, JSON.stringify(ach))] : []),
   ];
   if (cx && fresh) stmts.push(env.DB.prepare(
     `INSERT OR IGNORE INTO cx_lives (id, ts, dev, hero, cls, cx_end, by_who, fate, mode, st, comp, tries, sk, day) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
