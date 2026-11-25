@@ -265,7 +265,8 @@ async function postGhost(request, env) {
 // 유령 후보: 조 id는 무작위 글자라 id 순서가 곧 섞인 순서다. 무작위 위치에서 시작해 id 순서로 GH_N개를 읽는다
 // (예전 ORDER BY random()은 조건에 맞는 조를 모두 읽고 섞었다). +year: 연도 색인 대신 id 색인을 타게 한다.
 // 11-25: 읽은 후보는 연도마다 1분 동안 메모리에 둔다. 같은 promise를 요청끼리 나눠 기다리지 않는다(11-17 수정 2와 같은 까닭) — 동시에 비면 각자 읽는다
-const GH_N = 48, GH_TTL = 60e3, GH_KEYS = 64, GH_POOL = new Map();
+// 11-25 고침: 48개로 읽었더니 한 번에 평균 4천 행 · P99 2초를 읽어 오히려 D1을 막았다 → 예전과 같은 12개(한 번 비용은 예전과 같고, 1분 안에 같은 서버로 오면 다시 쓴다)
+const GH_N = 12, GH_TTL = 60e3, GH_KEYS = 64, GH_POOL = new Map();
 async function ghostPool(env, year) {
   const now = Date.now(), c = GH_POOL.get(year);
   if (c && now - c.at < GH_TTL) return c.list;
@@ -295,7 +296,7 @@ async function getGhost(request, url, env) {
   const dev = str(url.searchParams.get('dev'), ID) || '-';
   if (!year) return json({ ok: false, error: 'bad_year' }, 400);
   await ensureSchema(env);
-  // 11-25: 연도마다 후보(GH_N개)를 이 서버(isolate) 메모리에 1분 동안 두고, 그 안에서 자기 조를 빼고 4개를 고른다
+  // 11-25: 연도마다 후보(GH_N = 12개)를 이 서버(isolate) 메모리에 1분 동안 두고, 그 안에서 자기 조를 빼고 4개를 고른다
   //   (예전: 요청마다 DB에서 12개를 읽었다 — 하루 112만 번, D1 실행 시간의 32%)
   const pool = await ghostPool(env, year);
   const cand = pool.filter(r => r.dev !== dev);
