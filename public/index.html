@@ -1919,8 +1919,8 @@ body.lb-reading .lb-disc,body.lb-hideui .lb-disc,body.lb-rec .lb-disc,body.lb-hi
 <div id="ldScr" data-notr role="status" aria-live="polite"><canvas id="ldBg"></canvas><canvas id="ldCup"></canvas><p id="ldTxt"><span></span><b>0%</b></p></div>
 <script>
 (()=>{let L='ko';const ZO=true,LS=['ko','en','ja','zhs','zht'];let q=null,v=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');}catch(e){}if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;
- if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=2abdee12"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=dc3a361f"><\/script>');
- if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'dff0125b',zht:'f38e4c77'}[L]+'"><\/script>');
+ if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=2eca5fa4"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=23aad86d"><\/script>');
+ if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'8a21f9f0',zht:'46466d29'}[L]+'"><\/script>');
  document.querySelector('#ldTxt span').textContent={ko:'성배에 마력이 차오른다',en:'Mana is filling the Grail',ja:'聖杯に魔力が満ちていく',zhs:'魔力正在注满圣杯',zht:'魔力正在注滿聖杯'}[L];})();
 /* ===== 로딩 화면 (11-13): 하늘에서 금빛 줄기가 졸졸 떨어져 성배를 채우고, 넘쳐 쏟아진 뒤 성배와 검은 배경이 픽셀로 흩어진다 =====
    게임 HTML 맨 앞(<body> 바로 뒤)에 들어가 가장 먼저 그려진다. 문서가 다 불러와지고 로비 배경까지 그려지면 끝난다. */
@@ -5607,7 +5607,7 @@ const Sim = (() => {
   /* ---------- 커스텀 마스터 (custom1125) ---------- */
   const CUST_BUDGET = 10;
   const CUST_ART_COST = [0, 2, 4, 7, 11];
-  const CUST_GIFT_COST = [0, 2, 4, 6, 9];
+  const CUST_GIFT_COST = [0, 2, 4, 6, 9, 10]; /* eyes1125 */
   const CUST_ST_KEYS = ['mana', 'lore', 'will', 'bond', 'health', 'wealth'];
   function custRanges(originId, circuit){
     const o = ORIGINS.find(x=>x.id===originId) || ORIGINS[5];
@@ -8040,7 +8040,7 @@ const Sim = (() => {
     return v;
   }
   function atkKinds(h){ const k=['round']; if(canMagic(h)) k.push('magic'); if(burstSk(h)) k.push('burst'); return k; }
-  const expUp=v=>(S.hero==='lancelot'&&v>0)?Math.round(v*.75):v;
+  const expUp=v=>{ let x=v; if(S.hero==='lancelot'&&x>0) x=Math.round(x*.75); if(x>0&&giftIs('illusion')) x=Math.max(1,Math.round(x*Math.max(.55,1-.08*giftF()))); return x; };
   const CLS_BIAS={};
   const BIAS={};
   function clsBonus(h,P){ return h.cls==='caster'? PV(P[3])*1.2 : MAGE_BERSERK[h.id]? PV(P[3])*2.0 : h.cls==='shadow'? PV(P[1])*1.0 : 0; }
@@ -8142,6 +8142,7 @@ const Sim = (() => {
   function clsReveal(t,why){ if(!t||t.clsKnown||t.revealed||!CLS[t.cls].sp) return; t.clsKnown=true; log(`${why||''}${XCLS_LINE[t.cls]||`정체 모를 조의 클래스는 「${CLS[t.cls].n}」이었다.`}`,'war'); }
   function addIntel(t,g,why){
     if(g>0&&t.hero==='lancelot') g=Math.round(g*.6);
+    if(g>0&&giftIs('clairvoyance')) g=Math.round(g*(1+.1*giftF()));
     t.intel=clamp(t.intel+g); if(t.intel>=45) clsReveal(t,'모은 단서를 맞춰 보았다. ');
     const loc=why!=='sight'&&why!=='btalk'&&why!=='watch'; // 싸우며 본 것(sight: 보구·마스터), 전장에서 나눈 말(btalk), 멀리서 지켜본 싸움(watch)은 거처나 소원까지 알려 주지 않는다
     if(loc&&!t.known&&t.intel>=30){ t.known=true; log(`${cn(t)} 조의 거처를 알아냈다. ${t.arche}, ${t.mname}.`,'war'); ghostIntro(t); }
@@ -9087,6 +9088,7 @@ const Sim = (() => {
     if(w.day===7) log('전쟁의 절반이 지났다. 감독관의 통지가 점점 짧아진다.','n');
     if(w.day===13) log('성배가 차오르는 소리가 들린다는 사람이 늘었다. 내일 밤이 마지막이다.','war');
     if(w.day===14) log('마지막 날. 오늘 밤 끝나지 않으면 성배는 남은 이들을 한자리로 불러 모은다.','war');
+    if(giftIs('clairvoyance')&&w.heroAlive){ const hids=alivePairs().filter(p=>!p.known&&!p.cx); if(hids.length&&ch(Math.min(.65,.2+.08*giftF()))){ const ct=pick(hids); addIntel(ct,15,'trace'); ct.known=true; log(`거리 너머를 훑던 시선이 ${cn(ct)} 조의 은신처를 포착했다. 천리안의 마안이다.`,'war'); } }
     planAllNpc();
     if(w.altarDay==null) w.altarDay=ri(10,12);
     altarDayStart();
@@ -10755,7 +10757,7 @@ const Sim = (() => {
     w.roamed=true; w.exposure=clamp(w.exposure+expUp(12)); w.sm=clamp(w.sm-8);
     log(pickNR([`${h.name}의 탈것이 밤의 대로를 가로질렀다. 신호등이 한꺼번에 깜빡였다.`,`${h.name}${J(h.name,과)} 함께 강을 따라 도시 끝까지 내달렸다. 바람 소리밖에 들리지 않았다.`,'고가도로 위를 질주했다. 도시의 마력이 지도처럼 눈 아래 펼쳐졌다.',`${h.name}의 탈것이 지붕에서 지붕으로 뛰어올랐다. 거처 몇 곳의 불빛이 한눈에 들어왔다.`],'rideS'),'war');
     addIntel(t,ri(40,55)+(h.sp==='intel'?15:0)+SV(h,'insight')+S.st.lore*.08,'trace'); if(CHK) CHK.push({txt:'「라이더」의 탈것으로 도시를 가로질렀다',ok:true});
-    if(ch(.15)){ const t2=wpick(pool.filter(p=>p!==t&&p.alive),p=>100-p.intel); if(t2){ addIntel(t2,ri(15,25),'trace'); log(`돌아오는 길에 ${cn(t2)} 조의 흔적도 스쳐 보았다.`,'war'); } }
+    if(ch(giftIs('clairvoyance')?.85:.15)){ const t2=wpick(alivePairs().filter(p=>p!==t&&p.alive&&p.intel<95),p=>100-p.intel); if(t2){ addIntel(t2,giftIs('clairvoyance')?Math.round(14+giftF()*2.5):ri(15,25),'trace'); log(giftIs('clairvoyance')?`멀리서 시야를 넓힌 덕분에 ${cn(t2)} 조의 기척까지 함께 읽어 냈다.`:`돌아오는 길에 ${cn(t2)} 조의 흔적도 스쳐 보았다.`,'war'); } }
     if(ch(.3)&&!t.truce){ t.provoked=Math.max(t.provoked||0,2); log(`질주하는 모습을 ${pName(t)} 조에게 들켰다. 그쪽도 이제 우리를 노릴 것이다.`,'war'); if(CHK) CHK.push({txt:'요란한 질주가 눈에 띄었다',ok:false}); }
   }
   function scout(){
@@ -10766,7 +10768,9 @@ const Sim = (() => {
     log(pickNR(['옥상에서 옥상으로 건너갔다.','강변을 따라 마력의 흔적을 쫓았다.','서번트가 먼저 기척을 찾아냈다.','버려진 공장 지대를 돌았다.',`${site} 쪽으로 마력의 잔향이 이어져 있었다.`,'지하철 막차가 끊긴 선로를 따라 걸었다.','인적 없는 상가 지하 주차장을 한 층씩 내려갔다.','공사장 크레인 꼭대기에서 도시를 내려다보았다.',h.cls==='bow'?`${h.name}${J(h.name,이)} 멀리서 도시 전체를 훑었다.`:h.cls==='shadow'?`${h.name}${J(h.name,이)} 기척을 지운 채 앞서 나갔다.`:h.cls==='rider'?`${h.name}의 탈것을 타고 도시를 가로질렀다.`:h.cls==='caster'?`${h.name}${J(h.name,이)} 사역마를 날려 거리를 살폈다.`:`${h.name}${J(h.name,이)} 당신을 등 뒤에 두고 앞장섰다.`],'scoutL'));
     addIntel(t,ri(20,35)+(h.cls==='bow'?12:0)+(h.sp==='intel'?15:0)+(h.sp==='judge'?25:0)+SV(h,'insight')+S.st.lore*.08,'trace');
     { const sc=SCOUT_CLS(h); if(sc&&CHK) CHK.push({txt:sc.r,ok:true}); }
-    if(!t.ally&&ch(.16+(t.tac==='hunter'?.1:0))&&!t.truce&&npcWillRaid(t)){ log(`돌아오는 길, ${pName(t)} 조에게 들켰다.`,'war'); woundNote(t); battle(t,{ambushed:true}); return; }
+    if(giftIs('clairvoyance')){ const t2=wpick(alivePairs().filter(p=>p!==t&&p.alive&&p.intel<95),p=>100-p.intel); if(t2){ addIntel(t2,Math.round(10+giftF()*2.5),'trace'); if(!t2.known&&t2.intel>=25) t2.known=true; log(`멀리서 시야를 넓힌 덕분에 ${cn(t2)} 조의 기척까지 함께 읽어 냈다.`,'war'); } }
+    const _ambP=(.16+(t.tac==='hunter'?.1:0))*(giftIs('clairvoyance')?Math.max(.2,1-.18*giftF()):1)*(giftIs('illusion')?.75:1);
+    if(!t.ally&&ch(_ambP)&&!t.truce&&npcWillRaid(t)){ log(`돌아오는 길, ${pName(t)} 조에게 들켰다.`,'war'); woundNote(t); battle(t,{ambushed:true}); return; }
     if(ch(.5)) scoutEvent(t);
   }
   // 정찰 중의 작은 사건들
@@ -10916,7 +10920,7 @@ const Sim = (() => {
 
   /* ---------- 전투 ---------- */
   // 선제의 이점: 먼저 습격한 쪽이 첫 두 합의 기선을 잡는다
-  function npcInitB(b){ const c=b.ctx; return c.betrayed? (b.round===1?14:b.round===2?7:0) : (c.defend||c.ambushed)&&!c.final&&!c.claim&&!c.hunted? (b.round===1?10:b.round===2?5:0) : 0; }
+  function npcInitB(b){ const c=b.ctx; let v=c.betrayed? (b.round===1?14:b.round===2?7:0) : (c.defend||c.ambushed)&&!c.final&&!c.claim&&!c.hunted? (b.round===1?10:b.round===2?5:0) : 0; if(v>0&&c.ambushed&&!c.betrayed&&giftIs('clairvoyance')) v=Math.round(v*Math.max(.25,1-.18*giftF())); return v; }
   // NPC 서번트의 호전성: 「명예」·「야망」은 먼저 싸움을 걸고, 「연민」만 가진 영웅은 덜 건다
   function npcAggr(p){ const t=H_BY[p.hero].traits; const hon=t.includes('명예'), amb=t.includes('야망'); return (1+(hon?.3:0)+(amb?.3:0)-(!hon&&!amb&&t.includes('연민')?.15:0))/1.2; }
   function initB(b){ const c=b.ctx; return c.attack&&!c.final&&!c.claim&&!c.raid? (b.round===1?10:b.round===2?5:0) : 0; }
@@ -11089,8 +11093,8 @@ const Sim = (() => {
       if(artLv('blackkey')) one('key','흑건을 던진다','이번 합 서번트 전투력이 떨어진다',0,true,()=>{ D.pre={...(D.pre||{}),deb:5+(artLv('blackkey')-1)*2}; });
       if(artLv('jewel')) cs.push({grp:'master',t:'보석을 던진다',d:`이번 합 서번트 전투력이 크게 떨어진다 ${S.wealth>=5?'[재산 −5]':'[재산 5 필요]'}`,off:S.wealth<5,f:()=>{ add({wealth:-5}); D.pre={...(D.pre||{}),deb:Math.round((6+artLv('jewel')*3)*(artLv('jewel')>=2?artQ('jewel'):1))}; return duelPre('보석을 던진다'); }});
       // 마안
-      if(eyeOn&&DUEL_EYE[S.gift.id]){ const g=S.gift, once=['stone','future','compel'].includes(g.id), used=once&&D.used.eye, gc=giftCost();
-        cs.push({grp:'eye',t:GIFTS[g.id].n,d:`${DUEL_EYE[g.id]}${once?' · 결투에서 한 번':''} ${used?'[이미 썼다]':gc?`[건강 −${gc}]`:'[대가 없음]'}`,off:used||D.mhp<=gc+5,f:()=>{ if(once) D.used.eye=1; D.mhp-=gc; duelEye(g.id); return duelPre(GIFTS[g.id].n); }}); }
+      if(eyeOn&&DUEL_EYE[S.gift.id]){ const g=S.gift, once=['stone','future','compel','prolong'].includes(g.id), used=once&&D.used.eye, gc=giftCost(), reqOk=g.id!=='death'||(S.st.will>=35&&D.mhp>gc+15);
+        cs.push({grp:'eye',t:GIFTS[g.id].n,d:`${DUEL_EYE[g.id]}${once?' · 결투에서 한 번':''} ${used?'[이미 썼다]':!reqOk?'[정신·건강 부족]':gc?`[건강 −${gc}]`:'[대가 없음]'}`,off:used||!reqOk||D.mhp<=gc+5,f:()=>{ if(once) D.used.eye=1; D.mhp-=gc; duelEye(g.id); return duelPre(GIFTS[g.id].n); }}); }
       // 고위 기술: 비기
       for(const b of duelBikis(M)){ const B=DUEL_BK[b.k], u=D.used['bk_'+b.k], x=b.x;
         const dd=B.g==='atk'?`힘 겨루기 없이 피해 ${Math.round(B.d*x)}${B.mr?' · 대마력에 깎인다':' · 대마력을 무시한다'}${B.av?' · 어벤저에게는 두 배':''} · 그 합의 공격을 대신한다`
@@ -11110,7 +11114,13 @@ const Sim = (() => {
     decide({title:`${h.name} · ${D.r}합`,body:`상대 ${sw} · 우리 ${mw} · 결심 ${DUEL_BW[duelBlade(D.R)]}${D.hes?' · 망설인다':''}`,war:true,battle:true,duel:true,choices:cs}); }
   // 마스터 행동을 쓴 뒤: 같은 합에서 공격 방식을 고른다
   function duelPre(t){ const D=W().duel; D.mR=D.r; soon(()=>duelRound(),.9); return ''; }
-  const DUEL_EYE={charm:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',bind:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',flame:'이번 합 서번트 전투력이 크게 떨어진다',stone:'세 합 동안 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다',future:'세 합 동안 받는 피해를 크게 줄인다',jinx:'흉 표식을 새긴다 · 표식 하나마다 서번트 전투력 −5',compel:'세 합 동안 서번트의 공격 방식을 정한다 · 대마력이면 두 합',telek:'이번 합 받는 피해를 줄인다'};
+  const DUEL_EYE={charm:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',bind:'이번 합 서번트가 한 번 더 머뭇거린다 · 서번트 전투력이 떨어진다',flame:'이번 합 서번트 전투력이 크게 떨어진다',stone:'세 합 동안 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다',future:'세 합 동안 받는 피해를 크게 줄인다',jinx:'흉 표식을 새긴다 · 표식 하나마다 서번트 전투력 −5',compel:'세 합 동안 서번트의 공격 방식을 정한다 · 대마력이면 두 합',telek:'이번 합 받는 피해를 줄인다',
+    illusion:'두 합 동안 서번트의 인식을 흐려 공격을 빗나가게 하고 거짓 표적을 세운다',
+    clairvoyance:'서번트의 동작을 멀리서 읽어 낸다 · 이번 합 공격력과 정밀도가 오른다',
+    immob:'두 합 동안 서번트의 민첩과 회피를 꺾고 다음 일격의 위력을 높인다',
+    vtheft:'서번트의 시야를 빼앗아 간파와 회피를 꺾는다',
+    prolong:'걸려 있는 저주·약화·결계 효과를 연장하고 한층 강하게 만든다',
+    death:'체력과 정신을 크게 소모해 결계와 방어를 꿰뚫는 일격을 넣는다'};
   function duelEye(id){ const D=W().duel, h=hero(), F=giftF(), mr=SV(h,'mr'), P=D.pre||(D.pre={});
     if(id==='charm'||id==='bind'){ P.reroll=true; P.deb=(P.deb||0)+Math.round((id==='charm'?5:6)+F*1.5); }
     else if(id==='flame') P.deb=(P.deb||0)+Math.round(8+F*2);
@@ -11119,6 +11129,12 @@ const Sim = (() => {
     else if(id==='jinx') D.jinx=Math.min(3,D.jinx+1);
     else if(id==='compel'){ D.compel=D.r+(mr?1:2); add({will:-2}); lean('cruel',1); }
     else if(id==='telek') P.guard=Math.max(P.guard||0,Math.min(.5,.2+F*.03));
+    else if(id==='illusion'){ D.eyeIll={until:D.r+1,v:Math.min(.45,.14+F*.05)}; P.reroll=true; P.deb=(P.deb||0)+Math.round(4+F); }
+    else if(id==='clairvoyance'){ D.eyeClair={until:D.r+1,v:Math.round(4+F*1.5)}; P.pow=(P.pow||0)+Math.round(4+F*1.5); }
+    else if(id==='immob'){ D.eyeImmob={until:D.r+1,agiPen:Math.min(3,1+Math.floor(F/2)),nextPow:Math.round(6+F*2)}; P.pow=(P.pow||0)+Math.round(6+F*2); }
+    else if(id==='vtheft'){ D.eyeVTheft={until:D.r+1,v:Math.round(5+F*1.5)}; P.deb=(P.deb||0)+Math.round(5+F*1.5); }
+    else if(id==='prolong'){ const ext=(S.gift.ctl||0)>=2?2:1, mul=1.3; if(D.curse&&D.curse.until>=D.r){ D.curse.until+=ext; D.curse.v=Math.round(D.curse.v*mul); } if(D.eyeDeb&&D.eyeDeb.until>=D.r){ D.eyeDeb.until+=ext; D.eyeDeb.v=Math.round(D.eyeDeb.v*mul); } if(D.eyeGuard&&D.eyeGuard.until>=D.r){ D.eyeGuard.until+=ext; D.eyeGuard.v=Math.min(.75,D.eyeGuard.v*mul); } if(D.compel>=D.r) D.compel+=ext; if(D.hesUp>=D.r) D.hesUp+=ext; if(P.pow) P.pow=Math.round(P.pow*mul); if(P.deb) P.deb=Math.round(P.deb*mul); D.sWall=D.sWall>=D.r?D.sWall:0; D.wallM=D.wallM>=D.r?D.wallM+ext:0; }
+    else if(id==='death'){ add({will:-3}); D.eyeDeath={until:D.r+1,gr:S.gift.gr}; P.pow=(P.pow||0)+Math.round(8+F*1.5); }
     log(`당신의 눈이 ${h.name}${J(h.name,을)} 붙잡았다. 「${GIFTS[id].n}」.`,'skill'); }
   // 한 합의 처리: kind = magic · round · bk(비기) · talkP · talkM
   function duelClash(kind,bk){ const w=W(), D=w.duel, h=hero(), M=duelMaster(), mh=duelMH(M), night=w.tod!=='낮', n=h.name, P0=D.pre||{}; D.pre=null;
@@ -11146,7 +11162,7 @@ const Sim = (() => {
     const E=duelSPow(D)-(hes?DUEL_K.hP:0)-(P0.deb||0)-(P0.stop||0)-(D.curse&&D.curse.until>=D.r?D.curse.v:0)-(D.eyeDeb&&D.eyeDeb.until>=D.r?D.eyeDeb.v:0)-D.jinx*5+(rnd()*36-18)-(D.sm<=0?30:D.sm<15?10:0)+(D.sBuff>=D.r?8:0)-(sk==='magic'?M.soy*1.2:0);
     const d=P-E, guard=Math.max(P0.guard||0,D.eyeGuard&&D.eyeGuard.until>=D.r?D.eyeGuard.v:0), wallOn=D.wallM>=D.r;
     const inM=atkM(sk,h,h.s,mh,M.P,night)*(1-guard), outM=kind==='magic'||kind==='round'?atkM(kind,mh,M.P,h,h.s,night):0;
-    const sTake=x=>Math.max(1,Math.round((x-grdD(h))*(1-Math.min(.35,SV(h,'evade')*.035))*sgfM(h)*(D.sWall>=D.r?.5:1)));
+    const _dDeath=D.eyeDeath&&D.eyeDeath.until>=D.r; const sTake=x=>_dDeath?Math.max(1,Math.round(x*(D.sWall>=D.r?.85:1))):Math.max(1,Math.round((x-grdD(h))*(1-Math.min(.35,SV(h,'evade')*.035))*sgfM(h)*(D.sWall>=D.r?.5:1)));
     const hitMe=x=>{ if(wallOn&&!np) return; D.mhp-=x; };
     // 비기 · 말을 건다 · 보구
     if(talk){ const mu=duelMu(D.ctx.stage);
@@ -11168,9 +11184,9 @@ const Sim = (() => {
       if(Math.abs(d)<8){ hitMe(Math.round(ri(3,7)*(1-guard))); D.shp-=ri(3,7)*(D.sWall>=D.r?.5:1); log(pickNR(['칼끝과 마력이 몇 번이고 엇갈렸다. 승부가 나지 않는다.','서로 한 걸음씩 물러섰다. 숨을 고른다.'],'duelEven'),'war'); }
       else if(rv==='m'){ D.shp-=sTake((6+8*.3)*outM); hitMe(ri(1,5)); log(`밀리던 당신이 한순간 틈을 비집고 들어갔다. 일격이 ${n}에게 닿았다.`,'war'); }
       else if(rv==='e'){ hitMe(Math.max(1,Math.round((6+8*.3)*inM))); D.shp-=ri(1,4); log(`몰아붙이던 순간, ${n}의 칼이 먼저 닿았다.`,'loss'); }
-      else if(d>0){ if(ch(dodgeP(h.s[1],M.P[1])*(kind==='magic'?MG.dodge:1))){ hitMe(ri(1,3)); log(`${n}${J(n,이)} 당신의 공격을 흘려 냈다.`,'war'); }
+      else if(d>0){ const _dIm=D.eyeImmob&&D.eyeImmob.until>=D.r, _dCl=D.eyeClair&&D.eyeClair.until>=D.r, _eAg=_dIm?Math.max(1,PV(h.s[1])-D.eyeImmob.agiPen):h.s[1]; if(ch(dodgeP(_eAg,M.P[1])*(kind==='magic'?MG.dodge:1)*(_dIm?.35:1)*(_dCl?.55:1))){ hitMe(ri(1,3)); log(`${n}${J(n,이)} 당신의 공격을 흘려 냈다.`,'war'); }
         else { D.shp-=sTake((6+d*.3)*outM); hitMe(ri(1,5)); log(kind==='magic'?pickNR([`마탄이 ${n}의 어깨를 꿰뚫었다.`,`당신의 마술이 ${n}${J(n,을)} 덮쳤다.`],'duelMagW'):pickNR([`강화를 두른 팔로 자루를 걷어 내고, ${n}의 품으로 파고들었다.`,`당신의 일격이 ${n}의 옆구리에 꽂혔다.`],'duelRndW'),'war'); } }
-      else { if(ch(dodgeP(M.P[1],h.s[1])*(sk==='magic'?MG.dodge:1))){ D.shp-=ri(1,3); log(`${n}의 일격을 간신히 피했다.`,'war'); }
+      else { const _dIl=D.eyeIll&&D.eyeIll.until>=D.r; if(ch((dodgeP(M.P[1],h.s[1])+(_dIl?D.eyeIll.v*.45:0))*(sk==='magic'?MG.dodge:1))||(_dIl&&ch(D.eyeIll.v))){ D.shp-=ri(1,3); log(`${n}의 일격을 간신히 피했다.`,'war'); }
         else { hitMe(Math.max(1,Math.round((6+(-d)*.3)*inM))); D.shp-=ri(1,5); log(pickNR([`${n}의 칼이 당신을 베고 지나갔다.`,`피할 틈이 없었다. ${n}의 일격이 당신에게 꽂혔다.`],'duelLose'),'loss'); } } }
     if(hes&&!talk) log('✓ 망설임 — 서번트의 공격이 한 박자 늦었다','check');
     if(wallOn&&!np&&!talk&&!isBk) log('✓ 결계 — 서번트의 칼이 닿지 않았다','check');
@@ -12345,8 +12361,14 @@ const Sim = (() => {
     future:{n:'미래시의 마안',w:10,g:[2,4],all:2}, past:{n:'과거시의 마안',w:10,g:[2,3]},
     jinx:{n:'흉운의 마안',w:6,g:[3,3],slot:{atkM:4,rush:4}}, compel:{n:'강제의 마안',w:1.5,g:[4,4],slot:{trkM:5,trick:5}},
     telek:{n:'염동',w:8,g:[1,3],slot:{defM:3,hide:3}}, blood:{n:'마의 피',w:0,g:[2,3],slot:{rush:8,hide:8,trick:8}},
+    illusion:{n:'환각의 마안',w:12,g:[1,3],slot:{defM:4,hide:4}},
+    clairvoyance:{n:'천리안의 마안',w:10,g:[2,3],slot:{atkM:3,trkM:3}},
+    immob:{n:'정지의 마안',w:12,g:[1,3],slot:{rush:4,atkM:3}},
+    vtheft:{n:'탈시의 마안',w:8,g:[2,3],slot:{trkM:4,trick:4}},
+    prolong:{n:'연장의 마안',w:1.5,g:[4,4],all:3},
+    death:{n:'직사의 마안',w:0.2,g:[4,5],slot:{atkM:5,rush:5}},
   };
-  const GRADE_N=['','하','중','상','보석'];
+  const GRADE_N=['','하','중','상','보석','무지개'];
   const GIFT_AWAKE={
     charm:'친구와 말다툼을 하다 눈이 마주쳤다. 친구가 갑자기 말을 멈추고 웃었다. 당신이 바란 대로였다. 그 뒤로 사람들의 눈을 오래 보지 않게 되었다.',
     bind:'쫓아오던 개와 눈이 마주친 순간, 개가 그 자리에 얼어붙었다. 당신이 눈을 돌리고 나서야 개는 낑낑거리며 달아났다.',
@@ -12358,10 +12380,16 @@ const Sim = (() => {
     compel:'“멈춰.” 그 한마디에 교실 전체가 숨을 멈췄다. 당신의 눈을 본 사람은 아무도 움직이지 못했다.',
     telek:'떨어지는 컵이 바닥에 닿기 직전 멈춰 섰다. 손을 대지 않았는데도.',
     blood:'열이 사흘 동안 내리지 않았다. 열이 내린 날, 손에 쥔 쇠파이프가 엿가락처럼 휘었다. 집안 어른들은 말없이 서로를 보았다.',
+    illusion:'복도 끝에 서 있던 그림자에게 말을 걸었다. 돌아보니 아무도 없었다. 그날부터 당신이 눈으로 짚은 허상은 남의 눈에도 그대로 겹쳐 보였다.',
+    clairvoyance:'창밖 몇 킬로미터 너머, 닫힌 문 뒤의 불빛과 사람의 움직임이 손에 잡힐 듯 선명하게 비쳤다. 눈을 감아도 거리의 윤곽이 지워지지 않았다.',
+    immob:'뛰어내리던 길고양이와 눈이 마주친 찰나, 고양이의 도약이 늪에 빠진 듯 느려졌다. 사슬도 감옥도 없이 공간 자체가 움직임을 끌어내리고 있었다.',
+    vtheft:'스쳐 지나간 행인의 시선이 겹친 순간, 그 사람이 방금 보았던 골목의 풍경과 기억이 통째로 눈 안으로 흘러들었다. 상대는 잠시 앞을 보지 못했다.',
+    prolong:'다 꺼져 가던 모닥불의 불꽃을 오래 바라보았다. 바람이 불어도 불씨는 좀처럼 사그라지지 않고, 평소보다 배는 더 오래 타올랐다.',
+    death:'열병이 멎고 눈을 떴을 때, 세상 모든 사물과 살아 숨 쉬는 것 위에 검은 금이 가 있었다. 손가락 하나로 그어 내리면 두 번 다시 붙지 않을 죽음의 선이었다.',
   };
   // ── 기술 업적: 계통별 단계, 마안별 깨어남·능숙(업적 화면에서 '익힌 기술'·'마안' 묶음으로 따로 보여 준다)
   for(const id of Object.keys(ART_CHAIN)){ const A=ARTS[id]; for(let t=1;t<=ART_CHAIN[id].max;t++) ACH.push({id:`art_${id}_${t}`,cat:'익힌 기술',grp:A.br,line:id,tier:t,h:t>=4?1:0,n:`${A.n} · ${ART_TIER[t]}`,d:`${A.n}의 ${ART_TIER[t]} 단계에 이르렀다.`,t:()=>artLv(id)>=t}); }
-  for(const id of Object.keys(GIFTS)){ const G=GIFTS[id], h=(id==='compel'||id==='blood')?1:0;
+  for(const id of Object.keys(GIFTS)){ const G=GIFTS[id], h=(id==='compel'||id==='blood'||id==='prolong'||id==='death')?1:0;
     ACH.push({id:`eye_${id}_1`,cat:'마안',line:id,tier:1,h,n:`${G.n} · 깨어남`,d:`${G.n}${J(G.n,이)} 눈을 떴다.`,t:()=>!!S.gift&&S.gift.id===id&&!!S.gift.awake});
     ACH.push({id:`eye_${id}_2`,cat:'마안',line:id,tier:2,h,n:`${G.n} · 능숙`,d:`${G.n}${J(G.n,을)} 능숙하게 다루게 되었다.`,t:()=>!!S.gift&&S.gift.id===id&&!!S.gift.awake&&(S.gift.ctl||0)>=2}); }
   ACH.push(
@@ -12375,18 +12403,27 @@ const Sim = (() => {
     {id:'arts10',cat:'기록',n:'열 갈래의 길',d:'여러 생에 걸쳐 서로 다른 계통 열 가지를 익혔다',meta:1},
     {id:'eyes5',cat:'기록',n:'모든 눈',d:'여러 생에 걸쳐 마안 다섯 종류를 깨웠다',meta:1},
     {id:'h_jewel',cat:'숨겨진 업적',h:1,n:'보석의 눈',d:'보석 등급의 마안이 깨어났다',t:()=>!!S.gift&&!!S.gift.awake&&S.gift.gr>=4},
+    {id:'h_rainbow',cat:'숨겨진 업적',h:1,n:'무지개의 눈',d:'무지개 등급의 마안이 깨어났다',t:()=>!!S.gift&&!!S.gift.awake&&S.gift.gr>=5},
     {id:'h_word',cat:'숨겨진 업적',h:1,n:'말 한마디',d:'강제의 마안으로 맞대결에서 이겨 상대 마스터를 쓰러뜨렸다',t:()=>!!S.flags.compelWin});
   function giftRoll(){ const m={orphan:2,exorcist:4,noble:1.5,noble2:1.5,fallen:1.5,church:1.5}[S.origin]||1; if(hrand('gift')>=.03*m) return;
     const ks=Object.keys(GIFTS), w=ks.map(k=>k==='blood'?(S.origin==='exorcist'?40:0):GIFTS[k].w); let r=hrand('giftK')*w.reduce((a,b)=>a+b,0), id=ks[0];
     for(let i=0;i<ks.length;i++){ if((r-=w[i])<0){ id=ks[i]; break; } }
-    const [g0,g1]=GIFTS[id].g; S.gift={id,gr:g0+Math.floor(hrand('giftG')*(g1-g0+1)),awake:false,ctl:0}; }
+    const [g0,g1]=GIFTS[id].g; const gr=id==='death'?(hrand('giftG')<.12?5:4):g0+Math.floor(hrand('giftG')*(g1-g0+1)); S.gift={id,gr,awake:false,ctl:0}; }
   const giftOn=()=>S&&S.gift&&S.gift.awake?S.gift:null;
   const giftIs=id=>{ const g=giftOn(); return !!g&&g.id===id; };
-  // 등급 보정: 하 1 · 중 2.5 · 상 4 · 보석 6, 제어에 따라 ×0.7 / ×1 / ×1.3
-  const GIFT_F=[0,1,2.5,4,6];
+  // 등급 보정: 하 1 · 중 2.5 · 상 4 · 보석 6 · 무지개 8.5, 제어에 따라 ×0.7 / ×1 / ×1.3
+  const GIFT_F=[0,1,2.5,4,6,8.5];
   const giftF=()=>{ const g=giftOn(); return g?GIFT_F[g.gr]*[.7,1,1.3][g.ctl||0]:0; };
   function giftDuel(k){ const g=giftOn(); if(!g) return 0; const G=GIFTS[g.id]; return (((G.slot&&G.slot[k])||0)+(G.all||0))*giftF(); }
-  const giftCost=()=>{ const g=giftOn(); return g?[4,2,0][g.ctl||0]+(g.id==='compel'?8:0):0; };
+  const giftCost=()=>{ const g=giftOn(); if(!g) return 0; const b0=[4,2,0][g.ctl||0]; if(g.id==='compel') return b0+8; if(g.id==='prolong') return b0+4; if(g.id==='death'){ const w=W(), bt=w&&w.battle; return 12+[6,3,1][g.ctl||0]+(bt&&bt.deathUses?bt.deathUses*6:0); } return b0; };
+  function deathGrasp(e, b){
+    const g=giftOn(), eh=e&&H_BY[e.hero]; if(!g||!eh) return {ok:false,mode:'blur',p:0};
+    const res = divR(eh)*0.05 + (eh.sp==='revive'?0.18:0) + (e.aid==='apostle'||e.cx==='boss'||e.cx==='shadow'||e.bxNun?0.2:0) + (npRV(eh)>=5?0.08:0) + (SV(eh,'mr')>=4?0.06:0);
+    const p = Math.max(0.15, Math.min(0.92, 0.42 + (g.gr>=5?0.22:0) + (g.ctl||0)*0.1 + Math.max(0,(S.st.will||50)-35)*0.004 - res));
+    if(!ch(p)) return {ok:false,mode:'blur',p};
+    const pointP = Math.max(0.12, Math.min(0.85, (g.gr>=5?0.55:0.28) + (g.ctl||0)*0.1 - res*0.6));
+    return {ok:true,mode:ch(pointP)?'point':'line',p};
+  }
   // 다른 사건과 겹친 해에는 미뤄 두었다가 다음 빈 해에 띄운다
   function giftEvent(){ const g=S.gift; if(!g||!preWar()) return false;
     if(!g.awake){ if(!g.due&&S.age>=6&&S.age<=18&&(hrand('giftA')<.15*(S.flags.lossAge===S.age?3:1)||(S.custom&&S.age===18))) g.due='awake'; }
@@ -12396,7 +12433,7 @@ const Sim = (() => {
     if(kind==='awake'){ decide({title:`${S.age}세`,body:GIFT_AWAKE[g.id],choices:[
       {t:'받아들인다',d:`${G.n} · 등급 · ${GRADE_N[g.gr]}`,auto:true,f:()=>{ g.awake=true; g.at=S.age; return `${G.n}${J(G.n,이)} 눈을 떴다.`; }},
       {t:'아무에게도 말하지 않는다',d:`${G.n} · 정신 +1 · 관계 −1`,f:()=>{ g.awake=true; g.at=S.age; add({will:1,bond:-1}); return '그날 일은 혼자만 알기로 했다.'; }}]}); return; }
-    const up=r=>{ g.ctl=Math.min(2,(g.ctl||0)+1); if(g.ctl===2&&g.gr<4&&hrand('gUp')<.3){ g.gr++; log(`${G.n}${J(G.n,이)} 한 단계 깊어졌다. 등급 · ${GRADE_N[g.gr]}`,'ev'); } return r||'제어가 한 단계 나아졌다.'; };
+    const up=r=>{ g.ctl=Math.min(2,(g.ctl||0)+1); const mx=GIFTS[g.id]?GIFTS[g.id].g[1]:4; if(g.ctl===2&&g.gr<mx&&hrand('gUp')<(g.id==='death'?.15:.3)){ g.gr++; log(`${G.n}${J(G.n,이)} 한 단계 깊어졌다. 등급 · ${GRADE_N[g.gr]}`,'ev'); } return r||'제어가 한 단계 나아졌다.'; };
     const ch_=[];
     if(S.origin==='church'||S.flags.churchTie) ch_.push({t:'교회에 맡긴다',d:'제어 +1 · 재산 −5',off:S.wealth<5,f:()=>{ add({wealth:-5}); return up('신부는 아무것도 묻지 않고 눈을 가리는 기도를 가르쳐 주었다.'); }});
     if(S.origin==='exorcist') ch_.push({t:'집안의 방식을 따른다',d:'제어 +1 · 정신 +2',auto:true,f:()=>{ add({will:2}); return up('집안 어른들은 이런 일에 익숙했다. 사흘 밤을 화로 앞에서 보냈다.'); }});
@@ -12404,9 +12441,15 @@ const Sim = (() => {
     ch_.push({t:'혼자 버틴다',d:'반쯤 제어 +1 · 실패하면 건강 −5',auto:!ch_.some(c=>c.auto),f:()=>{ if(hrand('gSelf')<.5) return up('몇 달을 앓은 끝에 눈을 조금 다룰 수 있게 되었다.'); add({health:-5}); return '힘이 손아귀에서 빠져나갔다.'; }});
     ch_.push({t:'눈을 감고 지낸다',d:'아무것도 바뀌지 않는다',f:()=>'당분간 눈을 감고 지내기로 했다.'});
     decide({title:`${S.age}세`,body:hrand('gTxt')<.5?'눈이 또 제멋대로 열렸다. 이대로 두면 언젠가 사람을 다치게 할 것이다.':'힘이 몸 안에서 날뛰는 밤이 잦아졌다. 다스리는 법을 배워야 한다.',choices:ch_}); }
-  function giftView(){ const g=S&&S.gift; if(!g||!g.awake) return null; return {n:GIFTS[g.id].n,gr:GRADE_N[g.gr],ctl:['제어 못 함','제어 보통','제어 능숙'][g.ctl||0],fx:{blood:'마스터끼리 맞붙을 때 「정면으로 덤빈다」 · 「몸을 숨긴다」 · 「허를 찌른다」가 강해진다',past:'전투에 들어서면 상대 조가 걸어온 길을 읽는다'}[g.id]||''}; }
+  function giftView(){ const g=S&&S.gift; if(!g||!g.awake) return null; return {n:GIFTS[g.id].n,gr:GRADE_N[g.gr],ctl:['제어 못 함','제어 보통','제어 능숙'][g.ctl||0],fx:{blood:'마스터끼리 맞붙을 때 「정면으로 덤빈다」 · 「몸을 숨긴다」 · 「허를 찌른다」가 강해진다',past:'전투에 들어서면 상대 조가 걸어온 길을 읽는다',illusion:'적의 추적을 흐리고 밤 습격을 다른 표적으로 돌린다',clairvoyance:'멀리서 적의 거처를 포착하고 정찰 범위와 정보 획득을 넓힌다',immob:'상대의 민첩과 회피·도주를 묶고 다음 공격을 강화한다',vtheft:'전투 중 상대의 시야와 정보를 빼앗아 숨겨진 능력을 드러낸다',prolong:'전투 중 아군 버프와 보구의 지속 시간을 늘리고 위력을 증폭한다',death:'막대한 부담을 안고 적의 방어와 재생을 끊으며 사점을 노린다'}[g.id]||''}; }
   // 전투 지원으로 쓰는 마안(과거시·마의 피는 지원 행동이 없다)
-  const EYE_D={charm:'이번 합 상대 마스터가 머뭇거린다 · 상대 전투력이 떨어진다',bind:'이번 합 상대 마스터를 묶는다 · 상대 전투력이 떨어진다',flame:'이번 합 상대 전투력이 크게 떨어진다',stone:'세 합 동안 상대 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다',future:'세 합 동안 받는 피해를 크게 줄인다',jinx:'상대 조에 흉 표식을 새긴다 · 표식 하나마다 상대 전투력 −5',compel:'세 합 동안 상대 마스터를 조종한다',telek:'이번 합 받는 피해를 줄인다'};
+  const EYE_D={charm:'이번 합 상대 마스터가 머뭇거린다 · 상대 전투력이 떨어진다',bind:'이번 합 상대 마스터를 묶는다 · 상대 전투력이 떨어진다',flame:'이번 합 상대 전투력이 크게 떨어진다',stone:'세 합 동안 상대 서번트가 굳는다 · 대마력이 높을수록 덜 듣는다',future:'세 합 동안 받는 피해를 크게 줄인다',jinx:'상대 조에 흉 표식을 새긴다 · 표식 하나마다 상대 전투력 −5',compel:'세 합 동안 상대 마스터를 조종한다',telek:'이번 합 받는 피해를 줄인다',
+    illusion:'두 합 동안 적의 시야와 인식을 비틀어 거짓 표적을 세운다 · 회피와 반격 억제',
+    clairvoyance:'적의 움직임을 멀리서 꿰뚫어 보고 정보를 얻는다 · 회피를 꺾고 전투력을 높인다',
+    immob:'두 합 동안 상대의 움직임을 묶어 민첩과 회피, 도주를 꺾고 다음 공격을 강화한다',
+    vtheft:'상대의 시야와 정보를 빼앗고 숨겨진 스킬을 드러낸다 · 노출을 줄이고 적의 관찰을 막는다',
+    prolong:'현재 걸린 버프·디버프와 보구 효과를 연장하고 위력을 끌어올린다',
+    death:'큰 대가를 치르고 죽음의 선과 점을 읽는다 · 방어·배율 무시 및 재생 차단 · 사점 관통 시 즉사'};
   // 지나간 흔적 읽기: 과거시의 마안·강령술은 전투에 들어서며 상대의 정보를 읽는다
   function pastSee(e){ if(!e||e.pastSeen||e.cx) return; const g=giftIs('past')?giftF():0, n=artLv('necro'); if(!g&&!n) return; e.pastSeen=true; addIntel(e,Math.round(6+g*4+n*4),'sight'); log(g?`${pName(e)} 조가 걸어온 길이 눈앞에 겹쳐 보였다. 과거시의 마안이다.`:`떠도는 영들이 ${pName(e)} 조에 대해 수군거렸다.`,'war'); }
   // 사역마: 낮에는 정찰, 정찰을 쉬는 날 밤에는 거처 보초
@@ -12481,18 +12524,57 @@ const Sim = (() => {
     gap:{n:'틈을 만든다',d:'이번 합 상대 전투력이 떨어진다 · 몸을 쓸 줄 알아 덜 다친다',f:(b,e)=>{ const lv=martialLv(); b.mDeb={r:b.round,v:4+lv}; if(ch(Math.max(.1,.4-lv*.1))){ add({health:-5}); log('상대 서번트의 일격을 피했지만, 바람에 옷깃이 찢기며 살갗까지 베였다.','loss'); } },l:(h,e)=>`당신은 ${pName(e)}의 시선이 닿지 않는 쪽으로 파고들어 발을 걸었다.`},
     back:{n:'서번트 등 뒤를 지킨다',d:'이번 합 받는 피해 −15% · 이 전투에서 상대 마스터의 기습을 막는다',f:b=>{ b.mGuard={r:b.round,v:.15}; b.backGuard=true; },l:h=>`당신은 ${h.name}의 등 뒤에 서서 상대 마스터 쪽을 노려보았다.`},
     key:{n:'흑건을 던진다',art:'blackkey',d:'이번 합 상대 전투력이 떨어진다 · 상대 마스터를 노린다',f:(b,e)=>{ b.mDeb={r:b.round,v:5+(artLv('blackkey')-1)*2}; if(e.master&&!b.eMasterDown&&ch(.2+artLv('blackkey')*.05)){ e.mSeen=true; b.mDeb.v+=3; log(`흑건 한 자루가 ${e.mname}의 어깨를 스쳤다. 영창이 끊겼다.`,'war'); } },l:(h,e)=>`당신은 손가락 사이에 끼운 흑건을 ${pName(e)} 쪽으로 던졌다.`},
-    eye:{free:1,get n(){ return GIFTS[S.gift.id].n; },get once(){ return ['stone','future','compel'].includes(S.gift.id)?'eyeUsed':null; },get d(){ return EYE_D[S.gift.id]+(this.once?' · 전투에서 한 번':''); },
-      req:()=>!(S.gift.id==='stone'&&S.gift.gr<3)&&S.st.health>giftCost()+5,rq:'건강이 모자라다',cost:()=>giftCost(),
+    eye:{free:1,get n(){ return GIFTS[S.gift.id].n; },get once(){ return ['stone','future','compel','prolong'].includes(S.gift.id)?'eyeUsed':null; },get d(){ return EYE_D[S.gift.id]+(this.once?' · 전투에서 한 번':''); },
+      req:()=>{ const id=S.gift.id, b=W()&&W().battle; if(id==='stone') return S.gift.gr>=3&&S.st.health>giftCost()+5; if(id==='death') return S.st.will>=35&&!(b&&b.ctx&&b.ctx.remote)&&S.st.health>giftCost()+15; return S.st.health>giftCost()+5; },
+      get rq(){ return S.gift&&S.gift.id==='death'?'정신 35·체력·직접 시야 필요':'건강이 모자라다'; },cost:()=>giftCost(),
       f:(b,e)=>{ const g=S.gift, F=giftF(), eh=H_BY[e.hero]; add({health:-giftCost()}); if(g.id==='compel'){ add({will:-2}); lean('cruel',1); }
         if(g.id==='charm'){ b.eHes=b.round; b.mDeb={r:b.round,v:Math.round(5+F*1.5)}; }
         else if(g.id==='bind'){ b.eHes=b.round; b.mDeb={r:b.round,v:Math.round(6+F*1.5)}; }
         else if(g.id==='flame'){ b.mDeb={r:b.round,v:Math.round(8+F*2)}; }
-        else if(g.id==='stone'){ b.eyeDeb={until:b.round+2,set:b.round,v:Math.round((14+F*3)*Math.max(0,1-.15*SV(eh,'mr')))}; } // 대마력 랭크마다 15%씩 덜 듣는다(E 15% … A 75%, EX 90%)
+        else if(g.id==='stone'){ b.eyeDeb={until:b.round+2,set:b.round,v:Math.round((14+F*3)*Math.max(0,1-.15*SV(eh,'mr')))}; }
         else if(g.id==='future'){ b.eyeGuard={until:b.round+2,set:b.round,v:Math.min(.5,.25+F*.04)}; }
         else if(g.id==='jinx'){ e.jinx=Math.min(3,(e.jinx||0)+1); }
         else if(g.id==='compel'){ b.eHes=b.round; b.eHesTo=b.round+2; b.eyeDeb={until:b.round+2,set:b.round,v:[6,10,16][g.ctl||0]}; }
-        else if(g.id==='telek'){ b.mGuard={r:b.round,v:Math.min(.5,.2+F*.03)}; } },
-      l:(h,e)=>{ const id=S.gift.id, mn=e.mname||pName(e); return id==='charm'?`당신의 눈을 마주친 ${mn}${J(mn,이)} 한순간 멍하니 서 있었다.`:id==='bind'?`${mn}의 몸이 당신의 시선에 묶였다.`:id==='flame'?'당신이 바라본 자리에서 불길이 치솟았다.':id==='stone'?`${pName(e)}의 다리가 회색으로 굳어 갔다.`:id==='future'?`당신은 다음 일격이 어디로 올지 이미 보았다. ${h.name}에게 짧게 외쳤다.`:id==='jinx'?`당신은 오래 노려보았다. ${pName(e)} 조에 흉 표식이 하나 더 새겨졌다.`:id==='compel'?`“멈춰라.” ${mn}의 몸이 당신의 말대로 굳었다.`:`떨어지던 잔해가 허공에서 멈췄다. ${h.name}${J(h.name,이)} 그 틈으로 몸을 뺐다.`; }},
+        else if(g.id==='telek'){ b.mGuard={r:b.round,v:Math.min(.5,.2+F*.03)}; }
+        else if(g.id==='illusion'){ b.eyeIll={until:b.round+1,set:b.round,v:Math.min(.45,.14+F*.05)}; b.mDeb={r:b.round,v:Math.round(4+F)}; }
+        else if(g.id==='clairvoyance'){ b.eyeClair={until:b.round+1,set:b.round,v:Math.round(4+F*1.5)}; b.mPow={r:b.round,v:Math.round(4+F*1.5)}; addIntel(e,Math.round(8+F*2),'sight'); e.kitSeen=true; if(g.gr>=3&&!e.revealed) revealSkills(e,'천리안이 상대의 기술을 간파했다. ',1); }
+        else if(g.id==='immob'){ b.eyeImmob={until:b.round+1,set:b.round,agiPen:Math.min(3,1+Math.floor(F/2)),fleePen:Math.min(.55,.2+F*.06),nextPow:Math.round(6+F*2),nextMul:1.15+F*.03}; b.immobNext=1; }
+        else if(g.id==='vtheft'){
+          b.eyeVTheft={until:b.round+1,set:b.round,v:Math.round(4+F*1.5)};
+          addIntel(e,Math.round(14+F*3),'trace'); e.kitSeen=true; e.scoutEdge=0;
+          W().exposure=clamp(W().exposure-Math.round(4+F));
+          if(!e.revealed) revealSkills(e,'탈시의 마안으로 상대의 숨겨진 수를 훔쳐보았다. ',2);
+          if(!e.artKnown&&!e.artHint){ const ea=artOf(eh); e.artHint={k:ea.k,r:RANK_BAND(ea.r)}; }
+          if(e.know){ for(const [ki,kv] of Object.entries(e.know)){ if(kv>=20){ const tp=pairBy(Number(ki)); if(tp&&tp!==e&&tp.alive) addIntel(tp,Math.round(kv*.4),'trace'); } } }
+          if((b.vtLore||0)<3){ add({lore:1}); b.vtLore=(b.vtLore||0)+1; }
+        }
+        else if(g.id==='prolong'){
+          const ext=(g.ctl||0)>=2?2:1, mul=g.ctl>=2?1.35:1.25;
+          b.eyeProlong={until:b.round+ext,ext,mul};
+          for(const k of ['eyeGuard','eyeDeb','eWeak','eyeIll','eyeImmob','eyeClair','eyeVTheft']){ if(b[k]&&b[k].until>=b.round){ b[k].until+=ext; if(b[k].v!=null) b[k].v=(b[k].v<1?Math.min(.75,b[k].v*mul):Math.round(b[k].v*mul)); } }
+          if(b.mPow&&b.mPow.r>=b.round){ b.mPow.until=Math.max(b.mPow.until||b.mPow.r,b.round+ext); b.mPow.v=Math.round(b.mPow.v*mul); }
+          if(b.mDeb&&b.mDeb.r>=b.round){ b.mDeb.until=Math.max(b.mDeb.until||b.mDeb.r,b.round+ext); b.mDeb.v=Math.round(b.mDeb.v*mul); }
+          if(b.mGuard&&b.mGuard.r>=b.round){ b.mGuard.until=Math.max(b.mGuard.until||b.mGuard.r,b.round+ext); b.mGuard.v=Math.min(.75,b.mGuard.v*mul); }
+          if(b.mad>=b.round) b.mad+=ext;
+          for(const f of fxL(b)){ if(f.side==='me'&&f.left<90) f.left+=ext; }
+          if(e.mHurt) e.mHurt+=1; if(e.provoked) e.provoked+=1;
+        }
+        else if(g.id==='death'){
+          add({will:-3}); b.deathUses=(b.deathUses||0)+1;
+          const gr=deathGrasp(e,b);
+          b.eyeDeath={until:b.round+(g.gr>=5?2:1),set:b.round,mode:gr.mode,pointDone:false};
+          e.noRegen=Math.max(e.noRegen||0,3);
+          if(gr.mode!=='blur') e.survUsed=true;
+        }
+      },
+      l:(h,e)=>{ const id=S.gift.id, mn=e.mname||pName(e);
+        if(id==='illusion') return `공기가 일렁이며 허상이 겹쳐졌다. ${pName(e)}의 시야가 엇갈리기 시작했다.`;
+        if(id==='clairvoyance') return `먼 거리까지 꿰뚫는 시선이 ${pName(e)}의 빈틈을 정확히 짚어 냈다.`;
+        if(id==='immob') return `${pName(e)}의 발걸음이 보이지 않는 무게에 눌린 듯 느려졌다.`;
+        if(id==='vtheft') return `${pName(e)}의 시야가 한순간 검게 꺼지며 정보가 이쪽으로 흘러들었다.`;
+        if(id==='prolong') return `지속되던 술식과 효과의 윤곽이 선명하게 고정되며 한층 강해졌다.`;
+        if(id==='death'){ const b=W().battle, md=b&&b.eyeDeath?b.eyeDeath.mode:'blur'; return md==='point'?`정신을 극한까지 벼려 냈다. ${pName(e)}의 심장부에서 일렁이는 죽음의 점이 또렷하게 잡혔다.`:md==='line'?`눈앞에 검은 금이 그어졌다. ${pName(e)}의 방어를 가를 죽음의 선이 보였다.`:`격렬한 두통 속에 죽음의 선이 희미하게 스쳐 지나갔다.`; }
+        return id==='charm'?`당신의 눈을 마주친 ${mn}${J(mn,이)} 한순간 멍하니 서 있었다.`:id==='bind'?`${mn}의 몸이 당신의 시선에 묶였다.`:id==='flame'?'당신이 바라본 자리에서 불길이 치솟았다.':id==='stone'?`${pName(e)}의 다리가 회색으로 굳어 갔다.`:id==='future'?`당신은 다음 일격이 어디로 올지 이미 보았다. ${h.name}에게 짧게 외쳤다.`:id==='jinx'?`당신은 오래 노려보았다. ${pName(e)} 조에 흉 표식이 하나 더 새겨졌다.`:id==='compel'?`“멈춰라.” ${mn}의 몸이 당신의 말대로 굳었다.`:`떨어지던 잔해가 허공에서 멈췄다. ${h.name}${J(h.name,이)} 그 틈으로 몸을 뺐다.`; }},
     gem:{n:'보석을 던진다',art:'jewel',free:1,req:()=>S.wealth>=5,rq:'재산 5 필요',cost:()=>0,costW:5,d:'이번 합 상대 전투력이 크게 떨어진다',f:(b,e)=>{ add({wealth:-5}); b.mDeb={r:b.round,v:Math.round((6+artLv('jewel')*3)*(artLv('jewel')>=2?artQ('jewel'):1))}; },l:(h,e)=>`마력을 채운 보석이 ${pName(e)}의 발밑에서 터졌다.`},
     decoy:{n:'사역마를 미끼로 쓴다',free:1,req:()=>famOK(),rq:'사역마가 없다',cost:()=>0,d:'이번 합 상대 전투력 −4 · 사역마는 사흘 동안 돌아오지 않는다',f:(b,e)=>{ b.mDeb={r:b.round,v:4}; const w=W(); w.famBack=w.day+3; w.famTail=null; },l:(h,e)=>{ const f=famName(); return `${f}${J(f,이)} ${pName(e)}의 눈앞으로 날아들었다. 상대의 첫 일격이 허공을 갈랐다.`; }},
     cheer:{n:'목소리로 북돋운다',req:()=>W().trust>=50,rq:'신뢰 50 필요',d:'이번 합 우리 전투력이 조금 오른다',f:b=>{ b.mPow={r:b.round,v:2}; },l:h=>`당신은 목이 터져라 ${h.name}의 이름을 불렀다.`},
@@ -12514,7 +12596,7 @@ const Sim = (() => {
     return 1; }
   function actChips(k){
     const fx=v=>(Math.round(v*10)/10).toFixed(1);
-    if(k==='eye'){ const g=S.gift, F=giftF(), V={charm:f=>5+1.5*f,bind:f=>6+1.5*f,flame:f=>8+2*f,stone:f=>14+3*f,future:f=>Math.min(.5,.25+.04*f),telek:f=>Math.min(.5,.2+.03*f)}[g.id];
+    if(k==='eye'){ const g=S.gift, F=giftF(), V={charm:f=>5+1.5*f,bind:f=>6+1.5*f,flame:f=>8+2*f,stone:f=>14+3*f,future:f=>Math.min(.5,.25+.04*f),telek:f=>Math.min(.5,.2+.03*f),illusion:f=>4+f,clairvoyance:f=>4+1.5*f,immob:f=>6+2*f,vtheft:f=>4+1.5*f,prolong:()=>g.ctl>=2?2:1,death:f=>14+f*2}[g.id];
       const r=g.id==='compel'?[6,10,16][g.ctl||0]/10:V?V(F)/V(1):1; return [{art:true,on:true,l:GIFTS[g.id].n,tier:GRADE_N[g.gr],mul:fx(r)}]; }
     const learned=ACT_SRC(k).filter(id=>artLv(id)>=1); if(!learned.length) return null;
     // 효과를 정하는 계통: 단계가 가장 높고, 같으면 품질이 높은 쪽(엔진의 actLv·actQ·martialLv와 같은 기준)
@@ -12562,7 +12644,7 @@ const Sim = (() => {
     if(e.master&&!e.ally&&!b.duelDone&&!b.ctx.remote){ const can=myMDList().some(k=>mdCost(k)); cs.push({grp:'master',t:'상대 마스터와 맞선다',d:`서번트는 그대로 싸운다 · 방식을 고른다${can?'':' [쓸 수 없다]'}`,off:!can,f:()=>duelPick(e)}); }
   }
   function mAct(k){ const w=W(),b=w.battle,e=b.e,h=hero(),A=MACT[k]; b.mR=b.round; if(!b.relAid&&['ward','heal','back','cover','cheer','buff'].includes(k)){ b.relAid=1; relGain(3); } if(!A.free) mPay(A.mg?A.c:0); if(A.once){ if(A.twice&&A.twice()&&!b[A.once+'1']) b[A.once+'1']=true; else b[A.once]=true; }
-    A.f(b,e); if(b.ctx.remote){ if(b.mPow&&b.mPow.r===b.round) b.mPow.v=Math.round(b.mPow.v/2); if(b.mDeb&&b.mDeb.r===b.round) b.mDeb.v=Math.round(b.mDeb.v/2); if(b.mGuard&&b.mGuard.r===b.round) b.mGuard.v/=2; if(b.eyeDeb&&b.eyeDeb.set===b.round) b.eyeDeb.v=Math.round(b.eyeDeb.v/2); if(b.eyeGuard&&b.eyeGuard.set===b.round) b.eyeGuard.v/=2; }
+    A.f(b,e); if(b.ctx.remote){ if(b.mPow&&b.mPow.r===b.round) b.mPow.v=Math.round(b.mPow.v/2); if(b.mDeb&&b.mDeb.r===b.round) b.mDeb.v=Math.round(b.mDeb.v/2); if(b.mGuard&&b.mGuard.r===b.round) b.mGuard.v/=2; if(b.eyeDeb&&b.eyeDeb.set===b.round) b.eyeDeb.v=Math.round(b.eyeDeb.v/2); if(b.eyeGuard&&b.eyeGuard.set===b.round) b.eyeGuard.v/=2; if(b.eyeIll&&b.eyeIll.set===b.round) b.eyeIll.v/=2; if(b.eyeClair&&b.eyeClair.set===b.round) b.eyeClair.v=Math.round(b.eyeClair.v/2); if(b.eyeImmob&&b.eyeImmob.set===b.round) b.eyeImmob.nextPow=Math.round(b.eyeImmob.nextPow/2); if(b.eyeVTheft&&b.eyeVTheft.set===b.round) b.eyeVTheft.v=Math.round(b.eyeVTheft.v/2); }
     log(A.l(h,e),'war'); H.sfx('m_'+({bapt:'ward',gap:'hex',back:'ward',key:'hex',eye:'hex',gem:'hex',decoy:'hex'}[k]||k)); if(mDead('무리한 마술의 대가')) return ''; soon(()=>battleRound()); }
   function mdCost(k){ const b=W().battle, od=b.od||0; if(MD[k].mg) return od>=30?'[오드 −30]':(!b.over&&S.st.health>=40)?'[오드 부족 · 무리하면 건강 −8]':null; return bodyOK()?`[건강 −${myBodyCost()}]`:null; }
   function duelPick(e){ const w=W(),b=w.battle; b.mR=b.round; b.duelDone=true;
@@ -12611,8 +12693,8 @@ const Sim = (() => {
       ...L.map(k=>Object.assign({t:MD[k].n,d:MD_D[k],off:k==='trick'&&!!e.bluffed,auto:k===best&&bv>-5,f:go(k)},mdAdv(e,k),{st:[{l:'마스터 등급',v:masterTier(masterScore())}]})),
       {t:'서번트 뒤로 피한다',d:'다치지 않는다 · 서번트가 감싸느라 이번 합 우리 전투력이 떨어진다',auto:bv<=-5,f:()=>{ b.shield=b.round; log(`${h.name}${J(h.name,이)} 당신 앞을 막아섰다. ${e.mname}의 마술이 서번트의 등에 부딪혀 흩어졌다.`,'war'); soon(()=>battleRound()); }}]});
     return true; }
-  const mBon=b=>(b.mPow&&b.mPow.r===b.round?b.mPow.v:0)-(b.shield===b.round?6:0);
-  const eMal=b=>(b.mDeb&&b.mDeb.r===b.round?b.mDeb.v:0)+(b.eWeak&&b.eWeak.until>=b.round?b.eWeak.v:0)+(b.eyeDeb&&b.eyeDeb.until>=b.round?b.eyeDeb.v:0)+((b.e&&b.e.jinx)||0)*5;
+  const mBon=b=>((b.mPow&&(b.mPow.r===b.round||(b.mPow.until&&b.mPow.until>=b.round)))?b.mPow.v:0)+((b.eyeClair&&b.eyeClair.until>=b.round&&b.eyeClair.set!==b.round)?b.eyeClair.v:0)-(b.shield===b.round?6:0);
+  const eMal=b=>((b.mDeb&&(b.mDeb.r===b.round||(b.mDeb.until&&b.mDeb.until>=b.round)))?b.mDeb.v:0)+(b.eWeak&&b.eWeak.until>=b.round?b.eWeak.v:0)+(b.eyeDeb&&b.eyeDeb.until>=b.round?b.eyeDeb.v:0)+(b.eyeVTheft&&b.eyeVTheft.until>=b.round?b.eyeVTheft.v:0)+((b.e&&b.e.jinx)||0)*5;
   // 서번트 마력: 전투 한 합마다 조금, 보구는 크게 소모. 마스터 마력에 비례해 하루마다 회복
   const NP_MUL=2.2; // 보구 피해 배율(양쪽 공통)
   // 보구 피해: 랭크로 정해지고, 대마력·회피로 줄며, 미리 알던 보구는 절반만 들어온다
@@ -12753,6 +12835,11 @@ const Sim = (() => {
     if(b.mDeb&&b.mDeb.r===rd) add(E,'방해 마술',-b.mDeb.v,'당신의 방해 마술이 상대를 묶고 있다','이번 합');
     if(b.eWeak&&b.eWeak.until>=rd) add(E,'약화',-b.eWeak.v,'상대가 약해져 있다',`${b.eWeak.until-rd+1}합 남음`);
     if(b.eyeDeb&&b.eyeDeb.until>=rd&&b.eyeDeb.v) add(E,S.gift?GIFTS[S.gift.id].n:'마안',-b.eyeDeb.v,'상대가 약해져 있다',`${b.eyeDeb.until-rd+1}합 남음`);
+    if(b.eyeIll&&b.eyeIll.until>=rd) add(M,'환각 · 잔상',b.eyeIll.v*20,'거짓 표적으로 적의 공격과 반격이 빗나간다',`${b.eyeIll.until-rd+1}합 남음`);
+    if(b.eyeClair&&b.eyeClair.until>=rd) add(M,'천리안 · 간파',b.eyeClair.v,'멀리서 움직임을 읽어 전투력과 정밀도가 올랐다',`${b.eyeClair.until-rd+1}합 남음`);
+    if(b.eyeImmob&&b.eyeImmob.until>=rd) add(E,'정지 · 감속',-b.eyeImmob.agiPen*4,'동작이 묶여 민첩·회피·도주 확률이 떨어지고 다음 일격이 강해진다',`${b.eyeImmob.until-rd+1}합 남음`);
+    if(b.eyeVTheft&&b.eyeVTheft.until>=rd) add(E,'탈시 · 실명',-b.eyeVTheft.v,'시야를 빼앗겨 간파와 공격 예리함이 무뎌졌다',`${b.eyeVTheft.until-rd+1}합 남음`);
+    if(b.eyeDeath&&b.eyeDeath.until>=rd) add(M,b.eyeDeath.mode==='point'?'직사 · 사점':'직사 · 선',b.eyeDeath.mode==='point'?18:10,'적의 방어와 재생을 끊고 죽음의 선과 점을 겨눈다',`${b.eyeDeath.until-rd+1}합 남음`);
     if(e.jinx) add(E,'흉운',-e.jinx*5,'흉운의 마안이 새긴 표식이 상대의 운을 깎고 있다');
     { const es=npcSmOf(e); if(es<=0) add(E,'서번트 마력 바닥',-30,'상대 서번트의 마력이 바닥났다'); else if(es<15) add(E,'서번트 마력 부족',-10,'상대 서번트의 마력이 모자라다'); }
     for(const f of fxL(b)){ if(f.start&&rd<f.start) continue; const k=FX_KO[f.type]; if(!k) continue;
@@ -12831,7 +12918,12 @@ const Sim = (() => {
   // 이 합에서 쓰는 보구의 평소 피해 (기존 공식 그대로) × 특례 × 받는 쪽 영역의 경감
   function npBase(b,side){ const s=npSide(b,side), w=s.w, e=s.e, tag=(b.npTag||{})[side];
     const imm=tag==='field'?NPK.fImm:1, take=npNpTakeM(b,npOther(side));
-    if(s.me) return Math.round(npDmg(s.h,s.o,!!FORESEE[e.hero],e.aid==='elder',s.P)*(b.ctx.raid?.6:1)*(b.sealNow?1.3:1)*kavF(s.o.id,e)*(s.h.id==='enkidu'&&w.morph==='atk'?1.15:1)*npDmgSp(b,s)*imm*take);
+    if(s.me){
+      const dOn=b.eyeDeath&&b.eyeDeath.until>=b.round, dFull=dOn&&b.eyeDeath.mode!=='blur';
+      const takeD=dFull?(1-(1-take)*.2):dOn?(1-(1-take)*.55):take;
+      const kf=dFull?1:kavF(s.o.id,e);
+      return Math.round(npDmg(s.h,s.o,!!FORESEE[e.hero],!dFull&&e.aid==='elder',s.P)*(b.ctx.raid?.6:1)*(b.sealNow?1.3:1)*kf*(s.h.id==='enkidu'&&w.morph==='atk'?1.15:1)*npDmgSp(b,s)*imm*takeD);
+    }
     const known=!!b.eKnownHit;
     return Math.round(npDmg(s.h,s.o,known,false,s.P)*(s.o.id==='enkidu'&&w.morph==='def'?.8:1)*kavF(s.o.id,w)*(!known&&e.artHint?.875:1)*(s.o.id==='habetrot'&&S.sex==='f'?.8:1)*npDmgSp(b,s)*imm*take); }
   function npHit(b,side,x){ x=Math.max(0,Math.round(x)); if(side==='me') W().hp=clamp(W().hp-x); else b.e.hp=clamp(b.e.hp-x);
@@ -12989,7 +13081,7 @@ const Sim = (() => {
 
   /* 영역 (7번) */
   function npFieldDur(b,side){ const s=npSide(b,side); let d=npDur((PV(s.P[3])+npRV(s.h))/2,NPK.fDur,NPK.fMin,NPK.fMax);
-    if(s.me?S.st.mana>=NPK.fMana:s.e.pw>=74) d=Math.min(NPK.fMax,d+1); return d; }
+    if(s.me?S.st.mana>=NPK.fMana:s.e.pw>=74) d=Math.min(NPK.fMax,d+1); if(s.me&&giftIs('prolong')) d+=1; return d; }
   function npFieldUp(b,side,cv){ const s=npSide(b,side), nm=artOf(s.h).n.split(' - ').pop(), who=s.me?s.h.name:pName(b.e);
     const old=fxGet(b,side,'field'); if(old) fxDrop(b,old);
     const of=fxGet(b,npOther(side),'field');
@@ -13008,7 +13100,7 @@ const Sim = (() => {
     b.npHoldN=(b.npHoldN||0)+1; }
 
   /* 방벽 (8번) */
-  function npWallDur(b,side){ const s=npSide(b,side); return npDur(PV(s.P[2])+npRV(s.h),NPK.wDur,NPK.wMin,NPK.wMax); }
+  function npWallDur(b,side){ const s=npSide(b,side); return npDur(PV(s.P[2])+npRV(s.h),NPK.wDur,NPK.wMin,NPK.wMax)+(s.me&&giftIs('prolong')?1:0); }
   function npWallUp(b,side){ const s=npSide(b,side), nm=artOf(s.h).n.split(' - ').pop(), who=s.me?s.h.name:pName(b.e);
     const old=fxGet(b,side,'wall'); if(old) fxDrop(b,old);
     const d=npWallDur(b,side); fxL(b).push({side,type:'wall',id:s.h.id,left:d,age:0,bv:npBV(b,side),cost:s.me?NPK.wCost:0});
@@ -13042,7 +13134,7 @@ const Sim = (() => {
       const who=f.side==='me'?h.name:pName(b.e), nm=fxName(f);
       if(f.side==='me'&&f.cost){ if(w.sm<f.cost){ fxDrop(b,f); log(`마력이 모자라 「${nm}」${J(nm,이)} 걷혔다.`,'loss'); continue; } smUse(f.cost); }
       if(f.type==='wall'&&(WALL_SP[f.id]||{}).rev&&f.taken){ fxL(b).push({side:f.side,type:'rev',start:b.round+1,left:1,v:Math.min(12,f.taken)}); f.taken=0; }
-      if(f.type==='sup'&&(SUP_SP[f.id]||{}).heal){ const v=SUP_SP[f.id].heal; if(f.side==='me'&&w.hp>0) w.hp=clamp(w.hp+v); else if(f.side==='en'&&b.e.hp>0) b.e.hp=clamp(b.e.hp+v); }
+      if(f.type==='sup'&&(SUP_SP[f.id]||{}).heal){ const v=SUP_SP[f.id].heal; if(f.side==='me'&&w.hp>0) w.hp=clamp(w.hp+v); else if(f.side==='en'&&b.e.hp>0&&!(b.eyeDeath&&b.eyeDeath.until>=b.round)) b.e.hp=clamp(b.e.hp+v); }
       f.age++; f.left--;
       if(f.left<=0){ fxDrop(b,f); npFxEnd(b,f); log(`${who}의 「${nm}」${J(nm,이)} 걷혔다.`,f.side==='me'?'war':'n'); }
       else out.push(`「${nm}」 ${f.left}합 남음`); }
@@ -13183,7 +13275,7 @@ const Sim = (() => {
   // 메데이아의 단검: 계약이 흔들린 쪽의 스테이터스가 1랭크 내려간다
   function npCurse(side,arr){ const b=S.war&&S.war.battle; if(b&&b.fx&&b.fx.length&&fxGet(b,npOther(side),'curse')) return arr.map(r=>r==='-'?r:rankShift(r,-1)); return arr; }
   /* 보조 보구 (9번) */
-  function npSupDur(b,side){ return npDur((PV(npSide(b,side).P[3])+npRV(npSide(b,side).h))/2,NPK.sDur,NPK.sMin,NPK.sMax); }
+  function npSupDur(b,side){ return npDur((PV(npSide(b,side).P[3])+npRV(npSide(b,side).h))/2,NPK.sDur,NPK.sMin,NPK.sMax)+(side==='me'&&giftIs('prolong')?1:0); }
   function npSupUp(b,side){ const s=npSide(b,side), w=W(), e=b.e, sp=SUP_SP[s.h.id]||{}, im=sp.imm||{}, nm=artOf(s.h).n.split(' - ').pop(), who=s.me?s.h.name:pName(e), other=npOther(side);
     if(s.me){ w_npLog(b,artOf(s.h)); b.supNow=b.round; if(sp.will) b.andersenUsed=1; }
     log(`${who}${J(who,이)} 「${nm}」${J(nm,을)} 펼쳤다.`,s.me?'war':'loss');
@@ -13268,8 +13360,13 @@ const Sim = (() => {
     if(SV(h,'slayer')&&(PV(npcParams(e).p[0])>=4||eh2.cls==='berserk'||(skillsOf(h).some(x=>x.n==='용살자')&&npIsDragon(b,'en')))) sab+=SV(h,'slayer')*1.2;
     skillFlavor(h,mN0(h),b,true); skillFlavor(eh2,pName(e),b,false,e);
     if(h.sp==='gate'&&w.hp<50&&!b.gateSerious){ b.gateSerious=true; log(pickNR(['길가메시의 얼굴에서 웃음이 사라졌다. “좋다. 조금은 진심을 보여 주지.” 황금빛 문이 하늘을 메웠다.','“잡종 주제에 나를 다치게 하다니.” 등 뒤의 문이 셀 수 없이 열렸다.'],'gateS'),'war'); }
-    b.dodged=null; b.judgedNow=b.judged; b.sealNow=b.sealBuff===b.round; const P=myPower({e,defend:b.ctx.defend,judged:b.judged,attack:b.ctx.attack,trap:b.ctx.trap,breach:b.ctx.breach})+bonus+mBon(b)+(b.ctx.final&&w.altar==='me'?6:0)+(b.ctx.final&&w.riteDone?6:0)+(b.ctx.raid?12:0)+initB(b)+(b.mad>=b.round?12:0)+(b.aron?8:0)+(rnd()*36-18)-eSab-(w.sm<=0?30:w.sm<15?10:0)+npFxP(b,'me'); b.judged=false;
+    b.dodged=null; b.judgedNow=b.judged; b.sealNow=b.sealBuff===b.round;
+    const _immOn=b.eyeImmob&&b.eyeImmob.until>=b.round, _immNext=_immOn&&b.immobNext;
+    const _illOn=b.eyeIll&&b.eyeIll.until>=b.round, _clrOn=b.eyeClair&&b.eyeClair.until>=b.round, _vtOn=b.eyeVTheft&&b.eyeVTheft.until>=b.round, _dthOn=b.eyeDeath&&b.eyeDeath.until>=b.round, _dthFull=_dthOn&&b.eyeDeath.mode!=='blur';
+    if(_immNext){ b.immobNext=0; bonus+=(b.eyeImmob.nextPow||6); }
+    const P=myPower({e,defend:b.ctx.defend,judged:b.judged,attack:b.ctx.attack,trap:b.ctx.trap,breach:b.ctx.breach})+bonus+mBon(b)+(b.ctx.final&&w.altar==='me'?6:0)+(b.ctx.final&&w.riteDone?6:0)+(b.ctx.raid?12:0)+initB(b)+(b.mad>=b.round?12:0)+(b.aron?8:0)+(rnd()*36-18)-eSab-(w.sm<=0?30:w.sm<15?10:0)+npFxP(b,'me'); b.judged=false;
     let E=npcPower(e,true)-eMal(b)+(rnd()*36-18)+(b.ctx.hunted?(w.hid?HUNT_E/2:HUNT_E):0)+(b.ctx.final&&e.altar?6:0)+(b.ctx.claim&&b.ctx.attack&&e.altarPre?10:0)+(e.tac==='reckless'?6:0)+npcAct(b,e)+npcInitB(b)+(b.ctx.hostage&&b.round<=2?10:0)-sab+(b.ctx.attack?eWsB(e):0)-(b.compChk&&b.compChk.r===b.round?b.compChk.v:0);
+    if(_vtOn) E-=Math.min(6,SV(eh2,'insight')*1.5);
     E+=npFxP(b,'en'); { const _c=Math.round(((3+ri(0,3))*(H_BY[e.hero].cls==='berserk'?1.4:1)+(SV(H_BY[e.hero],'mad')?1:0))*(b.eMad>=b.round?2:1)); e.sm=Math.max(0,npcSmOf(e)-_c); if(e.master&&e.seals>1&&e.sm<15){ e.seals--; e.sm=clamp(e.sm+40); log(`${pName(e)}의 마스터가 령주를 긁었다. 흐려지던 윤곽이 다시 짙어졌다.`,'seal'); } E-=e.sm<=0?30:e.sm<15?10:0; }
     if(S.dead) return;
     if(b.endNow){ b.endNow=false; return endBattle(); }
@@ -13278,10 +13375,15 @@ const Sim = (() => {
     const eN=pName(e), mN=h.name;
     const extra = d>0 ? (kind==='weak'?6:0) : 0;
     let myNP = kind==='art', enNP = eArtHit>0;
-    const MP=myParams().p, EP=npcParams(e).p, cl=(x,a,b)=>Math.max(a,Math.min(b,x));
+    const MP=myParams().p, EP0=npcParams(e).p, EP=_immOn?EP0.map((x,i)=>i===1?Math.max(1,PV(x)-b.eyeImmob.agiPen):x):EP0, cl=(x,a,b)=>Math.max(a,Math.min(b,x));
     const night=w.tod==='밤', atkK=kind==='magic'||kind==='burst'?kind:'round';
     let eK='round'; if(MG.npc&&!enNP){ let bv=-9; for(const k of atkKinds(eh2)){ const v=atkVal(k,eh2,EP,h,MP,night); if(v>bv+.02){bv=v;eK=k;} } } b.eK=eK;
-    const agi=(PV(MP[1])-PV(EP[1]))*.02, outM=atkM(atkK,h,MP,eh2,EP,night)*udM(h,eh2)*sjDayM(h)*(b.ctx.raid?.6:1)*(h.sp==='gate'?1.06:1)*(h.id==='enkidu'&&w.morph==='atk'?1.15:1)*npTakeM(b,'en')*npDealM(b,'me'), inM=atkM(eK,eh2,EP,h,MP,night)*udM(eh2,h)*sjDayM(eh2)*(b.ctx.raid?.8:1)*(h.id==='enkidu'&&w.morph==='def'?.85:1)*(eh2.sp==='gate'?1.06:1)*npTakeM(b,'me')*npDealM(b,'en')*(e.bx?BXK.logos:1);
+    const _tmRaw=npTakeM(b,'en'), _tmD=_dthFull?(1-(1-_tmRaw)*.15):_dthOn?(1-(1-_tmRaw)*.5):_tmRaw;
+    const _enRed=_dthFull?1:(1-Math.min(.35,SV(eh2,'evade')*.035*(_immOn?.3:1)))*sgfM(eh2)*kavF(eh2.id,e)*(e.aid==='elder'?.8:1);
+    const _enGrd=_dthFull?0:_dthOn?Math.round(grdD(eh2)*.5):grdD(eh2);
+    const _eDodgeMul=(_immOn?Math.max(.15,1-(.35+giftF()*.08)):1)*(_clrOn?.55:1);
+    const _mDodgeAdd=(_illOn?b.eyeIll.v*.45:0);
+    const agi=(PV(MP[1])-PV(EP[1]))*.02, outM=atkM(atkK,h,MP,eh2,EP,night)*udM(h,eh2)*sjDayM(h)*(b.ctx.raid?.6:1)*(h.sp==='gate'?1.06:1)*(h.id==='enkidu'&&w.morph==='atk'?1.15:1)*(_immNext?(b.eyeImmob.nextMul||1.15):1)*_tmD*npDealM(b,'me'), inM=atkM(eK,eh2,EP,h,MP,night)*udM(eh2,h)*sjDayM(eh2)*(b.ctx.raid?.8:1)*(h.id==='enkidu'&&w.morph==='def'?.85:1)*(eh2.sp==='gate'?1.06:1)*npTakeM(b,'me')*npDealM(b,'en')*(e.bx?BXK.logos:1);
     const hp0=w.hp;
     const go=(sel)=>{
     const NX=npPre(sel); myNP=NX.myNP; enNP=NX.enNP; if(myNP&&e.bx) b.bxAoe=1; const _h0=w.hp,_e0=e.hp;
@@ -13290,7 +13392,7 @@ const Sim = (() => {
       const ourSide=()=>{
       if(myNP){ const nh=npBase(b,'me'); e.hp=clamp(e.hp-nh);
         if(e.hp>0) log(pickNR([`보구가 ${eN}${J(eN,을)} 휩쓸었다. 빛이 걷힌 자리에 ${eN}${J(eN,이)} 피투성이로 서 있었다.`,`${eN}${J(eN,이)} 보구를 정면으로 받아 냈다. 대가는 컸다.`,`${eN}의 방어가 보구 앞에서 종잇장처럼 찢겼다.`],'npMine'),'war'); }
-      else if(d>=8){ const dmg=Math.max(1,Math.round((Math.round((6+d*.3+extra)*outM*(e.aid==='elder'?.8:1))-grdD(eh2))*(1-Math.min(.35,SV(eh2,'evade')*.035))*sgfM(eh2)*kavF(eh2.id,e))); e.hp=clamp(e.hp-dmg);
+      else if(d>=8){ const dmg=Math.max(1,Math.round((Math.round((6+d*.3+extra)*outM)-_enGrd)*_enRed)); e.hp=clamp(e.hp-dmg);
         log(pickNR([`보구를 쏟아 낸 틈을 놓치지 않고 ${mN}${J(mN,이)} 파고들었다.`,`${mN}${J(mN,이)} 빛의 가장자리를 돌아 ${eN}에게 일격을 넣었다.`],'npCtr'),'war'); }
       else if(d>-8) e.hp=clamp(e.hp-ri(2,5));
       };
@@ -13315,29 +13417,29 @@ const Sim = (() => {
       else { if(enNP&&!myNP){ theirSide(); if(w.hp>0) ourSide(); } else { ourSide(); if(e.hp>0||enNP) theirSide(); } if(myNP) npAfterHit(b,'me'); if(enNP) npAfterHit(b,'en'); }
     } else {
       // 역전의 일격: 크게 밀린 합에서도 낮은 확률로 진 쪽이 먼저 닿는다(행운이 높을수록 잦다 · 플레이어와 NPC 같은 규칙)
-      const rvS=Math.abs(d)>=8&&ch(revP(d>0?EP:MP))?(d>0?'e':'m'):null; b.rev=null;
+      const rvS=Math.abs(d)>=8&&ch(revP(d>0?EP:MP)*(d>0&&_illOn?Math.max(.25,1-b.eyeIll.v):1))?(d>0?'e':'m'):null; b.rev=null;
       if(Math.abs(d)<8){
         w.hp=clamp(w.hp-ri(3,7)); e.hp=clamp(e.hp-ri(3,7));
         log(pickNR(['칼끝이 몇 번이고 엇갈렸다. 승부가 나지 않는다.','서로 한 걸음씩 물러섰다. 숨을 고른다.','건물 하나가 무너졌다. 둘 다 아직 서 있다.','불꽃이 튀고 가로등이 줄줄이 꺼졌다.',`${mN}${J(mN,과)} ${eN}${J(eN,이)} 정면으로 부딪쳤다. 충격파에 유리창이 일제히 깨졌다.`,'두 그림자가 지붕에서 지붕으로 옮겨 가며 맞붙었다.','서로의 수를 읽고 있다. 섣불리 들어가지 못한다.','무기가 맞부딪친 소리가 골목 끝까지 울렸다.','둘 다 한 발도 물러서지 않았다. 바닥에 금이 갔다.'],'tie'),'war');
       } else if(rvS==='m'){ b.rev='m';
-        const dmg=Math.max(1,Math.round((Math.round((6+8*.3)*outM*(e.aid==='elder'?.8:1))-grdD(eh2))*(1-Math.min(.35,SV(eh2,'evade')*.035))*sgfM(eh2)*kavF(eh2.id,e))); e.hp=clamp(e.hp-dmg); w.hp=clamp(w.hp-ri(1,5));
+        const dmg=Math.max(1,Math.round((Math.round((6+8*.3)*outM)-_enGrd)*_enRed)); e.hp=clamp(e.hp-dmg); w.hp=clamp(w.hp-ri(1,5));
         log(pickNR([`밀리던 ${mN}${J(mN,이)} 한순간 틈을 비집고 들어갔다. 일격이 ${eN}에게 꽂혔다.`,`${eN}의 칼끝이 닿기 직전, ${mN}${J(mN,이)} 몸을 틀어 되받아쳤다.`,`몰리던 ${mN}의 반격이 ${eN}의 허를 찔렀다.`,`${eN}${J(eN,이)} 승기를 잡았다고 여긴 순간, ${mN}의 일격이 먼저 닿았다.`],'revM'),'war');
       } else if(rvS==='e'){ b.rev='e';
         let dmg=Math.round((6+8*.3)*inM)-grdD(h); dmg=Math.round(dmg*(1-Math.min(.35,SV(h,'evade')*.035))*sgfM(h)*kavF(h.id,w)); w.hp=clamp(w.hp-Math.max(1,dmg)); e.hp=clamp(e.hp-ri(1,4));
         log(pickNR([`밀리던 ${eN}${J(eN,이)} 한순간 틈을 비집고 들어왔다. 일격이 ${mN}에게 꽂혔다.`,`${mN}의 칼끝이 닿기 직전, ${eN}${J(eN,이)} 몸을 틀어 되받아쳤다.`,`몰리던 ${eN}의 반격이 ${mN}의 허를 찔렀다.`,`승기를 잡았다고 여긴 순간, ${eN}의 일격이 먼저 닿았다.`],'revE'),'war');
-      } else if(d>0&&ch(dodgeP(EP[1],MP[1])*(atkK==='magic'?MG.dodge:1)*(fxGet(b,'me','holmes')?0:1))){ b.dodged='e'; w.hp=clamp(w.hp-ri(1,3));
+      } else if(d>0&&ch(dodgeP(EP[1],MP[1])*(atkK==='magic'?MG.dodge:1)*_eDodgeMul*(fxGet(b,'me','holmes')?0:1))){ b.dodged='e'; w.hp=clamp(w.hp-ri(1,3));
         log(pickNR([`${eN}${J(eN,이)} 몸을 비틀어 일격을 흘려 냈다.`,`${mN}의 일격이 허공을 갈랐다. ${eN}${J(eN,은)} 이미 그 자리에 없었다.`,`${eN}${J(eN,이)} 종이 한 장 차이로 칼끝을 피했다.`],'dodgeE'),'war');
       } else if(d>0){
-        const dmg=Math.max(1,Math.round((Math.round((6+d*.3+extra)*outM*(e.aid==='elder'?.8:1))-grdD(eh2))*(1-Math.min(.35,SV(eh2,'evade')*.035))*sgfM(eh2)*kavF(eh2.id,e))); e.hp=clamp(e.hp-dmg); w.hp=clamp(w.hp-ri(1,5));
+        const dmg=Math.max(1,Math.round((Math.round((6+d*.3+extra)*outM)-_enGrd)*_enRed)); e.hp=clamp(e.hp-dmg); w.hp=clamp(w.hp-ri(1,5));
         if(e.hp>0&&atkK==='magic') log(pickNR([`${mN}의 마술이 ${eN}${J(eN,을)} 덮쳤다. 방어 위로 빛이 쏟아졌다.`,`마법진이 겹겹이 열렸다. ${eN}${J(eN,이)} 피할 곳을 찾지 못했다.`,`${mN}${J(mN,이)} 낮게 영창했다. 다음 순간 ${eN}의 발밑이 터졌다.`],'advMg'),'war');
         else if(e.hp>0&&atkK==='burst') log(pickNR([`${mN}${J(mN,이)} 마력을 터뜨리며 돌진했다. 일격이 ${eN}의 방어를 부쉈다.`,`무기에 실린 마력이 폭발했다. ${eN}${J(eN,이)} 뒤로 튕겨 나갔다.`,`${mN}의 일격이 마력의 꼬리를 끌며 ${eN}에게 꽂혔다.`],'advBu'),'war');
         else if(e.hp>0) log(pickNR([`${mN}의 일격이 ${eN}의 방어를 뚫었다.`,`${eN}${J(eN,이)} 비틀거렸다. 피가 흩뿌려졌다.`,`${mN}${J(mN,이)} 틈을 놓치지 않고 파고들었다.`,`${eN}${J(eN,이)} 한쪽 무릎을 꿇었다가 다시 일어섰다.`,`${mN}${J(mN,이)} 밀어붙인다. ${eN}${J(eN,이)} 뒤로 밀려났다.`,`${eN}의 방어가 한순간 무너졌다.`,`${mN}의 연격이 이어졌다. ${eN}${J(eN,이)} 숨을 몰아쉬었다.`],'adv'),'war');
         if(h.sp==='tough') w.hp=clamp(w.hp+3);
-      } else if(ch(dodgeP(MP[1],EP[1])*(eK==='magic'?MG.dodge:1)*(fxGet(b,'en','holmes')?0:1))){ b.dodged='m'; e.hp=clamp(e.hp-ri(1,3));
+      } else if(ch((dodgeP(MP[1],EP[1])+_mDodgeAdd)*(eK==='magic'?MG.dodge:1)*(fxGet(b,'en','holmes')?0:1))||(_illOn&&ch(b.eyeIll.v))){ b.dodged='m'; e.hp=clamp(e.hp-ri(1,3));
         log(pickNR([`${mN}${J(mN,이)} 한 발 물러서며 공격을 흘려 냈다.`,`${eN}의 일격이 ${mN}의 옷자락만 스치고 지나갔다.`,`${mN}${J(mN,이)} 몸을 낮춰 공격을 아슬아슬하게 피했다.`],'dodgeM'),'war');
       } else {
         let dmg=Math.round((6+(-d)*.3)*inM); if(h.sp==='leaf'&&w.exposure>=75&&ch(.5)){ dmg+=5; log(pickNR(['적은 서번트의 약점을 알고 있었다.','상대는 정확히 전승의 약점을 노려 왔다.','정체가 알려진 대가였다. 적의 칼끝이 약점만 노린다.'],'leaf'),'war'); } dmg-=grdD(h);
-        dmg=Math.round(dmg*(1-Math.min(.35,SV(h,'evade')*.035))*sgfM(h)*kavF(h.id,w)); w.hp=clamp(w.hp-Math.max(1,dmg)); e.hp=clamp(e.hp-ri(1,4)); if(eh2.sp==='tough') e.hp=clamp(e.hp+3);
+        dmg=Math.round(dmg*(1-Math.min(.35,SV(h,'evade')*.035))*sgfM(h)*kavF(h.id,w)); w.hp=clamp(w.hp-Math.max(1,dmg)); e.hp=clamp(e.hp-ri(1,4)); if(eh2.sp==='tough'&&!_dthOn) e.hp=clamp(e.hp+3);
         if(w.hp>0&&atkK==='magic') log(pickNR([`${mN}의 마술이 ${eN}에게 닿기 전에 흩어졌다. 그 틈으로 반격이 날아들었다.`,`영창이 끝나기 전에 ${eN}${J(eN,이)} 거리를 좁혔다. ${mN}${J(mN,이)} 피를 흘리며 물러섰다.`,`빛줄기가 빗나갔다. ${eN}의 일격이 ${mN}의 어깨를 스쳤다.`],'disMg'),'war');
         else if(w.hp>0&&eK==='magic') log(pickNR([`${eN}의 마술이 ${mN}${J(mN,을)} 덮쳤다. 피할 곳이 없었다.`,`발밑에 마법진이 열렸다. ${mN}${J(mN,이)} 불길 속에서 비틀거렸다.`,`${eN}${J(eN,이)} 짧게 영창했다. 보이지 않는 힘이 ${mN}${J(mN,을)} 벽으로 밀어붙였다.`],'disEMg'),'war');
         else if(w.hp>0&&eK==='burst') log(pickNR([`${eN}${J(eN,이)} 마력을 터뜨리며 파고들었다. ${mN}${J(mN,이)} 막아 낸 무기째 밀려났다.`,`${eN}의 일격에 실린 마력이 폭발했다. ${mN}${J(mN,이)} 바닥을 굴렀다.`],'disEBu'),'war');
@@ -13350,7 +13452,17 @@ const Sim = (() => {
     if(myNP||enNP) npAfterNP(b,myNP,enNP,_h0,_e0);
     if(myNP&&h.id==='arash'&&!NX.myDodge) return arashEnd(b);
     if(enNP&&eh2.id==='arash'&&!NX.enDodge&&e.alive){ log('화살이 손을 떠나는 순간, 상대 아처의 몸이 빛이 되어 부서졌다. 한 발과 맞바꾼 목숨이었다.','war'); e.usedRevive=true; e.survUsed=true; defeatNpc(e,'스스로'); if(w.hp<=0) myHeroDown(e); return endBattle(); }
-    { const gv=Math.max(b.mGuard&&b.mGuard.r===b.round?b.mGuard.v:0,b.eyeGuard&&b.eyeGuard.until>=b.round?b.eyeGuard.v:0); if(!(myNP||enNP)&&gv&&w.hp<hp0) w.hp=clamp(w.hp+Math.round((hp0-w.hp)*gv)); }
+    { const gv=Math.max((b.mGuard&&(b.mGuard.r===b.round||(b.mGuard.until&&b.mGuard.until>=b.round)))?b.mGuard.v:0,b.eyeGuard&&b.eyeGuard.until>=b.round?b.eyeGuard.v:0); if(!(myNP||enNP)&&gv&&w.hp<hp0) w.hp=clamp(w.hp+Math.round((hp0-w.hp)*gv)); }
+    if(_dthOn&&b.eyeDeath.mode==='point'&&!b.eyeDeath.pointDone&&e.hp>0&&(myNP||b.rev==='m'||(d>0&&b.dodged!=='e'))){
+      b.eyeDeath.pointDone=true; const _g=S.gift;
+      if(!e.cx&&!e.bxNun&&ch(.55+(_g&&_g.gr>=5?.25:0))){
+        e.hp=0; e.usedRevive=true; e.survUsed=true;
+        log(`시선으로 죽음의 점을 꿰뚫었다. ${eN}의 존재가 한순간에 흩어졌다!`,'war');
+      } else {
+        const _td=ri(18,28); e.hp=clamp(e.hp-_td);
+        log(`죽음의 선이 ${eN}의 불멸을 베어 냈다. 재생도 버팀도 허락되지 않는다.`,'war');
+      }
+    }
     if(!(myNP||enNP)&&b.eGuard&&b.eGuard.r===b.round&&e.hp<_e0) e.hp=clamp(e.hp+Math.round((_e0-e.hp)*b.eGuard.v));
     if(CHK&&!NX.chip){ const fx={h,eh:eh2,MP,EP,w,e,b,bonus,kind};
       if(myNP||enNP){
@@ -13984,7 +14096,8 @@ const Sim = (() => {
       if(e.known&&ch(.4)) log('상대 마스터가 싸움에서 발을 빼려다 서번트의 반발에 부딪혔다.','war');
       return false;
     }
-    if(e.hp<RET&&ch(Math.min(.9,st.rp*fleeP(H_BY[e.hero],npcParams(e).p)/.6)-npFleeMinus(b,'en'))) return 'run';
+    const _immF=(b.eyeImmob&&b.eyeImmob.until>=b.round)?b.eyeImmob.fleePen:0;
+    if(e.hp<RET&&ch(Math.min(.9,st.rp*fleeP(H_BY[e.hero],npcParams(e).p)/.6)-npFleeMinus(b,'en')-_immF)) return 'run';
     return false;
   }
   function npcFight(a,b,final,init){ const r=npcDuel(a,b,final,init); addKnow(a,b,20); addKnow(b,a,20); famSeeFight(a,b);
@@ -14282,7 +14395,7 @@ const Sim = (() => {
       if(sg === 'gather_intel'){
         p.nAct = 'intel'; p.scoutEdge = 1;
         const tid = pl.targetId;
-        if(tid === 'me' && w.heroAlive){ p.knowMe = Math.min(100, (p.knowMe || 0) + 25); w.exposure = clamp(w.exposure + expUp(4)); }
+        if(tid === 'me' && w.heroAlive){ const _km=giftIs('illusion')?12:25; p.knowMe = Math.min(100, (p.knowMe || 0) + _km); w.exposure = clamp(w.exposure + expUp(4)); }
         else if(tid && tid.startsWith('p')){ const tgt = pairBy(Number(tid.slice(1))); if(tgt && tgt.alive) addKnow(p, tgt, 25); }
         else { const o = avail.filter(x => x !== p && x.i !== p.npcAlly); if(o.length) addKnow(p, pick(o), 25); }
         continue;
@@ -14406,6 +14519,11 @@ const Sim = (() => {
     if(!e.known){e.known=true;e.intel=Math.max(e.intel,30);}
     if(w.fort>=50){ const back=Math.min(.85,(w.fort-40)/60)*(['reckless','hunter'].includes(e.tac)||e.provoked>0?.5:1);
       if(ch(back)){ if(fortBreak(e)) return; log(`${pName(e)} 조가 결계 앞까지 왔다가 발길을 돌렸다.`,'war'); return; } }
+    if(giftIs('illusion')&&!e.cx&&ch(Math.min(.42,.12+giftF()*.05))){
+      const dec=foes.find(x=>x!==e&&x.alive&&!x.ally&&!x.cx);
+      if(dec&&ch(.55)){ log(`환각에 속은 ${pName(e)} 조가 엉뚱하게도 ${pName(dec)} 조의 거처를 향해 칼을 돌렸다.`,'war'); npcFight(e,dec,false,true); return; }
+      log(`환각이 ${pName(e)} 조의 눈길을 비틀었다. 적은 텅 빈 거짓 표적에 칼을 내리찍고 물러났다.`,'war'); return;
+    }
     if(H_BY[e.hero].cls==='shadow'&&ch(.5)){ shadowVisit(e); return; }
     const ally=w.pairs.find(x=>x.ally&&x.alive);
     // 동맹이 달려오면 그 싸움에 함께 선다: 합마다 협공 · 엄호 · 견제(후반 위기의 공동전과 같은 규칙)
@@ -18532,7 +18650,7 @@ function custBuildOnce(){
     }).join('')}</div>`;
   }).join('');
   $('#custGift').innerHTML=`<option value="random">${esc(T('무작위'))}</option><option value="none">${esc(T('없음'))}</option>`+Object.entries(Sim.GIFTS).map(([id,g])=>`<option value="${id}">${esc(T(g.n))}</option>`).join('');
-  $('#custGiftGrSeg').innerHTML=[1,2,3,4].map(g=>`<button type="button" data-g="${g}">${esc(T(Sim.GRADE_N[g]))}</button>`).join('');
+  $('#custGiftGrSeg').innerHTML=[1,2,3,4,5].map(g=>`<button type="button" data-g="${g}">${esc(T(Sim.GRADE_N[g]))}</button>`).join('');
 }
 function custRender(){
   if(!CUST_D) return;
@@ -18580,6 +18698,7 @@ function custRender(){
     d.giftGr=Math.max(G.g[0],Math.min(G.g[1],d.giftGr||G.g[0]));
     gs.querySelectorAll('button').forEach(b=>{
       const g=+b.dataset.g, ok=g>=G.g[0]&&g<=G.g[1];
+      b.classList.toggle('hidden', g>4 && G.g[1]<5);
       b.disabled=!ok; b.style.opacity=ok?'':'0.35';
       b.setAttribute('aria-pressed',String(g===d.giftGr));
     });
