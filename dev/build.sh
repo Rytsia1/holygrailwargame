@@ -125,6 +125,7 @@ python3 ai_rel_apply.py build/game.html             # 성격 기반 AI · 6축 �
 python3 narr_apply.py build/game.html               # 창발적 서사 생성기 (사건 인과 그래프 · 전쟁 서사)
 python3 plan_apply.py build/game.html               # 전략 AI 플래너 (장기·단기 목표 · NPC 동맹 · 거점 방비 · 마력 온존)
 python3 eyes_apply.py build/game.html               # 마안 6종 확장 (환각·천리안·정지·탈시·연장·직사) 및 무지개 등급
+python3 arts4_apply.py build/game.html              # 마술 계통 4종 추가 (투영·영매·환술·치환, 최대 3단계)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
 python3 lang_apply.py build/game.html               # 로딩 화면이 고른 언어를 게임도 그대로(언어팩을 따로 받기 위해, 11-22)
 python3 fxguard_apply.py build/game.html            # 연출에서 오류가 나도 진행이 멈추지 않게 (보구 사용 중 멈춤 문의, 11-23)
