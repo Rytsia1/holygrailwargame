@@ -250,7 +250,7 @@ aside{display:grid;gap:18px;align-content:start}
 .stat.rlw{grid-template-columns:44px minmax(0,1fr) auto}.stat .rl-n{white-space:nowrap;color:var(--text);font-size:12.5px;font-family:var(--f-ui)}.stat .rl-n .mono{color:var(--dim);font-family:var(--f-mono)}
 .rl-stp{display:flex;gap:4px}.rl-stp i{flex:1;height:6px;border-radius:3px;background:var(--panel2)}.rl-stp.lv i.on{background:#d67896}.rl-stp.fr i.on{background:#6eaa8c}
 #servCard .rl-body{margin-top:12px}.hint.rl-req{margin:-2px 0 8px}.hint.rl-why{margin:-2px 0 4px;color:var(--faint)}#servCard .hint.rl-why{margin:2px 0 0}.hint.rl-req b{font-weight:500;color:var(--text)}.hint.rl-req .no{color:#d9737c}.hint.rl-req .ok{color:var(--gold2)}#servCard .hint.rl-req{margin:2px 0 0}#servCard .hint{margin:2px 0 0}#servCard.rl-gone .track i{background:#6b6578}
-.herocard .hname{font-family:var(--f-display);font-size:26px;line-height:1.2}
+.ps-tags{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}.ps-tag{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid rgba(201,164,92,.45);color:var(--gold2);background:rgba(201,164,92,.08)}.ps-tag.loyal{border-color:rgba(111,191,138,.55);color:#9bd3ac;background:rgba(111,191,138,.09)}.ps-tag.ruthless,.ps-tag.berserk{border-color:rgba(210,80,90,.55);color:#e6a2a8;background:rgba(210,80,90,.09)}.ps-tag.cunning{border-color:rgba(140,160,230,.55);color:#b7c9f2;background:rgba(140,160,230,.09)}.rel6-box{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;margin:8px 0 4px}@media (max-width:360px){.rel6-box{grid-template-columns:1fr}}.rel6-row{display:grid;grid-template-columns:46px minmax(0,1fr) 24px;align-items:center;gap:6px;font-size:11.5px;color:var(--dim)}.rel6-row .tr{height:5px;border-radius:999px;background:var(--panel2);overflow:hidden}.rel6-row .tr i{display:block;height:100%;border-radius:999px;background:var(--gold)}.rel6-row.aff .tr i{background:#d67896}.rel6-row.fear .tr i{background:#8a86c9}.rel6-row.resp .tr i{background:#6eaa8c}.rel6-row.riv .tr i{background:#e0b48a}.rel6-row.grd .tr i{background:#c03a45}.rel6-row b{font-family:var(--f-mono);font-size:11px;color:var(--text);text-align:right;font-weight:500}.rel6-risk{display:inline-flex;gap:6px;align-items:center;font-size:11.5px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--dim);margin-top:4px}.rel6-risk.hi{border-color:rgba(210,80,90,.6);color:#e6a2a8}.rel6-risk.mid{border-color:rgba(201,164,92,.6);color:var(--gold2)}.rel6-risk.lo{border-color:rgba(111,191,138,.55);color:#9bd3ac}.herocard .hname{font-family:var(--f-display);font-size:26px;line-height:1.2}
 .herocard .htitle{font-size:13px;color:var(--dim)}
 .params{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin:12px 0}
 .params div{text-align:center;border:1px solid var(--line);border-radius:4px;padding:4px 0}
@@ -1919,8 +1919,8 @@ body.lb-reading .lb-disc,body.lb-hideui .lb-disc,body.lb-rec .lb-disc,body.lb-hi
 <div id="ldScr" data-notr role="status" aria-live="polite"><canvas id="ldBg"></canvas><canvas id="ldCup"></canvas><p id="ldTxt"><span></span><b>0%</b></p></div>
 <script>
 (()=>{let L='ko';const ZO=true,LS=['ko','en','ja','zhs','zht'];let q=null,v=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');}catch(e){}if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;
- if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=920d4fe6"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=51c20bd5"><\/script>');
- if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'c91a4f89',zht:'8c11a254'}[L]+'"><\/script>');
+ if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=91e087a0"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=542af1a8"><\/script>');
+ if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'2aeebc16',zht:'c95ba5e0'}[L]+'"><\/script>');
  document.querySelector('#ldTxt span').textContent={ko:'성배에 마력이 차오른다',en:'Mana is filling the Grail',ja:'聖杯に魔力が満ちていく',zhs:'魔力正在注满圣杯',zht:'魔力正在注滿聖杯'}[L];})();
 /* ===== 로딩 화면 (11-13): 하늘에서 금빛 줄기가 졸졸 떨어져 성배를 채우고, 넘쳐 쏟아진 뒤 성배와 검은 배경이 픽셀로 흩어진다 =====
    게임 HTML 맨 앞(<body> 바로 뒤)에 들어가 가장 먼저 그려진다. 문서가 다 불러와지고 로비 배경까지 그려지면 끝난다. */
@@ -7022,6 +7022,7 @@ const Sim = (() => {
     if(odd) log(CLS[h.cls].sp?`원래 성배는 일곱 자리만 마련한다. ${cn(h)}${J(cn(h),은)} 그 바깥에서 왔다. 이번 전쟁에는 여덟 번째 자리가 생겼다.`:'감독관 신부가 전화로 물었다. 이번에 부름에 응한 서번트가 여덟이라는데, 혹시 짚이는 데가 있느냐고.','war');
     if(h.cls==='berserk') log(h.id==='spartacus'?'그는 쉬지 않고 웃고 있었다. 숨을 쉴 때마다 당신의 마력이 빨려 나간다.':'그는 말을 거의 하지 않는다. 숨을 쉴 때마다 당신의 마력이 빨려 나간다.','war');
     H.phase('war'); H.change();
+    ensureRels();
     S.war.queue.push(()=>firstMeeting());
     S.war.queue.push(()=>dayStart());
   }
@@ -7056,6 +7057,153 @@ const Sim = (() => {
   }
 
   /* ---------- 전쟁: 공통 ---------- */
+
+  /* ---------- 성격 모델 & 6축 관계망 (airel1125) ---------- */
+  const REL_AXES = ['trust', 'affection', 'fear', 'respect', 'rivalry', 'grudge'];
+  const CUNNING_AID = new Set(['priest','atlas','prodigy','fortune','antique','stage','eighth','detective','lecturer']);
+  const RUTHLESS_AID = new Set(['killer','exec','executor','burial','apostle','merc','cultist','priest','avenger']);
+  const PRIDE_AID = new Set(['heir','lord','collector','wanderer']);
+  const LOYAL_AID = new Set(['democrat','veteran','mother','student','sibling','elder','kendo']);
+
+  function servantPersona(h){
+    if(!h) return {pride:50,loyalty:50,caution:50,ruthless:40,tags:[]};
+    const x = HX[h.id] || {}, tr = h.traits || [];
+    const pride = clamp(40 + (x.k==='오만'?40:(x.k==='기품'||x.k==='엄격')?18:x.k==='열정'?12:0) + (tr.includes('명예')?18:0) + (tr.includes('야망')?12:0) - (x.k==='순진'||x.k==='다정'?15:0));
+    const loyalty = clamp(40 + (tr.includes('충성')?35:0) + (x.p==='질서'?15:x.p==='혼돈'?-10:0) + (h.sp==='guard'?15:0) - (h.sp==='traitor'?45:0) - (tr.includes('자유')?8:0));
+    const caution = clamp(40 + (['caster','shadow','bow'].includes(h.cls)?18:h.cls==='berserk'?-30:0) + (x.k==='냉소'||x.k==='능청'?18:x.k==='광기'?-25:0) + (h.sp==='escape'||h.sp==='intel'?15:0));
+    const ruthless = clamp(30 + (x.a==='악'?35:x.a==='선'?-15:0) + (tr.includes('야망')?15:0) - (tr.includes('연민')?25:0) + (x.k==='냉소'||x.k==='광기'?12:0));
+    const tags = [];
+    if(pride >= 70) tags.push('prideful');
+    if(loyalty >= 70) tags.push('loyal');
+    if(caution >= 65) tags.push('cunning');
+    if(ruthless >= 65) tags.push('ruthless');
+    if(h.cls === 'berserk' || x.k === '광기') tags.push('berserk');
+    return {pride, loyalty, caution, ruthless, tags};
+  }
+
+  function masterPersona(p){
+    if(!p) return {pride:45,cunning:45,ruthless:45,loyal:45,caution:45,tags:[]};
+    const aid = p.aid || '', tac = p.tac || 'proud';
+    const pride = clamp(40 + (PRIDE_AID.has(aid)?35:0) + (tac==='proud'?25:tac==='reckless'?10:tac==='naive'?-15:0));
+    const cunning = clamp(35 + (CUNNING_AID.has(aid)?38:0) + (tac==='cunning'?28:tac==='defensive'?15:tac==='reckless'?-20:0));
+    const ruthless = clamp(35 + (RUTHLESS_AID.has(aid)?38:0) + (tac==='hunter'?22:tac==='reckless'?12:tac==='naive'||LOYAL_AID.has(aid)?-18:0));
+    const loyal = clamp(45 + (LOYAL_AID.has(aid)?28:0) + (tac==='defensive'||tac==='naive'?15:0) - (RUTHLESS_AID.has(aid)?22:0));
+    const caution = clamp(40 + (tac==='defensive'||tac==='cunning'?25:tac==='reckless'?-22:0) + (CUNNING_AID.has(aid)?15:0));
+    const tags = [];
+    if(pride >= 65) tags.push('prideful');
+    if(cunning >= 65) tags.push('cunning');
+    if(ruthless >= 65) tags.push('ruthless');
+    if(loyal >= 65) tags.push('loyal');
+    return {pride, cunning, ruthless, loyal, caution, tags};
+  }
+
+  function personaOf(who){
+    if(who === 'me') return {master:null, servant:servantPersona(hero())};
+    if(!who) return null;
+    return {master:masterPersona(who), servant:servantPersona(H_BY[who.hero])};
+  }
+
+  const pIdOf = x => x === 'me' || x === 'hero' ? x : (typeof x === 'string' ? x : ('p' + x.i));
+  const relKey = (a, b) => pIdOf(a) + '|' + pIdOf(b);
+
+  function relSeed(a, b){
+    const w = S && S.war;
+    const d = {trust:25, affection:10, fear:0, respect:20, rivalry:10, grudge:0};
+    if(a === 'me' && b === 'hero'){
+      const h = hero(), sp = servantPersona(h), A = S.aff || {};
+      d.trust = w ? Math.round(w.trust) : 50;
+      d.affection = clamp(Math.round(((w ? w.fit : 60) - 35) * 0.7 + (h && h.traits.includes('연민') ? 10 : 0)));
+      d.respect = clamp(20 + (S.circuit || 1) * 5 + Math.round((S.st && S.st.will || 20) * 0.2) + (h && h.traits.includes('명예') && (A.judge || 0) >= 2 ? 12 : 0));
+      d.fear = clamp(((A.cruel || 0) + (A.taboo || 0)) * 5);
+      d.rivalry = clamp(sp.pride >= 70 ? 20 + (A.zeal || 0) * 3 : 5);
+      d.grudge = (w && w.fit < 45) ? 10 : 0;
+      return d;
+    }
+    const pa = w && (w.pairs || []).find(x => 'p'+x.i === a);
+    const pb = w && (w.pairs || []).find(x => 'p'+x.i === b);
+    if(pa && b === 'me'){
+      const mp = masterPersona(pa), A = S.aff || {};
+      d.trust = pa.aid === 'executor' ? 5 : pa.aid === 'democrat' ? 40 : 25;
+      d.affection = pa.aid === 'democrat' ? 20 : 10;
+      d.fear = clamp(Math.round((A.cruel || 0) * 4));
+      d.respect = clamp(20 + (S.circuit || 1) * 4);
+      d.rivalry = mp.pride >= 70 ? 25 : 10;
+      d.grudge = pa.aid === 'executor' ? 15 : 0;
+      return d;
+    }
+    if(pa && pb){
+      const pk = PAIRV[pa.hero + '|' + pb.hero] || PAIRV[pb.hero + '|' + pa.hero];
+      if(pk){ d.rivalry = clamp(d.rivalry + 28); d.respect = clamp(d.respect + 22); }
+      if((pa.aid === 'burial' || pa.aid === 'executor') && pb.aid === 'apostle') d.grudge = 55;
+      if(pa.aid === 'apostle' && (pb.aid === 'burial' || pb.aid === 'executor')) d.fear = 25;
+    }
+    return d;
+  }
+
+  function ensureRels(){
+    const w = W(); if(!w) return {};
+    if(!w.rels) w.rels = {};
+    if(!w.rels['me|hero'] && S.hero) w.rels['me|hero'] = relSeed('me', 'hero');
+    for(const p of (w.pairs || [])){
+      const k = 'p' + p.i + '|me';
+      if(!w.rels[k]) w.rels[k] = relSeed('p'+p.i, 'me');
+    }
+    return w.rels;
+  }
+
+  function relGet(a, b){
+    const w = W(); if(!w) return {trust:50,affection:15,fear:0,respect:20,rivalry:0,grudge:0};
+    ensureRels();
+    const ka = pIdOf(a), kb = pIdOf(b), k = ka + '|' + kb;
+    if(!w.rels[k]) w.rels[k] = relSeed(ka, kb);
+    const r = w.rels[k];
+    if(ka === 'me' && kb === 'hero') r.trust = Math.round(w.trust);
+    return r;
+  }
+
+  function relShift(a, b, delta){
+    const w = W(); if(!w || !delta) return null;
+    const ka = pIdOf(a), kb = pIdOf(b), r = relGet(ka, kb);
+    for(const ax of REL_AXES){
+      if(delta[ax]){
+        if(ka === 'me' && kb === 'hero' && ax === 'trust'){
+          w.trust = clamp(w.trust + delta.trust);
+          r.trust = Math.round(w.trust);
+        } else {
+          r[ax] = clamp((r[ax] || 0) + delta[ax]);
+        }
+      }
+    }
+    return r;
+  }
+
+  function betrayScore(rel, persona, ctx = {}){
+    if(!rel || !persona) return 0.1;
+    const ruth = persona.ruthless ?? 40;
+    const loy = persona.loyal ?? persona.loyalty ?? 45;
+    const tr = rel.trust ?? 25, aff = rel.affection ?? 10, resp = rel.respect ?? 20;
+    const fear = rel.fear ?? 0, riv = rel.rivalry ?? 0, grd = rel.grudge ?? 0;
+    let s = 0.12 + (ruth - 40) * 0.005 + grd * 0.006 + riv * (ctx.final ? 0.004 : 0.0015);
+    s += Math.max(0, 50 - tr) * 0.0055 + Math.max(0, 30 - aff) * 0.003;
+    s -= tr * 0.0035 + aff * 0.003 + resp * 0.0025 + (loy - 40) * 0.004;
+    s += (ctx.slight || 0) * 0.1 - (ctx.owe || 0) * 0.08;
+    const weak = (ctx.seals ?? 1) === 0 || (ctx.hp ?? 100) < 40;
+    s += weak ? (fear * 0.003) : -(fear * 0.0045);
+    return Math.max(0.01, Math.min(0.95, s));
+  }
+
+  function loyalIntercept(b, dmg, srcTxt){
+    const w = W(), h = hero(); if(!w || !w.heroAlive || !h) return false;
+    const sp = servantPersona(h), rh = relGet('me', 'hero');
+    if(sp.loyalty < 70 || rh.grudge >= 45 || w.trust < 30) return false;
+    const p = Math.min(0.85, 0.35 + (sp.loyalty - 70) * 0.01 + rh.affection * 0.004 + w.trust * 0.003);
+    if(!ch(p)) return false;
+    w.hp = clamp(w.hp - Math.max(2, Math.round(dmg * 0.35)));
+    log(`${h.name}${J(h.name,이)} 몸을 던져 ${srcTxt} 막아 냈다.`, 'war');
+    if(CHK) CHK.push({txt:'「충의」로운 서번트가 당신을 지켜 냈다', ok:true});
+    relShift('me', 'hero', {trust:2, affection:3, respect:2});
+    return true;
+  }
   const W=()=>S.war;
   const hero=()=>H_BY[S.hero];
   const he=h=>h.fem?'그녀':'그';
@@ -7595,6 +7743,8 @@ const Sim = (() => {
       if(p.hp<=0){ const lh=H_BY[p.hero]; if(lh.sp==='revive'&&!p.usedRevive){ p.usedRevive=true; p.hp=40; log(`${pN}${J(pN,이)} 쓰러졌다가 다시 일어섰다.`,'war'); continue; }
         p.alive=false; p.revealed=true; out.push(i); pairOut(p,e.cx==='boss'?'검은 성배 앞에서 쓰러졌다':e.cx?'검은 그림자에게 쓰러졌다':'다른 조에게 쓰러졌다');
         log(`감독관의 통지: ${cn(p)} 조 탈락. ${e.cx==='boss'?'검은 성배 앞에서.':`${cn(e)}의 손에.`}`,'notice'); if(p.ally) log(`동맹 ${p.mname}의 조가 무너졌다.`,'loss'); continue; }
+      const _mp=masterPersona(p), _bs=p.ally?betrayScore(relGet('p'+p.i,'me'),_mp,{hp:w.hp,seals:w.seals,owe:p.owe,slight:p.slight}):0;
+      if(p.ally&&_mp.ruthless>=65&&p.hp<55&&ch(Math.min(.65,_bs*.5+.12))){ out.push(i); p.ally=false; p.allyGone=true; relShift('p'+p.i,'me',{trust:-30,affection:-20,grudge:20}); log('동맹이 싸움 도중 발을 뺐다. 처음부터 당신을 방패로 삼을 작정이었던 모양이다.','loss'); continue; }
       if(p.hp<30&&ch(cxTacP(p,2))){ out.push(i); log(`${pN} 조가 더 버티지 못하고 물러났다.`,'war'); } } }
   // NPC 조 하나와 그림자 · 보스의 싸움 (플레이어가 없는 곳)
   function cxNpcVs(p,u,withMe){ const c=CXW(), seen=withMe||p.known||p.ally;
@@ -9174,7 +9324,7 @@ const Sim = (() => {
     const [f,i]=own.length&&ch(.3)?own[0]:pool.length?pick(pool):pick(fit);
     w.outUsed=(w.outUsed||[]).concat(i);
     w.exposure=clamp(w.exposure+expUp(3)); const g=fitGain('out',ri(2,4));
-    if(g===null){ w.trust=clamp(w.trust-2); log(`${h.name}${J(h.name,과)} 거리를 걷다 사소한 일로 말다툼이 났다. 돌아오는 길에는 서로 말이 없었다.`,'voice'); return; }
+    if(g===null){ w.trust=clamp(w.trust-2); relShift('me','hero',{affection:-3,grudge:4}); log(`${h.name}${J(h.name,과)} 거리를 걷다 사소한 일로 말다툼이 났다. 돌아오는 길에는 서로 말이 없었다.`,'voice'); return; }
     log(f(h),'voice'); w.trust=clamp(w.trust+trustGain(g)); relGain(6);
     if(w.frag<h.frags.length&&w.trust>=50&&ch(.5)){ log(voiceLine(h,h.frags[w.frag]),'voice'); w.frag++; }
   }
@@ -9790,7 +9940,8 @@ const Sim = (() => {
   function asnRoll(reach,g){ if(ch(asnTot(reach,g))) return 'ok'; return ch(reach)?'block':'miss'; }
   function guardPick(o){ return o.sort((a,b)=>b.p-a.p)[0]; }
   function npcGuard(t,ah,AE,mode='battle',home=true){ const th=H_BY[t.hero], off=asnOff(ah,AE), det=asnSk(th,'battle',true)*1.5, g=mGrp(t), T=GUARD_T[mode];
-    const o=[{k:'servant',p:pRoll(40+t.pw*.3+det,50,T.s+off)}];
+    const _loyG=servantPersona(th).loyalty>=70?12:0;
+    const o=[{k:'servant',p:pRoll(40+t.pw*.3+det+_loyG,50,T.s+off)}];
     if(home) o.push({k:'home',p:pRoll(17+(t.cls==='caster'?25:0)+(t.workshop?6:0)+asnSk(th,'night',true)*.5,40,T.h+off)});
     if(g!=='plain') o.push({k:'magic',p:pRoll(t.pw*1.3+(MGRP_B[g]||0),40,T.m+off)});
     return guardPick(o); }
@@ -10017,8 +10168,8 @@ const Sim = (() => {
   function talk(){
     const w=W(),h=hero();
     const g=fitGain('talk',ri(3,6)+(S.st.bond>60?2:0)-(h.sp==='avenge'?2:0));
-    if(g===null){ w.trust=clamp(w.trust-2); log(pick([`${h.name}${J(h.name,과)} 이야기를 나누다 언성이 높아졌다. ${h.name}${J(h.name,은)} 먼저 자리를 떴다.`,`대화는 처음부터 엇나갔다. ${h.name}${J(h.name,은)} 당신 말을 끝까지 듣지 않았다.`,`내일 밤의 계획을 두고 ${h.name}${J(h.name,과)} 부딪쳤다. 둘 다 끝내 물러서지 않았다.`]),'voice'); return; }
-    w.trust=clamp(w.trust+trustGain(g)); w.hp=clamp(w.hp+5); relGain(8);
+    if(g===null){ w.trust=clamp(w.trust-2); relShift('me','hero',{affection:-3,grudge:4}); log(pick([`${h.name}${J(h.name,과)} 이야기를 나누다 언성이 높아졌다. ${h.name}${J(h.name,은)} 먼저 자리를 떴다.`,`대화는 처음부터 엇나갔다. ${h.name}${J(h.name,은)} 당신 말을 끝까지 듣지 않았다.`,`내일 밤의 계획을 두고 ${h.name}${J(h.name,과)} 부딪쳤다. 둘 다 끝내 물러서지 않았다.`]),'voice'); return; }
+    w.trust=clamp(w.trust+trustGain(g)); w.hp=clamp(w.hp+5); relGain(8); relShift('me','hero',{affection:5,respect:3,grudge:-4});
     if(w.frag<h.frags.length&&(w.talkFrag||ch(.7))){ w.talkFrag=0; log(voiceLine(h,h.frags[w.frag]),'voice'); w.frag++; relGain(4); }
     else if(ch(.85)){ w.talkFrag=1; talkMore(h); }
     else log(pick([`${h.name}${J(h.name,은)} 당신의 어린 시절을 물었다. 당신은 처음으로 그 이야기를 끝까지 했다.`,`${h.name}${J(h.name,과)} 체스를 두었다. 규칙을 가르쳐 준 지 세 판 만에 졌다.`,`둘이서 내일 밤의 계획을 세웠다. ${h.name}${J(h.name,은)} 당신 의견을 두 번 받아들였다.`]),'voice');
@@ -10063,7 +10214,8 @@ const Sim = (() => {
     const w=W(); const ts=alivePairs().filter(p=>p.known&&!p.ally);
     if(viaF==null&&famOK()&&w.famUsed!==w.day&&!w.famTail){ const f=famName(); decide({title:'동맹 제안',body:'누구를 보낼 것인가.',war:true,choices:[{t:'사신을 보낸다',d:'거절당하면 거처가 알려진다',auto:true,f:()=>{ w.queue.unshift(()=>allyPick(false)); }},{t:'사역마로 전한다',d:`${f} · 성공률 −10% · 거절당해도 거처가 드러나지 않는다`,f:()=>{ w.queue.unshift(()=>allyPick(true)); }},{...BACK}]}); return; }
     decide({title:'동맹 제안',body:viaF?'사역마에게 편지를 들려 보낸다. 받아들일지는 상대에게 달렸다.':'사신을 보낸다. 받아들일지는 상대에게 달렸다.',war:true,choices:[...ts.map(p=>({t:`${pName(p)} 조 · ${p.mname}`,d:p.arche,f:()=>{w.queue.unshift(()=>{ if(viaF) w.famUsed=w.day;
-      const pc=(viaF?-.1:0)+(p.aid==='executor'?-1:p.aid==='democrat'?.2:0)+.3+(p.tac==='naive'||p.tac==='desperate'?.3:0)+(p.tac==='proud'?-.2:0)+S.st.bond/400+(p.hp<50?.15:0)+(p.sym||p.friendly?.2:0)+(CXW()&&CXW().stage>=2?.1:0);
+      const _rp=relGet('p'+p.i,'me'), _mp=masterPersona(p);
+      const pc=(viaF?-.1:0)+(p.aid==='executor'?-1:p.aid==='democrat'?.2:0)+.28+(p.tac==='naive'||p.tac==='desperate'?.28:0)+(_mp.pride>=65?-.15:0)+(_rp.trust-25)*.004+_rp.respect*.003-_rp.grudge*.006+S.st.bond/400+(p.hp<50?.15:0)+(p.sym||p.friendly?.2:0)+(CXW()&&CXW().stage>=2?.1:0);
       if(ch(pc)){p.ally=true;p.allyDay=W().day;S.flags.allyName=p.mname;allyConfide(p);wrec('ally',`${cn(p)} 조 ${p.mname}${J(p.mname,과)} 동맹`,{p:p.i});log(`${p.mname}${J(p.mname,이)} 동맹을 받아들였다. 마지막 둘이 남을 때까지만.`,'war');}
       else if(viaF){ const f=famName(); log(`${p.mname}${J(p.mname,은)} 편지를 읽고 ${f}${J(f,을)} 그냥 돌려보냈다.`,'war'); }
       else{log(`${p.mname}${J(p.mname,은)} 답 대신 사신을 돌려보냈다. 당신 거처가 알려졌다.`,'war');W().exposure=clamp(W().exposure+expUp(10));}
@@ -11796,12 +11948,14 @@ const Sim = (() => {
   // 령주 연출용 정보: 쓴 획(0~2), 남은 획, 명령
   function sealFxOf(word){ const w=W(), i=Math.min(2,w.seals); return {t:'seal',w:word||'',i,left:w.seals,part:seal().parts[i]}; }
   function useSeal(word,fx){ const w=W(); w.seals--; (w.sealLog=w.sealLog||[]).push({d:w.day,tod:w.tod,word}); wrec('seal',`령주 — “${word}”`); const sp=seal().parts[Math.min(2,w.seals)]; log(pickNR([`령주의 ${sp}${J(sp,이)} 타들어 갔다. “${word}.”`,`“${word}.” 손등에서 ${sp}${J(sp,이)} 빛을 잃었다.`,`령주 한 획, ${sp}${J(sp,이)} 붉게 타올랐다가 사라졌다. “${word}.”`],'sealU'),'seal',{fx:fx||sealFxOf(word)}); if(word==='이겨라') w.trust=clamp(w.trust+fitT(w.trust>60?-3:4));
+    { const h=hero(), sp=servantPersona(h); relShift('me','hero',{fear:10,grudge:(sp.pride>=70||(h&&h.traits.includes('자유')))?8:3,affection:-4}); }
     if(w.seals===0&&!w.zeroed){ w.zeroed=true; w.queue.push(()=>sealsGone()); } }
   function sealsGone(){
     const w=W(); if(w.ended||!w.heroAlive||S.dead) return; const h=hero();
     log('손등의 마지막 령주가 사라졌다. 이제 서번트를 묶어 둘 것은 계약과 신뢰뿐이다.','seal');
-    const ambitious = h.sp==='traitor'||h.traits.includes('야망');
-    if(w.trust<35&&(ambitious||ch(.25))){
+    const sp=servantPersona(h), rh=relGet('me','hero'), bP=betrayScore(rh,sp,{seals:0,hp:w.hp});
+    const ambitious = h.sp==='traitor'||h.traits.includes('야망')||rh.grudge>=60;
+    if((w.trust<35||rh.grudge>=70)&&(ambitious||ch(bP))){
       const tgt=wpick(contracted().filter(p=>!p.ally),p=>p.pw);
       if(tgt&&ch(.6)){
         w.heroAlive=false; S.flags.war='lost'; S.flags.betrayedByHero=1; mark('loss'); w.myOut={d:w.day,tod:w.tod,why:'령주가 다한 뒤 다른 조로 떠났다'}; wrec('mine',`${h.name}${J(h.name,이)} 계약을 끊고 떠났다`);
@@ -12494,7 +12648,7 @@ const Sim = (() => {
         else if(w.hp>0&&eK==='magic') log(pickNR([`${eN}의 마술이 ${mN}${J(mN,을)} 덮쳤다. 피할 곳이 없었다.`,`발밑에 마법진이 열렸다. ${mN}${J(mN,이)} 불길 속에서 비틀거렸다.`,`${eN}${J(eN,이)} 짧게 영창했다. 보이지 않는 힘이 ${mN}${J(mN,을)} 벽으로 밀어붙였다.`],'disEMg'),'war');
         else if(w.hp>0&&eK==='burst') log(pickNR([`${eN}${J(eN,이)} 마력을 터뜨리며 파고들었다. ${mN}${J(mN,이)} 막아 낸 무기째 밀려났다.`,`${eN}의 일격에 실린 마력이 폭발했다. ${mN}${J(mN,이)} 바닥을 굴렀다.`],'disEBu'),'war');
         else if(w.hp>0) log(pickNR([`${mN}${J(mN,이)} 밀렸다. 피를 흘리며 당신을 감쌌다.`,`${eN}의 공격이 ${mN}의 어깨를 스쳤다.`,`${mN}${J(mN,이)} 벽에 내동댕이쳐졌다가 일어섰다.`,`${eN}${J(eN,이)} 기세를 잡았다. ${mN}${J(mN,이)} 방어에 급급하다.`,`${mN}${J(mN,이)} 무릎을 꿇었다가 이를 악물고 일어섰다.`,`${eN}의 일격에 ${mN}의 무기가 크게 튕겨 나갔다.`],'dis'),'war');
-        if(w.heroAlive&&ch(.08-S.st.will/2000)&&w.trust>=60){ w.hp=clamp(w.hp-2); log(`${mN}${J(mN,이)} 몸을 틀어 당신에게 날아드는 파편을 대신 맞았다.`,'war'); if(CHK) CHK.push({txt:'「신뢰」하는 서번트가 당신을 감쌌다',ok:true}); }
+        if(w.heroAlive&&ch(.08-S.st.will/2000)&&(w.trust>=60||servantPersona(h).loyalty>=70)){ w.hp=clamp(w.hp-2); log(`${mN}${J(mN,이)} 몸을 틀어 당신에게 날아드는 파편을 대신 맞았다.`,'war'); if(CHK) CHK.push({txt:servantPersona(h).loyalty>=70?'「충의」로운 서번트가 당신을 지켜 냈다':'「신뢰」하는 서번트가 당신을 감쌌다',ok:true}); relShift('me','hero',{trust:1,affection:2}); }
         else if(w.heroAlive&&ch(.08-S.st.will/2000)&&!npGuard(b)) { add({health:-ri(4,10)}); log(pickNR(['파편이 당신 옆구리를 스쳤다.','튀어 오른 돌조각에 이마가 찢어졌다.','충격파에 당신도 바닥을 굴렀다.','깨진 유리가 팔을 긁고 지나갔다.'],'shr'),'war'); }
       }
     }
@@ -12692,9 +12846,16 @@ const Sim = (() => {
   }
   function retreat(sure){
     const w=W(),h=hero(),e=w.battle.e;
-    if(!sure&&w.trust<DIST&&w.heroAlive&&ch(.3)){ log(`${h.name}${J(h.name,은)} 물러서지 않았다. 당신의 말은 들리지 않는 모양이다.`,'loss'); if(CHK) CHK.push({txt:'「불신」 탓에 서번트가 명령을 듣지 않았다',ok:false}); return clash(0); }
+    if(!sure&&w.trust<DIST&&w.heroAlive&&ch(.3)){ log(`${h.name}${J(h.name,은)} 물러서지 않았다. 당신의 말은 들리지 않는 모양이다.`,'loss'); if(CHK) CHK.push({txt:'「불신」 탓에 서번트가 명령을 듣지 않았다',ok:false}); relShift('me','hero',{respect:-3,grudge:3}); return clash(0); }
+    { const sp=servantPersona(h), rh=relGet('me','hero');
+      if(!sure&&w.heroAlive&&sp.pride>=70&&!(sp.loyalty>=70&&S.st.health<=40)){
+        const refP=Math.max(0,Math.min(.75,(sp.pride-55)*.012+rh.grudge*.004-rh.respect*.005-(sp.loyalty>=70?.2:0)-(w.trust>=80?.25:0)));
+        if(ch(refP)){ log(`${h.name}: “${h.traits.includes('명예')?'긍지를 버릴 수는 없다. 물러서지 않겠다.':'물러날 이유를 대라. 적 앞에서 등을 돌리지는 않는다.'}”`,'loss'); if(CHK) CHK.push({txt:'「긍지」 높은 서번트가 퇴각을 거부했다',ok:false}); relShift('me','hero',{grudge:3,rivalry:2}); return clash(0); }
+      }
+    }
     w.battle.res='retreat'; H.sfx('retreat');
-    const p=(sure?1:fleeP(h,myParams().p)*(w.battle.ctx.hunted?HUNT_RET:1))-(sure?0:npFleeMinus(w.battle,'me'));
+    const _loyB=(!sure&&S.st.health<=40&&servantPersona(h).loyalty>=70)?.18:0;
+    const p=Math.min(.98,(sure?1:fleeP(h,myParams().p)*(w.battle.ctx.hunted?HUNT_RET:1)+_loyB)-(sure?0:npFleeMinus(w.battle,'me')));
     if(ch(p)){ log(pickNR(['어둠 속으로 빠져나왔다.','골목 몇 개를 건너뛰어 추격을 따돌렸다.','연막처럼 흩어지는 마력 속으로 몸을 숨겼다.','강 쪽으로 내달렸다. 뒤따르는 기척이 끊겼다.','지붕 위로 뛰어올라 반대편 거리로 내려섰다.'],'ret'),'war'); w.exposure=clamp(w.exposure+expUp(5)); }
     else { w.hp=clamp(w.hp-ri(18,32)); log(pickNR(['등을 보인 대가를 치렀다.','빠져나가는 등 뒤로 일격이 꽂혔다.','도망칠 틈은 없었다. 길목이 먼저 막혀 있었다.'],'retF'),'war'); if(w.hp<=0) myHeroDown(e); }
     endBattle();
@@ -12714,6 +12875,14 @@ const Sim = (() => {
   function endBattle(){ const w=W(); const b=w.battle; if(b) b.fx=[];
     if(b&&b.e&&!b.xDone){ b.xDone=1; const e=b.e, won=b.res==='win'||b.res==='fled';
       if(w.heroAlive&&w.hp<(w.bHp0??w.hp)-8) e.hurtMe=w.day;
+      if(!e.cx){
+        const _eh=H_BY[e.hero], _esp=servantPersona(_eh);
+        if(won||e.hp<55) relShift('p'+e.i,'me',{respect:8,fear:e.hp<35?12:6,rivalry:_esp.pride>=65?10:4,grudge:(b.ctx.attack||b.ctx.trap)?12:5});
+        if(b.round>=4) relShift('p'+e.i,'me',{respect:8,rivalry:6});
+        if(b.res==='talk') relShift('p'+e.i,'me',{trust:15,affection:10,respect:8,grudge:-10});
+        if(won&&w.heroAlive) relShift('me','hero',{trust:2,respect:4,affection:3});
+        if(b.res==='lose'||b.res==='retreat') relShift('me','hero',{respect:-2,rivalry:4});
+      }
       if(w.xDebt===e.i){ w.xDebt=null; if(won){ if(e.alive) log('빚은 갚았다. 그 조는 등을 보이고 달아났다.','war'); } else if(w.heroAlive){ lean('avenger',1); log('빚은 갚지 못했다. 그만큼 더 무거워졌다.','war'); } }
       if(w.xLast===e.i){ w.xLast=null; if(won&&w.heroAlive){ w.sm=clamp(w.sm+20); w.hp=clamp(w.hp+8); log('마지막 싸움을 받아 준 서번트가 웃으며 흩어졌다. 그 빛 한 줌이 우리 서번트에게 스며들었다.','war'); } } } if(b&&w.heroAlive&&!b.relPer){ b.relPer=1; relGain(5); } if(b&&w.heroAlive&&b.res==='win'&&w.hp<20&&!b.relNear){ b.relNear=1; relGain(5); } if(b&&!b.relDone){ b.relDone=1; relAfterBattle(b); } if(b&&b.andersenUsed&&!b.andDone&&w.heroAlive){ b.andDone=1; add({will:2}); }
     if(b&&b.ctx.hostage&&!b.hostDone){ b.hostDone=true; const ok=w.heroAlive&&(['win','fled','asn','talk'].includes(b.res)||(b.res==='draw'&&ch(.5))); if(ok) hostSaved(); else hostLost(true); }
@@ -13043,7 +13212,7 @@ const Sim = (() => {
       if(word&&fxGet(b,'me','field')&&(FIELD_SP[fxGet(b,'me','field').id]||{}).sealHalf) bonus=_sb+Math.round((bonus-_sb)/2);
       if(word){ b.npcSealUsed=true; npcSeal(e,word); if(bonus>=22) b.eSealHit=true; }
     }
-    if(e.aid==='exec'&&w.heroAlive&&!b.eMasterDown&&!b.backGuard&&(b.huntNow||ch(.15))&&!npGuard(b)){ b.huntNow=false;
+    if(e.aid==='exec'&&w.heroAlive&&!b.eMasterDown&&!b.backGuard&&(b.huntNow||ch(.15))&&!npGuard(b)&&!loyalIntercept(b,10,'마탄을')){ b.huntNow=false;
       if(chk('',S.st.mana+S.st.will+w.fort*.5+ri(0,40),95)) log(pickNR([`${e.mname}의 마탄이 당신을 노렸다. 결계가 가까스로 막아 냈다.`,`마탄 한 발이 귀 옆을 스치고 지나갔다.`],'execM'),'war');
       else { add({health:-ri(6,14)}); log(pickNR([`${e.mname}${J(e.mname,이)} 서번트를 제쳐 두고 당신을 노렸다. 마탄이 옆구리를 스쳤다.`,`마탄이 결계를 뚫고 들어와 당신 다리를 꿰뚫었다.`],'execH'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('봉인지정 집행자의 마탄'); } }
     }
@@ -13054,15 +13223,15 @@ const Sim = (() => {
         if(ro==='block'){ w.asnAlert=(w.asnAlert||0)+2; if(g.k==='magic'){ e.hp=clamp(e.hp-12); log('당신의 마술이 적 어새신을 밀어냈다.','war'); } else if(g.k==='home') log('결계가 적 어새신의 칼날을 튕겨 냈다.','war'); else log('당신은 서번트를 불렀다. 칼끝이 닿기 직전에 막혔다.','war'); }
         else if(ro==='ok'){ add({health:-ri(20,30)}); log('적 어새신이 합이 엇갈린 틈에 서번트를 지나쳐 당신에게 닿았다. 칼날이 깊이 들어왔다.','loss'); if(S.st.health<=0){ S.flags.war='dead'; die('어새신의 암습'); } else { b.res='eAsn'; b.endNow=true; } }
         else { const sk=skillsOf(h).some(k=>ASN_A.test(k.n)||ASN_B.test(k.n)||ASN_C.test(k.n)); e.hp=clamp(e.hp-Math.round(Math.max(6,Math.min(32,9+asnStrike(P)+(sk?4:0)-E[2]*1.2-SV(eh,'evade')*.6+ri(-3,3))))); w.asnAlert=(w.asnAlert||0)+2; log('적 어새신의 칼날이 당신 앞에서 막혔다. 서번트의 반격이 그 몸을 베었다.','war'); } } }
-    if(e.aid==='executor'&&ch(.25)&&w.heroAlive&&!npGuard(b)){ if(chk('',S.st.mana+S.st.will+ri(0,40),90)) log(pickNR([`${e.mname}의 흑건이 당신 발밑에 꽂혔다. 한 뼘 차이였다.`,`날아든 흑건을 가까스로 피했다.`,`흑건이 결계에 튕겨 나갔다.`],'exeM'),'war'); else { add({health:-ri(5,10)}); log(pickNR([`${e.mname}${J(e.mname,이)} 던진 흑건이 당신 팔을 스쳤다.`,`흑건 세 자루가 날아들었다. 하나가 허벅지에 박혔다.`,`${e.mname}의 흑건이 어깨를 꿰뚫었다.`],'exe'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('대행자의 흑건'); return 0; } } }
+    if(e.aid==='executor'&&ch(.25)&&w.heroAlive&&!npGuard(b)&&!loyalIntercept(b,8,'흑건을')){ if(chk('',S.st.mana+S.st.will+ri(0,40),90)) log(pickNR([`${e.mname}의 흑건이 당신 발밑에 꽂혔다. 한 뼘 차이였다.`,`날아든 흑건을 가까스로 피했다.`,`흑건이 결계에 튕겨 나갔다.`],'exeM'),'war'); else { add({health:-ri(5,10)}); log(pickNR([`${e.mname}${J(e.mname,이)} 던진 흑건이 당신 팔을 스쳤다.`,`흑건 세 자루가 날아들었다. 하나가 허벅지에 박혔다.`,`${e.mname}의 흑건이 어깨를 꿰뚫었다.`],'exe'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('대행자의 흑건'); return 0; } } }
     // 매장기관의 흑건: 대행자보다 자주, 피하기 어렵고, 더 깊이 박힌다
-    if(e.aid==='burial'&&ch(.3)&&w.heroAlive&&!npGuard(b)){ if(chk('',S.st.mana+S.st.will+ri(0,40),100)) log(pickNR([`${e.mname}의 흑건이 당신 그림자를 꿰뚫고 바닥에 박혔다. 반 뼘 차이였다.`,`흑건 여섯 자루가 부채꼴로 날아들었다. 몸을 굴려 가까스로 피했다.`,`흑건이 결계에 박혀 한참을 떨었다.`],'burM'),'war'); else { add({health:-ri(7,13)}); log(pickNR([`${e.mname}의 흑건이 당신 어깨를 꿰뚫었다. 칼날에 새겨진 성언이 상처를 태웠다.`,`${e.mname}${J(e.mname,이)} 던진 흑건 여섯 자루 가운데 둘이 당신에게 닿았다.`,`흑건이 허벅지에 박혔다. 뽑아내도 상처가 식지 않았다.`],'bur'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('매장기관의 흑건'); return 0; } } }
+    if(e.aid==='burial'&&ch(.3)&&w.heroAlive&&!npGuard(b)&&!loyalIntercept(b,10,'흑건을')){ if(chk('',S.st.mana+S.st.will+ri(0,40),100)) log(pickNR([`${e.mname}의 흑건이 당신 그림자를 꿰뚫고 바닥에 박혔다. 반 뼘 차이였다.`,`흑건 여섯 자루가 부채꼴로 날아들었다. 몸을 굴려 가까스로 피했다.`,`흑건이 결계에 박혀 한참을 떨었다.`],'burM'),'war'); else { add({health:-ri(7,13)}); log(pickNR([`${e.mname}의 흑건이 당신 어깨를 꿰뚫었다. 칼날에 새겨진 성언이 상처를 태웠다.`,`${e.mname}${J(e.mname,이)} 던진 흑건 여섯 자루 가운데 둘이 당신에게 닿았다.`,`흑건이 허벅지에 박혔다. 뽑아내도 상처가 식지 않았다.`],'bur'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('매장기관의 흑건'); return 0; } } }
     if(e.aid==='atlas'){ if(b.round===1){ bonus+=16; log(`${e.mname}: “분할 사고, 일곱 갈래 시작. 결과 계산 완료.”`,'enemy'); } else if(e.hp<50) bonus-=6; }
     if(e.aid==='lord'){ if(b.round===1) log(`${e.mname}의 예장이 은빛으로 흘러내려 서번트를 감쌌다.`,'war'); }
     if(e.aid==='wanderer'&&b.round===1&&b.ctx.defend){ bonus+=w.fort*.2; log(`${e.mname}${J(e.mname,이)} 손짓 한 번으로 당신 결계를 걷어 냈다. 신대의 술식이다.`,'war'); }
     if(e.aid==='burial'&&hero().cls==='avenger'){ bonus+=6; if(b.round===1) log(`${e.mname}${J(e.mname,은)} ${hero().name}${J(hero().name,을)} 보자마자 성구를 꺼내 들었다. 묻어야 할 것을 알아본 얼굴이었다.`,'enemy'); }
     if(e.aid==='apostle'){ e.hp=clamp(e.hp+2); if(b.round===1) log(`${pName(e)}의 마스터에게서 짙은 피 냄새가 났다. 사람이 아니다.`,'war'); }
-    if(e.aid==='killer'&&w.heroAlive&&ch(.3)&&!npGuard(b)){ if(chk('',w.fort+S.st.will+ri(0,40),80)) log(pickNR([`어디선가 날아온 저격탄이 결계에 박혔다. ${e.mname}의 짓이다.`,`총성. 탄은 당신 머리 위 벽에 박혔다.`,`결계 표면에 금이 갔다. 저격이다.`],'kilM'),'war'); else { add({health:-ri(8,16)}); log(pickNR([`${e.mname}의 총탄이 당신을 노렸다. 서번트는 미처 닿지 못했다.`,`어딘가에서 총성이 울렸다. 당신 어깨에서 피가 터졌다.`,`${e.mname}${J(e.mname,은)} 서번트를 미끼로 쓰고, 직접 당신을 쐈다.`],'kil'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('마술사 사냥꾼의 총탄'); return 0; } } }
+    if(e.aid==='killer'&&w.heroAlive&&ch(.3)&&!npGuard(b)&&!loyalIntercept(b,12,'저격탄을')){ if(chk('',w.fort+S.st.will+ri(0,40),80)) log(pickNR([`어디선가 날아온 저격탄이 결계에 박혔다. ${e.mname}의 짓이다.`,`총성. 탄은 당신 머리 위 벽에 박혔다.`,`결계 표면에 금이 갔다. 저격이다.`],'kilM'),'war'); else { add({health:-ri(8,16)}); log(pickNR([`${e.mname}의 총탄이 당신을 노렸다. 서번트는 미처 닿지 못했다.`,`어딘가에서 총성이 울렸다. 당신 어깨에서 피가 터졌다.`,`${e.mname}${J(e.mname,은)} 서번트를 미끼로 쓰고, 직접 당신을 쐈다.`],'kil'),'war'); if(S.st.health<=0){ S.flags.war='dead'; die('마술사 사냥꾼의 총탄'); return 0; } } }
     if(e.aid==='democrat'&&b.round===1&&!b.talked) log(`${e.mname}${J(e.mname,이)} 싸우는 와중에도 자꾸 이쪽을 보며 말을 걸 틈을 찾았다.`,'war');
     if(e.aid==='collector'){ bonus+=6; if(b.round===1) log(`${e.mname}${J(e.mname,이)} 고용한 경호 마술사들이 사방에서 결계를 펼쳤다.`,'war'); }
     if(e.aid==='prodigy'&&b.round>=3){ bonus+=Math.min(14,(b.round-2)*5); if(b.round===3) log(`${e.mname}: “패턴 다 읽었어요.”`,'enemy'); }
@@ -13093,11 +13262,12 @@ const Sim = (() => {
   const WOUND_HP=80;
   function npcLines(p){ const t=WOUND_TAC[p.tac]||WOUND_TAC.proud, c=WOUND_CLS[(H_BY[p.hero]||{}).cls]||WOUND_CLS.sword, st=STYLE[p.aid]||{retreat:30};
     // 마스터 원형의 결(허세·겁먹음은 일찍, 패기·절박은 늦게)을 조금 섞는다. 원래 물러나지 않는 원형(무모한 복수자·광신·흡혈)은 그대로 끝까지 싸운다
-    const ret=st.retreat===0?0:Math.max(8,Math.min(55,Math.round(t.ret+c.ret+(st.retreat-30)*.3)));
-    const floor=Math.max(ret+8,Math.min(85,t.floor+c.floor));
+    const _sp=servantPersona(H_BY[p.hero]), _mp=masterPersona(p);
+    const ret=st.retreat===0?0:Math.max(6,Math.min(58,Math.round(t.ret+c.ret+(st.retreat-30)*.3-(_sp.pride>=70?10:0)+(_mp.cunning>=70?5:0))));
+    const floor=Math.max(ret+8,Math.min(88,t.floor+c.floor-(_sp.pride>=70?6:0)+(_mp.cunning>=70?6:0)));
     return {ret,floor,wp:Math.max(.05,Math.min(.95,t.wp*c.wp))}; }
   // 이 조가 오늘 먼저 습격하러 나서는가: 바닥 아래면 절대 아니고, 80 미만이면 다친 정도에 따라 확률로
-  function npcWillRaid(p){ const L=npcLines(p); if(p.hp<L.floor) return false; if(p.hp>=WOUND_HP) return true;
+  function npcWillRaid(p){ const L=npcLines(p), _mp=masterPersona(p); if(_mp.cunning>=70&&p.hp<85&&!p.scoutEdge&&!(p.provoked>0)) return false; if(p.hp<L.floor) return false; if(p.hp>=WOUND_HP) return true;
     return ch(L.wp+(1-L.wp)*(p.hp-L.floor)/Math.max(1,WOUND_HP-L.floor)); }
   const raidOk=p=>p.hp>=npcLines(p).floor;
   // 다친 채로 온 조: 버그가 아니라 그 조의 성격이라는 걸 한 줄로 보여 준다
@@ -13110,10 +13280,18 @@ const Sim = (() => {
     if(b.eMad>=b.round) return false;
     if(e.master&&e.seals>0&&['priest','mother','student','veteran','ghost','eighth','atlas','killer'].includes(e.aid)&&e.hp<RET&&ch(.7)){ npcSeal(e,e.aid==='mother'?'살아서 돌아와':'돌아와라'); return 'seal'; }
     if((b.ctx.asnFail||b.eAsnFail)&&e.cls==='shadow'&&ch(ASN_FLEE*Math.min(.9,fleeP(H_BY[e.hero],npcParams(e).p))-npFleeMinus(b,'en'))) return 'asn';
+    const _sp=servantPersona(H_BY[e.hero]), _mp=masterPersona(e);
+    if(e.hp<RET&&_sp.pride>=70){
+      if(_mp.cunning>=70&&e.master&&e.seals>0&&ch(.45)){ npcSeal(e,'물러나라'); e._svGrudge=(e._svGrudge||0)+12; return 'seal'; }
+      if(ch(Math.min(.85,st.rp*fleeP(H_BY[e.hero],npcParams(e).p)/.6*.45)-npFleeMinus(b,'en'))) return 'run';
+      if(e.known&&ch(.4)) log('상대 마스터가 싸움에서 발을 빼려다 서번트의 반발에 부딪혔다.','war');
+      return false;
+    }
     if(e.hp<RET&&ch(Math.min(.9,st.rp*fleeP(H_BY[e.hero],npcParams(e).p)/.6)-npFleeMinus(b,'en'))) return 'run';
     return false;
   }
   function npcFight(a,b,final,init){ const r=npcDuel(a,b,final,init); addKnow(a,b,20); addKnow(b,a,20); famSeeFight(a,b);
+    if(r&&r.win&&r.lose&&!r.win.cx&&!r.lose.cx){ relShift('p'+r.lose.i,'p'+r.win.i,{fear:10,respect:8,rivalry:10,grudge:12}); relShift('p'+r.win.i,'p'+r.lose.i,{respect:6,rivalry:6}); }
     if(r&&r.win&&r.lose&&r.lose.hp<=0&&!r.win.cx&&H_BY[r.win.hero]&&H_BY[r.win.hero].cls==='ego') r.win.hp=clamp(r.win.hp+15); // 얼터 에고: 쓰러뜨린 상대의 힘을 빨아들인다
     return r; }
 
@@ -13361,16 +13539,19 @@ const Sim = (() => {
     if(!truce) npcClassNight();
     const co=coalBusy(), avail=truce?[]:contracted().filter(p=>!(p.halt>0)&&!(p.truceN>0)&&!(co&&co.has(p.i)));
     for(const p of avail){ if(p.nAct) continue;
-      const [rp,smT,hpT,hideT]=REST_TAC[p.tac]||[.5,40,50,35], low=p.sm<smT||p.hp<hpT;
-      if(p.master&&low&&ch(Math.min(.9,rp*(p.hp<hpT-10?1.3:1)))){ p.nAct=p.hp<hideT?'hide':'rest'; p.rest=true; }
-      else if(p.master&&w.day<=3&&(p.tac==='cunning'||p.tac==='defensive')&&ch(.3)){ p.nAct='intel'; p.scoutEdge=1; const o=avail.filter(x=>x!==p); if(o.length) addKnow(p,pick(o),20); } // 정보를 모은다: 다음 싸움 첫 합 +6, 다른 조 하나의 정보 +20
+      const [rp,smT,hpT,hideT]=REST_TAC[p.tac]||[.5,40,50,35], low=p.sm<smT||p.hp<hpT, _mp=masterPersona(p), _sp=servantPersona(H_BY[p.hero]);
+      if(p.master&&p.mHurt>0&&_sp.loyalty>=65){ p.nAct='hide'; p.rest=true; }
+      else if(p.master&&low&&ch(Math.min(.92,rp*(_mp.cunning>=70?1.15:1)*(p.hp<hpT-10?1.3:1)))){ p.nAct=p.hp<hideT||_mp.cunning>=70?'hide':'rest'; p.rest=true; }
+      else if(p.master&&((w.day<=3&&(p.tac==='cunning'||p.tac==='defensive')&&ch(.3))||(_mp.cunning>=70&&w.day<=7&&ch(.42)))){ p.nAct='intel'; p.scoutEdge=1; const o=avail.filter(x=>x!==p); if(o.length) addKnow(p,pick(o),20); } // 정보를 모은다: 다음 싸움 첫 합 +6, 다른 조 하나의 정보 +20
       else p.nAct='out'; }
     const act=shuffle(avail.filter(p=>p.nAct==='out'));
     const pressure=(.16+w.day*.03)*(w.crisis&&!w.crisis.done?[1,1,.8,.5][w.crisis.stage]:1); // 검은 성배가 넘치기 시작하면 조끼리의 싸움이 줄어든다
     const done=new Set(); let reported=0; bxNunHunt(avail,done);
     for(const a of act){
       if(done.has(a)||!ch(Math.min(.95,pressure*npcAggr(a)))||!npcWillRaid(a)) continue;
-      const b=shuffle(avail).find(x=>x!==a&&!done.has(x)&&!(x.ally&&a.ally)&&!ch(Math.min(.5,SV(H_BY[x.hero],'stealth')*.05))&&(x.nAct!=='hide'||ch(.4))); if(!b) continue; // 쉬는 조도 습격받을 수 있다. 숨죽인 조는 잘 들키지 않는다
+      const _mpA=masterPersona(a), _cands=avail.filter(x=>x!==a&&!done.has(x)&&!(x.ally&&a.ally)&&!ch(Math.min(.5,SV(H_BY[x.hero],'stealth')*.05))&&(x.nAct!=='hide'||ch(.4)));
+      if(!_cands.length) continue;
+      const b=wpick(_cands,x=>{ const r=relGet('p'+a.i,'p'+x.i); let wt=1+r.grudge*.04+r.rivalry*.025-r.trust*.02-r.respect*.01-(_mpA.cunning>=70?r.fear*.025:r.fear*.01); if(_mpA.cunning>=70){ wt+=(100-x.hp)*.03+(x.mHurt?2:0)-(x.hp>a.hp+15?.6:0); } return Math.max(.08,wt); }); if(!b) continue; // 쉬는 조도 습격받을 수 있다. 숨죽인 조는 잘 들키지 않는다
       done.add(a);done.add(b);
       if(b.ally&&!a.ally&&w.heroAlive&&!w.allyRaid&&!w.final&&!w.ended){ w.allyRaid={a:a.i,b:b.i}; continue; } // 우리 동맹이 습격당한다: 알림과 선택은 이 밤이 끝날 때
       const {win,lose}=npcFight(a,b,false,true); w.nf.push([a.i,b.i]);
@@ -13405,12 +13586,12 @@ const Sim = (() => {
     const a=pairBy(r.a), b=pairBy(r.b); if(!a||!b||!a.alive||!b.alive||!b.ally||!a.master) return;
     b.hp=clamp(b.hp-ri(10,20)); const who=b.mname;
     decide({title:'동맹의 급한 연락',body:`동맹 ${pName(b)} 조의 사역마가 창문을 두드렸다. ${pName(a)} 조에게 습격당하고 있다. ${who}: “오래는 못 버틴다. 와 줄 수 있나.”`,war:true,choices:[
-      {t:'달려간다',d:`${pName(a)} 조와 싸운다. 동맹이 함께 싸운다(${hpWord(b.hp)}) · 그동안 거처는 빈다`,auto:w.hp>=50&&w.sm>=30,f:()=>{ crossReact({충성:6,명예:4,연민:3,야망:-3},{질서:4,선:2}); w.rescue=w.day; b.owe=(b.owe||0)+1; b.slight=Math.max(0,(b.slight||0)-1);
+      {t:'달려간다',d:`${pName(a)} 조와 싸운다. 동맹이 함께 싸운다(${hpWord(b.hp)}) · 그동안 거처는 빈다`,auto:w.hp>=50&&w.sm>=30,f:()=>{ crossReact({충성:6,명예:4,연민:3,야망:-3},{질서:4,선:2}); w.rescue=w.day; b.owe=(b.owe||0)+1; b.slight=Math.max(0,(b.slight||0)-1); relShift('p'+b.i,'me',{trust:18,affection:12,respect:10,grudge:-10});
         w.queue.unshift(()=>{ if(!a.alive||!b.alive||!w.heroAlive) return; if(!a.known){ a.known=true; a.intel=Math.max(a.intel||0,30); } log(`${pName(b)} 조의 거처 앞에서 ${pName(a)} 조와 마주쳤다.`,'war'); battle(a,{attack:true,allyComp:true,comp:[b.i]}); }); return '도시를 가로질러 달렸다.'; }},
       {t:'모른 척한다',d:'그 싸움은 그들끼리 결판난다. 동맹이 서운해할 수 있다',f:()=>{ crossReact({충성:-7,명예:-4,야망:3},{질서:-4}); allyRaidFight(a,b);
-        if(b.alive&&b.ally){ b.slight=(b.slight||0)+1; if(ch(Math.min(.9,(ALLY_QUIT[b.tac]??.35)*(b.owe?.5:1)+.15*(b.slight-1)))){ b.ally=false; b.allyGone=true; log(`${who}에게서 짧은 전갈이 왔다. “부를 때 오지 않는 동맹은 동맹이 아니다.” 동맹이 끊겼다.`,'loss'); wrec('mine',`동맹 ${who}${J(who,이)} 등을 돌렸다 — 습격을 외면했다`,{p:b.i}); } }
+        if(b.alive&&b.ally){ b.slight=(b.slight||0)+1; relShift('p'+b.i,'me',{trust:-22,affection:-15,grudge:22}); if(ch(Math.min(.9,(ALLY_QUIT[b.tac]??.35)*(b.owe?.5:1)+.15*(b.slight-1)))){ b.ally=false; b.allyGone=true; log(`${who}에게서 짧은 전갈이 왔다. “부를 때 오지 않는 동맹은 동맹이 아니다.” 동맹이 끊겼다.`,'loss'); wrec('mine',`동맹 ${who}${J(who,이)} 등을 돌렸다 — 습격을 외면했다`,{p:b.i}); } }
         return '휴대폰이 몇 번 더 울리다 멈췄다.'; }},
-      {t:'이참에 동맹을 끊는다',d:'동맹의 표식을 불태운다. 그 조가 한동안 우리를 노린다',f:()=>{ crossReact({야망:5,충성:-8,자유:2},{질서:-6,혼돈:2,악:2}); b.ally=false; b.allyGone=true; b.cutByMe=true; b.provoked=2; allyRaidFight(a,b); return '답장 대신 동맹의 표식을 불태웠다.'; }}]}); }
+      {t:'이참에 동맹을 끊는다',d:'동맹의 표식을 불태운다. 그 조가 한동안 우리를 노린다',f:()=>{ crossReact({야망:5,충성:-8,자유:2},{질서:-6,혼돈:2,악:2}); b.ally=false; b.allyGone=true; b.cutByMe=true; b.provoked=2; relShift('p'+b.i,'me',{trust:-35,affection:-25,grudge:35,rivalry:15}); allyRaidFight(a,b); return '답장 대신 동맹의 표식을 불태웠다.'; }}]}); }
   // 외면하거나 끊었을 때: 미뤄 둔 싸움을 그들끼리 치른다(밤의 다른 조 싸움과 같은 규칙)
   function allyRaidFight(a,b){ const w=W(); if(!a.alive||!b.alive) return; const {win,lose}=npcFight(a,b,false,true); w.nf.push([a.i,b.i]);
     if(lose.master&&!lose.bxNun&&ch(mHunt(win))){ if(ch(.7)) makeStray(lose); else { lose.master=false; lose.alive=false; pairOut(lose,'마스터를 잃고 흩어졌다',win); }
@@ -13432,8 +13613,15 @@ const Sim = (() => {
     if(w.rescue===w.day){ log('동맹을 구하러 간 사이 거처에 습격이 왔다. 비어 있는 결계만 부서졌다.','war'); w.fort=clamp(w.fort-8); return; }
     if(w.safehouse){ w.safehouse=0; log('친구가 내준 빈 원룸으로 몸을 옮겨 두었다. 그날 밤 습격은 텅 빈 거처를 덮쳤다.','war'); return; }
     if(w.foresee){ w.foresee=false; log('계시대로였다. 습격이 오기 전에 거처를 옮겨 두었다. 빈 결계만 부서졌다.','war'); w.fort=clamp(w.fort-5); return; }
-    const e=wpick(foes,f=>npcAggr(f)*({hunter:3,reckless:3,proud:2,cunning:2,desperate:2,defensive:1,naive:1}[f.tac]||1)*(f.provoked>0?4:1)*(w.hunted&&['executor','burial'].includes(f.aid)?4:1));
-    if(!npcWillRaid(e)) return; // 다친 조는 성향·클래스대로 오늘 밤을 넘기기도 한다
+    const _allyS=w.pairs.find(x=>allyOld(x));
+    if(_allyS&&!w.sacrificed&&masterPersona(_allyS).ruthless>=65){
+      const _bs=betrayScore(relGet('p'+_allyS.i,'me'),masterPersona(_allyS),{seals:w.seals,hp:w.hp,owe:_allyS.owe,slight:_allyS.slight});
+      const _bait=foes.find(x=>x!==_allyS);
+      if(_bait&&ch(_bs*.42)){ w.sacrificed=1; _allyS.ally=false; _allyS.allyGone=true; w.exposure=clamp(w.exposure+expUp(18)); relShift('p'+_allyS.i,'me',{trust:-35,affection:-25,grudge:25}); log('동맹이 등을 돌렸다. 당신의 거처를 다른 조에 팔아넘긴 것이다.','loss'); wrec('mine',`동맹 ${_allyS.mname}${J(_allyS.mname,이)} 거처를 팔아넘겼다`,{p:_allyS.i}); return battle(_bait,{ambushed:true}); }
+    }
+    const e=wpick(foes,f=>{ const _r=relGet('p'+f.i,'me'), _mp=masterPersona(f), _rw=Math.max(.2,1+_r.grudge*.03+_r.rivalry*.02-(_mp.cunning>=70?_r.fear*.025:_r.fear*.01)); return npcAggr(f)*_rw*({hunter:3,reckless:3,proud:2,cunning:2,desperate:2,defensive:1,naive:1}[f.tac]||1)*(f.provoked>0?4:1)*(w.hunted&&['executor','burial'].includes(f.aid)?4:1); });
+    if(!npcWillRaid(e)) return;
+    if(masterPersona(e).cunning>=70&&!e.scoutEdge&&w.fort>=45&&!(e.provoked>0)&&ch(.4)) return; // 다친 조는 성향·클래스대로 오늘 밤을 넘기기도 한다
     if(!e.known){e.known=true;e.intel=Math.max(e.intel,30);}
     if(w.fort>=50){ const back=Math.min(.85,(w.fort-40)/60)*(['reckless','hunter'].includes(e.tac)||e.provoked>0?.5:1);
       if(ch(back)){ if(fortBreak(e)) return; log(`${pName(e)} 조가 결계 앞까지 왔다가 발길을 돌렸다.`,'war'); return; } }
@@ -13484,7 +13672,7 @@ const Sim = (() => {
     const w=W(),h=hero();
     log('잠결에 눈을 떴다. 창가에 누군가 서 있었다.','war');
     decide({title:'창가의 그림자',body:`${pName(e)}. 서번트가 아니라 당신을 노리고 왔다.`,war:true,choices:[
-      {t:`${h.name}${J(h.name,을)} 부른다`,auto:true,f:()=>{if(chkp('신뢰·결계',.45+w.trust/250+w.fort/300)){log(`${h.name}${J(h.name,이)} 제때 닿았다. 그림자는 물러갔다.`,'war');e.known=true;}else{add({health:-ri(12,25)});log('칼끝이 어깨를 갈랐다. 서번트가 닿기 직전이었다.','war');if(S.st.health<=0){S.flags.war='dead';die('어새신의 칼');}}}},
+      {t:`${h.name}${J(h.name,을)} 부른다`,auto:true,f:()=>{if(chkp('신뢰·결계',.45+w.trust/250+w.fort/300+(servantPersona(h).loyalty>=70?.2:0))){log(`${h.name}${J(h.name,이)} 제때 닿았다. 그림자는 물러갔다.`,'war');e.known=true;}else{add({health:-ri(12,25)});log('칼끝이 어깨를 갈랐다. 서번트가 닿기 직전이었다.','war');if(S.st.health<=0){S.flags.war='dead';die('어새신의 칼');}}}},
       {t:'령주: 지금 여기로',d:'령주 1획 · 반드시 막는다',off:w.seals<1,f:()=>{useSeal('지금 여기로');log(`${h.name}${J(h.name,이)} 순식간에 당신 앞에 나타났다.`,'war');battle(e,{defend:true});}},
       {t:'스스로 막는다',d:'마력과 정신에 기댄다',f:()=>{if(chk('마력·정신',S.st.mana+S.st.will+ri(0,40),110)){log('당신의 결계가 칼끝을 튕겨 냈다. 그림자는 놀란 얼굴로 사라졌다.','war');add({will:3});}else{add({health:-ri(15,30)});log('당신의 결계는 종이처럼 찢어졌다.','war');if(S.st.health<=0){S.flags.war='dead';die('어새신의 칼');}}}}]});
   }
@@ -13508,10 +13696,10 @@ const Sim = (() => {
       {t:'엄폐하며 물러난다',auto:true,f:()=>{w.hp=clamp(w.hp-ri(5,12));addIntel(p,15,'raid');return '세 발을 더 피했다. 쏜 방향을 기억해 두었다.'}},
       {t:'사선을 거슬러 달려간다',f:()=>{addIntel(p,40,'raid');w.queue.unshift(()=>battle(p,{attack:true}));return '서번트가 빗발치는 화살 속으로 뛰어들었다.'}}]});}},
     {w:2,c:()=>hero().id==='cuchulainn'&&!S.once.geis,f:()=>{S.once.geis=1;decide({title:'금기',body:'길에서 만난 노파가 고기 수프를 내밀었다. 개고기라고 했다. 쿠 훌린은 손님으로서 거절할 수 없다.',war:true,choices:[{t:'대신 거절한다',auto:true,f:()=>{W().trust=clamp(W().trust+8);return '“고맙다, 마스터.” 그는 작게 웃었다.'}},{t:'그가 정하게 둔다',f:()=>{W().hp=clamp(W().hp-25);return '그는 수프를 비웠다. 왼손이 떨리기 시작했다.'}}]});}},
-    {w:2,c:()=>hero().sp==='traitor'||(hero().traits.includes('야망')&&W().trust<25),f:()=>{const w=W(),h=hero();if(w.trust>=40){log(`${h.name}${J(h.name,이)} 다른 조의 사신과 이야기하다가 당신을 보고 입을 다물었다.`);return;}decide({title:'배신의 기척',body:`${h.name}${J(h.name,이)} 당신보다 강한 주인을 찾고 있다.`,war:true,choices:[
+    {w:2,c:()=>hero().sp==='traitor'||((hero().traits.includes('야망')||relGet('me','hero').grudge>=65)&&W().trust<30),f:()=>{const w=W(),h=hero();if(w.trust>=40){log(`${h.name}${J(h.name,이)} 다른 조의 사신과 이야기하다가 당신을 보고 입을 다물었다.`);return;}decide({title:'배신의 기척',body:`${h.name}${J(h.name,이)} 당신보다 강한 주인을 찾고 있다.`,war:true,choices:[
       {t:'령주로 묶어 둔다',d:'1획',off:w.seals<1,auto:true,f:()=>{useSeal('내 곁에 있어라');w.trust=clamp(w.trust+fitT(-5));return `${h.name}${J(h.name,은)} 이를 갈며 무릎을 꿇었다.`}},
       {t:'말로 붙잡는다',f:()=>{if(chkp('정신',.3+S.st.will/200)){w.trust=clamp(w.trust+10);return `${he(h)}는 오래 당신을 보다가 무기를 내려놓았다.`}w.heroAlive=false;w.myOut={d:w.day,tod:w.tod,why:'붙잡지 못하고 떠나보냈다'};wrec('mine',`${h.name}${J(h.name,이)} 계약을 끊고 떠났다`);S.flags.war='lost';S.flags.betrayedByHero=1;mark('loss');log(`${h.name}${J(h.name,은)} 떠났다.`,'loss');afterLoss();return ''}}]});}},
-    {w:2,c:()=>W().pairs.some(allyOld)&&W().day>=7,f:()=>{const a=W().pairs.find(allyOld);if(ch(Math.max(.03,(a.tac==='cunning'||a.tac==='proud'?.45:.15)+.15*(a.slight||0)-.1*(a.owe||0)))){a.ally=false;a.allyGone=true;log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}else{log(`${a.mname}${J(a.mname,이)} 알아낸 것을 나눠 주었다.`);W().pairs.forEach(p=>{if(p.alive&&!p.ally&&ch(.4))addIntel(p,20);});}}},
+    {w:2,c:()=>W().pairs.some(allyOld)&&W().day>=7,f:()=>{const a=W().pairs.find(allyOld), _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}else{log(`${a.mname}${J(a.mname,이)} 알아낸 것을 나눠 주었다.`);W().pairs.forEach(p=>{if(p.alive&&!p.ally&&ch(.4))addIntel(p,20);});}}},
     {w:1,c:()=>true,f:()=>decide({title:'은폐반',body:'성당교회의 은폐반이 무너진 건물 주변에 장막을 치고 있다. 그들 눈에 띄면 오늘 밤의 일을 해명해야 한다.',war:true,choices:[
       {t:'협조한다',auto:true,f:()=>{W().exposure=clamp(W().exposure-5);add({wealth:-3});return '진술서 세 장을 썼다. 새벽에 풀려났다.'}},
       {t:'몰래 빠져나간다',f:()=>{if(ch(.6))return '아무도 당신을 보지 못했다.';W().exposure=clamp(W().exposure+expUp(10));return '은폐반 한 명과 눈이 마주쳤다. 그는 무전기를 들었다.'}}]})},
@@ -13693,8 +13881,12 @@ const Sim = (() => {
   // 동맹의 속마음: 마지막 둘이 남았을 때 동맹도 배신·함께 빌기·양보 중 하나를 마음먹는다
   const ALLY_B=['merc','killer','apostle','lord','cultist','collector','wanderer','exec','executor','burial','heir','antique','avenger','eighth'];
   const ALLY_Y=['student','veteran','elder','artist','streamer','stage','kendo','lecturer','fortune','amnesia'];
-  function allyIntent(a){ let [b,sh,y]=ALLY_B.includes(a.aid)?[.6,.25,.15]:ALLY_Y.includes(a.aid)?[.1,.35,.55]:[.15,.65,.2];
-    if(['hunter','reckless'].includes(a.tac)) b*=1.2; if(S.st.bond>=60) b*=.6; if(a.sym) b*=.5; if(a.slight) b*=1+.5*a.slight; if(a.owe){ b*=Math.max(.3,1-.25*a.owe); y*=1+.2*a.owe; }
+  function allyIntent(a){ const w=W(), rp=relGet('p'+a.i,'me'), mp=masterPersona(a);
+    let [b,sh,y]=ALLY_B.includes(a.aid)?[.55,.28,.17]:ALLY_Y.includes(a.aid)?[.1,.35,.55]:[.15,.65,.2];
+    const bs=betrayScore(rp,mp,{final:true,seals:w.seals,hp:w.hp,owe:a.owe,slight:a.slight});
+    b=Math.max(.04,b*.5+bs*.65); if(S.st.bond>=60) b*=.7; if(a.sym) b*=.55;
+    sh*=Math.max(.3,1+(rp.trust-30)*.008+(rp.respect-20)*.006-rp.grudge*.008);
+    y*=Math.max(.2,1+rp.affection*.008+rp.fear*.006+(a.owe||0)*.2);
     return wpick(['betray','share','yield'],x=>({betray:b,share:sh,yield:y})[x]); }
   function allyFinal(a){
     const h=hero(), w=W(); const it=a.intent||(a.intent=allyIntent(a)); const read=a.intel>=60||S.st.bond>=60;
@@ -15926,7 +16118,7 @@ const Sim = (() => {
   return {cn,ACH:ACH.map(({t,...a})=>a),newLife,start,tick,ep2When,setHold,battleMods,resolve,autoChoice,setFocus,setHooks,snapshot,load,record,yearProgress,
     get S(){return S}, relLoveOk:id=>!REL_CHILD.includes(id)&&!REL_NOLOVE.includes(id)&&!!H_BY[id], STYLE:()=>STYLE, AR, seal:()=>S&&S.sealId!=null?SEALS[S.sealId]:SEALS[0], skillsOf, CLS,GR,HEROES,H_BY,ORIGINS,CITIES,ARTS,ART_TIER,FAMILY_ART,GIFTS,GRADE_N,ART_CHAIN:Object.fromEntries(Object.entries(ART_CHAIN).map(([k,v])=>[k,{max:v.max,st:v.st}])),custCost,custClamp,custRanges,FOCUS,LEN,pName,artOf,ARCHE,myParams,npcParams,TIER_TXT,npInfo,npCompare,hpWord,hero:()=>S&&S.hero?H_BY[S.hero]:null,
     alName:id=>alName(id), pickup:()=>({live:pickupLive(),end:PICKUP.end,ids:PICKUP.ids.slice()}), artsView:()=>S?artsView():null, relView:()=>S?relView():null, artInfo:id=>S?artInfo(id):null, artActs:id=>(ART_ACT[id]||[]).map(k=>MACT[k].n), famState:()=>{ const w=S&&W(); if(!w||!famName()) return null; return {n:famName(),back:w.famBack>w.day?w.famBack-w.day:0,used:w.famUsed===w.day,tail:!!w.famTail}; }, giftView:()=>S?giftView():null, setGhost, randName:sx=>genName(sx==='f'?'f':'m'), mInfo, NAMES, fullName, setName, oDesc, canTrain:()=>!!S&&!!(O().mage||S.flags.awakened),
-    duelStart:c=>duelStart(c||{}), duelView:()=>S?duelView():null,
+    duelStart:c=>duelStart(c||{}), duelView:()=>S?duelView():null, personaOf:who=>S?personaOf(who):null, relMatrix:(a,b)=>S&&S.war?relGet(a,b):null, betrayRisk:p=>S&&S.war&&p?betrayScore(relGet('p'+p.i,'me'),masterPersona(p),{seals:S.war.seals,hp:S.war.hp,owe:p.owe,slight:p.slight}):0,
     _: {advanceYear, die} };
 })();
 if(typeof module!=='undefined') module.exports=Sim;
@@ -17947,6 +18139,13 @@ document.addEventListener('keydown',e=>{
   if(e.code==='Space'&&!Sim.S.pending){ e.preventDefault(); $('#pauseBtn').click(); }
 });
 
+
+const PS_L={prideful:'긍지',loyal:'충의',cunning:'책략',ruthless:'비정',berserk:'광기'};
+const REL6_M=[['trust','신뢰',''],['affection','애정','aff'],['fear','두려움','fear'],['respect','경의','resp'],['rivalry','경쟁심','riv'],['grudge','원한','grd']];
+function psTagsHtml(p){ if(!p||!p.tags||!p.tags.length) return ''; return `<div class="ps-tags">${p.tags.map(t=>`<span class="ps-tag ${t}">${esc(PS_L[t]||t)}</span>`).join('')}</div>`; }
+function rel6Html(r){ if(!r) return ''; return `<div class="rel6-box">${REL6_M.map(([k,l,c])=>`<div class="rel6-row ${c}"><span>${esc(l)}</span><span class="tr"><i style="width:${Math.round(r[k]||0)}%"></i></span><b>${Math.round(r[k]||0)}</b></div>`).join('')}</div>`; }
+function riskHtml(p){ const S=Sim.S; if(!S||!S.war||!p||!p.ally||!(p.intel>=50||S.st.bond>=55)) return ''; const v=Sim.betrayRisk(p), cl=v>=.55?'hi':v>=.3?'mid':'lo', lb=v>=.55?'높음':v>=.3?'주의':'낮음';
+  return `<div class="rel6-risk ${cl}"><span>배신 가능성</span> · <b>${lb}</b></div>`; }
 function bar(lb,v,cls){ return `<div class="stat"><span class="lb">${lb}</span><span class="track ${cls||''}"><i style="width:${Math.round(v)}%"></i></span><span class="v">${Math.round(v)}</span></div>`; }
 function letter(n){return Sim.GR[n]||'–';}
 function sealSvg(n){
@@ -18024,10 +18223,11 @@ function render(){
     hc.className='card herocard';
     hc.innerHTML=`<h3>나의 서번트 <small>${Sim.CLS[h.cls].n}</small></h3><div class="phd">${faceHtml(h.id,72)}<div><div class="hname">${h.name}</div><div class="htitle">${h.title} · ${h.from}</div></div></div>
       ${heroAffRows(h,w)}
+      ${psTagsHtml((Sim.personaOf('me')||{}).servant)}
       ${paramGrid(h.s,Sim.myParams().p)}
       <p class="hint">${Sim.TIER_TXT[Sim.myParams().tier]}${Sim.myParams().starved?' · 마스터가 지쳐 마력 공급이 흔들립니다':''}</p>
       ${(()=>{const x=[w.rSeals!=null?`감독자 령주 ${w.rSeals}획`:'',w.workshop?`공방 완성${w.fort<30?' (훼손됨)':''}`:w.wsProg?`공방 진척 ${w.wsProg}/100`:'',w.heat?`성당교회의 주목 ${w.heat}`:'',w.halt>0?`정지 명령에 묶임 ${w.halt}일`:''].filter(Boolean);return x.length?`<p class="hint">${x.join(' · ')}</p>`:''})()}
-      ${bar('건강',w.heroAlive?w.hp:0,'hp')}${bar('마력',w.heroAlive?(w.sm??100):0,'mana')}<div class="stat rlw"><span class="lb">신뢰</span><span class="track"><i style="width:${Math.round(w.trust)}%"></i></span><span class="v rl-n">${w.trust<35?'불신':w.trust<60?'보통':w.trust<80?'신뢰':'유대'} <span class="mono">${Math.round(w.trust)}</span></span></div>${relRow(Sim.relView())}${relReq(Sim.relView())}${bar('노출',w.exposure,'mana')}${bar('결계',w.fort,'health')}
+      ${bar('건강',w.heroAlive?w.hp:0,'hp')}${bar('마력',w.heroAlive?(w.sm??100):0,'mana')}<div class="stat rlw"><span class="lb">신뢰</span><span class="track"><i style="width:${Math.round(w.trust)}%"></i></span><span class="v rl-n">${w.trust<35?'불신':w.trust<60?'보통':w.trust<80?'신뢰':'유대'} <span class="mono">${Math.round(w.trust)}</span></span></div>${relRow(Sim.relView())}${relReq(Sim.relView())}${rel6Html(Sim.relMatrix('me','hero'))}${bar('노출',w.exposure,'mana')}${bar('결계',w.fort,'health')}
       <p class="hint">신뢰는 전투력, 서번트의 배신 여부, 성배 앞의 선택지에 영향을 줍니다. 35 미만은 「불신」으로 명령이 어긋나고, 60 이상 「신뢰」는 서번트가 당신을 감싸며, 80 이상 「유대」는 위급할 때 한 번 한계를 넘습니다.</p>
       <div class="seals">${sealSvg(w.seals)}<p>령주 <b class="mono">${w.seals}</b>획 남음 · ${esc(Sim.seal().n)}<br>한 획마다 절대 명령 하나.</p></div>
       ${skBlock(h,null)}
@@ -18485,7 +18685,7 @@ function showInfo(key){
   if(key==='me'){
     const h=Sim.hero(); const fr=h.frags.slice(0,w.frag);
     html=`<h2>${h.name}</h2><div class="body">${Sim.CLS[h.cls].n} · ${h.title} · ${h.from}</div>
-      <dl class="row"><dt>소원</dt><dd>${esc(h.wish)}</dd><dt>신뢰</dt><dd>${Math.round(w.trust)}</dd><dt>성향</dt><dd>${h.traits.map(t=>'「'+esc(t)+'」').join(' ')}</dd>${Sim.alName(h.id)?`<dt>속성</dt><dd>${esc(Sim.alName(h.id))}</dd>`:''}<dt>궁합</dt><dd>${fitWord(w.fit)}</dd></dl>
+      <dl class="row"><dt>소원</dt><dd>${esc(h.wish)}</dd><dt>신뢰</dt><dd>${Math.round(w.trust)}</dd><dt>성향</dt><dd>${h.traits.map(t=>'「'+esc(t)+'」').join(' ')}</dd>${Sim.alName(h.id)?`<dt>속성</dt><dd>${esc(Sim.alName(h.id))}</dd>`:''}<dt>궁합</dt><dd>${fitWord(w.fit)}</dd><dt>서번트 성격</dt><dd>${psTagsHtml((Sim.personaOf('me')||{}).servant)||'—'}</dd><dt>관계</dt><dd>${rel6Html(Sim.relMatrix('me','hero'))}</dd></dl>
       ${skBlock(h,null)}${npBlock(h,true,null,'me')}
       <div class="np"><div class="nh"><span>알게 된 사연</span><span class="nr">${fr.length}/${h.frags.length}</span></div>${fr.length?fr.map(t=>`<p class="frag">“${esc(t)}”</p>`).join(''):'<p class="unk">아직 들은 이야기가 없습니다.</p>'}</div>`;
   } else {
@@ -18505,7 +18705,7 @@ function showInfo(key){
       <dt>마스터의 소원</dt><dd>${p.wishKnown?esc(ar.wish||''):'<span class="unk">알 수 없음</span>'}</dd>
       <dt>진명</dt><dd>${p.revealed?`${h.title} ${h.name} · ${h.from}`:p.hint?`<span class="unk">알 수 없음 · 단서: ${esc(p.hint)}에 등장하는 인물</span>`:'<span class="unk">알 수 없음</span>'}</dd>
       <dt>능력치</dt><dd class="mono">${p.revealed?ORD.map(i=>`${PL[i]} ${Sim.npcParams(p).p[i]}`).join(' · '):'<span class="unk">알 수 없음</span>'}</dd>
-      <dt>전투 성향</dt><dd>${p.known||!p.alive?`${(Sim.STYLE()[p.aid]||{}).n||''} · ${(p.bxNun?"밤마다 다른 조를 찾아간다":(Sim.STYLE()[p.aid]||{}).d||'')}`:'<span class="unk">알 수 없음</span>'}</dd><dt>마스터 실력</dt><dd>${(()=>{ const m=Sim.mInfo(p); return m.stage===0?'<span class="unk">알 수 없음</span>':m.stage===1?`${m.grp} · <span class="unk">등급 알 수 없음</span>`:`${m.grp} · ${m.tier}등급 · ${m.odd}${m.habit?' · 주로 '+m.habit:''}`; })()}</dd><dt>마스터 기술</dt><dd>${(()=>{ const m=Sim.mInfo(p); if(!m.kit) return '<span class="unk">알 수 없음</span>'; if(!m.kit.length) return '마술을 쓰지 않는다'; return m.kit.map(k=>`<span>${esc(k.n)}</span>${k.tier?` <b>${esc(k.tier)}</b>`:''}`).join(', ')+(m.kitAll?'':' <span class="unk">· 그 밖은 알 수 없음</span>'); })()}</dd><dt>령주</dt><dd class="mono">${p.known||!p.alive?(p.seals??3)+'획':'<span class="unk">알 수 없음</span>'}</dd><dt>정보</dt><dd class="mono">${Math.round(p.intel)}/100</dd></dl>
+      <dt>전투 성향</dt><dd>${p.known||!p.alive?`${(Sim.STYLE()[p.aid]||{}).n||''} · ${(p.bxNun?"밤마다 다른 조를 찾아간다":(Sim.STYLE()[p.aid]||{}).d||'')}`:'<span class="unk">알 수 없음</span>'}</dd><dt>마스터 실력</dt><dd>${(()=>{ const m=Sim.mInfo(p); return m.stage===0?'<span class="unk">알 수 없음</span>':m.stage===1?`${m.grp} · <span class="unk">등급 알 수 없음</span>`:`${m.grp} · ${m.tier}등급 · ${m.odd}${m.habit?' · 주로 '+m.habit:''}`; })()}</dd><dt>마스터 기술</dt><dd>${(()=>{ const m=Sim.mInfo(p); if(!m.kit) return '<span class="unk">알 수 없음</span>'; if(!m.kit.length) return '마술을 쓰지 않는다'; return m.kit.map(k=>`<span>${esc(k.n)}</span>${k.tier?` <b>${esc(k.tier)}</b>`:''}`).join(', ')+(m.kitAll?'':' <span class="unk">· 그 밖은 알 수 없음</span>'); })()}</dd><dt>령주</dt><dd class="mono">${p.known||!p.alive?(p.seals??3)+'획':'<span class="unk">알 수 없음</span>'}</dd><dt>정보</dt><dd class="mono">${Math.round(p.intel)}/100</dd>${p.known||p.ally||!p.alive?`<dt>마스터 성격</dt><dd>${psTagsHtml((Sim.personaOf(p)||{}).master)||'—'}</dd>`:''}${p.revealed?`<dt>서번트 성격</dt><dd>${psTagsHtml((Sim.personaOf(p)||{}).servant)||'—'}</dd>`:''}${p.ally||p.intel>=40||!p.alive?`<dt>관계</dt><dd>${rel6Html(Sim.relMatrix('p'+p.i,'me'))}${riskHtml(p)}</dd>`:''}</dl>
       ${skBlock(h,p)}
       ${npBlock(h,!!p.artKnown,p.artHint,p.alive?p:null)}
       ${p.revealed?`<div class="np"><div class="nh"><span>들은 사연</span><span class="nr">${fr.length}/${h.frags.length}</span></div>${fr.length?fr.map(t=>`<p class="frag">“${esc(t)}”</p>`).join(''):'<p class="unk">전투 중에 말을 걸면 들을 수 있을지도 모릅니다.</p>'}</div>`:''}`;
