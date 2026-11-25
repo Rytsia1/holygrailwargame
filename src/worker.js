@@ -262,32 +262,45 @@ async function postGhost(request, env) {
   return json({ ok: true, id });
 }
 
+// 유령 후보: 조 id는 무작위 글자라 id 순서가 곧 섞인 순서다. 무작위 위치에서 시작해 id 순서로 GH_N개를 읽는다
+// (예전 ORDER BY random()은 조건에 맞는 조를 모두 읽고 섞었다). +year: 연도 색인 대신 id 색인을 타게 한다.
+// 11-25: 읽은 후보는 연도마다 1분 동안 메모리에 둔다. 같은 promise를 요청끼리 나눠 기다리지 않는다(11-17 수정 2와 같은 까닭) — 동시에 비면 각자 읽는다
+const GH_N = 48, GH_TTL = 60e3, GH_KEYS = 64, GH_POOL = new Map();
+async function ghostPool(env, year) {
+  const now = Date.now(), c = GH_POOL.get(year);
+  if (c && now - c.at < GH_TTL) return c.list;
+  const pivot = 'g' + crypto.randomUUID().replace(/-/g, '').slice(0, 20);
+  const pick = op => env.DB.prepare(
+    `SELECT id, dev, data FROM ghosts WHERE id ${op} ? AND hidden = 0 AND +year BETWEEN ? AND ? ORDER BY id LIMIT ${GH_N}`
+  ).bind(pivot, year - 40, year - 1).all();
+  let { results } = await pick('>=');
+  if (results.length < GH_N) {   // 끝에 닿으면 처음부터 이어서
+    // 11-23: 조가 드문 연도대에서는 처음부터 id 순으로 훑으면 표 대부분(수만 줄, 0.5~0.8초)을 읽어 D1을 막았다.
+    // pivot 뒤 구간(f)에서 찾은 수로 전체를 어림해, 드물면 연도 색인으로 그 연도대만 읽는다
+    const f = 1 - parseInt(pivot.slice(1, 9), 16) / 2 ** 32, est = f > 0.02 ? results.length / f : 0;
+    const rest = est < 3000
+      ? await env.DB.prepare(`SELECT id, dev, data FROM ghosts INDEXED BY ghosts_year WHERE year BETWEEN ? AND ? AND id < ? AND hidden = 0 ORDER BY id LIMIT ${GH_N}`)
+          .bind(year - 40, year - 1, pivot).all()
+      : await pick('<');
+    results = results.concat(rest.results).slice(0, GH_N);
+  }
+  GH_POOL.delete(year); GH_POOL.set(year, { at: now, list: results });
+  while (GH_POOL.size > GH_KEYS) GH_POOL.delete(GH_POOL.keys().next().value);   // 오래 안 쓴 연도부터 비운다
+  return results;
+}
+
 async function getGhost(request, url, env) {
   if (await slowDown(env, request, 'q')) return SLOW();
   const year = int(Number(url.searchParams.get('year')), 1900, 2140);
   const dev = str(url.searchParams.get('dev'), ID) || '-';
   if (!year) return json({ ok: false, error: 'bad_year' }, 400);
   await ensureSchema(env);
-  // 조 id는 무작위 글자라 id 순서가 곧 섞인 순서다. 무작위 위치에서 시작해 id 순서로 12개만 읽고 그중 4개를 고른다
-  // (예전 ORDER BY random()은 조건에 맞는 조를 모두 읽고 섞었다). 12개에서 고르는 것은 id 간격 탓에 몇몇 조가
-  // 자주 뽑히는 쏠림을 줄이려고. +year: 연도 색인 대신 id 색인을 타게 한다.
-  const pivot = 'g' + crypto.randomUUID().replace(/-/g, '').slice(0, 20);
-  const pick = op => env.DB.prepare(
-    `SELECT id, data FROM ghosts WHERE id ${op} ? AND hidden = 0 AND dev != ? AND +year BETWEEN ? AND ? ORDER BY id LIMIT 12`
-  ).bind(pivot, dev, year - 40, year - 1).all();
-  let { results } = await pick('>=');
-  if (results.length < 12) {   // 끝에 닿으면 처음부터 이어서
-    // 11-23: 조가 드문 연도대에서는 처음부터 id 순으로 훑으면 표 대부분(수만 줄, 0.5~0.8초)을 읽어 D1을 막았다.
-    // pivot 뒤 구간(f)에서 찾은 수로 전체를 어림해, 드물면 연도 색인으로 그 연도대만 읽는다
-    const f = 1 - parseInt(pivot.slice(1, 9), 16) / 2 ** 32, est = f > 0.02 ? results.length / f : 0;
-    const rest = est < 3000
-      ? await env.DB.prepare(`SELECT id, data FROM ghosts INDEXED BY ghosts_year WHERE year BETWEEN ? AND ? AND id < ? AND hidden = 0 AND dev != ? ORDER BY id LIMIT 12`)
-          .bind(year - 40, year - 1, pivot, dev).all()
-      : await pick('<');
-    results = results.concat(rest.results).slice(0, 12);
-  }
-  for (let i = results.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [results[i], results[j]] = [results[j], results[i]]; }
-  const list = results.slice(0, 4).map(r => ({ id: r.id, ...JSON.parse(r.data) }));
+  // 11-25: 연도마다 후보(GH_N개)를 이 서버(isolate) 메모리에 1분 동안 두고, 그 안에서 자기 조를 빼고 4개를 고른다
+  //   (예전: 요청마다 DB에서 12개를 읽었다 — 하루 112만 번, D1 실행 시간의 32%)
+  const pool = await ghostPool(env, year);
+  const cand = pool.filter(r => r.dev !== dev);
+  for (let i = cand.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [cand[i], cand[j]] = [cand[j], cand[i]]; }
+  const list = cand.slice(0, 4).map(r => ({ id: r.id, ...JSON.parse(r.data) }));
   return json({ ok: true, list });
 }
 
@@ -410,7 +423,12 @@ const b64u = a => btoa(String.fromCharCode(...a)).replace(/\+/g, '-').replace(/\
 async function gidOf(key) { const h = new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key))); return b64u(h); }
 function syncCode() { const out = []; while (out.length < 8) { const r = crypto.getRandomValues(new Uint8Array(16)); for (const x of r) if (x < 248 && out.length < 8) out.push(SYNC_ABC[x % 31]); } return out.join(''); }
 const syncData = z => (typeof z === 'string' && SYNC_DATA.test(z) && z.length <= SYNC_MAX ? z : null);
-async function syncLite(env, key) { if (!str(key, SYNC_KEY)) return null; return await env.DB.prepare(`SELECT gid, ver, seen, devs FROM sync_groups WHERE gid = ?`).bind(await gidOf(key)).first(); } // 기록 묶음(data) 없이
+// 11-25: 출입증(dk)을 함께 주면 그 기기 줄도 같은 쿼리로 읽는다(dj) — 예전에는 묶음 조회 · 기기 조회를 따로 2번 했다(하루 각 500만 번)
+async function syncLite(env, key, dk) { if (!str(key, SYNC_KEY)) return null; const gid = await gidOf(key);
+  if (!str(dk, SYNC_DK)) return await env.DB.prepare(`SELECT gid, ver, seen, devs FROM sync_groups WHERE gid = ?`).bind(gid).first(); // 기록 묶음(data) 없이
+  const r = await env.DB.prepare(`SELECT g.gid, g.ver, g.seen, g.devs, d.did, d.pid, d.lbl, d.seen AS dseen FROM sync_groups g LEFT JOIN sync_devs d ON d.did = ? AND d.gid = g.gid WHERE g.gid = ?`).bind(await gidOf(dk), gid).first();
+  if (!r) return null;
+  return { gid: r.gid, ver: r.ver, seen: r.seen, devs: r.devs, dj: { dk, d: r.did ? { did: r.did, pid: r.pid, lbl: r.lbl, seen: r.dseen } : null } }; }
 async function syncGroup(env, key) { if (!str(key, SYNC_KEY)) return null; const gid = await gidOf(key); const g = await env.DB.prepare(`SELECT gid, ver, seen, devs, data FROM sync_groups WHERE gid = ?`).bind(gid).first(); return g; }
 const SYNC_DK = /^[A-Za-z0-9_-]{32}$/;
 const devTxt = (v, n) => (typeof v === 'string' ? v.replace(/[\u0000-\u001f\u007f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, n) : '');
@@ -429,7 +447,8 @@ async function syncAuth(env, b, g) {
   const now = Date.now();
   if (b.dk !== undefined) {
     if (!str(b.dk, SYNC_DK)) return { err: 'kicked' };
-    const d = await env.DB.prepare(`SELECT did, pid, lbl, seen FROM sync_devs WHERE did = ? AND gid = ?`).bind(await gidOf(b.dk), g.gid).first();
+    const d = g.dj && g.dj.dk === b.dk ? g.dj.d   // syncLite가 같은 쿼리로 읽어 둔 기기 줄
+      : await env.DB.prepare(`SELECT did, pid, lbl, seen FROM sync_devs WHERE did = ? AND gid = ?`).bind(await gidOf(b.dk), g.gid).first();
     if (!d) return { err: 'kicked' };
     const lbl = devTxt(b.lbl, 40);
     if (now - d.seen > 36e5 || (lbl && lbl !== d.lbl)) await env.DB.prepare(`UPDATE sync_devs SET seen = ?, lbl = CASE WHEN ? <> '' THEN ? ELSE lbl END WHERE did = ?`).bind(now, lbl, lbl, d.did).run();
@@ -442,14 +461,23 @@ async function syncAuth(env, b, g) {
 const authFail = a => json({ ok: false, error: a.err }, a.err === 'kicked' ? 403 : 404);
 async function syncTouch(env, g) { const now = Date.now(); if (now - g.seen > 864e5) await env.DB.prepare(`UPDATE sync_groups SET seen = ? WHERE gid = ?`).bind(now, g.gid).run(); }
 
+// 11-25: 오래된 묶음 · 코드 · 끊긴 기기 줄 정리는 1시간에 한 번만 (예전: 새 연결마다 — 하루 5천 번, 한 번에 0.1 ~ 0.18초씩 D1을 잡아 다른 요청이 밀려 실패)
+// meta의 sync_clean 시각을 먼저 잡은 한 요청만 지운다. 이 서버(isolate)가 한 시간 안에 이미 확인했으면 DB도 보지 않는다
+const SYNC_CLEAN = 36e5; let syncCleanAt = 0;
+async function syncClean(env, now) {
+  if (now - syncCleanAt < SYNC_CLEAN) return; syncCleanAt = now;
+  const c = await env.DB.prepare(`INSERT INTO meta (k, v) VALUES ('sync_clean', ?) ON CONFLICT(k) DO UPDATE SET v = excluded.v WHERE CAST(meta.v AS INTEGER) < ?`).bind(String(now), now - SYNC_CLEAN).run();
+  if (!(c.meta && c.meta.changes > 0)) return;
+  await env.DB.batch([env.DB.prepare(`DELETE FROM sync_groups WHERE seen < ?`).bind(now - SYNC_TTL), env.DB.prepare(`DELETE FROM sync_codes WHERE exp < ?`).bind(now),
+    env.DB.prepare(`DELETE FROM sync_devs WHERE gid NOT IN (SELECT gid FROM sync_groups)`)]);
+}
 async function syncNew(request, env) {
   if (await slowDown(env, request, 's')) return SLOW();
   const b = await readJson(request, 1_500_000); const z = syncData(b && b.z);
   if (!z) return json({ ok: false, error: 'bad_fields' }, 400);
   await ensureSchema(env);
   const now = Date.now();
-  await env.DB.batch([env.DB.prepare(`DELETE FROM sync_groups WHERE seen < ?`).bind(now - SYNC_TTL), env.DB.prepare(`DELETE FROM sync_codes WHERE exp < ?`).bind(now),
-    env.DB.prepare(`DELETE FROM sync_devs WHERE gid NOT IN (SELECT gid FROM sync_groups)`)]);
+  await syncClean(env, now);
   const key = b64u(crypto.getRandomValues(new Uint8Array(24))), gid = await gidOf(key);
   await env.DB.prepare(`INSERT INTO sync_groups (gid, ver, ts, seen, devs, size, data) VALUES (?, 1, ?, ?, 1, ?, ?)`).bind(gid, now, now, z.length, z).run();
   const dk = await devAdd(env, gid, b.lbl, now);
@@ -459,7 +487,7 @@ async function syncMakeCode(request, env) {
   if (await slowDown(env, request, 's')) return SLOW();
   const b = await readJson(request, 400);
   await ensureSchema(env);
-  const g = await syncLite(env, b && b.key);
+  const g = await syncLite(env, b && b.key, b && b.dk);
   if (!g) return json({ ok: false, error: 'gone' }, 404);
   const a = await syncAuth(env, b, g); if (a.err) return authFail(a);
   if (g.devs >= SYNC_DEVS) return json({ ok: false, error: 'full' }, 409);
@@ -493,7 +521,7 @@ async function syncPull(request, env) {
   if (await slowDown(env, request, 'p')) return SLOW();
   const b = await readJson(request, 400);
   await ensureSchema(env);
-  const g = await syncLite(env, b && b.key);
+  const g = await syncLite(env, b && b.key, b && b.dk);
   if (!g) return json({ ok: false, error: 'gone' }, 404);
   const a = await syncAuth(env, b, g); if (a.err) return authFail(a);
   await syncTouch(env, g);
@@ -508,7 +536,7 @@ async function syncPush(request, env) {
   const b = await readJson(request, 1_500_000); const z = syncData(b && b.z);
   if (!z || !Number.isInteger(b.base) || !str(b.key, SYNC_KEY)) return json({ ok: false, error: 'bad_fields' }, 400);
   await ensureSchema(env);
-  const g0 = await syncLite(env, b.key);
+  const g0 = await syncLite(env, b.key, b.dk);
   if (!g0) return json({ ok: false, error: 'gone' }, 404);
   const a = await syncAuth(env, b, g0); if (a.err) return authFail(a);
   const gid = g0.gid, now = Date.now(), dk = a.dk ? { dk: a.dk } : {};
@@ -546,7 +574,7 @@ async function syncDevs(request, env) {
   if (await slowDown(env, request, 's')) return SLOW();
   const b = await readJson(request, 400);
   await ensureSchema(env);
-  const g = await syncLite(env, b && b.key);
+  const g = await syncLite(env, b && b.key, b && b.dk);
   if (!g) return json({ ok: false, error: 'gone' }, 404);
   if (!str(b.dk, SYNC_DK)) return json({ ok: false, error: 'kicked' }, 403);
   const a = await syncAuth(env, b, g); if (a.err) return authFail(a);
@@ -558,7 +586,7 @@ async function syncKick(request, env) {
   if (await slowDown(env, request, 's')) return SLOW();
   const b = await readJson(request, 400);
   await ensureSchema(env);
-  const g = await syncLite(env, b && b.key);
+  const g = await syncLite(env, b && b.key, b && b.dk);
   if (!g) return json({ ok: false, error: 'gone' }, 404);
   if (!str(b.dk, SYNC_DK)) return json({ ok: false, error: 'kicked' }, 403);
   const a = await syncAuth(env, b, g); if (a.err) return authFail(a);
@@ -577,7 +605,7 @@ async function syncName(request, env) {
   if (await slowDown(env, request, 's')) return SLOW();
   const b = await readJson(request, 500);
   await ensureSchema(env);
-  const g = await syncLite(env, b && b.key);
+  const g = await syncLite(env, b && b.key, b && b.dk);
   if (!g) return json({ ok: false, error: 'gone' }, 404);
   if (!str(b.dk, SYNC_DK)) return json({ ok: false, error: 'kicked' }, 403);
   const a = await syncAuth(env, b, g); if (a.err) return authFail(a);
@@ -707,10 +735,13 @@ async function cntReady(env, budget) {
 const SNAP_TTL = 10 * 60000, SNAP_LOCK = 2 * 60000;
 // 11-23: 기간 통계(since/until)는 lives를 기간으로 GROUP BY해 한 번에 3~5초 D1을 잡으므로 1시간에 한 번만 다시 센다
 const snapTtl = key => (key === 'all' ? SNAP_TTL : 60 * 60000);
+// 11-25: 받은 스냅숏을 이 서버(isolate) 메모리에 1분 동안 둔다 (예전: 통계 요청마다 stats_snap을 읽었다 — 하루 61만 번)
+const SNAP_MEM = 60e3, snapMem = new Map();
 async function snapStats(env, ctx, key, build) {
   const now = Date.now();
+  const m = snapMem.get(key); if (m && now - m.at < SNAP_MEM) return m.body;
   const row = await env.DB.prepare(`SELECT at, body FROM stats_snap WHERE k = ?`).bind(key).first();
-  if (row && row.body && now - row.at < snapTtl(key)) return row.body;
+  if (row && row.body && now - row.at < snapTtl(key)) { snapMem.set(key, { at: now, body: row.body }); if (snapMem.size > 64) snapMem.delete(snapMem.keys().next().value); return row.body; }
   // 다시 셀 차례를 잡는다: busy가 비었거나 너무 오래된 경우에만 한 요청이 잡는다
   const claim = await env.DB.prepare(
     `INSERT INTO stats_snap (k, at, busy, body) VALUES (?, 0, ?, '') ON CONFLICT(k) DO UPDATE SET busy = excluded.busy WHERE stats_snap.busy < ?`
