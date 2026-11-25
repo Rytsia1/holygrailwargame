@@ -24,7 +24,7 @@ NARR_CORE = r"""
   /* ---------- 창발적 서사 생성기 (narr1125) ---------- */
   function pairSnap(p){
     if(!p) return null;
-    if(p === 'me') return { id:'me', name:S.name, cls:S.hero?CLS[S.hero].n:'', hero:S.hero&&H_BY[S.hero]?H_BY[S.hero].name:'' };
+    if(p === 'me'){ const h = S.hero && H_BY[S.hero]; return { id:'me', name:S.name, cls:h && CLS[h.cls] ? CLS[h.cls].n : '', hero:h ? h.name : '' }; }
     const h = p.hero && H_BY[p.hero];
     return { id:'p'+p.i, i:p.i, name:p.mname||'', cls:p.cls&&CLS[p.cls]?CLS[p.cls].n:'', hero:h?h.name:'', revealed:!!p.revealed, known:!!p.known };
   }
@@ -82,7 +82,7 @@ NARR_CORE = r"""
     if(f.type === 'ally_betray' || f.type === 'ally_abandon'){
       const mid = f.type === 'ally_abandon';
       return {
-        ko: mid ? `${aM}${J(aM,'은')} 가장 위험한 순간에 발을 빼며 동맹을 방패로 내던졌다.` : `${aM}${J(aM,'은')} 동맹의 약속을 깨고 칼끝을 돌렸다.`,
+        ko: mid ? `${aM}${J(aM,은)} 가장 위험한 순간에 발을 빼며 동맹을 방패로 내던졌다.` : `${aM}${J(aM,은)} 동맹의 약속을 깨고 칼끝을 돌렸다.`,
         en: mid ? `${aM} slipped away at the height of battle, leaving their ally as a shield.` : `${aM} broke the alliance and turned the blade against their partner.`,
         ja: mid ? `${aM}は戦いの最中に手を引き、同盟を盾にして姿を消した。` : `${aM}は同盟の誓いを破り、仲間へ刃を向けた。`,
         zhs: mid ? `${aM}在最凶险的时刻抽身而退，把同盟当成了盾牌。` : `${aM}撕毁了同盟之约，将刀锋转向了同伴。`,
@@ -92,7 +92,7 @@ NARR_CORE = r"""
     if(f.type === 'order_refuse'){
       const sv = w.a && w.a.id === 'me' ? T(w.a.hero || '') : aS;
       return {
-        ko: `${sv}${J(sv,'은')} 물러서라는 명령을 꺾고 스스로 전장에 남았다.`,
+        ko: `${sv}${J(sv,은)} 물러서라는 명령을 꺾고 스스로 전장에 남았다.`,
         en: `${sv} defied the order to withdraw and stood their ground.`,
         ja: `${sv}は退却の命を退け、自ら戦場に踏みとどまった。`,
         zhs: `${sv}违抗了撤退的命令，独自留在了战场上。`,
@@ -111,7 +111,7 @@ NARR_CORE = r"""
     if(f.type === 'stray_fight'){
       const rev = m.revenge;
       return {
-        ko: rev ? `주인을 잃은 ${aS}${J(aS,'은')} 복수를 쫓아 ${bM} 조의 밤을 덮쳤다.` : `주인을 잃은 ${aS}${J(aS,'은')} 홀로 싸움을 이어 가며 ${bM} 조와 맞부딪쳤다.`,
+        ko: rev ? `주인을 잃은 ${aS}${J(aS,은)} 복수를 쫓아 ${bM} 조의 밤을 덮쳤다.` : `주인을 잃은 ${aS}${J(aS,은)} 홀로 싸움을 이어 가며 ${bM} 조와 맞부딪쳤다.`,
         en: rev ? `Masterless ${aS} hunted down ${bM} in vengeance for their fallen Master.` : `Despite losing their Master, ${aS} fought on alone and clashed with ${bM}.`,
         ja: rev ? `主を失った${aS}は仇を追い、${bM}へ夜襲を仕掛けた。` : `主を失った${aS}はなお戦いを続け、${bM}と激突した。`,
         zhs: rev ? `失去御主的${aS}追寻复仇，夜袭了${bM}。` : `失去御主的${aS}依然独自继续战斗，与${bM}正面交锋。`,
@@ -120,7 +120,7 @@ NARR_CORE = r"""
     }
     if(f.type === 'servant_defect'){
       return {
-        ko: `신뢰가 무너진 끝에서, ${aS}${J(aS,'은')} 옛 주인을 버리고 전장을 떠났다.`,
+        ko: `신뢰가 무너진 끝에서, ${aS}${J(aS,은)} 옛 주인을 버리고 전장을 떠났다.`,
         en: `With trust shattered, ${aS} abandoned their Master and walked away from the contract.`,
         ja: `信頼が崩れ去った末に、${aS}は主を見限り契約を断ち切った。`,
         zhs: `在信任彻底崩塌之后，${aS}背弃了旧主，转身离去。`,
@@ -224,19 +224,19 @@ NARR_CORE = r"""
           zht:'裂痕既生，彼此的信任終究未能挽回。',
         }[L];
         const act = f.type === 'ally_abandon' ? {
-          ko:`${dayTag(d1)}, ${mN}${J(mN,'은')} 난전 한가운데서 발을 빼며 동맹을 방패로 세웠다.`,
+          ko:`${dayTag(d1)}, ${mN}${J(mN,은)} 난전 한가운데서 발을 빼며 동맹을 방패로 세웠다.`,
           en:`On ${dayTag(d1)}, ${mN} withdrew mid-battle, abandoning their ally to take the blow.`,
           ja:`${dayTag(d1)}、${mN}は乱戦のただ中で手を引き、同盟を盾にして姿を消した。`,
           zhs:`${dayTag(d1)}，${mN}在混战中抽身而退，将同盟留作挡箭牌。`,
           zht:`${dayTag(d1)}，${mN}在混戰中抽身而退，將同盟留作擋箭牌。`,
         }[L] : (f.meta && f.meta.kind === 'sellout') ? {
-          ko:`${dayTag(d1)}, ${mN}${J(mN,'은')} 동맹의 거처를 다른 진영에 팔아넘겼다.`,
+          ko:`${dayTag(d1)}, ${mN}${J(mN,은)} 동맹의 거처를 다른 진영에 팔아넘겼다.`,
           en:`On ${dayTag(d1)}, ${mN} betrayed the pact by selling out their ally's hideout to rival hunters.`,
           ja:`${dayTag(d1)}、${mN}は同盟の拠点を他陣営に売り渡した。`,
           zhs:`${dayTag(d1)}，${mN}背弃盟约，将同盟的据点出卖给了敌方。`,
           zht:`${dayTag(d1)}，${mN}背棄盟約，將同盟的據點出賣給了敵方。`,
         }[L] : {
-          ko:`${dayTag(d0)}에 맺은 손을 뒤로한 채, ${dayTag(d1)}에 ${mN}${J(mN,'은')} 동맹에게 칼을 겨누었다.`,
+          ko:`${dayTag(d0)}에 맺은 손을 뒤로한 채, ${dayTag(d1)}에 ${mN}${J(mN,은)} 동맹에게 칼을 겨누었다.`,
           en:`Forgetting the oath sworn on ${dayTag(d0)}, ${mN} turned their blade against their ally on ${dayTag(d1)}.`,
           ja:`${dayTag(d0)}に結んだ手を裏切り、${dayTag(d1)}、${mN}は同盟へと刃を向けた。`,
           zhs:`背弃了${dayTag(d0)}的盟约，${mN}在${dayTag(d1)}向同盟举起了刀刃。`,
@@ -277,7 +277,7 @@ NARR_CORE = r"""
           id: 'masterless_' + f.id, kind: 'masterless',
           title: { ko:'주인 없는 칼날', en:'A Blade Without a Master', ja:'主なき刃', zhs:'无主之刃', zht:'無主之刃' }[L],
           body: `${{
-            ko:`${dayTag(d0)}, 마스터가 쓰러졌지만 ${sN}${J(sN,'은')} 흩어지지 않았다.`,
+            ko:`${dayTag(d0)}, 마스터가 쓰러졌지만 ${sN}${J(sN,은)} 흩어지지 않았다.`,
             en:`On ${dayTag(d0)}, their Master perished, yet ${sN} refused to vanish.`,
             ja:`${dayTag(d0)}、マスターが倒れてなお、${sN}は消滅を拒んだ。`,
             zhs:`${dayTag(d0)}，御主虽已陨落，${sN}却并未就此消散。`,
@@ -305,7 +305,7 @@ NARR_CORE = r"""
           id: 'coop_' + f.id, kind: 'enemy_coop',
           title: { ko:'적과의 동행', en:'Reluctant Alliance', ja:'敵との共闘', zhs:'强敌暂盟', zht:'強敵暫盟' }[L],
           body: `${pre} ${{
-            ko:`${dayTag(f.d)}에 ${aM}${J(aM,'과')} ${bM}${J(bM,'은')} ${tgt ? tgt + '이라는 ' : ''}거대한 위협 앞에서 잠시 손을 잡았다.`,
+            ko:`${dayTag(f.d)}에 ${aM}${J(aM,과)} ${bM}${J(bM,은)} ${tgt ? tgt + '이라는 ' : ''}거대한 위협 앞에서 잠시 손을 잡았다.`,
             en:`on ${dayTag(f.d)}, ${aM} and ${bM} were forced to join forces${tgt ? ` against ${tgt}` : ' against a greater threat'}.`,
             ja:`${dayTag(f.d)}、${aM}と${bM}は${tgt ? `${tgt}という` : ''}強大な脅威を前にやむなく手を結んだ。`,
             zhs:`在${dayTag(f.d)}，${aM}与${bM}面对${tgt ? `${tgt}这一` : ''}共同的强敌，不得不暂时并肩。`,
@@ -334,7 +334,7 @@ NARR_CORE = r"""
           id: 'defiance_' + r0.id, kind: 'defiance',
           title: { ko:'꺾이지 않은 의지', en:'Unbowed Defiance', ja:'折れぬ意志', zhs:'不屈的抗命', zht:'不屈的抗命' }[L],
           body: `${sealTxt} ${{
-            ko:`${dayTag(r0.d)}에 ${sv}${J(sv,'은')} 명령을 정면으로 거부했다.${hasDef ? ' 결국 계약마저 끊어지고 말았다.' : ''}`,
+            ko:`${dayTag(r0.d)}에 ${sv}${J(sv,은)} 명령을 정면으로 거부했다.${hasDef ? ' 결국 계약마저 끊어지고 말았다.' : ''}`,
             en:`on ${dayTag(r0.d)}, ${sv} defied their Master's order.${hasDef ? ' Ultimately, even the contract shattered.' : ''}`,
             ja:`${dayTag(r0.d)}、${sv}は主の命令を正面から拒んだ。${hasDef ? 'ついには契約までもが断ち切られた。' : ''}`,
             zhs:`${dayTag(r0.d)}，${sv}正面违抗了御主的命令。${hasDef ? '最终连契约也彻底断裂。' : ''}`,
@@ -349,7 +349,7 @@ NARR_CORE = r"""
           id: 'devotion_' + p0.id, kind: 'devotion',
           title: { ko:'방패가 된 충의', en:'Shield of Loyalty', ja:'盾となった忠義', zhs:'化为盾牌的忠义', zht:'化為盾牌的忠義' }[L],
           body: {
-            ko:`전쟁 내내 ${sv}${J(sv,'은')} 마스터의 안전을 가장 먼저 두었다. ${cnt}번의 위기 속에서 몸을 던져 치명상을 막아 냈다.`,
+            ko:`전쟁 내내 ${sv}${J(sv,은)} 마스터의 안전을 가장 먼저 두었다. ${cnt}번의 위기 속에서 몸을 던져 치명상을 막아 냈다.`,
             en:`Throughout the war, ${sv} placed their Master's life above their own, stepping into harm's way ${cnt} time${cnt>1?'s':''}.`,
             ja:`戦いを通じて${sv}はマスターの命を何より重んじ、${cnt}度の危機で身を挺して一撃を防ぎ切った。`,
             zhs:`整场战争中，${sv}始终将御主的安危置于首位，在${cnt}次险境中挺身挡下了致命一击。`,
@@ -494,8 +494,8 @@ rp(
 "if(_bait&&ch(_bs*.42)){ w.sacrificed=1; _allyS.ally=false; _allyS.allyGone=true; w.exposure=clamp(w.exposure+expUp(18)); relShift('p'+_allyS.i,'me',{trust:-35,affection:-25,grudge:25}); const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+_allyS.i); recFact('ally_betray',{actor:'p'+_allyS.i,target:'me',who:{a:pairSnap(_allyS),b:pairSnap('me')},rel:relGet('p'+_allyS.i,'me'),persona:masterPersona(_allyS),causeId:_pr&&_pr.id,meta:{kind:'sellout'},beat:true}); log('동맹이 등을 돌렸다. 당신의 거처를 다른 조에 팔아넘긴 것이다.','loss'); wrec('mine',`동맹 ${_allyS.mname}${J(_allyS.mname,이)} 거처를 팔아넘겼다`,{p:_allyS.i}); return battle(_bait,{ambushed:true}); }"
 )
 rp(
-"const _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}",
-"const _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+a.i);recFact('ally_betray',{actor:'p'+a.i,target:'me',who:{a:pairSnap(a),b:pairSnap('me')},rel:relGet('p'+a.i,'me'),persona:masterPersona(a),causeId:_pr&&_pr.id,meta:{kind:'ambush'},beat:true});log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}"
+"const a=W().pairs.find(allyOld), _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}",
+"const a=W().pairs.find(allyOld), _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+a.i);recFact('ally_betray',{actor:'p'+a.i,target:'me',who:{a:pairSnap(a),b:pairSnap('me')},rel:relGet('p'+a.i,'me'),persona:masterPersona(a),causeId:_pr&&_pr.id,meta:{kind:'ambush'},beat:true});log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}"
 )
 rp(
 "if(it==='betray'){ a.ally=false; S.flags.allyBetrayed=1; log(`손을 내민 순간, ${a.mname}의 서번트가 먼저 움직였다. 처음부터 이럴 생각이었던 것이다.`,'loss');",

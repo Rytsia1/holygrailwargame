@@ -202,7 +202,7 @@ button.pair:hover{border-color:var(--gold)}
 .entry.note .b,.sub.note{color:var(--dim);font-family:var(--f-ui);font-size:14px}
 .entry.dead .b,.sub.dead{color:var(--text);font-weight:700}
 .entry.n .b,.sub.n{color:#cfc8ba}
-.entry.guide .b,.sub.guide{color:var(--gold2);font-family:var(--f-ui);font-size:14.5px;font-weight:600;background:rgba(201,164,92,.12);border-left:3px solid var(--gold);padding:6px 10px;border-radius:4px}
+.entry.story .b,.sub.story{color:#e6d9f2;font-family:var(--f-story);font-style:italic;border-left:2px solid rgba(180,150,220,.65);padding:4px 10px;background:rgba(160,130,210,.06);border-radius:0 6px 6px 0}.narr-btn{margin-left:auto;background:none;border:1px solid rgba(201,164,92,.4);color:var(--gold2);border-radius:999px;font:500 11px var(--f-ui);padding:2px 9px;cursor:pointer}.narr-btn:hover{background:rgba(201,164,92,.12)}.narr-box{display:grid;gap:10px;margin:8px 0 14px}.narr-title{font-family:var(--f-display);font-size:18px;color:var(--gold2);margin:0 0 6px}.narr-arc{padding:10px 12px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;background:rgba(255,255,255,.02)}.narr-arc.betrayal{border-left-color:#c03a45}.narr-arc.masterless{border-left-color:#8a86c9}.narr-arc.enemy_coop{border-left-color:#86ab92}.narr-arc.defiance{border-left-color:#e0b48a}.narr-arc.devotion{border-left-color:#9bd3ac}.narr-arc h5{margin:0 0 4px;font-size:13px;color:var(--gold2);display:flex;justify-content:space-between;align-items:center}.narr-arc h5 small{font-family:var(--f-mono);font-size:11px;color:var(--faint);font-weight:400}.narr-arc p{margin:0;font-family:var(--f-story);font-size:13.5px;line-height:1.65;color:var(--text)}.entry.guide .b,.sub.guide{color:var(--gold2);font-family:var(--f-ui);font-size:14.5px;font-weight:600;background:rgba(201,164,92,.12);border-left:3px solid var(--gold);padding:6px 10px;border-radius:4px}
 .entry.q .qt{display:block;font-family:var(--f-ui);font-size:11.5px;letter-spacing:.08em;color:var(--faint)}
 .entry.q .qb{display:block;color:var(--dim)}
 .entry.q .pk{display:block;margin-top:2px;font-family:var(--f-ui);font-size:14px;font-weight:500;color:var(--gold2)}
@@ -1919,8 +1919,8 @@ body.lb-reading .lb-disc,body.lb-hideui .lb-disc,body.lb-rec .lb-disc,body.lb-hi
 <div id="ldScr" data-notr role="status" aria-live="polite"><canvas id="ldBg"></canvas><canvas id="ldCup"></canvas><p id="ldTxt"><span></span><b>0%</b></p></div>
 <script>
 (()=>{let L='ko';const ZO=true,LS=['ko','en','ja','zhs','zht'];let q=null,v=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(LS.includes(q))localStorage.setItem('cupnight.lang',JSON.stringify(q));v=JSON.parse(localStorage.getItem('cupnight.lang')||'null');}catch(e){}if(LS.includes(q))L=q;else if(LS.includes(v))L=v;else{try{const n=((navigator.languages&&navigator.languages[0])||navigator.language||'ko').toLowerCase();L=n.startsWith('ko')?'ko':n.startsWith('ja')?'ja':(ZO&&n.startsWith('zh'))?(/hant|tw|hk|mo/.test(n)?'zht':'zhs'):'en'}catch(e){}}window.__LANG=L;
- if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=91e087a0"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=542af1a8"><\/script>');
- if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'2aeebc16',zht:'c95ba5e0'}[L]+'"><\/script>');
+ if(L==='en'||L==='zhs'||L==='zht') document.write('<script src="assets/i18n/en.js?v=e59f7242"><\/script>'); if(L==='ja') document.write('<script src="assets/i18n/ja.js?v=bd0be48b"><\/script>');
+ if(L==='zhs'||L==='zht') document.write('<script src="assets/i18n/'+L+'.js?v='+{zhs:'3b56676e',zht:'700aced4'}[L]+'"><\/script>');
  document.querySelector('#ldTxt span').textContent={ko:'성배에 마력이 차오른다',en:'Mana is filling the Grail',ja:'聖杯に魔力が満ちていく',zhs:'魔力正在注满圣杯',zht:'魔力正在注滿聖杯'}[L];})();
 /* ===== 로딩 화면 (11-13): 하늘에서 금빛 줄기가 졸졸 떨어져 성배를 채우고, 넘쳐 쏟아진 뒤 성배와 검은 배경이 픽셀로 흩어진다 =====
    게임 HTML 맨 앞(<body> 바로 뒤)에 들어가 가장 먼저 그려진다. 문서가 다 불러와지고 로비 배경까지 그려지면 끝난다. */
@@ -2178,7 +2178,7 @@ play();
       <aside>
         <div class="card herocard hidden" id="servCard"></div>
         <div class="card hidden" id="heroCard"></div>
-        <div class="card hidden" id="pairsCard"><h3 title="눌러서 자세히"><span id="pairsTitle">같은 성배를 다투는 일곱 조</span> <small id="pairsLeft"></small></h3><div class="pairs" id="pairs"></div></div>
+        <div class="card hidden" id="pairsCard"><h3 title="눌러서 자세히" style="display:flex;align-items:center;gap:6px"><span id="pairsTitle">같은 성배를 다투는 일곱 조</span> <small id="pairsLeft"></small><button type="button" class="narr-btn" id="narrOpenBtn">전쟁 서사</button></h3><div class="pairs" id="pairs"></div></div>
         <div class="card"><h3>상태 <small id="circ"></small></h3><div class="prof" id="prof"></div><div id="stats"></div><div id="affs"></div></div>
         <div class="card" id="artsCard"><h3>익힌 기술</h3><div class="fam" id="arts"></div></div>
         <div class="card" id="focusCard"><h3>올해의 목표 <small>언제든 바꿀 수 있습니다</small></h3><div class="focus" id="focus"></div><div class="focus-d" id="focusD"></div></div>
@@ -6822,7 +6822,7 @@ const Sim = (() => {
     const f0=S.flags.firstHero&&S.flags.firstHero!==S.hero?H_BY[S.flags.firstHero]:null;
     const lab=p=>({bxn:p.bxNun?1:undefined,sent:p.bxSentUsed?1:undefined,abs:p.bxAbs?1:undefined,i:p.i,id:p.hero,fought:!!p.fought,byMe:!!p.byMe,cls:CLS[p.cls].n,hero:H_BY[p.hero].name,title:H_BY[p.hero].title,heroKnown:!!p.revealed,hint:p.revealed?null:(p.hint||null),mname:p.mname||null,arche:p.arche||null,mKnown:!!(p.known||p.ally||!p.alive),art:artOf(H_BY[p.hero]).n,artKnown:!!p.artKnown,mg:p.master!==undefined?`${mTier(p)}등급 · ${MGRP_N[mGrp(p)]}`:null,mgKnown:!!(p.mDueled||p.intel>=60),alive:!!p.alive,ally:!!p.ally,out:p.out||null,extra:p.extra?H_BY[p.extra].name:null,ghost:p.ghost?{gid:p.ghost.gid,year:p.ghost.year,city:p.ghost.city,join:p.joinDay||null}:null});
     return { day:w.day, my:{id:h.id,ccls:h.cls,cls:cn(h),name:h.name,title:h.title,art:a.n,artR:a.r,trust:Math.round(w.trust),frag:w.frag||0,fragN:h.frags.length,alive:!!w.heroAlive,out:w.myOut||null,first:f0?`${cn(f0)} ${f0.name}`:null,rel:(w.rel&&w.rel.h===h.id&&w.rel.stage)?{tr:w.rel.track,st:w.rel.stage,n:relName(w.rel),stay:stayHome(),old:!!S.flags.stayDied,wed:!!S.flags.relWed,mx:w.rel.mx||{[w.rel.track]:w.rel.stage}}:null},
-      pairs:w.pairs.map(lab), bt:w.bt||null, kills:w.kills||0, seals:w.sealLog||[], sealsLeft:Math.max(0,w.seals||0), np:w.npN||0, tl:(w.tl||[]).slice(0,80), last:w.lastVoice||'',
+      pairs:w.pairs.map(lab), bt:w.bt||null, kills:w.kills||0, seals:w.sealLog||[], sealsLeft:Math.max(0,w.seals||0), np:w.npN||0, tl:(w.tl||[]).slice(0,80), facts:(w.facts||[]).slice(-60), last:w.lastVoice||'',
       winner:w.winner||0, cup:(S.flags.war==='victor'||S.flags.war==='shared')&&!(w.crisis&&w.crisis.type==='beast3R')?(w.cupPure?'pure':'dark'):null, broke:!!S.flags.brokeCup, cx:w.crisis?{type:w.crisis.type,st:w.crisis.stage,sk:w.crisis.shadowKills||0,dd:w.crisis.type==='beast3R'?(w.crisis.descD||undefined):undefined,bx:w.crisis.type==='beast3R'?(S.flags.bxEnd||(S.flags.bxDream?'dream':'')):undefined,end:w.crisis.type==='beast3R'?null:S.flags.cupSealed?'seal':S.flags.cupKey?'key':S.flags.cxFlood?'flood':S.flags.cxNpcBreak?'npcBreak':S.flags.cxNpcClaim?'npcClaim':S.flags.cxClaim?'claim':S.flags.brokeCup?'break':null,rep:cxRep()}:null, wish:S.flags.wishText||'', ally:S.flags.allyName||'' };
   }
   function record(){
@@ -7202,7 +7202,452 @@ const Sim = (() => {
     log(`${h.name}${J(h.name,이)} 몸을 던져 ${srcTxt} 막아 냈다.`, 'war');
     if(CHK) CHK.push({txt:'「충의」로운 서번트가 당신을 지켜 냈다', ok:true});
     relShift('me', 'hero', {trust:2, affection:3, respect:2});
+    recFact('servant_protect',{actor:'hero',target:'me',who:{a:pairSnap('me')},rel:relGet('me','hero'),persona:sp});
     return true;
+  }
+
+  /* ---------- 창발적 서사 생성기 (narr1125) ---------- */
+  function pairSnap(p){
+    if(!p) return null;
+    if(p === 'me'){ const h = S.hero && H_BY[S.hero]; return { id:'me', name:S.name, cls:h && CLS[h.cls] ? CLS[h.cls].n : '', hero:h ? h.name : '' }; }
+    const h = p.hero && H_BY[p.hero];
+    return { id:'p'+p.i, i:p.i, name:p.mname||'', cls:p.cls&&CLS[p.cls]?CLS[p.cls].n:'', hero:h?h.name:'', revealed:!!p.revealed, known:!!p.known };
+  }
+  function narrName(sn, trFn, isServ){
+    if(!sn) return '';
+    if(sn.id === 'me'){ return isServ ? trFn(sn.hero || sn.cls) : trFn(sn.name); }
+    const c = trFn(sn.cls || '???');
+    if(isServ) return sn.revealed && sn.hero ? `${trFn(sn.hero)} (${c})` : c;
+    return sn.name ? `${trFn(sn.name)} (${c})` : c;
+  }
+  function recFact(type, data = {}){
+    const w = W(); if(!w) return null;
+    w.facts = w.facts || [];
+    if(w.facts.length >= 120) return null;
+    const f = {
+      id: (w.factSeq = (w.factSeq || 0) + 1),
+      d: w.day || 0,
+      tod: w.tod || '낮',
+      type,
+      actor: data.actor || null,
+      target: data.target || null,
+      who: data.who || null,
+      rel: data.rel ? { ...data.rel } : null,
+      persona: data.persona || null,
+      causeId: data.causeId || null,
+      meta: data.meta || null,
+    };
+    w.facts.push(f);
+    if(data.beat){
+      const koTxt = narrBeat(f, 'ko', x=>x);
+      if(koTxt) log(koTxt, 'story', { fact: f });
+    }
+    return f;
+  }
+  function lastFactOf(types, pred){
+    const w = W(); if(!w || !w.facts) return null;
+    const ts = Array.isArray(types) ? types : [types];
+    for(let i = w.facts.length - 1; i >= 0; i--){
+      const f = w.facts[i];
+      if(ts.includes(f.type) && (!pred || pred(f))) return f;
+    }
+    return null;
+  }
+
+  function narrBeat(f, lg='ko', trFn){
+    if(!f) return '';
+    const L = ['ko','en','ja','zhs','zht'].includes(lg) ? lg : 'ko';
+    const T = trFn || (typeof tr === 'function' ? tr : x => x);
+    const w = f.who || {};
+    const aM = w.a ? narrName(w.a, T, false) : (w.aLabel ? T(w.aLabel) : '');
+    const aS = w.a ? narrName(w.a, T, true) : '';
+    const bM = w.b ? narrName(w.b, T, false) : (w.bLabel ? T(w.bLabel) : '');
+    const bS = w.b ? narrName(w.b, T, true) : '';
+    const m = f.meta || {};
+    if(f.type === 'ally_betray' || f.type === 'ally_abandon'){
+      const mid = f.type === 'ally_abandon';
+      return {
+        ko: mid ? `${aM}${J(aM,은)} 가장 위험한 순간에 발을 빼며 동맹을 방패로 내던졌다.` : `${aM}${J(aM,은)} 동맹의 약속을 깨고 칼끝을 돌렸다.`,
+        en: mid ? `${aM} slipped away at the height of battle, leaving their ally as a shield.` : `${aM} broke the alliance and turned the blade against their partner.`,
+        ja: mid ? `${aM}は戦いの最中に手を引き、同盟を盾にして姿を消した。` : `${aM}は同盟の誓いを破り、仲間へ刃を向けた。`,
+        zhs: mid ? `${aM}在最凶险的时刻抽身而退，把同盟当成了盾牌。` : `${aM}撕毁了同盟之约，将刀锋转向了同伴。`,
+        zht: mid ? `${aM}在最凶險的時刻抽身而退，把同盟當成了盾牌。` : `${aM}撕毀了同盟之約，將刀鋒轉向了同伴。`,
+      }[L];
+    }
+    if(f.type === 'order_refuse'){
+      const sv = w.a && w.a.id === 'me' ? T(w.a.hero || '') : aS;
+      return {
+        ko: `${sv}${J(sv,은)} 물러서라는 명령을 꺾고 스스로 전장에 남았다.`,
+        en: `${sv} defied the order to withdraw and stood their ground.`,
+        ja: `${sv}は退却の命を退け、自ら戦場に踏みとどまった。`,
+        zhs: `${sv}违抗了撤退的命令，独自留在了战场上。`,
+        zht: `${sv}違抗了撤退的命令，獨自留在了戰場上。`,
+      }[L];
+    }
+    if(f.type === 'enemy_coop'){
+      return {
+        ko: `서로 칼을 겨누던 ${aM} 조와 ${bM} 조가 공동의 위협 앞에서 손을 잡았다.`,
+        en: `Former foes ${aM} and ${bM} set aside their blades to face a common threat.`,
+        ja: `刃を交えていた${aM}と${bM}が、共通の脅威を前に手を組んだ。`,
+        zhs: `曾兵戎相见的${aM}与${bM}在共同的威胁面前暂时联手。`,
+        zht: `曾兵戎相見的${aM}與${bM}在共同的威脅面前暫時聯手。`,
+      }[L];
+    }
+    if(f.type === 'stray_fight'){
+      const rev = m.revenge;
+      return {
+        ko: rev ? `주인을 잃은 ${aS}${J(aS,은)} 복수를 쫓아 ${bM} 조의 밤을 덮쳤다.` : `주인을 잃은 ${aS}${J(aS,은)} 홀로 싸움을 이어 가며 ${bM} 조와 맞부딪쳤다.`,
+        en: rev ? `Masterless ${aS} hunted down ${bM} in vengeance for their fallen Master.` : `Despite losing their Master, ${aS} fought on alone and clashed with ${bM}.`,
+        ja: rev ? `主を失った${aS}は仇を追い、${bM}へ夜襲を仕掛けた。` : `主を失った${aS}はなお戦いを続け、${bM}と激突した。`,
+        zhs: rev ? `失去御主的${aS}追寻复仇，夜袭了${bM}。` : `失去御主的${aS}依然独自继续战斗，与${bM}正面交锋。`,
+        zht: rev ? `失去御主的${aS}追尋復仇，夜襲了${bM}。` : `失去御主的${aS}依然獨自繼續戰鬥，與${bM}正面交鋒。`,
+      }[L];
+    }
+    if(f.type === 'servant_defect'){
+      return {
+        ko: `신뢰가 무너진 끝에서, ${aS}${J(aS,은)} 옛 주인을 버리고 전장을 떠났다.`,
+        en: `With trust shattered, ${aS} abandoned their Master and walked away from the contract.`,
+        ja: `信頼が崩れ去った末に、${aS}は主を見限り契約を断ち切った。`,
+        zhs: `在信任彻底崩塌之后，${aS}背弃了旧主，转身离去。`,
+        zht: `在信任徹底崩塌之後，${aS}背棄了舊主，轉身離去。`,
+      }[L];
+    }
+    return '';
+  }
+
+  function detectArcs(facts){
+    const byId = new Map((facts || []).map(f => [f.id, f]));
+    const arcs = [];
+    const used = new Set();
+
+    // 1) Pengkhianatan Aliansi (Betrayal)
+    for(const f of facts){
+      if(f.type !== 'ally_betray' && f.type !== 'ally_abandon') continue;
+      const chain = [f.id];
+      let cur = f.causeId ? byId.get(f.causeId) : null;
+      const causeTypes = [];
+      let guard = 0;
+      while(cur && guard++ < 5){
+        chain.unshift(cur.id);
+        causeTypes.push(cur.type);
+        cur = cur.causeId ? byId.get(cur.causeId) : null;
+      }
+      // Cari ally_form sebelumnya jika belum masuk chain
+      const form = facts.find(x => x.type === 'ally_form' && x.d <= f.d && (x.actor === f.actor || x.target === f.actor) && !chain.includes(x.id));
+      if(form) chain.unshift(form.id);
+      const ignored = facts.find(x => x.type === 'ally_ignore' && x.d <= f.d && x.actor === f.actor);
+      if(ignored && !chain.includes(ignored.id)) chain.push(ignored.id);
+      const after = facts.find(x => (x.type === 'kill' || x.type === 'duel_clash') && x.d >= f.d && (x.actor === f.actor || x.target === f.actor));
+      if(after && !chain.includes(after.id)) chain.push(after.id);
+      chain.forEach(id => used.add(id));
+      arcs.push({ kind:'betrayal', fact:f, form, ignored, after, factIds:chain });
+    }
+
+    // 2) Master Gugur, Servant Terus Bertarung (Masterless)
+    for(const f of facts){
+      if(f.type !== 'master_die_stray') continue;
+      const fights = facts.filter(x => (x.type === 'stray_fight' || x.type === 'stray_recontract' || x.type === 'kill') && (x.causeId === f.id || (x.actor === f.actor && x.d >= f.d)));
+      if(!fights.length) continue;
+      const fids = [f.id, ...fights.map(x => x.id)];
+      arcs.push({ kind:'masterless', fact:f, fights, factIds:fids });
+    }
+
+    // 3) Dua Musuh Terpaksa Bekerja Sama (Forced Cooperation)
+    for(const f of facts){
+      if(f.type !== 'enemy_coop') continue;
+      const prior = f.causeId ? byId.get(f.causeId) : facts.find(x => x.type === 'duel_clash' && x.d <= f.d && ((x.actor === f.actor && x.target === f.target) || (x.actor === f.target && x.target === f.actor)));
+      const fids = [prior ? prior.id : null, f.id].filter(Boolean);
+      arcs.push({ kind:'enemy_coop', fact:f, prior, factIds:fids });
+    }
+
+    // 4) Servant Menolak Perintah / Membangkang (Defiance)
+    const refuses = facts.filter(f => f.type === 'order_refuse' || f.type === 'servant_defect');
+    if(refuses.length){
+      const seals = facts.filter(f => f.type === 'seal_force' && f.d <= refuses[refuses.length - 1].d);
+      const fids = [...seals.map(x => x.id), ...refuses.map(x => x.id)];
+      arcs.push({ kind:'defiance', fact:refuses[0], refuses, seals, factIds:fids });
+    }
+
+    // 5) Kesetiaan Loyal Servant (Devotion)
+    const prots = facts.filter(f => f.type === 'servant_protect');
+    if(prots.length >= 1){
+      arcs.push({ kind:'devotion', fact:prots[0], prots, factIds:prots.map(x => x.id) });
+    }
+
+    return arcs;
+  }
+
+  function renderNarrative(facts, ctx = {}, lg = 'ko', trFn){
+    const L = ['ko','en','ja','zhs','zht'].includes(lg) ? lg : 'ko';
+    const T = trFn || (typeof tr === 'function' ? tr : x => x);
+    const list = Array.isArray(facts) ? facts : [];
+    const arcs = detectArcs(list);
+    const outArcs = [];
+    const dayTag = d => ({ ko:`제${d}일`, en:`Day ${d}`, ja:`${d}日目`, zhs:`第${d}天`, zht:`第${d}天` }[L]);
+
+    for(const a of arcs){
+      const f = a.fact, w = f.who || {};
+      if(a.kind === 'betrayal'){
+        const mN = narrName(w.a, T, false), d0 = a.form ? a.form.d : f.d, d1 = f.d;
+        const why = a.ignored ? {
+          ko:'구원 요청을 외면당했던 밤의 원한이 쌓인 결과였다.',
+          en:'It was the price of an earlier plea for aid left unanswered.',
+          ja:'かつて救援を求めた夜に見捨てられた恨みが積もった結果だった。',
+          zhs:'那是昔日求援却遭冷眼旁观后积攒的怨恨所致。',
+          zht:'那是昔日求援卻遭冷眼旁觀後積攢的怨恨所致。',
+        }[L] : (f.persona && f.persona.ruthless >= 65) ? {
+          ko:'처음부터 타인을 이용하다 버릴 계산이 서 있던 비정한 결단이었다.',
+          en:'Cold calculation drove them from the first—allies were only shields to discard.',
+          ja:'最初から他者を利用し切り捨てる計算の上に立った非情な決断だった。',
+          zhs:'从一开始便算计着利用并舍弃同伴，这是毫无怜悯的决断。',
+          zht:'從一開始便算計著利用並捨棄同伴，這是毫無憐憫的決斷。',
+        }[L] : {
+          ko:'금 간 신뢰는 끝내 회복되지 못했다.',
+          en:'Once fractured, their trust never healed.',
+          ja:'ひび割れた信頼はついに戻ることはなかった。',
+          zhs:'裂痕既生，彼此的信任终究未能挽回。',
+          zht:'裂痕既生，彼此的信任終究未能挽回。',
+        }[L];
+        const act = f.type === 'ally_abandon' ? {
+          ko:`${dayTag(d1)}, ${mN}${J(mN,은)} 난전 한가운데서 발을 빼며 동맹을 방패로 세웠다.`,
+          en:`On ${dayTag(d1)}, ${mN} withdrew mid-battle, abandoning their ally to take the blow.`,
+          ja:`${dayTag(d1)}、${mN}は乱戦のただ中で手を引き、同盟を盾にして姿を消した。`,
+          zhs:`${dayTag(d1)}，${mN}在混战中抽身而退，将同盟留作挡箭牌。`,
+          zht:`${dayTag(d1)}，${mN}在混戰中抽身而退，將同盟留作擋箭牌。`,
+        }[L] : (f.meta && f.meta.kind === 'sellout') ? {
+          ko:`${dayTag(d1)}, ${mN}${J(mN,은)} 동맹의 거처를 다른 진영에 팔아넘겼다.`,
+          en:`On ${dayTag(d1)}, ${mN} betrayed the pact by selling out their ally's hideout to rival hunters.`,
+          ja:`${dayTag(d1)}、${mN}は同盟の拠点を他陣営に売り渡した。`,
+          zhs:`${dayTag(d1)}，${mN}背弃盟约，将同盟的据点出卖给了敌方。`,
+          zht:`${dayTag(d1)}，${mN}背棄盟約，將同盟的據點出賣給了敵方。`,
+        }[L] : {
+          ko:`${dayTag(d0)}에 맺은 손을 뒤로한 채, ${dayTag(d1)}에 ${mN}${J(mN,은)} 동맹에게 칼을 겨누었다.`,
+          en:`Forgetting the oath sworn on ${dayTag(d0)}, ${mN} turned their blade against their ally on ${dayTag(d1)}.`,
+          ja:`${dayTag(d0)}に結んだ手を裏切り、${dayTag(d1)}、${mN}は同盟へと刃を向けた。`,
+          zhs:`背弃了${dayTag(d0)}的盟约，${mN}在${dayTag(d1)}向同盟举起了刀刃。`,
+          zht:`背棄了${dayTag(d0)}的盟約，${mN}在${dayTag(d1)}向同盟舉起了刀刃。`,
+        }[L];
+        outArcs.push({
+          id: 'betrayal_' + f.id, kind: 'betrayal',
+          title: { ko:'끊어진 맹세', en:'Broken Oaths', ja:'砕かれた誓約', zhs:'破碎的盟誓', zht:'破碎的盟誓' }[L],
+          body: `${act} ${why}`,
+          days: [d0, d1], factIds: a.factIds
+        });
+      } else if(a.kind === 'masterless'){
+        const sN = narrName(w.a, T, true), d0 = f.d, cnt = a.fights.length;
+        const lastF = a.fights[cnt - 1];
+        const re = a.fights.find(x => x.type === 'stray_recontract');
+        const rev = a.fights.some(x => x.meta && x.meta.revenge);
+        const tail = re ? {
+          ko:`결국 ${dayTag(re.d)}에 새 마스터와 다시 계약을 맺으며 전장에 남았다.`,
+          en:`Eventually on ${dayTag(re.d)}, they forged a new pact and stayed in the war.`,
+          ja:`やがて${dayTag(re.d)}、新たなマスターと契約を結び直し戦場に留まった。`,
+          zhs:`最终在${dayTag(re.d)}与新御主缔结契约，留在了战局之中。`,
+          zht:`最終在${dayTag(re.d)}與新御主締結契約，留在了戰局之中。`,
+        }[L] : {
+          ko:`주인의 죽음 뒤에도 ${cnt}차례나 검을 맞대며 마지막 마력이 다할 때까지 싸움을 멈추지 않았다.`,
+          en:`Even after their Master fell, they crossed blades ${cnt} more time${cnt>1?'s':''}, refusing to fade quietly.`,
+          ja:`主を失った後も${cnt}度にわたり刃を交え、残る魔力が尽きるまで戦い続けた。`,
+          zhs:`在御主身亡后仍${cnt}次挥刃交锋，直至魔力耗尽也未曾停步。`,
+          zht:`在御主身亡後仍${cnt}次揮刃交鋒，直至魔力耗盡也未曾停步。`,
+        }[L];
+        const mid = rev ? {
+          ko:`특히 마스터를 쓰러뜨린 원수를 쫓아 밤거리를 덮쳤다.`,
+          en:`Driven by vengeance, they hunted down the very faction that slew their Master.`,
+          ja:`とりわけ主を討った仇を追い、夜の街で襲撃を仕掛けた。`,
+          zhs:`更是追猎着杀害御主的仇敌，在夜色中发动反击。`,
+          zht:`更是追獵著殺害御主的仇敵，在夜色中發動反擊。`,
+        }[L] : '';
+        outArcs.push({
+          id: 'masterless_' + f.id, kind: 'masterless',
+          title: { ko:'주인 없는 칼날', en:'A Blade Without a Master', ja:'主なき刃', zhs:'无主之刃', zht:'無主之刃' }[L],
+          body: `${{
+            ko:`${dayTag(d0)}, 마스터가 쓰러졌지만 ${sN}${J(sN,은)} 흩어지지 않았다.`,
+            en:`On ${dayTag(d0)}, their Master perished, yet ${sN} refused to vanish.`,
+            ja:`${dayTag(d0)}、マスターが倒れてなお、${sN}は消滅を拒んだ。`,
+            zhs:`${dayTag(d0)}，御主虽已陨落，${sN}却并未就此消散。`,
+            zht:`${dayTag(d0)}，御主雖已隕落，${sN}卻並未就此消散。`,
+          }[L]} ${mid ? mid + ' ' : ''}${tail}`,
+          days: [d0, lastF.d], factIds: a.factIds
+        });
+      } else if(a.kind === 'enemy_coop'){
+        const aM = narrName(w.a, T, false), bM = narrName(w.b, T, false);
+        const tgt = (f.meta && f.meta.vsLabel) ? T(f.meta.vsLabel) : '';
+        const pre = a.prior ? {
+          ko:`${dayTag(a.prior.d)}에 이미 칼을 맞댔던 사이였지만,`,
+          en:`Though they had crossed blades on ${dayTag(a.prior.d)},`,
+          ja:`${dayTag(a.prior.d)}には互いに刃を交えた仲だったが、`,
+          zhs:`尽管${dayTag(a.prior.d)}两人还曾拔刀相向，`,
+          zht:`儘管${dayTag(a.prior.d)}兩人還曾拔刀相向，`,
+        }[L] : {
+          ko:`적대하던 두 진영이었으나,`,
+          en:`Though sworn rivals in the war,`,
+          ja:`相容れぬ敵同士であったものの、`,
+          zhs:`本是彼此敌对的两方，`,
+          zht:`本是彼此敵對的兩方，`,
+        }[L];
+        outArcs.push({
+          id: 'coop_' + f.id, kind: 'enemy_coop',
+          title: { ko:'적과의 동행', en:'Reluctant Alliance', ja:'敵との共闘', zhs:'强敌暂盟', zht:'強敵暫盟' }[L],
+          body: `${pre} ${{
+            ko:`${dayTag(f.d)}에 ${aM}${J(aM,과)} ${bM}${J(bM,은)} ${tgt ? tgt + '이라는 ' : ''}거대한 위협 앞에서 잠시 손을 잡았다.`,
+            en:`on ${dayTag(f.d)}, ${aM} and ${bM} were forced to join forces${tgt ? ` against ${tgt}` : ' against a greater threat'}.`,
+            ja:`${dayTag(f.d)}、${aM}と${bM}は${tgt ? `${tgt}という` : ''}強大な脅威を前にやむなく手を結んだ。`,
+            zhs:`在${dayTag(f.d)}，${aM}与${bM}面对${tgt ? `${tgt}这一` : ''}共同的强敌，不得不暂时并肩。`,
+            zht:`在${dayTag(f.d)}，${aM}與${bM}面對${tgt ? `${tgt}這一` : ''}共同的強敵，不得不暫時並肩。`,
+          }[L]}`,
+          days: [a.prior ? a.prior.d : f.d, f.d], factIds: a.factIds
+        });
+      } else if(a.kind === 'defiance'){
+        const r0 = a.refuses[0], rw = r0.who || {};
+        const sv = rw.a && rw.a.id === 'me' ? T(rw.a.hero || '') : narrName(rw.a, T, true);
+        const hasDef = a.refuses.some(x => x.type === 'servant_defect');
+        const sealTxt = a.seals.length ? {
+          ko:`령주(${a.seals.length}획)로 얽어매려던 균열 끝에`,
+          en:`Strained by ${a.seals.length} forced Command Spell${a.seals.length>1?'s':''},`,
+          ja:`${a.seals.length}画の令呪による強制で深まった亀裂の末に、`,
+          zhs:`在${a.seals.length}道强行令咒积累的裂痕下，`,
+          zht:`在${a.seals.length}道強行令咒累積的裂痕下，`,
+        }[L] : {
+          ko:`주종 사이의 불화와 자존심이 맞부딪치며,`,
+          en:`Where pride collided with a Master's command,`,
+          ja:`主従の矜持と不信がぶつかり合い、`,
+          zhs:`主从间的骄傲与命令发生碰撞，`,
+          zht:`主從間的驕傲與命令發生碰撞，`,
+        }[L];
+        outArcs.push({
+          id: 'defiance_' + r0.id, kind: 'defiance',
+          title: { ko:'꺾이지 않은 의지', en:'Unbowed Defiance', ja:'折れぬ意志', zhs:'不屈的抗命', zht:'不屈的抗命' }[L],
+          body: `${sealTxt} ${{
+            ko:`${dayTag(r0.d)}에 ${sv}${J(sv,은)} 명령을 정면으로 거부했다.${hasDef ? ' 결국 계약마저 끊어지고 말았다.' : ''}`,
+            en:`on ${dayTag(r0.d)}, ${sv} defied their Master's order.${hasDef ? ' Ultimately, even the contract shattered.' : ''}`,
+            ja:`${dayTag(r0.d)}、${sv}は主の命令を正面から拒んだ。${hasDef ? 'ついには契約までもが断ち切られた。' : ''}`,
+            zhs:`${dayTag(r0.d)}，${sv}正面违抗了御主的命令。${hasDef ? '最终连契约也彻底断裂。' : ''}`,
+            zht:`${dayTag(r0.d)}，${sv}正面違抗了御主的命令。${hasDef ? '最終連契約也徹底斷裂。' : ''}`,
+          }[L]}`,
+          days: [r0.d, a.refuses[a.refuses.length - 1].d], factIds: a.factIds
+        });
+      } else if(a.kind === 'devotion'){
+        const p0 = a.prots[0], pw = p0.who || {}, sv = T((pw.a && pw.a.hero) || '');
+        const cnt = a.prots.length;
+        outArcs.push({
+          id: 'devotion_' + p0.id, kind: 'devotion',
+          title: { ko:'방패가 된 충의', en:'Shield of Loyalty', ja:'盾となった忠義', zhs:'化为盾牌的忠义', zht:'化為盾牌的忠義' }[L],
+          body: {
+            ko:`전쟁 내내 ${sv}${J(sv,은)} 마스터의 안전을 가장 먼저 두었다. ${cnt}번의 위기 속에서 몸을 던져 치명상을 막아 냈다.`,
+            en:`Throughout the war, ${sv} placed their Master's life above their own, stepping into harm's way ${cnt} time${cnt>1?'s':''}.`,
+            ja:`戦いを通じて${sv}はマスターの命を何より重んじ、${cnt}度の危機で身を挺して一撃を防ぎ切った。`,
+            zhs:`整场战争中，${sv}始终将御主的安危置于首位，在${cnt}次险境中挺身挡下了致命一击。`,
+            zht:`整場戰爭中，${sv}始終將御主的安危置於首位，在${cnt}次險境中挺身擋下了致命一擊。`,
+          }[L],
+          days: [p0.d, a.prots[cnt - 1].d], factIds: a.factIds
+        });
+      }
+    }
+
+    // Judul Dinamis berdasarkan arc paling dominan yang benar-benar terjadi
+    const pri = ['betrayal','masterless','enemy_coop','defiance','devotion'];
+    const lead = pri.map(k => outArcs.find(x => x.kind === k)).find(Boolean);
+    const TITLES = {
+      betrayal: { ko:'배신으로 얼룩진 겨울', en:'The Winter of Broken Oaths', ja:'裏切りに染まった冬', zhs:'背叛染红的冬夜', zht:'背叛染紅的冬夜' },
+      masterless: { ko:'주인 없는 칼날이 남긴 밤', en:'The Night of the Masterless Blade', ja:'主なき刃の残響', zhs:'无主之刃的冬夜', zht:'無主之刃的冬夜' },
+      enemy_coop: { ko:'적과 등을 맞댄 겨울', en:'Enemies Under One Banner', ja:'敵と背中を預けた夜', zhs:'敌手并肩的冬夜', zht:'敵手並肩的冬夜' },
+      defiance: { ko:'명령을 거스른 영령의 기록', en:'Chronicle of the Unbowed Hero', ja:'命に背いた英霊の記録', zhs:'违命英灵的战纪', zht:'違命英靈的戰紀' },
+      devotion: { ko:'끝까지 주인을 지킨 밤', en:'Vigil of Unyielding Loyalty', ja:'主を守り抜いた冬', zhs:'誓死护主的冬夜', zht:'誓死護主的冬夜' },
+      plain: { ko:'성배가 차오른 겨울의 기록', en:'Chronicle of the Winter War', ja:'聖杯戦争の記録', zhs:'圣杯战争战纪', zht:'聖杯戰爭戰紀' },
+    };
+    const title = TITLES[lead ? lead.kind : 'plain'][L];
+    return { title, arcs: outArcs, factCount: list.length };
+  }
+
+  // Stray Servant terus bertarung di malam hari sebelum memudar
+  function strayFightNight(){
+    const w = W(), svs = strays().filter(p => p.alive && !p.master && p.stray > 0 && !(w.nf || []).some(f => f.includes(p.i)));
+    if(!svs.length) return;
+    for(const st of svs){
+      const sp = servantPersona(H_BY[st.hero]);
+      const targets = contracted().filter(x => x.alive && !x.bxNun && !(w.nf || []).some(f => f.includes(x.i)));
+      if(!targets.length) continue;
+      const revTarget = st.killerId ? targets.find(x => x.i === st.killerId) : null;
+      if(!revTarget && sp.pride < 60 && !sp.tags.includes('berserk') && !ch(.35)) continue;
+      if(revTarget ? !ch(.75) : !ch(.5)) continue;
+      const tgt = revTarget || wpick(targets, x => 1 + (x.hp < 60 ? 1.5 : 0));
+      if(!tgt) continue;
+      const { win, lose } = npcFight(st, tgt, false, true);
+      w.nf.push([st.i, tgt.i]);
+      recFact('stray_fight', {
+        actor: 'p'+st.i, target: 'p'+tgt.i,
+        who: { a: pairSnap(st), b: pairSnap(tgt) },
+        causeId: st.strayFactId || null,
+        meta: { revenge: tgt.i === st.killerId, won: win === st, killed: lose.hp <= 0 },
+        beat: st.known || tgt.known || st.revealed || tgt.revealed || tgt.i === st.killerId
+      });
+      const seen = st.known || tgt.known || tgt.ally || tgt.ally || ch(.5);
+      if(lose.hp <= 0){
+        const lh = H_BY[lose.hero];
+        if(lh.sp === 'revive' && !lose.usedRevive){ lose.usedRevive = true; lose.hp = 45; continue; }
+        lose.alive = false; lose.revealed = true;
+        pairOut(lose, '주인 잃은 서번트에게 쓰러졌다', seen ? win : null);
+        log(`감독관의 통지: ${cn(lose)} 조 탈락.${seen ? ` 주인 잃은 ${pName(win)}의 손에.` : ''}`, 'notice');
+      }
+    }
+  }
+
+  // Dua musuh terpaksa bekerja sama menghadapi ancaman dominan
+  function npcEnemyCoop(){
+    const w = W(); if(w.day < 4 || w.coopDone) return;
+    const cs = contracted().filter(p => p.alive && p.master && !p.ally && !p.bxNun && !(p.halt > 0) && !(w.nf || []).some(f => f.includes(p.i)));
+    if(cs.length < 3) return;
+    // Cari ancaman dominan (NPC kuat dengan kills >= 2 atau pemain dengan kills >= 2)
+    let threatTgt = null, vsMe = false;
+    const bossNpc = cs.slice().sort((a,b) => (b.pw + (b.kills||0)*12) - (a.pw + (a.kills||0)*12))[0];
+    if((w.kills || 0) >= 2 && w.heroAlive && !w.hid && ch(.35)){ vsMe = true; }
+    else if(bossNpc && ((bossNpc.kills || 0) >= 2 || bossNpc.pw >= 76) && ch(.35)){ threatTgt = bossNpc; }
+    if(!vsMe && !threatTgt) return;
+    const pool = cs.filter(p => p !== threatTgt && (!vsMe || !p.ally));
+    if(pool.length < 2) return;
+    let pairA = null, pairB = null, priorFact = null;
+    for(let i = 0; i < pool.length && !pairA; i++){
+      for(let j = i + 1; j < pool.length; j++){
+        const a = pool[i], b = pool[j], r = relGet('p'+a.i, 'p'+b.i);
+        const du = lastFactOf('duel_clash', x => (x.actor==='p'+a.i && x.target==='p'+b.i) || (x.actor==='p'+b.i && x.target==='p'+a.i));
+        if(du || r.rivalry >= 15 || r.grudge >= 10){ pairA = a; pairB = b; priorFact = du; break; }
+      }
+    }
+    if(!pairA || !pairB) return;
+    w.coopDone = w.day;
+    relShift('p'+pairA.i, 'p'+pairB.i, { trust: 15, respect: 10, grudge: -8 });
+    relShift('p'+pairB.i, 'p'+pairA.i, { trust: 15, respect: 10, grudge: -8 });
+    if(vsMe){
+      recFact('enemy_coop', {
+        actor:'p'+pairA.i, target:'p'+pairB.i,
+        who:{ a: pairSnap(pairA), b: pairSnap(pairB) },
+        causeId: priorFact ? priorFact.id : null,
+        meta:{ kind:'npc_pact', vsLabel: S.name },
+        beat: true
+      });
+      w.coal = { a: pairA.i, b: pairB.i, d: w.day };
+      return;
+    }
+    recFact('enemy_coop', {
+      actor:'p'+pairA.i, target:'p'+pairB.i,
+      who:{ a: pairSnap(pairA), b: pairSnap(pairB) },
+      causeId: priorFact ? priorFact.id : null,
+      meta:{ kind:'npc_pact', vsLabel: threatTgt.mname || cn(threatTgt) },
+      beat: !!(pairA.known || pairB.known || threatTgt.known)
+    });
+    for(const atk of [pairA, pairB]){
+      if(!threatTgt.alive) break;
+      const { win, lose } = npcFight(atk, threatTgt, false, true);
+      w.nf.push([atk.i, threatTgt.i]);
+      if(lose.hp <= 0){
+        const lh = H_BY[lose.hero];
+        if(lh.sp === 'revive' && !lose.usedRevive){ lose.usedRevive = true; lose.hp = 45; continue; }
+        lose.alive = false; lose.revealed = true;
+        pairOut(lose, '임시로 손을 잡은 두 조에게 쓰러졌다', win);
+        log(`감독관의 통지: ${cn(lose)} 조 탈락.`, 'notice');
+      }
+    }
   }
   const W=()=>S.war;
   const hero=()=>H_BY[S.hero];
@@ -7744,7 +8189,7 @@ const Sim = (() => {
         p.alive=false; p.revealed=true; out.push(i); pairOut(p,e.cx==='boss'?'검은 성배 앞에서 쓰러졌다':e.cx?'검은 그림자에게 쓰러졌다':'다른 조에게 쓰러졌다');
         log(`감독관의 통지: ${cn(p)} 조 탈락. ${e.cx==='boss'?'검은 성배 앞에서.':`${cn(e)}의 손에.`}`,'notice'); if(p.ally) log(`동맹 ${p.mname}의 조가 무너졌다.`,'loss'); continue; }
       const _mp=masterPersona(p), _bs=p.ally?betrayScore(relGet('p'+p.i,'me'),_mp,{hp:w.hp,seals:w.seals,owe:p.owe,slight:p.slight}):0;
-      if(p.ally&&_mp.ruthless>=65&&p.hp<55&&ch(Math.min(.65,_bs*.5+.12))){ out.push(i); p.ally=false; p.allyGone=true; relShift('p'+p.i,'me',{trust:-30,affection:-20,grudge:20}); log('동맹이 싸움 도중 발을 뺐다. 처음부터 당신을 방패로 삼을 작정이었던 모양이다.','loss'); continue; }
+      if(p.ally&&_mp.ruthless>=65&&p.hp<55&&ch(Math.min(.65,_bs*.5+.12))){ out.push(i); p.ally=false; p.allyGone=true; relShift('p'+p.i,'me',{trust:-30,affection:-20,grudge:20}); const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+p.i); recFact('ally_abandon',{actor:'p'+p.i,target:'me',who:{a:pairSnap(p),b:pairSnap('me')},rel:relGet('p'+p.i,'me'),persona:_mp,causeId:_pr&&_pr.id,meta:{kind:'midfight'},beat:true}); log('동맹이 싸움 도중 발을 뺐다. 처음부터 당신을 방패로 삼을 작정이었던 모양이다.','loss'); continue; }
       if(p.hp<30&&ch(cxTacP(p,2))){ out.push(i); log(`${pN} 조가 더 버티지 못하고 물러났다.`,'war'); } } }
   // NPC 조 하나와 그림자 · 보스의 싸움 (플레이어가 없는 곳)
   function cxNpcVs(p,u,withMe){ const c=CXW(), seen=withMe||p.known||p.ally;
@@ -9536,6 +9981,7 @@ const Sim = (() => {
     if(c.strike){ log(`연합이 움직이기 전에 ${pName(live[0])} 조의 거처를 먼저 쳤다.`,'war'); battle(live[0],{attack:true}); return; }
     if(c.hide&&ch(.5)){ log('비워 둔 거처 쪽에서 밤새 굉음이 들렸다. 연합은 허탕을 쳤다.','war'); return; }
     w.coalNext=live[1]?live[1].i:null;
+    if(live.length>=2){ const _du=lastFactOf('duel_clash',x=>(x.actor==='p'+live[0].i&&x.target==='p'+live[1].i)||(x.actor==='p'+live[1].i&&x.target==='p'+live[0].i)); recFact('enemy_coop',{actor:'p'+live[0].i,target:'p'+live[1].i,who:{a:pairSnap(live[0]),b:pairSnap(live[1])},causeId:_du&&_du.id,meta:{kind:'coalition',vsLabel:S.name},beat:true}); }
     log(`자정, 결계 바깥에 두 서번트의 기척이 나란히 섰다. 먼저 넘어온 것은 ${pName(live[0])} 조였다.`,'war');
     battle(live[0],{defend:true,coal:true}); }
   function coalEnd(b){ const w=W(); const n=w.coalNext; w.coalNext=null; if(!n||!w.heroAlive||b.res==='retreat') return;
@@ -10216,7 +10662,7 @@ const Sim = (() => {
     decide({title:'동맹 제안',body:viaF?'사역마에게 편지를 들려 보낸다. 받아들일지는 상대에게 달렸다.':'사신을 보낸다. 받아들일지는 상대에게 달렸다.',war:true,choices:[...ts.map(p=>({t:`${pName(p)} 조 · ${p.mname}`,d:p.arche,f:()=>{w.queue.unshift(()=>{ if(viaF) w.famUsed=w.day;
       const _rp=relGet('p'+p.i,'me'), _mp=masterPersona(p);
       const pc=(viaF?-.1:0)+(p.aid==='executor'?-1:p.aid==='democrat'?.2:0)+.28+(p.tac==='naive'||p.tac==='desperate'?.28:0)+(_mp.pride>=65?-.15:0)+(_rp.trust-25)*.004+_rp.respect*.003-_rp.grudge*.006+S.st.bond/400+(p.hp<50?.15:0)+(p.sym||p.friendly?.2:0)+(CXW()&&CXW().stage>=2?.1:0);
-      if(ch(pc)){p.ally=true;p.allyDay=W().day;S.flags.allyName=p.mname;allyConfide(p);wrec('ally',`${cn(p)} 조 ${p.mname}${J(p.mname,과)} 동맹`,{p:p.i});log(`${p.mname}${J(p.mname,이)} 동맹을 받아들였다. 마지막 둘이 남을 때까지만.`,'war');}
+      if(ch(pc)){p.ally=true;p.allyDay=W().day;S.flags.allyName=p.mname;allyConfide(p);wrec('ally',`${cn(p)} 조 ${p.mname}${J(p.mname,과)} 동맹`,{p:p.i});log(`${p.mname}${J(p.mname,이)} 동맹을 받아들였다. 마지막 둘이 남을 때까지만.`,'war'); const _af=recFact('ally_form',{actor:'p'+p.i,target:'me',who:{a:pairSnap(p),b:pairSnap('me')},rel:relGet('p'+p.i,'me'),persona:masterPersona(p)}); if(p.fought){ const _df=lastFactOf('duel_clash',x=>x.actor==='p'+p.i||x.target==='p'+p.i); recFact('enemy_coop',{actor:'p'+p.i,target:'me',who:{a:pairSnap(p),b:pairSnap('me')},causeId:_df?_df.id:_af&&_af.id,meta:{kind:'truce_ally'},beat:true}); } }
       else if(viaF){ const f=famName(); log(`${p.mname}${J(p.mname,은)} 편지를 읽고 ${f}${J(f,을)} 그냥 돌려보냈다.`,'war'); }
       else{log(`${p.mname}${J(p.mname,은)} 답 대신 사신을 돌려보냈다. 당신 거처가 알려졌다.`,'war');W().exposure=clamp(W().exposure+expUp(10));}
     })}})), {...BACK}]});
@@ -11948,7 +12394,7 @@ const Sim = (() => {
   // 령주 연출용 정보: 쓴 획(0~2), 남은 획, 명령
   function sealFxOf(word){ const w=W(), i=Math.min(2,w.seals); return {t:'seal',w:word||'',i,left:w.seals,part:seal().parts[i]}; }
   function useSeal(word,fx){ const w=W(); w.seals--; (w.sealLog=w.sealLog||[]).push({d:w.day,tod:w.tod,word}); wrec('seal',`령주 — “${word}”`); const sp=seal().parts[Math.min(2,w.seals)]; log(pickNR([`령주의 ${sp}${J(sp,이)} 타들어 갔다. “${word}.”`,`“${word}.” 손등에서 ${sp}${J(sp,이)} 빛을 잃었다.`,`령주 한 획, ${sp}${J(sp,이)} 붉게 타올랐다가 사라졌다. “${word}.”`],'sealU'),'seal',{fx:fx||sealFxOf(word)}); if(word==='이겨라') w.trust=clamp(w.trust+fitT(w.trust>60?-3:4));
-    { const h=hero(), sp=servantPersona(h); relShift('me','hero',{fear:10,grudge:(sp.pride>=70||(h&&h.traits.includes('자유')))?8:3,affection:-4}); }
+    { const h=hero(), sp=servantPersona(h); relShift('me','hero',{fear:10,grudge:(sp.pride>=70||(h&&h.traits.includes('자유')))?8:3,affection:-4}); recFact('seal_force',{actor:'me',target:'hero',who:{a:pairSnap('me')},rel:relGet('me','hero'),meta:{word}}); }
     if(w.seals===0&&!w.zeroed){ w.zeroed=true; w.queue.push(()=>sealsGone()); } }
   function sealsGone(){
     const w=W(); if(w.ended||!w.heroAlive||S.dead) return; const h=hero();
@@ -11959,6 +12405,7 @@ const Sim = (() => {
       const tgt=wpick(contracted().filter(p=>!p.ally),p=>p.pw);
       if(tgt&&ch(.6)){
         w.heroAlive=false; S.flags.war='lost'; S.flags.betrayedByHero=1; mark('loss'); w.myOut={d:w.day,tod:w.tod,why:'령주가 다한 뒤 다른 조로 떠났다'}; wrec('mine',`${h.name}${J(h.name,이)} 계약을 끊고 떠났다`);
+        const _or=lastFactOf(['order_refuse','seal_force']); recFact('servant_defect',{actor:'hero',target:'me',who:{a:pairSnap('me'),b:pairSnap(tgt)},rel:relGet('me','hero'),causeId:_or&&_or.id,beat:true});
         log(`${h.name}${J(h.name,은)} 당신을 내려다보았다. ${qv(h,'betray')} 그리고 ${tgt.mname}의 진영으로 걸어갔다.`,'loss');
         tgt.hp=clamp(tgt.hp+30); tgt.pw=Math.min(95,tgt.pw+12); tgt.extra=h.id;
         log(`${pName(tgt)} 조가 서번트 둘을 거느리게 되었다는 소식이 돌았다.`,'notice');
@@ -12810,7 +13257,7 @@ const Sim = (() => {
   }
   function talkAllyAsk(e){ const w=W(); if(!w||w.ended||S.dead||!w.heroAlive||!e.alive||!e.master||e.ally||allyBlock()) return;
     decide({title:'동맹 제안',body:'무기를 거둔 상대가 손을 내밀었다. 동맹을 맺을 것인가.',war:true,choices:[
-      {t:'손을 잡는다',f:()=>{ e.ally=true;e.allyDay=w.day; e.known=true; S.flags.allyName=e.mname;allyConfide(e);wrec('ally',`${cn(e)} 조 ${e.mname}${J(e.mname,과)} 동맹`,{p:e.i}); return `${pName(e)} 조와 동맹을 맺었다.`; }},
+      {t:'손을 잡는다',f:()=>{ e.ally=true;e.allyDay=w.day; e.known=true; S.flags.allyName=e.mname;allyConfide(e);wrec('ally',`${cn(e)} 조 ${e.mname}${J(e.mname,과)} 동맹`,{p:e.i}); const _af=recFact('ally_form',{actor:'p'+e.i,target:'me',who:{a:pairSnap(e),b:pairSnap('me')},rel:relGet('p'+e.i,'me'),persona:masterPersona(e)}); const _df=lastFactOf('duel_clash',x=>x.actor==='p'+e.i||x.target==='p'+e.i); recFact('enemy_coop',{actor:'p'+e.i,target:'me',who:{a:pairSnap(e),b:pairSnap('me')},causeId:_df?_df.id:(_af&&_af.id),meta:{kind:'truce_ally'},beat:true}); return `${pName(e)} 조와 동맹을 맺었다.`; }},
       {t:'거절한다',auto:true,f:()=>'상대는 고개를 끄덕이고 물러났다. 다음에 만나면 다시 적이다.'}]}); }
   const WEAK = {
     solomon:'열 개의 반지',
@@ -12846,11 +13293,11 @@ const Sim = (() => {
   }
   function retreat(sure){
     const w=W(),h=hero(),e=w.battle.e;
-    if(!sure&&w.trust<DIST&&w.heroAlive&&ch(.3)){ log(`${h.name}${J(h.name,은)} 물러서지 않았다. 당신의 말은 들리지 않는 모양이다.`,'loss'); if(CHK) CHK.push({txt:'「불신」 탓에 서번트가 명령을 듣지 않았다',ok:false}); relShift('me','hero',{respect:-3,grudge:3}); return clash(0); }
+    if(!sure&&w.trust<DIST&&w.heroAlive&&ch(.3)){ log(`${h.name}${J(h.name,은)} 물러서지 않았다. 당신의 말은 들리지 않는 모양이다.`,'loss'); if(CHK) CHK.push({txt:'「불신」 탓에 서번트가 명령을 듣지 않았다',ok:false}); relShift('me','hero',{respect:-3,grudge:3}); const _sf=lastFactOf('seal_force'); recFact('order_refuse',{actor:'hero',target:'me',who:{a:pairSnap('me')},rel:relGet('me','hero'),causeId:_sf&&_sf.id,meta:{reason:'distrust'},beat:true}); return clash(0); }
     { const sp=servantPersona(h), rh=relGet('me','hero');
       if(!sure&&w.heroAlive&&sp.pride>=70&&!(sp.loyalty>=70&&S.st.health<=40)){
         const refP=Math.max(0,Math.min(.75,(sp.pride-55)*.012+rh.grudge*.004-rh.respect*.005-(sp.loyalty>=70?.2:0)-(w.trust>=80?.25:0)));
-        if(ch(refP)){ log(`${h.name}: “${h.traits.includes('명예')?'긍지를 버릴 수는 없다. 물러서지 않겠다.':'물러날 이유를 대라. 적 앞에서 등을 돌리지는 않는다.'}”`,'loss'); if(CHK) CHK.push({txt:'「긍지」 높은 서번트가 퇴각을 거부했다',ok:false}); relShift('me','hero',{grudge:3,rivalry:2}); return clash(0); }
+        if(ch(refP)){ log(`${h.name}: “${h.traits.includes('명예')?'긍지를 버릴 수는 없다. 물러서지 않겠다.':'물러날 이유를 대라. 적 앞에서 등을 돌리지는 않는다.'}”`,'loss'); if(CHK) CHK.push({txt:'「긍지」 높은 서번트가 퇴각을 거부했다',ok:false}); relShift('me','hero',{grudge:3,rivalry:2}); const _sf=lastFactOf('seal_force'); recFact('order_refuse',{actor:'hero',target:'me',who:{a:pairSnap('me')},rel:relGet('me','hero'),persona:sp,causeId:_sf&&_sf.id,meta:{reason:'pride'},beat:true}); return clash(0); }
       }
     }
     w.battle.res='retreat'; H.sfx('retreat');
@@ -12880,6 +13327,7 @@ const Sim = (() => {
         if(won||e.hp<55) relShift('p'+e.i,'me',{respect:8,fear:e.hp<35?12:6,rivalry:_esp.pride>=65?10:4,grudge:(b.ctx.attack||b.ctx.trap)?12:5});
         if(b.round>=4) relShift('p'+e.i,'me',{respect:8,rivalry:6});
         if(b.res==='talk') relShift('p'+e.i,'me',{trust:15,affection:10,respect:8,grudge:-10});
+        recFact('duel_clash',{actor:'me',target:'p'+e.i,who:{a:pairSnap('me'),b:pairSnap(e)},meta:{res:b.res}});
         if(won&&w.heroAlive) relShift('me','hero',{trust:2,respect:4,affection:3});
         if(b.res==='lose'||b.res==='retreat') relShift('me','hero',{respect:-2,rivalry:4});
       }
@@ -12952,7 +13400,7 @@ const Sim = (() => {
     return Math.max(1,Math.min(7,Math.round(d)));
   }
   const strays=()=>W().pairs.filter(p=>p.alive&&!p.master&&p.stray>0);
-  function makeStray(e){ const eh=H_BY[e.hero], d=strayDays(eh); e.master=false; e.mDied=true; e.stray=d; e.wishKnown=false; if(!W().stray||!W().stray.alive) W().stray=e; return d; }
+  function makeStray(e,by){ const eh=H_BY[e.hero], d=strayDays(eh); e.master=false; e.mDied=true; e.stray=d; e.wishKnown=false; e.killerId=by==='me'?'me':(by&&by.i?by.i:null); const _mf=recFact('master_die_stray',{actor:'p'+e.i,target:e.killerId==='me'?'me':(e.killerId?'p'+e.killerId:null),who:{a:pairSnap(e),b:by?pairSnap(by):null},meta:{days:d}}); e.strayFactId=_mf?_mf.id:null; if(!W().stray||!W().stray.alive) W().stray=e; return d; }
   const indTxt=h=>{ const ind=skillsOf(h).find(x=>x.k==='ind'); return ind?`스킬 「${ind.n} ${ind.r}」. `:''; };
   // 서번트를 잃은 NPC 마스터가 물러나지 않고 버틸지: 대담한 성향일수록, 령주가 남아 있어야
   function npcStayAlone(p){ if(!(p.seals>0)) return false; const r=(STYLE[p.aid]||{retreat:30}).retreat; return ch(Math.max(.1,Math.min(.85,(55-r)/55))); }
@@ -12960,13 +13408,14 @@ const Sim = (() => {
     s.master=true; s.mDied=false; s.stray=0; s.mname=m.mname; s.aid=m.aid; s.arche=m.arche; s.tac=m.tac; s.pw=m.pw; s.seals=Math.max(0,(m.seals||1)-1); s.ghost=m.ghost||null; s.ghostIntro=!!m.ghostIntro; s.joinDay=m.joinDay;
     s.hp=Math.max(s.hp,55); s.known=false; s.ally=false; s.truce=false; s.wishKnown=false; s.recon=1; s.reconD=w.day; m.lone=false; if(w.stray===s) w.stray=null;
     log(`감독관의 통지: 주인을 잃었던 ${cn(s)}${J(cn(s),이)} 새 마스터와 계약했다.${m.known?` 탈락했던 ${cn(m)} 조의 ${m.mname}${J(m.mname,이)==='이'?'이다':'다'}.`:''}`,'notice');
+    recFact('stray_recontract',{actor:'p'+s.i,target:'p'+m.i,who:{a:pairSnap(s),b:pairSnap(m)},causeId:s.strayFactId||null});
     wrec('hint',`${cn(s)} 서번트가 ${m.known?m.mname:'다른 마스터'}${J(m.known?m.mname:'다른 마스터',과)} 다시 계약했다`); }
   // 마스터를 노리는 정도: 어새신 서번트, 마스터를 먼저 노리는 마술사
   const mHunt=p=>.03+(H_BY[p.hero].cls==='shadow'?.15:H_BY[p.hero].cls==='bow'?.06:0)+(['exec','killer','executor'].includes(p.aid)?.15:0)+(p.tac==='hunter'?.04:0);
   function masterKilled(e){
     e.master=false; e.mDied=true; e.byMe=true; S.flags.killedMaster=S.flags.killedMaster||1;
     if(W().churchQuest===e.i){ W().churchQuest=-1; W().seals++; log('며칠 뒤 신부가 찾아와 당신 손등에 령주 한 획을 그려 주었다. “약속드린 보답입니다.”','seal'); }   // 사도는 마스터 쪽이다: 암살로 끝내도 의뢰는 이루어진 것
-    if(ch(.6)){ const d=makeStray(e); log(`주인을 잃은 ${pName(e)}${J(pName(e),은)} 아직 사라지지 않았다. ${indTxt(H_BY[e.hero])}마력이 다하기까지 ${d}일.`,'war'); }
+    if(ch(.6)){ const d=makeStray(e,'me'); log(`주인을 잃은 ${pName(e)}${J(pName(e),은)} 아직 사라지지 않았다. ${indTxt(H_BY[e.hero])}마력이 다하기까지 ${d}일.`,'war'); }
     else { e.alive=false; pairOut(e,'마스터를 잃고 흩어졌다'); log(`주인을 잃은 ${pName(e)}${J(pName(e),은)} 그대로 흩어졌다.`,'war'); }
   }
   const LASTW = {
@@ -13284,6 +13733,7 @@ const Sim = (() => {
     if(e.hp<RET&&_sp.pride>=70){
       if(_mp.cunning>=70&&e.master&&e.seals>0&&ch(.45)){ npcSeal(e,'물러나라'); e._svGrudge=(e._svGrudge||0)+12; return 'seal'; }
       if(ch(Math.min(.85,st.rp*fleeP(H_BY[e.hero],npcParams(e).p)/.6*.45)-npFleeMinus(b,'en'))) return 'run';
+      recFact('order_refuse',{actor:'p'+e.i,target:'p'+e.i,who:{a:pairSnap(e)},persona:_sp,meta:{reason:'pride',npc:1},beat:!!e.known});
       if(e.known&&ch(.4)) log('상대 마스터가 싸움에서 발을 빼려다 서번트의 반발에 부딪혔다.','war');
       return false;
     }
@@ -13291,7 +13741,7 @@ const Sim = (() => {
     return false;
   }
   function npcFight(a,b,final,init){ const r=npcDuel(a,b,final,init); addKnow(a,b,20); addKnow(b,a,20); famSeeFight(a,b);
-    if(r&&r.win&&r.lose&&!r.win.cx&&!r.lose.cx){ relShift('p'+r.lose.i,'p'+r.win.i,{fear:10,respect:8,rivalry:10,grudge:12}); relShift('p'+r.win.i,'p'+r.lose.i,{respect:6,rivalry:6}); }
+    if(r&&r.win&&r.lose&&!r.win.cx&&!r.lose.cx){ relShift('p'+r.lose.i,'p'+r.win.i,{fear:10,respect:8,rivalry:10,grudge:12}); relShift('p'+r.win.i,'p'+r.lose.i,{respect:6,rivalry:6}); if(r.win.master&&r.lose.master) recFact('duel_clash',{actor:'p'+r.win.i,target:'p'+r.lose.i,who:{a:pairSnap(r.win),b:pairSnap(r.lose)}}); }
     if(r&&r.win&&r.lose&&r.lose.hp<=0&&!r.win.cx&&H_BY[r.win.hero]&&H_BY[r.win.hero].cls==='ego') r.win.hp=clamp(r.win.hp+15); // 얼터 에고: 쓰러뜨린 상대의 힘을 빨아들인다
     return r; }
 
@@ -13460,7 +13910,7 @@ const Sim = (() => {
     }
     for(const x of [a,b]) if(x.madCost){ x.madCost=0; x.hp=clamp(x.hp-10); }
     if(asnWin){ const win=asnWin.p, lose=asnWin.o.p, sn=seen||ch(.5);
-      if(ch(.7)){ makeStray(lose); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${sn?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
+      if(ch(.7)){ makeStray(lose,win); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${sn?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
       else { lose.master=false; lose.mDied=true; lose.alive=false; pairOut(lose,'마스터를 잃고 흩어졌다',sn?win:null); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${sn?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
       return {win,lose,asn:true}; }
     // 아라쉬: 스텔라를 쏜 쪽은 체력과 상관없이 진다(소멸). 상대도 그 화살에 쓰러졌으면 두 조 모두 쓰러진다(both)
@@ -13479,7 +13929,7 @@ const Sim = (() => {
   function npcClassNight(){
     const w=W(), co=coalBusy(), cs=contracted().filter(p=>!(co&&co.has(p.i))), V=p=>npcParams(p).p.map(PV), seenOf=(a,b)=>a.known||b.known||a.ally||b.ally;
     const others=a=>cs.filter(x=>x!==a&&x.alive&&x.master&&!(x.ally&&a.ally)&&!x.bxNun);
-    const mKill=(t,by,how)=>{ const seen=seenOf(t,by); if(ch(.7)) makeStray(t); else { t.master=false; t.mDied=true; t.alive=false; pairOut(t,'마스터를 잃고 흩어졌다',seen?by:null); }
+    const mKill=(t,by,how)=>{ const seen=seenOf(t,by); if(ch(.7)) makeStray(t,by); else { t.master=false; t.mDied=true; t.alive=false; pairOut(t,'마스터를 잃고 흩어졌다',seen?by:null); }
       log(`감독관의 통지: ${cn(t)} 조의 마스터 사망.${seen?` ${pName(by)} 조가 ${how}고 한다.`:''}`,'notice'); };
     for(const a of shuffle(cs)){
       if(!a.alive||!a.master||a.halt>0) continue; const ah=H_BY[a.hero], A=V(a), ts=others(a); if(!ts.length) continue;
@@ -13535,6 +13985,7 @@ const Sim = (() => {
     if(ap&&hunters.length&&ch(.35)){ const hn=pick(hunters); const {win,lose}=npcFight(hn,ap); if(lose.hp<=0&&!(H_BY[lose.hero].sp==='revive'&&!lose.usedRevive)){ lose.alive=false; lose.revealed=true; pairOut(lose,'성당교회 쪽 조에게 쓰러졌다',hn); log(`성당교회 쪽 ${pName(hn)} 조가 ${pName(ap)} 조를 쫓았다. 감독관의 통지: ${cn(lose)} 조 탈락.`,'notice'); } else log('밤새 교회 종이 울렸다. 대행자들이 무언가를 쫓고 있다.'); }
     for(const c of contracted()) if(c.cls==='caster'&&!c.ally&&(c.drain||0)<3&&ch(.15)){ c.drain=(c.drain||0)+1; c.hp=clamp(c.hp+10); }
     const truce=huntOn(); huntNpc();
+    if(!truce){ strayFightNight(); npcEnemyCoop(); }
     altarNpc();
     if(!truce) npcClassNight();
     const co=coalBusy(), avail=truce?[]:contracted().filter(p=>!(p.halt>0)&&!(p.truceN>0)&&!(co&&co.has(p.i)));
@@ -13557,7 +14008,7 @@ const Sim = (() => {
       const {win,lose}=npcFight(a,b,false,true); w.nf.push([a.i,b.i]);
       const seen=a.known||b.known||a.ally||b.ally||ch(.5);
       if(lose.master&&!lose.bxNun&&ch(mHunt(win))){
-        if(ch(.7)){ const d=makeStray(lose); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${seen?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
+        if(ch(.7)){ const d=makeStray(lose,win); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${seen?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
         else { lose.master=false; lose.mDied=true; lose.alive=false; pairOut(lose,'마스터를 잃고 흩어졌다',seen?win:null); log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망.${seen?` ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`:''}`,'notice'); }
         reported++; continue;
       }
@@ -13586,15 +14037,15 @@ const Sim = (() => {
     const a=pairBy(r.a), b=pairBy(r.b); if(!a||!b||!a.alive||!b.alive||!b.ally||!a.master) return;
     b.hp=clamp(b.hp-ri(10,20)); const who=b.mname;
     decide({title:'동맹의 급한 연락',body:`동맹 ${pName(b)} 조의 사역마가 창문을 두드렸다. ${pName(a)} 조에게 습격당하고 있다. ${who}: “오래는 못 버틴다. 와 줄 수 있나.”`,war:true,choices:[
-      {t:'달려간다',d:`${pName(a)} 조와 싸운다. 동맹이 함께 싸운다(${hpWord(b.hp)}) · 그동안 거처는 빈다`,auto:w.hp>=50&&w.sm>=30,f:()=>{ crossReact({충성:6,명예:4,연민:3,야망:-3},{질서:4,선:2}); w.rescue=w.day; b.owe=(b.owe||0)+1; b.slight=Math.max(0,(b.slight||0)-1); relShift('p'+b.i,'me',{trust:18,affection:12,respect:10,grudge:-10});
+      {t:'달려간다',d:`${pName(a)} 조와 싸운다. 동맹이 함께 싸운다(${hpWord(b.hp)}) · 그동안 거처는 빈다`,auto:w.hp>=50&&w.sm>=30,f:()=>{ crossReact({충성:6,명예:4,연민:3,야망:-3},{질서:4,선:2}); w.rescue=w.day; b.owe=(b.owe||0)+1; b.slight=Math.max(0,(b.slight||0)-1); relShift('p'+b.i,'me',{trust:18,affection:12,respect:10,grudge:-10}); recFact('ally_help',{actor:'me',target:'p'+b.i,who:{a:pairSnap('me'),b:pairSnap(b)},rel:relGet('p'+b.i,'me')});
         w.queue.unshift(()=>{ if(!a.alive||!b.alive||!w.heroAlive) return; if(!a.known){ a.known=true; a.intel=Math.max(a.intel||0,30); } log(`${pName(b)} 조의 거처 앞에서 ${pName(a)} 조와 마주쳤다.`,'war'); battle(a,{attack:true,allyComp:true,comp:[b.i]}); }); return '도시를 가로질러 달렸다.'; }},
       {t:'모른 척한다',d:'그 싸움은 그들끼리 결판난다. 동맹이 서운해할 수 있다',f:()=>{ crossReact({충성:-7,명예:-4,야망:3},{질서:-4}); allyRaidFight(a,b);
-        if(b.alive&&b.ally){ b.slight=(b.slight||0)+1; relShift('p'+b.i,'me',{trust:-22,affection:-15,grudge:22}); if(ch(Math.min(.9,(ALLY_QUIT[b.tac]??.35)*(b.owe?.5:1)+.15*(b.slight-1)))){ b.ally=false; b.allyGone=true; log(`${who}에게서 짧은 전갈이 왔다. “부를 때 오지 않는 동맹은 동맹이 아니다.” 동맹이 끊겼다.`,'loss'); wrec('mine',`동맹 ${who}${J(who,이)} 등을 돌렸다 — 습격을 외면했다`,{p:b.i}); } }
+        if(b.alive&&b.ally){ b.slight=(b.slight||0)+1; relShift('p'+b.i,'me',{trust:-22,affection:-15,grudge:22}); const _ig=recFact('ally_ignore',{actor:'p'+b.i,target:'me',who:{a:pairSnap(b),b:pairSnap('me')},rel:relGet('p'+b.i,'me')}); if(ch(Math.min(.9,(ALLY_QUIT[b.tac]??.35)*(b.owe?.5:1)+.15*(b.slight-1)))){ b.ally=false; b.allyGone=true; log(`${who}에게서 짧은 전갈이 왔다. “부를 때 오지 않는 동맹은 동맹이 아니다.” 동맹이 끊겼다.`,'loss'); wrec('mine',`동맹 ${who}${J(who,이)} 등을 돌렸다 — 습격을 외면했다`,{p:b.i}); } }
         return '휴대폰이 몇 번 더 울리다 멈췄다.'; }},
       {t:'이참에 동맹을 끊는다',d:'동맹의 표식을 불태운다. 그 조가 한동안 우리를 노린다',f:()=>{ crossReact({야망:5,충성:-8,자유:2},{질서:-6,혼돈:2,악:2}); b.ally=false; b.allyGone=true; b.cutByMe=true; b.provoked=2; relShift('p'+b.i,'me',{trust:-35,affection:-25,grudge:35,rivalry:15}); allyRaidFight(a,b); return '답장 대신 동맹의 표식을 불태웠다.'; }}]}); }
   // 외면하거나 끊었을 때: 미뤄 둔 싸움을 그들끼리 치른다(밤의 다른 조 싸움과 같은 규칙)
   function allyRaidFight(a,b){ const w=W(); if(!a.alive||!b.alive) return; const {win,lose}=npcFight(a,b,false,true); w.nf.push([a.i,b.i]);
-    if(lose.master&&!lose.bxNun&&ch(mHunt(win))){ if(ch(.7)) makeStray(lose); else { lose.master=false; lose.alive=false; pairOut(lose,'마스터를 잃고 흩어졌다',win); }
+    if(lose.master&&!lose.bxNun&&ch(mHunt(win))){ if(ch(.7)) makeStray(lose,win); else { lose.master=false; lose.alive=false; pairOut(lose,'마스터를 잃고 흩어졌다',win); }
       log(`감독관의 통지: ${cn(lose)} 조의 마스터 사망. ${pName(win)} 조가 서번트를 피해 마스터를 노렸다고 한다.`,'notice'); return; }
     if(lose.hp<=0){ const lh=H_BY[lose.hero]; if(lh.sp==='revive'&&!lose.usedRevive){ lose.usedRevive=true; lose.hp=45; return; }
       lose.alive=false; lose.revealed=true; pairOut(lose,'다른 조에게 쓰러졌다',win); log(`감독관의 통지: ${cn(lose)} 조 탈락. ${pName(win)} 조의 손에.`,'notice');
@@ -13617,7 +14068,7 @@ const Sim = (() => {
     if(_allyS&&!w.sacrificed&&masterPersona(_allyS).ruthless>=65){
       const _bs=betrayScore(relGet('p'+_allyS.i,'me'),masterPersona(_allyS),{seals:w.seals,hp:w.hp,owe:_allyS.owe,slight:_allyS.slight});
       const _bait=foes.find(x=>x!==_allyS);
-      if(_bait&&ch(_bs*.42)){ w.sacrificed=1; _allyS.ally=false; _allyS.allyGone=true; w.exposure=clamp(w.exposure+expUp(18)); relShift('p'+_allyS.i,'me',{trust:-35,affection:-25,grudge:25}); log('동맹이 등을 돌렸다. 당신의 거처를 다른 조에 팔아넘긴 것이다.','loss'); wrec('mine',`동맹 ${_allyS.mname}${J(_allyS.mname,이)} 거처를 팔아넘겼다`,{p:_allyS.i}); return battle(_bait,{ambushed:true}); }
+      if(_bait&&ch(_bs*.42)){ w.sacrificed=1; _allyS.ally=false; _allyS.allyGone=true; w.exposure=clamp(w.exposure+expUp(18)); relShift('p'+_allyS.i,'me',{trust:-35,affection:-25,grudge:25}); const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+_allyS.i); recFact('ally_betray',{actor:'p'+_allyS.i,target:'me',who:{a:pairSnap(_allyS),b:pairSnap('me')},rel:relGet('p'+_allyS.i,'me'),persona:masterPersona(_allyS),causeId:_pr&&_pr.id,meta:{kind:'sellout'},beat:true}); log('동맹이 등을 돌렸다. 당신의 거처를 다른 조에 팔아넘긴 것이다.','loss'); wrec('mine',`동맹 ${_allyS.mname}${J(_allyS.mname,이)} 거처를 팔아넘겼다`,{p:_allyS.i}); return battle(_bait,{ambushed:true}); }
     }
     const e=wpick(foes,f=>{ const _r=relGet('p'+f.i,'me'), _mp=masterPersona(f), _rw=Math.max(.2,1+_r.grudge*.03+_r.rivalry*.02-(_mp.cunning>=70?_r.fear*.025:_r.fear*.01)); return npcAggr(f)*_rw*({hunter:3,reckless:3,proud:2,cunning:2,desperate:2,defensive:1,naive:1}[f.tac]||1)*(f.provoked>0?4:1)*(w.hunted&&['executor','burial'].includes(f.aid)?4:1); });
     if(!npcWillRaid(e)) return;
@@ -13699,7 +14150,7 @@ const Sim = (() => {
     {w:2,c:()=>hero().sp==='traitor'||((hero().traits.includes('야망')||relGet('me','hero').grudge>=65)&&W().trust<30),f:()=>{const w=W(),h=hero();if(w.trust>=40){log(`${h.name}${J(h.name,이)} 다른 조의 사신과 이야기하다가 당신을 보고 입을 다물었다.`);return;}decide({title:'배신의 기척',body:`${h.name}${J(h.name,이)} 당신보다 강한 주인을 찾고 있다.`,war:true,choices:[
       {t:'령주로 묶어 둔다',d:'1획',off:w.seals<1,auto:true,f:()=>{useSeal('내 곁에 있어라');w.trust=clamp(w.trust+fitT(-5));return `${h.name}${J(h.name,은)} 이를 갈며 무릎을 꿇었다.`}},
       {t:'말로 붙잡는다',f:()=>{if(chkp('정신',.3+S.st.will/200)){w.trust=clamp(w.trust+10);return `${he(h)}는 오래 당신을 보다가 무기를 내려놓았다.`}w.heroAlive=false;w.myOut={d:w.day,tod:w.tod,why:'붙잡지 못하고 떠나보냈다'};wrec('mine',`${h.name}${J(h.name,이)} 계약을 끊고 떠났다`);S.flags.war='lost';S.flags.betrayedByHero=1;mark('loss');log(`${h.name}${J(h.name,은)} 떠났다.`,'loss');afterLoss();return ''}}]});}},
-    {w:2,c:()=>W().pairs.some(allyOld)&&W().day>=7,f:()=>{const a=W().pairs.find(allyOld), _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}else{log(`${a.mname}${J(a.mname,이)} 알아낸 것을 나눠 주었다.`);W().pairs.forEach(p=>{if(p.alive&&!p.ally&&ch(.4))addIntel(p,20);});}}},
+    {w:2,c:()=>W().pairs.some(allyOld)&&W().day>=7,f:()=>{const a=W().pairs.find(allyOld), _bs=betrayScore(relGet('p'+a.i,'me'),masterPersona(a),{seals:W().seals,hp:W().hp,owe:a.owe,slight:a.slight});if(ch(_bs)){a.ally=false;a.allyGone=true;const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+a.i);recFact('ally_betray',{actor:'p'+a.i,target:'me',who:{a:pairSnap(a),b:pairSnap('me')},rel:relGet('p'+a.i,'me'),persona:masterPersona(a),causeId:_pr&&_pr.id,meta:{kind:'ambush'},beat:true});log(`동맹 ${a.mname}${J(a.mname,이)} 등을 돌렸다.`,'loss');battle(a,{ambushed:true});}else{log(`${a.mname}${J(a.mname,이)} 알아낸 것을 나눠 주었다.`);W().pairs.forEach(p=>{if(p.alive&&!p.ally&&ch(.4))addIntel(p,20);});}}},
     {w:1,c:()=>true,f:()=>decide({title:'은폐반',body:'성당교회의 은폐반이 무너진 건물 주변에 장막을 치고 있다. 그들 눈에 띄면 오늘 밤의 일을 해명해야 한다.',war:true,choices:[
       {t:'협조한다',auto:true,f:()=>{W().exposure=clamp(W().exposure-5);add({wealth:-3});return '진술서 세 장을 썼다. 새벽에 풀려났다.'}},
       {t:'몰래 빠져나간다',f:()=>{if(ch(.6))return '아무도 당신을 보지 못했다.';W().exposure=clamp(W().exposure+expUp(10));return '은폐반 한 명과 눈이 마주쳤다. 그는 무전기를 들었다.'}}]})},
@@ -13897,7 +14348,7 @@ const Sim = (() => {
         if(it==='betray') S.flags.allyBetrayed=1; log(it==='betray'?`${a.mname}도 이미 칼을 쥐고 있었다. 서로 같은 생각이었다.`:`${a.mname}${J(a.mname,은)} 잠시 쓸쓸한 얼굴을 하더니, 서번트를 앞으로 내세웠다.`,'war');
         w.ended=false;w.final=true;battle(a,{attack:true,final:true});}},
       {t:'함께 소원을 빈다',d:'성배를 나눈다. 두 소원 모두 반쯤만 이루어질지도 모른다',f:()=>{
-        if(it==='betray'){ a.ally=false; S.flags.allyBetrayed=1; log(`손을 내민 순간, ${a.mname}의 서번트가 먼저 움직였다. 처음부터 이럴 생각이었던 것이다.`,'loss'); wrec('mine',`동맹 ${a.mname}${J(a.mname,이)} 마지막에 등을 돌렸다`,{p:a.i}); w.ended=false; w.final=true; battle(a,{defend:true,final:true,betrayed:true}); return; }
+        if(it==='betray'){ a.ally=false; S.flags.allyBetrayed=1; const _pr=lastFactOf(['ally_ignore','ally_form'],x=>x.actor==='p'+a.i); recFact('ally_betray',{actor:'p'+a.i,target:'me',who:{a:pairSnap(a),b:pairSnap('me')},rel:relGet('p'+a.i,'me'),persona:masterPersona(a),causeId:_pr&&_pr.id,meta:{kind:'final'},beat:true}); log(`손을 내민 순간, ${a.mname}의 서번트가 먼저 움직였다. 처음부터 이럴 생각이었던 것이다.`,'loss'); wrec('mine',`동맹 ${a.mname}${J(a.mname,이)} 마지막에 등을 돌렸다`,{p:a.i}); w.ended=false; w.final=true; battle(a,{defend:true,final:true,betrayed:true}); return; }
         if(it==='yield') log(`${a.mname}${J(a.mname,은)} 고개를 저으며 웃었다. “나눌 것까진 없는데. 그래도, 고마워.”`,'war');
         S.flags.war='shared';S.flags.sharedWith=a.mname;finale(a);}},
       {t:'성배를 양보한다',f:()=>{log(`${a.mname}에게 성배를 넘겼다.`,'war');S.flags.war='withdrew';S.flags.yieldAlly=1;log(byBody(h,{normal:`${h.name}${J(h.name,은)} 말없이 당신 어깨에 손을 얹고 흩어졌다.`,tiny:`${h.name}${J(h.name,은)} 말없이 당신 손등에 작은 손을 얹고 흩어졌다.`,beast:'늑대가 말없이 당신 손에 코끝을 대고 흩어졌다.'}),'voice');npcWinText(a);warOver();}},
@@ -16118,7 +16569,7 @@ const Sim = (() => {
   return {cn,ACH:ACH.map(({t,...a})=>a),newLife,start,tick,ep2When,setHold,battleMods,resolve,autoChoice,setFocus,setHooks,snapshot,load,record,yearProgress,
     get S(){return S}, relLoveOk:id=>!REL_CHILD.includes(id)&&!REL_NOLOVE.includes(id)&&!!H_BY[id], STYLE:()=>STYLE, AR, seal:()=>S&&S.sealId!=null?SEALS[S.sealId]:SEALS[0], skillsOf, CLS,GR,HEROES,H_BY,ORIGINS,CITIES,ARTS,ART_TIER,FAMILY_ART,GIFTS,GRADE_N,ART_CHAIN:Object.fromEntries(Object.entries(ART_CHAIN).map(([k,v])=>[k,{max:v.max,st:v.st}])),custCost,custClamp,custRanges,FOCUS,LEN,pName,artOf,ARCHE,myParams,npcParams,TIER_TXT,npInfo,npCompare,hpWord,hero:()=>S&&S.hero?H_BY[S.hero]:null,
     alName:id=>alName(id), pickup:()=>({live:pickupLive(),end:PICKUP.end,ids:PICKUP.ids.slice()}), artsView:()=>S?artsView():null, relView:()=>S?relView():null, artInfo:id=>S?artInfo(id):null, artActs:id=>(ART_ACT[id]||[]).map(k=>MACT[k].n), famState:()=>{ const w=S&&W(); if(!w||!famName()) return null; return {n:famName(),back:w.famBack>w.day?w.famBack-w.day:0,used:w.famUsed===w.day,tail:!!w.famTail}; }, giftView:()=>S?giftView():null, setGhost, randName:sx=>genName(sx==='f'?'f':'m'), mInfo, NAMES, fullName, setName, oDesc, canTrain:()=>!!S&&!!(O().mage||S.flags.awakened),
-    duelStart:c=>duelStart(c||{}), duelView:()=>S?duelView():null, personaOf:who=>S?personaOf(who):null, relMatrix:(a,b)=>S&&S.war?relGet(a,b):null, betrayRisk:p=>S&&S.war&&p?betrayScore(relGet('p'+p.i,'me'),masterPersona(p),{seals:S.war.seals,hp:S.war.hp,owe:p.owe,slight:p.slight}):0,
+    duelStart:c=>duelStart(c||{}), duelView:()=>S?duelView():null, personaOf:who=>S?personaOf(who):null, relMatrix:(a,b)=>S&&S.war?relGet(a,b):null, betrayRisk:p=>S&&S.war&&p?betrayScore(relGet('p'+p.i,'me'),masterPersona(p),{seals:S.war.seals,hp:S.war.hp,owe:p.owe,slight:p.slight}):0, narrative:(lg,trFn)=>S&&S.war?renderNarrative(S.war.facts||[],{day:S.war.day},lg,trFn):null, narrativeFrom:(wd,lg,trFn)=>wd?renderNarrative(wd.facts||[],wd,lg,trFn):null, narrBeat:(f,lg,trFn)=>narrBeat(f,lg,trFn),
     _: {advanceYear, die} };
 })();
 if(typeof module!=='undefined') module.exports=Sim;
@@ -18089,7 +18540,7 @@ function addEntry(e){
   }
   const key=`${e.a}|${e.n||0}|${e.tod||''}`;
   if(group&&!(BREAK.includes(e.k)&&!(e.k==='n'&&e.n))&&key===groupKey){
-    const sub=document.createElement('span'); sub.className='sub '+e.k; sub.textContent=e.t; { const fh=lineFace(e); if(fh) sub.insertAdjacentHTML('afterbegin',fh); } group.appendChild(sub); return;
+    const sub=document.createElement('span'); sub.className='sub '+e.k; sub.textContent=(e.k==='story'&&e.fact&&typeof Sim.narrBeat==='function')?Sim.narrBeat(e.fact,typeof LANG==='string'?LANG:'ko',tr):e.t; { const fh=lineFace(e); if(fh) sub.insertAdjacentHTML('afterbegin',fh); } group.appendChild(sub); return;
   }
   const d=document.createElement('div'); d.className='entry '+e.k;
   d.innerHTML='<span class="t mono"></span><span class="b"></span>';
@@ -18100,7 +18551,7 @@ function addEntry(e){
     const qb=document.createElement('span');qb.className='qb';qb.textContent=e.t;
     const pk=document.createElement('span');pk.className='pk';pk.textContent=e.pick||'';
     b.append(qt,qb,pk); group=b; groupKey=key;
-  } else { b.textContent=e.t; { const fh=lineFace(e); if(fh) b.insertAdjacentHTML('afterbegin',fh); } group=null; }
+  } else { b.textContent=(e.k==='story'&&e.fact&&typeof Sim.narrBeat==='function')?Sim.narrBeat(e.fact,typeof LANG==='string'?LANG:'ko',tr):e.t; { const fh=lineFace(e); if(fh) b.insertAdjacentHTML('afterbegin',fh); } group=null; }
   f.prepend(d);
   while(f.children.length>shown) f.lastChild.remove();
   $('#moreBtn').classList.toggle('hidden',Sim.S.log.length<=f.children.length);
@@ -18144,6 +18595,14 @@ const PS_L={prideful:'긍지',loyal:'충의',cunning:'책략',ruthless:'비정',
 const REL6_M=[['trust','신뢰',''],['affection','애정','aff'],['fear','두려움','fear'],['respect','경의','resp'],['rivalry','경쟁심','riv'],['grudge','원한','grd']];
 function psTagsHtml(p){ if(!p||!p.tags||!p.tags.length) return ''; return `<div class="ps-tags">${p.tags.map(t=>`<span class="ps-tag ${t}">${esc(PS_L[t]||t)}</span>`).join('')}</div>`; }
 function rel6Html(r){ if(!r) return ''; return `<div class="rel6-box">${REL6_M.map(([k,l,c])=>`<div class="rel6-row ${c}"><span>${esc(l)}</span><span class="tr"><i style="width:${Math.round(r[k]||0)}%"></i></span><b>${Math.round(r[k]||0)}</b></div>`).join('')}</div>`; }
+function narrHtml(N, isEnd){ if(!N) return ''; const arcs=N.arcs||[];
+  const body=arcs.length?arcs.map(a=>`<div class="narr-arc ${a.kind}"><h5><span>${esc(a.title)}</span><small>${a.days&&a.days.length?`D${a.days[0]}${a.days[1]&&a.days[1]!==a.days[0]?'–'+a.days[1]:''}`:''}</small></h5><p>${esc(a.body)}</p></div>`).join(''):`<p class="nodata">${esc(tr(isEnd?'아직 뚜렷한 이야기가 엮이지 않았습니다.':'아직 기록된 사건이 부족합니다. 전쟁이 깊어지면 사건들이 하나의 서사로 이어집니다.'))}</p>`;
+  return `<div class="narr-box" data-notr><div class="narr-title">${esc(N.title)}</div>${body}</div>`; }
+function showNarrative(){ const N=Sim.narrative(typeof LANG==='string'?LANG:'ko',tr); if(!N) return;
+  $('#infoBody').innerHTML=`<div class="eyebrow">${esc(tr('전쟁 서사'))}</div>${narrHtml(N,false)}`;
+  if($('#info').classList.contains('hidden')){ infoHeld=!Sim.S.paused; if(infoHeld){ Sim.S.paused=true; syncCtrl(); } clearTimeout(autoTimer); }
+  $('#info').classList.remove('hidden'); }
+document.addEventListener('click',e=>{ if(e.target.closest('#narrOpenBtn')){ e.stopPropagation(); showNarrative(); } });
 function riskHtml(p){ const S=Sim.S; if(!S||!S.war||!p||!p.ally||!(p.intel>=50||S.st.bond>=55)) return ''; const v=Sim.betrayRisk(p), cl=v>=.55?'hi':v>=.3?'mid':'lo', lb=v>=.55?'높음':v>=.3?'주의':'낮음';
   return `<div class="rel6-risk ${cl}"><span>배신 가능성</span> · <b>${lb}</b></div>`; }
 function bar(lb,v,cls){ return `<div class="stat"><span class="lb">${lb}</span><span class="track ${cls||''}"><i style="width:${Math.round(v)}%"></i></span><span class="v">${Math.round(v)}</span></div>`; }
@@ -19355,6 +19814,7 @@ function warReport(r){
     <div class="stats">${stat(bt.n,'교전')}${stat(bt.win,'승리')}${stat(bt.lose,'패배')}${stat((bt.ret||0)+(bt.fled||0)+(bt.draw||0),'결판 없음')}${stat(wd.kills,'격파')}${stat(wd.np,'보구 해방')}</div>
     <h4>령주</h4><div class="seals">${sealDots}<span class="st" style="margin-left:6px">${used}획 사용 · ${left}획 남음</span></div>${sealList}
     <h4>${['일곱','여덟','아홉','열'][Math.max(0,Math.min(3,wd.pairs.length-6))]} 조</h4><table class="pairs-t">${rows}</table>
+    ${(()=>{ const N=Sim.narrativeFrom(wd,typeof LANG==='string'?LANG:'ko',typeof tr==='function'?tr:x=>x); return N&&N.arcs&&N.arcs.length?`<h4>그 겨울의 서사</h4>${narrHtml(N,true)}`:''; })()}
     <h4>14일의 기록</h4><details open><summary>날짜별로 보기 · ${tl.length}건</summary><div class="tl">${tlHtml}</div></details>
   </div>`;
 }
