@@ -123,6 +123,7 @@ python3 fix1123_apply.py build/game.html            # 11-23 커뮤니티 버그:
 python3 custom_apply.py build/game.html             # 커스텀 마스터: 포인트/무제한 · 출신/회로/스탯/기술/마안
 python3 ai_rel_apply.py build/game.html             # 성격 기반 AI · 6축 관계망(신뢰·애정·두려움·경의·경쟁심·원한) · 배신 시스템
 python3 narr_apply.py build/game.html               # 창발적 서사 생성기 (사건 인과 그래프 · 전쟁 서사)
+python3 plan_apply.py build/game.html               # 전략 AI 플래너 (장기·단기 목표 · NPC 동맹 · 거점 방비 · 마력 온존)
 python3 zh/zh_apply.py build/game.html --on       # 중국어 간체 · 번체: 사전 파일(assets/i18n) · 엔진 · 공개 (11-18 공개)
 python3 lang_apply.py build/game.html               # 로딩 화면이 고른 언어를 게임도 그대로(언어팩을 따로 받기 위해, 11-22)
 python3 fxguard_apply.py build/game.html            # 연출에서 오류가 나도 진행이 멈추지 않게 (보구 사용 중 멈춤 문의, 11-23)
